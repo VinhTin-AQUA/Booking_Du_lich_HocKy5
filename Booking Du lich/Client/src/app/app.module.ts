@@ -8,8 +8,6 @@ import { FooterComponent } from './footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './account/login/login.component';
-import { RegisterComponent } from './account/register/register.component';
 
 @NgModule({
   declarations: [
@@ -17,8 +15,6 @@ import { RegisterComponent } from './account/register/register.component';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    LoginComponent,
-    RegisterComponent
   ],
   imports: [
     BrowserModule,
