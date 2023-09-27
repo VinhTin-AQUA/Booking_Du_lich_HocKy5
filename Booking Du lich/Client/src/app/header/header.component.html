@@ -35,24 +35,28 @@
         'w-[200px]': collapseMenu === true,
         'w-0 overflow-hidden': collapseMenu === false
       }"
-      class="menu-collapse duration-300 bg-[#fed7aa] flex gap-2 flex-col rounded h-[267px]"
+      class="menu-collapse duration-200 bg-[#fed7aa] flex gap-2 flex-col rounded h-[267px]"
     >
       <ul
         class="flex justify-center items-center flex-col rounded overflow-hidden"
       >
-        <li class="menu-item">Hotels & Homes</li>
-        <li class="menu-item">Activities</li>
-        <li class="menu-item">Flights</li>
-        <li class="menu-item">Deals</li>
+        <li (click)="hideMenu()" class="menu-item">Hotels & Homes</li>
+        <li (click)="hideMenu()" class="menu-item">Activities</li>
+        <li (click)="hideMenu()" class="menu-item">Flights</li>
+        <li (click)="hideMenu()" class="menu-item">Deals</li>
       </ul>
 
-      <div class="flex items-center justify-center gap-2 flex-col m-2 overflow-hidden">
+      <div
+        class="flex items-center justify-center gap-2 flex-col m-2 overflow-hidden"
+      >
         <a
+          (click)="hideMenu()"
           class="btn-primary cursor-pointer max-h-[36px] overflow-hidden"
           routerLink="/account/login"
           >Sign in</a
         >
         <a
+          (click)="hideMenu()"
           class="btn-outline-primary cursor-pointer max-h-[36px] overflow-hidden"
           routerLink="/account/register"
           >Create account</a
