@@ -11,4 +11,8 @@ export class HeaderComponent {
   showMenu() {
     this.collapseMenu = !this.collapseMenu;
   }
+
+  hideMenu(){
+    this.collapseMenu = false;
+  }
 }
