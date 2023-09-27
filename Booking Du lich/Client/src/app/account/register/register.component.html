@@ -1,1 +1,130 @@
-<p>register works!</p>
+<div class="wrapper">
+  <div class="shadow-container container mx-auto md:w-[500px] p-5 rounded my-10">
+    <form [formGroup]="signUpForm" (ngSubmit)="submit()" autocomplete="off">
+      <div class="title font-bold text-[1.7em] mb-9">
+        <span>Sign up</span>
+      </div>
+
+      <!-- first name -->
+      <div class="text-[1.2em] mb-4">
+        <label class="block mb-2">First name</label>
+        <input
+          [class]="inputValidation('firstName')"
+          type="text"
+          formControlName="firstName"
+          spellcheck="false"
+          placeholder="First Name"
+        />
+        <span
+          class="text-red-500"
+          *ngIf="
+            submitted === true && signUpForm.hasError('required', 'firstName')
+          "
+        >
+          First name is required
+        </span>
+      </div>
+
+      <!-- last name -->
+      <div class="text-[1.2em] mb-4">
+        <label class="block mb-2">Last name</label>
+        <input
+          [class]="inputValidation('lastName')"
+          type="text"
+          formControlName="lastName"
+          spellcheck="false"
+          placeholder="Last Name"
+        />
+        <span
+          class="text-red-500"
+          *ngIf="
+            submitted === true && signUpForm.hasError('required', 'lastName')
+          "
+        >
+          Last name is required
+        </span>
+      </div>
+
+      <!-- email -->
+      <div class="text-[1.2em] mb-4">
+        <label class="block mb-2">Email</label>
+        <input
+          [class]="inputValidation('email')"
+          type="email"
+          formControlName="email"
+          spellcheck="false"
+          placeholder="Email"
+        />
+        <span
+          class="text-red-500"
+          *ngIf="submitted === true && signUpForm.hasError('required', 'email')"
+        >
+          Email is required
+        </span>
+        <span
+          class="text-red-500"
+          *ngIf="submitted === true && signUpForm.hasError('email', 'email')"
+        >
+          Email is invalid
+        </span>
+      </div>
+
+      <!-- password -->
+      <div class="text-[1.2em] mb-4">
+        <label class="block mb-2">Password</label>
+        <input
+          [class]="inputValidation('password')"
+          type="password"
+          formControlName="password"
+          spellcheck="false"
+          placeholder="Password"
+        />
+        <span
+          class="text-red-500"
+          *ngIf="
+            submitted === true && signUpForm.hasError('required', 'password')
+          "
+        >
+          Password is invalid
+        </span>
+        <span
+          class="text-red-500"
+          *ngIf="
+            submitted === true && signUpForm.hasError('minlength', 'password') ||
+						submitted === true && signUpForm.hasError('maxlength', 'password')
+          "
+        >
+          Password is at least 6 and max is 16 characters
+        </span>
+      </div>
+
+			<!-- confirm password -->
+      <div class="text-[1.2em] mb-4">
+        <label class="block mb-2">Confrim password</label>
+        <input
+					[class]="inputValidation('confirmPassword')"
+          type="password"
+          formControlName="confirmPassword"
+          spellcheck="false"
+          placeholder="Confrim password"
+					(keydown)="change()"
+        />
+
+				<span
+          class="text-red-500"
+          *ngIf="errorConfirmPassword !== ''"
+        >
+					Confirm password is incorrect
+        </span>
+
+      </div>
+
+      <div>
+        <button class="btn-primary w-full mb-2">Sign up</button>
+        <a class="btn-outline-primary w-full" routerLink="/account/login"
+          >Already have an account? Sign in</a
+        >
+      </div>
+    </form>
+  </div>
+</div>
