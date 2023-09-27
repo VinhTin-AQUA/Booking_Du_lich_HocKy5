@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+  collapseMenu: boolean = false;
 
+  showMenu() {
+    this.collapseMenu = !this.collapseMenu;
+  }
 }
