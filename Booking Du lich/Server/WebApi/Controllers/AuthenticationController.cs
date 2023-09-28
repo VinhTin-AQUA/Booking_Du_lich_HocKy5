@@ -11,6 +11,11 @@ using WebApi1.Models.Authentication.SignUp;
 using WebApi1.Repositories;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using Microsoft.AspNetCore.Authorization;
+using System.ComponentModel.DataAnnotations;
+using User.Management.Service.Models;
+using WebApi.Models.Authentication.SignUp;
+using System.Globalization;
 
 namespace WebApi1.Controllers
 {
@@ -23,13 +28,15 @@ namespace WebApi1.Controllers
         private readonly RoleManager<IdentityRole> _roleManage;
         private readonly IConfiguration _configuration;
         private readonly IEmailService _emailService;
+        private readonly SignInManager<ApplicationUser> _loginManage;
 
-        public AuthenticationController(IAccountRepository repo, UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> role, IConfiguration configuration, IEmailService emailService) {
+        public AuthenticationController(IAccountRepository repo, UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> role, IConfiguration configuration, IEmailService emailService, SignInManager<ApplicationUser> loginManage) {
             accountRepo = repo;
             _userManage = userManager;
             _roleManage = role;
             _configuration = configuration;
             _emailService = emailService;
+            _loginManage = loginManage;
         }
 
        
@@ -52,12 +59,13 @@ namespace WebApi1.Controllers
                     LastName = signUpModel.LastName,
                     UserName = signUpModel.Email,
                     Email = signUpModel.Email,
+                    TwoFactorEnabled = true,
                 };
 
 
                 if (await _roleManage.RoleExistsAsync(role))
                 {
-                    IdentityResult result =  await _userManage.CreateAsync(user, signUpModel.Password); ;
+                    IdentityResult result =  await _userManage.CreateAsync(user, signUpModel.Password); 
                     if (!result.Succeeded)
                     {
                         return StatusCode(StatusCodes.Status500InternalServerError, new Response
@@ -126,7 +134,18 @@ namespace WebApi1.Controllers
         public async Task<IActionResult> SignIn(SignInModel signInModel)
         {
             var user = await _userManage.FindByEmailAsync(signInModel.Email);
+            if (user.TwoFactorEnabled)
+            {
+                await _loginManage.SignOutAsync();
+                await _loginManage.PasswordSignInAsync(user, signInModel.Password, false, true);
+                var token = await _userManage.GenerateTwoFactorTokenAsync(user, "Email");
+                var message = new User.Management.Service.Models.Message(new string[] { user.Email! },
+                    "OTP Confirmation",
+                    token);
+                _emailService.SendEmail(message);
 
+                return StatusCode(StatusCodes.Status200OK, new Response { Status = "Success", Message = "We have sent a OTP to your email" });
+            }
             if (user != null && await _userManage.CheckPasswordAsync(user, signInModel.Password))
             {
                 var authClaim = new List<Claim>
@@ -139,6 +158,8 @@ namespace WebApi1.Controllers
                 {
                     authClaim.Add(new Claim(ClaimTypes.Role, role));
                 }
+
+              
                 var jwtToken = GetToken(authClaim);
                 return Ok(
                         new
@@ -149,6 +170,100 @@ namespace WebApi1.Controllers
                     );
             }
             return Unauthorized();
+        }
+
+        [HttpPost]
+        [Route("Login-2FA")]
+
+        public async Task<IActionResult> LoginWithOtp(string code, string email)
+        {
+            var signIn = await _loginManage.TwoFactorSignInAsync("Email", code, false, false);
+            var user = await _userManage.FindByEmailAsync(email);
+            if (signIn.Succeeded)
+            {
+                var authClaim = new List<Claim>
+                {
+                    new Claim(ClaimTypes.Name, user.UserName),
+                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                };
+                var userRoles = await _userManage.GetRolesAsync(user);
+                foreach (var role in userRoles)
+                {
+                    authClaim.Add(new Claim(ClaimTypes.Role, role));
+                }
+                var jwtToken = GetToken(authClaim);
+                return Ok(
+                        new
+                        {
+                            token = new JwtSecurityTokenHandler().WriteToken(jwtToken),
+                            expiration = jwtToken.ValidTo,
+                        }
+                    );
+            }
+
+            return StatusCode(StatusCodes.Status404NotFound, new Response { Status = "Error", Message = "Invalid code" });
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        [Route("forgot-password")]
+
+        public async Task<IActionResult> ForgotPassword([Required] string email)
+        {
+            var user = await _userManage.FindByEmailAsync(email);
+
+            if (user != null)
+            {
+                var token  = await _userManage.GeneratePasswordResetTokenAsync(user);
+                var forgotPassLink = Url.Action(nameof(ResetPassword), "Authentication", new {token, email = user.Email}, Request.Scheme);
+                var message = new Message(new string[] { user.Email! }, "Forgot Password Link", forgotPassLink!);
+                _emailService.SendEmail(message);
+
+                return StatusCode(StatusCodes.Status200OK, new Response { Status = "Success", Message = "We have sent a link for reset password to your email. Please open the link and click it for reset password!" });
+            }
+            return StatusCode(StatusCodes.Status404NotFound, new Response { Status = "Error", Message = "User isn't exist" });
+        }
+
+        [HttpGet]
+        [Route("reset-password")]
+
+        public async Task<IActionResult> ResetPassword(string token, string email)
+        {
+            var model = new ResetPassword { Token = token, Email = email };
+
+            return Ok(new
+            {
+                model,
+              
+            });
+        }
+
+        [HttpPut]
+        [AllowAnonymous]
+        [Route("reset-password")]
+
+        public async Task<IActionResult> ResetPassword(ResetPassword resetPassword)
+        {
+            var user = await _userManage.FindByEmailAsync(resetPassword.Email);
+            if (user != null)
+            {
+                var resetResult = await _userManage.ResetPasswordAsync(user, resetPassword.Token, resetPassword.Password);
+
+                if (!resetResult.Succeeded)
+                {
+                    foreach(var err in resetResult.Errors)
+                    {
+                        ModelState.AddModelError(err.Code, err.Description);
+
+                    }
+                    return Ok(ModelState);
+                }
+
+                return StatusCode(StatusCodes.Status200OK, new Response { Status = "Success", Message = "Password has been changed" });
+            }
+
+            return NotFound();
+
         }
 
         private JwtSecurityToken GetToken(List<Claim> authClaim)

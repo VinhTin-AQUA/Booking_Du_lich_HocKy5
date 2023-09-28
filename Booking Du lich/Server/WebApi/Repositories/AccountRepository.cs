@@ -22,6 +22,7 @@ namespace WebApi1.Repositories
                 LastName= model.LastName,
                 UserName = model.Email,
                 Email = model.Email,
+                TwoFactorEnabled = true
             };
 
             //await _userManage.AddToRoleAsync(user, role);

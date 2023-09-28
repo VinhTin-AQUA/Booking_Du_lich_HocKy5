@@ -47,6 +47,7 @@ builder.Services.AddSwaggerGen(options =>
     });
 });
 
+//For Identity
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options => {
     options.Password.RequireDigit = false;
     options.Password.RequiredLength = 4;
@@ -63,6 +64,9 @@ var emailConfig = builder.Configuration.GetSection("EmailConfiguration").Get<Ema
 builder.Services.AddSingleton(emailConfig);
 
 builder.Services.AddScoped<IEmailService, EmailService>();
+
+
+
 
 // Add Authentication
 builder.Services.AddAuthentication(options =>
@@ -86,7 +90,9 @@ builder.Services.AddAuthentication(options =>
 
 // Add config for Required Email
 builder.Services.Configure<IdentityOptions>(options => options.SignIn.RequireConfirmedEmail = true);
+builder.Services.Configure<DataProtectionTokenProviderOptions>(options => { options.TokenLifespan= TimeSpan.FromHours(10); });
 
+// For entity framwork
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("ApplicationDbContext"));
