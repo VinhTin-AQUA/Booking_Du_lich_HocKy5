@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+
+import { AccountService } from '../account.service';
 
 @Component({
   selector: 'app-register',
@@ -12,7 +15,11 @@ export class RegisterComponent implements OnInit {
   errorMessages: string[] = [];
   errorConfirmPassword: string = '';
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private accountService: AccountService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.signUpForm = this.formBuilder.group({
@@ -60,7 +67,15 @@ export class RegisterComponent implements OnInit {
     ) {
       this.errorConfirmPassword = 'Err';
     } else if (this.signUpForm.valid) {
-      console.log(this.signUpForm.value);
+      this.accountService.signIn(this.signUpForm.value).subscribe({
+        next: (res: any) =>{ 
+          console.log(res); // {status: 'Success', message: 'User created successfully and Send email to tinhovinh@gmail.com'}
+          this.router.navigateByUrl('/account/send-email-confirm')
+        },
+        error: (errors: any) => {
+          console.log(errors.error);
+        }
+      })
     }
   }
 }

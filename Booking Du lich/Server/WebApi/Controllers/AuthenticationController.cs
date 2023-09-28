@@ -24,7 +24,8 @@ namespace WebApi1.Controllers
         private readonly IConfiguration _configuration;
         private readonly IEmailService _emailService;
 
-        public AuthenticationController(IAccountRepository repo, UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> role, IConfiguration configuration, IEmailService emailService) {
+        public AuthenticationController(IAccountRepository repo, UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> role, IConfiguration configuration, IEmailService emailService)
+        {
             accountRepo = repo;
             _userManage = userManager;
             _roleManage = role;
@@ -32,10 +33,10 @@ namespace WebApi1.Controllers
             _emailService = emailService;
         }
 
-       
-        [HttpPost("SignUp")]
 
-        public async Task<IActionResult> SignUp(SignUpModel signUpModel, string role)
+        [HttpPost("sign-up")]
+
+        public async Task<IActionResult> SignUp(SignUpModel signUpModel)
         {
             try
             {
@@ -43,7 +44,7 @@ namespace WebApi1.Controllers
                 var userExist = await _userManage.FindByEmailAsync(signUpModel.Email);
                 if (userExist != null)
                 {
-                    return StatusCode(StatusCodes.Status403Forbidden, new Response { Status = "Error", Message = "User already exist!" });
+                    return StatusCode(StatusCodes.Status403Forbidden, new Response { Status = "Error", Message = "Email already taken. Please choose another email!" });
                 }
                 // Add user in the database
                 var user = new ApplicationUser
@@ -54,61 +55,53 @@ namespace WebApi1.Controllers
                     Email = signUpModel.Email,
                 };
 
-
-                if (await _roleManage.RoleExistsAsync(role))
+                IdentityResult result = await _userManage.CreateAsync(user, signUpModel.Password); ;
+                if (!result.Succeeded)
                 {
-                    IdentityResult result =  await _userManage.CreateAsync(user, signUpModel.Password); ;
-                    if (!result.Succeeded)
+                    return StatusCode(StatusCodes.Status500InternalServerError, new Response
                     {
-                        return StatusCode(StatusCodes.Status500InternalServerError, new Response
-                        {
-                            Status = "Error",
-                            Message = "User failed to create"
-                        });
-                        //List<IdentityError> errorList = result.Errors.ToList();
-                        //string errors = "";
-
-                        //foreach (var error in errorList)
-                        //{
-                        //    errors = errors + error.Description.ToString();
-                        //}
-
-                        //return Content(errors);
-                    }
-
-                    await _userManage.AddToRoleAsync(user, role);
-                    var token = await _userManage.GenerateEmailConfirmationTokenAsync(user);
-                    var confirmationLink = Url.Action(nameof(ConfirmEmail), "Authentication", new { token, email = user.Email }, Request.Scheme);
-                    var message = new User.Management.Service.Models.Message(new string[] { user.Email }, 
-                        "Confirmation email link",
-                        confirmationLink!);
-                    _emailService.SendEmail(message);
-
-
-                    return StatusCode(StatusCodes.Status200OK, new Response
-                    {
-                        Status = "Success",
-                        Message = $"User created successfully and Send email to {user.Email}"
+                        Status = "Error",
+                        Message = "User failed to create"
                     });
+                    //List<IdentityError> errorList = result.Errors.ToList();
+                    //string errors = "";
+
+                    //foreach (var error in errorList)
+                    //{
+                    //    errors = errors + error.Description.ToString();
+                    //}
+
+                    //return Content(errors);
                 }
-                else
+
+                await _userManage.AddToRoleAsync(user, "User");
+                var token = await _userManage.GenerateEmailConfirmationTokenAsync(user);
+                var confirmationLink = Url.Action(nameof(ConfirmEmail), "Authentication", new { token, email = user.Email }, Request.Scheme);
+                var message = new User.Management.Service.Models.Message(new string[] { user.Email },
+                    "Confirmation email link",
+                    confirmationLink!);
+                _emailService.SendEmail(message);
+
+
+                return StatusCode(StatusCodes.Status200OK, new Response
                 {
-                    return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "Role don't exist" });
-                }
+                    Status = "Success",
+                    Message = $"User created successfully and Send email to {user.Email}"
+                });
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return StatusCode(StatusCodes.Status416RangeNotSatisfiable, ex);
             }
-                           
+
         }
 
         [HttpGet("ConfirmEmail")]
 
-        public async Task<IActionResult> ConfirmEmail (string token, string email)
+        public async Task<IActionResult> ConfirmEmail(string token, string email)
         {
             var user = await _userManage.FindByEmailAsync(email);
-            if(user != null)
+            if (user != null)
             {
                 var result = await _userManage.ConfirmEmailAsync(user, token);
                 if (result.Succeeded)
@@ -135,7 +128,7 @@ namespace WebApi1.Controllers
                     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                 };
                 var userRoles = await _userManage.GetRolesAsync(user);
-                foreach(var role in userRoles)
+                foreach (var role in userRoles)
                 {
                     authClaim.Add(new Claim(ClaimTypes.Role, role));
                 }
@@ -157,11 +150,11 @@ namespace WebApi1.Controllers
             var token = new JwtSecurityToken(
                 issuer: _configuration["JWT:ValidIssuer"],
                 audience: _configuration["JWT:ValidAudience"],
-                expires:DateTime.Now.AddHours(3),
+                expires: DateTime.Now.AddHours(3),
                 claims: authClaim,
-                signingCredentials:new SigningCredentials(authSignInKey, SecurityAlgorithms.HmacSha256));
+                signingCredentials: new SigningCredentials(authSignInKey, SecurityAlgorithms.HmacSha256));
             return token;
         }
-        
+
     }
 }
