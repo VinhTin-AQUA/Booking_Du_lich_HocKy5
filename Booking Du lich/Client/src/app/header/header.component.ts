@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { SharedService } from '../shared/shared.service';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -8,6 +10,8 @@ import { Component } from '@angular/core';
 export class HeaderComponent {
   collapseMenu: boolean = false;
 
+  constructor() {}
+
   showMenu() {
     this.collapseMenu = !this.collapseMenu;
   }
@@ -15,4 +19,9 @@ export class HeaderComponent {
   hideMenu(){
     this.collapseMenu = false;
   }
+
+
+
+  
+
 }

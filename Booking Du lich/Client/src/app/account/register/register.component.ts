@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { AccountService } from '../account.service';
+import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
   selector: 'app-register',
@@ -18,7 +19,8 @@ export class RegisterComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private accountService: AccountService,
-    private router: Router
+    private router: Router,
+    private sharedService: SharedService
   ) {}
 
   ngOnInit(): void {
@@ -67,15 +69,18 @@ export class RegisterComponent implements OnInit {
     ) {
       this.errorConfirmPassword = 'Err';
     } else if (this.signUpForm.valid) {
+      this.sharedService.showLoading(true);
       this.accountService.signIn(this.signUpForm.value).subscribe({
-        next: (res: any) =>{ 
+        next: (res: any) => {
+          this.sharedService.showLoading(false);
           console.log(res); // {status: 'Success', message: 'User created successfully and Send email to tinhovinh@gmail.com'}
-          this.router.navigateByUrl('/account/send-email-confirm')
+          this.router.navigateByUrl('/account/send-email-confirm');
         },
         error: (errors: any) => {
+          this.sharedService.showLoading(false);
           console.log(errors.error);
-        }
-      })
+        },
+      });
     }
   }
 }
