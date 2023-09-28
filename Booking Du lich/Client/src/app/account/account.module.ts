@@ -6,10 +6,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AccountRoutingModule } from './account-routing.module';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { SendEmailConfirmComponent } from './send-email-confirm/send-email-confirm.component';
 
 
 @NgModule({
-  declarations: [LoginComponent, RegisterComponent],
+  declarations: [LoginComponent, RegisterComponent, SendEmailConfirmComponent],
   imports: [
     CommonModule,
     AccountRoutingModule,
