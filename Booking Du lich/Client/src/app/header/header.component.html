@@ -1,26 +1,67 @@
-<div class="wrapper bg-[#eff6ff] pt-1">
+<div class="wrapper bg-[#eff6ff] pt-1 overflow-hidden">
+  <div class="flex justify-between items-center mx-5 h-10">
+    <div class="Logo">
+      <img class="rounded-full" src="/assets/logo.jpg" width="100" alt="" />
+    </div>
 
-	<div class="menu flex justify-between items-center mx-5 h-10">
-		<div class="Logo">LOGO</div>
+    <!-- menu -->
+    <div class="menu flex gap-20">
+      <ul class="flex justify-center items-center gap-20">
+        <li class="menu-item">Hotels & Homes</li>
+        <li class="menu-item">Activities</li>
+        <li class="menu-item">Flights</li>
+        <li class="menu-item">Deals</li>
+      </ul>
 
-		<div class="flex gap-20 ">
-			<ul class="flex justify-center items-center gap-20">
-				<li class="menu-item">Hotels & Homes</li>
-				<li class="menu-item">Activities</li>
-				<li class="menu-item">Flights</li>
-				<li class="menu-item">Deals</li>
-			</ul>
+      <div class="flex items-center justify-center gap-2">
+        <a class="btn-primary cursor-pointer" routerLink="/account/login"
+          >Sign in</a
+        >
+        <a class="btn-outline-primary cursor-pointer" routerLink="/account/register" >
+          Create account
+        </a>
+      </div>
+    </div>
 
-			<div	class="flex items-center justify-center gap-2">
-				<a class="btn-primary cursor-pointer" routerLink="/account/login">Sign in</a>
-				<a class="btn-outline-primary cursor-pointer" routerLink="/account/register">Create account</a>
-			</div>
+    <button (click)="showMenu()" class="collapse-btn">
+      <mat-icon>menu</mat-icon>
+    </button>
 
-		</div>
-	</div>
+    <!-- menu-collapse -->
+    <div
+      [ngClass]="{
+        'w-[200px]': collapseMenu === true,
+        'w-0 overflow-hidden': collapseMenu === false
+      }"
+      class="menu-collapse duration-200 bg-[#fed7aa] flex gap-2 flex-col rounded h-[267px]"
+    >
+      <ul
+        class="flex justify-center items-center flex-col rounded overflow-hidden"
+      >
+        <li (click)="hideMenu()" class="menu-item">Hotels & Homes</li>
+        <li (click)="hideMenu()" class="menu-item">Activities</li>
+        <li (click)="hideMenu()" class="menu-item">Flights</li>
+        <li (click)="hideMenu()" class="menu-item">Deals</li>
+      </ul>
 
-	<div class="menu-wrapper">
+      <div
+        class="flex items-center justify-center gap-2 flex-col m-2 overflow-hidden"
+      >
+        <a
+          (click)="hideMenu()"
+          class="btn-primary cursor-pointer max-h-[36px] overflow-hidden"
+          routerLink="/account/login"
+          >Sign in</a
+        >
+        <a
+          (click)="hideMenu()"
+          class="btn-outline-primary cursor-pointer max-h-[36px] overflow-hidden"
+          routerLink="/account/register"
+          >Create account</a
+        >
+      </div>
+    </div>
+  </div>
 
-	</div>
-
+  <div class="menu-wrapper"></div>
 </div>

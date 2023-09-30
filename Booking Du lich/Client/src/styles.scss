@@ -12,19 +12,19 @@ body {
 }
 
 .btn-primary {
-  @apply bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 duration-100;
+  @apply bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 duration-100 block text-center;
 }
 
 .btn-outline-primary {
-  @apply border-2 border-blue-600 text-blue-600 px-4 py-2 rounded-md hover:bg-blue-700 hover:text-white duration-100;
+  @apply border-2 border-blue-600 text-blue-600 px-4 py-2 rounded-md hover:bg-blue-700 hover:text-white duration-100 block text-center;
 }
 
 .btn-danger {
-  @apply bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 duration-100;
+  @apply bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 duration-100 block text-center;
 }
 
 .input-control {
-  @apply border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-blue-600;
+  @apply border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-blue-600 block text-center;
 }
 
 

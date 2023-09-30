@@ -1,5 +1,48 @@
 .menu-item {
-	@apply hover:text-[#3b82f6] cursor-pointer leading-10 text-center h-full
+  @apply hover:text-[#3b82f6] cursor-pointer leading-10 text-center h-full duration-100 select-none;
 }
 
+.menu-collapse {
+  position: absolute;
+  right: 0px;
+  top: 50px;
 
+  a {
+    width: 100%;
+  }
+  ul li {
+    @apply rounded w-full;
+  }
+
+  ul li:hover {
+    background-color: rgb(255, 176, 176);
+  }
+}
+
+@media only screen and (min-width: 933px) {
+  .menu {
+    visibility: visible;
+  }
+
+  .menu-collapse {
+    display: none;
+  }
+
+  .collapse-btn {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 932px) {
+  .menu {
+    display: none;
+  }
+
+  .menu-collapse {
+    visibility: visible;
+  }
+
+  .collapse-btn {
+    visibility: visible;
+  }
+}
