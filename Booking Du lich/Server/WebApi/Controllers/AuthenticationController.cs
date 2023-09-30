@@ -11,6 +11,9 @@ using WebApi1.Models.Authentication.SignUp;
 using WebApi1.Repositories;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using System;
+using WebApi.DTOs;
+using Microsoft.AspNetCore.WebUtilities;
 
 namespace WebApi1.Controllers
 {
@@ -35,7 +38,6 @@ namespace WebApi1.Controllers
 
 
         [HttpPost("sign-up")]
-
         public async Task<IActionResult> SignUp(SignUpModel signUpModel)
         {
             try
@@ -76,10 +78,15 @@ namespace WebApi1.Controllers
 
                 await _userManage.AddToRoleAsync(user, "User");
                 var token = await _userManage.GenerateEmailConfirmationTokenAsync(user);
-                var confirmationLink = Url.Action(nameof(ConfirmEmail), "Authentication", new { token, email = user.Email }, Request.Scheme);
+                token = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(token));
+                //var confirmationLink = Url.Action(nameof(ConfirmEmail), "Authentication", new { token, email = user.Email }, Request.Scheme);
+
+                string url = $"{_configuration["JWT:UrlClient"]}/{_configuration["JWT:UrlConfirmEmail"]}?token={token}&email={user.Email}";
+
                 var message = new User.Management.Service.Models.Message(new string[] { user.Email },
                     "Confirmation email link",
-                    confirmationLink!);
+                    $"<p>We really happy when you using my app. Click <a href='{url}'>here</a> to verify email</p>"
+                    !);
                 _emailService.SendEmail(message);
 
 
@@ -96,14 +103,15 @@ namespace WebApi1.Controllers
 
         }
 
-        [HttpGet("ConfirmEmail")]
-
-        public async Task<IActionResult> ConfirmEmail(string token, string email)
+        [HttpPut("confirm-email")]
+        public async Task<IActionResult> ConfirmEmail(ConfirmEmailDto model)
         {
-            var user = await _userManage.FindByEmailAsync(email);
+            var user = await _userManage.FindByEmailAsync(model.email);
             if (user != null)
             {
-                var result = await _userManage.ConfirmEmailAsync(user, token);
+                var decodedTokenBytes = WebEncoders.Base64UrlDecode(model.token);
+                var decodedToken = Encoding.UTF8.GetString(decodedTokenBytes);
+                var result = await _userManage.ConfirmEmailAsync(user, decodedToken);
                 if (result.Succeeded)
                 {
                     return StatusCode(StatusCodes.Status200OK, new Response { Status = "Success", Message = "Email verified successfully" });
@@ -114,7 +122,7 @@ namespace WebApi1.Controllers
         }
 
         [HttpPost]
-        [Route("Login")]
+        [Route("login")]
 
         public async Task<IActionResult> SignIn(SignInModel signInModel)
         {

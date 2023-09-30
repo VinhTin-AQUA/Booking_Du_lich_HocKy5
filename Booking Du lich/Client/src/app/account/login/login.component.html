@@ -1,44 +1,42 @@
-<div class="wrapper  flex justify-center items-center gap-4">
+<div class="wrapper flex justify-center items-center gap-4">
+  <div class="shadow-2xl login-form my-10 p-6 w-1/3 h-auto flex-col">
+    <span class="text-center text-[2em] font-bold w-full block my-2" >
+      LOGIN
+    </span>
+    <p style="font-size: large; font-family: Helvetica">
+      Để đảm bảo an toàn, xin vui lòng đăng nhập để truy cập vào thông tin
+    </p>
 
-    <div class="shadow-2xl login-form my-10  p-6 w-1/3 h-screen flex-col">
+    <form [formGroup]="loginForm" autocomplete="off" (ngSubmit)="login()">
+      <div class="mt-6 text-lg">
+        <label for="">Email</label><br />
+        <input formControlName="email" class="input-form mt-2" type="text" placeholder="Email" />
+        <span class="text-red-500" *ngIf="submitted === true && loginForm.hasError('required','email')">
+            Email is required
+        </span>
+      </div>
 
-        <h1 style="font-size: xx-large; font-style: bold; text-align:center;">LOGIN</h1>
-        <p style="font-size:large; font-family: Helvetica;">Để đảm bảo an toàn, xin vui lòng đăng nhập để truy cập vào thông tin</p>
-        <form action="">
-            <div class="mt-6 text-lg ">
-                <label for="">Username</label><br>
-                <input class="input-form mt-2" type ="text" placeholder="Username">
-            </div>
+      <div class="mt-6 text-lg">
+        <label for="">Password</label><br />
+        <input formControlName="password" class="input-form mt-2" type="text" placeholder="Password" />
+        <span class="text-red-500" *ngIf="submitted === true && loginForm.hasError('required','password')">
+            Password is required
+        </span>
+      </div>
 
-            <div class="mt-6 text-lg">
-                <label for="">Password</label><br>
-                <input class="input-form mt-2" type ="text" placeholder="Password">
-            </div>
+      <div class="my-6 text-lg">
+        <input formControlName="rememberMe"  type="checkbox" />
+        <label for="">Remember me</label>
+      </div>
 
-            
-                <div class="my-6 text-lg ">
-                    <input class="" type="checkbox">
-                    <label for="">Remember me</label>
-                </div>
+      <div>
+        <button class="button-login w-full">Sign in</button>
+      </div>
+    </form>
 
-           
-        </form>
-
-                <div class="button-login  ">
-                    <button>Sign in</button>
-                </div>
-       
-                <div class="forgot-password ">
-                    
-                    <a  href="forgot password">Forgor password</a>
-                    <a  href="Create account">Create account</a>
-                </div>
-
-                
-             
-           
-                
-           
+    <div class="forgot-password">
+      <a href="forgot password">Forgor password</a>
+      <a href="Create account">Create account</a>
     </div>
-
+  </div>
 </div>
