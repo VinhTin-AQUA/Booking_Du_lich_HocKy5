@@ -73,7 +73,6 @@ export class RegisterComponent implements OnInit {
       this.accountService.signIn(this.signUpForm.value).subscribe({
         next: (res: any) => {
           this.sharedService.showLoading(false);
-          console.log(res); // {status: 'Success', message: 'User created successfully and Send email to tinhovinh@gmail.com'}
           this.router.navigateByUrl('/account/send-email-confirm');
         },
         error: (errors: any) => {

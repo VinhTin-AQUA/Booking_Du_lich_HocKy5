@@ -1,21 +1,26 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-//import { FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AccountRoutingModule } from './account-routing.module';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { SendEmailConfirmComponent } from './send-email-confirm/send-email-confirm.component';
-
+import { ConfirmEmailComponent } from './confirm-email/confirm-email.component';
 
 @NgModule({
-  declarations: [LoginComponent, RegisterComponent, SendEmailConfirmComponent],
+  declarations: [
+    LoginComponent,
+    RegisterComponent,
+    SendEmailConfirmComponent,
+    ConfirmEmailComponent,
+  ],
   imports: [
     CommonModule,
     AccountRoutingModule,
-    ReactiveFormsModule
-  ]
+    ReactiveFormsModule,
+    FormsModule,
+  ],
 })
-
-export class AccountModule { }
+export class AccountModule {}
