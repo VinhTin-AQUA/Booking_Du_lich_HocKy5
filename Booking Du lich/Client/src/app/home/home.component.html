@@ -1,1 +1,92 @@
-<p>home works!</p>
+<div class="wrapper">
+  <!-- banner -->
+  <section class="banner-wrapper">
+    <div class="banner-container">
+      <!-- background -->
+      <div class="bg-banner"></div>
+
+      <!-- search -->
+      <div class="search-container p-8">
+        <!-- input -->
+        <div class="locate-wrapper">
+          <mat-icon class="locate-icon">search</mat-icon>
+
+          <div class="locate-input-container">
+            <input class="locate-input" type="text" placeholder="location" />
+          </div>
+        </div>
+
+        <!-- date -->
+        <div class="mb-3 w-full border-2">
+          <mat-form-field class="w-full">
+            <mat-label>Enter a date range</mat-label>
+            <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
+              <input
+                formControlName="start"
+                matStartDate
+                placeholder="Start date"
+              />
+              <input formControlName="end" matEndDate placeholder="End date" />
+            </mat-date-range-input>
+            <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle
+              matIconSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-date-range-picker #picker></mat-date-range-picker>
+          </mat-form-field>
+        </div>
+
+        <!-- people -->
+        <div class="people-wrapper">
+          <div (click)="showDetailPeople()" class="people">
+            <mat-icon class="people-icon">people</mat-icon>
+            <div class="people-details">
+              <span class="font-bold text-[1.3em]">{{ rooms }} rooms</span>
+              <br />
+              <span class="text-[1.2em]">{{ people }} people</span>
+            </div>
+            <mat-icon class="people-icon">expand_more</mat-icon>
+          </div>
+
+          <!-- people room detail -->
+          <div
+            [ngClass]="{
+              'h-0': isShowedDetailPeople === false,
+              'h-[82px] p-2': isShowedDetailPeople === true
+            }"
+            class="bg-[#d8b4fe] w-1/2 rounded-md overflow-hidden duration-300"
+          >
+            <!-- rooms -->
+            <div class="room-details">
+              <span class="w-full font-bold">Rooms</span>
+              <div class="room-btn">
+                <mat-icon (click)="decreaseRooms()" class="remove"
+                  >remove</mat-icon
+                >
+                <span class="text-[1.2em]">{{ rooms }}</span>
+                <mat-icon (click)="increaseRooms()" class="add"
+                  >add_circle</mat-icon
+                >
+              </div>
+            </div>
+
+            <!-- people -->
+            <div class="room-details">
+              <span class="w-full font-bold">People</span>
+              <div class="room-btn">
+                <mat-icon (click)="decreasePeolple()" class="remove"
+                  >remove</mat-icon
+                >
+                <span class="text-[1.2em]">{{ people }}</span>
+                <mat-icon (click)="increasePeolple()" class="add"
+                  >add_circle</mat-icon
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
