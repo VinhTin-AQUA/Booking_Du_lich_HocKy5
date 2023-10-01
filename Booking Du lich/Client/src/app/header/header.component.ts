@@ -27,9 +27,7 @@ export class HeaderComponent {
     this.collapseMenu = false;
   }
 
-  test() {
-    this.sharedService.showToastMessage('success hello');
-  }
+
 
   logout() {
     this.accountService.logout();

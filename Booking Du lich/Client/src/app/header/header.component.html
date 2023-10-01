@@ -10,7 +10,7 @@
         <li class="menu-item" routerLink="/account/confirm-email">Hotels & Homes</li>
         <li class="menu-item">Activities</li>
         <li class="menu-item">Flights</li>
-        <li class="menu-item" (click)="test()">Deals</li>
+        <li class="menu-item">Deals</li>
       </ul>
 
       <div class="flex items-center justify-center gap-2" *ngIf="(accountService.user$ | async) === null">

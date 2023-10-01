@@ -74,3 +74,28 @@
     }
   }
 }
+
+// destinations
+.destination-wrapper {
+  @apply mb-3 h-auto;
+}
+
+.destination-container {
+  @apply container mx-auto h-auto flex gap-6 flex-wrap justify-start ;
+}
+
+.destination-item {
+  @apply w-40 h-56 flex flex-col text-center cursor-pointer duration-75 p-2;
+
+  .city-name {
+    @apply font-bold;
+  }
+
+  .accommodations {
+    @apply text-gray-500;
+  }
+
+  &:hover {
+    box-shadow: 1px 2px 8px;
+  }
+}
