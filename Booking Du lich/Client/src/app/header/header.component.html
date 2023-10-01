@@ -10,15 +10,24 @@
         <li class="menu-item" routerLink="/account/confirm-email">Hotels & Homes</li>
         <li class="menu-item">Activities</li>
         <li class="menu-item">Flights</li>
-        <li class="menu-item">Deals</li>
+        <li class="menu-item" (click)="test()">Deals</li>
       </ul>
 
-      <div class="flex items-center justify-center gap-2">
+      <div class="flex items-center justify-center gap-2" *ngIf="(accountService.user$ | async) === null">
         <a class="btn-primary cursor-pointer" routerLink="/account/login"
           >Sign in</a
         >
         <a class="btn-outline-primary cursor-pointer" routerLink="/account/register" >
           Create account
+        </a>
+      </div>
+
+      <div class="flex items-center justify-center gap-2" *ngIf="(accountService.user$ | async)">
+        <a class="btn-primary cursor-pointer" routerLink="/account/login"
+          >Hello</a
+        >
+        <a class="btn-outline-primary cursor-pointer" (click)="logout()" >
+          Logout
         </a>
       </div>
     </div>
@@ -33,7 +42,7 @@
         'w-[200px]': collapseMenu === true,
         'w-0 overflow-hidden': collapseMenu === false
       }"
-      class="menu-collapse duration-200 bg-[#fed7aa] flex gap-2 flex-col rounded h-[267px]"
+      class="menu-collapse z-20 duration-200 bg-[#fed7aa] flex gap-2 flex-col rounded h-[267px]"
     >
       <ul
         class="flex justify-center items-center flex-col rounded overflow-hidden"
@@ -44,7 +53,7 @@
         <li (click)="hideMenu()" class="menu-item">Deals</li>
       </ul>
 
-      <div
+      <div  *ngIf="(accountService.user$ | async) === null"
         class="flex items-center justify-center gap-2 flex-col m-2 overflow-hidden"
       >
         <a
@@ -60,6 +69,25 @@
           >Create account</a
         >
       </div>
+
+      <div *ngIf="(accountService.user$ | async)"
+        class="flex items-center justify-center gap-2 flex-col m-2 overflow-hidden"
+      >
+        <a
+          (click)="hideMenu()"
+          class="btn-primary cursor-pointer max-h-[36px] overflow-hidden"
+          routerLink="/account/login"
+          >Hello</a
+        >
+        <a
+          (click)="logout()"
+          class="btn-outline-primary cursor-pointer max-h-[36px] overflow-hidden"
+          routerLink="/account/login"
+          >Logout</a
+        >
+      </div>
+
+
     </div>
   </div>
 

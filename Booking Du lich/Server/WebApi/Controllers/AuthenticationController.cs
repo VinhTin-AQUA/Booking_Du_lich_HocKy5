@@ -3,17 +3,18 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
-using User.Management.Service.Service;
-using WebApi1.Data;
 using WebApi1.Models;
-using WebApi1.Models.Authentication.SignIn;
-using WebApi1.Models.Authentication.SignUp;
-using WebApi1.Repositories;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using System;
 using WebApi.DTOs;
 using Microsoft.AspNetCore.WebUtilities;
+using WebApi.DTOs.Authentication;
+using WebApi.Interfaces;
+using WebApi.Models;
+using WebApi.Models.MailService;
+using WebApi.Services;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WebApi1.Controllers
 {
@@ -22,20 +23,19 @@ namespace WebApi1.Controllers
     public class AuthenticationController : ControllerBase
     {
         private readonly IAccountRepository accountRepo;
-        private readonly UserManager<ApplicationUser> _userManage;
         private readonly RoleManager<IdentityRole> _roleManage;
         private readonly IConfiguration _configuration;
-        private readonly IEmailService _emailService;
+        private readonly IEmailSender emailSender;
+        private readonly IUserRepository userRepository;
 
-        public AuthenticationController(IAccountRepository repo, UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> role, IConfiguration configuration, IEmailService emailService)
+        public AuthenticationController(IAccountRepository repo, RoleManager<IdentityRole> role, IConfiguration configuration, IEmailSender emailSender, IUserRepository userRepository)
         {
             accountRepo = repo;
-            _userManage = userManager;
             _roleManage = role;
             _configuration = configuration;
-            _emailService = emailService;
+            this.emailSender = emailSender;
+            this.userRepository = userRepository;
         }
-
 
         [HttpPost("sign-up")]
         public async Task<IActionResult> SignUp(SignUpModel signUpModel)
@@ -43,7 +43,8 @@ namespace WebApi1.Controllers
             try
             {
                 //Check User exist
-                var userExist = await _userManage.FindByEmailAsync(signUpModel.Email);
+                var userExist = await userRepository.GetUserByEmail(signUpModel.Email);
+
                 if (userExist != null)
                 {
                     return StatusCode(StatusCodes.Status403Forbidden, new Response { Status = "Error", Message = "Email already taken. Please choose another email!" });
@@ -57,112 +58,116 @@ namespace WebApi1.Controllers
                     Email = signUpModel.Email,
                 };
 
-                IdentityResult result = await _userManage.CreateAsync(user, signUpModel.Password); ;
+                var result = await accountRepo.CreateUser(user, signUpModel.Password);
+
                 if (!result.Succeeded)
                 {
                     return StatusCode(StatusCodes.Status500InternalServerError, new Response
                     {
                         Status = "Error",
-                        Message = "User failed to create"
+                        Message = "Register failed. Please try agian."
                     });
-                    //List<IdentityError> errorList = result.Errors.ToList();
-                    //string errors = "";
-
-                    //foreach (var error in errorList)
-                    //{
-                    //    errors = errors + error.Description.ToString();
-                    //}
-
-                    //return Content(errors);
                 }
+                await accountRepo.AddRoleToUser(user, "User");
 
-                await _userManage.AddToRoleAsync(user, "User");
-                var token = await _userManage.GenerateEmailConfirmationTokenAsync(user);
-                token = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(token));
-                //var confirmationLink = Url.Action(nameof(ConfirmEmail), "Authentication", new { token, email = user.Email }, Request.Scheme);
-
-                string url = $"{_configuration["JWT:UrlClient"]}/{_configuration["JWT:UrlConfirmEmail"]}?token={token}&email={user.Email}";
-
-                var message = new User.Management.Service.Models.Message(new string[] { user.Email },
-                    "Confirmation email link",
-                    $"<p>We really happy when you using my app. Click <a href='{url}'>here</a> to verify email</p>"
-                    !);
-                _emailService.SendEmail(message);
-
-
-                return StatusCode(StatusCodes.Status200OK, new Response
+                if (await SendEmailConfirmAsync(user))
                 {
-                    Status = "Success",
-                    Message = $"User created successfully and Send email to {user.Email}"
+                    return StatusCode(StatusCodes.Status200OK, new Response
+                    {
+                        Status = "Success",
+                        Message = $"User created successfully and Send email to {user.Email}"
+                    });
+                }
+                return StatusCode(StatusCodes.Status400BadRequest, new Response
+                {
+                    Status = "Error",
+                    Message = $"Something error. Please try again"
                 });
             }
             catch (Exception ex)
             {
                 return StatusCode(StatusCodes.Status416RangeNotSatisfiable, ex);
             }
-
         }
 
         [HttpPut("confirm-email")]
         public async Task<IActionResult> ConfirmEmail(ConfirmEmailDto model)
         {
-            var user = await _userManage.FindByEmailAsync(model.email);
+            var user = await userRepository.GetUserByEmail(model.email);
             if (user != null)
             {
-                var decodedTokenBytes = WebEncoders.Base64UrlDecode(model.token);
-                var decodedToken = Encoding.UTF8.GetString(decodedTokenBytes);
-                var result = await _userManage.ConfirmEmailAsync(user, decodedToken);
+                var result = await accountRepo.ConfirmEmail(user, model.token);
                 if (result.Succeeded)
                 {
                     return StatusCode(StatusCodes.Status200OK, new Response { Status = "Success", Message = "Email verified successfully" });
                 }
             }
             return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User don't exist" });
-
         }
 
-        [HttpPost]
-        [Route("login")]
-
-        public async Task<IActionResult> SignIn(SignInModel signInModel)
+        [HttpPost("login")]
+        public async Task<ActionResult<UserDto>> SignIn(SignInModel signInModel)
         {
-            var user = await _userManage.FindByEmailAsync(signInModel.Email);
-
-            if (user != null && await _userManage.CheckPasswordAsync(user, signInModel.Password))
+            if (signInModel == null || string.IsNullOrEmpty(signInModel.Email) || string.IsNullOrEmpty(signInModel.Password))
             {
-                var authClaim = new List<Claim>
-                {
-                    new Claim(ClaimTypes.Name, user.UserName),
-                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                };
-                var userRoles = await _userManage.GetRolesAsync(user);
-                foreach (var role in userRoles)
-                {
-                    authClaim.Add(new Claim(ClaimTypes.Role, role));
-                }
-                var jwtToken = GetToken(authClaim);
-                return Ok(
-                        new
-                        {
-                            token = new JwtSecurityTokenHandler().WriteToken(jwtToken),
-                            expiration = jwtToken.ValidTo,
-                        }
-                    );
+                return BadRequest(new JsonResult(new { title = "Error", message = "Account is invalid" }));
             }
-            return Unauthorized();
+
+            var user = await userRepository.GetUserByEmail(signInModel.Email);
+            if (user == null)
+            {
+                return BadRequest(new JsonResult(new { title = "Error", message = "Email or password is incorrect." }));
+            }
+
+            if (user.EmailConfirmed == false)
+            {
+                return BadRequest(new JsonResult(new { title = "Error", message = "Please confirm your email." }));
+            }
+            var result = await accountRepo.CheckPassword(user, signInModel.Password);
+
+            if (result.IsLockedOut)
+            {
+                return Unauthorized(string.Format("Your account has been locked. You should wait until {0} (UTC time)" +
+                    "to be able to login", user.LockoutEnd));
+            }
+
+            if (result.Succeeded == false)
+            {
+                return BadRequest(new JsonResult(new { title = "Error", message = "Please confirm your email." }));
+            }
+            var r = await userRepository.CreateApplicationUserDto(user);
+            return r;
         }
 
-        private JwtSecurityToken GetToken(List<Claim> authClaim)
+        [Authorize]
+        [HttpGet("refresh-user-token")]
+        public async Task<ActionResult<UserDto>> RefreshUserToken()
         {
-            var authSignInKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Secret"]));
-            var token = new JwtSecurityToken(
-                issuer: _configuration["JWT:ValidIssuer"],
-                audience: _configuration["JWT:ValidAudience"],
-                expires: DateTime.Now.AddHours(3),
-                claims: authClaim,
-                signingCredentials: new SigningCredentials(authSignInKey, SecurityAlgorithms.HmacSha256));
-            return token;
+            var user = await userRepository.GetUserByEmail(User.FindFirst(ClaimTypes.Email)?.Value!);
+            if (await userRepository.IsLockedOut(user))
+            {
+                return Unauthorized(new JsonResult(new { title = "Error", message = "You have been lock out" }));
+            }
+            return await userRepository.CreateApplicationUserDto(user!);
         }
 
+
+        // =============================================================================
+        #region private method
+
+
+        private async Task<bool> SendEmailConfirmAsync(ApplicationUser user)
+        {
+            var token = await accountRepo.GenerateEmailConfirmationToken(user);
+            string url = $"{_configuration["JWT:UrlClient"]}/{_configuration["JWT:UrlConfirmEmail"]}?token={token}&email={user.Email}";
+
+            Message message = new Message(new string[] { user.Email! },
+                "Confirm Email",
+                $"<p>We really happy when you using my app. Click <a href='{url}'>here</a> to verify email</p>"!);
+            return await emailSender.SendEmail(message);
+        }
+
+
+        #endregion
     }
 }

@@ -1,0 +1,21 @@
+.toast {
+	@apply rounded flex justify-between items-center p-4;
+	width: 500px;
+	height: 70px;
+	position: absolute;
+	left: 50%;
+	top: 10px;
+	transform: translateX(-50%);
+
+	.close {
+		@apply flex justify-center items-center cursor-pointer rounded-full duration-75 hover:text-white;
+		width: 40px;
+		height: 40px;
+		//font: 400px;
+		text-align: center;
+	}
+
+	.message {
+		@apply text-xl;
+	}
+}

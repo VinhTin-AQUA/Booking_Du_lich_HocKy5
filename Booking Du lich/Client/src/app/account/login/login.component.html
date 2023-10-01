@@ -18,7 +18,7 @@
 
       <div class="mt-6 text-lg">
         <label for="">Password</label><br />
-        <input formControlName="password" class="input-form mt-2" type="text" placeholder="Password" />
+        <input formControlName="password" class="input-form mt-2" type="password" placeholder="Password" />
         <span class="text-red-500" *ngIf="submitted === true && loginForm.hasError('required','password')">
             Password is required
         </span>
