@@ -59,6 +59,13 @@ namespace WebApi1.Repositories
             return token;
         }
 
+        public async Task<string> GeneratePasswordResetTokenAsync(ApplicationUser user)
+        {
+            var token = await _userManage.GeneratePasswordResetTokenAsync(user);
+            token = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(token));
+            return token;
+        }
+
         public async Task<IdentityResult> ConfirmEmail(ApplicationUser user, string token)
         {
             var decodedTokenBytes = WebEncoders.Base64UrlDecode(token);
@@ -77,6 +84,12 @@ namespace WebApi1.Repositories
         {
             var userRoles = await _userManage.GetRolesAsync(user);
             return userRoles.ToList();
+        }
+
+        public async Task<IdentityResult> ResetPasswordAsync(ApplicationUser user, ResetPassword resetPassword)
+        {
+            var resetResult = await _userManage.ResetPasswordAsync(user, resetPassword.Token, resetPassword.Password);
+            return resetResult;
         }
 
     }

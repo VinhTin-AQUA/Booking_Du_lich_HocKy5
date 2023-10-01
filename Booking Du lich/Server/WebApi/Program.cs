@@ -110,6 +110,8 @@ builder.Services.Configure<IdentityOptions>(options =>
     options.SignIn.RequireConfirmedEmail = true;
 });
 
+builder.Services.Configure<DataProtectionTokenProviderOptions>(options => options.TokenLifespan= TimeSpan.FromHours(10));
+
 // enable cors
 builder.Services.AddCors(c =>
 {

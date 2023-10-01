@@ -15,6 +15,7 @@ using WebApi.Models;
 using WebApi.Models.MailService;
 using WebApi.Services;
 using Microsoft.AspNetCore.Authorization;
+using System.ComponentModel.DataAnnotations;
 
 namespace WebApi1.Controllers
 {
@@ -175,7 +176,37 @@ namespace WebApi1.Controllers
                 Message = $"Something error. Please try again"
             });
         }
-    
+
+        // Lay token de resetpass
+        [HttpPost("forgot-password")]
+        [AllowAnonymous]
+
+        public async Task<IActionResult> ForgotPassword([Required] string email)
+        {
+            var userExist = await userRepository.GetUserByEmail(email);
+            if(userExist != null)
+            {
+                if(await ResetPasswordAsync(userExist))
+                {
+                    return StatusCode(StatusCodes.Status200OK, new Response
+                    {
+                        Status = "Success",
+                        Message = $"Password changed request is sent on {userExist.Email}"
+                    });
+                }
+                return StatusCode(StatusCodes.Status400BadRequest, new Response
+                {
+                    Status = "Error",
+                    Message = $"Something error. Please try again"
+                });
+            
+            }
+            return StatusCode(StatusCodes.Status400BadRequest, new Response
+            {
+                Status = "Error",
+                Message = $"Couldn't send link to email, please try again"
+            });
+        }
 
     // =============================================================================
     #region private method
@@ -202,6 +233,61 @@ namespace WebApi1.Controllers
             return await emailSender.SendEmail(message);
         }
 
+        private async Task<bool> ResetPasswordAsync(ApplicationUser user)
+        {
+            var token = await accountRepo.GeneratePasswordResetTokenAsync(user);
+            var url = Url.Action(nameof(ResetPasswords), "Authentication", new { token, email = user.Email }, Request.Scheme);
+            Message message = new Message(new string[] { user.Email! }, "Forgot Password link", url);
+
+            return await emailSender.SendEmail(message);
+        }
+
+
         #endregion
+
+        // Chuyen huong de lay token
+        [HttpGet("reset-password")]
+        public async Task<IActionResult> ResetPasswords(string token, string email)
+        {
+            var model = new ResetPassword { Token = token, Email = email };
+            return Ok(new
+            {
+                model
+            });
+        }
+
+        // Reset pass o day
+        [HttpPost("reset-password")]
+        [AllowAnonymous]
+
+        public async Task<IActionResult> ResetPassword(ResetPassword reserPassword)
+        {
+            var userExist = await userRepository.GetUserByEmail(reserPassword.Email);
+            if (userExist != null)
+            {
+                var result = await accountRepo.ResetPasswordAsync(userExist, reserPassword);
+                if (!result.Succeeded)
+                {
+                   foreach(var err in result.Errors)
+                    {
+                        ModelState.AddModelError(err.Code, err.Description);
+                    }
+                    return Ok(ModelState);
+                }
+                return StatusCode(StatusCodes.Status200OK, new Response
+                {
+                    Status = "Success",
+                    Message = $"Password has been changed"
+                });
+
+            }
+            return StatusCode(StatusCodes.Status400BadRequest, new Response
+            {
+                Status = "Error",
+                Message = $"Couldn't send link to email, please try again"
+            });
+        }
+
+
     }
 }
