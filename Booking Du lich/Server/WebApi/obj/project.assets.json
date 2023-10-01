@@ -2732,11 +2732,19 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< Updated upstream
       "projectUniqueName": "D:\\Workspace\\C#\\School\\WebApi\\WebApi.csproj",
       "projectName": "WebApi",
       "projectPath": "D:\\Workspace\\C#\\School\\WebApi\\WebApi.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
       "outputPath": "D:\\Workspace\\C#\\School\\WebApi\\obj\\",
+=======
+      "projectUniqueName": "D:\\Workspace\\C#\\School\\Booking_Du_lich_HocKy5\\Booking Du lich\\Server\\WebApi\\WebApi.csproj",
+      "projectName": "WebApi",
+      "projectPath": "D:\\Workspace\\C#\\School\\Booking_Du_lich_HocKy5\\Booking Du lich\\Server\\WebApi\\WebApi.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "D:\\Workspace\\C#\\School\\Booking_Du_lich_HocKy5\\Booking Du lich\\Server\\WebApi\\obj\\",
+>>>>>>> Stashed changes
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

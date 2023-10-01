@@ -98,6 +98,16 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("ApplicationDbContext"));
 });
 
+<<<<<<< Updated upstream
+=======
+builder.Services.Configure<DataProtectionTokenProviderOptions>(options => { options.TokenLifespan = TimeSpan.FromHours(10); });
+
+// enable cors
+builder.Services.AddCors(c =>
+{
+    c.AddPolicy("AllowOrigin", option => option.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+});
+>>>>>>> Stashed changes
 
 
 builder.Services.AddScoped<IAccountRepository, AccountRepository>();
