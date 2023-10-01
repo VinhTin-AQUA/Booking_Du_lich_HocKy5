@@ -70,7 +70,7 @@ export class RegisterComponent implements OnInit {
       this.errorConfirmPassword = 'Err';
     } else if (this.signUpForm.valid) {
       this.sharedService.showLoading(true);
-      this.accountService.signIn(this.signUpForm.value).subscribe({
+      this.accountService.signUp(this.signUpForm.value).subscribe({
         next: (res: any) => {
           this.sharedService.showLoading(false);
           this.router.navigateByUrl('/account/send-email-confirm');

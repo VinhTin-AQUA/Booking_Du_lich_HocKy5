@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace WebApi1.Models.Authentication.SignUp
+namespace WebApi.DTOs.Authentication
 {
     public class SignUpModel
     {
