@@ -151,12 +151,37 @@ namespace WebApi1.Controllers
             return await userRepository.CreateApplicationUserDto(user!);
         }
 
+        [HttpPost("resent-email")]
+        public async Task<IActionResult> ResendToken([FromBody] ResendEmailConfirm model)
+        {
+            var userExist = await userRepository.GetUserByEmail(model.Email);
+            if (userExist == null)
+            {
+                return BadRequest("User does not exist.");
+            }
 
-        // =============================================================================
-        #region private method
+           if(await ResendEmailConfirmAsync(userExist))
+            {
+                return StatusCode(StatusCodes.Status200OK, new Response
+                {
+                    Status = "Success",
+                    Message = $"Resend email to {model.Email}"
+                });
+            }
+
+            return StatusCode(StatusCodes.Status400BadRequest, new Response
+            {
+                Status = "Success",
+                Message = $"Something error. Please try again"
+            });
+        }
+    
+
+    // =============================================================================
+    #region private method
 
 
-        private async Task<bool> SendEmailConfirmAsync(ApplicationUser user)
+    private async Task<bool> SendEmailConfirmAsync(ApplicationUser user)
         {
             var token = await accountRepo.GenerateEmailConfirmationToken(user);
             string url = $"{_configuration["JWT:UrlClient"]}/{_configuration["JWT:UrlConfirmEmail"]}?token={token}&email={user.Email}";
@@ -166,7 +191,16 @@ namespace WebApi1.Controllers
                 $"<p>We really happy when you using my app. Click <a href='{url}'>here</a> to verify email</p>"!);
             return await emailSender.SendEmail(message);
         }
+        private async Task<bool> ResendEmailConfirmAsync(ApplicationUser user)
+        {
+            var token = await accountRepo.GenerateEmailConfirmationToken(user);
+            string url = $"{_configuration["JWT:UrlClient"]}/{_configuration["JWT:UrlConfirmEmail"]}?token={token}&email={user.Email}";
 
+            Message message = new Message(new string[] { user.Email! },
+                "Confirm Email",
+                $"<p>We really happy when you using my app. Click <a href='{url}'>here</a> to verify email</p>"!);
+            return await emailSender.SendEmail(message);
+        }
 
         #endregion
     }
