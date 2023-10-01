@@ -1,21 +1,28 @@
-.toast {
-	@apply rounded flex justify-between items-center p-4;
+.wrapper {
+  @apply bg-red-400 fixed;
 	width: 500px;
-	height: 70px;
-	position: absolute;
-	left: 50%;
-	top: 10px;
-	transform: translateX(-50%);
+  top: 70px;
+  right: 0px;
+}
 
-	.close {
-		@apply flex justify-center items-center cursor-pointer rounded-full duration-75 hover:text-white;
-		width: 40px;
-		height: 40px;
-		//font: 400px;
-		text-align: center;
-	}
+.toast {
+  @apply flex rounded justify-between items-center p-4 duration-1000;
+  width: 500px;
+  height: 70px;
+  position: absolute;
+  left: 50%;
+  top: 10px;
+  transform: translateX(-50%);
 
-	.message {
-		@apply text-xl;
-	}
+  .close {
+    @apply flex justify-center items-center cursor-pointer rounded-full duration-75 hover:text-white;
+    width: 40px;
+    height: 40px;
+    //font: 400px;
+    text-align: center;
+  }
+
+  .message {
+    @apply text-xl text-white;
+  }
 }
