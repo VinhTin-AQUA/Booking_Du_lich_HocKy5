@@ -156,7 +156,6 @@ C:\Users\tinho\Desktop\Booking_Du_lich_HocKy5\Booking Du lich\Server\WebApi\obj\
 C:\Users\tinho\Desktop\Booking_Du_lich_HocKy5\Booking Du lich\Server\WebApi\obj\Debug\net6.0\WebApi.pdb
 C:\Users\tinho\Desktop\Booking_Du_lich_HocKy5\Booking Du lich\Server\WebApi\obj\Debug\net6.0\WebApi.genruntimeconfig.cache
 C:\Users\tinho\Desktop\Booking_Du_lich_HocKy5\Booking Du lich\Server\WebApi\obj\Debug\net6.0\ref\WebApi.dll
-C:\Users\tinho\Desktop\Booking_Du_lich_HocKy5\Booking Du lich\Server\WebApi\bin\Debug\net6.0\WebApi.staticwebassets.runtime.json
 C:\Users\tinho\Desktop\Booking_Du_lich_HocKy5\Booking Du lich\Server\WebApi\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
 D:\Workspace\C#\School\Booking_Du_lich_HocKy5\Booking Du lich\Server\WebApi\bin\Debug\net6.0\appsettings.Development.json
 D:\Workspace\C#\School\Booking_Du_lich_HocKy5\Booking Du lich\Server\WebApi\bin\Debug\net6.0\appsettings.json
