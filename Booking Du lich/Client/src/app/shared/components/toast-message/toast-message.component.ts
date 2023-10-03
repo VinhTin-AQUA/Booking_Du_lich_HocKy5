@@ -34,7 +34,7 @@ export class ToastMessageComponent implements OnInit {
   timeOut() {
     this.timeout = setTimeout(() => {
       this.message = '';
-    }, 4000);
+    }, 3800);
   }
 
   close() {

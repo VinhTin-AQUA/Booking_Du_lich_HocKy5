@@ -86,4 +86,8 @@ export class AccountService {
     }
     return null;
   }
+
+  forgotPassword() {
+    
+  }
 }

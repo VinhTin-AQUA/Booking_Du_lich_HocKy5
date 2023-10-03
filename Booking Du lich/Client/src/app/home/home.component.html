@@ -1,6 +1,6 @@
 <div class="wrapper">
   <!-- banner -->
-  <section class="banner-wrapper">
+  <section class="banner-wrapper mb-6">
     <div class="banner-container">
       <!-- background -->
       <div class="bg-banner"></div>
@@ -38,7 +38,7 @@
         </div>
 
         <!-- people -->
-        <div class="people-wrapper">
+        <div class="people-wrapper mb-2">
           <div (click)="showDetailPeople()" class="people">
             <mat-icon class="people-icon">people</mat-icon>
             <div class="people-details">
@@ -86,7 +86,29 @@
             </div>
           </div>
         </div>
+
+        <div class="search-btn">
+          <a class="btn-primary">Search</a>
+        </div>
       </div>
+      
     </div>
   </section>
+
+  <!-- Top destinations in Vietnam -->
+  <section class="destination-wrapper">
+    <div class="destination-container">
+
+      <div *ngFor="let des of destinations" class="destination-item">
+        <div class="img">
+          <img class="w-40 h-36 rounded-full" [src]="des.imgUrl" alt="">
+        </div>
+        <span class="city-name">{{des.name}}</span>
+        <span class="accommodations">{{des.accommodations}} accommodations</span>
+      </div>
+
+    </div>
+  </section>
+
+
 </div>
