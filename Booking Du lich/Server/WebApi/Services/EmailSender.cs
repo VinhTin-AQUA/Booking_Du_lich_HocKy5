@@ -32,7 +32,7 @@ namespace WebApi.Services
             bool isSent = true;
             // tạo email
             var emailMessage = CreateEmailMessage(email);
-            using (var client = new SmtpClient())
+            using (var client = new SmtpClient())   
             {
                 try
                 {
