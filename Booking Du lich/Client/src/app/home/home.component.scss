@@ -8,7 +8,7 @@
 }
 
 .search-container {
-  @apply container bg-[#f9fafb]  w-[600px] h-[400px] rounded-2xl;
+  @apply container bg-[#f9fafb] md:w-1/2 h-[400px] rounded-2xl;
   position: relative;
   top: -200px;
   left: 50%;
