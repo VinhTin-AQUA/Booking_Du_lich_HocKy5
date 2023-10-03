@@ -77,11 +77,11 @@
 
 // destinations
 .destination-wrapper {
-  @apply mb-3 h-auto;
+  @apply my-10 h-auto;
 }
 
 .destination-container {
-  @apply container mx-auto h-auto flex gap-6 flex-wrap justify-start ;
+  @apply container p-2 mx-auto flex gap-6 flex-wrap justify-start h-[668px] overflow-y-scroll ;
 }
 
 .destination-item {

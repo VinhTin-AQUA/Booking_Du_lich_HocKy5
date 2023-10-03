@@ -97,18 +97,20 @@
 
   <!-- Top destinations in Vietnam -->
   <section class="destination-wrapper">
+    <div class="text-center text-3xl font-bold mb-2">Top destinations in Vietnam</div>
     <div class="destination-container">
-
-      <div *ngFor="let des of destinations" class="destination-item">
+      
+      <a *ngFor="let des of destinations" [routerLink]="['city', des.name]" (click)="navigateToCity(des)" class="destination-item">
         <div class="img">
           <img class="w-40 h-36 rounded-full" [src]="des.imgUrl" alt="">
         </div>
         <span class="city-name">{{des.name}}</span>
         <span class="accommodations">{{des.accommodations}} accommodations</span>
-      </div>
+      </a>
 
     </div>
   </section>
 
+  
 
 </div>
