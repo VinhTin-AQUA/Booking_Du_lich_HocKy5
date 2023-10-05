@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div class="wrapper mb-3">
   <!-- banner -->
   <section class="banner-wrapper mb-6">
     <div class="banner-container">
@@ -91,26 +91,132 @@
           <a class="btn-primary">Search</a>
         </div>
       </div>
-      
     </div>
   </section>
 
   <!-- Top destinations in Vietnam -->
   <section class="destination-wrapper">
-    <div class="text-center text-3xl font-bold mb-2">Top destinations in Vietnam</div>
+    <div class="text-center text-3xl font-bold mb-2">
+      Top destinations in Vietnam
+    </div>
     <div class="destination-container">
-      
-      <a *ngFor="let des of destinations" [routerLink]="['city', des.name]" (click)="navigateToCity(des)" class="destination-item">
+      <a
+        *ngFor="let des of destinations"
+        [routerLink]="['city', des.name]"
+        (click)="navigateToCity(des)"
+        class="destination-item"
+      >
         <div class="img">
-          <img class="w-40 h-36 rounded-full" [src]="des.imgUrl" alt="">
+          <img class="w-40 h-36 rounded-full" [src]="des.imgUrl" alt="" />
         </div>
-        <span class="city-name">{{des.name}}</span>
-        <span class="accommodations">{{des.accommodations}} accommodations</span>
+        <span class="city-name">{{ des.name }}</span>
+        <span class="accommodations"
+          >{{ des.accommodations }} accommodations</span
+        >
       </a>
-
     </div>
   </section>
 
-  
+  <!-- Featured homes -->
+  <section class="home-wrapper">
+    <div class="text-center font-bold text-3xl mb-6">
+      Featured homes recommended for you
+    </div>
 
+    <div class="mx-auto w-[480px] mb-2 border-b-2">
+      <ul class="des-list">
+        <li
+          class="des-item"
+          (click)="searchFeaturedHome(0)"
+          [ngClass]="{
+            'border-b-2 text-green-500 border-b-green-500':
+              currentFeaturedIndex === 0
+          }"
+        >
+          Ho Chi Minh City
+        </li>
+        <li
+          class="des-item"
+          (click)="searchFeaturedHome(1)"
+          [ngClass]="{
+            'border-b-2 text-green-500 border-b-green-500':
+              currentFeaturedIndex === 1
+          }"
+        >
+          Ha Noi
+        </li>
+        <li
+          class="des-item"
+          (click)="searchFeaturedHome(2)"
+          [ngClass]="{
+            'border-b-2 text-green-500 border-b-green-500':
+              currentFeaturedIndex === 2
+          }"
+        >
+          Da Nang
+        </li>
+        <li
+          class="des-item"
+          (click)="searchFeaturedHome(3)"
+          [ngClass]="{
+            'border-b-2 text-green-500 border-b-green-500':
+              currentFeaturedIndex === 3
+          }"
+        >
+          Nha Trang
+        </li>
+        <li
+          class="des-item"
+          (click)="searchFeaturedHome(4)"
+          [ngClass]="{
+            'border-b-2 text-green-500 border-b-green-500':
+              currentFeaturedIndex === 4
+          }"
+        >
+          Vung Tau
+        </li>
+      </ul>
+    </div>
+
+    <div class="homes">
+      <div class="home" *ngFor="let city of hcmCity">
+        <img class="mb-1" [src]="city.imgUrl" alt="" />
+        <div>
+          <span class="font-bold mb-1">{{ city.title }}</span>
+          <div>
+            <!-- vote -->
+            <div class="vote">
+              <!-- 3.5 -->
+              <div>
+                <ng-container
+                  *ngFor="let item of [].constructor(city.vote); let i = index"
+                >
+                  <span class="material-icons star">star</span>
+                </ng-container>
+
+                <ng-container *ngIf="city.vote % 1 !== 0">
+                  <span class="material-icons star">star_half</span>
+                </ng-container>
+
+                <ng-container
+                  *ngFor="let item of [].constructor(5 - city.vote); let i = index"
+                >
+                <!--<mat-icon></mat-icon>-->
+                  <span class="material-icons star">star_border</span>
+                </ng-container>
+                
+
+              </div>
+              <span class="text-[0.9em] text-blue-600">{{ city.address }}</span>
+            
+            </div>
+            <!-- price -->
+            <span class="text-red-500 text-1.1em] font-bold"
+              >VND {{ city.price }}</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </div>

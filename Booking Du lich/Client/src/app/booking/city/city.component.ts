@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
   selector: 'app-city',
@@ -9,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 export class CityComponent {
   cityName: string | null = '';
   
-  constructor(private activatedRoute: ActivatedRoute) {
+  constructor(private activatedRoute: ActivatedRoute, private sharedService: SharedService) {
 
   }
 
@@ -19,5 +20,10 @@ export class CityComponent {
       this.cityName = params.get('cityName');
       // Bây giờ, bạn có thể sử dụng this.cityName trong component của bạn
     });
+
+    // lấy thông tin thành phố mà người dùng chọn
+    this.sharedService.passSubject.subscribe(data => {
+      console.log(data);
+    })
   }
 }

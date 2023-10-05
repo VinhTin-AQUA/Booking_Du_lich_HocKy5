@@ -99,3 +99,39 @@
     box-shadow: 1px 2px 8px;
   }
 }
+
+// home
+.home-wrapper {
+  @apply container mx-auto ;
+}
+
+.des-list {
+  @apply flex justify-between items-center gap-3 text-[1.2em];
+
+  .des-item {
+    @apply cursor-pointer duration-100  ;
+
+    &:hover{
+      @apply text-green-500 font-bold;
+    }
+  }
+}
+
+.homes {
+  @apply h-[600px] border-2 rounded-md p-2  flex overflow-y-scroll justify-center items-start gap-4 flex-wrap;
+}
+
+.home {
+  @apply w-[266px];
+
+  .vote {
+    @apply  flex items-center justify-start mb-1 gap-2;
+
+    .star {
+      height: 15px;
+      width: 15px;
+      font-size: 15px;
+      color: red;
+    }
+  }
+}
