@@ -5,6 +5,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AccountService } from '../account.service';
 import { LoginUser } from 'src/app/shared/models/account/loginUser';
 import { SharedService } from 'src/app/shared/shared.service';
+import { getLocaleMonthNames } from '@angular/common';
 
 @Component({
   selector: 'app-login',
@@ -15,6 +16,7 @@ export class LoginComponent {
   loginForm: FormGroup = new FormGroup([]);
   rememberMe: boolean = true;
   submitted: boolean = false;
+  errorMessage: string = '';
 
   constructor(
     private formBuilder: FormBuilder,
@@ -22,6 +24,13 @@ export class LoginComponent {
     private sharedService: SharedService,
     private router: Router
   ) {
+    accountService.user$.subscribe({
+      next: (res) => {
+        if (res !== null) {
+          this.router.navigateByUrl('');
+        }
+      },
+    });
     this.loginForm = formBuilder.group({
       email: ['', [Validators.required]],
       password: ['', [Validators.required]],
@@ -38,17 +47,26 @@ export class LoginComponent {
       };
 
       this.sharedService.showLoading(true);
-      this.accountService.login(loginUser, this.loginForm.value.rememberMe).subscribe({
-        next: (res: any) => {
-          this.sharedService.showLoading(false);
-          this.router.navigateByUrl('/');
-        },
-        error: (err) => {
-          this.sharedService.showLoading(false);
+      this.accountService
+        .login(loginUser, this.loginForm.value.rememberMe)
+        .subscribe({
+          next: (res: any) => {
+            this.sharedService.showLoading(false);
+            this.router.navigateByUrl('/');
+          },
+          error: (err) => {
+            this.sharedService.showLoading(false);
+            // su ly email chua confirm
 
-          console.log(err.error);
-        },
-      });
+            if (err.error.value.message === 'Please confirm your email.') {
+              this.router.navigate(['/account/confirm-email'], {
+                queryParams: { status: 'error' },
+              });
+            }  else {
+              this.errorMessage = err.error.value.message;
+            }
+          },
+        });
     }
   }
 }
