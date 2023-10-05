@@ -118,14 +118,14 @@
 }
 
 .homes {
-  @apply h-[600px] border-2 rounded-md p-2  flex overflow-y-scroll justify-center items-start gap-4 flex-wrap;
+  @apply h-[650px] border-2 rounded-md p-2  flex overflow-y-scroll justify-center items-start gap-4 flex-wrap;
 }
 
 .home {
   @apply w-[266px];
 
   .vote {
-    @apply  flex items-center justify-start mb-1 gap-2;
+    @apply  flex items-start justify-start mb-1 gap-2;
 
     .star {
       height: 15px;
