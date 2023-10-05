@@ -182,33 +182,33 @@
       <div class="home" *ngFor="let city of hcmCity">
         <img class="mb-1" [src]="city.imgUrl" alt="" />
         <div>
-          <span class="font-bold mb-1">{{ city.title }}</span>
+          <span class="font-bold mb-3 block">{{ city.title }}</span>
           <div>
             <!-- vote -->
             <div class="vote">
               <!-- 3.5 -->
-              <div>
+              <div class="">
+                <!-- start -->
                 <ng-container
-                  *ngFor="let item of [].constructor(city.vote); let i = index"
+                  *ngFor="let item of [].constructor(city.vote | star); let i = index"
                 >
                   <span class="material-icons star">star</span>
                 </ng-container>
 
+                <!-- half star -->
                 <ng-container *ngIf="city.vote % 1 !== 0">
                   <span class="material-icons star">star_half</span>
                 </ng-container>
 
+                <!-- no star -->
                 <ng-container
-                  *ngFor="let item of [].constructor(5 - city.vote); let i = index"
+                  *ngFor="let item of [].constructor( city.vote | noStar ); let i = index"
                 >
                 <!--<mat-icon></mat-icon>-->
                   <span class="material-icons star">star_border</span>
                 </ng-container>
-                
-
               </div>
               <span class="text-[0.9em] text-blue-600">{{ city.address }}</span>
-            
             </div>
             <!-- price -->
             <span class="text-red-500 text-1.1em] font-bold"

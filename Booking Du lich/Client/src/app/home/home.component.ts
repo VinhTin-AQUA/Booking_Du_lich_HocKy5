@@ -117,7 +117,7 @@ export class HomeComponent {
       imgUrl:
         'https://pix8.agoda.net/hotelImages/5684454/-1/07fd71826409454317e7be5159f38134.jpg?ca=9&ce=1',
       price: 542,
-      vote: 5,
+      vote: 4.5,
     },
     {
       title: 'Cherry apartment - Thao Dien Centre',
@@ -174,8 +174,6 @@ export class HomeComponent {
     private route: ActivatedRoute,
     private sharedService: SharedService
   ) {
-    console.log(3.5 / 1 >> 0);
-    //(a / b) >> 0
   }
 
   show() {
