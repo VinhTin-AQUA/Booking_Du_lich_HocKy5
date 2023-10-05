@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ReplaySubject } from 'rxjs';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -11,6 +12,8 @@ export class SharedService {
   isLoading$ = this.isLoading.asObservable();
   showToastMessage$ = this.isToastMessage.asObservable();
 
+  passSubject: Subject<any> = new Subject<any>();
+
   constructor() {}
 
   showLoading(isShowed: boolean) {
@@ -19,5 +22,9 @@ export class SharedService {
 
   showToastMessage(message: string) {
     this.isToastMessage.next(message);
+  }
+
+  passObj(obj: any) {
+    this.passSubject.next(obj);
   }
 }

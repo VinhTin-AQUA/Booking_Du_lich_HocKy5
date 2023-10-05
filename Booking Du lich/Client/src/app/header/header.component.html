@@ -22,9 +22,9 @@
         </a>
       </div>
 
-      <div class="flex items-center justify-center gap-2" *ngIf="(accountService.user$ | async)">
+      <div class="flex items-center justify-center gap-2" *ngIf="accountService.user$ | async as user">
         <a class="btn-primary cursor-pointer" routerLink="/account/login"
-          >Hello</a
+          >Hello {{user.firstName + ' ' + user.lastName}}</a
         >
         <a class="btn-outline-primary cursor-pointer" (click)="logout()" >
           Logout
