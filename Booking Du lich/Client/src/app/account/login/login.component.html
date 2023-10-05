@@ -8,7 +8,9 @@
     </p>
 
     <form [formGroup]="loginForm" autocomplete="off" (ngSubmit)="login()">
+    
       <div class="mt-6 text-lg">
+        <div class="text-red-600">{{errorMessage}}</div>
         <label for="">Email</label><br />
         <input formControlName="email" class="input-form mt-2" type="text" placeholder="Email" />
         <span class="text-red-500" *ngIf="submitted === true && loginForm.hasError('required','email')">
@@ -24,10 +26,10 @@
         </span>
       </div>
 
-      <div class="my-6 text-lg">
+      <!--<div class="my-6 text-lg">
         <input formControlName="rememberMe"  type="checkbox" />
         <label for="">Remember me</label>
-      </div>
+      </div>-->
 
       <div>
         <button class="button-login w-full">Sign in</button>

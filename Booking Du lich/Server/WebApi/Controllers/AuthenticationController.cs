@@ -43,12 +43,22 @@ namespace WebApi1.Controllers
         {
             try
             {
+                if (signUpModel == null)
+                {
+                    return BadRequest(new JsonResult(new { title = "Error", message = "Error when sign-up." }));
+                }
+
+                if (ModelState.IsValid == false)
+                {
+                    return BadRequest();
+                }
+
                 //Check User exist
                 var userExist = await userRepository.GetUserByEmail(signUpModel.Email);
 
                 if (userExist != null)
                 {
-                    return StatusCode(StatusCodes.Status403Forbidden, new Response { Status = "Error", Message = "Email already taken. Please choose another email!" });
+                    return BadRequest(new JsonResult(new { title = "Error", message = "Email already taken. Please choose another email." }));
                 }
                 // Add user in the database
                 var user = new ApplicationUser
@@ -63,21 +73,17 @@ namespace WebApi1.Controllers
 
                 if (!result.Succeeded)
                 {
-                    return StatusCode(StatusCodes.Status500InternalServerError, new Response
-                    {
-                        Status = "Error",
-                        Message = "Register failed. Please try agian."
-                    });
+                    return BadRequest(new JsonResult(new { title = "Error", message = "Register failed. Please try agian." }));
                 }
                 await accountRepo.AddRoleToUser(user, "User");
 
                 if (await SendEmailConfirmAsync(user))
                 {
-                    return StatusCode(StatusCodes.Status200OK, new Response
+                    return Ok(new JsonResult(new
                     {
                         Status = "Success",
                         Message = $"User created successfully and Send email to {user.Email}"
-                    });
+                    }));
                 }
                 return StatusCode(StatusCodes.Status400BadRequest, new Response
                 {
@@ -87,23 +93,39 @@ namespace WebApi1.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status416RangeNotSatisfiable, ex);
+                return BadRequest(new JsonResult(new { title = "Error", message = "Register failed. Please try agian." }));
             }
         }
 
         [HttpPut("confirm-email")]
         public async Task<IActionResult> ConfirmEmail(ConfirmEmailDto model)
         {
+            if (model == null)
+            {
+                return BadRequest(new JsonResult(new { title = "Error", message = "Error when login." }));
+            }
+
+            if (ModelState.IsValid == false)
+            {
+                return BadRequest(ModelState);
+            }
+
             var user = await userRepository.GetUserByEmail(model.email);
+
+            if (user.EmailConfirmed == true)
+            {
+                return BadRequest(new JsonResult(new { title = "Error", message = "Your email has been confirmed." }));
+            }
+
             if (user != null)
             {
                 var result = await accountRepo.ConfirmEmail(user, model.token);
                 if (result.Succeeded)
                 {
-                    return StatusCode(StatusCodes.Status200OK, new Response { Status = "Success", Message = "Email verified successfully" });
+                    return Ok(new JsonResult(new { title = "Success", message = "Email verified successfully." }));
                 }
             }
-            return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User don't exist" });
+            return BadRequest(new JsonResult(new { title = "Error", message = "User don't exist." }));
         }
 
         [HttpPost("login")]
@@ -111,19 +133,25 @@ namespace WebApi1.Controllers
         {
             if (signInModel == null || string.IsNullOrEmpty(signInModel.Email) || string.IsNullOrEmpty(signInModel.Password))
             {
-                return BadRequest(new JsonResult(new { title = "Error", message = "Account is invalid" }));
+                return BadRequest(new JsonResult(new { title = "Error", message = "Incorrect email or password" }));
+            }
+
+            if (ModelState.IsValid == false)
+            {
+                return BadRequest(new JsonResult(new { title = "Error", message = "Incorrect email or password" }));
             }
 
             var user = await userRepository.GetUserByEmail(signInModel.Email);
             if (user == null)
             {
-                return BadRequest(new JsonResult(new { title = "Error", message = "Email or password is incorrect." }));
+                return BadRequest(new JsonResult(new { title = "Error", message = "Incorrect email or password." }));
             }
 
             if (user.EmailConfirmed == false)
             {
                 return BadRequest(new JsonResult(new { title = "Error", message = "Please confirm your email." }));
             }
+
             var result = await accountRepo.CheckPassword(user, signInModel.Password);
 
             if (result.IsLockedOut)
@@ -134,7 +162,7 @@ namespace WebApi1.Controllers
 
             if (result.Succeeded == false)
             {
-                return BadRequest(new JsonResult(new { title = "Error", message = "Please confirm your email." }));
+                return BadRequest(new JsonResult(new { title = "Error", message = "Incorrect email or password." }));
             }
             var r = await userRepository.CreateApplicationUserDto(user);
             return r;
@@ -153,66 +181,98 @@ namespace WebApi1.Controllers
         }
 
         [HttpPost("resent-email")]
-        public async Task<IActionResult> ResendToken([FromBody] ResendEmailConfirm model)
+        public async Task<IActionResult> ResendEmail(ResendEmailConfirm model)
         {
+            if (model == null)
+            {
+                return BadRequest();
+            }
+
             var userExist = await userRepository.GetUserByEmail(model.Email);
+
             if (userExist == null)
             {
-                return BadRequest("User does not exist.");
+                return BadRequest(new JsonResult(new { title = "Error", message = "Incorrect email." }));
             }
 
-           if(await ResendEmailConfirmAsync(userExist))
+            if (userExist.EmailConfirmed)
             {
-                return StatusCode(StatusCodes.Status200OK, new Response
+                return Ok(new JsonResult(new
                 {
-                    Status = "Success",
-                    Message = $"Resend email to {model.Email}"
-                });
+                    title = "Success",
+                    message = "Your email has been confirmed."
+                }));
             }
 
-            return StatusCode(StatusCodes.Status400BadRequest, new Response
+            if (await SendEmailConfirmAsync(userExist))
             {
-                Status = "Success",
-                Message = $"Something error. Please try again"
-            });
+                return Ok(new JsonResult(new
+                {
+                    title = "Success",
+                    message = "Email has been resent."
+                }));
+            }
+
+            return BadRequest(new JsonResult(new
+            {
+                title = "Error",
+                message = $"Something error. Please try again."
+
+            }));
         }
 
-        // Lay token de resetpass
-        [HttpPost("forgot-password")]
-        [AllowAnonymous]
 
-        public async Task<IActionResult> ForgotPassword([Required] string email)
+        [HttpPost("forgot-password/{email}")]
+        public async Task<IActionResult> ForgotPassword(string email)
         {
-            var userExist = await userRepository.GetUserByEmail(email);
-            if(userExist != null)
+            if (string.IsNullOrEmpty(email))
             {
-                if(await ResetPasswordAsync(userExist))
-                {
-                    return StatusCode(StatusCodes.Status200OK, new Response
-                    {
-                        Status = "Success",
-                        Message = $"Password changed request is sent on {userExist.Email}"
-                    });
-                }
-                return StatusCode(StatusCodes.Status400BadRequest, new Response
-                {
-                    Status = "Error",
-                    Message = $"Something error. Please try again"
-                });
-            
+                return BadRequest(new JsonResult(new { title = "Error", message = "Error" }));
             }
-            return StatusCode(StatusCodes.Status400BadRequest, new Response
+
+            var userExisted = await userRepository.GetUserByEmail(email);
+            if (userExisted == null)
             {
-                Status = "Error",
-                Message = $"Couldn't send link to email, please try again"
-            });
+                return BadRequest(new JsonResult(new { title = "Error", message = "Email is incorrect" }));
+            }
+
+            if (await SendForgotPasswordEmail(userExisted))
+            {
+                return Ok(new JsonResult(new { title = "Success", message = "Email sent" }));
+            }
+            return BadRequest(new JsonResult(new { title = "Error", message = "Email is incorrect" }));
         }
 
-    // =============================================================================
-    #region private method
+        [HttpPut("reset-password")]
+        public async Task<IActionResult> ResetPassword(ResetPassword model)
+        {
+            if (model == null)
+            {
+                return BadRequest(new JsonResult(new { title = "Error", message = "Error" }));
+            }
+
+            var userExisted = await userRepository.GetUserByEmail(model.Email);
+            if (userExisted == null)
+            {
+                return BadRequest(new JsonResult(new { title = "Error", message = "User is not existed" }));
+            }
+            // mayf cucs
+            var result = await accountRepo.ResetPassword(userExisted, model.Token, model.Password);
+
+            if(result.Succeeded == false) {
+                return BadRequest(new JsonResult(new { title = "Error", message = "Error when reset password" }));
+            }
+
+            return Ok(new JsonResult(new { title = "Succes", message = "Reset password successfully" }));
+        }
 
 
-    private async Task<bool> SendEmailConfirmAsync(ApplicationUser user)
+
+        // =============================================================================
+
+
+        #region private method
+        private async Task<bool> SendEmailConfirmAsync(ApplicationUser user)
         {
             var token = await accountRepo.GenerateEmailConfirmationToken(user);
             string url = $"{_configuration["JWT:UrlClient"]}/{_configuration["JWT:UrlConfirmEmail"]}?token={token}&email={user.Email}";
@@ -222,72 +282,17 @@ namespace WebApi1.Controllers
                 $"<p>We really happy when you using my app. Click <a href='{url}'>here</a> to verify email</p>"!);
             return await emailSender.SendEmail(message);
         }
-        private async Task<bool> ResendEmailConfirmAsync(ApplicationUser user)
+
+        private async Task<bool> SendForgotPasswordEmail(ApplicationUser user)
         {
-            var token = await accountRepo.GenerateEmailConfirmationToken(user);
-            string url = $"{_configuration["JWT:UrlClient"]}/{_configuration["JWT:UrlConfirmEmail"]}?token={token}&email={user.Email}";
+            var token = await accountRepo.GeneratePasswordResetToken(user);
+            string url = $"{_configuration["JWT:UrlClient"]}/{_configuration["JWT:UrlResetPassword"]}?token={token}&email={user.Email}";
 
             Message message = new Message(new string[] { user.Email! },
-                "Confirm Email",
-                $"<p>We really happy when you using my app. Click <a href='{url}'>here</a> to verify email</p>"!);
+                "Reset password",
+                $"<p>To reset your password, please click <a href='{url}'>here</a></p>"!);
             return await emailSender.SendEmail(message);
         }
-
-        private async Task<bool> ResetPasswordAsync(ApplicationUser user)
-        {
-            var token = await accountRepo.GeneratePasswordResetTokenAsync(user);
-            var url = Url.Action(nameof(ResetPasswords), "Authentication", new { token, email = user.Email }, Request.Scheme);
-            Message message = new Message(new string[] { user.Email! }, "Forgot Password link", url);
-
-            return await emailSender.SendEmail(message);
-        }
-
-
         #endregion
-
-        // Chuyen huong de lay token
-        [HttpGet("reset-password")]
-        public async Task<IActionResult> ResetPasswords(string token, string email)
-        {
-            var model = new ResetPassword { Token = token, Email = email };
-            return Ok(new
-            {
-                model
-            });
-        }
-
-        // Reset pass o day
-        [HttpPost("reset-password")]
-        [AllowAnonymous]
-
-        public async Task<IActionResult> ResetPassword(ResetPassword reserPassword)
-        {
-            var userExist = await userRepository.GetUserByEmail(reserPassword.Email);
-            if (userExist != null)
-            {
-                var result = await accountRepo.ResetPasswordAsync(userExist, reserPassword);
-                if (!result.Succeeded)
-                {
-                   foreach(var err in result.Errors)
-                    {
-                        ModelState.AddModelError(err.Code, err.Description);
-                    }
-                    return Ok(ModelState);
-                }
-                return StatusCode(StatusCodes.Status200OK, new Response
-                {
-                    Status = "Success",
-                    Message = $"Password has been changed"
-                });
-
-            }
-            return StatusCode(StatusCodes.Status400BadRequest, new Response
-            {
-                Status = "Error",
-                Message = $"Couldn't send link to email, please try again"
-            });
-        }
-
-
     }
 }

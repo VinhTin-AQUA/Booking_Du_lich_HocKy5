@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { ReplaySubject, map,of } from 'rxjs';
+import { ReplaySubject, map, of } from 'rxjs';
 
 import { environment } from 'src/environments/environment.development';
 import { RegisterUser } from '../shared/models/account/reigisterUser';
 import { LoginUser } from '../shared/models/account/loginUser';
 import { ConfirmEmail } from '../shared/models/account/confirmEmail';
 import { User } from '../shared/models/account/user';
-
+import { ResendEmail } from '../shared/models/account/resendEmail';
+import { ResetPassword } from '../shared/models/account/resetPassword';
 
 @Injectable({
   providedIn: 'root',
@@ -21,23 +22,28 @@ export class AccountService {
 
   signUp(model: RegisterUser) {
     return this.http.post<User>(
-      `${environment.appUrl}/authentication/sign-up`,model)
+      `${environment.appUrl}/authentication/sign-up`,
+      model
+    );
   }
 
   confirmEmail(model: ConfirmEmail) {
     return this.http.put(
-      `${environment.appUrl}/authentication/confirm-email`, model
+      `${environment.appUrl}/authentication/confirm-email`,
+      model
     );
   }
 
   login(model: LoginUser, remmeberMe: boolean) {
-    return this.http.post<User>(`${environment.appUrl}/authentication/login`, model).pipe(
-      map((user: User) => {
-        if (user && remmeberMe === true) {
+    return this.http
+      .post<User>(`${environment.appUrl}/authentication/login`, model)
+      .pipe(
+        map((user: User) => {
+          //if (user && remmeberMe === true) {
           this.saveJWTUser(user);
-        }
-      })
-    );;
+          //}
+        })
+      );
   }
 
   notLogin() {
@@ -61,18 +67,18 @@ export class AccountService {
       this.userSource.next(null);
       return of(undefined);
     }
-    
+
     let headers = new HttpHeaders();
     headers = headers.set('Authorization', 'Bearer ' + jwt);
 
     return this.http
       .get<User>(`${environment.appUrl}/authentication/refresh-user-token`, {
-        headers: headers
+        headers: headers,
       })
       .pipe(
-        map((user: User) => { 
+        map((user: User) => {
           if (user) {
-            this.saveJWTUser(user); 
+            this.saveJWTUser(user);
           }
         })
       );
@@ -87,7 +93,24 @@ export class AccountService {
     return null;
   }
 
-  forgotPassword() {
-    
+  resendEmailConfirm(model: ResendEmail) {
+    return this.http.post(
+      `${environment.appUrl}/authentication/resent-email`,
+      model
+    );
+  }
+
+  forgotPassword(email: string) {
+    return this.http.post(
+      `${environment.appUrl}/authentication/forgot-password/${email}`,
+      null
+    );
+  }
+
+  resetPassword(model: ResetPassword) {
+    return this.http.put(
+      `${environment.appUrl}/authentication/reset-password`,
+      model
+    );
   }
 }

@@ -13,7 +13,8 @@ namespace WebApi1.Repositories
         private readonly IConfiguration _configuration;
         private readonly SignInManager<ApplicationUser> signInManager;
 
-        public AccountRepository(UserManager<ApplicationUser> userManager, IConfiguration configuration, SignInManager<ApplicationUser> signInManager) {
+        public AccountRepository(UserManager<ApplicationUser> userManager, IConfiguration configuration, SignInManager<ApplicationUser> signInManager)
+        {
             _userManage = userManager;
             _configuration = configuration;
             this.signInManager = signInManager;
@@ -24,8 +25,8 @@ namespace WebApi1.Repositories
         {
             var user = new ApplicationUser
             {
-                FirstName= model.FirstName,
-                LastName= model.LastName,
+                FirstName = model.FirstName,
+                LastName = model.LastName,
                 UserName = model.Email,
                 Email = model.Email,
             };
@@ -38,8 +39,6 @@ namespace WebApi1.Repositories
 
             return await _userManage.CreateAsync(user, model.Password);
         }
-        
-        
 
         public async Task<IdentityResult> CreateUser(ApplicationUser user, string password)
         {
@@ -90,6 +89,21 @@ namespace WebApi1.Repositories
         {
             var resetResult = await _userManage.ResetPasswordAsync(user, resetPassword.Token, resetPassword.Password);
             return resetResult;
+        }
+
+        public async Task<string> GeneratePasswordResetToken(ApplicationUser user)
+        {
+            var token = await _userManage.GeneratePasswordResetTokenAsync(user);
+            token = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(token));
+            return token;
+        }
+
+        public async Task<IdentityResult> ResetPassword(ApplicationUser user, string token, string newPassword)
+        {
+            var decodedTokenBytes = WebEncoders.Base64UrlDecode(token);
+            var decodedToken = Encoding.UTF8.GetString(decodedTokenBytes);
+            var r = await _userManage.ResetPasswordAsync(user, decodedToken, newPassword);
+            return r;
         }
 
     }

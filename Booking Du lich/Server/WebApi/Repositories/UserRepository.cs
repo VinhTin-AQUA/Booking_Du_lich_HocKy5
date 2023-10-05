@@ -11,14 +11,17 @@ namespace WebApi.Repositories
         private readonly UserManager<ApplicationUser> _userManage;
         private readonly IConfiguration _configuration;
         private readonly JWTService jwtService;
+        private readonly RoleManager<IdentityRole> roleManager;
 
         public UserRepository(UserManager<ApplicationUser> userManager, 
             IConfiguration configuration,
-            JWTService jwtService)
+            JWTService jwtService,
+            RoleManager<IdentityRole> roleManager)
         {
             _userManage = userManager;
             _configuration = configuration;
             this.jwtService = jwtService;
+            this.roleManager = roleManager;
         }
 
         public async Task<ApplicationUser> GetUserByEmail(string email)

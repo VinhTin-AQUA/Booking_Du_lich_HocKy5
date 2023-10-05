@@ -17,6 +17,8 @@ namespace WebApi.Interfaces
         public Task<List<string>> GetRolesOfUser(ApplicationUser user);
         public  Task<string> GeneratePasswordResetTokenAsync(ApplicationUser user);
         public Task<IdentityResult> ResetPasswordAsync(ApplicationUser user, ResetPassword resetPassword);
+        public Task<string> GeneratePasswordResetToken(ApplicationUser user);
+        public Task<IdentityResult> ResetPassword(ApplicationUser user, string token, string newPassword);
     }
 }
 

@@ -25,7 +25,7 @@ export class ToastMessageComponent implements OnInit {
           : ((this.isSuccess = false),
             (this._classToast = 'bg-red-500'),
             (this._classCloseBtn = 'hover:bg-red-800'));
-        this.message = message;
+        this.message = message.substring(7);
         this.timeOut();
       }
     });

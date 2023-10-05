@@ -9,6 +9,10 @@ import { RegisterComponent } from './register/register.component';
 import { SendEmailConfirmComponent } from './send-email-confirm/send-email-confirm.component';
 import { ConfirmEmailComponent } from './confirm-email/confirm-email.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { ConfirmPasswordComponent } from './confirm-password/confirm-password.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { ResendEmailConfirmComponent } from './resend-email-confirm/resend-email-confirm.component';
+import { SendEmailResetPasswordComponent } from './send-email-reset-password/send-email-reset-password.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +21,10 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
     SendEmailConfirmComponent,
     ConfirmEmailComponent,
     ForgotPasswordComponent,
+    ConfirmPasswordComponent,
+    ResetPasswordComponent,
+    ResendEmailConfirmComponent,
+    SendEmailResetPasswordComponent,
   ],
   imports: [
     CommonModule,
