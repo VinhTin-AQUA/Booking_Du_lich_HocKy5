@@ -11,6 +11,10 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+.btn-default {
+  @apply bg-white text-black px-4 py-2 rounded-md hover:bg-gray-700 hover:text-white duration-100 block text-center;
+}
+
 .btn-primary {
   @apply bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 duration-100 block text-center;
 }

@@ -161,7 +161,7 @@ export class HomeComponent {
     },
     {
       title: 'Cozrum Homes - Graceful Corner',
-      address: '=Phú Nhuậ Ho Chi Minh City',
+      address: 'Phú Nhuậ Ho Chi Minh City',
       imgUrl:
         'https://pix8.agoda.net/hotelImages/32728246/-1/2cf94b49e93cef2e4624bfda87d11ba1.jpg?ce=0',
       price: 120,

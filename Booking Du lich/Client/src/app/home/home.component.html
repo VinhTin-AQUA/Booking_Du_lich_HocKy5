@@ -106,8 +106,8 @@
         (click)="navigateToCity(des)"
         class="destination-item"
       >
-        <div class="img">
-          <img class="w-40 h-36 rounded-full" [src]="des.imgUrl" alt="" />
+        <div class="img h-[9rem] w-[10rem] flex justify-center items-center">
+          <img class="w-[8rem] h-[8rem] rounded-full hover:w-[9rem] hover:h-[9rem] duration-100" [src]="des.imgUrl" alt="" />
         </div>
         <span class="city-name">{{ des.name }}</span>
         <span class="accommodations"
@@ -187,7 +187,7 @@
             <!-- vote -->
             <div class="vote">
               <!-- 3.5 -->
-              <div class="">
+              <div class="w-1/3">
                 <!-- start -->
                 <ng-container
                   *ngFor="let item of [].constructor(city.vote | star); let i = index"
@@ -208,7 +208,7 @@
                   <span class="material-icons star">star_border</span>
                 </ng-container>
               </div>
-              <span class="text-[0.9em] text-blue-600">{{ city.address }}</span>
+              <span class="text-[0.9em] text-blue-600 w-2/3">{{ city.address }}</span>
             </div>
             <!-- price -->
             <span class="text-red-500 text-1.1em] font-bold"
