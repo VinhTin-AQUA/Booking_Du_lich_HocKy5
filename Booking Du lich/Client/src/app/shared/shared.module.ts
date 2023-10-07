@@ -6,10 +6,11 @@ import { LoadingComponent } from './components/loading/loading.component';
 import { ToastMessageComponent } from './components/toast-message/toast-message.component';
 import { StarPipe } from './pipes/city/star.pipe';
 import { NoStarPipe } from './pipes/city/no-star.pipe';
+import { RolePipe } from './pipes/auth/role.pipe';
 
 @NgModule({
-  declarations: [LoadingComponent, ToastMessageComponent, StarPipe, NoStarPipe],
+  declarations: [LoadingComponent, ToastMessageComponent, StarPipe, NoStarPipe, RolePipe],
   imports: [CommonModule, MatIconModule],
-  exports: [LoadingComponent, ToastMessageComponent,StarPipe,NoStarPipe],
+  exports: [LoadingComponent, ToastMessageComponent,StarPipe,NoStarPipe,RolePipe],
 })
 export class SharedModule {}

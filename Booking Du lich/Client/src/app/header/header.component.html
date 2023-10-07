@@ -11,6 +11,7 @@
         <li class="menu-item">Activities</li>
         <li class="menu-item">Flights</li>
         <li class="menu-item">Deals</li>
+        <li class="menu-item">Notification</li>
       </ul>
 
       <div class="flex items-center justify-center gap-2" *ngIf="(accountService.user$ | async) === null">
@@ -23,9 +24,19 @@
       </div>
 
       <div class="flex items-center justify-center gap-2" *ngIf="accountService.user$ | async as user">
-        <a class="btn-primary cursor-pointer" routerLink="/account/login"
+
+        <a *ngIf="(user.jwt | role) === 'Admin'" class="btn-primary cursor-pointer" routerLink="/admin/profile"
           >Hello {{user.firstName + ' ' + user.lastName}}</a
         >
+
+        <a *ngIf="(user.jwt | role) === 'User'" class="btn-primary cursor-pointer" routerLink="/admin/profile"
+          >Hello {{user.firstName + ' ' + user.lastName}}</a
+        >
+
+        <a *ngIf="(user.jwt | role) === 'Manager'" class="btn-primary cursor-pointer" routerLink="/admin/profile"
+          >Hello {{user.firstName + ' ' + user.lastName}}</a
+        >
+        
         <a class="btn-outline-primary cursor-pointer" (click)="logout()" >
           Logout
         </a>
@@ -70,28 +81,28 @@
         >
       </div>
 
-      <div *ngIf="(accountService.user$ | async)"
+      <div *ngIf="(accountService.user$ | async) as user"
         class="flex items-center justify-center gap-2 flex-col m-2 overflow-hidden"
       >
-        <a
+        <a *ngIf="(user.jwt | role) === 'Admin'"
           (click)="hideMenu()"
           class="btn-primary cursor-pointer max-h-[36px] overflow-hidden"
-          routerLink="/account/login"
+          routerLink="/account/login" 
           >Hello</a
         >
         <a
+          
           (click)="logout()"
           class="btn-outline-primary cursor-pointer max-h-[36px] overflow-hidden"
           routerLink="/account/login"
-          >Logout</a
-        >
+          >Logout</a>
       </div>
-
-
     </div>
   </div>
-
   <div class="menu-wrapper"></div>
 </div>
 
 
+<!--<div *ngIf="(accountService.user$ | async) as user">
+  <div *ngIf="(user.jwt | role) === 'Admin'">hahah</div>
+</div>-->
