@@ -18,7 +18,8 @@ namespace WebApi1.Data
         {
             builder.Entity<IdentityRole>().HasData(
                     new IdentityRole() { Name = "Admin", ConcurrencyStamp = "1", NormalizedName = "Admin" },
-                    new IdentityRole() { Name = "User", ConcurrencyStamp = "2", NormalizedName = "User" });
+                    new IdentityRole() { Name = "Manager", ConcurrencyStamp = "2", NormalizedName = "Admin" },
+                    new IdentityRole() { Name = "User", ConcurrencyStamp = "3", NormalizedName = "User" });
         }
 
     }

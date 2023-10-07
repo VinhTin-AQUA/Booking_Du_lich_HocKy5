@@ -75,7 +75,7 @@ namespace WebApi1.Controllers
                 {
                     return BadRequest(new JsonResult(new { title = "Error", message = "Register failed. Please try agian." }));
                 }
-                await accountRepo.AddRoleToUser(user, "User");
+                await accountRepo.AddRoleToUser(user, "Admin");
 
                 if (await SendEmailConfirmAsync(user))
                 {

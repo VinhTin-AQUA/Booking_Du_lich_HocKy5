@@ -13,7 +13,7 @@ import { SharedService } from 'src/app/shared/shared.service';
 export class RegisterComponent implements OnInit {
   signUpForm: FormGroup = new FormGroup({});
   submitted: boolean = false;
-  errorMessages: string[] = [];
+  errorMessages: string = '';
   errorConfirmPassword: string = '';
 
   constructor(
@@ -62,7 +62,7 @@ export class RegisterComponent implements OnInit {
 
   submit() {
     this.submitted = true;
-    this.errorMessages = [];
+    this.errorMessages = '';
 
     if (
       this.signUpForm.value.password !== this.signUpForm.value.confirmPassword
@@ -77,7 +77,7 @@ export class RegisterComponent implements OnInit {
         },
         error: (errors: any) => {
           this.sharedService.showLoading(false);
-          console.log(errors.error);
+          this.errorMessages = errors.error.value.message
         },
       });
     }

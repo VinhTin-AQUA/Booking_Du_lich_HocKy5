@@ -48,7 +48,7 @@ namespace WebApi1.Repositories
 
         public async Task AddRoleToUser(ApplicationUser user, string role)
         {
-            var r = await _userManage.AddToRoleAsync(user, "User");
+            var r = await _userManage.AddToRoleAsync(user, role);
         }
 
         public async Task<string> GenerateEmailConfirmationToken(ApplicationUser user)
