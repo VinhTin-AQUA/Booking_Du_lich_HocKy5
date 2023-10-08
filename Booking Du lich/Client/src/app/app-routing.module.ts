@@ -9,6 +9,15 @@ const routes: Routes = [
     loadChildren: () =>
       import('../app/account/account.module').then((m) => m.AccountModule),
   },
+  {
+    path: 'city',
+    loadChildren: () =>
+      import('../app/booking/booking.module').then((m) => m.BookingModule),
+  },
+  {
+    path: 'admin',
+    loadChildren: () => import('../app/admin/admin.module').then((m) => m.AdminModule),
+  }
 ];
 
 @NgModule({

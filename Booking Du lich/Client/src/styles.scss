@@ -11,6 +11,10 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+.btn-default {
+  @apply bg-white text-black px-4 py-2 rounded-md hover:bg-gray-700 hover:text-white duration-100 block text-center;
+}
+
 .btn-primary {
   @apply bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 duration-100 block text-center;
 }
@@ -23,9 +27,13 @@ body {
   @apply bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 duration-100 block text-center;
 }
 
+.btn-outline-danger {
+  @apply border-2 border-red-600 text-red-600 px-4 py-2 rounded-md hover:bg-red-700 hover:text-white duration-100 block text-center;
+}
+
+
 .input-control {
   @apply border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-blue-600 block text-center;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+

@@ -51,15 +51,22 @@ namespace WebApi.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "c1ebae7f-5893-481d-a79b-c0d8a5c4fac4",
+                            Id = "f072ae30-6bfb-436c-8ba4-9fc0a92b6a60",
                             ConcurrencyStamp = "1",
                             Name = "Admin",
                             NormalizedName = "Admin"
                         },
                         new
                         {
-                            Id = "13aacd8d-f467-417d-abd7-c2c344e3d49d",
+                            Id = "fe8e418c-af6a-4285-bde5-18de5e88c4e4",
                             ConcurrencyStamp = "2",
+                            Name = "Manager",
+                            NormalizedName = "Manager"
+                        },
+                        new
+                        {
+                            Id = "4eb48dcf-758e-4de1-a0a5-227595fedcec",
+                            ConcurrencyStamp = "3",
                             Name = "User",
                             NormalizedName = "User"
                         });
@@ -171,7 +178,7 @@ namespace WebApi.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("WebApi1.Data.ApplicationUser", b =>
+            modelBuilder.Entity("WebApi.Models.ApplicationUser", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -191,11 +198,9 @@ namespace WebApi.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("FirstName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LastName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("LockoutEnabled")
@@ -244,6 +249,34 @@ namespace WebApi.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("WebApi.Models.City", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("Accommodations")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CityCode")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ImgUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(70)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("Id")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.ToTable("City");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -255,7 +288,7 @@ namespace WebApi.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("WebApi1.Data.ApplicationUser", null)
+                    b.HasOne("WebApi.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -264,7 +297,7 @@ namespace WebApi.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("WebApi1.Data.ApplicationUser", null)
+                    b.HasOne("WebApi.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -279,7 +312,7 @@ namespace WebApi.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("WebApi1.Data.ApplicationUser", null)
+                    b.HasOne("WebApi.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -288,7 +321,7 @@ namespace WebApi.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("WebApi1.Data.ApplicationUser", null)
+                    b.HasOne("WebApi.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)

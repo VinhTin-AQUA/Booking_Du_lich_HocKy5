@@ -1,0 +1,35 @@
+.loading,
+.loading-2 {
+  border-radius: 50%;
+  outline: none;
+}
+
+.loading {
+  width: 300px;
+  height: 300px;
+
+  border-top: 20px solid #2563eb;
+  border-bottom: 20px solid #2563eb;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  animation: spinner 2s linear infinite;
+}
+
+.loading-2 {
+  width: 200px;
+  height: 200px;
+  border-left: 20px solid #13e816;
+  border-right: 20px solid #31e057;
+  border-bottom: 20px solid transparent;
+  border-top: 20px solid transparent;
+  animation: spinner 3.5s linear infinite;
+}
+
+@keyframes spinner {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}

@@ -1,0 +1,8 @@
+<div *ngIf="message !== ''" class="wrapper">
+  <div  class="toast" [class]="_classToast">
+    <div class="message">{{ message }}</div>
+    <mat-icon (click)="close()" [class]="_classCloseBtn" class="close"
+      >close</mat-icon
+    >
+  </div>
+</div>

@@ -6,8 +6,11 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Security;
 using System.Text;
-using User.Management.Service.Models;
-using User.Management.Service.Service;
+using WebApi.Interfaces;
+using WebApi.Models;
+using WebApi.Models.MailService;
+using WebApi.Repositories;
+using WebApi.Services;
 using WebApi1.Data;
 using WebApi1.Repositories;
 
@@ -48,22 +51,31 @@ builder.Services.AddSwaggerGen(options =>
     });
 });
 
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ApplicationDbContext"));
+});
+
+// repositories service
+builder.Services.AddScoped<IAccountRepository, AccountRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<ICityRepository, CityRepository>();
+builder.Services.AddScoped<IImageService, ImageService>();
+
+// JWT
+builder.Services.AddScoped<JWTService>();
+
+// identity
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options => {
     options.Password.RequireDigit = false;
     options.Password.RequiredLength = 4;
     options.Password.RequireNonAlphanumeric = false;
     options.Password.RequireUppercase = false;
     options.Password.RequireLowercase = false;
-}).AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
+}).AddEntityFrameworkStores<ApplicationDbContext>()
+.AddDefaultTokenProviders();
+
 builder.Services.AddCors(options => options.AddDefaultPolicy(policy => policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod()));
-
-// Add Email config
-
-var emailConfig = builder.Configuration.GetSection("EmailConfiguration").Get<EmailConfiguration>();
-
-builder.Services.AddSingleton(emailConfig);
-
-builder.Services.AddScoped<IEmailService, EmailService>();
 
 // Add Authentication
 builder.Services.AddAuthentication(options =>
@@ -77,25 +89,43 @@ builder.Services.AddAuthentication(options =>
     options.RequireHttpsMetadata = false;
     options.TokenValidationParameters = new TokenValidationParameters
     {
+        // validate the issuer (who ever is issuing the JWT)
         ValidateIssuer = true,
-        ValidateAudience = true,
-        ValidAudience = builder.Configuration["JWT:ValidAudience"],
-        ValidIssuer = builder.Configuration["JWT:ValidIssuer"],
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWT:Secret"]))
+        ValidateIssuerSigningKey = true, // validate token based on the key we have provided in appsetting.json
+
+        // don't validate audience (angular side)
+        ValidateAudience = false,
+
+        //ValidAudience = builder.Configuration.GetSection("JWT:ValidAudience").Value,
+        // the issuer which in here is the api project url
+        ValidIssuer = builder.Configuration.GetSection("JWT:ValidIssuer").Value,
+
+        // the issuer signin key based on JWT:Key
+        IssuerSigningKey = new SymmetricSecurityKey(
+                Encoding.UTF8.GetBytes(builder.Configuration.GetSection("JWT:Secret").Value!))
     };
 });
 
-// Add config for Required Email
-builder.Services.Configure<IdentityOptions>(options => options.SignIn.RequireConfirmedEmail = true);
-
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
+// Add config for user
+builder.Services.Configure<IdentityOptions>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("ApplicationDbContext"));
+    options.SignIn.RequireConfirmedEmail = true;
 });
 
+builder.Services.Configure<DataProtectionTokenProviderOptions>(options => options.TokenLifespan= TimeSpan.FromHours(10));
 
+// enable cors
+builder.Services.AddCors(c =>
+{
+    c.AddPolicy("AllowOrigin", option => option.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+});
 
-builder.Services.AddScoped<IAccountRepository, AccountRepository>();
+// mail service
+var emailConfig = builder.Configuration
+        .GetSection("EmailConfiguration")
+        .Get<EmailConfiguration>();
+builder.Services.AddSingleton(emailConfig);
+builder.Services.AddScoped<IEmailSender, EmailSender>();
 
 // định dạng lỗi gửi đến client
 builder.Services.Configure<ApiBehaviorOptions>(options =>
@@ -116,6 +146,8 @@ builder.Services.Configure<ApiBehaviorOptions>(options =>
     };
 });
 
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -126,6 +158,11 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+// enable cors
+app.UseCors(option => option.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+
+app.UseStaticFiles();
 
 app.UseAuthentication();
 app.UseAuthorization();
