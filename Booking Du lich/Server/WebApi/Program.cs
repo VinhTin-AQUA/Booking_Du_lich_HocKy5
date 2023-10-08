@@ -59,6 +59,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 // repositories service
 builder.Services.AddScoped<IAccountRepository, AccountRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<ICityRepository, CityRepository>();
+builder.Services.AddScoped<IImageService, ImageService>();
 
 // JWT
 builder.Services.AddScoped<JWTService>();
@@ -159,6 +161,8 @@ app.UseHttpsRedirection();
 
 // enable cors
 app.UseCors(option => option.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+
+app.UseStaticFiles();
 
 app.UseAuthentication();
 app.UseAuthorization();

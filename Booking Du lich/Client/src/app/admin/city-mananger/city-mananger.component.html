@@ -1,0 +1,71 @@
+<div class="wrapper h-screen w-full">
+  <div class="container-fluid">
+    <!-- search -->
+    <div class="search-wrapper">
+      <div class="search-container">
+        <div class="form-group">
+          <button class="btn-primary">Search</button>
+          <input
+            class="form-control"
+            type="text"
+            spellcheck="false"
+            placeholder="City name"
+          />
+        </div>
+        <div (click)="showAddcityModal()" class="add-btn">
+					<mat-icon class="add-icon">add_circle</mat-icon>
+          <button class="">
+            Add city
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- list cities -->
+    <div class="city-wrapper">
+      <div class="city-container"></div>
+    </div>
+  </div>
+</div>
+
+<div [ngClass]="{'h-0' : addcityModal === false, 'h-screen' : addcityModal === true}" class="add-city-wrapper">
+	<div class="container mx-auto">
+		<div class="form-wrapper">
+			<div class="form">
+				<form [formGroup]="formSubmit" autocomplete="off" (ngSubmit)="submit()">
+
+					<span class="text-red-500" *ngIf="submitted === true && formSubmit.hasError('required','cityCode')">
+						CityCode must be required
+					</span>
+					<div class="form-group-add">
+						<label >City code</label>
+						<input class="form-add" formControlName="cityCode" type="number" >
+					</div>
+		
+					<span class="text-red-500" *ngIf="submitted === true && formSubmit.hasError('required','name')">
+						Name must be required
+					</span>
+					<div class="form-group-add">
+						<label >City name</label>
+						<input class="form-add" formControlName="name" type="text" >
+					</div>
+	
+					<div class="form-group-add">
+						<input class="" type="file" (change)="getFile($event)" #file> <mat-icon title="close image" class="close-img" (click)="closeImg(file)">close</mat-icon>
+					</div>
+	
+					<div class="flex gap-2">
+						<input class="btn-primary" type="button" (click)="submit()" value="upload file">
+						<input class="btn-outline-danger" type="button" (click)="cancel()" value="Cancel">
+					</div>
+				</form>
+			</div>
+
+			<div class="img-show">
+				<img [src]="imgUrl" class="w-full" alt="no-image">
+			</div>
+			
+		</div>
+	</div>
+</div>
+

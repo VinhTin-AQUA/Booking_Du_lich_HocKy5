@@ -94,6 +94,13 @@
   .accommodations {
     @apply text-gray-500;
   }
+  img {
+    @apply w-[8rem] h-[8rem] rounded-full duration-100;
+    &:hover {
+      @apply h-[9rem] w-[9rem];
+      box-shadow: 0px 0px 10px;
+    }
+  }
 }
 
 // home
