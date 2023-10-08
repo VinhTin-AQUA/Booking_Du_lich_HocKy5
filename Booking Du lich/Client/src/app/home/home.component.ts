@@ -209,8 +209,6 @@ export class HomeComponent {
 
     // Đặt title trên tab của trình duyệt
     document.title = 'Hello ' + city.name;
-
-    
   }
 
   /* featured home */
