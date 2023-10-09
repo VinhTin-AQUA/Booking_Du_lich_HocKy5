@@ -23,11 +23,27 @@
 
     <!-- list cities -->
     <div class="city-wrapper">
-      <div class="city-container"></div>
+      <div class="city-container">
+				<div class="city-item" *ngFor="let city of allCities">
+					<div class="flex items-center justify-between">
+						<div class="text-[1.1em]"><span>{{city.name}}</span></div>
+						<div>
+							<mat-icon class="city-icon-delete" title="delete" (click)="showDeleteCity(city)">delete</mat-icon>
+							<mat-icon class="city-icon-edit" title="edit" (click)="showEditcityModal(city)">edit</mat-icon>
+						</div>
+					</div>
+					<img class="w-[250px]" [src]="_environment.imgUrl + '/' + city.imgUrl" alt="no-img">
+					<div>
+						<span>CityCode:<b> {{city.cityCode}}</b></span><br>
+						<span>Accommodations:<b> {{city.accommodations}}</b></span>
+					</div>
+				</div>
+			</div>
     </div>
   </div>
 </div>
 
+<!-- add city -->
 <div [ngClass]="{'h-0' : addcityModal === false, 'h-screen' : addcityModal === true}" class="add-city-wrapper">
 	<div class="container mx-auto">
 		<div class="form-wrapper">
@@ -55,7 +71,7 @@
 					</div>
 	
 					<div class="flex gap-2">
-						<input class="btn-primary" type="button" (click)="submit()" value="upload file">
+						<input class="btn-primary" type="button" (click)="submit()" value="Add">
 						<input class="btn-outline-danger" type="button" (click)="cancel()" value="Cancel">
 					</div>
 				</form>
@@ -69,3 +85,57 @@
 	</div>
 </div>
 
+<!--  delete city -->
+<div *ngIf="deleteCityModal === true && cityDeleteModel !== null" class="delete-city">
+	<div class="delete-city-container">
+		<div class="mb-5">
+			<span>Do you want to delete <b>{{cityDeleteModel.name}}</b></span>
+		</div>
+		<div class="flex items-center justify-center gap-2">
+			<button class="btn-danger" (click)="deleteCitySubmit()">Delete</button>
+			<button class="btn-outline-primary" (click)="showDeleteCity(null)">Cancel</button>
+		</div>
+	</div>
+</div>
+
+<!-- edit city -->
+<div [ngClass]="{'h-0' : editCityModal === false, 'h-screen' : editCityModal === true}" class="add-city-wrapper">
+	<div class="container mx-auto">
+		<div class="form-wrapper">
+			<div class="form">
+				<form [formGroup]="formEdit" autocomplete="off" (ngSubmit)="editSubmit()">
+
+					<span class="text-red-500" *ngIf="submitted === true && formEdit.hasError('required','cityCode')">
+						CityCode must be required
+					</span>
+					<div class="form-group-add">
+						<label >City code</label>
+						<input class="form-add" formControlName="cityCode" type="number" >
+					</div>
+		
+					<span class="text-red-500" *ngIf="submitted === true && formEdit.hasError('required','name')">
+						Name must be required
+					</span>
+					<div class="form-group-add">
+						<label >City name</label>
+						<input class="form-add" formControlName="name" type="text" >
+					</div>
+	
+					<div class="form-group-add">
+						<input class="" type="file" (change)="getFile($event)" #file> <mat-icon title="close image" class="close-img" (click)="closeImg(file)">close</mat-icon>
+					</div>
+	
+					<div class="flex gap-2">
+						<button class="btn-primary">Update</button>
+						<input class="btn-outline-danger" type="button" (click)="showEditcityModal(null)" value="Cancel">
+					</div>
+				</form>
+			</div>
+
+			<div class="img-show">
+				<img [src]="imgUrl" class="w-full" alt="no-image">
+			</div>
+			
+		</div>
+	</div>
+</div>
