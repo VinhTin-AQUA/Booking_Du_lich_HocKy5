@@ -4,20 +4,23 @@ using System.Text;
 using WebApi.DTOs.Authentication;
 using WebApi.Interfaces;
 using WebApi.Models;
+using WebApi.Services;
 
 namespace WebApi1.Repositories
 {
-    public class AccountRepository : IAccountRepository
+    public class AuthenRepository : IAuthenRepository
     {
         private readonly UserManager<ApplicationUser> _userManage;
         private readonly IConfiguration _configuration;
         private readonly SignInManager<ApplicationUser> signInManager;
+        private readonly JWTService jwtService;
 
-        public AccountRepository(UserManager<ApplicationUser> userManager, IConfiguration configuration, SignInManager<ApplicationUser> signInManager)
+        public AuthenRepository(UserManager<ApplicationUser> userManager, IConfiguration configuration, SignInManager<ApplicationUser> signInManager, JWTService jwtService)
         {
             _userManage = userManager;
             _configuration = configuration;
             this.signInManager = signInManager;
+            this.jwtService = jwtService;
         }
 
 
@@ -106,5 +109,27 @@ namespace WebApi1.Repositories
             return r;
         }
 
+        public async Task<ApplicationUser> GetUserByEmail(string email)
+        {
+            var user = await _userManage.FindByEmailAsync(email);
+            return user;
+        }
+
+        public async Task<bool> IsLockedOut(ApplicationUser user)
+        {
+            var r = await _userManage.IsLockedOutAsync(user);
+            return r;
+        }
+
+        public async Task<UserDto> CreateApplicationUserDto(ApplicationUser user)
+        {
+            return new UserDto
+            {
+                Id = user.Id,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                JWT = await jwtService.CreateJWT(user)
+            };
+        }
     }
 }

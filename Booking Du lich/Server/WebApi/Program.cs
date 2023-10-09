@@ -57,10 +57,10 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 });
 
 // repositories service
-builder.Services.AddScoped<IAccountRepository, AccountRepository>();
-builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IAuthenRepository, AuthenRepository>();
 builder.Services.AddScoped<ICityRepository, CityRepository>();
 builder.Services.AddScoped<IImageService, ImageService>();
+builder.Services.AddScoped<IUserManagerRepository, UserManagerRepository>();
 
 // JWT
 builder.Services.AddScoped<JWTService>();
