@@ -1,1 +1,57 @@
-<p>user-mangement works!</p>
+<div class="wrapper">
+	<div class="container-fluid">
+
+		<!-- search -->
+		<div class="search">
+			<button class="btn-primary">Search</button>
+			<input class="search-input" type="text" placeholder="user name">
+		</div>
+
+		<!-- list users -->
+		<div class="w-full">
+			<div class="user-table">
+				<table class="mb-1">
+					<thead>
+						<tr>
+							<th>.NO</th>
+							<th>Name</th>
+							<th>Email</th>
+							<th>EmailConfirmed</th>
+							<th>PhoneNumber</th>
+							<th>LockoutEnd</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr *ngFor="let user of users; let i = index">
+							<td>{{pageSize * currentPage + i + 1}}</td>
+							<td>{{user.firstName}} {{user.lastName}}</td>
+							<td>{{user.email}}</td>
+							<td>{{user.emailConfirmed}}</td>
+							<td>{{user.phoneNumber}}</td>
+							<td class="text-[#f97316] font-bold">{{user.lockoutEnd | date : 'hh:mm - dd/MM/yyyy'}}</td>
+							<td>
+								<mat-icon *ngIf="user.lockoutEnd === null" title="lock" class="action-lock-icon">lock</mat-icon>
+								<mat-icon *ngIf="user.lockoutEnd !== null" title="un-lock" class="action-lock-icon">lock_open</mat-icon>
+								<mat-icon title="delete user" class="action-delete-icon">delete</mat-icon>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<!-- pagination -->
+				<div class="flex items-center justify-start gap-2">
+					<mat-icon class="navigate-btn" (click)="prevPage()">navigate_before</mat-icon>
+
+					<div>
+						{{currentPage + 1}} / {{totalPages}}
+					</div>
+
+					<mat-icon class="navigate-btn" (click)="nextPage()">navigate_next</mat-icon>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>

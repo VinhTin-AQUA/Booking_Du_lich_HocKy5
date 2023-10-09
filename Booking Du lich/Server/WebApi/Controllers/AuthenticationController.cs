@@ -23,19 +23,17 @@ namespace WebApi1.Controllers
     [ApiController]
     public class AuthenticationController : ControllerBase
     {
-        private readonly IAccountRepository accountRepo;
+        private readonly IAuthenRepository accountRepo;
         private readonly RoleManager<IdentityRole> _roleManage;
         private readonly IConfiguration _configuration;
         private readonly IEmailSender emailSender;
-        private readonly IUserRepository userRepository;
 
-        public AuthenticationController(IAccountRepository repo, RoleManager<IdentityRole> role, IConfiguration configuration, IEmailSender emailSender, IUserRepository userRepository)
+        public AuthenticationController(IAuthenRepository repo, RoleManager<IdentityRole> role, IConfiguration configuration, IEmailSender emailSender)
         {
             accountRepo = repo;
             _roleManage = role;
             _configuration = configuration;
             this.emailSender = emailSender;
-            this.userRepository = userRepository;
         }
 
         [HttpPost("sign-up")]
@@ -54,7 +52,7 @@ namespace WebApi1.Controllers
                 }
 
                 //Check User exist
-                var userExist = await userRepository.GetUserByEmail(signUpModel.Email);
+                var userExist = await accountRepo.GetUserByEmail(signUpModel.Email);
 
                 if (userExist != null)
                 {
@@ -110,7 +108,7 @@ namespace WebApi1.Controllers
                 return BadRequest(ModelState);
             }
 
-            var user = await userRepository.GetUserByEmail(model.email);
+            var user = await accountRepo.GetUserByEmail(model.email);
 
             if (user.EmailConfirmed == true)
             {
@@ -141,7 +139,7 @@ namespace WebApi1.Controllers
                 return BadRequest(new JsonResult(new { title = "Error", message = "Incorrect email or password" }));
             }
 
-            var user = await userRepository.GetUserByEmail(signInModel.Email);
+            var user = await accountRepo.GetUserByEmail(signInModel.Email);
             if (user == null)
             {
                 return BadRequest(new JsonResult(new { title = "Error", message = "Incorrect email or password." }));
@@ -164,7 +162,7 @@ namespace WebApi1.Controllers
             {
                 return BadRequest(new JsonResult(new { title = "Error", message = "Incorrect email or password." }));
             }
-            var r = await userRepository.CreateApplicationUserDto(user);
+            var r = await accountRepo.CreateApplicationUserDto(user);
             return r;
         }
 
@@ -172,12 +170,12 @@ namespace WebApi1.Controllers
         [HttpGet("refresh-user-token")]
         public async Task<ActionResult<UserDto>> RefreshUserToken()
         {
-            var user = await userRepository.GetUserByEmail(User.FindFirst(ClaimTypes.Email)?.Value!);
-            if (await userRepository.IsLockedOut(user))
+            var user = await accountRepo.GetUserByEmail(User.FindFirst(ClaimTypes.Email)?.Value!);
+            if (await accountRepo.IsLockedOut(user))
             {
                 return Unauthorized(new JsonResult(new { title = "Error", message = "You have been lock out" }));
             }
-            return await userRepository.CreateApplicationUserDto(user!);
+            return await accountRepo.CreateApplicationUserDto(user!);
         }
 
         [HttpPost("resent-email")]
@@ -188,7 +186,7 @@ namespace WebApi1.Controllers
                 return BadRequest();
             }
 
-            var userExist = await userRepository.GetUserByEmail(model.Email);
+            var userExist = await accountRepo.GetUserByEmail(model.Email);
 
             if (userExist == null)
             {
@@ -230,7 +228,7 @@ namespace WebApi1.Controllers
                 return BadRequest(new JsonResult(new { title = "Error", message = "Error" }));
             }
 
-            var userExisted = await userRepository.GetUserByEmail(email);
+            var userExisted = await accountRepo.GetUserByEmail(email);
             if (userExisted == null)
             {
                 return BadRequest(new JsonResult(new { title = "Error", message = "Email is incorrect" }));
@@ -251,7 +249,7 @@ namespace WebApi1.Controllers
                 return BadRequest(new JsonResult(new { title = "Error", message = "Error" }));
             }
 
-            var userExisted = await userRepository.GetUserByEmail(model.Email);
+            var userExisted = await accountRepo.GetUserByEmail(model.Email);
             if (userExisted == null)
             {
                 return BadRequest(new JsonResult(new { title = "Error", message = "User is not existed" }));

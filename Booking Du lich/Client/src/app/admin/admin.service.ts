@@ -28,4 +28,9 @@ export class AdminService {
   searchCities(searchString: string) {
     return this.http.get(`${environment.appUrl}/city/search-cities?searchString=${searchString}`)
   }
+
+  // user manager
+  getUsers(currentPage: number, pageSize: number) {
+    return this.http.get(`${environment.appUrl}/usermanager/get-users?currentPage=${currentPage}&pageSize=${pageSize}`)
+  }
 }

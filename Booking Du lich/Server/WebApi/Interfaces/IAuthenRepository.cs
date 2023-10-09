@@ -4,7 +4,7 @@ using WebApi.Models;
 
 namespace WebApi.Interfaces
 {
-    public interface IAccountRepository
+    public interface IAuthenRepository
     {
         public Task<IdentityResult> SignUpAsync(SignUpModel model);
         //public Task<IdentityResult> SignInAsync(Sign)
@@ -19,10 +19,8 @@ namespace WebApi.Interfaces
         public Task<IdentityResult> ResetPasswordAsync(ApplicationUser user, ResetPassword resetPassword);
         public Task<string> GeneratePasswordResetToken(ApplicationUser user);
         public Task<IdentityResult> ResetPassword(ApplicationUser user, string token, string newPassword);
+        public Task<ApplicationUser> GetUserByEmail(string email);
+        public Task<bool> IsLockedOut(ApplicationUser user);
+        public Task<UserDto> CreateApplicationUserDto(ApplicationUser user);
     }
 }
-
-
-
-
-

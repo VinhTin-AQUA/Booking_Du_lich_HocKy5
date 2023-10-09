@@ -1,0 +1,55 @@
+.search {
+  @apply border-b flex gap-2 items-center;
+
+  .search-input {
+    @apply outline-none text-[1.1em] rounded p-2 duration-150;
+    border: 1px solid blue;
+
+    &:focus {
+      box-shadow: 0px 0px 4px blue;
+    }
+  }
+}
+
+// user list
+.user-table {
+  @apply w-full;
+
+  table {
+    @apply w-full;
+
+    td,
+    th {
+      @apply border-b-2 text-start p-3;
+    }
+  }
+}
+
+.navigate-btn {
+	@apply duration-200;
+
+	width: 30px;
+	height: 30px;
+	font-size: 30px;
+
+	&:hover {
+		box-shadow: 0px 0px 4px gray;
+	}
+}
+
+.action-lock-icon,.action-delete-icon {
+	@apply cursor-pointer duration-100;
+	&:hover {
+		box-shadow: 0px 0px 4px gray;
+	}
+}
+
+.action-lock-icon {
+	@apply text-[#fbbf24];
+	
+}
+
+.action-delete-icon {
+	@apply text-[#b91c1c];
+}
+
