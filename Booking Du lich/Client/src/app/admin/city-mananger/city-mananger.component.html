@@ -1,15 +1,16 @@
-<div class="wrapper h-screen w-full">
+<div class="wrapper h-screen w-full overflow-y-scroll">
   <div class="container-fluid">
     <!-- search -->
     <div class="search-wrapper">
       <div class="search-container">
         <div class="form-group">
-          <button class="btn-primary">Search</button>
+          <button (click)="searchCities()" class="btn-primary">Search</button>
           <input
             class="form-control"
             type="text"
             spellcheck="false"
             placeholder="City name"
+						[(ngModel)]="searchString"
           />
         </div>
         <div (click)="showAddcityModal()" class="add-btn">
@@ -22,8 +23,9 @@
     </div>
 
     <!-- list cities -->
-    <div class="city-wrapper">
+    <div class="city-wrapper ">
       <div class="city-container">
+
 				<div class="city-item" *ngFor="let city of allCities">
 					<div class="flex items-center justify-between">
 						<div class="text-[1.1em]"><span>{{city.name}}</span></div>
@@ -32,12 +34,13 @@
 							<mat-icon class="city-icon-edit" title="edit" (click)="showEditcityModal(city)">edit</mat-icon>
 						</div>
 					</div>
-					<img class="w-[250px]" [src]="_environment.imgUrl + '/' + city.imgUrl" alt="no-img">
+					<img class="w-[230px] h-[230px]" [src]="_environment.imgUrl + '/' + city.imgUrl" alt="no-img">
 					<div>
 						<span>CityCode:<b> {{city.cityCode}}</b></span><br>
 						<span>Accommodations:<b> {{city.accommodations}}</b></span>
 					</div>
 				</div>
+				
 			</div>
     </div>
   </div>

@@ -118,5 +118,18 @@ namespace WebApi.Controllers
 
             return Ok();
         }
+
+        [HttpGet("search-cities")]
+        public async Task<IActionResult> SearchCities([FromQuery] string searchString)
+        {
+            if (string.IsNullOrEmpty(searchString))
+            {
+                var cites = await cityRepository.GetAllCities();
+                return Ok(cites.ToList());
+            }
+
+            var cities = await cityRepository.SearchCities(searchString);
+            return Ok(cities);
+        }
     }
 }
