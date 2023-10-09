@@ -24,4 +24,8 @@ export class AdminService {
   updateCity(formData: FormData) {
     return this.http.put(`${environment.appUrl}/city/update-city`, formData)
   }
+
+  searchCities(searchString: string) {
+    return this.http.get(`${environment.appUrl}/city/search-cities?searchString=${searchString}`)
+  }
 }

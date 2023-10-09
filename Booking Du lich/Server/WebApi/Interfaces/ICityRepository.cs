@@ -11,5 +11,6 @@ namespace WebApi.Interfaces
         public Task<IEnumerable<City>> GetAllCities();
         public Task<bool> Delete(City city);
         public Task<bool> UpdateCity(City city);
+        public Task<IEnumerable<City>> SearchCities(string searchString);
     }
 }

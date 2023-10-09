@@ -65,7 +65,11 @@ namespace WebApi.Repositories
             return await Save();
         }
 
-
+        public async Task<IEnumerable<City>> SearchCities(string searchString)
+        {
+            var r = await context.City.Where(c => c.Name.ToLower().Contains(searchString.ToLower())).ToListAsync();
+            return r;
+        }
         
 
         

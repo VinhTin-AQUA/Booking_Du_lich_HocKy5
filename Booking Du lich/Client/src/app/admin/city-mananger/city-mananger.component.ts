@@ -29,6 +29,9 @@ export class CityManangerComponent implements OnInit {
   formEdit: FormGroup = new FormGroup([]);
   editCityModal: boolean = false;
 
+  //search
+  searchString: string = '';
+
   constructor(
     private formBuilder: FormBuilder,
     private adminService: AdminService,
@@ -169,13 +172,40 @@ export class CityManangerComponent implements OnInit {
 
       this.adminService.updateCity(formData).subscribe({
         next: (res: any) => {
-          
-          this.sharedService.showToastMessage('success Update city successfully');
+          this.sharedService.showToastMessage(
+            'success Update city successfully'
+          );
+
+          let cityUpdate = this.allCities.find(
+            (c) => c.id === this.formEdit.value.id
+          );
+          if (cityUpdate !== null && cityUpdate !== undefined) {
+            cityUpdate.cityCode = this.formEdit.value.cityCode;
+            cityUpdate.name = this.formEdit.value.name;
+            if (this.file !== undefined) {
+              cityUpdate.imgUrl = `/cities/${this.file.name}`;
+            }
+          }
         },
         error: (err) => {
           this.sharedService.showToastMessage(err.error.value.message);
         },
       });
     }
+  }
+
+  //search
+  searchCities() {
+    this.sharedService.showLoading(true);
+    this.adminService.searchCities(this.searchString).subscribe({
+      next: (res: any) => {
+        this.sharedService.showLoading(false);
+        this.allCities = res;
+      },
+      error: (err) => {
+        console.log(err);
+        this.sharedService.showLoading(false);
+      },
+    });
   }
 }
