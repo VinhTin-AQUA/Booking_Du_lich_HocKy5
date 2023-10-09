@@ -2,9 +2,9 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
 
-namespace WebApi.DTOs
+namespace WebApi.DTOs.City
 {
-    public class CityDto
+    public class AddCityDto
     {
         [Required(ErrorMessage = "{0} must be required")]
         [Display(Name = "City Code")]

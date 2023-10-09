@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { AddCitty } from '../shared/models/destionation/addCity';
+
 import { environment } from 'src/environments/environment.development';
 
 @Injectable({
@@ -15,5 +15,13 @@ export class AdminService {
 
   getAllCities() {
     return this.http.get(`${environment.appUrl}/city/get-all-cities`);
+  }
+
+  deleteCity(id: number) {
+    return this.http.delete(`${environment.appUrl}/city/delete-city?id=${id}`)
+  }
+
+  updateCity(formData: FormData) {
+    return this.http.put(`${environment.appUrl}/city/update-city`, formData)
   }
 }
