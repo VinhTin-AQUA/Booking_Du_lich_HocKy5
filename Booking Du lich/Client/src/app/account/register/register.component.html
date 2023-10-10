@@ -73,6 +73,24 @@
         </span>
       </div>
 
+      <!-- address -->
+      <div class="text-[1.2em] mb-4">
+        <label class="block mb-2">Email</label>
+        <input
+          [class]="inputValidation('email')"
+          type="email"
+          formControlName="email"
+          spellcheck="false"
+          placeholder="Email"
+        />
+        <span
+          class="text-red-500"
+          *ngIf="submitted === true && signUpForm.hasError('required', 'address')"
+        >
+          Address is required
+        </span>
+      </div>
+
       <!-- password -->
       <div class="text-[1.2em] mb-4">
         <label class="block mb-2">Password</label>

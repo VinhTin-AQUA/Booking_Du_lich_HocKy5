@@ -25,7 +25,7 @@ namespace WebApi1.Data
             //    }
             //}
 
-            SeedRole(modelBuilder);
+            //SeedRole(modelBuilder);
 
             modelBuilder.Entity<City>()
                 .HasKey(c => c.Id)

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AccountService } from './account/account.service';
+import { Router,NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,8 +10,13 @@ import { AccountService } from './account/account.service';
 export class AppComponent implements OnInit {
   title = 'Booking App';
 
-  constructor(private accountService: AccountService) {
-
+  constructor(private accountService: AccountService, private router: Router) {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd){
+         //scroll to top
+         window.scrollTo(0,0);
+      }
+   });
   }
 
   ngOnInit(): void {
