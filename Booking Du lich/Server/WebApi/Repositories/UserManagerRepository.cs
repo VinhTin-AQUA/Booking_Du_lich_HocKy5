@@ -29,6 +29,23 @@ namespace WebApi.Repositories
             return users;
         }
 
+        public async Task<IdentityResult> LockUser(ApplicationUser user)
+        {
+            DateTimeOffset? date = new DateTimeOffset(DateTime.Now.AddDays(3));
+            var r = await userManager.SetLockoutEndDateAsync(user, date);
+            return r;
+        } 
 
+        public async Task<IdentityResult> UnlockUser(ApplicationUser user)
+        {
+            var r = await userManager.SetLockoutEndDateAsync(user, null);
+            return r;
+        }
+
+        public async Task<IdentityResult> DeleteUser(ApplicationUser user)
+        {
+            var r = await userManager.DeleteAsync(user);
+            return r;
+        }
     }
 }

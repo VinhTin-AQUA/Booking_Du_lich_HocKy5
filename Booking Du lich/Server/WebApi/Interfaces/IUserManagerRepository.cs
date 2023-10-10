@@ -1,4 +1,5 @@
-﻿using WebApi.Models;
+﻿using Microsoft.AspNetCore.Identity;
+using WebApi.Models;
 
 namespace WebApi.Interfaces
 {
@@ -7,5 +8,8 @@ namespace WebApi.Interfaces
         public Task<IEnumerable<ApplicationUser>> GetUser(int currentPage, int pageSize);
 
         public int TotalUsers();
+        public Task<IdentityResult> LockUser(ApplicationUser user);
+        public Task<IdentityResult> UnlockUser(ApplicationUser user);
+        public Task<IdentityResult> DeleteUser(ApplicationUser user);
     }
 }

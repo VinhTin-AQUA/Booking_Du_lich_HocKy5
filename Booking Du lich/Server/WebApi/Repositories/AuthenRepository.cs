@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.WebUtilities;
+using Microsoft.EntityFrameworkCore;
 using System.Text;
 using WebApi.DTOs.Authentication;
 using WebApi.Interfaces;
@@ -112,6 +113,12 @@ namespace WebApi1.Repositories
         public async Task<ApplicationUser> GetUserByEmail(string email)
         {
             var user = await _userManage.FindByEmailAsync(email);
+            return user;
+        }
+
+        public async Task<ApplicationUser> GetUserById(string id)
+        {
+            var user = await _userManage.Users.Where(u => u.Id == id).FirstOrDefaultAsync();
             return user;
         }
 
