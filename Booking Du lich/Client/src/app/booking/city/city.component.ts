@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
@@ -10,8 +10,11 @@ import { SharedService } from 'src/app/shared/shared.service';
 export class CityComponent {
   cityName: string | null = '';
   
-  constructor(private activatedRoute: ActivatedRoute, private sharedService: SharedService) {
-
+  constructor(
+    private activatedRoute: ActivatedRoute, 
+    private sharedService: SharedService,
+    private router: Router) {
+    
   }
 
   ngOnInit(): void {

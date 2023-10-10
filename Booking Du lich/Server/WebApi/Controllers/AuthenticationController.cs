@@ -65,6 +65,7 @@ namespace WebApi1.Controllers
                     LastName = signUpModel.LastName,
                     UserName = signUpModel.Email,
                     Email = signUpModel.Email,
+                    Address = signUpModel.Address,
                 };
 
                 var result = await accountRepo.CreateUser(user, signUpModel.Password);
