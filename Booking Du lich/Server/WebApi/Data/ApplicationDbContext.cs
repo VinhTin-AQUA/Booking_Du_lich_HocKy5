@@ -27,12 +27,18 @@ namespace WebApi1.Data
 
             //SeedRole(modelBuilder);
 
+            /* xử lý tham chiếu khóa chính, khóa ngoại */
+
             modelBuilder.Entity<City>()
                 .HasKey(c => c.Id)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity<Hotel>()
+                .HasKey(h => h.Id);
         }
 
         public DbSet<City> City { get; set; }
+        public DbSet<Hotel> Hotel { get; set; }
 
         private void SeedRole(ModelBuilder builder)
         {
