@@ -20,6 +20,7 @@ namespace WebApi.Interfaces
         public Task<string> GeneratePasswordResetToken(ApplicationUser user);
         public Task<IdentityResult> ResetPassword(ApplicationUser user, string token, string newPassword);
         public Task<ApplicationUser> GetUserByEmail(string email);
+        public Task<ApplicationUser> GetUserById(string id);
         public Task<bool> IsLockedOut(ApplicationUser user);
         public Task<UserDto> CreateApplicationUserDto(ApplicationUser user);
     }

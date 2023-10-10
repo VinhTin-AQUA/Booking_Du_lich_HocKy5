@@ -4,6 +4,6 @@ export interface UserView {
   lastName: string;
   email: string;
   emailConfirmed: boolean;
-  phoneNumber: string;
-  lockoutEnd: Date;
+  phoneNumber: string | null;
+  lockoutEnd: Date | null;
 }
