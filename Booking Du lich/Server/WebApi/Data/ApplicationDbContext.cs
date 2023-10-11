@@ -27,7 +27,7 @@ namespace WebApi1.Data
 
             //SeedRole(modelBuilder);
 
-            /* xử lý tham chiếu khóa chính, khóa ngoại */
+            /* xử lý tham chiếu khóa chính, khóa ngoại */       
 
             modelBuilder.Entity<City>()
                 .HasKey(c => c.Id)
@@ -35,6 +35,16 @@ namespace WebApi1.Data
 
             modelBuilder.Entity<Hotel>()
                 .HasKey(h => h.Id);
+
+            modelBuilder.Entity<Hotel>()
+                .HasMany(h => h.Agents)
+                .WithOne(u => u.Hotel)
+                .HasForeignKey(u => u.HotelId);
+
+            modelBuilder.Entity<City>()
+                .HasMany(c => c.Hotels)
+                .WithOne(h => h.City)
+                .HasForeignKey(h => h.CityId);
         }
 
         public DbSet<City> City { get; set; }
