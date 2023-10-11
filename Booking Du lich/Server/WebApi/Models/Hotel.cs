@@ -24,9 +24,14 @@ namespace WebApi.Models
         [Required(ErrorMessage = "{0} must be required")]
         [Display(Name = "Description")]
         [Column(TypeName = "nvarchar(max)")]
-        public string Description { get; set;}
+        public string Description { get; set; }
 
         [Column(TypeName = "varchar(250)")]
         public string PhotoPath { get; set; }
+
+        /*tham chiếu khóa ngoại*/ 
+        public ICollection<ApplicationUser> Agents { get; set; }
+        public int? CityId { get; set; }
+        public City City { get; set; }
     }
 }
