@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.CodeAnalysis;
 
 namespace WebApi.Models
 {
@@ -7,6 +8,7 @@ namespace WebApi.Models
     public class Hotel
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         [Required(ErrorMessage = "{0} must be required")]
@@ -14,20 +16,18 @@ namespace WebApi.Models
         [Column(TypeName = "nvarchar(250)")]
         public string HotelName { get; set; }
 
-        [Required(ErrorMessage = "{0} must be required")]
         [Display(Name = "Address")]
         [Column(TypeName = "nvarchar(250)")]
-        public string Address { get; set; }
+        public string? Address { get; set; }
 
         public int AvailableRoom { get; set; } = 0;
 
-        [Required(ErrorMessage = "{0} must be required")]
         [Display(Name = "Description")]
         [Column(TypeName = "nvarchar(max)")]
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         [Column(TypeName = "varchar(250)")]
-        public string PhotoPath { get; set; }
+        public string? PhotoPath { get; set; }
 
         /*tham chiếu khóa ngoại*/ 
         public ICollection<ApplicationUser> Agents { get; set; }

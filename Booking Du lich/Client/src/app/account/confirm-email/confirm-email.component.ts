@@ -37,17 +37,19 @@ export class ConfirmEmailComponent implements OnInit {
             token: params.get('token'),
             email: params.get('email'),
           };
+
           this.accountService.confirmEmail(model).subscribe({
             next: (res: any) => {
               this.title = 'Thank you for trusting our service';
               this.message = 'Your email has been successfully confirmed. Please click the button below to log in';
             },
             error: (err: any) => {
-              console.log(err.error);
+              this.title = err.error.value.title;
+              this.message = err.error.value.message;
             },
           });
         }
-      },
+      }
     });
   }
 }

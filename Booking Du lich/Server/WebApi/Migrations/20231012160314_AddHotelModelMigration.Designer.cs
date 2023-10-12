@@ -12,7 +12,7 @@ using WebApi1.Data;
 namespace WebApi.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231011134153_AddHotelModelMigration")]
+    [Migration("20231012160314_AddHotelModelMigration")]
     partial class AddHotelModelMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -276,7 +276,6 @@ namespace WebApi.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Address")
-                        .IsRequired()
                         .HasColumnType("nvarchar(250)");
 
                     b.Property<int>("AvailableRoom")
@@ -286,7 +285,6 @@ namespace WebApi.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("HotelName")
@@ -296,7 +294,8 @@ namespace WebApi.Migrations
                     b.Property<string>("PhotoPath")
                         .HasColumnType("varchar(250)");
 
-                    b.HasKey("Id");
+                    b.HasKey("Id")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.HasIndex("CityId");
 

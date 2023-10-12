@@ -34,7 +34,7 @@ namespace WebApi1.Data
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity<Hotel>()
-                .HasKey(h => h.Id);
+                .HasKey(h => h.Id).HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity<Hotel>()
                 .HasMany(h => h.Agents)
@@ -54,7 +54,7 @@ namespace WebApi1.Data
         {
             builder.Entity<IdentityRole>().HasData(
                     new IdentityRole() { Name = "Admin", ConcurrencyStamp = "1", NormalizedName = "Admin" },
-                    new IdentityRole() { Name = "Manager", ConcurrencyStamp = "2", NormalizedName = "Manager" },
+                    new IdentityRole() { Name = "Agent", ConcurrencyStamp = "2", NormalizedName = "Agent" },
                     new IdentityRole() { Name = "User", ConcurrencyStamp = "3", NormalizedName = "User" });
         }
 
