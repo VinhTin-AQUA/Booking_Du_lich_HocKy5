@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { environment } from 'src/environments/environment.development';
+import { AddHotel } from '../shared/models/hotel/addHotel';
 
 @Injectable({
   providedIn: 'root',
@@ -52,5 +53,9 @@ export class AdminService {
 
   deleteUser(id: string) {
     return this.http.delete(`${environment.appUrl}/usermanager/delete-user?id=${id}`);
+  }
+
+  addHotel(model: AddHotel) {
+    return this.http.post(`${environment.appUrl}/hotel/add-hotel`,model);
   }
 }

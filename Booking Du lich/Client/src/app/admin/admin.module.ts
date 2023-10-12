@@ -11,6 +11,7 @@ import { SideBarComponent } from './side-bar/side-bar.component';
 import { UserMangementComponent } from './user-mangement/user-mangement.component';
 import { NotificationComponent } from './notification/notification.component';
 import { CityManangerComponent } from './city-mananger/city-mananger.component';
+import { HotelManagerComponent } from './hotel-manager/hotel-manager.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { CityManangerComponent } from './city-mananger/city-mananger.component';
     UserMangementComponent,
     NotificationComponent,
     CityManangerComponent,
+    HotelManagerComponent,
     
   ],
   imports: [

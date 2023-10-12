@@ -25,15 +25,18 @@
 
       <div class="flex items-center justify-center gap-2" *ngIf="accountService.user$ | async as user">
 
+        <!-- admin routing -->
         <a *ngIf="(user.jwt | role) === 'Admin'" class="btn-primary cursor-pointer" routerLink="/admin/profile"
           >Hello {{user.firstName + ' ' + user.lastName}}</a
         >
 
-        <a *ngIf="(user.jwt | role) === 'User'" class="btn-primary cursor-pointer" routerLink="/admin/profile"
+        <!-- user routing -->
+        <a *ngIf="(user.jwt | role) === 'User'" class="btn-primary cursor-pointer" routerLink="/user/profile"
           >Hello {{user.firstName + ' ' + user.lastName}}</a
         >
 
-        <a *ngIf="(user.jwt | role) === 'Manager'" class="btn-primary cursor-pointer" routerLink="/admin/profile"
+        <!-- agent routing -->
+        <a *ngIf="(user.jwt | role) === 'Agent'" class="btn-primary cursor-pointer" routerLink="/agent/profile-agent"
           >Hello {{user.firstName + ' ' + user.lastName}}</a
         >
         

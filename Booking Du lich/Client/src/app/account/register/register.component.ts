@@ -29,6 +29,7 @@ export class RegisterComponent implements OnInit {
       lastName: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
       address: ['', [Validators.required]],
+      phoneNumber: ['', [Validators.required]],
       password: [
         '',
         [

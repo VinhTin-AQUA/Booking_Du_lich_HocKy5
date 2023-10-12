@@ -4,7 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { environment } from 'src/environments/environment.development';
 
 import { City } from '../shared/models/city/city';
-import { Home } from '../shared/models/destionation/home';
+import { Home } from '../shared/models/home/home';
 import { SharedService } from '../shared/shared.service';
 import { AdminService } from '../admin/admin.service';
 

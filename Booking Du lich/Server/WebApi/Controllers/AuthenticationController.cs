@@ -48,7 +48,7 @@ namespace WebApi1.Controllers
 
                 if (ModelState.IsValid == false)
                 {
-                    return BadRequest();
+                    return BadRequest(ModelState);
                 }
 
                 //Check User exist
@@ -66,6 +66,7 @@ namespace WebApi1.Controllers
                     UserName = signUpModel.Email,
                     Email = signUpModel.Email,
                     Address = signUpModel.Address,
+                    PhoneNumber = signUpModel.PhoneNumber,
                 };
 
                 var result = await accountRepo.CreateUser(user, signUpModel.Password);
@@ -74,7 +75,7 @@ namespace WebApi1.Controllers
                 {
                     return BadRequest(new JsonResult(new { title = "Error", message = "Register failed. Please try agian." }));
                 }
-                await accountRepo.AddRoleToUser(user, "Admin");
+                await accountRepo.AddRoleToUser(user, "Agent");
 
                 if (await SendEmailConfirmAsync(user))
                 {
