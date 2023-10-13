@@ -12,6 +12,7 @@ import { UserMangementComponent } from './user-mangement/user-mangement.componen
 import { NotificationComponent } from './notification/notification.component';
 import { CityManangerComponent } from './city-mananger/city-mananger.component';
 import { HotelManagerComponent } from './hotel-manager/hotel-manager.component';
+import { HotelDetailComponent } from './hotel-detail/hotel-detail.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { HotelManagerComponent } from './hotel-manager/hotel-manager.component';
     NotificationComponent,
     CityManangerComponent,
     HotelManagerComponent,
+    HotelDetailComponent,
     
   ],
   imports: [

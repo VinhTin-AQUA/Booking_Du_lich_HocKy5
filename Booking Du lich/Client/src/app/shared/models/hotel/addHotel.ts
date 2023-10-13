@@ -1,3 +1,3 @@
 export interface AddHotel {
-	hotelName: string
+	HotelName: string
 }

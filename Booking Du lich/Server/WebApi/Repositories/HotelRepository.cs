@@ -1,4 +1,6 @@
-﻿using WebApi.Interfaces;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using WebApi.Interfaces;
 using WebApi.Models;
 using WebApi1.Data;
 
@@ -7,10 +9,12 @@ namespace WebApi.Repositories
     public class HotelRepository : IHotelRepository
     {
         private readonly ApplicationDbContext context;
+        private readonly UserManager<ApplicationUser> userManager;
 
-        public HotelRepository(ApplicationDbContext context)
+        public HotelRepository(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
         {
             this.context = context;
+            this.userManager = userManager;
         }
 
         public async Task<bool> Save()
@@ -24,5 +28,33 @@ namespace WebApi.Repositories
             context.Hotel.Add(hotel);
             return await Save();
         }
+
+        public async Task<ICollection<Hotel>> GetAllHotels()
+        {
+            var hotels = await context.Hotel.ToListAsync();
+            return hotels;
+        }
+
+        public async Task<Hotel> GetHotelById(int? id)
+        {
+            var hotel = await context.Hotel
+                .Include(h => h.Agents)
+                .Where(h => h.Id == id)
+                .SingleOrDefaultAsync();
+            return hotel;
+        }
+
+        public async Task<IdentityResult> AdddAgent(ApplicationUser agent, string password)
+        {
+            var r = await userManager.CreateAsync(agent, password);
+            return r;
+        }
+
+        public async Task<IdentityResult> DeleteAgent(ApplicationUser agent)
+        {
+            var r = await userManager.DeleteAsync(agent);
+            return r;
+        }
+
     }
 }

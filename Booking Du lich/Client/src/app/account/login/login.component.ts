@@ -42,8 +42,8 @@ export class LoginComponent {
     this.submitted = true;
     if (this.loginForm.valid) {
       const loginUser: LoginUser = {
-        email: this.loginForm.value.email,
-        password: this.loginForm.value.password,
+        Email: this.loginForm.value.email,
+        Password: this.loginForm.value.password,
       };
 
       this.sharedService.showLoading(true);
@@ -58,12 +58,12 @@ export class LoginComponent {
             this.sharedService.showLoading(false);
             // su ly email chua confirm
 
-            if (err.error.value.message === 'Please confirm your email.') {
+            if (err.error.Value.message === 'Please confirm your email.') {
               this.router.navigate(['/account/confirm-email'], {
                 queryParams: { status: 'error' },
               });
             }  else {
-              this.errorMessage = err.error.value.message;
+              this.errorMessage = err.error.Value.message;
             }
           },
         });

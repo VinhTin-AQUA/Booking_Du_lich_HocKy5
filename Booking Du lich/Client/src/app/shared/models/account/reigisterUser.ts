@@ -1,9 +1,9 @@
 export interface RegisterUser {
-  firstName: string;
-  lastName: string;
-	email: string;
-	address: string;
-	phoneNumber: string;
-  password: string;
-  reEnterPassword: string;
+  FirstName: string;
+  LastName: string;
+	Email: string;
+	Address: string;
+	PhoneNumber: string;
+  Password: string;
+  ReEnterPassword: string;
 }

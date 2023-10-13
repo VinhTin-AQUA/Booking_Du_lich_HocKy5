@@ -79,7 +79,7 @@ export class RegisterComponent implements OnInit {
         },
         error: (errors: any) => {
           this.sharedService.showLoading(false);
-          this.errorMessages = errors.error.value.message
+          this.errorMessages = errors.error.Value.message
         },
       });
     }

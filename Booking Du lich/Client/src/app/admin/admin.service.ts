@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 
 import { environment } from 'src/environments/environment.development';
 import { AddHotel } from '../shared/models/hotel/addHotel';
+import { Agent } from '../shared/models/hotel/addAgent';
 
 @Injectable({
   providedIn: 'root',
@@ -41,21 +42,41 @@ export class AdminService {
 
   lockUser(id: string) {
     return this.http.put(
-      `${environment.appUrl}/usermanager/lock-user?id=${id}`,{}
+      `${environment.appUrl}/usermanager/lock-user?id=${id}`,
+      {}
     );
   }
 
   unlockUser(id: string) {
     return this.http.put(
-      `${environment.appUrl}/usermanager/un-lock-user?id=${id}`,{}
+      `${environment.appUrl}/usermanager/un-lock-user?id=${id}`,
+      {}
     );
   }
 
   deleteUser(id: string) {
-    return this.http.delete(`${environment.appUrl}/usermanager/delete-user?id=${id}`);
+    return this.http.delete(
+      `${environment.appUrl}/usermanager/delete-user?id=${id}`
+    );
   }
 
   addHotel(model: AddHotel) {
-    return this.http.post(`${environment.appUrl}/hotel/add-hotel`,model);
+    return this.http.post(`${environment.appUrl}/hotel/add-hotel`, model);
+  }
+
+  getAllHotels() {
+    return this.http.get(`${environment.appUrl}/hotel/get-all-hotels`);
+  }
+
+  getHotelById(id: string | null){
+    return this.http.get(`${environment.appUrl}/hotel/get-hotel-by-id?id=${id}`);
+  }
+
+  addAgent(model: Agent) {
+    return this.http.post(`${environment.appUrl}/hotel/add-agent`,model);
+  }
+
+  deleteAgent(id: string) {
+    return this.http.delete(`${environment.appUrl}/hotel/delete-agent?id=${id}`);
   }
 }

@@ -31,6 +31,7 @@ namespace WebApi.Models
 
         /*tham chiếu khóa ngoại*/ 
         public ICollection<ApplicationUser> Agents { get; set; }
+
         public int? CityId { get; set; }
         public City City { get; set; }
     }

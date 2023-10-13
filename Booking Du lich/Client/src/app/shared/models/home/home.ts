@@ -1,7 +1,7 @@
 export interface Home {
-	title: string;
-	address: string;
-	imgUrl: string;
-	price: number;
-	vote: number;
+	Title: string;
+	Address: string;
+	ImgUrl: string;
+	Price: number;
+	Vote: number;
 }

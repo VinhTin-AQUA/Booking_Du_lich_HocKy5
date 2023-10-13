@@ -26,14 +26,14 @@
 					<tbody>
 						<tr *ngFor="let user of users; let i = index">
 							<td>{{pageSize * currentPage + i + 1}}</td>
-							<td>{{user.firstName}} {{user.lastName}}</td>
-							<td>{{user.email}}</td>
-							<td>{{user.emailConfirmed}}</td>
-							<td>{{user.phoneNumber}}</td>
-							<td class="text-[#f97316] font-bold">{{user.lockoutEnd | date : 'hh:mm - dd/MM/yyyy'}}</td>
+							<td>{{user.FirstName}} {{user.LastName}}</td>
+							<td>{{user.Email}}</td>
+							<td>{{user.EmailConfirmed}}</td>
+							<td>{{user.PhoneNumber}}</td>
+							<td class="text-[#f97316] font-bold">{{user.LockoutEnd | date : 'hh:mm - dd/MM/yyyy'}}</td>
 							<td>
-								<mat-icon (click)="lockUser('lock',user)" *ngIf="user.lockoutEnd === null" title="lock" class="action-lock-icon">lock</mat-icon>
-								<mat-icon (click)="lockUser('un-lock',user)" *ngIf="user.lockoutEnd !== null" title="un-lock" class="action-lock-icon">lock_open</mat-icon>
+								<mat-icon (click)="lockUser('lock',user)" *ngIf="user.LockoutEnd === null" title="lock" class="action-lock-icon">lock</mat-icon>
+								<mat-icon (click)="lockUser('un-lock',user)" *ngIf="user.LockoutEnd !== null" title="un-lock" class="action-lock-icon">lock_open</mat-icon>
 								<mat-icon (click)="showDeleteUser(user)" title="delete user" class="action-delete-icon">delete</mat-icon>
 							</td>
 						</tr>
@@ -60,7 +60,7 @@
 <div *ngIf="deleteUser === true && userToDelete !== null" class="delete-user-wrapper">
 	<div class="delete-user-container">
 
-		<div class="text-[1.5em] text-red-600 mb-3">Do you want to delete <b>{{userToDelete.firstName + ' ' + userToDelete.lastName }}</b></div>
+		<div class="text-[1.5em] text-red-600 mb-3">Do you want to delete <b>{{userToDelete.FirstName + ' ' + userToDelete.LastName }}</b></div>
 		<!--<div>Do you want to delete hahaha</div>-->
 		<div class="flex justify-center items-center gap-2">
 			<button (click)="deleteUserSubmit()" class="btn-danger">Yes</button>
