@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
@@ -9,6 +10,7 @@ import { SharedService } from 'src/app/shared/shared.service';
 })
 export class CityComponent {
   cityName: string | null = '';
+  private subcription: Subscription | null = null;
   
   constructor(
     private activatedRoute: ActivatedRoute, 
@@ -25,8 +27,14 @@ export class CityComponent {
     });
 
     // lấy thông tin thành phố mà người dùng chọn
-    this.sharedService.passSubject.subscribe(data => {
+    this.subcription = this.sharedService.passSubject$.subscribe(data => {
       console.log(data);
     })
+  }
+
+
+  
+  ngOnDestroy() {
+    this.subcription?.unsubscribe();
   }
 }

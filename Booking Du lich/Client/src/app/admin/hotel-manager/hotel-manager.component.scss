@@ -66,31 +66,14 @@
 
 // list cities
 .city-container {
-	@apply flex justify-start items-start gap-2 flex-wrap;
+	@apply flex justify-start items-start gap-2 flex-wrap mt-2;
   
 }
 
 .city-item {
-  @apply w-[230px] p-1 border;
-}
-
-.city-icon-delete {
-	@apply text-red-500 cursor-pointer;
-}
-
-.city-icon-edit {
-	@apply text-green-500 cursor-pointer;
-}
-
-// deletecity
-.delete-city{
-  @apply w-full h-screen bg-gray-400/30 z-10 flex items-center justify-center;
-
-  position: fixed;
-  top: 0px;
-  left: 0px;
-
-  .delete-city-container {
-    @apply  w-[300px] bg-blue-300 p-2 text-center rounded;
+  @apply w-[230px] p-1 border border-blue-500 rounded cursor-pointer duration-100;
+  &:hover {
+    @apply bg-blue-300/50;
   }
 }
+

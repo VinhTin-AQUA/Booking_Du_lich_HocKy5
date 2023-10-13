@@ -1,6 +1,6 @@
 export interface User {
-	id: string;
-	firstName: string;
-	lastName: string;
-	jwt: string;
+	Id: string;
+	FirstName: string;
+	LastName: string;
+	JWT: string;
 }

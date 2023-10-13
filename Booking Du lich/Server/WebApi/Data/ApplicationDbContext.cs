@@ -45,6 +45,8 @@ namespace WebApi1.Data
                 .HasMany(c => c.Hotels)
                 .WithOne(h => h.City)
                 .HasForeignKey(h => h.CityId);
+
+
         }
 
         public DbSet<City> City { get; set; }

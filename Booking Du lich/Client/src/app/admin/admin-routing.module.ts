@@ -6,6 +6,7 @@ import { UserMangementComponent } from './user-mangement/user-mangement.componen
 import { NotificationComponent } from './notification/notification.component';
 import { CityManangerComponent } from './city-mananger/city-mananger.component';
 import { HotelManagerComponent } from './hotel-manager/hotel-manager.component';
+import { HotelDetailComponent } from './hotel-detail/hotel-detail.component';
 
 const routes: Routes = [
   {path: '', component: AdminComponent, 
@@ -15,6 +16,7 @@ const routes: Routes = [
       { path: 'notification', component: NotificationComponent, title: 'User management' },
       { path: 'city-management', component: CityManangerComponent, title: 'City management' },
       { path: 'hotel-management', component: HotelManagerComponent, title: 'Hotel management' },
+      { path: 'hotel-detail/:id', component: HotelDetailComponent, title: 'Hotel detail' },
     ],
   },
 ];

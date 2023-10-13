@@ -119,12 +119,12 @@ export class CityManangerComponent implements OnInit {
   deleteCitySubmit() {
     if (this.cityDeleteModel !== null) {
       this.sharedService.showLoading(true);
-      this.adminService.deleteCity(this.cityDeleteModel.id).subscribe({
+      this.adminService.deleteCity(this.cityDeleteModel.Id).subscribe({
         next: (res: any) => {
-          this.sharedService.showToastMessage(`success${res.value.message}`);
+          this.sharedService.showToastMessage(`success${res.Value.message}`);
           this.sharedService.showLoading(false);
           const index = this.allCities.findIndex(
-            (x) => x.id === this.cityDeleteModel?.id
+            (x) => x.Id === this.cityDeleteModel?.Id
           );
           if (index !== -1) {
             this.allCities.splice(index, 1);
@@ -133,7 +133,7 @@ export class CityManangerComponent implements OnInit {
           this.cityDeleteModel = null;
         },
         error: (err) => {
-          this.sharedService.showToastMessage(err.error.value.message);
+          this.sharedService.showToastMessage(err.error.Value.message);
           this.sharedService.showLoading(false);
           this.deleteCityModal = false;
           this.cityDeleteModel = null;
@@ -148,11 +148,11 @@ export class CityManangerComponent implements OnInit {
 
     if (this.editCityModal === true && city !== null) {
       this.formEdit.setValue({
-        id: city.id,
-        cityCode: city.cityCode,
-        name: city.name,
+        id: city.Id,
+        cityCode: city.CityCode,
+        name: city.Name,
       });
-      this.imgUrl = `${environment.imgUrl}/${city.imgUrl}`;
+      this.imgUrl = `${environment.imgUrl}/${city.ImgUrl}`;
     } else {
       this.submitted = false;
       this.imgUrl = '';
@@ -177,13 +177,13 @@ export class CityManangerComponent implements OnInit {
           );
 
           let cityUpdate = this.allCities.find(
-            (c) => c.id === this.formEdit.value.id
+            (c) => c.Id === this.formEdit.value.id
           );
           if (cityUpdate !== null && cityUpdate !== undefined) {
-            cityUpdate.cityCode = this.formEdit.value.cityCode;
-            cityUpdate.name = this.formEdit.value.name;
+            cityUpdate.CityCode = this.formEdit.value.cityCode;
+            cityUpdate.Name = this.formEdit.value.name;
             if (this.file !== undefined) {
-              cityUpdate.imgUrl = `/cities/${this.file.name}`;
+              cityUpdate.ImgUrl = `/cities/${this.file.name}`;
             }
           }
         },

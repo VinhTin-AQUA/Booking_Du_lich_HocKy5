@@ -1,3 +1,3 @@
 export interface ResendEmail {
-  email: string;
+  Email: string;
 }

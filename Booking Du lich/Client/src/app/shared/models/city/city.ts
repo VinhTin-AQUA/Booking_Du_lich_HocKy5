@@ -1,7 +1,7 @@
 export interface City {
-	id: number;
-	cityCode: number;
-	name: string;
-	imgUrl: string;
-	accommodations: number;
+	Id: number;
+	CityCode: number;
+	Name: string;
+	ImgUrl: string;
+	Accommodations: number;
 }

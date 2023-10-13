@@ -31,10 +31,10 @@ export class ResendEmailConfirmComponent {
     this.submit = true;
     if (this.formSubmit.valid) {
       this.sharedService.showLoading(true);
-      const model: ResendEmail = { email: this.formSubmit.value.email };
+      const model: ResendEmail = { Email: this.formSubmit.value.email };
       this.accountService.resendEmailConfirm(model).subscribe({
         next: (res:any) => {
-          if (res.value.message === 'Your email has been confirmed.') {
+          if (res.Value.message === 'Your email has been confirmed.') {
             this.router.navigate(['/account/confirm-email'], {
               queryParams: { status: 'success' },
             });
@@ -44,7 +44,7 @@ export class ResendEmailConfirmComponent {
           this.sharedService.showLoading(false);
         },
         error: (err) => {
-          this.errorMessages = err.error.value.message;
+          this.errorMessages = err.error.Value.message;
           this.sharedService.showLoading(false);
         },
       });

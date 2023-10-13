@@ -22,7 +22,7 @@ export class JwtInterceptor implements HttpInterceptor {
           // thêm mã jwt vào headers để gửi đến server khi cần xác thực
           request = request.clone({
             setHeaders: {
-              Authorization: `Bearer ${user.jwt}`
+              Authorization: `Bearer ${user.JWT}`
             }
           });
         }

@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Newtonsoft.Json.Serialization;
 using System.Security;
 using System.Text;
 using WebApi.Interfaces;
@@ -147,6 +148,9 @@ builder.Services.Configure<ApiBehaviorOptions>(options =>
     };
 });
 
+builder.Services.AddControllersWithViews().AddNewtonsoftJson(option =>
+option.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore)
+    .AddNewtonsoftJson(option => option.SerializerSettings.ContractResolver = new DefaultContractResolver());
 
 
 var app = builder.Build();
