@@ -4,6 +4,7 @@ using Microsoft.VisualBasic;
 using WebApi.DTOs.Hotel;
 using WebApi.Interfaces;
 using WebApi.Models;
+using WebApi.Services;
 
 namespace WebApi.Controllers
 {
@@ -13,11 +14,14 @@ namespace WebApi.Controllers
     {
         private readonly IHotelRepository hotelRepository;
         private readonly IAuthenRepository authenRepository;
+        private readonly IEmailSender emailSender;
 
-        public HotelController(IHotelRepository hotelRepository, IAuthenRepository authenRepository)
+        public HotelController(IHotelRepository hotelRepository, IAuthenRepository authenRepository,
+            IEmailSender emailSender)
         {
             this.hotelRepository = hotelRepository;
             this.authenRepository = authenRepository;
+            this.emailSender = emailSender;
         }
 
         [HttpPost("add-hotel")]
@@ -109,35 +113,25 @@ namespace WebApi.Controllers
                 Hotel = hotel,
             };
             var r = await hotelRepository.AdddAgent(newAgent, model.Password);
+            
+            
             if (r.Succeeded == false)
             {
                 return BadRequest(new JsonResult(new { title = "Error", message = "Something error. Please try again" }));
             }
 
+            string message = @$"<p>Hello <b>{newAgent.FirstName} {newAgent.LastName}</b></p> <p>Your passwork: <b>abc@123</b></p><p>Please change your password after confirm email</p>";
+
+            if (await emailSender.SendEmailConfirmAsync(newAgent, message))
+            {
+                return Ok(new JsonResult(new
+                {
+                    title = "Success",
+                    message = $"User created successfully and Send email to {newAgent.Email}"
+                }));
+            }
+
             return Ok(new JsonResult(new { title = "Success", message = "Add agent successfully" }));
-        }
-
-        [HttpDelete("delete-agent")]
-        public async Task<IActionResult> DeleteAgent([FromQuery]string id)
-        {
-            if(string.IsNullOrEmpty(id))
-            {
-                return BadRequest();
-            }
-
-            var agent = await authenRepository.GetUserById(id); 
-            if(agent == null )
-            {
-                return BadRequest(new JsonResult(new { title = "Error", message = "Agent was not found" }));
-            }
-
-            var r = await hotelRepository.DeleteAgent(agent);
-
-            if(r.Succeeded == false)
-            {
-                return BadRequest(new JsonResult(new { title = "Error", message = "Some thing error. Please try again" }));
-            }
-            return Ok(new JsonResult(new { title = "Success", message = "Delete agent successfully" }));
         }
 
     }

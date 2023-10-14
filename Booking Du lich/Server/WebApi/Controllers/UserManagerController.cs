@@ -46,14 +46,14 @@ namespace WebApi.Controllers
         }
 
         [HttpPut("lock-user")]
-        public async Task<IActionResult> LockUser([FromQuery] string id)
+        public async Task<IActionResult> LockUser([FromQuery] string email)
         {
-            if (string.IsNullOrEmpty(id))
+            if (string.IsNullOrEmpty(email))
             {
                 return BadRequest(new JsonResult(new {tile = "Error", message = "Something error when lock user"}));
             }
 
-            var user = await authenRepository.GetUserById(id);
+            var user = await authenRepository.GetUserByEmail(email);
             if (user == null)
             {
                 return BadRequest(new JsonResult(new { tile = "Error", message = "User was not found" }));
@@ -69,14 +69,14 @@ namespace WebApi.Controllers
         }
 
         [HttpPut("un-lock-user")]
-        public async Task<IActionResult> UnlockUser([FromQuery] string id)
+        public async Task<IActionResult> UnlockUser([FromQuery] string email)
         {
-            if (string.IsNullOrEmpty(id))
+            if (string.IsNullOrEmpty(email))
             {
                 return BadRequest(new JsonResult(new { tile = "Error", message = "Something error when un-lock user" }));
             }
 
-            var user = await authenRepository.GetUserById(id);
+            var user = await authenRepository.GetUserByEmail(email);
             if (user == null)
             {
                 return BadRequest(new JsonResult(new { tile = "Error", message = "User was not found" }));
@@ -92,14 +92,14 @@ namespace WebApi.Controllers
         }
 
         [HttpDelete("delete-user")]
-        public async Task<IActionResult> DeleteUser([FromQuery] string id)
+        public async Task<IActionResult> DeleteUser([FromQuery] string email)
         {
-            if(string.IsNullOrEmpty(id))
+            if(string.IsNullOrEmpty(email))
             {
                 return BadRequest(new JsonResult(new { title = "Error", message = "Something error when delete user" }));
             }
 
-            var user = await authenRepository.GetUserById(id);
+            var user = await authenRepository.GetUserByEmail(email);
             if(user == null)
             {
                 return BadRequest(new JsonResult(new { title = "Error", message = "Use was not found" }));

@@ -54,8 +54,21 @@ export class HotelDetailComponent implements OnInit {
     });
   }
 
+  private resetSignUpForm() {
+    this.signUpForm.controls['firstName'].setValue('');
+    this.signUpForm.controls['lastName'].setValue('');
+    this.signUpForm.controls['email'].setValue('');
+    this.signUpForm.controls['phoneNumber'].setValue('');
+    this.signUpForm.controls['password'].setValue('abc123');
+  }
+
   showaddAgent() {
     this.isShowedAgent = !this.isShowedAgent;
+
+    if (this.isShowedAgent === false) {
+      this.resetSignUpForm()
+      this.submitted = false;
+    }
   }
 
   inputValidation(field: string): string {
@@ -79,15 +92,22 @@ export class HotelDetailComponent implements OnInit {
         FirstName: this.signUpForm.value.firstName,
         LastName: this.signUpForm.value.lastName,
         Email: this.signUpForm.value.email,
+        EmailConfirmed: false,
+        LockoutEnd: null,
         PhoneNumber: this.signUpForm.value.phoneNumber,
         Password: this.signUpForm.value.password,
       };
+
+      this.sharedService.showLoading(true);
 
       this.adminService.addAgent(model).subscribe({
         next: (res: any) => {
           this.sharedService.showToastMessage('success' + res.Value.message);
           this.isShowedAgent = false;
           this.agents.push(model);
+          this.sharedService.showLoading(false);
+          this.submitted = false;
+          this.resetSignUpForm()
         },
         error: (err) => {
           if (err.error.Errors !== undefined) {
@@ -97,6 +117,8 @@ export class HotelDetailComponent implements OnInit {
           } else {
             this.erroMessage.push(err.error.Value.message);
           }
+          this.sharedService.showLoading(false);
+          this.resetSignUpForm();
         },
       });
     }
@@ -108,30 +130,31 @@ export class HotelDetailComponent implements OnInit {
   }
 
   deleteAgentSubmit() {
-    this.adminService.deleteAgent(this.agentToDelete.Id).subscribe({
+    this.sharedService.showLoading(true);
+    this.adminService.deleteUser(this.agentToDelete.Email).subscribe({
       next: (res) => {
-        console.log(res);
-        this.sharedService.showToastMessage(
-          'success Delete user successfully'
-        );
+        this.sharedService.showToastMessage('success Delete user successfully');
 
         const index = this.agents.findIndex(
-          (x:any) => x.Id === this.agentToDelete?.Id
+          (x: any) => x.Email === this.agentToDelete?.Email
         );
         if (index !== -1) {
           this.agents.splice(index, 1);
         }
         this.agentToDelete = null;
+        this.deleteAgent = false;
+        this.sharedService.showLoading(false);
       },
       error: (err) => {
         this.sharedService.showToastMessage(err.error.Value.message);
-      }
+        this.sharedService.showLoading(false);
+      },
     });
   }
 
   lockUser(tag: string, agent: any) {
     if (tag === 'lock') {
-      this.adminService.lockUser(agent.Id).subscribe({
+      this.adminService.lockUser(agent.Email).subscribe({
         next: (res: any) => {
           this.sharedService.showToastMessage('success Lock user successfully');
           agent.LockoutEnd = res.Value.lockoutEnd;
@@ -141,7 +164,7 @@ export class HotelDetailComponent implements OnInit {
         },
       });
     } else if (tag === 'un-lock') {
-      this.adminService.unlockUser(agent.Id).subscribe({
+      this.adminService.unlockUser(agent.Email).subscribe({
         next: (res: any) => {
           this.sharedService.showToastMessage(
             'success Unlock user successfully'
