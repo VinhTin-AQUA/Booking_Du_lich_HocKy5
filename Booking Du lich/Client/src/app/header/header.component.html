@@ -25,16 +25,19 @@
 
       <div class="flex items-center justify-center gap-2" *ngIf="accountService.user$ | async as user">
 
-        <a *ngIf="(user.jwt | role) === 'Admin'" class="btn-primary cursor-pointer" routerLink="/admin/profile"
-          >Hello {{user.firstName + ' ' + user.lastName}}</a
+        <!-- admin routing -->
+        <a *ngIf="(user.JWT | role) === 'Admin'" class="btn-primary cursor-pointer" routerLink="/admin/profile"
+          >Hello {{user.FirstName + ' ' + user.LastName}}</a
         >
 
-        <a *ngIf="(user.jwt | role) === 'User'" class="btn-primary cursor-pointer" routerLink="/admin/profile"
-          >Hello {{user.firstName + ' ' + user.lastName}}</a
+        <!-- user routing -->
+        <a *ngIf="(user.JWT | role) === 'User'" class="btn-primary cursor-pointer" routerLink="/user/profile"
+          >Hello {{user.FirstName + ' ' + user.LastName}}</a
         >
 
-        <a *ngIf="(user.jwt | role) === 'Manager'" class="btn-primary cursor-pointer" routerLink="/admin/profile"
-          >Hello {{user.firstName + ' ' + user.lastName}}</a
+        <!-- agent routing -->
+        <a *ngIf="(user.JWT | role) === 'Agent'" class="btn-primary cursor-pointer" routerLink="/agent/profile-agent"
+          >Hello {{user.FirstName + ' ' + user.LastName}}</a
         >
         
         <a class="btn-outline-primary cursor-pointer" (click)="logout()" >
@@ -84,7 +87,7 @@
       <div *ngIf="(accountService.user$ | async) as user"
         class="flex items-center justify-center gap-2 flex-col m-2 overflow-hidden"
       >
-        <a *ngIf="(user.jwt | role) === 'Admin'"
+        <a *ngIf="(user.JWT | role) === 'Admin'"
           (click)="hideMenu()"
           class="btn-primary cursor-pointer max-h-[36px] overflow-hidden"
           routerLink="/account/login" 

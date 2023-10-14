@@ -88,7 +88,7 @@ export class AccountService {
     const key = localStorage.getItem(environment.userKey);
     if (key) {
       const user: User = JSON.parse(key);
-      return user.jwt;
+      return user.JWT;
     }
     return null;
   }

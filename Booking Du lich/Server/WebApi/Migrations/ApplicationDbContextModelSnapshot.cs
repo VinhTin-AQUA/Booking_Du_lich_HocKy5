@@ -182,6 +182,9 @@ namespace WebApi.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(250)");
 
+                    b.Property<int?>("HotelId")
+                        .HasColumnType("int");
+
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasColumnType("nvarchar(250)");
@@ -221,6 +224,8 @@ namespace WebApi.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("HotelId");
+
                     b.HasIndex("NormalizedEmail")
                         .HasDatabaseName("EmailIndex");
 
@@ -258,6 +263,41 @@ namespace WebApi.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.ToTable("City");
+                });
+
+            modelBuilder.Entity("WebApi.Models.Hotel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(250)");
+
+                    b.Property<int>("AvailableRoom")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("CityId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("HotelName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(250)");
+
+                    b.Property<string>("PhotoPath")
+                        .HasColumnType("varchar(250)");
+
+                    b.HasKey("Id")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.HasIndex("CityId");
+
+                    b.ToTable("Hotel");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -309,6 +349,34 @@ namespace WebApi.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("WebApi.Models.ApplicationUser", b =>
+                {
+                    b.HasOne("WebApi.Models.Hotel", "Hotel")
+                        .WithMany("Agents")
+                        .HasForeignKey("HotelId");
+
+                    b.Navigation("Hotel");
+                });
+
+            modelBuilder.Entity("WebApi.Models.Hotel", b =>
+                {
+                    b.HasOne("WebApi.Models.City", "City")
+                        .WithMany("Hotels")
+                        .HasForeignKey("CityId");
+
+                    b.Navigation("City");
+                });
+
+            modelBuilder.Entity("WebApi.Models.City", b =>
+                {
+                    b.Navigation("Hotels");
+                });
+
+            modelBuilder.Entity("WebApi.Models.Hotel", b =>
+                {
+                    b.Navigation("Agents");
                 });
 #pragma warning restore 612, 618
         }

@@ -20,8 +20,16 @@ namespace WebApi.DTOs.Authentication
         [Column(TypeName = "nvarchar(250)")]
         public string Address { get; set; }
 
+        [Required(ErrorMessage = "{0} must be required")]
+        [Display(Name = "Phone Number")]
+        [Column(TypeName = "nvarchar(250)")]
+        public string PhoneNumber { get; set; }
+
         [Required(ErrorMessage = "Password is required")]
         [StringLength(18, MinimumLength = 6, ErrorMessage = "{0} is at least {2} and max length is {1} characters")]
         public string Password { get; set; } = null!;
+
+        [Compare("Password")]
+        public string ConfirmPassword { get; set; } = null!;
     }
 }

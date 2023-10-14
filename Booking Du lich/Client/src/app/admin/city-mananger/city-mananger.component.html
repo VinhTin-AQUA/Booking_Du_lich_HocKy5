@@ -28,16 +28,16 @@
 
 				<div class="city-item" *ngFor="let city of allCities">
 					<div class="flex items-center justify-between">
-						<div class="text-[1.1em]"><span>{{city.name}}</span></div>
+						<div class="text-[1.1em]"><span>{{city.Name}}</span></div>
 						<div>
 							<mat-icon class="city-icon-delete" title="delete" (click)="showDeleteCity(city)">delete</mat-icon>
 							<mat-icon class="city-icon-edit" title="edit" (click)="showEditcityModal(city)">edit</mat-icon>
 						</div>
 					</div>
-					<img class="w-[230px] h-[230px]" [src]="_environment.imgUrl + '/' + city.imgUrl" alt="no-img">
+					<img class="w-[230px] h-[230px]" [src]="_environment.imgUrl + '/' + city.ImgUrl" alt="no-img">
 					<div>
-						<span>CityCode:<b> {{city.cityCode}}</b></span><br>
-						<span>Accommodations:<b> {{city.accommodations}}</b></span>
+						<span>CityCode:<b> {{city.CityCode}}</b></span><br>
+						<span>Accommodations:<b> {{city.Accommodations}}</b></span>
 					</div>
 				</div>
 				
@@ -92,7 +92,7 @@
 <div *ngIf="deleteCityModal === true && cityDeleteModel !== null" class="delete-city">
 	<div class="delete-city-container">
 		<div class="mb-5">
-			<span>Do you want to delete <b>{{cityDeleteModel.name}}</b></span>
+			<span>Do you want to delete <b>{{cityDeleteModel.Name}}</b></span>
 		</div>
 		<div class="flex items-center justify-center gap-2">
 			<button class="btn-danger" (click)="deleteCitySubmit()">Delete</button>

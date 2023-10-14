@@ -19,7 +19,7 @@ export class UserMangementComponent {
 
   constructor(
     private adminService: AdminService,
-    private shareService: SharedService
+    private sharedService: SharedService
   ) {
     this.getUsers();
   }
@@ -58,25 +58,25 @@ export class UserMangementComponent {
 
   lockUser(tag: string, user: UserView) {
     if (tag === 'lock') {
-      this.adminService.lockUser(user.id).subscribe({
+      this.adminService.lockUser(user.Email).subscribe({
         next: (res: any) => {
-          this.shareService.showToastMessage('success Lock user successfully');
-          user.lockoutEnd = res.value.lockoutEnd;
+          this.sharedService.showToastMessage('success Lock user successfully');
+          user.LockoutEnd = res.Value.lockoutEnd;
         },
         error: (err) => {
-          this.shareService.showToastMessage(err.error.value.message);
+          this.sharedService.showToastMessage(err.error.Value.message);
         },
       });
     } else if (tag === 'un-lock') {
-      this.adminService.unlockUser(user.id).subscribe({
+      this.adminService.unlockUser(user.Email).subscribe({
         next: (res: any) => {
-          this.shareService.showToastMessage(
+          this.sharedService.showToastMessage(
             'success Unlock user successfully'
           );
-          user.lockoutEnd = null;
+          user.LockoutEnd = null;
         },
         error: (err) => {
-          this.shareService.showToastMessage(err.error.value.message);
+          this.sharedService.showToastMessage(err.error.Value.message);
         },
       });
     }
@@ -89,14 +89,14 @@ export class UserMangementComponent {
 
   deleteUserSubmit() {
     if (this.userToDelete !== null) {
-      this.adminService.deleteUser(this.userToDelete.id).subscribe({
+      this.adminService.deleteUser(this.userToDelete.Email).subscribe({
         next: (res) => {
-          this.shareService.showToastMessage(
+          this.sharedService.showToastMessage(
             'success Delete user successfully'
           );
 
           const index = this.users.findIndex(
-            (x) => x.id === this.userToDelete?.id
+            (x) => x.Id === this.userToDelete?.Email
           );
           if (index !== -1) {
             this.users.splice(index, 1);
@@ -104,7 +104,7 @@ export class UserMangementComponent {
           this.userToDelete = null;
         },
         error: (err) => {
-          this.shareService.showToastMessage(err.error.value.message);
+          this.sharedService.showToastMessage(err.error.Value.message);
         },
       });
     }

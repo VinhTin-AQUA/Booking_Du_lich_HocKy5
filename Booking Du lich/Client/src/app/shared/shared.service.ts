@@ -1,18 +1,20 @@
 import { Injectable } from '@angular/core';
 import { ReplaySubject } from 'rxjs';
-import { Subject } from 'rxjs';
+import { Subject,BehaviorSubject } from 'rxjs';
+import { Hotel } from './models/hotel/hotel';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SharedService {
   private isLoading: ReplaySubject<boolean | null> = new ReplaySubject(1);
-  private isToastMessage: ReplaySubject<string> = new ReplaySubject(1);
-
   isLoading$ = this.isLoading.asObservable();
+
+  private isToastMessage: ReplaySubject<string> = new ReplaySubject(1);
   showToastMessage$ = this.isToastMessage.asObservable();
 
-  passSubject: Subject<any> = new Subject<any>();
+  private passSubject = new BehaviorSubject<any>(null);
+  passSubject$ =this.passSubject.asObservable();
 
   constructor() {}
 

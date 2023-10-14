@@ -102,20 +102,20 @@
     <div class="destination-container">
       <a
         *ngFor="let city of tempCities"
-        [routerLink]="['city', city.name]"
+        [routerLink]="['city', city.Name]"
         (click)="navigateToCity(city)"
         class="destination-item"
       >
         <div class="img h-[9rem] w-[10rem] flex justify-center items-center">
           <img
             class=""
-            [src]="_environment.imgUrl + '/' + city.imgUrl"
+            [src]="_environment.imgUrl + '/' + city.ImgUrl"
             alt=""
           />
         </div>
-        <span class="city-name">{{ city.name }}</span>
+        <span class="city-name">{{ city.Name }}</span>
         <span class="accommodations"
-          >{{ city.accommodations }} accommodations</span
+          >{{ city.Accommodations }} accommodations</span
         >
       </a>
     </div>
@@ -191,9 +191,9 @@
 
     <div class="homes">
       <div class="home" *ngFor="let city of hcmCity">
-        <img class="mb-1" [src]="city.imgUrl" alt="" />
+        <img class="mb-1" [src]="city.ImgUrl" alt="" />
         <div>
-          <span class="font-bold mb-3 block">{{ city.title }}</span>
+          <span class="font-bold mb-3 block">{{ city.Title }}</span>
           <div>
             <!-- vote -->
             <div class="vote">
@@ -202,7 +202,7 @@
                 <!-- start -->
                 <ng-container
                   *ngFor="
-                    let item of [].constructor(city.vote | star);
+                    let item of [].constructor(city.Vote | star);
                     let i = index
                   "
                 >
@@ -210,14 +210,14 @@
                 </ng-container>
 
                 <!-- half star -->
-                <ng-container *ngIf="city.vote % 1 !== 0">
+                <ng-container *ngIf="city.Vote % 1 !== 0">
                   <span class="material-icons star">star_half</span>
                 </ng-container>
 
                 <!-- no star -->
                 <ng-container
                   *ngFor="
-                    let item of [].constructor(city.vote | noStar);
+                    let item of [].constructor(city.Vote | noStar);
                     let i = index
                   "
                 >
@@ -226,12 +226,12 @@
                 </ng-container>
               </div>
               <span class="text-[0.9em] text-blue-600 w-2/3">{{
-                city.address
+                city.Address
               }}</span>
             </div>
             <!-- price -->
             <span class="text-red-500 text-1.1em] font-bold"
-              >VND {{ city.price }}</span
+              >VND {{ city.Price }}</span
             >
           </div>
         </div>

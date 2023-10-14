@@ -1,0 +1,79 @@
+.container-fluid {
+  @apply pr-2;
+}
+
+// add hotel
+.add-hotel-wrapper {
+	@apply fixed top-0 left-0 bg-gray-500/30 z-20 w-full overflow-hidden duration-150;
+
+}
+
+.form-wrapper {
+	@apply bg-[#bfdbfe] mx-auto my-10 rounded p-2;
+	width: 450px;
+	height: auto;
+}
+
+.form-group-add {
+	@apply text-[1.2em] mb-3 flex justify-between;
+
+  .form-add {
+    @apply text-[1.1em] p-1 outline-none rounded border border-blue-600 duration-100;
+
+    &:focus {
+      box-shadow: 0px 0px 5px #2563eb;
+    }
+  }
+}
+
+//search
+.search-wrapper {
+  @apply border-b pb-2;
+}
+
+.search-container {
+  @apply flex justify-between items-center;
+}
+
+.form-group {
+  @apply flex justify-start items-center gap-2;
+
+  .form-control {
+    @apply w-[250px] p-2 text-[1.2em] outline-none rounded duration-200;
+    border: 1px solid #2563eb;
+    &:focus {
+      box-shadow: 1px 0px 5px #2563eb;
+    }
+  }
+}
+
+.add-btn {
+  @apply flex items-center border border-blue-600 rounded px-1 cursor-pointer text-blue-600 text-[1.1em] duration-100;
+
+  .add-icon {
+    width: 35px;
+    height: 35px;
+    font-size: 35px;
+    color: #2563eb;
+  }
+  &:hover {
+    @apply bg-blue-600 text-white;
+    .add-icon {
+      @apply text-white;
+    }
+  }
+}
+
+// list cities
+.city-container {
+	@apply flex justify-start items-start gap-2 flex-wrap mt-2;
+  
+}
+
+.city-item {
+  @apply w-[230px] p-1 border border-blue-500 rounded cursor-pointer duration-100;
+  &:hover {
+    @apply bg-blue-300/50;
+  }
+}
+
