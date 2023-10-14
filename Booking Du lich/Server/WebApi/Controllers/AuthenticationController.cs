@@ -23,14 +23,14 @@ namespace WebApi1.Controllers
     [ApiController]
     public class AuthenticationController : ControllerBase
     {
-        private readonly IAuthenRepository accountRepo;
+        private readonly IAuthenRepository authenRepository;
         private readonly RoleManager<IdentityRole> _roleManage;
         private readonly IConfiguration _configuration;
         private readonly IEmailSender emailSender;
 
-        public AuthenticationController(IAuthenRepository repo, RoleManager<IdentityRole> role, IConfiguration configuration, IEmailSender emailSender)
+        public AuthenticationController(IAuthenRepository authenRepository, RoleManager<IdentityRole> role, IConfiguration configuration, IEmailSender emailSender)
         {
-            accountRepo = repo;
+            this.authenRepository = authenRepository;
             _roleManage = role;
             _configuration = configuration;
             this.emailSender = emailSender;
@@ -52,7 +52,7 @@ namespace WebApi1.Controllers
                 }
 
                 //Check User exist
-                var userExist = await accountRepo.GetUserByEmail(signUpModel.Email);
+                var userExist = await authenRepository.GetUserByEmail(signUpModel.Email);
 
                 if (userExist != null)
                 {
@@ -69,15 +69,15 @@ namespace WebApi1.Controllers
                     PhoneNumber = signUpModel.PhoneNumber,
                 };
 
-                var result = await accountRepo.CreateUser(user, signUpModel.Password);
+                var result = await authenRepository.CreateUser(user, signUpModel.Password);
 
                 if (!result.Succeeded)
                 {
                     return BadRequest(new JsonResult(new { title = "Error", message = "Register failed. Please try agian." }));
                 }
-                await accountRepo.AddRoleToUser(user, "Agent");
+                await authenRepository.AddRoleToUser(user, "Agent");
 
-                if (await SendEmailConfirmAsync(user))
+                if (await  emailSender.SendEmailConfirmAsync(user))
                 {
                     return Ok(new JsonResult(new
                     {
@@ -110,7 +110,7 @@ namespace WebApi1.Controllers
                 return BadRequest(ModelState);
             }
 
-            var user = await accountRepo.GetUserByEmail(model.email);
+            var user = await authenRepository.GetUserByEmail(model.email);
 
             if (user.EmailConfirmed == true)
             {
@@ -119,7 +119,7 @@ namespace WebApi1.Controllers
 
             if (user != null)
             {
-                var result = await accountRepo.ConfirmEmail(user, model.token);
+                var result = await authenRepository.ConfirmEmail(user, model.token);
                 if (result.Succeeded)
                 {
                     return Ok(new JsonResult(new { title = "Success", message = "Email verified successfully." }));
@@ -141,7 +141,7 @@ namespace WebApi1.Controllers
                 return BadRequest(new JsonResult(new { title = "Error", message = "Incorrect email or password" }));
             }
 
-            var user = await accountRepo.GetUserByEmail(signInModel.Email);
+            var user = await authenRepository.GetUserByEmail(signInModel.Email);
             if (user == null)
             {
                 return BadRequest(new JsonResult(new { title = "Error", message = "Incorrect email or password." }));
@@ -152,7 +152,7 @@ namespace WebApi1.Controllers
                 return BadRequest(new JsonResult(new { title = "Error", message = "Please confirm your email." }));
             }
 
-            var result = await accountRepo.CheckPassword(user, signInModel.Password);
+            var result = await authenRepository.CheckPassword(user, signInModel.Password);
 
             if (result.IsLockedOut)
             {
@@ -164,7 +164,7 @@ namespace WebApi1.Controllers
             {
                 return BadRequest(new JsonResult(new { title = "Error", message = "Incorrect email or password." }));
             }
-            var r = await accountRepo.CreateApplicationUserDto(user);
+            var r = await authenRepository.CreateApplicationUserDto(user);
             return r;
         }
 
@@ -172,12 +172,12 @@ namespace WebApi1.Controllers
         [HttpGet("refresh-user-token")]
         public async Task<ActionResult<UserDto>> RefreshUserToken()
         {
-            var user = await accountRepo.GetUserByEmail(User.FindFirst(ClaimTypes.Email)?.Value!);
-            if (await accountRepo.IsLockedOut(user))
+            var user = await authenRepository.GetUserByEmail(User.FindFirst(ClaimTypes.Email)?.Value!);
+            if (await authenRepository.IsLockedOut(user))
             {
                 return Unauthorized(new JsonResult(new { title = "Error", message = "You have been lock out" }));
             }
-            return await accountRepo.CreateApplicationUserDto(user!);
+            return await authenRepository.CreateApplicationUserDto(user!);
         }
 
         [HttpPost("resent-email")]
@@ -188,7 +188,7 @@ namespace WebApi1.Controllers
                 return BadRequest();
             }
 
-            var userExist = await accountRepo.GetUserByEmail(model.Email);
+            var userExist = await authenRepository.GetUserByEmail(model.Email);
 
             if (userExist == null)
             {
@@ -204,7 +204,7 @@ namespace WebApi1.Controllers
                 }));
             }
 
-            if (await SendEmailConfirmAsync(userExist))
+            if (await emailSender.SendEmailConfirmAsync(userExist))
             {
                 return Ok(new JsonResult(new
                 {
@@ -230,7 +230,7 @@ namespace WebApi1.Controllers
                 return BadRequest(new JsonResult(new { title = "Error", message = "Error" }));
             }
 
-            var userExisted = await accountRepo.GetUserByEmail(email);
+            var userExisted = await authenRepository.GetUserByEmail(email);
             if (userExisted == null)
             {
                 return BadRequest(new JsonResult(new { title = "Error", message = "Email is incorrect" }));
@@ -251,13 +251,13 @@ namespace WebApi1.Controllers
                 return BadRequest(new JsonResult(new { title = "Error", message = "Error" }));
             }
 
-            var userExisted = await accountRepo.GetUserByEmail(model.Email);
+            var userExisted = await authenRepository.GetUserByEmail(model.Email);
             if (userExisted == null)
             {
                 return BadRequest(new JsonResult(new { title = "Error", message = "User is not existed" }));
             }
             // mayf cucs
-            var result = await accountRepo.ResetPassword(userExisted, model.Token, model.Password);
+            var result = await authenRepository.ResetPassword(userExisted, model.Token, model.Password);
 
             if(result.Succeeded == false) {
                 return BadRequest(new JsonResult(new { title = "Error", message = "Error when reset password" }));
@@ -272,20 +272,9 @@ namespace WebApi1.Controllers
 
 
         #region private method
-        private async Task<bool> SendEmailConfirmAsync(ApplicationUser user)
-        {
-            var token = await accountRepo.GenerateEmailConfirmationToken(user);
-            string url = $"{_configuration["JWT:UrlClient"]}/{_configuration["JWT:UrlConfirmEmail"]}?token={token}&email={user.Email}";
-
-            Message message = new Message(new string[] { user.Email! },
-                "Confirm Email",
-                $"<p>We really happy when you using my app. Click <a href='{url}'>here</a> to verify email</p>"!);
-            return await emailSender.SendEmail(message);
-        }
-
         private async Task<bool> SendForgotPasswordEmail(ApplicationUser user)
         {
-            var token = await accountRepo.GeneratePasswordResetToken(user);
+            var token = await authenRepository.GeneratePasswordResetToken(user);
             string url = $"{_configuration["JWT:UrlClient"]}/{_configuration["JWT:UrlResetPassword"]}?token={token}&email={user.Email}";
 
             Message message = new Message(new string[] { user.Email! },

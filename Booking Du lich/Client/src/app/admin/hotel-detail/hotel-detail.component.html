@@ -1,7 +1,5 @@
 <div class="wrapper" *ngIf="hotel !== null">
-  <div class="hotel-name text-2xl font-bold">
-    {{ hotel.HotelName }}
-  </div>
+  
 
   <!-- search -->
   <div class="border flex justify-between item-center">
@@ -16,6 +14,10 @@
       <mat-icon class="add-icon">add_circle</mat-icon>
       <button>Add agent</button>
     </div>
+  </div>
+
+  <div class="hotel-name text-2xl font-bold">
+    {{ hotel.HotelName }}
   </div>
 
   <!-- list agent -->

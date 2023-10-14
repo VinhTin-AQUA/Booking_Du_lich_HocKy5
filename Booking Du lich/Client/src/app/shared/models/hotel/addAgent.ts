@@ -3,6 +3,8 @@ export interface Agent{
 	FirstName: string;
 	LastName: string;
 	Email: string;
+	EmailConfirmed: boolean;
+	LockoutEnd: Date | null;
 	PhoneNumber: string
 	Password: string
 }

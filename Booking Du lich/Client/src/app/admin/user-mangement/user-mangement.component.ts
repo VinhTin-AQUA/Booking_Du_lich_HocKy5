@@ -58,7 +58,7 @@ export class UserMangementComponent {
 
   lockUser(tag: string, user: UserView) {
     if (tag === 'lock') {
-      this.adminService.lockUser(user.Id).subscribe({
+      this.adminService.lockUser(user.Email).subscribe({
         next: (res: any) => {
           this.sharedService.showToastMessage('success Lock user successfully');
           user.LockoutEnd = res.Value.lockoutEnd;
@@ -68,7 +68,7 @@ export class UserMangementComponent {
         },
       });
     } else if (tag === 'un-lock') {
-      this.adminService.unlockUser(user.Id).subscribe({
+      this.adminService.unlockUser(user.Email).subscribe({
         next: (res: any) => {
           this.sharedService.showToastMessage(
             'success Unlock user successfully'
@@ -89,14 +89,14 @@ export class UserMangementComponent {
 
   deleteUserSubmit() {
     if (this.userToDelete !== null) {
-      this.adminService.deleteUser(this.userToDelete.Id).subscribe({
+      this.adminService.deleteUser(this.userToDelete.Email).subscribe({
         next: (res) => {
           this.sharedService.showToastMessage(
             'success Delete user successfully'
           );
 
           const index = this.users.findIndex(
-            (x) => x.Id === this.userToDelete?.Id
+            (x) => x.Id === this.userToDelete?.Email
           );
           if (index !== -1) {
             this.users.splice(index, 1);

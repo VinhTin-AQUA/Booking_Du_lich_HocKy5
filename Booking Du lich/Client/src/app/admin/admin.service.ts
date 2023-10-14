@@ -40,23 +40,23 @@ export class AdminService {
     );
   }
 
-  lockUser(id: string) {
+  lockUser(email: string) {
     return this.http.put(
-      `${environment.appUrl}/usermanager/lock-user?id=${id}`,
+      `${environment.appUrl}/usermanager/lock-user?email=${email}`,
       {}
     );
   }
 
-  unlockUser(id: string) {
+  unlockUser(email: string) {
     return this.http.put(
-      `${environment.appUrl}/usermanager/un-lock-user?id=${id}`,
+      `${environment.appUrl}/usermanager/un-lock-user?email=${email}`,
       {}
     );
   }
 
-  deleteUser(id: string) {
+  deleteUser(email: string) {
     return this.http.delete(
-      `${environment.appUrl}/usermanager/delete-user?id=${id}`
+      `${environment.appUrl}/usermanager/delete-user?email=${email}`
     );
   }
 
@@ -76,7 +76,4 @@ export class AdminService {
     return this.http.post(`${environment.appUrl}/hotel/add-agent`,model);
   }
 
-  deleteAgent(id: string) {
-    return this.http.delete(`${environment.appUrl}/hotel/delete-agent?id=${id}`);
-  }
 }
