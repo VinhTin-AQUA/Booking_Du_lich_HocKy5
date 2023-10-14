@@ -151,6 +151,11 @@ namespace WebApi1.Controllers
             {
                 return BadRequest(new JsonResult(new { title = "Error", message = "Please confirm your email." }));
             }
+            
+            if(user.LockoutEnd != null)
+            {
+                return BadRequest(new JsonResult(new { title = "locked", message = $"Your account has been locked. Please login after {user.LockoutEnd}" }));
+            }
 
             var result = await authenRepository.CheckPassword(user, signInModel.Password);
 

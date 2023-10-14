@@ -16,6 +16,7 @@ export class UserMangementComponent {
   users: UserView[] = [];
   deleteUser: boolean = false;
   userToDelete: UserView | null = null;
+  searchString: string = '';
 
   constructor(
     private adminService: AdminService,
@@ -25,7 +26,7 @@ export class UserMangementComponent {
   }
 
   private getUsers() {
-    this.adminService.getUsers(this.currentPage, this.pageSize).subscribe({
+    this.adminService.getUsers(this.currentPage, this.pageSize, this.searchString).subscribe({
       next: (res: any) => {
         this.users = res.users;
         this.totalPages = Math.floor(res.totalUser / this.pageSize);
@@ -96,7 +97,7 @@ export class UserMangementComponent {
           );
 
           const index = this.users.findIndex(
-            (x) => x.Id === this.userToDelete?.Email
+            (x) => x.Email === this.userToDelete?.Email
           );
           if (index !== -1) {
             this.users.splice(index, 1);
@@ -108,5 +109,9 @@ export class UserMangementComponent {
         },
       });
     }
+  }
+
+  search() {
+    this.getUsers();
   }
 }
