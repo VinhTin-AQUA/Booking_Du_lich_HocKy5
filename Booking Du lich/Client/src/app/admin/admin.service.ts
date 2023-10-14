@@ -76,4 +76,7 @@ export class AdminService {
     return this.http.post(`${environment.appUrl}/hotel/add-agent`,model);
   }
 
+  deleteHotel(hotelId: string | null) {
+    return this.http.delete(`${environment.appUrl}/hotel/delete-hotel?hotelId=${hotelId}`);
+  }
 }

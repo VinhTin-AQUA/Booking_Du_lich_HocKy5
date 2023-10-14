@@ -10,9 +10,16 @@
     </div>
 
     <!-- add -->
-    <div class="add-btn" (click)="showaddAgent()">
-      <mat-icon class="add-icon">add_circle</mat-icon>
-      <button>Add agent</button>
+    <div class="flex items-center gap-2">
+      <div class="delete-btn" (click)="deleteHotel()" >
+        <mat-icon title="delete user" class="delete-hotel-icon">delete</mat-icon>
+        <button>Delete hotel</button>
+      </div>
+
+      <div class="add-btn" (click)="showaddAgent()">
+        <mat-icon class="add-icon">add_circle</mat-icon>
+        <button>Add agent</button>
+      </div>
     </div>
   </div>
 
@@ -66,7 +73,6 @@
 
     </div>
   </div>
-
 </div>
 
 <!-- add agent -->

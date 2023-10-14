@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription, share } from 'rxjs';
 import { Hotel } from 'src/app/shared/models/hotel/hotel';
 import { SharedService } from 'src/app/shared/shared.service';
@@ -15,7 +15,7 @@ import { Agent } from 'src/app/shared/models/hotel/addAgent';
 export class HotelDetailComponent implements OnInit {
   hotel: Hotel | null = null;
   agents: any;
-  id: string | null = '';
+  hotelId: string | null = '';
   signUpForm: FormGroup = new FormGroup({});
   submitted: boolean = false;
   isShowedAgent: boolean = false;
@@ -27,13 +27,14 @@ export class HotelDetailComponent implements OnInit {
     private sharedService: SharedService,
     private activaredRoute: ActivatedRoute,
     private adminService: AdminService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private router: Router
   ) {
     this.activaredRoute.paramMap.subscribe((param) => {
-      this.id = param.get('id');
+      this.hotelId = param.get('id');
     });
 
-    this.adminService.getHotelById(this.id).subscribe({
+    this.adminService.getHotelById(this.hotelId).subscribe({
       next: (res: any) => {
         this.hotel = res;
         this.agents = res.Agents;
@@ -60,6 +61,24 @@ export class HotelDetailComponent implements OnInit {
     this.signUpForm.controls['email'].setValue('');
     this.signUpForm.controls['phoneNumber'].setValue('');
     this.signUpForm.controls['password'].setValue('abc123');
+
+    this.submitted = false;
+      this.erroMessage = [];
+  }
+
+  deleteHotel() {
+    this.sharedService.showLoading(true);
+    this.adminService.deleteHotel(this.hotelId).subscribe({
+      next: (res: any) => {
+        this.sharedService.showToastMessage('success' + res.Value.message);
+        this.sharedService.showLoading(false);
+        this.router.navigateByUrl('/admin/hotel-management');
+      },
+      error: (err) => {
+        this.sharedService.showLoading(false);
+        this.sharedService.showToastMessage(err.error.Value.message);
+      }
+    })
   }
 
   showaddAgent() {
@@ -67,7 +86,6 @@ export class HotelDetailComponent implements OnInit {
 
     if (this.isShowedAgent === false) {
       this.resetSignUpForm()
-      this.submitted = false;
     }
   }
 
@@ -88,7 +106,7 @@ export class HotelDetailComponent implements OnInit {
     this.erroMessage = [];
     if (this.signUpForm.valid) {
       const model: Agent = {
-        HotelId: this.id,
+        HotelId: this.hotelId,
         FirstName: this.signUpForm.value.firstName,
         LastName: this.signUpForm.value.lastName,
         Email: this.signUpForm.value.email,
@@ -106,8 +124,8 @@ export class HotelDetailComponent implements OnInit {
           this.isShowedAgent = false;
           this.agents.push(model);
           this.sharedService.showLoading(false);
-          this.submitted = false;
-          this.resetSignUpForm()
+          this.resetSignUpForm();
+          
         },
         error: (err) => {
           if (err.error.Errors !== undefined) {
