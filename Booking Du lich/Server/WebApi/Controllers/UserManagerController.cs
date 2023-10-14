@@ -20,9 +20,9 @@ namespace WebApi.Controllers
         }
 
         [HttpGet("get-users")]
-        public async Task<IActionResult> GetUsers([FromQuery] int currentPage, [FromQuery] int pageSize)
+        public async Task<IActionResult> GetUsers([FromQuery] int currentPage, [FromQuery] int pageSize, string? searchString)
         {
-            var users = await userManagerRepository.GetUser(currentPage, pageSize);
+            var users = await userManagerRepository.GetUser(currentPage, pageSize, searchString);
 
             var userView = new List<UserView>();
 
@@ -40,7 +40,7 @@ namespace WebApi.Controllers
                 });
             }
 
-            int totalUser = userManagerRepository.TotalUsers();
+            int totalUser = userView.Count();
 
             return Ok(new { users = userView, totalUser = totalUser });
         }

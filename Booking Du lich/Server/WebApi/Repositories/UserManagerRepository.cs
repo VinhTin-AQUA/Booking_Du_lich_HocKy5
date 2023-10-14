@@ -20,13 +20,24 @@ namespace WebApi.Repositories
             return totalUser;
         }
 
-        public async Task<IEnumerable<ApplicationUser>> GetUser(int currentPage, int pageSize)
+        public async Task<IEnumerable<ApplicationUser>> GetUser(int currentPage, int pageSize, string? searchString)
         {
-            var users = await userManager.Users
-                .Skip(currentPage*pageSize)
+            if (string.IsNullOrEmpty(searchString))
+            {
+                var users = await userManager.Users
+                .Skip(currentPage * pageSize)
                 .Take(pageSize)
                 .ToListAsync();
-            return users;
+                return users;
+            }
+
+            var _users = await userManager.Users
+                .Where(u => u.FirstName.ToLower().Contains(searchString.ToLower()) || u.LastName.ToLower().Contains(searchString.ToLower()))
+                .Skip(currentPage * pageSize)
+                .Take(pageSize)
+                
+                .ToListAsync();
+            return _users;
         }
 
         public async Task<IdentityResult> LockUser(ApplicationUser user)
@@ -34,7 +45,7 @@ namespace WebApi.Repositories
             DateTimeOffset? date = new DateTimeOffset(DateTime.Now.AddDays(3));
             var r = await userManager.SetLockoutEndDateAsync(user, date);
             return r;
-        } 
+        }
 
         public async Task<IdentityResult> UnlockUser(ApplicationUser user)
         {

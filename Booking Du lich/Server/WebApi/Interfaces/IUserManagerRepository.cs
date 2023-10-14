@@ -5,7 +5,7 @@ namespace WebApi.Interfaces
 {
     public interface IUserManagerRepository
     {
-        public Task<IEnumerable<ApplicationUser>> GetUser(int currentPage, int pageSize);
+        public Task<IEnumerable<ApplicationUser>> GetUser(int currentPage, int pageSize, string? searchString);
 
         public int TotalUsers();
         public Task<IdentityResult> LockUser(ApplicationUser user);

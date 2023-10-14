@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AccountService } from 'src/app/account/account.service';
 
 @Component({
   selector: 'app-hotels',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./hotel.component.scss']
 })
 export class HotelComponent {
-
+  constructor(private accountService: AccountService) {
+    this.accountService.user$.subscribe(user => {
+      console.log(user);
+      
+    })
+  }
 }
