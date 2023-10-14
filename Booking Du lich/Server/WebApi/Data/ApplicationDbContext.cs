@@ -40,17 +40,26 @@ namespace WebApi1.Data
                 .HasMany(h => h.Agents)
                 .WithOne(u => u.Hotel)
                 .HasForeignKey(u => u.HotelId);
+            modelBuilder.Entity<Hotel>()
+                .HasMany(h => h.Rooms)
+                .WithOne(r => r.Hotel)
+                .HasForeignKey(r => r.HotelId);
 
             modelBuilder.Entity<City>()
                 .HasMany(c => c.Hotels)
                 .WithOne(h => h.City)
                 .HasForeignKey(h => h.CityId);
 
+            modelBuilder.Entity<Room>()
+                .HasKey(r => r.Id).HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+            
 
         }
 
         public DbSet<City> City { get; set; }
         public DbSet<Hotel> Hotel { get; set; }
+
+        public DbSet<Room> Room { get; set; }  
 
         private void SeedRole(ModelBuilder builder)
         {

@@ -1,40 +1,38 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Diagnostics.CodeAnalysis;
 
 namespace WebApi.Models
 {
-    [Table("Hotel")]
-    public class Hotel
+    [Table("Room")]
+    public class Room
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         [Required(ErrorMessage = "{0} must be required")]
-        [Display(Name = "Hotel name")]
+        [Display(Name = "Number Room")]
         [Column(TypeName = "nvarchar(250)")]
-        public string HotelName { get; set; }
+        public string RoomNumber { get; set; }
 
-        [Display(Name = "Address")]
+        [Required(ErrorMessage = "{0} must be required")]
+        [Display(Name = "Room Name")]
         [Column(TypeName = "nvarchar(250)")]
-        public string? Address { get; set; }
-
-        public int AvailableRoom { get; set; } = 0;
+        public string Name { get; set; }
 
         [Display(Name = "Description")]
         [Column(TypeName = "nvarchar(max)")]
         public string? Description { get; set; }
 
+        public bool IsAvailable { get; set; } = true;
+
         [Column(TypeName = "varchar(250)")]
         public string? PhotoPath { get; set; }
 
-        /*tham chiếu khóa ngoại*/ 
-        public ICollection<ApplicationUser> Agents { get; set; }
+        // Tham chieu khoa ngoai
 
-        public int? CityId { get; set; }
-        public City City { get; set; }
+        public int? HotelId { get; set; }
 
-        public ICollection<Room> Rooms { get; set; }
+        public Hotel Hotel { get; set; }
     }
 }
