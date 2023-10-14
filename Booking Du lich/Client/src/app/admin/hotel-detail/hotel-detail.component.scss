@@ -13,6 +13,23 @@
   }
 }
 
+.delete-btn {
+  @apply flex items-center border border-red-600 rounded px-1 cursor-pointer text-red-600 text-[1.1em] duration-100;
+
+  .delete-hotel-icon {
+    width: 35px;
+    height: 35px;
+    font-size: 35px;
+    color: #eb2525;
+  }
+  &:hover {
+    @apply bg-red-600 text-white;
+    .delete-hotel-icon {
+      @apply text-white;
+    }
+  }
+}
+
 .add-btn {
   @apply flex items-center border border-blue-600 rounded px-1 cursor-pointer text-blue-600 text-[1.1em] duration-100;
 

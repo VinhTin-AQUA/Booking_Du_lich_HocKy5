@@ -56,5 +56,15 @@ namespace WebApi.Repositories
             return r;
         }
 
+        public async Task<bool> DeleteHotel(Hotel hotel)
+        {
+            // delete agent 
+            var agents = userManager.Users.Where(h => h.HotelId == hotel.Id).ToList();
+            context.Users.RemoveRange(agents);
+
+            // delete hotel
+            context.Hotel.Remove(hotel);
+            return await Save();
+        }
     }
 }

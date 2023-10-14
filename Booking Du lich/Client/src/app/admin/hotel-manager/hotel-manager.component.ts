@@ -49,6 +49,7 @@ export class HotelManagerComponent implements OnInit {
           this.sharedService.showToastMessage('success' + res.Value.message);
           this.sharedService.showLoading(false);
           this.addHotelModal = false;
+          this.allHotels.push(res.Value.newHotel);
         },
         error: (err) => {
           this.sharedService.showToastMessage(err.error.Value.message);

@@ -46,7 +46,7 @@ namespace WebApi.Controllers
                 return BadRequest(new JsonResult(new { title = "Error", message = "Something error when add hotel" }));
             }
 
-            return Ok(new JsonResult(new { title = "Success", message = "Add hotel successfully" }));
+            return Ok(new JsonResult(new { title = "Success", message = "Add hotel successfully" , newHotel = hotel }));
         }
 
         [HttpGet("get-all-hotels")]
@@ -112,13 +112,16 @@ namespace WebApi.Controllers
                 HotelId = model.HotelId,
                 Hotel = hotel,
             };
-            var r = await hotelRepository.AdddAgent(newAgent, model.Password);
             
+
+            var r = await hotelRepository.AdddAgent(newAgent, model.Password);
             
             if (r.Succeeded == false)
             {
                 return BadRequest(new JsonResult(new { title = "Error", message = "Something error. Please try again" }));
             }
+
+            await authenRepository.AddRoleToUser(newAgent, "Agent");
 
             string message = @$"<p>Hello <b>{newAgent.FirstName} {newAgent.LastName}</b></p> <p>Your passwork: <b>abc@123</b></p><p>Please change your password after confirm email</p>";
 
@@ -134,5 +137,26 @@ namespace WebApi.Controllers
             return Ok(new JsonResult(new { title = "Success", message = "Add agent successfully" }));
         }
 
+        [HttpDelete("delete-hotel")]
+        public async Task<IActionResult> DeleteHotel([FromQuery] int? hotelId)
+        {
+            if (hotelId == null)
+            {
+                return BadRequest();
+            }
+            var hotel = await hotelRepository.GetHotelById(hotelId);
+
+            if (hotel == null)
+            {
+                return BadRequest(new JsonResult(new { title= "Error", message = "Hotel was not found" }));
+            }
+
+            var r = await hotelRepository.DeleteHotel(hotel);
+            if (r == false)
+            {
+                return BadRequest(new JsonResult(new { title = "Error", message = "Something error" }));
+            }
+            return Ok(new JsonResult(new { title = "Success", message = "Hotel delete successfully" }));
+        }
     }
 }
