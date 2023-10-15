@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { map, pipe, mergeMap } from 'rxjs';
+import { map, pipe, mergeMap, every } from 'rxjs';
 
 import { AccountService } from 'src/app/account/account.service';
 import { AgentService } from '../agent.service';
@@ -28,6 +28,10 @@ export class HotelComponent {
     ImgUrl: 'string',
     Accommodations: 1,
   };
+
+  //img
+  listShowImgUrls: any = [];
+  listImgAdd: any = [];
 
   constructor(
     private accountService: AccountService,
@@ -97,6 +101,15 @@ export class HotelComponent {
       formData.append('cityId', this.formHotelSubmit.value.cityId);
       formData.append('Id', this.formHotelSubmit.value.Id);
 
+      //formData.append('images', 'hotel');
+      //formData.append('files', this.listImgAdd);
+      
+      //this.listImgAdd.forEarch((_file: any) => formData.append('files',_file))
+      for(let file of this.listImgAdd) {
+        formData.append('files',file);
+      }
+
+
       this.agentService.updateHotel(formData).subscribe({
         next: (res: any) => {
           console.log(res.Value.message);
@@ -106,6 +119,27 @@ export class HotelComponent {
           this.sharedService.showToastMessage(err.error.Value.message);
         },
       });
+    }
+  }
+
+  // img
+  onSelectImg(event: any) {
+
+    for(let file of event.target.files) {
+      this.listImgAdd.push(file);
+    }
+    console.log(this.listImgAdd);
+    console.log(this.listImgAdd.length);
+
+    if (event.target.files) {
+      const n = event.target.files.length;
+      for (let i = 0; i < n; i++) {
+        var reader = new FileReader();
+        reader.readAsDataURL(event.target.files[i]);
+        reader.onload = (events: any) => {
+          this.listShowImgUrls.push(events.target.result);
+        };
+      }
     }
   }
 }

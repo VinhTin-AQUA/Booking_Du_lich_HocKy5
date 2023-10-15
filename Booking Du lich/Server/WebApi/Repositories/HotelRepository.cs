@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebApi.Interfaces;
 using WebApi.Models;
@@ -85,5 +86,7 @@ namespace WebApi.Repositories
             context.Hotel.Update(hotel);
             return await Save();
         }
+
+        
     }
 }
