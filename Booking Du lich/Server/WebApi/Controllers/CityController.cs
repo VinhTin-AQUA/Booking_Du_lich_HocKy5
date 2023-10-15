@@ -74,7 +74,7 @@ namespace WebApi.Controllers
             var city = await cityRepository.GetCityById(id);
 
             var result = await cityRepository.Delete(city);
-            imageService.DeleteImage(city.ImgUrl);
+            imageService.DeleteCityImage(city.ImgUrl);
             if (result == false)
             {
                 return BadRequest(new JsonResult(new { title = "Error", message = "Error when delete city" }));

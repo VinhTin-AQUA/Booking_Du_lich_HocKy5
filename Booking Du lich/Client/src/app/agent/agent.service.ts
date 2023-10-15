@@ -16,4 +16,13 @@ export class AgentService {
   updateHotel(formData: FormData) {
     return this.http.put(`${environment.appUrl}/hotel/update-hotel`,formData);
   }
+
+  deleteImgHotel(url: string) {
+    return this.http.delete(`${environment.appUrl}/hotel/delete-img-hotel?url=${url}`);
+  }
+
+  deleteAllImgHotel(hotelId: number | undefined) {
+    return this.http.delete(`${environment.appUrl}/hotel/delete-all-img-hotel?hotelId=${hotelId}`);
+  }
+
 }

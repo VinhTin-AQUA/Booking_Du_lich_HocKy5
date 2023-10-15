@@ -1,21 +1,23 @@
 <div class="wrapper">
-	
 	<div class="contain">
-
 		<div class="img-menu">
-			<!--<button class="btn-primary">Thêm hình ảnh</button>-->
-			<input (change)="onSelectImg($event)" type="file" class="btn-primary" multiple>
+			<input #fileInput (change)="onSelectImg($event)" type="file" class="btn-primary" multiple>
+			<button (click)="deleteAllIg()" class="btn-outline-danger">Xóa tất cả ảnh</button>
 		</div>
-
 		<div class="img-container">
 			<div class=" columns-2 md:columns-3  gap-2">
-				<div *ngFor="let url of listShowImgUrls" class="break-inside-avoid mb-2">
+				<div *ngFor="let url of imgFiles" class="break-inside-avoid mb-2 rounded border">
+					<mat-icon (click)="removeImgSaved(url)" class="remove-img-icon">delete</mat-icon>
+					<img [src]="envImgUrl + url" alt="">
+				</div>
+
+				<div *ngFor="let url of listNewImgUrls" class="break-inside-avoid mb-2 rounded border">
+					<mat-icon (click)="removeImgUnSave(url)" class="remove-img-icon">delete</mat-icon>
 					<img [src]="url" alt="">
 				</div>
 			</div>
 		</div>
 		<div class="room-infor bg-green-400">rooms</div>
-		
 	</div>
 
 	<div class="hotel-infor">
@@ -52,5 +54,4 @@
 
 		</form>
 	</div>
-
 </div>

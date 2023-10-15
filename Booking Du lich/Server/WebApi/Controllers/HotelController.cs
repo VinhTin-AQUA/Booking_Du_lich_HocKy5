@@ -100,24 +100,22 @@ namespace WebApi.Controllers
             return Ok(cities);
         }
 
-        [HttpGet("get-hotel-by-id")]
-        public async Task<IActionResult> GetHotelById([FromQuery] int? id)
-        {
-            if (id == null)
-            {
-                return BadRequest();
-            }
+        //[HttpGet("get-hotel-by-id")]
+        //public async Task<IActionResult> GetHotelById([FromQuery] int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return BadRequest();
+        //    }
 
-            var hotel = await hotelRepository.GetHotelById(id);
-            if (hotel == null)
-            {
-                return BadRequest(new JsonResult(new { title = "Error", mesage = "Hotel not found" }));
-            }
+        //    var hotel = await hotelRepository.GetHotelById(id);
+        //    if (hotel == null)
+        //    {
+        //        return BadRequest(new JsonResult(new { title = "Error", mesage = "Hotel not found" }));
+        //    }
 
-
-
-            return Ok(hotel);
-        }
+        //    return Ok(hotel);
+        //}
 
         [HttpGet("get-hotel-of-agent")]
         public async Task<IActionResult> GetHotelOfAgent([FromQuery] string agentId)
@@ -132,7 +130,10 @@ namespace WebApi.Controllers
             {
                 return BadRequest(new JsonResult(new { title = "Error", message = "Không tìm thấy khách sạn" }));
             }
-            return Ok(hotel);
+
+            var imgFileNames = imageService.GetAllFileOfFolder("hotels", hotel.Id.ToString(), "_imgHotel");
+
+            return Ok(new {hotel = hotel, imgFileNames = imgFileNames});
         }
 
         [HttpPost("add-agent")]
@@ -217,6 +218,29 @@ namespace WebApi.Controllers
                 return BadRequest(new JsonResult(new { title = "Error", message = "Something error" }));
             }
             return Ok(new JsonResult(new { title = "Success", message = "Hotel delete successfully" }));
+        }
+
+        [HttpDelete("delete-img-hotel")]
+        public IActionResult DeleteImgHotel([FromQuery]string url)
+        {
+            if(string.IsNullOrEmpty(url))
+            {
+                return BadRequest();
+            }
+            imageService.DeleteImgHotel(url);
+
+            return Ok();
+        }
+
+        [HttpDelete("delete-all-img-hotel")]
+        public IActionResult DeleteAllImgHotel([FromQuery] string hotelId)
+        {
+            if (string.IsNullOrEmpty(hotelId))
+            {
+                return BadRequest();
+            }
+            imageService.DeleteAllImgHotel(hotelId);
+            return Ok();
         }
     }
 }
