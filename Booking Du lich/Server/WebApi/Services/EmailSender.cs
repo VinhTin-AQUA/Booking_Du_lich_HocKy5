@@ -2,6 +2,7 @@
 using MailKit.Net.Smtp;
 using MimeKit;
 using WebApi.Interfaces;
+using WebApi.Models;
 using WebApi.Models.MailService;
 
 namespace WebApi.Services
@@ -10,11 +11,17 @@ namespace WebApi.Services
     {
         // inject dịch vụ EmailConfiguration để lấy cấu hình gửi mail
         private readonly EmailConfiguration emailConfig;
+        private readonly IAuthenRepository authenRepository;
+        private readonly IConfiguration configuration;
 
-        public EmailSender(EmailConfiguration emailConfig)
+        public EmailSender(IAuthenRepository authenRepository, IConfiguration configuration, EmailConfiguration emailConfig)
         {
+            this.authenRepository = authenRepository;
+            this.configuration = configuration;
             this.emailConfig = emailConfig;
         }
+
+     
 
         // tạo email (thư gửi đi)
         private MimeMessage CreateEmailMessage(Message message)
@@ -53,6 +60,18 @@ namespace WebApi.Services
                 }
             }
             return isSent;
+        }
+
+
+        public async Task<bool> SendEmailConfirmAsync(ApplicationUser user, params string[] messages)
+        {
+            var token = await authenRepository.GenerateEmailConfirmationToken(user);
+            string url = $"{configuration["JWT:UrlClient"]}/{configuration["JWT:UrlConfirmEmail"]}?token={token}&email={user.Email}";
+
+            Message message = new Message(new string[] { user.Email! },
+                "Confirm Email",
+                $"<p>We really happy when you using my app. Click <a href='{url}'>here</a> to verify email</p>" + messages[0]);
+            return await SendEmail(message);
         }
     }
 }

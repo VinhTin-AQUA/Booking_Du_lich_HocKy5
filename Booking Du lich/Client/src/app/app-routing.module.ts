@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { AccessDeniedComponent } from './access-denied/access-denied.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, title: 'Home' },
+  { path: 'access-denied', component: AccessDeniedComponent, title: 'Access denied' },
   {
     path: 'account',
     loadChildren: () =>
@@ -17,6 +19,10 @@ const routes: Routes = [
   {
     path: 'admin',
     loadChildren: () => import('../app/admin/admin.module').then((m) => m.AdminModule),
+  },
+  {
+    path: 'agent',
+    loadChildren: () => import('../app/agent/agent.module').then((m) => m.AgentModule),
   }
 ];
 

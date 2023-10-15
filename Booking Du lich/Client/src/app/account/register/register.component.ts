@@ -28,6 +28,8 @@ export class RegisterComponent implements OnInit {
       firstName: ['', [Validators.required]],
       lastName: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
+      address: ['', [Validators.required]],
+      phoneNumber: ['', [Validators.required]],
       password: [
         '',
         [
@@ -77,7 +79,7 @@ export class RegisterComponent implements OnInit {
         },
         error: (errors: any) => {
           this.sharedService.showLoading(false);
-          this.errorMessages = errors.error.value.message
+          this.errorMessages = errors.error.Value.message
         },
       });
     }

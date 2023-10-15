@@ -73,6 +73,42 @@
         </span>
       </div>
 
+      <!-- address -->
+      <div class="text-[1.2em] mb-4">
+        <label class="block mb-2">Address</label>
+        <input
+          [class]="inputValidation('address')"
+          type="text"
+          formControlName="address"
+          spellcheck="false"
+          placeholder="Address"
+        />
+        <span
+          class="text-red-500"
+          *ngIf="submitted === true && signUpForm.hasError('required', 'address')"
+        >
+          Address is required
+        </span>
+      </div>
+
+      <!-- phone number -->
+      <div class="text-[1.2em] mb-4">
+        <label class="block mb-2">Address</label>
+        <input
+          [class]="inputValidation('phoneNumber')"
+          type="text"
+          formControlName="phoneNumber"
+          spellcheck="false"
+          placeholder="PhoneNumber"
+        />
+        <span
+          class="text-red-500"
+          *ngIf="submitted === true && signUpForm.hasError('required', 'phoneNumber')"
+        >
+          PhoneNumber is required
+        </span>
+      </div>
+
       <!-- password -->
       <div class="text-[1.2em] mb-4">
         <label class="block mb-2">Password</label>

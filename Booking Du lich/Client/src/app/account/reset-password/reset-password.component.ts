@@ -17,10 +17,10 @@ export class ResetPasswordComponent {
   errorMessage: string = '';
   errorMessages: string[] = [];
   model: ResetPassword = {
-    password: '',
-    confirmPassword: '',
-    token: '',
-    email: '',
+    Password: '',
+    ConfirmPassword: '',
+    Token: '',
+    Email: '',
   };
 
   constructor(
@@ -41,8 +41,8 @@ export class ResetPasswordComponent {
   private getTokenAndEmail() {
     this.activatedRoute.queryParams.subscribe({
       next: (params: any) => {
-        this.model.token = params.token;
-        this.model.email = params.email;
+        this.model.Token = params.token;
+        this.model.Email = params.email;
       },
     });
   }
@@ -55,8 +55,8 @@ export class ResetPasswordComponent {
 
       const confirmPassword = this.formSubmit.value.confirmPassword;
 
-      this.model.password = password;
-      this.model.confirmPassword = confirmPassword;
+      this.model.Password = password;
+      this.model.ConfirmPassword = confirmPassword;
       this.sharedService.showLoading(true);
       if (password !== confirmPassword) {
         this.errorMessage = 'Password is not match';
@@ -65,12 +65,11 @@ export class ResetPasswordComponent {
         this.accountService.resetPassword(this.model).subscribe({
           next: (res: any) => {
             this.sharedService.showLoading(false);
-            this.sharedService.showToastMessage('success' + res.value.message);
+            this.sharedService.showToastMessage('success' + res.Value.message);
             this.router.navigateByUrl('/account/login');
           },
           error: (err) => {
-            console.log(err.error.errors);
-            this.errorMessages = err.error.errors
+            this.errorMessages = err.error.Errors
             this.sharedService.showLoading(false);
           },
         });

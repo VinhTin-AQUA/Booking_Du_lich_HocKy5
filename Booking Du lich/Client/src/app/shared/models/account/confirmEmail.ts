@@ -1,4 +1,4 @@
 export interface ConfirmEmail {
-	token: string;
-	email: string;
+	Token: string;
+	Email: string;
 }

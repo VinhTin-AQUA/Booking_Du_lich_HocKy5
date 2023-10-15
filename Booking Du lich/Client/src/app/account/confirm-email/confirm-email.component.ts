@@ -34,20 +34,22 @@ export class ConfirmEmailComponent implements OnInit {
           this.confirmed = false;
         } else {
           const model: ConfirmEmail = {
-            token: params.get('token'),
-            email: params.get('email'),
+            Token: params.get('token'),
+            Email: params.get('email'),
           };
+
           this.accountService.confirmEmail(model).subscribe({
             next: (res: any) => {
               this.title = 'Thank you for trusting our service';
               this.message = 'Your email has been successfully confirmed. Please click the button below to log in';
             },
             error: (err: any) => {
-              console.log(err.error);
+              this.title = err.error.Value.title;
+              this.message = err.error.Value.message;
             },
           });
         }
-      },
+      }
     });
   }
 }

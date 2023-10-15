@@ -34,14 +34,14 @@ export class ForgotPasswordComponent {
         .forgotPassword(this.formSubmit.value.email)
         .subscribe({
           next: (res: any) => {
-            if (res.value.message === 'Email sent') {
+            if (res.Value.message === 'Email sent') {
               this.router.navigate(['/account/send-email-reset-password']);
             }
             this.sharedService.showLoading(false);
           },
           error: (err) => {
             this.sharedService.showLoading(false);
-            this.errorMessage = err.error.value.message;
+            this.errorMessage = err.error.Value.message;
           },
         });
     }

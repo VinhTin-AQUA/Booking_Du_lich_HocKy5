@@ -27,8 +27,6 @@ export class HeaderComponent {
     this.collapseMenu = false;
   }
 
-
-
   logout() {
     this.accountService.logout();
     this.router.navigateByUrl('/account/login')

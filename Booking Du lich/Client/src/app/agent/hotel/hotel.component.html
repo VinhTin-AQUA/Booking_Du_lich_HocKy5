@@ -1,0 +1,56 @@
+<div class="wrapper">
+	
+	<div class="contain">
+
+		<div class="img-menu">
+			<!--<button class="btn-primary">Thêm hình ảnh</button>-->
+			<input (change)="onSelectImg($event)" type="file" class="btn-primary" multiple>
+		</div>
+
+		<div class="img-container">
+			<div class=" columns-2 md:columns-3  gap-2">
+				<div *ngFor="let url of listShowImgUrls" class="break-inside-avoid mb-2">
+					<img [src]="url" alt="">
+				</div>
+			</div>
+		</div>
+		<div class="room-infor bg-green-400">rooms</div>
+		
+	</div>
+
+	<div class="hotel-infor">
+		<form [formGroup]="formHotelSubmit" autocomplete="off" (ngSubmit)="submitHotel()">
+			<!-- tên khách sạn -->
+			<div class="form-group">
+				<label >Tên khách sạn</label>
+				<input formControlName="hotelName" class="form-control" type="text" placeholder="Miền tây">
+			</div>
+
+			<!--  địa chỉ -->
+			<div class="form-group">
+				<label >Địa chỉ</label>
+				<input formControlName="address" class="form-control" type="text" placeholder="450, Lê Văn Việt, phường Tăng Nhơn Phú A, Tp. Thủ Đức, Tp.HCM">
+			</div>
+
+			<!-- chọn thành phố -->
+			<div class="form-group">
+				<label >Tỉnh / Thành phố</label>
+				<select formControlName="cityId" class="form-control">
+					<option *ngFor="let city of cities" [value]="city.Id" [selected]="city.Id == cityOfHotel.Id">{{city.Name}}</option>
+				</select>
+			</div>	
+
+			<!-- miêu tả -->
+			<div class="form-group">
+				<label >Miêu tả</label>
+				<textarea formControlName="description" class="form-control" cols="30" rows="10" spellcheck="false"></textarea>
+			</div>
+
+			<div>
+				<button class="btn-primary w-full">Lưu tất cả</button>
+			</div>
+
+		</form>
+	</div>
+
+</div>
