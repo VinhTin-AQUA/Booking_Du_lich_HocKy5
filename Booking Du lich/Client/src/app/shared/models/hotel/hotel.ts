@@ -1,3 +1,5 @@
+import { City } from "../city/city";
+
 export interface Hotel {
   Id: number;
   HotelName: string;
@@ -6,4 +8,5 @@ export interface Hotel {
   Description: string;
   PhotoPath: string;
   Agents: any;
+  City: City;
 }

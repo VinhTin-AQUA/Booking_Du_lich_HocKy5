@@ -31,12 +31,10 @@ export class AppComponent implements OnInit {
         error: (err: any) => {
           //this.accountService.logout();
           this.accountService.notLogin();
-          this.router.navigateByUrl('');
         },
       });
     } else {
       this.accountService.refreshUser(null).subscribe();
-      this.router.navigateByUrl('');
     }
   }
 }
