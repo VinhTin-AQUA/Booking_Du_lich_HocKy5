@@ -16,14 +16,16 @@ namespace WebApi.Controllers
         private readonly IAuthenRepository authenRepository;
         private readonly IEmailSender emailSender;
         private readonly ICityRepository cityRepository;
+        private readonly IImageService imageService;
 
         public HotelController(IHotelRepository hotelRepository, IAuthenRepository authenRepository,
-            IEmailSender emailSender, ICityRepository cityRepository)
+            IEmailSender emailSender, ICityRepository cityRepository, IImageService imageService)
         {
             this.hotelRepository = hotelRepository;
             this.authenRepository = authenRepository;
             this.emailSender = emailSender;
             this.cityRepository = cityRepository;
+            this.imageService = imageService;
         }
 
         [HttpPost("add-hotel")]
@@ -52,7 +54,7 @@ namespace WebApi.Controllers
         }
 
         [HttpPut("update-hotel")]
-        public async Task<IActionResult> UpdateHotel(IFormFile files,[FromForm] UpdateHotel model)
+        public async Task<IActionResult> UpdateHotel(List<IFormFile> files,[FromForm] UpdateHotel model)
         {
             if (model == null)
             {
@@ -73,6 +75,14 @@ namespace WebApi.Controllers
             hotel.Description = model.Description;
             hotel.CityId = model.CityId;
             hotel.City = city;
+
+            // lưu hình ảnh
+            string urlImgFolder = "";
+            if (files != null)
+            {
+                urlImgFolder = await imageService.UploadImagesHotel(files, hotel);
+                hotel.PhotoPath = urlImgFolder;
+            }
 
             var r = await hotelRepository.UpdateHotel(hotel);
             if(r == false)

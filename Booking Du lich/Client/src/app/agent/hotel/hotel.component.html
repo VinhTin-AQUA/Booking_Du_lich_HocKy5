@@ -2,14 +2,18 @@
 	
 	<div class="contain">
 
-		<div class="img-menu ">
-			<button class="btn-primary">Thêm hình ảnh</button>
+		<div class="img-menu">
+			<!--<button class="btn-primary">Thêm hình ảnh</button>-->
+			<input (change)="onSelectImg($event)" type="file" class="btn-primary" multiple>
 		</div>
 
-		<div class="img-container ">
-			dfgd
+		<div class="img-container">
+			<div class=" columns-2 md:columns-3  gap-2">
+				<div *ngFor="let url of listShowImgUrls" class="break-inside-avoid mb-2">
+					<img [src]="url" alt="">
+				</div>
+			</div>
 		</div>
-		
 		<div class="room-infor bg-green-400">rooms</div>
 		
 	</div>
@@ -39,11 +43,11 @@
 			<!-- miêu tả -->
 			<div class="form-group">
 				<label >Miêu tả</label>
-				<textarea formControlName="description" resize="false" class="form-control" cols="30" rows="10"></textarea>
+				<textarea formControlName="description" class="form-control" cols="30" rows="10" spellcheck="false"></textarea>
 			</div>
 
 			<div>
-				<button class="btn-primary w-full">Lưu</button>
+				<button class="btn-primary w-full">Lưu tất cả</button>
 			</div>
 
 		</form>

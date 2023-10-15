@@ -3,6 +3,7 @@ using Microsoft.Extensions.Hosting;
 using Org.BouncyCastle.Asn1.Ocsp;
 using Org.BouncyCastle.Asn1.X509;
 using WebApi.Interfaces;
+using WebApi.Models;
 
 namespace WebApi.Services
 {
@@ -23,27 +24,7 @@ namespace WebApi.Services
             bool result = false;
             try
             {
-                string fileName = file.FileName;
-                string filePath = GetFilePath(fileName, folder);
-
-                // kiểm tra đường dẫn thư đã tồn tại chưa
-                // nếu chưa thì tạo mới
-                //if(System.IO.Directory.Exists(filePath) == false)
-                //{
-                //    System.IO.Directory.CreateDirectory(filePath);
-                //}
-
-                // nếu đã tồn tại đường dẫn file trước đó thì xóa file cũ
-                if (System.IO.File.Exists(filePath) == true)
-                {
-                    System.IO.File.Delete(filePath);
-                }
-
-                using (var fileStream = new FileStream(filePath, FileMode.Create))
-                {
-                    await file.CopyToAsync(fileStream);
-                    result = true;
-                }
+                result = await SaveFile(file, folder);
                 return result;
             }
             catch (Exception ex)
@@ -66,7 +47,7 @@ namespace WebApi.Services
             }
         }
 
-        public string GetFilePath(string fileName, string folder)
+        public string GetFilePath(string folder, string fileName)
         {
             var imagesPath = Path.Combine(hostEnvironment.WebRootPath, "images");
             var filePath = Path.Combine(imagesPath, folder, fileName);
@@ -76,7 +57,8 @@ namespace WebApi.Services
         public async Task<bool> UpdateImage(string oldImg, IFormFile file, string folder)
         {
             bool result = false;
-            try { 
+            try
+            {
 
                 string[] items = oldImg.Split("/");
                 string oldFilePath = Path.Combine(hostEnvironment.WebRootPath, "images");
@@ -86,7 +68,7 @@ namespace WebApi.Services
                     oldFilePath = Path.Combine(oldFilePath, f);
                 }
 
-                if(File.Exists(oldFilePath))
+                if (File.Exists(oldFilePath))
                 {
                     File.Delete(oldFilePath);
                 }
@@ -118,6 +100,59 @@ namespace WebApi.Services
             catch (Exception ex)
             {
 
+            }
+            return result;
+        }
+
+        public async Task<string> UploadImagesHotel(List<IFormFile> files, Hotel hotel)
+        {
+            bool result = false;
+            string urlImgFolder = "";
+            try
+            {
+                // thư mục chứa ảnh hotel và rooms
+                string folderOfHotel = GetFilePath("hotels", hotel.Id.ToString());
+
+                // thư mục chỉ chứa ảnh của hotel
+                string folderImgOfHotel = GetFilePath(folderOfHotel, "_imgHotel");
+
+                // nếu chưa có thư mục chứa ảnh của hotel thì tạo mới
+                if (System.IO.Directory.Exists(folderOfHotel) == false)
+                {
+                    System.IO.Directory.CreateDirectory(folderOfHotel);
+                    System.IO.Directory.CreateDirectory(folderImgOfHotel);
+                }
+
+                // lưu ảnh hotel vào thư mục imgHotel
+                foreach (var file in files)
+                {
+                    result = await SaveFile(file, folderImgOfHotel);
+                    if(result == false)
+                    {
+                        break;
+                    }
+                }
+                urlImgFolder = $"/hotels/{hotel.Id}/_imgHotel";
+            }
+            catch { }
+            return urlImgFolder;
+        }
+
+        private async Task<bool> SaveFile(IFormFile file, string folder)
+        {
+            bool result = false;
+            string fileName = file.FileName;
+            string filePath = GetFilePath(folder, fileName);
+
+            if (System.IO.File.Exists(filePath) == true)
+            {
+                System.IO.File.Delete(filePath);
+            }
+
+            using (var fileStream = new FileStream(filePath, FileMode.Create))
+            {
+                await file.CopyToAsync(fileStream);
+                result = true;
             }
             return result;
         }

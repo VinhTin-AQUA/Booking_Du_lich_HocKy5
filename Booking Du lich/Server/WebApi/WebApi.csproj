@@ -35,7 +35,7 @@
   <ItemGroup>
     <Folder Include="Migrations\" />
     <Folder Include="wwwroot\images\cities\" />
-    <Folder Include="wwwroot\images\Hotels\" />
+    <Folder Include="wwwroot\images\hotels\" />
   </ItemGroup>
 
 </Project>

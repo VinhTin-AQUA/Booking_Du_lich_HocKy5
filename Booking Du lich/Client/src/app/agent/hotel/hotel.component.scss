@@ -5,11 +5,11 @@
 		@apply  md:col-span-4 min-h-screen ;
 
 		.img-menu {
-			@apply h-auto ;
+			@apply h-auto;
 		}
 
 		.img-container {
-			@apply h-4/6;
+			@apply h-4/6 max-h-[472px] overflow-y-scroll;
 		}
 
 		.room-infor{
