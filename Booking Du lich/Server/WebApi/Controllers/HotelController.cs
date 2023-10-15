@@ -15,13 +15,15 @@ namespace WebApi.Controllers
         private readonly IHotelRepository hotelRepository;
         private readonly IAuthenRepository authenRepository;
         private readonly IEmailSender emailSender;
+        private readonly ICityRepository cityRepository;
 
         public HotelController(IHotelRepository hotelRepository, IAuthenRepository authenRepository,
-            IEmailSender emailSender)
+            IEmailSender emailSender, ICityRepository cityRepository)
         {
             this.hotelRepository = hotelRepository;
             this.authenRepository = authenRepository;
             this.emailSender = emailSender;
+            this.cityRepository = cityRepository;
         }
 
         [HttpPost("add-hotel")]
@@ -49,6 +51,38 @@ namespace WebApi.Controllers
             return Ok(new JsonResult(new { title = "Success", message = "Add hotel successfully" , newHotel = hotel }));
         }
 
+        [HttpPut("update-hotel")]
+        public async Task<IActionResult> UpdateHotel(IFormFile files,[FromForm] UpdateHotel model)
+        {
+            if (model == null)
+            {
+                return BadRequest();
+            }
+
+            var hotel = await hotelRepository.GetHotelById(model.Id);
+
+            if(hotel == null)
+            {
+                return BadRequest(new JsonResult(new { title = "Error", message = "Hotel was not found" }));
+            }
+
+            var city = await cityRepository.GetCityById(model.CityId);
+
+            hotel.HotelName = model.HotelName;
+            hotel.Address = model.Address;
+            hotel.Description = model.Description;
+            hotel.CityId = model.CityId;
+            hotel.City = city;
+
+            var r = await hotelRepository.UpdateHotel(hotel);
+            if(r == false)
+            {
+                return BadRequest(new JsonResult(new { title = "Error", message = "Something error when update" }));
+            }
+
+            return Ok(new JsonResult(new { title = "Success", message = "Update hotel successfully" }));
+        }
+
         [HttpGet("get-all-hotels")]
         public async Task<IActionResult> GetAllHotels()
         {
@@ -72,6 +106,22 @@ namespace WebApi.Controllers
 
 
 
+            return Ok(hotel);
+        }
+
+        [HttpGet("get-hotel-of-agent")]
+        public async Task<IActionResult> GetHotelOfAgent([FromQuery] string agentId)
+        {
+            if (string.IsNullOrEmpty(agentId))
+            {
+                return BadRequest();
+            }
+
+            var hotel = await hotelRepository.GetHotelOfAgent(agentId);
+            if (hotel == null)
+            {
+                return BadRequest(new JsonResult(new { title = "Error", message = "Không tìm thấy khách sạn" }));
+            }
             return Ok(hotel);
         }
 

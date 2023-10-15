@@ -1,9 +1,19 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AgentService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+  getHotelOfAgent(agentId: string | undefined) {
+    return this.http.get(`${environment.appUrl}/hotel/get-hotel-of-agent?agentId=${agentId}`);
+  }
+
+  updateHotel(formData: FormData) {
+    return this.http.put(`${environment.appUrl}/hotel/update-hotel`,formData);
+  }
 }

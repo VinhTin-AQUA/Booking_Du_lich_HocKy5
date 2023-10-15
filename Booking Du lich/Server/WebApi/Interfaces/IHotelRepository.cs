@@ -10,7 +10,10 @@ namespace WebApi.Interfaces
         public Task<ICollection<Hotel>> GetAllHotels();
         public Task<Hotel> GetHotelById(int? id);
         public Task<IdentityResult> AdddAgent(ApplicationUser agent, string password);
+
+        public Task<Hotel> GetHotelOfAgent(string agentId);
         public Task<IdentityResult> DeleteAgent(ApplicationUser agent);
         public Task<bool> DeleteHotel(Hotel hotel);
+        public Task<bool> UpdateHotel(Hotel hotel);
     }
 }

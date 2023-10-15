@@ -44,6 +44,19 @@ namespace WebApi.Repositories
             return hotel;
         }
 
+        public async Task<Hotel> GetHotelOfAgent(string agentId)
+        {
+            var agent = await userManager.FindByIdAsync(agentId);
+
+            var hotel = await context.Hotel
+                .Where(h => h.Id == agent.HotelId)
+                .Include(h => h.City)
+                .FirstOrDefaultAsync();
+            hotel.Agents = null;
+
+            return hotel;
+        }
+
         public async Task<IdentityResult> AdddAgent(ApplicationUser agent, string password)
         {
             var r = await userManager.CreateAsync(agent, password);
@@ -64,6 +77,12 @@ namespace WebApi.Repositories
 
             // delete hotel
             context.Hotel.Remove(hotel);
+            return await Save();
+        }
+
+        public async Task<bool> UpdateHotel(Hotel hotel)
+        {
+            context.Hotel.Update(hotel);
             return await Save();
         }
     }
