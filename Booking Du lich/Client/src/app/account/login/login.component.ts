@@ -62,7 +62,11 @@ export class LoginComponent {
               this.router.navigate(['/account/confirm-email'], {
                 queryParams: { status: 'error' },
               });
-            }  else {
+            }  else if (err.error.Value.title === 'locked') {
+              this.router.navigateByUrl('/account/locked');
+              this.sharedService.passObj(err.error.Value.message);
+            }
+            else {
               this.errorMessage = err.error.Value.message;
             }
           },

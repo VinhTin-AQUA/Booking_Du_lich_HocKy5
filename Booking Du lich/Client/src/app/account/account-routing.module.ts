@@ -9,6 +9,7 @@ import { ConfirmPasswordComponent } from './confirm-password/confirm-password.co
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { ResendEmailConfirmComponent } from './resend-email-confirm/resend-email-confirm.component';
 import { SendEmailResetPasswordComponent } from './send-email-reset-password/send-email-reset-password.component';
+import { LockoutEndComponent } from './lockout-end/lockout-end.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent, title: 'Login' },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'reset-password', component: ResetPasswordComponent, title: 'Reset password' },
   { path: 'resend-email-confirm', component: ResendEmailConfirmComponent, title: 'Resend email confirm' },
   { path: 'send-email-reset-password', component: SendEmailResetPasswordComponent, title: 'Send email reset password' },
+  { path: 'locked', component: LockoutEndComponent, title: 'Locked' },
 ];
 
 @NgModule({

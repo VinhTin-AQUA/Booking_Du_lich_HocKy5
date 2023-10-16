@@ -15,11 +15,12 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { SharedModule } from './shared/shared.module';
 import { JwtInterceptor } from './shared/interceptors/jwt.interceptors';
+import { AccessDeniedComponent } from './access-denied/access-denied.component';
 
 
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent, HomeComponent],
+  declarations: [AppComponent, HeaderComponent, FooterComponent, HomeComponent, AccessDeniedComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

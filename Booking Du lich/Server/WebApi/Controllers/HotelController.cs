@@ -15,13 +15,17 @@ namespace WebApi.Controllers
         private readonly IHotelRepository hotelRepository;
         private readonly IAuthenRepository authenRepository;
         private readonly IEmailSender emailSender;
+        private readonly ICityRepository cityRepository;
+        private readonly IImageService imageService;
 
         public HotelController(IHotelRepository hotelRepository, IAuthenRepository authenRepository,
-            IEmailSender emailSender)
+            IEmailSender emailSender, ICityRepository cityRepository, IImageService imageService)
         {
             this.hotelRepository = hotelRepository;
             this.authenRepository = authenRepository;
             this.emailSender = emailSender;
+            this.cityRepository = cityRepository;
+            this.imageService = imageService;
         }
 
         [HttpPost("add-hotel")]
@@ -49,6 +53,46 @@ namespace WebApi.Controllers
             return Ok(new JsonResult(new { title = "Success", message = "Add hotel successfully" , newHotel = hotel }));
         }
 
+        [HttpPut("update-hotel")]
+        public async Task<IActionResult> UpdateHotel(List<IFormFile> files,[FromForm] UpdateHotel model)
+        {
+            if (model == null)
+            {
+                return BadRequest();
+            }
+
+            var hotel = await hotelRepository.GetHotelById(model.Id);
+
+            if(hotel == null)
+            {
+                return BadRequest(new JsonResult(new { title = "Error", message = "Hotel was not found" }));
+            }
+
+            var city = await cityRepository.GetCityById(model.CityId);
+
+            hotel.HotelName = model.HotelName;
+            hotel.Address = model.Address;
+            hotel.Description = model.Description;
+            hotel.CityId = model.CityId;
+            hotel.City = city;
+
+            // lưu hình ảnh
+            string urlImgFolder = "";
+            if (files != null)
+            {
+                urlImgFolder = await imageService.UploadImagesHotel(files, hotel);
+                hotel.PhotoPath = urlImgFolder;
+            }
+
+            var r = await hotelRepository.UpdateHotel(hotel);
+            if(r == false)
+            {
+                return BadRequest(new JsonResult(new { title = "Error", message = "Something error when update" }));
+            }
+
+            return Ok(new JsonResult(new { title = "Success", message = "Update hotel successfully" }));
+        }
+
         [HttpGet("get-all-hotels")]
         public async Task<IActionResult> GetAllHotels()
         {
@@ -56,23 +100,40 @@ namespace WebApi.Controllers
             return Ok(cities);
         }
 
-        [HttpGet("get-hotel-by-id")]
-        public async Task<IActionResult> GetHotelById([FromQuery] int? id)
+        //[HttpGet("get-hotel-by-id")]
+        //public async Task<IActionResult> GetHotelById([FromQuery] int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return BadRequest();
+        //    }
+
+        //    var hotel = await hotelRepository.GetHotelById(id);
+        //    if (hotel == null)
+        //    {
+        //        return BadRequest(new JsonResult(new { title = "Error", mesage = "Hotel not found" }));
+        //    }
+
+        //    return Ok(hotel);
+        //}
+
+        [HttpGet("get-hotel-of-agent")]
+        public async Task<IActionResult> GetHotelOfAgent([FromQuery] string agentId)
         {
-            if (id == null)
+            if (string.IsNullOrEmpty(agentId))
             {
                 return BadRequest();
             }
 
-            var hotel = await hotelRepository.GetHotelById(id);
+            var hotel = await hotelRepository.GetHotelOfAgent(agentId);
             if (hotel == null)
             {
-                return BadRequest(new JsonResult(new { title = "Error", mesage = "Hotel not found" }));
+                return BadRequest(new JsonResult(new { title = "Error", message = "Không tìm thấy khách sạn" }));
             }
 
+            var imgFileNames = imageService.GetAllFileOfFolder("hotels", hotel.Id.ToString(), "_imgHotel");
 
-
-            return Ok(hotel);
+            return Ok(new {hotel = hotel, imgFileNames = imgFileNames});
         }
 
         [HttpPost("add-agent")]
@@ -157,6 +218,29 @@ namespace WebApi.Controllers
                 return BadRequest(new JsonResult(new { title = "Error", message = "Something error" }));
             }
             return Ok(new JsonResult(new { title = "Success", message = "Hotel delete successfully" }));
+        }
+
+        [HttpDelete("delete-img-hotel")]
+        public IActionResult DeleteImgHotel([FromQuery]string url)
+        {
+            if(string.IsNullOrEmpty(url))
+            {
+                return BadRequest();
+            }
+            imageService.DeleteImgHotel(url);
+
+            return Ok();
+        }
+
+        [HttpDelete("delete-all-img-hotel")]
+        public IActionResult DeleteAllImgHotel([FromQuery] string hotelId)
+        {
+            if (string.IsNullOrEmpty(hotelId))
+            {
+                return BadRequest();
+            }
+            imageService.DeleteAllImgHotel(hotelId);
+            return Ok();
         }
     }
 }

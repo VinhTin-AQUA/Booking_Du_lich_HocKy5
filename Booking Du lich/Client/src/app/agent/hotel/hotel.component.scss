@@ -1,0 +1,51 @@
+.wrapper {
+	@apply grid grid-cols-1 md:grid-cols-6 gap-2 mb-4 mt-2 mr-2 h-auto;
+
+	.contain {
+		@apply  md:col-span-4 min-h-screen ;
+
+		.img-menu {
+			@apply h-auto flex items-center gap-2;
+		}
+
+		.img-container {
+			@apply h-4/6 max-h-[472px] overflow-y-scroll;
+		}
+
+		.room-infor{
+			@apply h-auto;
+		}
+	}
+
+	.hotel-infor{
+		@apply md:col-span-2 h-auto;
+	}
+}
+
+.img-menu, .img-container, .room-infor, .hotel-infor {
+	@apply rounded p-2 mb-2;
+	box-shadow: 0px 0px 3px gray;
+}
+
+// form hotel infor
+.form-group {
+	@apply flex flex-col gap-2 mb-2;
+
+	.form-control {
+		@apply w-full rounded p-2 outline-none duration-150;
+		border: 1px solid blue;
+		resize: none;
+		&:focus {
+			box-shadow: 0px 0px 8px blue;
+		}
+	}
+}
+
+.remove-img-icon {
+	@apply duration-150 text-red-500;
+	cursor: pointer;
+
+	&:hover {
+		@apply  text-red-800;
+	}
+}

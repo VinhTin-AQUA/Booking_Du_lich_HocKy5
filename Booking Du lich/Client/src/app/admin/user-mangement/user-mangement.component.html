@@ -3,8 +3,8 @@
 
 		<!-- search -->
 		<div class="search">
-			<button class="btn-primary">Search</button>
-			<input class="search-input" type="text" placeholder="user name">
+			<button (click)="search()" class="btn-primary">Search</button>
+			<input [(ngModel)]="searchString" name="searchString" class="search-input" type="text" placeholder="user name">
 		</div>
 
 		<!-- list users -->

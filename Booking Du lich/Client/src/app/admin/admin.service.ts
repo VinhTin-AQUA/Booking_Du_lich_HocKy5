@@ -34,9 +34,9 @@ export class AdminService {
   }
 
   // user manager
-  getUsers(currentPage: number, pageSize: number) {
+  getUsers(currentPage: number, pageSize: number, searchString: string) {
     return this.http.get(
-      `${environment.appUrl}/usermanager/get-users?currentPage=${currentPage}&pageSize=${pageSize}`
+      `${environment.appUrl}/usermanager/get-users?currentPage=${currentPage}&pageSize=${pageSize}&searchString=${searchString}`
     );
   }
 
