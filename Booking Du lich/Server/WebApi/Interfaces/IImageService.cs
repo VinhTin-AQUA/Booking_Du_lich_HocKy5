@@ -12,5 +12,6 @@ namespace WebApi.Interfaces
         public string[] GetAllFileOfFolder(params string[] folder);
         public void DeleteImgHotel(string url);
         public void DeleteAllImgHotel(string hotelId);
+        public Task<string> AddRoomImages(List<IFormFile> files, Hotel hotel, Room room);
     }
 }

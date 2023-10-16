@@ -1,0 +1,85 @@
+<div class="wrapper">
+  <!-- search -->
+  <div class="search-wrapper">
+    <div class="search-container">
+      <div class="form-search-group">
+        <button (click)="searchCities()" class="btn-primary">Tìm</button>
+        <input
+          class="form-search-control"
+          type="text"
+          spellcheck="false"
+          placeholder="Số phòng"
+          [(ngModel)]="searchString"
+        />
+      </div>
+      <div class="add-btn" (click)="showAddRoomModal()">
+        <mat-icon class="add-icon">add_circle</mat-icon>
+        <button>Thêm phòng</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- add room modal -->
+<div *ngIf="isShowedAddRoomModel === true" class="add-room-modal">
+  <div class="form-container mx-auto">
+      <form [formGroup]="formRoomSubmit" (ngSubmit)="submitAdd()" autocomplete="off" class="form-content">
+          <div class="form-group">
+            <label class="w-1/3">Số phòng</label>
+            <input formControlName="roomNumber" class="form-control" type="text" placeholder="A-123" />
+          </div>
+
+          <div class="form-group">
+            <label class="w-1/3">Tên phòng</label>
+            <input formControlName="name" class="form-control" type="text" placeholder="" />
+          </div>
+
+          <div class="form-group">
+            <label class="w-1/3">Loại phòng</label>
+            <select  class="form-control">
+              <option selected value="1">Vip 1</option>
+              <option value="2">Vip 2</option>
+              <option value="3">Vip 3</option>
+            </select>
+          </div>
+
+          <div class="flex mb-2 items-center text-[1.2em] gap-2">
+            <label class="w-1/3"></label>
+            <input formControlName="isAvailable" checked="checked" type="checkbox">
+            <label class="" for="">Có sẵn</label>
+          </div>
+
+
+          <div class="form-group text-area">
+            <label class="w-1/3">Mô tả</label>
+            <textarea formControlName="description" class="form-control" ></textarea>
+          </div>
+
+        <div class="flex gap-2">
+          <button type="submit" class="btn-primary w-1/2">Lưu</button>
+          <button (click)="showAddRoomModal()" class="btn-outline-primary w-1/2">Cancle</button>
+        </div>
+      </form>
+
+			<div class="img-content">
+				<div class="mb-2">
+					<input #fileinput class="btn-primary" (change)="onSelectImage($event)" type="file" multiple>
+				</div>
+
+				<!-- list img -->
+        <div class="h-full w-full rounded overflow-y-scroll border-2 p-2">
+          <!-- render ảnh mới -->
+          <div class="columns-2 md:columns-3 gap-2">
+            <div class="break-inside-avoid mb-2 rounded border" *ngFor="let url of listNewImgUrls">
+              <div class="flex items-start gap-2">
+                <mat-icon (click)="removeImgUnSave(url.data)" class="remove-img-icon">delete</mat-icon>
+                <span>{{ url.name }}</span>
+              </div>
+              <img [src]="url.data" alt="" />
+            </div>
+          </div>
+
+        </div>
+			</div>
+  </div>
+</div>
