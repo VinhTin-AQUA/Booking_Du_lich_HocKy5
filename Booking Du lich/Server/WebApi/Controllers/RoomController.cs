@@ -16,14 +16,18 @@ namespace WebApi.Controllers
     public class RoomController : ControllerBase
     {
         private readonly IRoomRepository roomRepository;
+        private readonly IImageService imageService;
+        private readonly IHotelRepository hotelRepository;
 
-        public RoomController(IRoomRepository roomRepository)
+        public RoomController(IRoomRepository roomRepository, IImageService imageService, IHotelRepository hotelRepository)
         {
             this.roomRepository = roomRepository;
+            this.imageService = imageService;
+            this.hotelRepository = hotelRepository;
         }
 
         [HttpPost("add-room")]
-        public async Task<IActionResult> AddRoom(AddRoomDTO model)
+        public async Task<IActionResult> AddRoom(List<IFormFile> files , [FromForm]AddRoomDTO model)
         {
             if (model == null)
             {
@@ -34,25 +38,40 @@ namespace WebApi.Controllers
             {
                 return BadRequest(ModelState);
             }
+
+            var hotel = await hotelRepository.GetHotelById(model.HotelId);
+            if(hotel == null)
+            {
+                return BadRequest(new JsonResult(new { title = "Error", message = "Hotel không tìm thấy" }));
+            }
+
             var room = new Room
             {
                 RoomNumber = model.RoomNumber,
                 Name = model.Name,
                 Description = model.Description,
-
+                IsAvailable = model.IsAvailable,
+                HotelId = model.HotelId,
+                Hotel = hotel,
             };
+
+            string photoPath = "";
+            if (files != null)
+            {
+                photoPath = await imageService.AddRoomImages(files, hotel, room);
+            }
+            room.PhotoPath = photoPath;
+
             var result = await roomRepository.AddRoom(room);
             if (result == false)
             {
                 return BadRequest(new JsonResult(new { title = "Error", message = "Something error when add hotel" }));
             }
-
             return Ok(new JsonResult(new { title = "Success", message = "Add room successfully", newRoom = room }));
         }
 
-        [HttpGet("get-all-room")]
-
-        public async Task<IActionResult> GetAllRoom()
+        [HttpGet("get-all-rooms")]
+        public async Task<IActionResult> GetAllRooms()
         {
             var rooms = await roomRepository.GetAllRoom();
             return Ok(rooms.ToList());
@@ -98,7 +117,6 @@ namespace WebApi.Controllers
         }
 
         [HttpGet("search-room")]
-
         public async Task<IActionResult> SearchRoom(string available)
         {
             var check = true;

@@ -16,9 +16,32 @@ namespace WebApi.Services
             this.hostEnvironment = hostEnvironment;
         }
 
+        public string[] GetAllFileOfFolder(params string[] folder)
+        {
+            // lấy đường dẫn dự án đến folder chứa ảnh
+            var folderAbsolute = GetFilePath(folder);
+
+            // lấy đường dẫn tuyệt đối của tất cả file trong folder chứa ảnh
+            var filePathAbsolutes = Directory.GetFiles(folderAbsolute);
+
+            // tạo mảng lưu đường dẫn tương đối của ảnh
+            int n = filePathAbsolutes.Length;
+            string[] fileNames = new string[n];
+
+            string folderRelative = Path.Combine(folder);
+
+            for (int i = 0; i < n; i++)
+            {
+                string fileName = Path.GetFileName(filePathAbsolutes[i]);
+                fileNames[i] = Path.Combine(folderRelative, fileName);
+            }
+            return fileNames;
+        }
+
         // áp dụng cho upload city
         // mỗi city chỉ có 1 ảnh duy nhất nên không cần phân chia thư mục để chứa nhiều ảnh cho 1 city
         // add 1 ảnh vào 1 thư mục
+        #region city
         public async Task<bool> AddOneToFolder(IFormFile file, string folder)
         {
             bool result = false;
@@ -97,6 +120,9 @@ namespace WebApi.Services
             return result;
         }
 
+        #endregion
+
+        #region hotel
         public async Task<string> UploadImagesHotel(List<IFormFile> files, Hotel hotel)
         {
             bool result = false;
@@ -131,28 +157,6 @@ namespace WebApi.Services
             return urlImgFolder;
         }
 
-        public string[] GetAllFileOfFolder(params string[] folder)
-        {
-            // lấy đường dẫn dự án đến folder chứa ảnh
-            var folderAbsolute = GetFilePath(folder);
-
-            // lấy đường dẫn tuyệt đối của tất cả file trong folder chứa ảnh
-            var filePathAbsolutes = Directory.GetFiles(folderAbsolute);
-
-            // tạo mảng lưu đường dẫn tương đối của ảnh
-            int n = filePathAbsolutes.Length;
-            string[] fileNames = new string[n];
-
-            string folderRelative = Path.Combine(folder);
-
-            for (int i = 0; i < n; i++)
-            {
-                string fileName = Path.GetFileName(filePathAbsolutes[i]);
-                fileNames[i] =  Path.Combine(folderRelative, fileName);
-            }
-            return fileNames;
-        }
-
         public void DeleteImgHotel(string url)
         {
             var filePath = GetFilePath(url);
@@ -176,6 +180,51 @@ namespace WebApi.Services
             }
         }
 
+        #endregion
+
+        #region room
+
+        public async Task<string> AddRoomImages(List<IFormFile> files, Hotel hotel, Room room)
+        {
+            try
+            {
+                string urlImgFolder = "";
+                var folderRoom = GetFilePath("hotels", hotel.Id.ToString(), room.Id.ToString());
+                bool result = false;
+                if (Directory.Exists(folderRoom) == false)
+                {
+                    Directory.CreateDirectory(folderRoom);
+                }
+
+                // lưu ảnh hotel vào thư mục imgHotel
+                foreach (var file in files)
+                {
+                    result = await SaveFile(file, folderRoom);
+                    if (result == false)
+                    {
+                        break;
+                    }
+                }
+                urlImgFolder = $"/hotels/{hotel.Id}/{room.Id}";
+                return urlImgFolder;
+            }
+            catch
+            {
+
+            }
+            return "";
+        } 
+
+        public void DeleteRoomImage() { }
+
+        public void DeleteAllRoomImage()
+        {
+
+        }
+
+        #endregion
+
+
         private string GetFilePath(params string[] folderOrFileName)
         {
             var imagesPath = Path.Combine(hostEnvironment.WebRootPath, "images");
@@ -188,6 +237,7 @@ namespace WebApi.Services
             }
             return filePath;
         }
+
         private async Task<bool> SaveFile(IFormFile file, string folder)
         {
             bool result = false;

@@ -25,4 +25,11 @@ export class AgentService {
     return this.http.delete(`${environment.appUrl}/hotel/delete-all-img-hotel?hotelId=${hotelId}`);
   }
 
+  getRooms() {
+    return this.http.get(`${environment.appUrl}/room/get-all-rooms`);
+  }
+
+  addRoom(form: FormData) {
+    return this.http.post(`${environment.appUrl}/room/add-room`,form);
+  }
 }
