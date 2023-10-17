@@ -26,7 +26,7 @@
       <div class="flex items-center justify-center gap-2" *ngIf="accountService.user$ | async as user">
 
         <!-- admin routing -->
-        <a *ngIf="(user.JWT | role) === 'Admin'" class="btn-primary cursor-pointer" routerLink="/admin/profile"
+        <a *ngIf="(user.JWT  | role) === 'Admin'" class="btn-primary cursor-pointer" routerLink="/admin/profile"
           >Hello {{user.FirstName + ' ' + user.LastName}}</a
         >
 
@@ -56,15 +56,16 @@
         'w-[200px]': collapseMenu === true,
         'w-0 overflow-hidden': collapseMenu === false
       }"
-      class="menu-collapse z-20 duration-200 bg-[#fed7aa] flex gap-2 flex-col rounded h-[267px]"
+      class="menu-collapse z-20 duration-200 bg-[#fed7aa] flex gap-2 flex-col rounded h-auto"
     >
       <ul
-        class="flex justify-center items-center flex-col rounded overflow-hidden"
+        class="flex justify-center items-center flex-col rounded overflow-hidden whitespace-nowrap"
       >
-        <li (click)="hideMenu()" class="menu-item">Hotels & Homes</li>
-        <li (click)="hideMenu()" class="menu-item">Activities</li>
-        <li (click)="hideMenu()" class="menu-item">Flights</li>
-        <li (click)="hideMenu()" class="menu-item">Deals</li>
+        <li class="menu-item" routerLink="/account/reset-password" title="xác nhận email">Hotels & Homes</li>
+        <li class="menu-item">Activities</li>
+        <li class="menu-item">Flights</li>
+        <li class="menu-item">Deals</li>
+        <li class="menu-item">Notification</li>
       </ul>
 
       <div  *ngIf="(accountService.user$ | async) === null"
@@ -87,19 +88,26 @@
       <div *ngIf="(accountService.user$ | async) as user"
         class="flex items-center justify-center gap-2 flex-col m-2 overflow-hidden"
       >
-        <a *ngIf="(user.JWT | role) === 'Admin'"
-          (click)="hideMenu()"
-          class="btn-primary cursor-pointer max-h-[36px] overflow-hidden"
-          routerLink="/account/login" 
-          >Hello</a
+        <!-- admin routing -->
+        <a *ngIf="(user.JWT  | role) === 'Admin'" class="btn-primary cursor-pointer" routerLink="/admin/profile"
+          >Hello {{user.FirstName + ' ' + user.LastName}}</a
         >
-        <a
-          
-          (click)="logout()"
-          class="btn-outline-primary cursor-pointer max-h-[36px] overflow-hidden"
-          routerLink="/account/login"
-          >Logout</a>
+
+        <!-- user routing -->
+        <a *ngIf="(user.JWT | role) === 'User'" class="btn-primary cursor-pointer" routerLink="/user/profile"
+          >Hello {{user.FirstName + ' ' + user.LastName}}</a
+        >
+
+        <!-- agent routing -->
+        <a *ngIf="(user.JWT | role) === 'Agent'" class="btn-primary cursor-pointer" routerLink="/agent/profile-agent"
+          >Hello {{user.FirstName + ' ' + user.LastName}}</a
+        >
+        
+        <a class="btn-outline-primary cursor-pointer" (click)="logout()" >
+          Logout
+        </a>
       </div>
+
     </div>
   </div>
   <div class="menu-wrapper"></div>
