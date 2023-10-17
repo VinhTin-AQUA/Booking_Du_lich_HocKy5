@@ -1,7 +1,7 @@
 <ng-container *ngIf="sharedService.isLoading$| async as isLoading">
 
 <div *ngIf="isLoading === true"
-  class="fixed top-0 w-full h-full flex justify-center items-center bg-[#e4e4e7]/30"
+  class="fixed top-0 w-full h-full flex justify-center items-center bg-[#e4e4e7]/30 z-50"
 >
   <div class="loading">
     <div class="bg-dot">

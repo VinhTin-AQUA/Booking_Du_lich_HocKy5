@@ -81,8 +81,6 @@ export class HotelComponent {
               name: temp[temp.length - 1],
               data: i,
             };
-            console.log(imgShow);
-
             this.imgFiles.push(imgShow);
           }
 
@@ -134,7 +132,7 @@ export class HotelComponent {
     this.fileInput.nativeElement.value = '';
   }
 
-   submitHotel() {
+  submitHotel() {
     this.submitted = true;
     this.errorMessage = [];
 
@@ -199,8 +197,7 @@ export class HotelComponent {
   }
 
   removeImgSaved(url: string) {
-    console.log(url);
-
+    this.sharedService.showLoading(true);
     this.agentService.deleteImgHotel(url).subscribe({
       next: (_) => {
         const index = this.imgFiles.findIndex((u: any) => u === url);
@@ -210,9 +207,11 @@ export class HotelComponent {
         this.sharedService.showToastMessage(
           'success Delete image successfully'
         );
+        this.sharedService.showLoading(false);
       },
       error: (_) => {
         this.sharedService.showToastMessage('Please try again');
+        this.sharedService.showLoading(false);
       },
     });
   }

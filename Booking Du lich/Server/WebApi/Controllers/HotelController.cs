@@ -80,7 +80,7 @@ namespace WebApi.Controllers
             string urlImgFolder = "";
             if (files != null)
             {
-                urlImgFolder = await imageService.UploadImagesHotel(files, hotel);
+                urlImgFolder = await imageService.UploadImages(files, hotel);
                 hotel.PhotoPath = urlImgFolder;
             }
 
