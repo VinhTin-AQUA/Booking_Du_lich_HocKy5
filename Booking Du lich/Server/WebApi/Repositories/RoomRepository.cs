@@ -30,7 +30,7 @@ namespace WebApi.Repositories
             return await Save();
         }
 
-        public async Task<ICollection<Room>> GetAllRoom()
+        public async Task<ICollection<Room>> GetAllRooms()
         {
             var rooms =await _context.Room.ToListAsync();
             return rooms;
@@ -38,7 +38,10 @@ namespace WebApi.Repositories
 
         public async Task<Room> GetRoomById(int? id)
         {
-            var room = await _context.Room.Where(r => r.Id == id).FirstOrDefaultAsync();
+            var room = await _context.Room
+                .Where(r => r.Id == id)
+                .Include(r => r.Hotel)
+                .FirstOrDefaultAsync();
             return room;
         }
 

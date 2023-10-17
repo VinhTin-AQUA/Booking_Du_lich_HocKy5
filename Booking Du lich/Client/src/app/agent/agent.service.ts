@@ -32,4 +32,16 @@ export class AgentService {
   addRoom(form: FormData) {
     return this.http.post(`${environment.appUrl}/room/add-room`,form);
   }
+
+  getImagesOfRoom(roomId: number) {
+    return this.http.get(`${environment.appUrl}/room/get-images-of-room?roomId=${roomId}`);
+  }
+
+  deleteImgRoom(url: string) {
+    return this.http.delete(`${environment.appUrl}/room/delete-img-room?url=${url}`);
+  }
+
+  updateRoom(form: FormData) {
+    return this.http.put(`${environment.appUrl}/room/update-room`,form);
+  }
 }
