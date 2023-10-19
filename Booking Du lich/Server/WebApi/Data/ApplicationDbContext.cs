@@ -52,14 +52,18 @@ namespace WebApi1.Data
 
             modelBuilder.Entity<Room>()
                 .HasKey(r => r.Id).HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-            
 
+            modelBuilder.Entity<Contact>()
+                .HasKey(c => c.Id).HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
         }
 
         public DbSet<City> City { get; set; }
+
         public DbSet<Hotel> Hotel { get; set; }
 
         public DbSet<Room> Room { get; set; }  
+
+        public DbSet<Contact> Contact { get; set; }
 
         private void SeedRole(ModelBuilder builder)
         {

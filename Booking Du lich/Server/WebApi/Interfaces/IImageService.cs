@@ -4,13 +4,21 @@ namespace WebApi.Interfaces
 {
     public interface IImageService
     {
-        public Task<bool> AddOneToFolder(IFormFile file, string folder);
-
+        // city
+        public Task<bool> AddCityImage(IFormFile file, string folder);
         public void DeleteCityImage(string fileName);
-        public Task<bool> UpdateImage(string oldImg, IFormFile file, string folder);
-        public Task<string> UploadImagesHotel(List<IFormFile> files, Hotel hotel);
-        public string[] GetAllFileOfFolder(params string[] folder);
+        public Task<bool> UpdateCityImage(string oldImg, IFormFile file, string folder);
+
+        // hotel
+       
         public void DeleteImgHotel(string url);
         public void DeleteAllImgHotel(string hotelId);
+
+        // room
+        public Task<string> AddRoomImages(List<IFormFile> files, Hotel hotel, Room room);
+        public string GetFirstImageOfRoom(string photoPath);
+
+        public Task<string> UploadImages(List<IFormFile> files, Hotel hotel, params Room[] room);
+        public string[] GetAllFileOfFolder(params string[] folder);
     }
 }

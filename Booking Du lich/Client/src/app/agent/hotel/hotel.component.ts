@@ -9,6 +9,7 @@ import { AdminService } from 'src/app/admin/admin.service';
 import { City } from 'src/app/shared/models/city/city';
 import { SharedService } from 'src/app/shared/shared.service';
 import { environment } from 'src/environments/environment.development';
+import { ImgShow } from 'src/app/shared/models/image/imgShow';
 
 @Component({
   selector: 'app-hotels',
@@ -18,7 +19,7 @@ import { environment } from 'src/environments/environment.development';
 export class HotelComponent {
   private userId: string | undefined = '';
   hotel: Hotel | null = null;
-  imgFiles: string[] = [];
+  imgFiles: ImgShow[] = [];
   envImgUrl = environment.imgUrl;
 
   formHotelSubmit: FormGroup = new FormGroup([]);
@@ -34,7 +35,7 @@ export class HotelComponent {
   };
 
   //img
-  listNewImgUrls: any = []; // danh sách ảnh mới để hiển thị trên view
+  listNewImgUrls: ImgShow[] = []; // danh sách ảnh mới để hiển thị trên view
   newImgObjToAdd: any = []; // danh sách các đối tượng file gửi lên server
 
   @ViewChild('fileInput') fileInput!: ElementRef;
@@ -73,7 +74,15 @@ export class HotelComponent {
       .subscribe({
         next: (res: any) => {
           this.hotel = res.hotel;
-          this.imgFiles = res.imgFileNames;
+          for (let i of res.imgFileNames) {
+            const temp = i.split('\\');
+
+            const imgShow: ImgShow = {
+              name: temp[temp.length - 1],
+              data: i,
+            };
+            this.imgFiles.push(imgShow);
+          }
 
           if (this.hotel !== null && this.hotel.City !== null) {
             this.cityOfHotel = this.hotel.City;
@@ -100,7 +109,17 @@ export class HotelComponent {
   private getImagesHotel() {
     this.agentService.getHotelOfAgent(this.userId).subscribe({
       next: (res: any) => {
-        this.imgFiles = res.imgFileNames;
+        for (let i of res.imgFileNames) {
+          const temp = i.split('\\');
+
+          const imgShow: ImgShow = {
+            name: temp[temp.length - 1],
+            data: i,
+          };
+          console.log(imgShow);
+
+          this.imgFiles.push(imgShow);
+        }
         this.listNewImgUrls = [];
       },
       error: (err) => {
@@ -155,8 +174,15 @@ export class HotelComponent {
       for (let i = 0; i < n; i++) {
         var reader = new FileReader();
         reader.readAsDataURL(event.target.files[i]);
+
+        let imgShow: ImgShow = {
+          name: event.target.files[i].name,
+          data: '',
+        };
+
         reader.onload = (events: any) => {
-          this.listNewImgUrls.push(events.target.result);
+          imgShow.data = events.target.result;
+          this.listNewImgUrls.push(imgShow);
         };
       }
       this.clearFile();
@@ -164,15 +190,14 @@ export class HotelComponent {
   }
 
   removeImgUnSave(url: string) {
-    const index = this.listNewImgUrls.findIndex((u: any) => u === url);
+    const index = this.listNewImgUrls.findIndex((u: any) => u.data === url);
     if (index !== -1) {
       this.listNewImgUrls.splice(index, 1);
     }
   }
 
   removeImgSaved(url: string) {
-    console.log(url);
-
+    this.sharedService.showLoading(true);
     this.agentService.deleteImgHotel(url).subscribe({
       next: (_) => {
         const index = this.imgFiles.findIndex((u: any) => u === url);
@@ -182,9 +207,11 @@ export class HotelComponent {
         this.sharedService.showToastMessage(
           'success Delete image successfully'
         );
+        this.sharedService.showLoading(false);
       },
       error: (_) => {
         this.sharedService.showToastMessage('Please try again');
+        this.sharedService.showLoading(false);
       },
     });
   }
@@ -205,5 +232,3 @@ export class HotelComponent {
     });
   }
 }
-
-
