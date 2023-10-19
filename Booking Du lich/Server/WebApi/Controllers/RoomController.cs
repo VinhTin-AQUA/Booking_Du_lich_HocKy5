@@ -18,12 +18,14 @@ namespace WebApi.Controllers
         private readonly IRoomRepository roomRepository;
         private readonly IImageService imageService;
         private readonly IHotelRepository hotelRepository;
+        private readonly IRoomTypeRepository roomTypeRepository;
 
-        public RoomController(IRoomRepository roomRepository, IImageService imageService, IHotelRepository hotelRepository)
+        public RoomController(IRoomRepository roomRepository, IImageService imageService, IHotelRepository hotelRepository, IRoomTypeRepository roomTypeRepository)
         {
             this.roomRepository = roomRepository;
             this.imageService = imageService;
             this.hotelRepository = hotelRepository;
+            this.roomTypeRepository = roomTypeRepository;
         }
 
         [HttpPost("add-room")]
@@ -40,6 +42,7 @@ namespace WebApi.Controllers
             }
 
             var hotel = await hotelRepository.GetHotelById(model.HotelId);
+            var roomType = await roomTypeRepository.GetRoomTypeById(model.RoomTypeId);
             if (hotel == null)
             {
                 return BadRequest(new JsonResult(new { title = "Error", message = "Hotel không tìm thấy" }));
@@ -52,7 +55,9 @@ namespace WebApi.Controllers
                 Description = model.Description,
                 IsAvailable = model.IsAvailable,
                 HotelId = model.HotelId,
+                RoomTypeId= model.RoomTypeId,
                 Hotel = hotel,
+                RoomType = roomType
             };
             
             var result = await roomRepository.AddRoom(room);
