@@ -57,6 +57,11 @@ namespace WebApi1.Data
 
             modelBuilder.Entity<Contact>()
                 .HasKey(c => c.Id).HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity<RoomType>()
+                .HasMany(rt => rt.Rooms)
+                .WithOne(r => r.RoomType)
+                .HasForeignKey(r => r.RoomTypeId);
         }
 
         public DbSet<City> City { get; set; }
@@ -66,6 +71,8 @@ namespace WebApi1.Data
         public DbSet<Room> Room { get; set; }
 
         public DbSet<Contact> Contact { get; set; }
+
+        public DbSet<RoomType> RoomType { get; set; }
 
         private void SeedRole(ModelBuilder builder)
         {
