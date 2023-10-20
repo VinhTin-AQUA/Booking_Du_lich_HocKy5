@@ -10,7 +10,7 @@ namespace WebApi.Migrations
         {
             migrationBuilder.AlterColumn<string>(
                 name: "LastName",
-                table: "AspNetUsers",
+                table: "Users",
                 type: "nvarchar(250)",
                 nullable: false,
                 defaultValue: "",
@@ -20,7 +20,7 @@ namespace WebApi.Migrations
 
             migrationBuilder.AlterColumn<string>(
                 name: "FirstName",
-                table: "AspNetUsers",
+                table: "Users",
                 type: "nvarchar(250)",
                 nullable: false,
                 defaultValue: "",
@@ -30,7 +30,7 @@ namespace WebApi.Migrations
 
             migrationBuilder.AddColumn<string>(
                 name: "Address",
-                table: "AspNetUsers",
+                table: "Users",
                 type: "nvarchar(250)",
                 nullable: false,
                 defaultValue: "");
@@ -40,11 +40,11 @@ namespace WebApi.Migrations
         {
             migrationBuilder.DropColumn(
                 name: "Address",
-                table: "AspNetUsers");
+                table: "Users");
 
             migrationBuilder.AlterColumn<string>(
                 name: "LastName",
-                table: "AspNetUsers",
+                table: "Users",
                 type: "nvarchar(max)",
                 nullable: true,
                 oldClrType: typeof(string),
@@ -52,7 +52,7 @@ namespace WebApi.Migrations
 
             migrationBuilder.AlterColumn<string>(
                 name: "FirstName",
-                table: "AspNetUsers",
+                table: "Users",
                 type: "nvarchar(max)",
                 nullable: true,
                 oldClrType: typeof(string),

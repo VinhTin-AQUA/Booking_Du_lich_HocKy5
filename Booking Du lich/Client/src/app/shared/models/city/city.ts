@@ -1,6 +1,6 @@
 export interface City {
 	Id: number;
-	CityCode: number;
+	CityCode: string;
 	Name: string;
 	ImgUrl: string;
 	Accommodations: number;

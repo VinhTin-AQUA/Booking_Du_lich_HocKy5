@@ -58,6 +58,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 });
 
 // repositories service
+builder.Services.AddScoped<SeedService>();
 builder.Services.AddScoped<IAuthenRepository, AuthenRepository>();
 builder.Services.AddScoped<ICityRepository, CityRepository>();
 builder.Services.AddScoped<IImageService, ImageService>();
@@ -175,5 +176,17 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+
+using var scope = app.Services.CreateScope();
+try
+{
+    var contextSeedService = scope.ServiceProvider.GetService<SeedService>();
+    await contextSeedService!.InitializeContextAsync();
+}
+catch (Exception ex)
+{
+    var logger = scope.ServiceProvider.GetService<ILogger<Program>>();
+    logger.LogError("Eror: " + ex.InnerException, ex.InnerException);
+}
 
 app.Run();

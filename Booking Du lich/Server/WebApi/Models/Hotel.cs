@@ -32,6 +32,7 @@ namespace WebApi.Models
         public ICollection<ApplicationUser> Agents { get; set; }
 
         public int? CityId { get; set; }
+        public string? CityCode { get; set; }
         public City City { get; set; }
 
         public ICollection<Room> Rooms { get; set; }
