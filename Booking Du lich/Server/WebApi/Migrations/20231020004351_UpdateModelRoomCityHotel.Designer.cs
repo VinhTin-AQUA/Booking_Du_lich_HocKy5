@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebApi1.Data;
 
@@ -11,9 +12,10 @@ using WebApi1.Data;
 namespace WebApi.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231020004351_UpdateModelRoomCityHotel")]
+    partial class UpdateModelRoomCityHotel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -346,34 +348,12 @@ namespace WebApi.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(250)");
 
-                    b.Property<int?>("RoomTypeId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.HasIndex("HotelId");
 
-                    b.HasIndex("RoomTypeId");
-
                     b.ToTable("Room");
-                });
-
-            modelBuilder.Entity("WebApi.Models.RoomType", b =>
-                {
-                    b.Property<int>("RoomTypeId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RoomTypeId"), 1L, 1);
-
-                    b.Property<string>("RoomTypeName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(250)");
-
-                    b.HasKey("RoomTypeId");
-
-                    b.ToTable("Room Type");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -451,13 +431,7 @@ namespace WebApi.Migrations
                         .WithMany("Rooms")
                         .HasForeignKey("HotelId");
 
-                    b.HasOne("WebApi.Models.RoomType", "RoomType")
-                        .WithMany("Rooms")
-                        .HasForeignKey("RoomTypeId");
-
                     b.Navigation("Hotel");
-
-                    b.Navigation("RoomType");
                 });
 
             modelBuilder.Entity("WebApi.Models.City", b =>
@@ -469,11 +443,6 @@ namespace WebApi.Migrations
                 {
                     b.Navigation("Agents");
 
-                    b.Navigation("Rooms");
-                });
-
-            modelBuilder.Entity("WebApi.Models.RoomType", b =>
-                {
                     b.Navigation("Rooms");
                 });
 #pragma warning restore 612, 618

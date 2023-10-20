@@ -23,7 +23,7 @@ namespace WebApi.Models
         [Required(ErrorMessage = "{0} must be at least one image")]
         [Display(Name = "Images")]
         [Column(TypeName = "nvarchar(70)")]
-        public string ImgUrl { get; set; }
+        public string PhotoPath { get; set; }
 
         [DefaultValue(0)]
         public int Accommodations { get; set; } = 0;
