@@ -16,10 +16,38 @@ namespace WebApi.Services
             this.hostEnvironment = hostEnvironment;
         }
 
+        public string[] GetAllFileOfFolder(params string[] folder)
+        {
+            // lấy đường dẫn dự án đến folder chứa ảnh
+            var folderAbsolute = GetPath(folder);
+
+            if (Directory.Exists(folderAbsolute) == false)
+            {
+                return null;
+            }
+
+            // lấy đường dẫn tuyệt đối của tất cả file trong folder chứa ảnh
+            var filePathAbsolutes = Directory.GetFiles(folderAbsolute);
+
+            // tạo mảng lưu đường dẫn tương đối của ảnh
+            int n = filePathAbsolutes.Length;
+            string[] fileNames = new string[n];
+
+            string folderRelative = Path.Combine(folder);
+
+            for (int i = 0; i < n; i++)
+            {
+                string fileName = Path.GetFileName(filePathAbsolutes[i]);
+                fileNames[i] = Path.Combine(folderRelative, fileName);
+            }
+            return fileNames;
+        }
+
         // áp dụng cho upload city
         // mỗi city chỉ có 1 ảnh duy nhất nên không cần phân chia thư mục để chứa nhiều ảnh cho 1 city
         // add 1 ảnh vào 1 thư mục
-        public async Task<bool> AddOneToFolder(IFormFile file, string folder)
+        #region city
+        public async Task<bool> AddCityImage(IFormFile file, string folder)
         {
             bool result = false;
             try
@@ -34,7 +62,7 @@ namespace WebApi.Services
             return result;
         }
 
-        public void DeleteImage(string fileName)
+        public void DeleteCityImage(string fileName)
         {
             string[] items = fileName.Split("/");
             var rootpath = hostEnvironment.WebRootPath;
@@ -47,14 +75,7 @@ namespace WebApi.Services
             }
         }
 
-        public string GetFilePath(string folder, string fileName)
-        {
-            var imagesPath = Path.Combine(hostEnvironment.WebRootPath, "images");
-            var filePath = Path.Combine(imagesPath, folder, fileName);
-            return filePath;
-        }
-
-        public async Task<bool> UpdateImage(string oldImg, IFormFile file, string folder)
+        public async Task<bool> UpdateCityImage(string oldImg, IFormFile file, string folder)
         {
             bool result = false;
             try
@@ -104,18 +125,121 @@ namespace WebApi.Services
             return result;
         }
 
-        public async Task<string> UploadImagesHotel(List<IFormFile> files, Hotel hotel)
+        #endregion
+
+        #region hotel
+        
+        public void DeleteImgHotel(string url)
+        {
+            var filePath = GetPath(url);
+            if (File.Exists(filePath))
+            {
+                File.Delete(filePath);
+            }
+        }
+
+        public void DeleteAllImgHotel(string hotelId)
+        {
+            var filePath = GetPath("hotels", hotelId, "_imgHotel");
+            if (Directory.Exists(filePath))
+            {
+                DirectoryInfo di = new DirectoryInfo(filePath);
+
+                foreach (FileInfo file in di.GetFiles())
+                {
+                    file.Delete();
+                }
+            }
+        }
+
+        #endregion
+
+        #region room
+
+        public async Task<string> AddRoomImages(List<IFormFile> files, Hotel hotel, Room room)
+        {
+            try
+            {
+                string urlImgFolder = "";
+                var folderRoom = GetPath("hotels", hotel.Id.ToString(), room.Id.ToString());
+                bool result = false;
+                if (Directory.Exists(folderRoom) == false)
+                {
+                    Directory.CreateDirectory(folderRoom);
+                }
+
+                // lưu ảnh hotel vào thư mục imgHotel
+                foreach (var file in files)
+                {
+                    result = await SaveFile(file, folderRoom);
+                    if (result == false)
+                    {
+                        break;
+                    }
+                }
+                urlImgFolder = $"/hotels/{hotel.Id}/{room.Id}";
+                return urlImgFolder;
+            }
+            catch
+            {
+
+            }
+            return "";
+        }
+
+        public string GetFirstImageOfRoom(string photoPath)
+        {
+            try
+            {
+                if(string.IsNullOrEmpty(photoPath))
+                {
+                    return null;
+                }
+                var folder = GetPath(photoPath);
+                if (Directory.Exists(folder) == false)
+                {
+                    return "";
+                }
+                var files = Directory.GetFiles(folder);
+                if (files.Length == 0)
+                {
+                    return "";
+                }
+                return Path.GetFileName(files[0]);
+            }
+            catch { }
+            return null;
+        }
+
+        public void DeleteRoomImage() { }
+
+        public void DeleteAllRoomImage()
+        {
+
+        }
+        #endregion
+
+
+        public async Task<string> UploadImages(List<IFormFile> files, Hotel hotel, params Room[] room)
         {
             bool result = false;
             string urlImgFolder = "";
             try
             {
                 // thư mục chứa ảnh hotel và rooms
-                string folderOfHotel = GetFilePath("hotels", hotel.Id.ToString());
+                string folderOfHotel = GetPath("hotels", hotel.Id.ToString());
 
-                // thư mục chỉ chứa ảnh của hotel
-                string folderImgOfHotel = GetFilePath(folderOfHotel, "_imgHotel");
-
+                string folderImgOfHotel = "";
+                if (room.Length == 0)
+                {
+                    // thư mục chỉ chứa ảnh của hotel
+                    folderImgOfHotel = GetPath(folderOfHotel, "_imgHotel");
+                }
+                else
+                {
+                    folderImgOfHotel = GetPath(folderOfHotel, room[0].Id.ToString());
+                }
+                
                 // nếu chưa có thư mục chứa ảnh của hotel thì tạo mới
                 if (System.IO.Directory.Exists(folderOfHotel) == false)
                 {
@@ -127,7 +251,7 @@ namespace WebApi.Services
                 foreach (var file in files)
                 {
                     result = await SaveFile(file, folderImgOfHotel);
-                    if(result == false)
+                    if (result == false)
                     {
                         break;
                     }
@@ -138,11 +262,32 @@ namespace WebApi.Services
             return urlImgFolder;
         }
 
+        private string GetPath(params string[] folderOrFileName)
+        {
+            var imagesPath = Path.Combine(hostEnvironment.WebRootPath, "images");
+            string filePath = imagesPath;
+            foreach (var f in folderOrFileName)
+            {
+                if(f.StartsWith("/"))
+                {
+                    string[] temp = f.Split("/");
+                    foreach(var _f in temp)
+                    {
+                        filePath = Path.Combine(filePath, _f);
+                    }
+                } else
+                {
+                    filePath = Path.Combine(filePath, f);
+                }
+            }
+            return filePath;
+        }
+
         private async Task<bool> SaveFile(IFormFile file, string folder)
         {
             bool result = false;
             string fileName = file.FileName;
-            string filePath = GetFilePath(folder, fileName);
+            string filePath = GetPath(folder, fileName);
 
             if (System.IO.File.Exists(filePath) == true)
             {

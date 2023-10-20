@@ -26,7 +26,6 @@ namespace WebApi.Controllers
         [HttpPost("add-city")]
         public async Task<IActionResult> AddCity(IFormFile file, [FromForm] AddCityDto model)
         {
-
             if (model == null)
             {
                 return BadRequest(new JsonResult(new { title = "Error", message = "Something error when add city" }));
@@ -38,13 +37,12 @@ namespace WebApi.Controllers
             }
 
             //var file = Request.Form.Files[0];
-            var result = await imageService.AddOneToFolder(file, "cities");
-
+            var result = await imageService.AddCityImage(file, "cities");
             var newCity = new City
             {
                 CityCode = model.CityCode,
                 Name = model.Name,
-                ImgUrl = "/cities/" + file.FileName,
+                PhotoPath = "/cities/" + file.FileName,
                 Accommodations = 0
             };
 
@@ -52,12 +50,10 @@ namespace WebApi.Controllers
             {
                 return BadRequest(new JsonResult(new { title = "Error", message = "Something error when add city image" }));
             }
-
             if (await cityRepository.AddCity(newCity) == false)
             {
                 return BadRequest(new JsonResult(new { title = "Error", message = "Something error when add city" }));
             }
-
             return Ok(newCity);
         }
 
@@ -74,7 +70,7 @@ namespace WebApi.Controllers
             var city = await cityRepository.GetCityById(id);
 
             var result = await cityRepository.Delete(city);
-            imageService.DeleteImage(city.ImgUrl);
+            imageService.DeleteCityImage(city.PhotoPath);
             if (result == false)
             {
                 return BadRequest(new JsonResult(new { title = "Error", message = "Error when delete city" }));
@@ -99,23 +95,17 @@ namespace WebApi.Controllers
             // thay anh 
             if (file != null)
             {
-                var result = await imageService.UpdateImage(cityExist.ImgUrl, file, "cities");
-                cityExist.ImgUrl = "/cities/" + file.FileName;
+                var result = await imageService.UpdateCityImage(cityExist.PhotoPath, file, "cities");
+                cityExist.PhotoPath = "/cities/" + file.FileName;
             }
-
             cityExist.Name = model.Name;
             cityExist.CityCode = model.CityCode;
            
-
             var resultUpdate = await cityRepository.UpdateCity(cityExist);
             if(resultUpdate == false)
             {
                 return BadRequest(new JsonResult(new { title = "Error", message = "Something error when update city" }));
             }
-
-            
-
-
             return Ok();
         }
 
@@ -127,7 +117,6 @@ namespace WebApi.Controllers
                 var cites = await cityRepository.GetAllCities();
                 return Ok(cites.ToList());
             }
-
             var cities = await cityRepository.SearchCities(searchString);
             return Ok(cities);
         }

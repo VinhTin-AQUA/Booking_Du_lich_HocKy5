@@ -1,35 +1,43 @@
-.loading,
-.loading-2 {
-  border-radius: 50%;
-  outline: none;
-}
-
 .loading {
-  width: 300px;
-  height: 300px;
-
-  border-top: 20px solid #2563eb;
-  border-bottom: 20px solid #2563eb;
-  border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
-  animation: spinner 2s linear infinite;
+  @apply w-[200px] h-20 flex items-center justify-around;
 }
 
-.loading-2 {
-  width: 200px;
-  height: 200px;
-  border-left: 20px solid #13e816;
-  border-right: 20px solid #31e057;
-  border-bottom: 20px solid transparent;
-  border-top: 20px solid transparent;
-  animation: spinner 3.5s linear infinite;
+.bg-dot {
+  @apply h-10 w-10 flex items-center justify-center;
 }
 
-@keyframes spinner {
+.bg-dot:nth-child(1) .dot {
+  @apply bg-blue-500;
+  animation-delay: -1s;
+}
+
+.bg-dot:nth-child(2) .dot {
+  @apply bg-red-500;
+  animation-delay: -0.75s;
+}
+
+.bg-dot:nth-child(3) .dot {
+  @apply bg-yellow-500;
+  animation-delay: -0.5s;
+}
+
+.bg-dot:nth-child(4) .dot {
+  @apply bg-green-500 ;
+  animation-delay: -0.25s;
+}
+
+.dot {
+  @apply h-6 w-6 rounded-full;
+  animation: loading 0.7s ease-in-out infinite alternate;
+  box-shadow: 0px 0px 3px gray;
+}
+@keyframes loading {
   0% {
-    rotate: 0deg;
+    //transform: translateY(15px);
+    @apply h-10 w-10;
   }
   100% {
-    rotate: 360deg;
+    //transform: translateY(-15px);
+    @apply h-6 w-6;
   }
 }

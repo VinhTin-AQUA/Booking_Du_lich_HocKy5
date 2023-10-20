@@ -18,7 +18,7 @@ namespace WebApi.Models
         [Required(ErrorMessage = "{0} must be required")]
         [Display(Name = "Room Name")]
         [Column(TypeName = "nvarchar(250)")]
-        public string Name { get; set; }
+        public string RoomName { get; set; }
 
         [Display(Name = "Description")]
         [Column(TypeName = "nvarchar(max)")]
@@ -34,5 +34,8 @@ namespace WebApi.Models
         public int? HotelId { get; set; }
 
         public Hotel Hotel { get; set; }
+
+        public int? RoomTypeId { get; set; }
+        public RoomType RoomType { get; set; }
     }
 }

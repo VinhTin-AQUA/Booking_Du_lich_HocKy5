@@ -77,7 +77,7 @@ namespace WebApi1.Controllers
                 }
                 await authenRepository.AddRoleToUser(user, "User");
 
-                if (await  emailSender.SendEmailConfirmAsync(user))
+                if (await  emailSender.SendEmailConfirmAsync(user, ""))
                 {
                     return Ok(new JsonResult(new
                     {

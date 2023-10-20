@@ -1,5 +1,5 @@
 export interface EditCity {
   Id: number;
-  CityCode: number;
+  CityCode: string;
   Name: string;
 }

@@ -5,7 +5,7 @@
 		@apply  md:col-span-4 min-h-screen ;
 
 		.img-menu {
-			@apply h-auto;
+			@apply h-auto flex items-center gap-2;
 		}
 
 		.img-container {
@@ -38,5 +38,14 @@
 		&:focus {
 			box-shadow: 0px 0px 8px blue;
 		}
+	}
+}
+
+.remove-img-icon {
+	@apply duration-150 text-red-500;
+	cursor: pointer;
+
+	&:hover {
+		@apply  text-red-800;
 	}
 }

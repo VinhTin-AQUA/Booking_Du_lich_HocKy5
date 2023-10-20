@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { map, pipe, mergeMap, every } from 'rxjs';
 
 import { AccountService } from 'src/app/account/account.service';
@@ -8,6 +8,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AdminService } from 'src/app/admin/admin.service';
 import { City } from 'src/app/shared/models/city/city';
 import { SharedService } from 'src/app/shared/shared.service';
+import { environment } from 'src/environments/environment.development';
+import { ImgShow } from 'src/app/shared/models/image/imgShow';
 
 @Component({
   selector: 'app-hotels',
@@ -17,6 +19,9 @@ import { SharedService } from 'src/app/shared/shared.service';
 export class HotelComponent {
   private userId: string | undefined = '';
   hotel: Hotel | null = null;
+  imgFiles: ImgShow[] = [];
+  envImgUrl = environment.imgUrl;
+
   formHotelSubmit: FormGroup = new FormGroup([]);
   submitted: boolean = false;
   errorMessage: string[] = [];
@@ -30,8 +35,10 @@ export class HotelComponent {
   };
 
   //img
-  listShowImgUrls: any = [];
-  listImgAdd: any = [];
+  listNewImgUrls: ImgShow[] = []; // danh sách ảnh mới để hiển thị trên view
+  newImgObjToAdd: any = []; // danh sách các đối tượng file gửi lên server
+
+  @ViewChild('fileInput') fileInput!: ElementRef;
 
   constructor(
     private accountService: AccountService,
@@ -66,7 +73,17 @@ export class HotelComponent {
       )
       .subscribe({
         next: (res: any) => {
-          this.hotel = res;
+          this.hotel = res.hotel;
+          for (let i of res.imgFileNames) {
+            const temp = i.split('\\');
+
+            const imgShow: ImgShow = {
+              name: temp[temp.length - 1],
+              data: i,
+            };
+            this.imgFiles.push(imgShow);
+          }
+
           if (this.hotel !== null && this.hotel.City !== null) {
             this.cityOfHotel = this.hotel.City;
           }
@@ -89,6 +106,32 @@ export class HotelComponent {
     }
   }
 
+  private getImagesHotel() {
+    this.agentService.getHotelOfAgent(this.userId).subscribe({
+      next: (res: any) => {
+        for (let i of res.imgFileNames) {
+          const temp = i.split('\\');
+
+          const imgShow: ImgShow = {
+            name: temp[temp.length - 1],
+            data: i,
+          };
+          console.log(imgShow);
+
+          this.imgFiles.push(imgShow);
+        }
+        this.listNewImgUrls = [];
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
+  }
+
+  private clearFile() {
+    this.fileInput.nativeElement.value = '';
+  }
+
   submitHotel() {
     this.submitted = true;
     this.errorMessage = [];
@@ -101,22 +144,20 @@ export class HotelComponent {
       formData.append('cityId', this.formHotelSubmit.value.cityId);
       formData.append('Id', this.formHotelSubmit.value.Id);
 
-      //formData.append('images', 'hotel');
-      //formData.append('files', this.listImgAdd);
-      
       //this.listImgAdd.forEarch((_file: any) => formData.append('files',_file))
-      for(let file of this.listImgAdd) {
-        formData.append('files',file);
+      for (let file of this.newImgObjToAdd) {
+        formData.append('files', file);
       }
-
-
+      this.sharedService.showLoading(true);
       this.agentService.updateHotel(formData).subscribe({
         next: (res: any) => {
-          console.log(res.Value.message);
-          this.sharedService.showToastMessage('successs' + res.Value.message);
+          this.getImagesHotel();
+          this.sharedService.showToastMessage('success' + res.Value.message);
+          this.sharedService.showLoading(false);
         },
         error: (err) => {
           this.sharedService.showToastMessage(err.error.Value.message);
+          this.sharedService.showLoading(false);
         },
       });
     }
@@ -124,22 +165,70 @@ export class HotelComponent {
 
   // img
   onSelectImg(event: any) {
-
-    for(let file of event.target.files) {
-      this.listImgAdd.push(file);
+    for (let file of event.target.files) {
+      this.newImgObjToAdd.push(file);
     }
-    console.log(this.listImgAdd);
-    console.log(this.listImgAdd.length);
 
     if (event.target.files) {
       const n = event.target.files.length;
       for (let i = 0; i < n; i++) {
         var reader = new FileReader();
         reader.readAsDataURL(event.target.files[i]);
+
+        let imgShow: ImgShow = {
+          name: event.target.files[i].name,
+          data: '',
+        };
+
         reader.onload = (events: any) => {
-          this.listShowImgUrls.push(events.target.result);
+          imgShow.data = events.target.result;
+          this.listNewImgUrls.push(imgShow);
         };
       }
+      this.clearFile();
     }
+  }
+
+  removeImgUnSave(url: string) {
+    const index = this.listNewImgUrls.findIndex((u: any) => u.data === url);
+    if (index !== -1) {
+      this.listNewImgUrls.splice(index, 1);
+    }
+  }
+
+  removeImgSaved(url: string) {
+    this.sharedService.showLoading(true);
+    this.agentService.deleteImgHotel(url).subscribe({
+      next: (_) => {
+        const index = this.imgFiles.findIndex((u: any) => u === url);
+        if (index !== -1) {
+          this.imgFiles.splice(index, 1);
+        }
+        this.sharedService.showToastMessage(
+          'success Delete image successfully'
+        );
+        this.sharedService.showLoading(false);
+      },
+      error: (_) => {
+        this.sharedService.showToastMessage('Please try again');
+        this.sharedService.showLoading(false);
+      },
+    });
+  }
+
+  deleteAllIg() {
+    this.agentService.deleteAllImgHotel(this.hotel?.Id).subscribe({
+      next: (_) => {
+        this.sharedService.showToastMessage(
+          'success Delete all images successfully'
+        );
+        this.imgFiles = [];
+        this.listNewImgUrls = [];
+        this.newImgObjToAdd = [];
+      },
+      error: (_) => {
+        this.sharedService.showToastMessage('Please try again');
+      },
+    });
   }
 }

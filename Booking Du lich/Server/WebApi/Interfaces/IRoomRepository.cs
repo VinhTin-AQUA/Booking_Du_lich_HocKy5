@@ -7,7 +7,7 @@ namespace WebApi.Interfaces
     {
         public Task<bool> Save();
         public Task<bool> AddRoom(Room room);
-        public Task<ICollection<Room>> GetAllRoom();
+        public Task<ICollection<Room>> GetAllRooms();
         public Task<Room> GetRoomById(int? id);
         
         public Task<bool> DeleteRoom(Room room);

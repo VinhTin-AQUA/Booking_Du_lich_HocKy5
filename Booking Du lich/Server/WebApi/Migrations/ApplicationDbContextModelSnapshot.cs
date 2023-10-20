@@ -47,6 +47,36 @@ namespace WebApi.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "ed92ea7a-7051-478a-b5ac-0270ab0eb5c1",
+                            ConcurrencyStamp = "1",
+                            Name = "Admin",
+                            NormalizedName = "ADMIN"
+                        },
+                        new
+                        {
+                            Id = "769b79ed-ff6e-4ac3-83eb-04e5f10db4f7",
+                            ConcurrencyStamp = "2",
+                            Name = "Employee",
+                            NormalizedName = "EMPLOYEE"
+                        },
+                        new
+                        {
+                            Id = "b0483baa-b3b7-41a0-8e44-0faa14f9c37a",
+                            ConcurrencyStamp = "3",
+                            Name = "Agent",
+                            NormalizedName = "AGENT"
+                        },
+                        new
+                        {
+                            Id = "d4dd10a9-b45e-4954-9759-f3e79a5fc934",
+                            ConcurrencyStamp = "4",
+                            Name = "User",
+                            NormalizedName = "USER"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -245,24 +275,45 @@ namespace WebApi.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<string>("CityCode")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<int>("Accommodations")
                         .HasColumnType("int");
-
-                    b.Property<int>("CityCode")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ImgUrl")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(70)");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(50)");
 
+                    b.Property<string>("PhotoPath")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(70)");
+
+                    b.HasKey("Id", "CityCode")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.ToTable("City", (string)null);
+                });
+
+            modelBuilder.Entity("WebApi.Models.Contact", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("datetime2");
+
                     b.HasKey("Id")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.ToTable("City");
+                    b.ToTable("Contact", (string)null);
                 });
 
             modelBuilder.Entity("WebApi.Models.Hotel", b =>
@@ -276,8 +327,8 @@ namespace WebApi.Migrations
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(250)");
 
-                    b.Property<int>("AvailableRoom")
-                        .HasColumnType("int");
+                    b.Property<string>("CityCode")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int?>("CityId")
                         .HasColumnType("int");
@@ -295,9 +346,9 @@ namespace WebApi.Migrations
                     b.HasKey("Id")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.HasIndex("CityId");
+                    b.HasIndex("CityId", "CityCode");
 
-                    b.ToTable("Hotel");
+                    b.ToTable("Hotel", (string)null);
                 });
 
             modelBuilder.Entity("WebApi.Models.Room", b =>
@@ -317,23 +368,45 @@ namespace WebApi.Migrations
                     b.Property<bool>("IsAvailable")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(250)");
-
                     b.Property<string>("PhotoPath")
                         .HasColumnType("varchar(250)");
+
+                    b.Property<string>("RoomName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(250)");
 
                     b.Property<string>("RoomNumber")
                         .IsRequired()
                         .HasColumnType("nvarchar(250)");
+
+                    b.Property<int?>("RoomTypeId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.HasIndex("HotelId");
 
+                    b.HasIndex("RoomTypeId");
+
                     b.ToTable("Room");
+                });
+
+            modelBuilder.Entity("WebApi.Models.RoomType", b =>
+                {
+                    b.Property<int>("RoomTypeId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RoomTypeId"), 1L, 1);
+
+                    b.Property<string>("RoomTypeName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(250)");
+
+                    b.HasKey("RoomTypeId");
+
+                    b.ToTable("Room Type");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -400,7 +473,7 @@ namespace WebApi.Migrations
                 {
                     b.HasOne("WebApi.Models.City", "City")
                         .WithMany("Hotels")
-                        .HasForeignKey("CityId");
+                        .HasForeignKey("CityId", "CityCode");
 
                     b.Navigation("City");
                 });
@@ -411,7 +484,13 @@ namespace WebApi.Migrations
                         .WithMany("Rooms")
                         .HasForeignKey("HotelId");
 
+                    b.HasOne("WebApi.Models.RoomType", "RoomType")
+                        .WithMany("Rooms")
+                        .HasForeignKey("RoomTypeId");
+
                     b.Navigation("Hotel");
+
+                    b.Navigation("RoomType");
                 });
 
             modelBuilder.Entity("WebApi.Models.City", b =>
@@ -423,6 +502,11 @@ namespace WebApi.Migrations
                 {
                     b.Navigation("Agents");
 
+                    b.Navigation("Rooms");
+                });
+
+            modelBuilder.Entity("WebApi.Models.RoomType", b =>
+                {
                     b.Navigation("Rooms");
                 });
 #pragma warning restore 612, 618

@@ -1,11 +1,22 @@
 <ng-container *ngIf="sharedService.isLoading$| async as isLoading">
-  <div *ngIf="isLoading === true" class="wrapper">
-    <div
-      class="fixed top-0 w-full h-full flex justify-center items-center bg-[#e4e4e7]/50">
-      <div class="loading flex items-center justify-center">
-        <div class="loading-2"></div>
-      </div>
+
+<div *ngIf="isLoading === true"
+  class="fixed top-0 w-full h-full flex justify-center items-center bg-[#e4e4e7]/30 z-50"
+>
+  <div class="loading">
+    <div class="bg-dot">
+      <div class="dot"></div>
+    </div>
+    <div class="bg-dot">
+      <div class="dot"></div>
+    </div>
+    <div class="bg-dot">
+      <div class="dot"></div>
+    </div>
+    <div class="bg-dot">
+      <div class="dot"></div>
     </div>
   </div>
-</ng-container>
+</div>
 
+</ng-container>

@@ -58,12 +58,14 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 });
 
 // repositories service
+builder.Services.AddScoped<SeedService>();
 builder.Services.AddScoped<IAuthenRepository, AuthenRepository>();
 builder.Services.AddScoped<ICityRepository, CityRepository>();
 builder.Services.AddScoped<IImageService, ImageService>();
 builder.Services.AddScoped<IUserManagerRepository, UserManagerRepository>();
 builder.Services.AddScoped<IHotelRepository, HotelRepository>();
 builder.Services.AddScoped<IRoomRepository, RoomRepository>();
+builder.Services.AddScoped<IRoomTypeRepository, RoomTypeRepository>();
 
 // JWT
 builder.Services.AddScoped<JWTService>();
@@ -174,5 +176,17 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+
+using var scope = app.Services.CreateScope();
+try
+{
+    var contextSeedService = scope.ServiceProvider.GetService<SeedService>();
+    await contextSeedService!.InitializeContextAsync();
+}
+catch (Exception ex)
+{
+    var logger = scope.ServiceProvider.GetService<ILogger<Program>>();
+    logger.LogError("Eror: " + ex.InnerException, ex.InnerException);
+}
 
 app.Run();
