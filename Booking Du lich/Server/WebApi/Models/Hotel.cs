@@ -20,7 +20,6 @@ namespace WebApi.Models
         [Column(TypeName = "nvarchar(250)")]
         public string? Address { get; set; }
 
-        public int AvailableRoom { get; set; } = 0;
 
         [Display(Name = "Description")]
         [Column(TypeName = "nvarchar(max)")]

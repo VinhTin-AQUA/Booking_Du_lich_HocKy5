@@ -48,7 +48,7 @@ namespace WebApi.Controllers
             var room = new Room
             {
                 RoomNumber = model.RoomNumber,
-                Name = model.Name,
+                RoomName = model.Name,
                 Description = model.Description,
                 IsAvailable = model.IsAvailable,
                 HotelId = model.HotelId,
@@ -192,7 +192,7 @@ namespace WebApi.Controllers
             }
 
             roomExisted.RoomNumber = model.RoomNumber;
-            roomExisted.Name = model.Name;
+            roomExisted.RoomName = model.Name;
             roomExisted.Description = model.Description;
             roomExisted.IsAvailable = model.IsAvailable;
 
