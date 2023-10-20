@@ -1,4 +1,4 @@
 export interface AddCitty {
-  CityCode: number;
+  CityCode: string;
   Name: string;
 }

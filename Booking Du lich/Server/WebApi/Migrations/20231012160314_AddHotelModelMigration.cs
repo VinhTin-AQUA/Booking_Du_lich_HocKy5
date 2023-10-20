@@ -10,7 +10,7 @@ namespace WebApi.Migrations
         {
             migrationBuilder.AddColumn<int>(
                 name: "HotelId",
-                table: "AspNetUsers",
+                table: "Users",
                 type: "int",
                 nullable: true);
 
@@ -38,8 +38,8 @@ namespace WebApi.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_AspNetUsers_HotelId",
-                table: "AspNetUsers",
+                name: "IX_Users_HotelId",
+                table: "Users",
                 column: "HotelId");
 
             migrationBuilder.CreateIndex(
@@ -48,8 +48,8 @@ namespace WebApi.Migrations
                 column: "CityId");
 
             migrationBuilder.AddForeignKey(
-                name: "FK_AspNetUsers_Hotel_HotelId",
-                table: "AspNetUsers",
+                name: "FK_Users_Hotel_HotelId",
+                table: "Users",
                 column: "HotelId",
                 principalTable: "Hotel",
                 principalColumn: "Id");
@@ -58,19 +58,19 @@ namespace WebApi.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropForeignKey(
-                name: "FK_AspNetUsers_Hotel_HotelId",
-                table: "AspNetUsers");
+                name: "FK_Users_Hotel_HotelId",
+                table: "Users");
 
             migrationBuilder.DropTable(
                 name: "Hotel");
 
             migrationBuilder.DropIndex(
-                name: "IX_AspNetUsers_HotelId",
-                table: "AspNetUsers");
+                name: "IX_Users_HotelId",
+                table: "Users");
 
             migrationBuilder.DropColumn(
                 name: "HotelId",
-                table: "AspNetUsers");
+                table: "Users");
         }
     }
 }

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebApi1.Data;
 
@@ -11,9 +12,10 @@ using WebApi1.Data;
 namespace WebApi.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231020092944_UpdateCityModelMigration")]
+    partial class UpdateCityModelMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -292,7 +294,7 @@ namespace WebApi.Migrations
                     b.HasKey("Id", "CityCode")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.ToTable("City", (string)null);
+                    b.ToTable("City");
                 });
 
             modelBuilder.Entity("WebApi.Models.Contact", b =>
@@ -313,7 +315,7 @@ namespace WebApi.Migrations
                     b.HasKey("Id")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.ToTable("Contact", (string)null);
+                    b.ToTable("Contact");
                 });
 
             modelBuilder.Entity("WebApi.Models.Hotel", b =>
@@ -348,7 +350,7 @@ namespace WebApi.Migrations
 
                     b.HasIndex("CityId", "CityCode");
 
-                    b.ToTable("Hotel", (string)null);
+                    b.ToTable("Hotel");
                 });
 
             modelBuilder.Entity("WebApi.Models.Room", b =>
@@ -384,7 +386,7 @@ namespace WebApi.Migrations
 
                     b.HasIndex("HotelId");
 
-                    b.ToTable("Room", (string)null);
+                    b.ToTable("Room");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
