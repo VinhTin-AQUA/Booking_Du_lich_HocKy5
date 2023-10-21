@@ -24,9 +24,6 @@ namespace WebApi.Models
         [Column(TypeName = "nvarchar(70)")]
         public string PhotoPath { get; set; }
 
-        [DefaultValue(0)]
-        public int Accommodations { get; set; } = 0;
-
 
         /*tham chiếu khóa ngoại*/
         public ICollection<Hotel> Hotels { get; set;}

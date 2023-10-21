@@ -18,7 +18,7 @@ namespace WebApi.Migrations
                 newName: "RoomName");
 
             migrationBuilder.RenameColumn(
-                name: "ImgUrl",
+                name: "PhotoPath",
                 table: "City",
                 newName: "PhotoPath");
         }
