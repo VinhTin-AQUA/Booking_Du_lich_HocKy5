@@ -100,22 +100,22 @@ namespace WebApi.Controllers
             return Ok(cities);
         }
 
-        //[HttpGet("get-hotel-by-id")]
-        //public async Task<IActionResult> GetHotelById([FromQuery] int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return BadRequest();
-        //    }
+        [HttpGet("get-hotel-by-id")]
+        public async Task<IActionResult> GetHotelById([FromQuery] int? id)
+        {
+            if (id == null)
+            {
+                return BadRequest();
+            }
 
-        //    var hotel = await hotelRepository.GetHotelById(id);
-        //    if (hotel == null)
-        //    {
-        //        return BadRequest(new JsonResult(new { title = "Error", mesage = "Hotel not found" }));
-        //    }
+            var hotel = await hotelRepository.GetHotelById(id);
+            if (hotel == null)
+            {
+                return BadRequest(new JsonResult(new { title = "Error", mesage = "Hotel not found" }));
+            }
 
-        //    return Ok(hotel);
-        //}
+            return Ok(hotel);
+        }
 
         [HttpGet("get-hotel-of-agent")]
         public async Task<IActionResult> GetHotelOfAgent([FromQuery] string agentId)
@@ -184,7 +184,7 @@ namespace WebApi.Controllers
 
             await authenRepository.AddRoleToUser(newAgent, "Agent");
 
-            string message = @$"<p>Hello <b>{newAgent.FirstName} {newAgent.LastName}</b></p> <p>Your passwork: <b>abc@123</b></p><p>Please change your password after confirm email</p>";
+            string message = @$"<p>Hello <b>{newAgent.FirstName} {newAgent.LastName}</b></p> <p>Your passwork: <b>abc123</b></p><p>Please change your password after confirm email</p>";
 
             if (await emailSender.SendEmailConfirmAsync(newAgent, message))
             {
@@ -195,7 +195,7 @@ namespace WebApi.Controllers
                 }));
             }
 
-            return Ok(new JsonResult(new { title = "Success", message = "Add agent successfully" }));
+            return BadRequest(new JsonResult(new { title = "Error", message = "Error when sent email confirmation to agent" }));
         }
 
         [HttpDelete("delete-hotel")]

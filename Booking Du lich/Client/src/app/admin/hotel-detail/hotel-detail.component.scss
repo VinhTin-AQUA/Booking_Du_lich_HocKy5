@@ -73,7 +73,16 @@
 }
 
 .form {
-  @apply bg-[#bfdbfe] w-1/2 mx-auto p-2 rounded mt-2;
+  @apply w-1/2 mx-auto p-2 rounded mt-2;
+}
+
+.form-success {
+  @apply bg-[#bfdbfe] ;
+}
+
+.form-error {
+  @apply bg-[#ffebea];
+  box-shadow: 0 0 4px #fc827c;
 }
 
 // agent list

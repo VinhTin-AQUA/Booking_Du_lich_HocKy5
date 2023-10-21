@@ -10,7 +10,6 @@ namespace WebApi.DTOs.RoomType
 
         [Required(ErrorMessage = "{0} must be required")]
         [Display(Name = "Room Type Name")]
-        [Column(TypeName = "nvarchar(250)")]
         public string RoomTypeName { get; set; }
     }
 }
