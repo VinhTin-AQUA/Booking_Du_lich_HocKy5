@@ -152,7 +152,7 @@ export class CityManangerComponent implements OnInit {
         cityCode: city.CityCode,
         name: city.Name,
       });
-      this.imgUrl = `${environment.imgUrl}/${city.ImgUrl}`;
+      this.imgUrl = `${environment.imgUrl}/${city.PhotoPath}`;
     } else {
       this.submitted = false;
       this.imgUrl = '';
@@ -183,7 +183,7 @@ export class CityManangerComponent implements OnInit {
             cityUpdate.CityCode = this.formEdit.value.cityCode;
             cityUpdate.Name = this.formEdit.value.name;
             if (this.file !== undefined) {
-              cityUpdate.ImgUrl = `/cities/${this.file.name}`;
+              cityUpdate.PhotoPath = `/cities/${this.file.name}`;
             }
           }
         },
