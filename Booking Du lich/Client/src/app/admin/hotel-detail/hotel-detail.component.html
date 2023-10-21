@@ -1,6 +1,5 @@
 <div class="wrapper" *ngIf="hotel !== null">
   
-
   <!-- search -->
   <div class="border flex justify-between item-center">
     <!-- search -->
@@ -78,12 +77,13 @@
 <!-- add agent -->
 <div *ngIf="isShowedAgent === true" class="add-agent-wrapper">
   <div class="add-agent-container">
-    <div class="form">
+    <div class="form"  [class]="addFormSuccess === true ? 'form-success' : 'form-error'">
+      
 			<div *ngFor="let err of erroMessage" class="text-red-500 text-[1.1em]">
 				{{err}} <br>
 			</div>
-      <form [formGroup]="signUpForm" (ngSubmit)="submit()" autocomplete="off">
 
+      <form [formGroup]="signUpForm" (ngSubmit)="submit()" autocomplete="off">
         <!-- first name -->
         <div class="text-[1.2em] mb-4">
           <label class="block mb-2">First name</label>

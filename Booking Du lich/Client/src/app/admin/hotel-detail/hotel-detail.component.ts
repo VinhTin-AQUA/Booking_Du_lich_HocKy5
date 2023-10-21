@@ -22,6 +22,7 @@ export class HotelDetailComponent implements OnInit {
   erroMessage: string[] = [];
   deleteAgent: boolean = false;
   agentToDelete: any;
+  addFormSuccess: boolean = true;
 
   constructor(
     private sharedService: SharedService,
@@ -61,9 +62,8 @@ export class HotelDetailComponent implements OnInit {
     this.signUpForm.controls['email'].setValue('');
     this.signUpForm.controls['phoneNumber'].setValue('');
     this.signUpForm.controls['password'].setValue('abc123');
-
     this.submitted = false;
-      this.erroMessage = [];
+    this.addFormSuccess = true;
   }
 
   deleteHotel() {
@@ -104,6 +104,7 @@ export class HotelDetailComponent implements OnInit {
   submit() {
     this.submitted = true;
     this.erroMessage = [];
+    this.addFormSuccess = true;
     if (this.signUpForm.valid) {
       const model: Agent = {
         HotelId: this.hotelId,
@@ -115,7 +116,6 @@ export class HotelDetailComponent implements OnInit {
         PhoneNumber: this.signUpForm.value.phoneNumber,
         Password: this.signUpForm.value.password,
       };
-
       this.sharedService.showLoading(true);
 
       this.adminService.addAgent(model).subscribe({
@@ -125,10 +125,10 @@ export class HotelDetailComponent implements OnInit {
           this.agents.push(model);
           this.sharedService.showLoading(false);
           this.resetSignUpForm();
-          
         },
         error: (err) => {
-          if (err.error.Errors !== undefined) {
+          this.addFormSuccess = false;
+          if (err.error.Errors) {
             for (let _err of err.error.Errors) {
               this.erroMessage.push(_err);
             }
@@ -139,6 +139,9 @@ export class HotelDetailComponent implements OnInit {
           this.resetSignUpForm();
         },
       });
+    }
+    else {
+      this.addFormSuccess = false;
     }
   }
 
