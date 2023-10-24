@@ -32,8 +32,7 @@ namespace WebApi.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CityCode = table.Column<int>(type: "int", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(50)", nullable: false),
-                    ImgUrl = table.Column<string>(type: "nvarchar(70)", nullable: false),
-                    Accommodations = table.Column<int>(type: "int", nullable: false)
+                    PhotoPath = table.Column<string>(type: "nvarchar(70)", nullable: false)
                 },
                 constraints: table =>
                 {

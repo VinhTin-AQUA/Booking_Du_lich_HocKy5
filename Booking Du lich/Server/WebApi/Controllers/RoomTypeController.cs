@@ -16,11 +16,9 @@ namespace WebApi.Controllers
     {
         private readonly IRoomTypeRepository roomTypeRepository;
        
-
         public RoomTypeController(IRoomTypeRepository roomTypeRepository)
         {
             this.roomTypeRepository = roomTypeRepository;
-            
         }
 
         [HttpPost("add-room-type")]
@@ -38,7 +36,6 @@ namespace WebApi.Controllers
 
             var roomType = await roomTypeRepository.GetRoomTypeByName(model.RoomTypeName);
 
-            
 
             if (roomType != null)
             {

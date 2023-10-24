@@ -43,7 +43,6 @@ namespace WebApi.Controllers
                 CityCode = model.CityCode,
                 Name = model.Name,
                 PhotoPath = "/cities/" + file.FileName,
-                Accommodations = 0
             };
 
             if (result == false)

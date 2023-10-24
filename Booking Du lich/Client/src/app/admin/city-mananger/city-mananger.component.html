@@ -34,10 +34,9 @@
 							<mat-icon class="city-icon-edit" title="edit" (click)="showEditcityModal(city)">edit</mat-icon>
 						</div>
 					</div>
-					<img class="w-[230px] h-[230px]" [src]="_environment.imgUrl + '/' + city.ImgUrl" alt="no-img">
+					<img class="w-[230px] h-[230px]" [src]="_environment.imgUrl + '/' + city.PhotoPath" alt="no-img">
 					<div>
 						<span>CityCode:<b> {{city.CityCode}}</b></span><br>
-						<span>Accommodations:<b> {{city.Accommodations}}</b></span>
 					</div>
 				</div>
 				
