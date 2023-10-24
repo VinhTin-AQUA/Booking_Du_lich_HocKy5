@@ -66,6 +66,7 @@ builder.Services.AddScoped<IUserManagerRepository, UserManagerRepository>();
 builder.Services.AddScoped<IHotelRepository, HotelRepository>();
 builder.Services.AddScoped<IRoomRepository, RoomRepository>();
 builder.Services.AddScoped<IRoomTypeRepository, RoomTypeRepository>();
+builder.Services.AddScoped<IServiceRepository, ServiceRepository>();
 
 // JWT
 builder.Services.AddScoped<JWTService>();
