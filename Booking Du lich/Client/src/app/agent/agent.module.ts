@@ -10,6 +10,8 @@ import { AgentComponent } from './agent.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { HotelComponent } from './hotel/hotel.component';
 import { RoomDashboardComponent } from './room-dashboard/room-dashboard.component';
+import { ServiceComponent } from './service/service.component';
+import { RoomDetailComponent } from './room-detail/room-detail.component';
 
 
 
@@ -19,7 +21,9 @@ import { RoomDashboardComponent } from './room-dashboard/room-dashboard.componen
     AgentComponent,
     SidebarComponent,
     HotelComponent,
-    RoomDashboardComponent
+    RoomDashboardComponent,
+    ServiceComponent,
+    RoomDetailComponent
   ],
   imports: [
     CommonModule,

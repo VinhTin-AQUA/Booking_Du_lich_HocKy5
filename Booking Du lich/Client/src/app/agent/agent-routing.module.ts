@@ -4,6 +4,7 @@ import { AgentComponent } from './agent.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HotelComponent } from './hotel/hotel.component';
 import { RoomDashboardComponent } from './room-dashboard/room-dashboard.component';
+import { RoomDetailComponent } from './room-detail/room-detail.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,7 @@ const routes: Routes = [
       { path: 'profile-agent', component: ProfileComponent, title: 'Profile Agent', },
       { path: 'hotel', component: HotelComponent, title: 'Hotel', },
       { path: 'room-dashboard', component: RoomDashboardComponent, title: 'Room dashboard', },
+      { path: 'room-details', component: RoomDetailComponent, title: 'Room details', },
     ],
   },
 ];
