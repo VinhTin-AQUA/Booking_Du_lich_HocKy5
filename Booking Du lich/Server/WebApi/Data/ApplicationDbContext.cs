@@ -43,11 +43,6 @@ namespace WebApi1.Data
                 .HasForeignKey(h => new { h.CityId, h.CityCode });
 
             modelBuilder.Entity<Hotel>()
-                .HasMany(h => h.Agents)
-                .WithOne(u => u.Hotel)
-                .HasForeignKey(u => u.HotelId);
-
-            modelBuilder.Entity<Hotel>()
                 .HasMany(h => h.Rooms)
                 .WithOne(r => r.Hotel)
                 .HasForeignKey(r => r.HotelId);
@@ -73,18 +68,6 @@ namespace WebApi1.Data
         public DbSet<Contact> Contact { get; set; }
 
         public DbSet<RoomType> RoomType { get; set; }
-
-        private void SeedRole(ModelBuilder builder)
-        {
-            builder.Entity<IdentityRole>().HasData(
-                    new IdentityRole() { Name = "Admin", ConcurrencyStamp = "1", NormalizedName = "ADMIN" },
-
-                    new IdentityRole() { Name = "Employee", ConcurrencyStamp = "2", NormalizedName = "EMPLOYEE" },
-
-                    new IdentityRole() { Name = "Agent", ConcurrencyStamp = "3", NormalizedName = "AGENT" },
-
-                    new IdentityRole() { Name = "User", ConcurrencyStamp = "4", NormalizedName = "USER" });
-        }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }

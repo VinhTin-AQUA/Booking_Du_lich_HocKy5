@@ -39,24 +39,23 @@ namespace WebApi.Repositories
         public async Task<Hotel> GetHotelById(int? id)
         {
             var hotel = await context.Hotel
-                .Include(h => h.Agents)
                 .Where(h => h.Id == id)
                 .SingleOrDefaultAsync();
             return hotel;
         }
 
-        public async Task<Hotel> GetHotelOfAgent(string agentId)
-        {
-            var agent = await userManager.FindByIdAsync(agentId);
+        //public async Task<Hotel> GetHotelOfAgent(string agentId)
+        //{
+        //    var agent = await userManager.FindByIdAsync(agentId);
 
-            var hotel = await context.Hotel
-                .Where(h => h.Id == agent.HotelId)
-                .Include(h => h.City)
-                .FirstOrDefaultAsync();
-            hotel.Agents = null;
+        //    var hotel = await context.Hotel
+        //        .Where(h => h.Id == agent.HotelId)
+        //        .Include(h => h.City)
+        //        .FirstOrDefaultAsync();
+        //    hotel.Agents = null;
 
-            return hotel;
-        }
+        //    return hotel;
+        //}
 
         public async Task<IdentityResult> AdddAgent(ApplicationUser agent, string password)
         {
@@ -72,10 +71,6 @@ namespace WebApi.Repositories
 
         public async Task<bool> DeleteHotel(Hotel hotel)
         {
-            // delete agent 
-            var agents = userManager.Users.Where(h => h.HotelId == hotel.Id).ToList();
-            context.Users.RemoveRange(agents);
-
             // delete hotel
             context.Hotel.Remove(hotel);
             return await Save();
