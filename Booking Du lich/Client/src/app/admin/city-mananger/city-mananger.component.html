@@ -4,19 +4,19 @@
     <div class="search-wrapper">
       <div class="search-container">
         <div class="form-group">
-          <button (click)="searchCities()" class="btn-primary">Search</button>
+          <button (click)="searchCities()" class="btn-primary">Tìm kiếm</button>
           <input
             class="form-control"
             type="text"
             spellcheck="false"
-            placeholder="City name"
+            placeholder="Tên thành phố"
 						[(ngModel)]="searchString"
           />
         </div>
         <div (click)="showAddcityModal()" class="add-btn">
 					<mat-icon class="add-icon">add_circle</mat-icon>
           <button class="">
-            Add city
+            Thêm tỉnh/thành
           </button>
         </div>
       </div>

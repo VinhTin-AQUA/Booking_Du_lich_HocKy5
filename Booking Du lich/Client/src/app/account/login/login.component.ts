@@ -55,7 +55,6 @@ export class LoginComponent {
             this.router.navigateByUrl('/');
           },
           error: (err) => {
-            console.log(err);
             
             this.sharedService.showLoading(false);
             // su ly email chua confirm

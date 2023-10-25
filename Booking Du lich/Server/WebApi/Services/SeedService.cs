@@ -43,12 +43,12 @@ namespace WebApi.Services
 
         private async Task SeedRoles()
         {
-
             if (await roleManager.Roles.AnyAsync() == false)
             {
                 await roleManager.CreateAsync(new IdentityRole(SeedRole.ADMIN_ROLE));
                 await roleManager.CreateAsync(new IdentityRole(SeedRole.EMPLOYEE_ROLE));
-                await roleManager.CreateAsync(new IdentityRole(SeedRole.AGENT_ROLE));
+                await roleManager.CreateAsync(new IdentityRole(SeedRole.AGENTHOTEL_ROLE));
+                await roleManager.CreateAsync(new IdentityRole(SeedRole.AGENTTOUR_ROLE));
                 await roleManager.CreateAsync(new IdentityRole(SeedRole.USER_ROLE));
             }
         }
@@ -76,22 +76,41 @@ namespace WebApi.Services
 
         private async Task SeedAgent()
         {
-            var agent = new ApplicationUser()
+            var agentHotel = new ApplicationUser()
             {
-                UserName = Seeds.SeedAgent.Email,
-                Email = Seeds.SeedAgent.Email,
+                UserName = SeedAgentHotel.Email,
+                Email = SeedAgentHotel.Email,
                 EmailConfirmed = true,
-                FirstName = Seeds.SeedAgent.FirstName,
-                LastName = Seeds.SeedAgent.LastName,
-                Address = Seeds.SeedAgent.Address,
+                FirstName = SeedAgentHotel.FirstName,
+                LastName = SeedAgentHotel.LastName,
+                Address = SeedAgentHotel.Address,
             };
 
-            await userManager.CreateAsync(agent, Seeds.SeedAgent.Password);
+            await userManager.CreateAsync(agentHotel, SeedAgentHotel.Password);
 
-            await userManager.AddToRolesAsync(agent, new[] { SeedRole.AGENT_ROLE });
-            await userManager.AddClaimsAsync(agent, new Claim[]
+            await userManager.AddToRolesAsync(agentHotel, new[] { SeedRole.AGENTHOTEL_ROLE });
+            await userManager.AddClaimsAsync(agentHotel, new Claim[]
             {
-                    new Claim(ClaimTypes.Email, agent.Email),
+                    new Claim(ClaimTypes.Email, agentHotel.Email),
+            });
+
+            // agent tour
+            var agentTour = new ApplicationUser()
+            {
+                UserName = SeedAgentTour.Email,
+                Email = SeedAgentTour.Email,
+                EmailConfirmed = true,
+                FirstName = SeedAgentTour.FirstName,
+                LastName = SeedAgentTour.LastName,
+                Address = SeedAgentTour.Address,
+            };
+
+            await userManager.CreateAsync(agentTour, SeedAgentTour.Password);
+
+            await userManager.AddToRolesAsync(agentTour, new[] { SeedRole.AGENTTOUR_ROLE });
+            await userManager.AddClaimsAsync(agentTour, new Claim[]
+            {
+                    new Claim(ClaimTypes.Email, agentTour.Email),
             });
         }
 

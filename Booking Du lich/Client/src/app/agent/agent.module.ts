@@ -5,21 +5,21 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 
 import { AgentRoutingModule } from './agent-routing.module';
-import { ProfileComponent } from './profile/profile.component';
 import { AgentComponent } from './agent.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { HotelComponent } from './hotel/hotel.component';
 import { RoomDashboardComponent } from './room-dashboard/room-dashboard.component';
-
-
+import { ServiceComponent } from './service/service.component';
+import { ManageRoomTypeComponent } from './manage-room-type/manage-room-type.component';
 
 @NgModule({
   declarations: [
-    ProfileComponent,
     AgentComponent,
     SidebarComponent,
     HotelComponent,
-    RoomDashboardComponent
+    RoomDashboardComponent,
+    ServiceComponent,
+    ManageRoomTypeComponent,
   ],
   imports: [
     CommonModule,
