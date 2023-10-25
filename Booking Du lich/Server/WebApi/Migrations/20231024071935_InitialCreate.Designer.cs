@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebApi1.Data;
 
@@ -11,9 +12,10 @@ using WebApi1.Data;
 namespace WebApi.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231024071935_InitialCreate")]
+    partial class InitialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -182,6 +184,9 @@ namespace WebApi.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(250)");
 
+                    b.Property<int?>("HotelId")
+                        .HasColumnType("int");
+
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasColumnType("nvarchar(250)");
@@ -221,6 +226,8 @@ namespace WebApi.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("HotelId");
+
                     b.HasIndex("NormalizedEmail")
                         .HasDatabaseName("EmailIndex");
 
@@ -242,6 +249,9 @@ namespace WebApi.Migrations
 
                     b.Property<string>("CityCode")
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("Accommodations")
+                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -311,7 +321,6 @@ namespace WebApi.Migrations
                     b.HasIndex("CityId", "CityCode");
 
                     b.ToTable("Hotel");
-
                 });
 
             modelBuilder.Entity("WebApi.Models.HotelService", b =>
@@ -441,6 +450,15 @@ namespace WebApi.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("WebApi.Models.ApplicationUser", b =>
+                {
+                    b.HasOne("WebApi.Models.Hotel", "Hotel")
+                        .WithMany("Agents")
+                        .HasForeignKey("HotelId");
+
+                    b.Navigation("Hotel");
+                });
+
             modelBuilder.Entity("WebApi.Models.Hotel", b =>
                 {
                     b.HasOne("WebApi.Models.City", "City")
@@ -472,6 +490,8 @@ namespace WebApi.Migrations
 
             modelBuilder.Entity("WebApi.Models.Hotel", b =>
                 {
+                    b.Navigation("Agents");
+
                     b.Navigation("Rooms");
                 });
 
