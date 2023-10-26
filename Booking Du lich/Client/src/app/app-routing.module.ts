@@ -2,10 +2,21 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AccessDeniedComponent } from './access-denied/access-denied.component';
+import { Roles } from './shared/guards/roles';
+import { authGuard } from './shared/guards/auth.guard';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent, title: 'Home' },
-  { path: 'access-denied', component: AccessDeniedComponent, title: 'Access denied' },
+  {
+    path: '',
+    component: HomeComponent,
+    title: 'Home',
+    canActivate:[authGuard]
+  },
+  {
+    path: 'access-denied',
+    component: AccessDeniedComponent,
+    title: 'Access denied',
+  },
   {
     path: 'account',
     loadChildren: () =>
@@ -18,12 +29,18 @@ const routes: Routes = [
   },
   {
     path: 'admin',
-    loadChildren: () => import('../app/admin/admin.module').then((m) => m.AdminModule),
+    loadChildren: () =>
+      import('../app/admin/admin.module').then((m) => m.AdminModule),
+    canActivate: [authGuard],
+    data: { role: Roles.ADMIN },
   },
   {
     path: 'agent',
-    loadChildren: () => import('../app/agent/agent.module').then((m) => m.AgentModule),
-  }
+    loadChildren: () =>
+      import('../app/agent/agent.module').then((m) => m.AgentModule),
+    canActivate: [authGuard],
+    data: { role: Roles.AGENT },
+  },
 ];
 
 @NgModule({

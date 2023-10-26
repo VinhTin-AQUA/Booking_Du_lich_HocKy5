@@ -42,8 +42,7 @@ namespace WebApi.Controllers
             {
                 CityCode = model.CityCode,
                 Name = model.Name,
-                ImgUrl = "/cities/" + file.FileName,
-                Accommodations = 0
+                PhotoPath = "/cities/" + file.FileName,
             };
 
             if (result == false)
@@ -70,7 +69,7 @@ namespace WebApi.Controllers
             var city = await cityRepository.GetCityById(id);
 
             var result = await cityRepository.Delete(city);
-            imageService.DeleteCityImage(city.ImgUrl);
+            imageService.DeleteCityImage(city.PhotoPath);
             if (result == false)
             {
                 return BadRequest(new JsonResult(new { title = "Error", message = "Error when delete city" }));
@@ -95,8 +94,8 @@ namespace WebApi.Controllers
             // thay anh 
             if (file != null)
             {
-                var result = await imageService.UpdateCityImage(cityExist.ImgUrl, file, "cities");
-                cityExist.ImgUrl = "/cities/" + file.FileName;
+                var result = await imageService.UpdateCityImage(cityExist.PhotoPath, file, "cities");
+                cityExist.PhotoPath = "/cities/" + file.FileName;
             }
             cityExist.Name = model.Name;
             cityExist.CityCode = model.CityCode;

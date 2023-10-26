@@ -22,7 +22,7 @@ namespace WebApi.Controllers
         [HttpGet("get-users")]
         public async Task<IActionResult> GetUsers([FromQuery] int currentPage, [FromQuery] int pageSize, string? searchString)
         {
-            var users = await userManagerRepository.GetUser(currentPage, pageSize, searchString);
+            var users = await userManagerRepository.GetUsers(currentPage, pageSize, searchString);
 
             var userView = new List<UserView>();
 

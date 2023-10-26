@@ -23,6 +23,7 @@ namespace WebApi.DTOs.Authentication
         [Required(ErrorMessage = "{0} must be required")]
         [Display(Name = "Phone Number")]
         [Column(TypeName = "nvarchar(250)")]
+        [Phone(ErrorMessage = "Số điện thoại không hợp lệ")]
         public string PhoneNumber { get; set; }
 
         [Required(ErrorMessage = "Password is required")]

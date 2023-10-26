@@ -20,7 +20,6 @@ namespace WebApi.Models
         [Column(TypeName = "nvarchar(250)")]
         public string? Address { get; set; }
 
-        public int AvailableRoom { get; set; } = 0;
 
         [Display(Name = "Description")]
         [Column(TypeName = "nvarchar(max)")]
@@ -30,9 +29,8 @@ namespace WebApi.Models
         public string? PhotoPath { get; set; }
 
         /*tham chiếu khóa ngoại*/ 
-        public ICollection<ApplicationUser> Agents { get; set; }
-
         public int? CityId { get; set; }
+        public string? CityCode { get; set; }
         public City City { get; set; }
 
         public ICollection<Room> Rooms { get; set; }

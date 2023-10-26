@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using WebApi.Interfaces;
 using WebApi.Models;
+using WebApi.Seeds;
 
 namespace WebApi.Repositories
 {
@@ -16,15 +17,16 @@ namespace WebApi.Repositories
 
         public int TotalUsers()
         {
-            var totalUser = userManager.Users.Count();
+            var totalUser = userManager.Users.Where(u => u.Email != SeedAdmin.Email).Count();
             return totalUser;
         }
 
-        public async Task<IEnumerable<ApplicationUser>> GetUser(int currentPage, int pageSize, string? searchString)
+        public async Task<IEnumerable<ApplicationUser>> GetUsers(int currentPage, int pageSize, string? searchString)
         {
             if (string.IsNullOrEmpty(searchString))
             {
                 var users = await userManager.Users
+                .Where(u=>u.Email != SeedAdmin.Email)
                 .Skip(currentPage * pageSize)
                 .Take(pageSize)
                 .ToListAsync();
@@ -32,7 +34,7 @@ namespace WebApi.Repositories
             }
 
             var _users = await userManager.Users
-                .Where(u => u.FirstName.ToLower().Contains(searchString.ToLower()) || u.LastName.ToLower().Contains(searchString.ToLower()))
+                .Where(u => (u.FirstName.ToLower().Contains(searchString.ToLower()) || u.LastName.ToLower().Contains(searchString.ToLower())) && u.Email != SeedAdmin.Email)
                 .Skip(currentPage * pageSize)
                 .Take(pageSize)
                 

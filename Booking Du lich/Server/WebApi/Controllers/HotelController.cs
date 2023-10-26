@@ -100,103 +100,41 @@ namespace WebApi.Controllers
             return Ok(cities);
         }
 
-        //[HttpGet("get-hotel-by-id")]
-        //public async Task<IActionResult> GetHotelById([FromQuery] int? id)
+        [HttpGet("get-hotel-by-id")]
+        public async Task<IActionResult> GetHotelById([FromQuery] int? id)
+        {
+            if (id == null)
+            {
+                return BadRequest();
+            }
+
+            var hotel = await hotelRepository.GetHotelById(id);
+            if (hotel == null)
+            {
+                return BadRequest(new JsonResult(new { title = "Error", mesage = "Hotel not found" }));
+            }
+
+            return Ok(hotel);
+        }
+
+        //[HttpGet("get-hotel-of-agent")]
+        //public async Task<IActionResult> GetHotelOfAgent([FromQuery] string agentId)
         //{
-        //    if (id == null)
+        //    if (string.IsNullOrEmpty(agentId))
         //    {
         //        return BadRequest();
         //    }
 
-        //    var hotel = await hotelRepository.GetHotelById(id);
+        //    var hotel = await hotelRepository.GetHotelOfAgent(agentId);
         //    if (hotel == null)
         //    {
-        //        return BadRequest(new JsonResult(new { title = "Error", mesage = "Hotel not found" }));
+        //        return BadRequest(new JsonResult(new { title = "Error", message = "Không tìm thấy khách sạn" }));
         //    }
 
-        //    return Ok(hotel);
+        //    var imgFileNames = imageService.GetAllFileOfFolder("hotels", hotel.Id.ToString(), "_imgHotel");
+
+        //    return Ok(new {hotel = hotel, imgFileNames = imgFileNames});
         //}
-
-        [HttpGet("get-hotel-of-agent")]
-        public async Task<IActionResult> GetHotelOfAgent([FromQuery] string agentId)
-        {
-            if (string.IsNullOrEmpty(agentId))
-            {
-                return BadRequest();
-            }
-
-            var hotel = await hotelRepository.GetHotelOfAgent(agentId);
-            if (hotel == null)
-            {
-                return BadRequest(new JsonResult(new { title = "Error", message = "Không tìm thấy khách sạn" }));
-            }
-
-            var imgFileNames = imageService.GetAllFileOfFolder("hotels", hotel.Id.ToString(), "_imgHotel");
-
-            return Ok(new {hotel = hotel, imgFileNames = imgFileNames});
-        }
-
-        [HttpPost("add-agent")]
-        public async Task<IActionResult> AddAgent(AddAgent model)
-        {
-            if (model == null)
-            {
-                return BadRequest();
-            }
-
-            if (ModelState.IsValid == false)
-            {
-                return BadRequest(ModelState);
-            }
-
-            var hotel = await hotelRepository.GetHotelById(model.HotelId);
-            if (hotel == null)
-            {
-                return BadRequest(new JsonResult(new { title = "Error", message = "Hotel was not found" }));
-            }
-
-            var emailExist = await authenRepository.GetUserByEmail(model.Email);
-
-            if (emailExist != null)
-            {
-                return BadRequest(new JsonResult(new { title = "Error", message = "Email already taken by other user. Please choose another email" }));
-            }
-
-            var newAgent = new ApplicationUser
-            {
-                FirstName = model.FirstName,
-                LastName = model.LastName,
-                Address = "",
-                Email = model.Email,
-                PhoneNumber = model.PhoneNumber,
-                UserName = model.Email,
-                HotelId = model.HotelId,
-                Hotel = hotel,
-            };
-            
-
-            var r = await hotelRepository.AdddAgent(newAgent, model.Password);
-            
-            if (r.Succeeded == false)
-            {
-                return BadRequest(new JsonResult(new { title = "Error", message = "Something error. Please try again" }));
-            }
-
-            await authenRepository.AddRoleToUser(newAgent, "Agent");
-
-            string message = @$"<p>Hello <b>{newAgent.FirstName} {newAgent.LastName}</b></p> <p>Your passwork: <b>abc@123</b></p><p>Please change your password after confirm email</p>";
-
-            if (await emailSender.SendEmailConfirmAsync(newAgent, message))
-            {
-                return Ok(new JsonResult(new
-                {
-                    title = "Success",
-                    message = $"User created successfully and Send email to {newAgent.Email}"
-                }));
-            }
-
-            return Ok(new JsonResult(new { title = "Success", message = "Add agent successfully" }));
-        }
 
         [HttpDelete("delete-hotel")]
         public async Task<IActionResult> DeleteHotel([FromQuery] int? hotelId)

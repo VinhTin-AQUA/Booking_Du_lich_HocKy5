@@ -13,8 +13,9 @@ import { SharedService } from 'src/app/shared/shared.service';
 export class RegisterComponent implements OnInit {
   signUpForm: FormGroup = new FormGroup({});
   submitted: boolean = false;
-  errorMessages: string = '';
+  errorMessages: string[] = [];
   errorConfirmPassword: string = '';
+  formSuccess: boolean = true;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -29,7 +30,15 @@ export class RegisterComponent implements OnInit {
       lastName: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
       address: ['', [Validators.required]],
-      phoneNumber: ['', [Validators.required]],
+      phoneNumber: [
+        '',
+        [
+          Validators.required,
+          Validators.pattern(
+            `(^1300\d{6}$)|(^1800|1900|1902\d{6}$)|(^0[2|3|7|8]{1}[0-9]{8}$)|(^13\d{4}$)|(^04\d{2,3}\d{6}$)`
+          ),
+        ],
+      ],
       password: [
         '',
         [
@@ -50,7 +59,9 @@ export class RegisterComponent implements OnInit {
         (field === 'password' &&
           this.signUpForm.hasError('minlength', 'password')) ||
         (field === 'password' &&
-          this.signUpForm.hasError('maxlength', 'password'))
+          this.signUpForm.hasError('maxlength', 'password')) ||
+          (field === 'phoneNumber' &&
+            this.signUpForm.hasError('pattern', 'phoneNumber'))
       ) {
         return 'input-field-error';
       }
@@ -64,13 +75,17 @@ export class RegisterComponent implements OnInit {
 
   submit() {
     this.submitted = true;
-    this.errorMessages = '';
+    this.errorMessages = [];
+    this.formSuccess = true;
 
-    if (
+    if (this.signUpForm.invalid) {
+      this.formSuccess = false;
+    } else if (
       this.signUpForm.value.password !== this.signUpForm.value.confirmPassword
     ) {
       this.errorConfirmPassword = 'Err';
-    } else if (this.signUpForm.valid) {
+
+    } else {
       this.sharedService.showLoading(true);
       this.accountService.signUp(this.signUpForm.value).subscribe({
         next: (res: any) => {
@@ -79,7 +94,18 @@ export class RegisterComponent implements OnInit {
         },
         error: (errors: any) => {
           this.sharedService.showLoading(false);
-          this.errorMessages = errors.error.Value.message
+          window.scrollTo(0, 0);
+          this.formSuccess = false;
+          if (
+            errors.error.Errors !== null ||
+            errors.error.Errors !== undefined
+          ) {
+            for (let err of errors.error.Errors) {
+              this.errorMessages.push(err);
+            }
+          } else {
+            this.errorMessages.push(errors.error.Value.message);
+          }
         },
       });
     }

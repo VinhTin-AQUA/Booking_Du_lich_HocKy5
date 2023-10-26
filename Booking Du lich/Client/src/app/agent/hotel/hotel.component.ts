@@ -28,10 +28,9 @@ export class HotelComponent {
   cities: City[] = [];
   cityOfHotel: City = {
     Id: 1,
-    CityCode: 1,
+    CityCode: "1",
     Name: 'string',
-    ImgUrl: 'string',
-    Accommodations: 1,
+    PhotoPath: 'string',
   };
 
   //img
