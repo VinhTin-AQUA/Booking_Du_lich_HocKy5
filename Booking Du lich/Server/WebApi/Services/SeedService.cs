@@ -29,53 +29,117 @@ namespace WebApi.Services
                 // tiến hành cập nhật migration
                 await context.Database.MigrateAsync();
             }
-
             await SeedRoles();
-            await SeedAdmin();
+
+            if (await userManager.Users.AnyAsync() == false)
+            {
+                await SeedAdmin();
+                await SeedAgent();
+                await SeedEmployee();
+                await SeedUserAsync();
+            }
             await SeedCities();
         }
 
         private async Task SeedRoles()
         {
-            
+
             if (await roleManager.Roles.AnyAsync() == false)
             {
-                await roleManager.CreateAsync(new IdentityRole(RoleSeed.ADMIN_ROLE));
-                await roleManager.CreateAsync(new IdentityRole(RoleSeed.EMPLOYEE_ROLE));
-                await roleManager.CreateAsync(new IdentityRole(RoleSeed.AGENT_ROLE));
-                await roleManager.CreateAsync(new IdentityRole(RoleSeed.USER_ROLE));
+                await roleManager.CreateAsync(new IdentityRole(SeedRole.ADMIN_ROLE));
+                await roleManager.CreateAsync(new IdentityRole(SeedRole.EMPLOYEE_ROLE));
+                await roleManager.CreateAsync(new IdentityRole(SeedRole.AGENT_ROLE));
+                await roleManager.CreateAsync(new IdentityRole(SeedRole.USER_ROLE));
             }
         }
 
         private async Task SeedAdmin()
         {
-            // seed user
-            if (await userManager.Users.AnyAsync() == false)
+            var admin = new ApplicationUser()
             {
-                // admin
-                var admin = new ApplicationUser()
-                {
-                    UserName = AdminAccount.AdminEmail,
-                    Email = AdminAccount.AdminEmail,
-                    EmailConfirmed = true,
-                    FirstName = AdminAccount.AdminFirstName,
-                    LastName = AdminAccount.AdminLastName,
-                    Address = AdminAccount.AdminAddress,
-                };
+                UserName = Seeds.SeedAdmin.Email,
+                Email = Seeds.SeedAdmin.Email,
+                EmailConfirmed = true,
+                FirstName = Seeds.SeedAdmin.FirstName,
+                LastName = Seeds.SeedAdmin.LastName,
+                Address = Seeds.SeedAdmin.Address,
+            };
 
-                await userManager.CreateAsync(admin, AdminAccount.AdminPassword);
+            await userManager.CreateAsync(admin, Seeds.SeedAdmin.Password);
 
-                await userManager.AddToRolesAsync(admin, new[] { RoleSeed.ADMIN_ROLE });
-                await userManager.AddClaimsAsync(admin, new Claim[]
-                {
+            await userManager.AddToRolesAsync(admin, new[] { SeedRole.ADMIN_ROLE });
+            await userManager.AddClaimsAsync(admin, new Claim[]
+            {
                     new Claim(ClaimTypes.Email, admin.Email),
-                });
-            }
+            });
+        }
+
+        private async Task SeedAgent()
+        {
+            var agent = new ApplicationUser()
+            {
+                UserName = Seeds.SeedAgent.Email,
+                Email = Seeds.SeedAgent.Email,
+                EmailConfirmed = true,
+                FirstName = Seeds.SeedAgent.FirstName,
+                LastName = Seeds.SeedAgent.LastName,
+                Address = Seeds.SeedAgent.Address,
+            };
+
+            await userManager.CreateAsync(agent, Seeds.SeedAgent.Password);
+
+            await userManager.AddToRolesAsync(agent, new[] { SeedRole.AGENT_ROLE });
+            await userManager.AddClaimsAsync(agent, new Claim[]
+            {
+                    new Claim(ClaimTypes.Email, agent.Email),
+            });
+        }
+
+        private async Task SeedEmployee()
+        {
+            var employee = new ApplicationUser()
+            {
+                UserName = EmployeeSeed.Email,
+                Email = EmployeeSeed.Email,
+                EmailConfirmed = true,
+                FirstName = EmployeeSeed.FirstName,
+                LastName = EmployeeSeed.LastName,
+                Address = EmployeeSeed.Address,
+            };
+
+            await userManager.CreateAsync(employee, EmployeeSeed.Password);
+
+            await userManager.AddToRolesAsync(employee, new[] { SeedRole.EMPLOYEE_ROLE });
+            await userManager.AddClaimsAsync(employee, new Claim[]
+            {
+                    new Claim(ClaimTypes.Email, employee.Email),
+            });
+        }
+
+        private async Task SeedUserAsync()
+        {
+            var user = new ApplicationUser()
+            {
+                UserName = SeedUser.Email,
+                Email = SeedUser.Email,
+                EmailConfirmed = true,
+                FirstName = SeedUser.FirstName,
+                LastName = SeedUser.LastName,
+                Address = SeedUser.Address,
+            };
+
+            await userManager.CreateAsync(user, SeedUser.Password);
+
+            await userManager.AddToRolesAsync(user, new[] { SeedRole.USER_ROLE });
+            await userManager.AddClaimsAsync(user, new Claim[]
+            {
+                    new Claim(ClaimTypes.Email, user.Email),
+            });
         }
 
         private async Task SeedCities()
         {
-            if(await context.City.AnyAsync() == false)
+            if (await context.City.AnyAsync() == false)
             {
                 List<City> cities = new List<City>()
                 {
