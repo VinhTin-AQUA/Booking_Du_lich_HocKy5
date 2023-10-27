@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebApi1.Data;
 
@@ -11,9 +12,10 @@ using WebApi1.Data;
 namespace WebApi.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231026133802_CreateRoomPrices")]
+    partial class CreateRoomPrices
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -372,28 +374,6 @@ namespace WebApi.Migrations
                     b.ToTable("Room");
                 });
 
-            modelBuilder.Entity("WebApi.Models.RoomPrice", b =>
-                {
-                    b.Property<int>("RoomId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("ValidFrom")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("GoodThru")
-                        .HasColumnType("datetime2");
-
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.HasKey("RoomId", "ValidFrom");
-
-                    b.HasIndex("RoomId")
-                        .IsUnique();
-
-                    b.ToTable("Room Price");
-                });
-
             modelBuilder.Entity("WebApi.Models.RoomType", b =>
                 {
                     b.Property<int>("RoomTypeId")
@@ -486,17 +466,6 @@ namespace WebApi.Migrations
                     b.Navigation("RoomType");
                 });
 
-            modelBuilder.Entity("WebApi.Models.RoomPrice", b =>
-                {
-                    b.HasOne("WebApi.Models.Room", "Room")
-                        .WithOne("RoomPrice")
-                        .HasForeignKey("WebApi.Models.RoomPrice", "RoomId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Room");
-                });
-
             modelBuilder.Entity("WebApi.Models.City", b =>
                 {
                     b.Navigation("Hotels");
@@ -505,11 +474,6 @@ namespace WebApi.Migrations
             modelBuilder.Entity("WebApi.Models.Hotel", b =>
                 {
                     b.Navigation("Rooms");
-                });
-
-            modelBuilder.Entity("WebApi.Models.Room", b =>
-                {
-                    b.Navigation("RoomPrice");
                 });
 
             modelBuilder.Entity("WebApi.Models.RoomType", b =>

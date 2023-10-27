@@ -37,5 +37,7 @@ namespace WebApi.Models
 
         public int? RoomTypeId { get; set; }
         public RoomType RoomType { get; set; }
+
+        public RoomPrice RoomPrice { get; set; }
     }
 }

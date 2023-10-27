@@ -59,6 +59,15 @@ namespace WebApi1.Data
                 .HasForeignKey(r => r.RoomTypeId);
             modelBuilder.Entity<HotelService>()
                 .HasKey(s => s.ServiceId).HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity<RoomPrice>()
+                .HasKey(rp => new { rp.RoomId, rp.ValidFrom }).HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+            
+            modelBuilder.Entity<Room>()
+                .HasOne(r => r.RoomPrice)
+                .WithOne(rp => rp.Room)
+                .HasForeignKey<RoomPrice>(rp => rp.RoomId);
+            
         }
 
         public DbSet<City> City { get; set; }
@@ -72,6 +81,8 @@ namespace WebApi1.Data
         public DbSet<RoomType> RoomType { get; set; }
 
         public DbSet<HotelService> HotelService { get; set; }
+
+        public DbSet<RoomPrice> RoomPrices { get; set; }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }

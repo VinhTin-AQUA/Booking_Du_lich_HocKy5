@@ -22,5 +22,8 @@ namespace WebApi.DTOs.Room
         public int HotelId { get; set; }
 
         public int RoomTypeId { get; set; }
+
+        
+       
     }
 }
