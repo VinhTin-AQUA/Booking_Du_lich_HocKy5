@@ -1,20 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ProfileComponent } from './profile/profile.component';
 import { AdminComponent } from './admin.component';
 import { UserMangementComponent } from './user-mangement/user-mangement.component';
-import { NotificationComponent } from './notification/notification.component';
 import { CityManangerComponent } from './city-mananger/city-mananger.component';
 import { HotelManagerComponent } from './hotel-manager/hotel-manager.component';
+import { AddAccountComponent } from './add-account/add-account.component';
+import { FeedBackComponent } from './feed-back/feed-back.component';
+import { ManageTourTypeComponent } from './manage-tour-type/manage-tour-type.component';
 
 const routes: Routes = [
   {path: '', component: AdminComponent, 
     children: [
-      { path: 'profile', component: ProfileComponent, title: 'Profile' },
       { path: 'user-management', component: UserMangementComponent, title: 'User management' },
-      { path: 'notification', component: NotificationComponent, title: 'User management' },
       { path: 'city-management', component: CityManangerComponent, title: 'City management' },
       { path: 'hotel-management', component: HotelManagerComponent, title: 'Hotel management' },
+      { path: 'add-account', component: AddAccountComponent, title: 'Add account' },
+      { path: 'manage-tour-type', component: ManageTourTypeComponent, title: 'Manage tour' },
+      { path: 'feedback', component: FeedBackComponent, title: 'Feedback' },
     ],
   },
 ];

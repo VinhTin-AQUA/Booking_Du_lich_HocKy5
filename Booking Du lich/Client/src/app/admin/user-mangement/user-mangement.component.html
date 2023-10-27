@@ -14,12 +14,12 @@
 					<thead>
 						<tr>
 							<th>.NO</th>
-							<th>Name</th>
+							<th>Họ tên</th>
 							<th>Email</th>
-							<th>EmailConfirmed</th>
-							<th>PhoneNumber</th>
-							<th>LockoutEnd</th>
-							<th>Actions</th>
+							<th>Xác thực</th>
+							<th>Số điện thoại</th>
+							<th>Khóa</th>
+							<th>Chức năng</th>
 						</tr>
 					</thead>
 
@@ -28,7 +28,10 @@
 							<td>{{pageSize * currentPage + i + 1}}</td>
 							<td>{{user.FirstName}} {{user.LastName}}</td>
 							<td>{{user.Email}}</td>
-							<td>{{user.EmailConfirmed}}</td>
+							<td>
+								<span *ngIf="user.EmailConfirmed === true">Đã xác thực</span>
+								<span *ngIf="user.EmailConfirmed === false">Chưa xác thực</span>
+							</td>
 							<td>{{user.PhoneNumber}}</td>
 							<td class="text-[#f97316] font-bold">{{user.LockoutEnd | date : 'hh:mm - dd/MM/yyyy'}}</td>
 							<td>
