@@ -30,6 +30,7 @@ export const authGuard: CanActivateFn = (route, state) => {
       return router.navigateByUrl('/employee');
     }
 
+<<<<<<< HEAD
     if (roleAccount === Roles.AGENTHOTEL) {
       return router.navigateByUrl('/agent');
     }
@@ -37,6 +38,11 @@ export const authGuard: CanActivateFn = (route, state) => {
     if (roleAccount === Roles.AGENTTOUR) {
       return router.navigateByUrl('/agent-tour');
     }
+=======
+    if (roleAccount === Roles.AGENT) {
+      return router.navigateByUrl('/agent');
+    }
+>>>>>>> fbf7a2fbe52bc67243c690eef5a99389b5d4f982
   }
 
   if (roleAccount !== roleSys) {

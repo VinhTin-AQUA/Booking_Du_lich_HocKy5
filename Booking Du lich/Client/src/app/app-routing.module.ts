@@ -4,7 +4,10 @@ import { HomeComponent } from './home/home.component';
 import { AccessDeniedComponent } from './access-denied/access-denied.component';
 import { Roles } from './shared/guards/roles';
 import { authGuard } from './shared/guards/auth.guard';
+<<<<<<< HEAD
 import { ProfileComponent } from './profile/profile.component';
+=======
+>>>>>>> fbf7a2fbe52bc67243c690eef5a99389b5d4f982
 
 const routes: Routes = [
   {
@@ -40,6 +43,7 @@ const routes: Routes = [
     loadChildren: () =>
       import('../app/agent/agent.module').then((m) => m.AgentModule),
     canActivate: [authGuard],
+<<<<<<< HEAD
     data: { role: Roles.AGENTHOTEL },
   },
   {
@@ -52,6 +56,10 @@ const routes: Routes = [
   {
     path: 'profile', component: ProfileComponent, title: 'Profile'
   }
+=======
+    data: { role: Roles.AGENT },
+  },
+>>>>>>> fbf7a2fbe52bc67243c690eef5a99389b5d4f982
 ];
 
 @NgModule({
