@@ -48,27 +48,30 @@ export class RoomDashboardComponent {
       name: ['', [Validators.required]],
       description: ['', [Validators.required]],
       isAvailable: [true],
+      price: [0, [Validators.required, Validators.min(0)]],
+      validFrom: [Date.now,[Validators.required]],
+      goodThru: [Date.now,[Validators.required]],
     });
 
     this.sharedService.showLoading(true);
-    this.accountService.user$
-      .pipe(
-        map((user) => {
-          this.userId = user?.Id;
-          return user;
-        }),
-        mergeMap((user) => this.agentService.getHotelOfAgent(user?.Id))
-      )
-      .subscribe({
-        next: (res: any) => {
-          this.hotelId = res.hotel.Id;
-          this.sharedService.showLoading(false);
-        },
-        error: (err) => {
-          console.log(err);
-          this.sharedService.showLoading(false);
-        },
-      });
+    //this.accountService.user$
+    //  .pipe(
+    //    map((user) => {
+    //      this.userId = user?.Id;
+    //      return user;
+    //    }),
+    //    mergeMap((user) => this.agentService.getHotelOfAgent(user?.Id))
+    //  )
+    //  .subscribe({
+    //    next: (res: any) => {
+    //      this.hotelId = res.hotel.Id;
+    //      this.sharedService.showLoading(false);
+    //    },
+    //    error: (err) => {
+    //      console.log(err);
+    //      this.sharedService.showLoading(false);
+    //    },
+    //  });
   }
 
   ngOnInit() {
@@ -192,6 +195,11 @@ export class RoomDashboardComponent {
       formData.append('Name', this.formRoomSubmit.value.name);
       formData.append('Description', this.formRoomSubmit.value.description);
       formData.append('IsAvailable', this.formRoomSubmit.value.isAvailable);
+      formData.append('Price', this.formRoomSubmit.value.price);
+      formData.append('ValidFrom', this.formRoomSubmit.value.validFrom);
+      formData.append('GoodThru', this.formRoomSubmit.value.goodThru);
+      
+
       if (this.hotelId !== undefined) {
         formData.append('HotelId', this.hotelId);
       }

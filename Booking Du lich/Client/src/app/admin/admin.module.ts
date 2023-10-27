@@ -5,24 +5,26 @@ import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 
 import { AdminRoutingModule } from './admin-routing.module';
-import { ProfileComponent } from './profile/profile.component';
 import { AdminComponent } from './admin.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { UserMangementComponent } from './user-mangement/user-mangement.component';
-import { NotificationComponent } from './notification/notification.component';
 import { CityManangerComponent } from './city-mananger/city-mananger.component';
 import { HotelManagerComponent } from './hotel-manager/hotel-manager.component';
+import { AddAccountComponent } from './add-account/add-account.component';
+import { FeedBackComponent } from './feed-back/feed-back.component';
+import { ManageTourTypeComponent } from './manage-tour-type/manage-tour-type.component';
 
 
 @NgModule({
   declarations: [
-    ProfileComponent,
     AdminComponent,
     SideBarComponent,
     UserMangementComponent,
-    NotificationComponent,
     CityManangerComponent,
     HotelManagerComponent,
+    AddAccountComponent,
+    FeedBackComponent,
+    ManageTourTypeComponent,
   ],
   imports: [
     CommonModule,

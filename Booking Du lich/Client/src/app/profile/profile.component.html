@@ -1,0 +1,122 @@
+<div class="wrapper">
+  <div
+    [class]="formSuccess === true ? 'form-success' : 'form-error'"
+    class="container mx-auto md:w-[500px] p-5 rounded my-2"
+  >
+    <form [formGroup]="signUpForm" (ngSubmit)="submit()" autocomplete="off">
+      <div class="title font-bold text-[1.7em] mb-9">
+        <span>Your profile</span>
+      </div>
+
+      <div class="text-red-500" *ngFor="let i of errorMessages">
+        {{ i }} <br>
+      </div>
+
+      <div class="text-[1.2em] mb-4 flex gap-2 items-start justify-start">
+        <!-- first name -->
+        <div class="w-1/2">
+          <label class="block mb-2">First name</label>
+          <input
+            [class]="inputValidation('firstName')"
+            type="text"
+            formControlName="firstName"
+            spellcheck="false"
+            placeholder="First Name"
+          />
+          <span
+            class="text-red-500"
+            *ngIf="
+              submitted === true && signUpForm.hasError('required', 'firstName')
+            "
+          >
+            First name is required
+          </span>
+        </div>
+
+        <!-- last name -->
+        <div class="w-1/2">
+          <label class="block mb-2">Last name</label>
+          <input
+            [class]="inputValidation('lastName')"
+            type="text"
+            formControlName="lastName"
+            spellcheck="false"
+            placeholder="Last Name"
+          />
+          <span
+            class="text-red-500"
+            *ngIf="
+              submitted === true && signUpForm.hasError('required', 'lastName')
+            "
+          >
+            Last name is required
+          </span>
+        </div>
+      </div>
+
+      <!-- email -->
+      <div class="text-[1.2em] mb-4">
+        <label class="block mb-2">Email</label>
+        <input
+          [class]="inputValidation('email')"
+          type="email"
+          formControlName="email"
+          spellcheck="false"
+					readonly
+        />
+      </div>
+
+      <!-- address -->
+      <div class="text-[1.2em] mb-4">
+        <label class="block mb-2">Address</label>
+        <input
+          [class]="inputValidation('address')"
+          type="text"
+          formControlName="address"
+          spellcheck="false"
+          placeholder="Address"
+        />
+        <span
+          class="text-red-500"
+          *ngIf="
+            submitted === true && signUpForm.hasError('required', 'address')
+          "
+        >
+          Address is required
+        </span>
+      </div>
+
+      <!-- phone number -->
+      <div class="text-[1.2em] mb-4">
+        <label class="block mb-2">Phone number</label>
+        <input
+          [class]="inputValidation('phoneNumber')"
+          type="text"
+          formControlName="phoneNumber"
+          spellcheck="false"
+          placeholder="PhoneNumber"
+        />
+        <span
+          class="text-red-500"
+          *ngIf="
+            submitted === true && signUpForm.hasError('required', 'phoneNumber')
+          "
+        >
+          PhoneNumber is required
+        </span>
+        <span
+          class="text-red-500"
+          *ngIf="
+            submitted === true && signUpForm.hasError('pattern', 'phoneNumber')
+          "
+        >
+          PhoneNumber is invalid
+        </span>
+      </div>
+
+      <div>
+        <button class="btn-primary w-full mb-2">Save</button>
+      </div>
+    </form>
+  </div>
+</div>
