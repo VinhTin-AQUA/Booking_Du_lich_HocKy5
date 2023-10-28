@@ -39,5 +39,9 @@ namespace WebApi.Models
         public RoomType RoomType { get; set; }
 
         public RoomPrice RoomPrice { get; set; }
+
+        public BookRoom BookRoom { get; set; }
+
+      
     }
 }

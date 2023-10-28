@@ -127,7 +127,7 @@ namespace WebApi.Controllers
             {
                 return BadRequest(new JsonResult(new { title = "Error", message = "Room type was not existed" }));
             }
-
+            
             roomPriceExisted.Price = model.Price;
 
             var resultUpdate = await roomPriceRepository.UpdateRoomPrice(roomPriceExisted);
