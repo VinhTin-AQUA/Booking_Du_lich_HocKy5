@@ -20,5 +20,8 @@ namespace WebApi.Models
         [Display(Name = "Address")]
         [Column(TypeName = "nvarchar(250)")]
         public string Address { get; set; }
+
+        public BookRoom BookRoom { get; set; }
+       
     }
 }
