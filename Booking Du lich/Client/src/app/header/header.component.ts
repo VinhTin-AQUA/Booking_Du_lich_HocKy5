@@ -17,7 +17,8 @@ export class HeaderComponent {
     private sharedService: SharedService,
     public accountService: AccountService,
     private router: Router
-  ) {}
+  ) {
+  }
 
   showMenu() {
     this.collapseMenu = !this.collapseMenu;

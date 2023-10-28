@@ -1,6 +1,6 @@
 <div class="wrapper bg-[#eff6ff] pt-1 overflow-hidden">
   <div class="flex justify-between items-center mx-5 h-10">
-    <div class="Logo">
+    <div class="Logo" routerLink="/">
       <img class="rounded-full" src="/assets/logo.jpg" width="100" alt="" />
     </div>
 
@@ -25,24 +25,14 @@
 
       <div class="flex items-center justify-center gap-2" *ngIf="accountService.user$ | async as user">
 
-        <!-- admin routing -->
-        <a *ngIf="(user.JWT  | role) === 'Admin'" class="btn-primary cursor-pointer" routerLink="/admin/profile"
+        <a class="btn-primary cursor-pointer" routerLink="/profile"
           >Hello {{user.FirstName + ' ' + user.LastName}}</a
         >
 
-        <!-- user routing -->
-        <a *ngIf="(user.JWT | role) === 'User'" class="btn-primary cursor-pointer" routerLink="/user/profile"
-          >Hello {{user.FirstName + ' ' + user.LastName}}</a
-        >
-
-        <!-- agent routing -->
-        <a *ngIf="(user.JWT | role) === 'Agent'" class="btn-primary cursor-pointer" routerLink="/agent/profile-agent"
-          >Hello {{user.FirstName + ' ' + user.LastName}}</a
-        >
-        
         <a class="btn-outline-primary cursor-pointer" (click)="logout()" >
           Logout
         </a>
+
       </div>
     </div>
 
@@ -61,7 +51,7 @@
       <ul
         class="flex justify-center items-center flex-col rounded overflow-hidden whitespace-nowrap"
       >
-        <li class="menu-item" routerLink="/account/reset-password" title="xác nhận email">Hotels & Homes</li>
+        <li class="menu-item">Hotels & Homes</li>
         <li class="menu-item">Activities</li>
         <li class="menu-item">Flights</li>
         <li class="menu-item">Deals</li>

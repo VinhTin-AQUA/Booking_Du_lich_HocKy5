@@ -55,43 +55,43 @@ export class HotelComponent {
     });
 
     // get all cities
-    this.adminService.getAllCities().subscribe({
-      next: (res: any) => {
-        this.cities = res;
-        this.cityOfHotel = this.cities[0];
-      },
-    });
+    //this.adminService.getAllCities().subscribe({
+    //  next: (res: any) => {
+    //    this.cities = res;
+    //    this.cityOfHotel = this.cities[0];
+    //  },
+    //});
 
-    this.accountService.user$
-      .pipe(
-        map((user) => {
-          this.userId = user?.Id;
-          return user;
-        }),
-        mergeMap((user) => this.agentService.getHotelOfAgent(user?.Id))
-      )
-      .subscribe({
-        next: (res: any) => {
-          this.hotel = res.hotel;
-          for (let i of res.imgFileNames) {
-            const temp = i.split('\\');
+    //this.accountService.user$
+    //  .pipe(
+    //    map((user) => {
+    //      this.userId = user?.Id;
+    //      return user;
+    //    }),
+    //    mergeMap((user) => this.agentService.getHotelOfAgent(user?.Id))
+    //  )
+    //  .subscribe({
+    //    next: (res: any) => {
+    //      this.hotel = res.hotel;
+    //      for (let i of res.imgFileNames) {
+    //        const temp = i.split('\\');
 
-            const imgShow: ImgShow = {
-              name: temp[temp.length - 1],
-              data: i,
-            };
-            this.imgFiles.push(imgShow);
-          }
+    //        const imgShow: ImgShow = {
+    //          name: temp[temp.length - 1],
+    //          data: i,
+    //        };
+    //        this.imgFiles.push(imgShow);
+    //      }
 
-          if (this.hotel !== null && this.hotel.City !== null) {
-            this.cityOfHotel = this.hotel.City;
-          }
-          this.formInit();
-        },
-        error: (err) => {
-          console.log(err);
-        },
-      });
+    //      if (this.hotel !== null && this.hotel.City !== null) {
+    //        this.cityOfHotel = this.hotel.City;
+    //      }
+    //      this.formInit();
+    //    },
+    //    error: (err) => {
+    //      console.log(err);
+    //    },
+    //  });
   }
 
   private formInit() {
