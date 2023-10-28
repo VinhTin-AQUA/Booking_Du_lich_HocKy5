@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebApi1.Data;
 
@@ -11,9 +12,10 @@ using WebApi1.Data;
 namespace WebApi.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231027153211_UpdateBookRoom")]
+    partial class UpdateBookRoom
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -439,24 +441,6 @@ namespace WebApi.Migrations
                     b.HasKey("RoomTypeId");
 
                     b.ToTable("Room Type");
-                });
-
-            modelBuilder.Entity("WebApi.Models.TourType", b =>
-                {
-                    b.Property<int>("TourTypeId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TourTypeId"), 1L, 1);
-
-                    b.Property<string>("TourTypeName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(100)");
-
-                    b.HasKey("TourTypeId")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.ToTable("TourType");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
