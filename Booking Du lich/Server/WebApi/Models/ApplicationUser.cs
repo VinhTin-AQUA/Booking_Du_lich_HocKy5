@@ -22,6 +22,9 @@ namespace WebApi.Models
         public string Address { get; set; }
 
         public BookRoom BookRoom { get; set; }
-       
+
+        public ICollection<Hotel> PostHotels { get;set; }
+        public ICollection<Hotel> ApprovalHotels { get;set; }
+
     }
 }

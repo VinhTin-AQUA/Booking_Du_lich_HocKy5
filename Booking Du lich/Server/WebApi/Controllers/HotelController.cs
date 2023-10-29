@@ -40,9 +40,15 @@ namespace WebApi.Controllers
             {
                 return BadRequest(ModelState);
             }
+
+            var Poster = await authenRepository.GetUserById(model.PosterID);
+            var Approver = await authenRepository.GetUserById(model.ApproverID);
             var hotel = new Hotel
             {
                 HotelName = model.HotelName,
+                PosterID = model.PosterID,
+                ApproverID = model.ApproverID,
+                Poster = Poster, Approver = Approver,
             };
             var result = await hotelRepository.AddHotel(hotel);
             if (result == false)
@@ -75,6 +81,8 @@ namespace WebApi.Controllers
             hotel.Description = model.Description;
             hotel.CityId = model.CityId;
             hotel.City = city;
+            hotel.PosterID = model.PosterID;
+            hotel.ApproverID = model.ApproverID;
 
             // lưu hình ảnh
             string urlImgFolder = "";

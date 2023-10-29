@@ -21,5 +21,9 @@ namespace WebApi.DTOs.Hotel
         public string? PhotoPath { get; set; }
 
         public int CityId { get; set; }
+        public DateTime? PostingDate { get; set; }
+        public DateTime? ApprovalDate { get; set; }
+        public string PosterID { get; set; }
+        public string ApproverID { get; set; }
     }
 }
