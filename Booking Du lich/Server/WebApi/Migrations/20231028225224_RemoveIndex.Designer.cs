@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebApi1.Data;
 
@@ -11,9 +12,10 @@ using WebApi1.Data;
 namespace WebApi.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231028225224_RemoveIndex")]
+    partial class RemoveIndex
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -319,12 +321,6 @@ namespace WebApi.Migrations
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(250)");
 
-                    b.Property<DateTime?>("ApprovalDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ApproverID")
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<string>("CityCode")
                         .HasColumnType("nvarchar(450)");
 
@@ -341,18 +337,8 @@ namespace WebApi.Migrations
                     b.Property<string>("PhotoPath")
                         .HasColumnType("varchar(250)");
 
-                    b.Property<string>("PosterID")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<DateTime?>("PostingDate")
-                        .HasColumnType("datetime2");
-
                     b.HasKey("Id")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.HasIndex("ApproverID");
-
-                    b.HasIndex("PosterID");
 
                     b.HasIndex("CityId", "CityCode");
 
@@ -548,23 +534,11 @@ namespace WebApi.Migrations
 
             modelBuilder.Entity("WebApi.Models.Hotel", b =>
                 {
-                    b.HasOne("WebApi.Models.ApplicationUser", "Approver")
-                        .WithMany("ApprovalHotels")
-                        .HasForeignKey("ApproverID");
-
-                    b.HasOne("WebApi.Models.ApplicationUser", "Poster")
-                        .WithMany("PostHotels")
-                        .HasForeignKey("PosterID");
-
                     b.HasOne("WebApi.Models.City", "City")
                         .WithMany("Hotels")
                         .HasForeignKey("CityId", "CityCode");
 
-                    b.Navigation("Approver");
-
                     b.Navigation("City");
-
-                    b.Navigation("Poster");
                 });
 
             modelBuilder.Entity("WebApi.Models.Room", b =>
@@ -595,11 +569,7 @@ namespace WebApi.Migrations
 
             modelBuilder.Entity("WebApi.Models.ApplicationUser", b =>
                 {
-                    b.Navigation("ApprovalHotels");
-
                     b.Navigation("BookRoom");
-
-                    b.Navigation("PostHotels");
                 });
 
             modelBuilder.Entity("WebApi.Models.City", b =>

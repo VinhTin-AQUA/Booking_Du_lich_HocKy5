@@ -28,10 +28,19 @@ namespace WebApi.Models
         [Column(TypeName = "varchar(250)")]
         public string? PhotoPath { get; set; }
 
-        /*tham chiếu khóa ngoại*/ 
+        public DateTime? PostingDate { get; set; }
+        public DateTime? ApprovalDate { get; set; }
+
+        public string PosterID { get; set; }
+        public string ApproverID { get; set; }
+
+        /*tham chiếu khóa ngoại*/
         public int? CityId { get; set; }
         public string? CityCode { get; set; }
         public City City { get; set; }
+
+        public ApplicationUser Poster { get; set; }
+        public ApplicationUser Approver { get; set; }
 
         public ICollection<Room> Rooms { get; set; }
     }

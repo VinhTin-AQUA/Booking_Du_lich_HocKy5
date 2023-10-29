@@ -9,7 +9,6 @@ namespace WebApi.DTOs.TourType
 
         [Required(ErrorMessage = "{0} must be required")]
         [Display(Name = "Tour type name")]
-        [Column(TypeName = "nvarchar(100)")]
         public string TourTypeName { get; set; }
     }
 }
