@@ -1,13 +1,17 @@
 .sidebar-wrapper {
 	@apply min-h-screen;
+	display: flex;
+	min-height: 100%;
 }
 
 .sidebar-container {
 	@apply bg-[#1e3a8a] min-h-screen p-2 rounded;
+	flex-grow: 1;
 }
 
 .menu-container {
 	@apply text-white;
+	
 
 	.menu-item {
 		@apply mb-3 p-2 select-none cursor-pointer rounded text-[1.1em] duration-75;

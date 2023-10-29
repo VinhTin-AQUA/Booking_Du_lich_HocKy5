@@ -9,7 +9,6 @@ import { AdminComponent } from './admin.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { UserMangementComponent } from './user-mangement/user-mangement.component';
 import { CityManangerComponent } from './city-mananger/city-mananger.component';
-import { HotelManagerComponent } from './hotel-manager/hotel-manager.component';
 import { AddAccountComponent } from './add-account/add-account.component';
 import { FeedBackComponent } from './feed-back/feed-back.component';
 import { ManageTourTypeComponent } from './manage-tour-type/manage-tour-type.component';
@@ -21,7 +20,6 @@ import { ManageTourTypeComponent } from './manage-tour-type/manage-tour-type.com
     SideBarComponent,
     UserMangementComponent,
     CityManangerComponent,
-    HotelManagerComponent,
     AddAccountComponent,
     FeedBackComponent,
     ManageTourTypeComponent,

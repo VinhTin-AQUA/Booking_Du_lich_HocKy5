@@ -58,7 +58,7 @@ namespace WebApi.Controllers
         }
 
         [HttpDelete("delete-tourtype")]
-        public async Task<IActionResult> DeleteService([FromQuery] int id)
+        public async Task<IActionResult> DeleteTourType([FromQuery] int id)
         {
             var type = await _tourTypeRepository.GetTourTypeById(id);
 
@@ -88,7 +88,7 @@ namespace WebApi.Controllers
         }
 
         [HttpPut("update-tourtype")]
-        public async Task<IActionResult> UpdateTourType([FromForm] EditTourTypeDto model)
+        public async Task<IActionResult> UpdateTourType( EditTourTypeDto model)
         {
             if (model == null)
             {
