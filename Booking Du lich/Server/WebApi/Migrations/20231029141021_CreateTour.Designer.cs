@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebApi1.Data;
 
@@ -11,9 +12,10 @@ using WebApi1.Data;
 namespace WebApi.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231029141021_CreateTour")]
+    partial class CreateTour
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -479,17 +481,16 @@ namespace WebApi.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("DepartureLocation")
-                        .HasColumnType("nvarchar(200)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("DropOffLocation")
-                        .HasColumnType("nvarchar(200)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Overview")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhotoPath")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(70)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PosterID")
                         .HasColumnType("nvarchar(450)");
@@ -501,11 +502,10 @@ namespace WebApi.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TourAddress")
-                        .HasColumnType("nvarchar(250)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TourName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("TourTypeId")
                         .HasColumnType("int");

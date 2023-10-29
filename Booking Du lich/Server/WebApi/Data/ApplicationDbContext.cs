@@ -90,6 +90,25 @@ namespace WebApi1.Data
             modelBuilder.Entity<TourType>()
                 .HasKey(t => t.TourTypeId).HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+
+            modelBuilder.Entity<Tour>()
+                .HasKey(t => t.TourId).HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+            modelBuilder.Entity<City>()
+                .HasMany(c => c.Tours)
+                .WithOne(t => t.City)
+                .HasForeignKey(t => new { t.CityId, t.CityCode });
+            modelBuilder.Entity<TourType>()
+                .HasMany(c => c.Tours)
+                .WithOne(t => t.TourType)
+                .HasForeignKey(t => t.TourTypeId);
+            modelBuilder.Entity<Tour>()
+                .HasOne(t => t.Poster)
+                .WithMany(p => p.PostTours)
+                .HasForeignKey(t => t.PosterID);
+            modelBuilder.Entity<Tour>()
+                .HasOne(t => t.Approver)
+                .WithMany(a => a.ApprovalTours)
+                .HasForeignKey(t => t.ApproverID);  
         }
 
         public DbSet<City> City { get; set; }
@@ -108,6 +127,7 @@ namespace WebApi1.Data
         public DbSet<RoomPrice> RoomPrices { get; set; }
 
         public DbSet<BookRoom> BookRooms { get; set; }
+        public DbSet<Tour> Tour { get; set; }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }

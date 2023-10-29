@@ -31,6 +31,7 @@ namespace WebApi.Models
         public DateTime? PostingDate { get; set; }
         public DateTime? ApprovalDate { get; set; }
 
+        /*tham chiếu khóa ngoại*/
         public string PosterID { get; set; }
         public string ApproverID { get; set; }
 
