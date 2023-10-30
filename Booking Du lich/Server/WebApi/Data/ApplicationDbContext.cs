@@ -120,6 +120,13 @@ namespace WebApi1.Data
                 .HasOne(hs => hs.Hotel)
                 .WithMany(h => h.HasServices)
                 .HasForeignKey(h => h.HotelID);
+
+            modelBuilder.Entity<Package>()
+                .HasKey(p => p.PackageID);
+            modelBuilder.Entity<Tour>()
+                .HasMany(t => t.Packages)
+                .WithOne(p => p.Tour)
+                .HasForeignKey(p => p.TourID);
         }
 
         public DbSet<City> City { get; set; }
@@ -141,6 +148,8 @@ namespace WebApi1.Data
         public DbSet<Tour> Tour { get; set; }
 
         public DbSet<HasService> HasServices { get; set; }
+
+        public DbSet<Package> Packages { get; set; }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }

@@ -9,9 +9,18 @@ namespace WebApi.DTOs.Tour
         [Display(Name = "Tour name")]
         [Column(TypeName = "nvarchar(100)")]
         public string TourName { get; set; }
+        public int? TourTypeId { get; set; }
+        public int? CityId { get; set; }
+        public string TourAddress { get; set; }
+        public string Overview { get; set; }
+        public string Schedule { get; set; }
+        public string DepartureLocation { get; set; }
+        public string DropOffLocation { get; set; }
         public string PosterID { get; set; }
         public string ApproverID { get; set; }
         public DateTime? PostingDate { get; set; }
         public DateTime? ApprovalDate { get; set; }
+
+        public string PhotoPath { get; set; }
     }
 }
