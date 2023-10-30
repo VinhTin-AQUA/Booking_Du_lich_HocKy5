@@ -7,6 +7,7 @@ import { BussinessInfoComponent } from './bussiness-info/bussiness-info.componen
 import { PostComponent } from './post/post.component';
 import { PostDetailComponent } from './post-detail/post-detail.component';
 import { AddRoomComponent } from './add-room/add-room.component';
+import { ManageRoomComponent } from './manage-room/manage-room.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,7 @@ const routes: Routes = [
       { path: 'bussiness-info', component: BussinessInfoComponent, title: 'Thông tin khách sạn', },
       { path: 'service', component: ServiceComponent, title: 'Quản lý dịch vụ', },
       { path: 'add-room', component: AddRoomComponent, title: 'Thêm phòng', },
+      { path: 'manage-rooms', component: ManageRoomComponent, title: 'Quản lý phòng', },
 
     ],
   },

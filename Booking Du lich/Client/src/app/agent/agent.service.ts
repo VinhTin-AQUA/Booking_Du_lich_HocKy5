@@ -18,6 +18,10 @@ export class AgentService {
     return this.http.get(`${environment.appUrl}/hotel/get-hotels-of-agent?posterId=${posterId}`);
   }
 
+  getHotelById(hotelId: number) {
+    return this.http.get(`${environment.appUrl}/hotel/get-hotel-by-id?id=${hotelId}`);
+  }
+
   updateHotel(formData: FormData) {
     return this.http.put(`${environment.appUrl}/hotel/update-hotel`,formData);
   }
@@ -28,6 +32,10 @@ export class AgentService {
 
   deleteAllImgHotel(hotelId: number | undefined) {
     return this.http.delete(`${environment.appUrl}/hotel/delete-all-img-hotel?hotelId=${hotelId}`);
+  }
+
+  deleteHotel(hotelId: number) {
+    return this.http.delete(`${environment.appUrl}/hotel/delete-hotel?hotelId=${hotelId}`);
   }
 
   //room

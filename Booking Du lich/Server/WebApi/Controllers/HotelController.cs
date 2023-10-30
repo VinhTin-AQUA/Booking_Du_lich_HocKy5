@@ -56,6 +56,7 @@ namespace WebApi.Controllers
                 ApprovalDate = null,
                 CityId = model.CityId,
                 City = City,
+                CityCode = model.CityCode,
                 ApproverID = null,
                 Approver = null,
             };
@@ -83,7 +84,7 @@ namespace WebApi.Controllers
         }
 
         [HttpPut("update-hotel")]
-        public async Task<IActionResult> UpdateHotel(List<IFormFile> files,[FromForm] UpdateHotel model)
+        public async Task<IActionResult> UpdateHotel([FromForm] List<IFormFile> files,[FromForm] UpdateHotel model)
         {
             if (model == null)
             {
@@ -144,8 +145,9 @@ namespace WebApi.Controllers
             {
                 return BadRequest(new JsonResult(new { title = "Error", mesage = "Hotel not found" }));
             }
+            var imgNames = imageService.GetAllFileOfFolder("hotels",hotel.Id.ToString(),"_imgHotel");
 
-            return Ok(hotel);
+            return Ok(new { hotel, imgNames });
         }
 
         [HttpGet("get-hotels-of-agent")]
@@ -178,6 +180,7 @@ namespace WebApi.Controllers
             {
                 return BadRequest(new JsonResult(new { title = "Error", message = "Something error" }));
             }
+            imageService.DeleteAllImgHotel(hotel.Id.ToString());
             return Ok(new JsonResult(new { title = "Success", message = "Hotel delete successfully" }));
         }
 
