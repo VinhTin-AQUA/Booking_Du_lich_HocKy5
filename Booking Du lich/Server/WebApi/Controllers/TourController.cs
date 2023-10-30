@@ -55,6 +55,13 @@ namespace WebApi.Controllers
                 ApproverID = model.ApproverID,
                 Poster = Poster,
                 Approver = Approver,
+                CityId = model.CityId,
+                TourTypeId = model.TourTypeId,
+                DepartureLocation = model.DepartureLocation,
+                TourAddress = model.TourAddress,
+                Overview = model.Overview,
+                Schedule = model.Schedule,
+                PhotoPath = model.PhotoPath
             };
             var result = await tourRepository.AddTour(tour);
             if (result == false)
@@ -94,6 +101,7 @@ namespace WebApi.Controllers
             tour.TourType = tourType;
             tour.PosterID = model.PosterID;
             tour.ApproverID = model.ApproverID;
+            
 
             // lưu hình ảnh
             string urlImgFolder = "";

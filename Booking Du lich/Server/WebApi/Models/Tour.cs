@@ -46,5 +46,7 @@ namespace WebApi.Models
         public string ApproverID { get; set; }
         public ApplicationUser Poster { get; set; }
         public ApplicationUser Approver { get; set; }
+
+        public ICollection<Package> Packages { get; set; }
     }
 }

@@ -76,6 +76,8 @@ builder.Services.AddScoped<ITourRepository, TourRepository>();
 
 builder.Services.AddScoped<IHasServiceRepository, HasServiceRepository>();
 
+builder.Services.AddScoped<IPackageRepository, PackageRepository>();
+
 // JWT
 builder.Services.AddScoped<JWTService>();
 
