@@ -68,9 +68,9 @@ namespace WebApi.Controllers
         }
 
         [HttpGet("get-room-price-by-price")]
-        public async Task<IActionResult> GetRoomPriceByPrice(double price)
+        public async Task<IActionResult> GetRoomPriceByPrice(double Price)
         {
-            var roomPrices = await roomPriceRepository.GetRoomPriceByPrice(price);
+            var roomPrices = await roomPriceRepository.GetRoomPriceByPrice(Price);
             if (roomPrices == null)
             {
                 return NotFound(new JsonResult(new { title = "Error", message = "Room price isn't exist" }));
