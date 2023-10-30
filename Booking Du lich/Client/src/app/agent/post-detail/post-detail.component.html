@@ -1,0 +1,101 @@
+<div class="wrapper">
+  <div class="container p-2 flex justify-start items-center gap-2">
+    <div class="img-container">
+
+      <!-- img -->
+      <div class="flex gap-2">
+        <input
+          #fileInput
+          (change)="onSelectImg($event)"
+          class="btn-primary"
+          type="file"
+          multiple
+        />
+        <button (click)="deleteAllImg()" class="btn-outline-danger">
+          Xoá tất cả ảnh
+        </button>
+      </div>
+
+      <!-- list img -->
+      <div class="list-img">
+        <div class="columns-2 md:columns-3 gap-2">
+          <!--<div
+						*ngFor="let url of imgFiles"
+						class="break-inside-avoid mb-2 rounded border"
+					>
+						<div class="flex items-center">
+							<mat-icon (click)="removeImgSaved(url.data)" class="remove-img-icon"
+								>delete</mat-icon
+							>
+							<span>{{ url.name }}</span>
+						</div>
+						<img [src]="envImgUrl + url.data" alt="" />
+					</div>-->
+
+          <div
+            *ngFor="let url of listNewImgUrls"
+            class="break-inside-avoid mb-2 rounded border"
+          >
+            <div class="flex items-center">
+              <mat-icon
+                (click)="removeImgUnSave(url.data)"
+                class="remove-img-icon"
+                >delete</mat-icon
+              >
+              <span>{{ url.name }}</span>
+            </div>
+            <img [src]="url.data" alt="" />
+          </div>
+        </div>
+
+				
+      </div>
+    </div>
+
+    <div class="detail">
+      <form [formGroup]="hotelGroup" (ngSubmit)="submit()" autocomplete="off">
+        <!-- hotel name -->
+        <div class="text-[1.2em] mb-4">
+          <label class="mr-1">Tên khách sạn</label>
+          <input formControlName="hotelName" class="input-field" type="text" />
+        </div>
+
+        <!-- thanh pho -->
+        <div class="text-[1.2em] mb-4">
+          <label class="mr-1">Tỉnh / Thành phố</label>
+          <select class="input-field" formControlName="cityId">
+            <option *ngFor="let city of allCities" [value]="city.Id">{{city.Name}}</option>
+          </select>
+        </div>
+
+        <!-- địa chỉ -->
+        <div class="text-[1.2em] mb-4">
+          <label class="mr-1">Địa chỉ</label>
+          <input formControlName="address" class="input-field" type="text" />
+        </div>
+
+        <!-- mo ta -->
+        <div class="text-[1.2em] mb-4">
+          <label class="mr-1">Mô tả</label>
+          <textarea
+          formControlName="description"
+            class="input-field"
+            name=""
+            id=""
+            cols="30"
+            rows="5"
+          ></textarea>
+        </div>
+
+        <!-- ngày đăng -->
+        <div class="text-[1.2em] mb-4">
+          <span>Ngày đăng: 12/02/2003</span>
+        </div>
+
+        <div>
+          <button class="btn-primary w-full mb-2">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

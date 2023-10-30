@@ -13,5 +13,7 @@ namespace WebApi.Models
         [Display(Name = "Tour type name")]
         [Column(TypeName = "nvarchar(100)")]
         public string TourTypeName { get; set; }
+
+        public ICollection<Tour> Tours { get; set; }
     }
 }

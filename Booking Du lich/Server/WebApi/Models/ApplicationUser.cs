@@ -28,5 +28,8 @@ namespace WebApi.Models
         public int? PartnerId { get; set; }
         public BusinessPartner BusinessPartner { get; set; }
 
+        public ICollection<Tour> PostTours { get; set; }
+        public ICollection<Tour> ApprovalTours { get; set; }
+
     }
 }

@@ -43,19 +43,14 @@ namespace WebApi.Repositories
                 .SingleOrDefaultAsync();
             return hotel;
         }
-
-        //public async Task<Hotel> GetHotelOfAgent(string agentId)
-        //{
-        //    var agent = await userManager.FindByIdAsync(agentId);
-
-        //    var hotel = await context.Hotel
-        //        .Where(h => h.Id == agent.HotelId)
-        //        .Include(h => h.City)
-        //        .FirstOrDefaultAsync();
-        //    hotel.Agents = null;
-
-        //    return hotel;
-        //}
+        public async Task<ICollection<Hotel>> GetHotelsOfAgent(string posterId)
+        {
+            var hotels = await context.Hotel
+                .Include(h => h.City)
+                .Where(h => h.PosterID == posterId)
+                .ToListAsync();
+            return hotels;
+        }
 
         public async Task<IdentityResult> AdddAgent(ApplicationUser agent, string password)
         {
