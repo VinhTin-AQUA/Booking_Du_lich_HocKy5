@@ -9,7 +9,7 @@ namespace WebApi.Models
     {
         [Required(ErrorMessage = "{0} must be required")]
         [Display(Name = "Price")]
-        public decimal Price { get; set; }
+        public double Price { get; set; }
         [Key]
         [DataType(DataType.Date)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
