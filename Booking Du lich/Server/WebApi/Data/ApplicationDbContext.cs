@@ -127,6 +127,13 @@ namespace WebApi1.Data
                 .HasMany(t => t.Packages)
                 .WithOne(p => p.Tour)
                 .HasForeignKey(p => p.TourID);
+
+            modelBuilder.Entity<PackagePrice>()
+                .HasKey(pp => new { pp.PackageId, pp.ValidFrom });
+            modelBuilder.Entity<Package>()
+                .HasOne(p => p.PackagePrice)
+                .WithOne(pp => pp.Package)
+                .HasForeignKey<PackagePrice>(pp => pp.PackageId);
         }
 
         public DbSet<City> City { get; set; }
@@ -150,6 +157,8 @@ namespace WebApi1.Data
         public DbSet<HasService> HasServices { get; set; }
 
         public DbSet<Package> Packages { get; set; }
+
+        public DbSet<PackagePrice> PackagePrices { get; set; }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }

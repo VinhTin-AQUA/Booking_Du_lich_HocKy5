@@ -14,7 +14,7 @@ namespace WebApi.Models
         [Column(TypeName = "nvarchar(250)")]
         [Required(ErrorMessage = "{0} must be required")]
         public string PackageName { get; set; }
-       
+
         [Column(TypeName = "nvarchar(max)")]
         public string Decription { get; set; }
         [Required(ErrorMessage = "{0} must be required")]
@@ -22,5 +22,7 @@ namespace WebApi.Models
 
         //--
         public Tour Tour { get; set; }
+
+        public PackagePrice PackagePrice { get; set; }
     }
 }
