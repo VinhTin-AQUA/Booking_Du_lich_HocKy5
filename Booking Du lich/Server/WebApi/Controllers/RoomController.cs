@@ -167,7 +167,7 @@ namespace WebApi.Controllers
             return Ok(new JsonResult(new { title = "Success", message = "Room delete successfully" }));
         }
 
-        [HttpGet("search-room")]
+        [HttpGet("search-room-available")]
         public async Task<IActionResult> SearchRoom(string available)
         {
             var check = true;
@@ -183,6 +183,18 @@ namespace WebApi.Controllers
 
             var rooms = await roomRepository.SearchRoom(check);
             return Ok(new JsonResult(new { title = "Success", rooms }));
+        }
+
+        [HttpGet("search-rooms-of-hotel")]
+        public async Task<IActionResult> SearchRoomsOfHotel(int? HotelId)
+        {
+           if(HotelId == null)
+            {
+                return BadRequest(new JsonResult(new { title = "Error", message = "Missing parameter" }));
+            }
+
+            var rooms = await roomRepository.SearchRoomOfHotel(HotelId);
+            return Ok(new JsonResult(new { title = "Success", Rooms = rooms }));
         }
 
         [HttpPut("update-room")]

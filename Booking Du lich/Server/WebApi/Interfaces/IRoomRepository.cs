@@ -8,8 +8,10 @@ namespace WebApi.Interfaces
         public Task<bool> Save();
         public Task<bool> AddRoom(Room room);
         public Task<ICollection<Room>> GetAllRooms();
-        public Task<Room> GetRoomById(int? id);
-        
+        public Task<IEnumerable<Room>> SearchRoomOfHotel(int? HotelId);
+
+        public Task<Room> GetRoomById(int? Id);
+
         public Task<bool> DeleteRoom(Room room);
 
         public Task<bool> RoomExisted(string numberRoom);
