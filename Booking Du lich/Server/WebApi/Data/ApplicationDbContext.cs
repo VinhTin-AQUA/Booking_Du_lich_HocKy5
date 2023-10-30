@@ -108,7 +108,18 @@ namespace WebApi1.Data
             modelBuilder.Entity<Tour>()
                 .HasOne(t => t.Approver)
                 .WithMany(a => a.ApprovalTours)
-                .HasForeignKey(t => t.ApproverID);  
+                .HasForeignKey(t => t.ApproverID);
+
+            modelBuilder.Entity<HasService>()
+                .HasKey(hs => new { hs.ServiceID, hs.HotelID });
+            modelBuilder.Entity<HasService>()
+                .HasOne(hs => hs.Service)
+                .WithMany(s => s.HasServices)
+                .HasForeignKey(s => s.ServiceID);
+            modelBuilder.Entity<HasService>()
+                .HasOne(hs => hs.Hotel)
+                .WithMany(h => h.HasServices)
+                .HasForeignKey(h => h.HotelID);
         }
 
         public DbSet<City> City { get; set; }
@@ -128,6 +139,8 @@ namespace WebApi1.Data
 
         public DbSet<BookRoom> BookRooms { get; set; }
         public DbSet<Tour> Tour { get; set; }
+
+        public DbSet<HasService> HasServices { get; set; }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }

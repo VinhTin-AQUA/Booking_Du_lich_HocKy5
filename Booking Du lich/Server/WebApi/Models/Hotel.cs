@@ -44,5 +44,7 @@ namespace WebApi.Models
         public ApplicationUser Approver { get; set; }
 
         public ICollection<Room> Rooms { get; set; }
+
+        public ICollection<HasService> HasServices { get; set; }    
     }
 }
