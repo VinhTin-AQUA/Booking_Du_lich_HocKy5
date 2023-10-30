@@ -12,6 +12,9 @@ import { CityManangerComponent } from './city-mananger/city-mananger.component';
 import { AddAccountComponent } from './add-account/add-account.component';
 import { FeedBackComponent } from './feed-back/feed-back.component';
 import { ManageTourTypeComponent } from './manage-tour-type/manage-tour-type.component';
+import { BussinessPartnerComponent } from './bussiness-partner/bussiness-partner.component';
+import { AddBussinessPartComponent } from './add-bussiness-part/add-bussiness-part.component';
+import { ManageAgentTourComponent } from './manage-agent-tour/manage-agent-tour.component';
 
 
 @NgModule({
@@ -23,6 +26,9 @@ import { ManageTourTypeComponent } from './manage-tour-type/manage-tour-type.com
     AddAccountComponent,
     FeedBackComponent,
     ManageTourTypeComponent,
+    BussinessPartnerComponent,
+    AddBussinessPartComponent,
+    ManageAgentTourComponent,
   ],
   imports: [
     CommonModule,
