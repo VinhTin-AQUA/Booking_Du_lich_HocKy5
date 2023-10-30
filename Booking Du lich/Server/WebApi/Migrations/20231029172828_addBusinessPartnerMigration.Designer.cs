@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebApi1.Data;
 
@@ -11,9 +12,10 @@ using WebApi1.Data;
 namespace WebApi.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231029172828_addBusinessPartnerMigration")]
+    partial class addBusinessPartnerMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -340,21 +342,6 @@ namespace WebApi.Migrations
                     b.ToTable("Contact");
                 });
 
-            modelBuilder.Entity("WebApi.Models.HasService", b =>
-                {
-                    b.Property<int>("ServiceID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("HotelID")
-                        .HasColumnType("int");
-
-                    b.HasKey("ServiceID", "HotelID");
-
-                    b.HasIndex("HotelID");
-
-                    b.ToTable("Has Service");
-                });
-
             modelBuilder.Entity("WebApi.Models.Hotel", b =>
                 {
                     b.Property<int>("Id")
@@ -422,56 +409,6 @@ namespace WebApi.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.ToTable("Service");
-                });
-
-            modelBuilder.Entity("WebApi.Models.Package", b =>
-                {
-                    b.Property<int>("PackageID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PackageID"), 1L, 1);
-
-                    b.Property<string>("Decription")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("MaxPeople")
-                        .HasColumnType("int");
-
-                    b.Property<string>("PackageName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(250)");
-
-                    b.Property<int>("TourID")
-                        .HasColumnType("int");
-
-                    b.HasKey("PackageID");
-
-                    b.HasIndex("TourID");
-
-                    b.ToTable("Package");
-                });
-
-            modelBuilder.Entity("WebApi.Models.PackagePrice", b =>
-                {
-                    b.Property<int>("PackageId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("ValidFrom")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("GoodThru")
-                        .HasColumnType("datetime2");
-
-                    b.Property<double>("Price")
-                        .HasColumnType("float");
-
-                    b.HasKey("PackageId", "ValidFrom");
-
-                    b.HasIndex("PackageId")
-                        .IsUnique();
-
-                    b.ToTable("Package Price");
                 });
 
             modelBuilder.Entity("WebApi.Models.Room", b =>
@@ -553,72 +490,6 @@ namespace WebApi.Migrations
                     b.HasKey("RoomTypeId");
 
                     b.ToTable("Room Type");
-                });
-
-            modelBuilder.Entity("WebApi.Models.Tour", b =>
-                {
-                    b.Property<int>("TourId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TourId"), 1L, 1);
-
-                    b.Property<DateTime?>("ApprovalDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ApproverID")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("CityCode")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<int?>("CityId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("DepartureLocation")
-                        .HasColumnType("nvarchar(200)");
-
-                    b.Property<string>("DropOffLocation")
-                        .HasColumnType("nvarchar(200)");
-
-                    b.Property<string>("Overview")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PhotoPath")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(70)");
-
-                    b.Property<string>("PosterID")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<DateTime?>("PostingDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Schedule")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TourAddress")
-                        .HasColumnType("nvarchar(250)");
-
-                    b.Property<string>("TourName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<int?>("TourTypeId")
-                        .HasColumnType("int");
-
-                    b.HasKey("TourId")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.HasIndex("ApproverID");
-
-                    b.HasIndex("PosterID");
-
-                    b.HasIndex("TourTypeId");
-
-                    b.HasIndex("CityId", "CityCode");
-
-                    b.ToTable("Tour");
                 });
 
             modelBuilder.Entity("WebApi.Models.TourType", b =>
@@ -718,25 +589,6 @@ namespace WebApi.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("WebApi.Models.HasService", b =>
-                {
-                    b.HasOne("WebApi.Models.Hotel", "Hotel")
-                        .WithMany("HasServices")
-                        .HasForeignKey("HotelID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("WebApi.Models.HotelService", "Service")
-                        .WithMany("HasServices")
-                        .HasForeignKey("ServiceID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Hotel");
-
-                    b.Navigation("Service");
-                });
-
             modelBuilder.Entity("WebApi.Models.Hotel", b =>
                 {
                     b.HasOne("WebApi.Models.ApplicationUser", "Approver")
@@ -756,28 +608,6 @@ namespace WebApi.Migrations
                     b.Navigation("City");
 
                     b.Navigation("Poster");
-                });
-
-            modelBuilder.Entity("WebApi.Models.Package", b =>
-                {
-                    b.HasOne("WebApi.Models.Tour", "Tour")
-                        .WithMany("Packages")
-                        .HasForeignKey("TourID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Tour");
-                });
-
-            modelBuilder.Entity("WebApi.Models.PackagePrice", b =>
-                {
-                    b.HasOne("WebApi.Models.Package", "Package")
-                        .WithOne("PackagePrice")
-                        .HasForeignKey("WebApi.Models.PackagePrice", "PackageId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Package");
                 });
 
             modelBuilder.Entity("WebApi.Models.Room", b =>
@@ -806,44 +636,13 @@ namespace WebApi.Migrations
                     b.Navigation("Room");
                 });
 
-            modelBuilder.Entity("WebApi.Models.Tour", b =>
-                {
-                    b.HasOne("WebApi.Models.ApplicationUser", "Approver")
-                        .WithMany("ApprovalTours")
-                        .HasForeignKey("ApproverID");
-
-                    b.HasOne("WebApi.Models.ApplicationUser", "Poster")
-                        .WithMany("PostTours")
-                        .HasForeignKey("PosterID");
-
-                    b.HasOne("WebApi.Models.TourType", "TourType")
-                        .WithMany("Tours")
-                        .HasForeignKey("TourTypeId");
-
-                    b.HasOne("WebApi.Models.City", "City")
-                        .WithMany("Tours")
-                        .HasForeignKey("CityId", "CityCode");
-
-                    b.Navigation("Approver");
-
-                    b.Navigation("City");
-
-                    b.Navigation("Poster");
-
-                    b.Navigation("TourType");
-                });
-
             modelBuilder.Entity("WebApi.Models.ApplicationUser", b =>
                 {
                     b.Navigation("ApprovalHotels");
 
-                    b.Navigation("ApprovalTours");
-
                     b.Navigation("BookRoom");
 
                     b.Navigation("PostHotels");
-
-                    b.Navigation("PostTours");
                 });
 
             modelBuilder.Entity("WebApi.Models.BusinessPartner", b =>
@@ -854,25 +653,11 @@ namespace WebApi.Migrations
             modelBuilder.Entity("WebApi.Models.City", b =>
                 {
                     b.Navigation("Hotels");
-
-                    b.Navigation("Tours");
                 });
 
             modelBuilder.Entity("WebApi.Models.Hotel", b =>
                 {
-                    b.Navigation("HasServices");
-
                     b.Navigation("Rooms");
-                });
-
-            modelBuilder.Entity("WebApi.Models.HotelService", b =>
-                {
-                    b.Navigation("HasServices");
-                });
-
-            modelBuilder.Entity("WebApi.Models.Package", b =>
-                {
-                    b.Navigation("PackagePrice");
                 });
 
             modelBuilder.Entity("WebApi.Models.Room", b =>
@@ -885,16 +670,6 @@ namespace WebApi.Migrations
             modelBuilder.Entity("WebApi.Models.RoomType", b =>
                 {
                     b.Navigation("Rooms");
-                });
-
-            modelBuilder.Entity("WebApi.Models.Tour", b =>
-                {
-                    b.Navigation("Packages");
-                });
-
-            modelBuilder.Entity("WebApi.Models.TourType", b =>
-                {
-                    b.Navigation("Tours");
                 });
 #pragma warning restore 612, 618
         }

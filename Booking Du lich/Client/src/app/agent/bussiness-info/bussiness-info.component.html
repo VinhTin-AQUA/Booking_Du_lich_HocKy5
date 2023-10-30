@@ -1,0 +1,108 @@
+<div class="wrapper">
+  <div
+    class="form-success container mx-auto md:w-[500px] p-5 rounded my-2"
+  >
+    <form [formGroup]="bussinessForm" (ngSubmit)="submit()" autocomplete="off">
+      <div class="title font-bold text-[1.7em] mb-9">
+        <span>Thông tin khách sạn</span>
+      </div>
+
+			<!-- tên khách sạn -->
+			<div class="text-[1.2em] mb-4">
+				<label class="block mb-2">Tên khách sạn</label>
+				<input
+					[class]="inputValidation('partnerName')"
+					type="text"
+					formControlName="partnerName"
+					spellcheck="false"
+				/>
+				<span
+					class="text-red-500"
+					*ngIf="
+						submitted === true && bussinessForm.hasError('required', 'partnerName')
+					"
+				>
+					Tên khách sạn không được bỏ trống
+				</span>
+			</div>
+
+			<!-- địa chỉ -->
+			<div class="text-[1.2em] mb-4">
+				<label class="block mb-2">Địa chỉ</label>
+				<input
+					[class]="inputValidation('address')"
+					type="text"
+					formControlName="address"
+					spellcheck="false"
+				/>
+				<span
+					class="text-red-500"
+					*ngIf="
+						submitted === true && bussinessForm.hasError('required', 'address')
+					"
+				>
+					Địa chỉ không được bỏ trống
+				</span>
+			</div>
+
+      <!-- email -->
+      <div class="text-[1.2em] mb-4">
+        <label class="block mb-2">Email</label>
+        <input
+          [class]="inputValidation('email')"
+          type="email"
+          formControlName="email"
+          spellcheck="false"
+        />
+				<span
+          class="text-red-500"
+          *ngIf="
+            submitted === true && bussinessForm.hasError('required', 'email')
+          "
+        >
+          Email không được bỏ trống
+        </span>
+				<span
+          class="text-red-500"
+          *ngIf="
+            submitted === true && bussinessForm.hasError('email', 'email')
+          "
+        >
+          Email không hợp lệ
+        </span>
+      </div>
+
+      <!-- số điện thoại -->
+      <div class="text-[1.2em] mb-4">
+        <label class="block mb-2">Số điện thoại khách sạn</label>
+        <input
+          [class]="inputValidation('phoneNumber')"
+          type="text"
+          formControlName="phoneNumber"
+          spellcheck="false"
+          placeholder="0123456789"
+        />
+        <span
+          class="text-red-500"
+          *ngIf="
+            submitted === true && bussinessForm.hasError('required', 'phoneNumber')
+          "
+        >
+          Số điện thoại khách sạn không được bỏ trống
+        </span>
+				<span
+          class="text-red-500"
+          *ngIf="
+            submitted === true && bussinessForm.hasError('pattern', 'phoneNumber')
+          "
+        >
+          Số điện thoại khách sạn không hợp lệ
+        </span>
+      </div>
+
+      <div>
+        <button class="btn-primary w-full mb-2">Lưu</button>
+      </div>
+    </form>
+  </div>
+</div>
