@@ -16,6 +16,7 @@ namespace WebApi.DTOs.BookRoom
         [Required(ErrorMessage = "{0} must be required")]
         public DateTime? CheckOutDate { get; set; }
 
-       
+        public DateTime? BookingDate { get; set; }
+
     }
 }
