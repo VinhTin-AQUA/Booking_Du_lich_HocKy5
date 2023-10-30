@@ -26,20 +26,22 @@ export class PostDetailComponent {
   hotelGroup: FormGroup = new FormGroup([]);
   submitted: boolean = false;
 
-  constructor(private activatedRoute: ActivatedRoute, 
+  constructor(
+    private activatedRoute: ActivatedRoute,
     private adminService: AdminService,
     private formBuilder: FormBuilder,
     private accountService: AccountService,
     private agentService: AgentService,
-    private sharedService: SharedService) {}
+    private sharedService: SharedService
+  ) {}
 
   ngOnInit() {
     this.hotelGroup = this.formBuilder.group({
-      hotelName: ['',[Validators.required]],
-      address: ['',[Validators.required]],
-      description: ['',[Validators.required]],
-      cityId: ['1',[Validators.required]],
-    })
+      hotelName: ['', [Validators.required]],
+      address: ['', [Validators.required]],
+      description: ['', [Validators.required]],
+      cityKey: 2,
+    });
 
     this.activatedRoute.params.subscribe({
       next: (params: any) => {
@@ -63,19 +65,17 @@ export class PostDetailComponent {
   }
 
   private getUserId() {
-    this.accountService.user$.subscribe(u => {
-      if(u !== null) {
+    this.accountService.user$.subscribe((u) => {
+      if (u !== null) {
         this.userId = u.Id;
       }
-       
-    })
+    });
   }
 
   private resetHotelForm() {
     if (this.hotelID !== null) {
-      
     }
-  } 
+  }
 
   private clearFile() {
     this.fileInput.nativeElement.value = '';
@@ -131,34 +131,35 @@ export class PostDetailComponent {
   removeImgSaved(url: string) {}
 
   submit() {
-    this.submitted = true
+    this.submitted = true;
 
-    if (this.hotelGroup.valid) {
-      this.sharedService.showLoading(true);
-      
-      let form = new FormData();
-      form.append('HotelName',this.hotelGroup.value.hotelName);
-      form.append('Address',this.hotelGroup.value.address);
-      form.append('Description',this.hotelGroup.value.description);
-      form.append('CityId',this.hotelGroup.value.cityId);
-      form.append('PosterID',this.userId);
-      
-      for (let file of this.newImgObjToAdd) {
-        form.append('files',file);
-      }
+    console.log(this.hotelGroup.value.cityKey);
 
-      this.agentService.addHotel(form).subscribe({
-        next: (res:any) => {
-          console.log(res);
-          this.sharedService.showLoading(false);
-          this.sharedService.showToastMessage('success' + res.Value.message);
-        },
-        error: (err) => {
-          this.sharedService.showLoading(false);
-          this.sharedService.showToastMessage(err.error.Value.message);
-        }
-      })
+    //if (this.hotelGroup.valid) {
+    //  this.sharedService.showLoading(true);
+    //  let form = new FormData();
+    //  form.append('HotelName',this.hotelGroup.value.hotelName);
+    //  form.append('Address',this.hotelGroup.value.address);
+    //  form.append('Description',this.hotelGroup.value.description);
+    //  form.append('CityId',this.hotelGroup.value.cityKey.CityId);
+    //  form.append('CityCode',this.hotelGroup.value.cityKey.CityCode);
+    //  form.append('PosterID',this.userId);
 
-    }
+    //  for (let file of this.newImgObjToAdd) {
+    //    form.append('files',file);
+    //  }
+
+    //  this.agentService.addHotel(form).subscribe({
+    //    next: (res:any) => {
+    //      console.log(res);
+    //      this.sharedService.showLoading(false);
+    //      this.sharedService.showToastMessage('success' + res.Value.message);
+    //    },
+    //    error: (err) => {
+    //      this.sharedService.showLoading(false);
+    //      this.sharedService.showToastMessage(err.error.Value.message);
+    //    }
+    //  })
+    //}
   }
 }

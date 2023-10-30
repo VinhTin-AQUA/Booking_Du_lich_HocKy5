@@ -6,6 +6,7 @@ import { ManageRoomTypeComponent } from './manage-room-type/manage-room-type.com
 import { BussinessInfoComponent } from './bussiness-info/bussiness-info.component';
 import { PostComponent } from './post/post.component';
 import { PostDetailComponent } from './post-detail/post-detail.component';
+import { AddRoomComponent } from './add-room/add-room.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,8 @@ const routes: Routes = [
       { path: 'add-post', component: PostDetailComponent, title: 'Thêm bài viết', },
       { path: 'manage-room-type', component: ManageRoomTypeComponent, title: 'Quản lý loại phòng', },
       { path: 'bussiness-info', component: BussinessInfoComponent, title: 'Thông tin khách sạn', },
+      { path: 'service', component: ServiceComponent, title: 'Quản lý dịch vụ', },
+      { path: 'add-room', component: AddRoomComponent, title: 'Thêm phòng', },
 
     ],
   },
