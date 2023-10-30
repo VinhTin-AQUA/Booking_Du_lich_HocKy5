@@ -51,6 +51,7 @@ namespace WebApi.Controllers
                 RoomID = model.RoomID,
                 CheckInDate = model.CheckInDate,
                 CheckOutDate = model.CheckOutDate,
+                BookingDate = model.BookingDate,
                 Room = Room,
                 User = User,
             };

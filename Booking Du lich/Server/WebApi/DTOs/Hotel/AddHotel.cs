@@ -10,10 +10,20 @@ namespace WebApi.DTOs.Hotel
         [Column(TypeName = "nvarchar(250)")]
         public string HotelName { get; set; }
 
-        public string PosterID { get; set; }
+        [Display(Name = "Address")]
+        [Column(TypeName = "nvarchar(250)")]
+        public string? Address { get; set; }
 
-        public string ApproverID { get; set; }
-        public DateTime? PostingDate { get; set; }
-        public DateTime? ApprovalDate { get; set; }
+        [Display(Name = "Description")]
+        [Column(TypeName = "nvarchar(max)")]
+        public string? Description { get; set; }
+
+        public int CityId;
+        public int CityCode;
+
+        public string PosterID
+        {
+            get; set;
+        }
     }
 }

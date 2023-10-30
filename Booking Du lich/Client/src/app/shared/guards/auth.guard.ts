@@ -31,7 +31,7 @@ export const authGuard: CanActivateFn = (route, state) => {
     }
 
     if (roleAccount === Roles.AGENTHOTEL) {
-      return router.navigateByUrl('/agent');
+      return router.navigateByUrl('/agent/post');
     }
 
     if (roleAccount === Roles.AGENTTOUR) {

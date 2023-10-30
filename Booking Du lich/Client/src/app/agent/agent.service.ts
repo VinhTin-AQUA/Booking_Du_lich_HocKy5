@@ -9,8 +9,13 @@ export class AgentService {
 
   constructor(private http: HttpClient) { }
 
-  getHotelOfAgent(agentId: string | undefined) {
-    return this.http.get(`${environment.appUrl}/hotel/get-hotel-of-agent?agentId=${agentId}`);
+  //hotel
+  addHotel(formData: FormData) {
+    return this.http.post(`${environment.appUrl}/hotel/add-hotel`,formData);
+  }
+
+  getHotelsOfAgentHotel(posterId: string | undefined) {
+    return this.http.get(`${environment.appUrl}/hotel/get-hotels-of-agent?posterId=${posterId}`);
   }
 
   updateHotel(formData: FormData) {
@@ -25,6 +30,7 @@ export class AgentService {
     return this.http.delete(`${environment.appUrl}/hotel/delete-all-img-hotel?hotelId=${hotelId}`);
   }
 
+  //room
   getRooms() {
     return this.http.get(`${environment.appUrl}/room/get-all-rooms`);
   }

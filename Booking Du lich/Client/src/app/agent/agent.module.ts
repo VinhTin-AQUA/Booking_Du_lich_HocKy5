@@ -7,19 +7,23 @@ import { FormsModule } from '@angular/forms';
 import { AgentRoutingModule } from './agent-routing.module';
 import { AgentComponent } from './agent.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import { HotelComponent } from './hotel/hotel.component';
-import { RoomDashboardComponent } from './room-dashboard/room-dashboard.component';
 import { ServiceComponent } from './service/service.component';
 import { ManageRoomTypeComponent } from './manage-room-type/manage-room-type.component';
+import { BussinessInfoComponent } from './bussiness-info/bussiness-info.component';
+import { PostComponent } from './post/post.component';
+import { PostDetailComponent } from './post-detail/post-detail.component';
+import { AddRoomComponent } from './add-room/add-room.component';
 
 @NgModule({
   declarations: [
     AgentComponent,
     SidebarComponent,
-    HotelComponent,
-    RoomDashboardComponent,
     ServiceComponent,
     ManageRoomTypeComponent,
+    BussinessInfoComponent,
+    PostComponent,
+    PostDetailComponent,
+    AddRoomComponent,
   ],
   imports: [
     CommonModule,

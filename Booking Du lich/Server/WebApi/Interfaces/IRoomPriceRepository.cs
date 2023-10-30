@@ -8,7 +8,7 @@ namespace WebApi.Interfaces
         public Task<bool> AddRoomPrice(RoomPrice roomPrice);
 
         public Task<ICollection<RoomPrice>> GetAllRoomPrices();
-        public Task<RoomPrice> GetRoomPriceByPrice(decimal price);
+        public Task<RoomPrice> GetRoomPriceByPrice(double price);
 
         public Task<RoomPrice> GetRoomPriceById(int? id);
         public Task<RoomPrice> GetRoomPriceByID(int? id , DateTime? validFrom);

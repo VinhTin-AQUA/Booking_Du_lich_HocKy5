@@ -18,12 +18,14 @@ namespace WebApi.Models
         [Required(ErrorMessage = "{0} must be required")]
         public DateTime? CheckOutDate { get; set; }
 
+        public DateTime? BookingDate { get; set; }
+
         // khoa ngoai
 
         public Room Room { get; set; }  
 
         public ApplicationUser User { get; set; }
 
-        public decimal Price { get; set; }
+        public double Price { get; set; }
     }
 }

@@ -1,0 +1,25 @@
+.container {
+  @apply p-2;
+}
+
+.search-input {
+  @apply w-[200px] outline-none px-3 py-2 rounded border-2 duration-100;
+
+  &:focus {
+    box-shadow: 0px 0px 1px 1px #2563eb;
+  }
+}
+
+.posts {
+  @apply flex gap-2 flex-wrap overflow-y-scroll p-2;
+  height: calc(100vh - 110px);
+  max-height: calc(100vh - 110px);
+}
+
+.post-item {
+  @apply min-w-[200px] w-[220px] border-2 border-[#2563eb] p-2 rounded cursor-pointer duration-[2ms];
+
+  &:hover {
+    box-shadow: 0px 0px 2px 2px #2563eb;
+  }
+}

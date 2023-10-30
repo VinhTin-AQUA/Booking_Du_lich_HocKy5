@@ -60,7 +60,7 @@ namespace WebApi.Controllers
          
 
         [HttpGet("get-all-room-price")]
-        public async Task<IActionResult> GetAllPrices()
+        public async Task<IActionResult> GetAllRoomPrices()
         {
             var roomPrices = await roomPriceRepository.GetAllRoomPrices();
 
@@ -68,9 +68,9 @@ namespace WebApi.Controllers
         }
 
         [HttpGet("get-room-price-by-price")]
-        public async Task<IActionResult> GetRoomTypeByName(decimal price)
+        public async Task<IActionResult> GetRoomPriceByPrice(double Price)
         {
-            var roomPrices = await roomPriceRepository.GetRoomPriceByPrice(price);
+            var roomPrices = await roomPriceRepository.GetRoomPriceByPrice(Price);
             if (roomPrices == null)
             {
                 return NotFound(new JsonResult(new { title = "Error", message = "Room price isn't exist" }));
@@ -80,7 +80,7 @@ namespace WebApi.Controllers
         }
 
         [HttpGet("get-room-price-by-id")]
-        public async Task<IActionResult> GetRoomTypeByName(int roomId, DateTime validFrom)
+        public async Task<IActionResult> GetRoomPriceByID(int roomId, DateTime validFrom)
         {
             var roomPrices = await roomPriceRepository.GetRoomPriceByID(roomId,validFrom );
             if (roomPrices == null)
@@ -93,7 +93,7 @@ namespace WebApi.Controllers
 
 
         [HttpDelete("delete-room-price")]
-        public async Task<IActionResult> DeleteRoom([FromQuery] int? roomId, [FromQuery] DateTime? validFrom)
+        public async Task<IActionResult> DeleteRoomPrice([FromQuery] int? roomId, [FromQuery] DateTime? validFrom)
         {
             if (roomId == null)
             {
@@ -125,7 +125,7 @@ namespace WebApi.Controllers
             var roomPriceExisted = await roomPriceRepository.GetRoomPriceByID(model.RoomId, model.validFrom);
             if (roomPriceExisted == null)
             {
-                return BadRequest(new JsonResult(new { title = "Error", message = "Room type was not existed" }));
+                return BadRequest(new JsonResult(new { title = "Error", message = "Room Price was not existed" }));
             }
             
             roomPriceExisted.Price = model.Price;

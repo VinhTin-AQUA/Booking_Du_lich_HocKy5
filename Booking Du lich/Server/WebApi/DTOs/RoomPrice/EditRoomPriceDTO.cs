@@ -7,7 +7,7 @@ namespace WebApi.DTOs.RoomPrice
     {
         [Required(ErrorMessage = "{0} must be required")]
         [Display(Name = "Price")]
-        public decimal Price { get; set; }
+        public double Price { get; set; }
 
         public int RoomId { get; set; }
 

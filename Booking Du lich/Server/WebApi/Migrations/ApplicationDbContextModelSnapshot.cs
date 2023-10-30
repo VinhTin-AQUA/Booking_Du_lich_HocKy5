@@ -200,6 +200,9 @@ namespace WebApi.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
+                    b.Property<int?>("PartnerId")
+                        .HasColumnType("int");
+
                     b.Property<string>("PasswordHash")
                         .HasColumnType("nvarchar(max)");
 
@@ -229,6 +232,8 @@ namespace WebApi.Migrations
                         .HasDatabaseName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
+                    b.HasIndex("PartnerId");
+
                     b.ToTable("Users", (string)null);
                 });
 
@@ -243,12 +248,15 @@ namespace WebApi.Migrations
                     b.Property<DateTime?>("CheckInDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<DateTime?>("BookingDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<DateTime?>("CheckOutDate")
                         .IsRequired()
                         .HasColumnType("datetime2");
 
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
 
                     b.HasKey("RoomID", "UserID", "CheckInDate")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -260,6 +268,33 @@ namespace WebApi.Migrations
                         .IsUnique();
 
                     b.ToTable("Book Room");
+                });
+
+            modelBuilder.Entity("WebApi.Models.BusinessPartner", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("PartnerName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(15)");
+
+                    b.HasKey("Id")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.ToTable("BusinessPartner");
                 });
 
             modelBuilder.Entity("WebApi.Models.City", b =>
@@ -306,6 +341,21 @@ namespace WebApi.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.ToTable("Contact");
+                });
+
+            modelBuilder.Entity("WebApi.Models.HasService", b =>
+                {
+                    b.Property<int>("ServiceID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("HotelID")
+                        .HasColumnType("int");
+
+                    b.HasKey("ServiceID", "HotelID");
+
+                    b.HasIndex("HotelID");
+
+                    b.ToTable("Has Service");
                 });
 
             modelBuilder.Entity("WebApi.Models.Hotel", b =>
@@ -377,6 +427,56 @@ namespace WebApi.Migrations
                     b.ToTable("Service");
                 });
 
+            modelBuilder.Entity("WebApi.Models.Package", b =>
+                {
+                    b.Property<int>("PackageID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PackageID"), 1L, 1);
+
+                    b.Property<string>("Decription")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("MaxPeople")
+                        .HasColumnType("int");
+
+                    b.Property<string>("PackageName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(250)");
+
+                    b.Property<int>("TourID")
+                        .HasColumnType("int");
+
+                    b.HasKey("PackageID");
+
+                    b.HasIndex("TourID");
+
+                    b.ToTable("Package");
+                });
+
+            modelBuilder.Entity("WebApi.Models.PackagePrice", b =>
+                {
+                    b.Property<int>("PackageId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("ValidFrom")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("GoodThru")
+                        .HasColumnType("datetime2");
+
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
+
+                    b.HasKey("PackageId", "ValidFrom");
+
+                    b.HasIndex("PackageId")
+                        .IsUnique();
+
+                    b.ToTable("Package Price");
+                });
+
             modelBuilder.Entity("WebApi.Models.Room", b =>
                 {
                     b.Property<int>("Id")
@@ -429,8 +529,8 @@ namespace WebApi.Migrations
                     b.Property<DateTime?>("GoodThru")
                         .HasColumnType("datetime2");
 
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
 
                     b.HasKey("RoomId", "ValidFrom")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -593,6 +693,15 @@ namespace WebApi.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("WebApi.Models.ApplicationUser", b =>
+                {
+                    b.HasOne("WebApi.Models.BusinessPartner", "BusinessPartner")
+                        .WithMany("PartnerUser")
+                        .HasForeignKey("PartnerId");
+
+                    b.Navigation("BusinessPartner");
+                });
+
             modelBuilder.Entity("WebApi.Models.BookRoom", b =>
                 {
                     b.HasOne("WebApi.Models.Room", "Room")
@@ -610,6 +719,25 @@ namespace WebApi.Migrations
                     b.Navigation("Room");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("WebApi.Models.HasService", b =>
+                {
+                    b.HasOne("WebApi.Models.Hotel", "Hotel")
+                        .WithMany("HasServices")
+                        .HasForeignKey("HotelID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("WebApi.Models.HotelService", "Service")
+                        .WithMany("HasServices")
+                        .HasForeignKey("ServiceID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Hotel");
+
+                    b.Navigation("Service");
                 });
 
             modelBuilder.Entity("WebApi.Models.Hotel", b =>
@@ -631,6 +759,28 @@ namespace WebApi.Migrations
                     b.Navigation("City");
 
                     b.Navigation("Poster");
+                });
+
+            modelBuilder.Entity("WebApi.Models.Package", b =>
+                {
+                    b.HasOne("WebApi.Models.Tour", "Tour")
+                        .WithMany("Packages")
+                        .HasForeignKey("TourID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Tour");
+                });
+
+            modelBuilder.Entity("WebApi.Models.PackagePrice", b =>
+                {
+                    b.HasOne("WebApi.Models.Package", "Package")
+                        .WithOne("PackagePrice")
+                        .HasForeignKey("WebApi.Models.PackagePrice", "PackageId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Package");
                 });
 
             modelBuilder.Entity("WebApi.Models.Room", b =>
@@ -699,6 +849,11 @@ namespace WebApi.Migrations
                     b.Navigation("PostTours");
                 });
 
+            modelBuilder.Entity("WebApi.Models.BusinessPartner", b =>
+                {
+                    b.Navigation("PartnerUser");
+                });
+
             modelBuilder.Entity("WebApi.Models.City", b =>
                 {
                     b.Navigation("Hotels");
@@ -708,7 +863,19 @@ namespace WebApi.Migrations
 
             modelBuilder.Entity("WebApi.Models.Hotel", b =>
                 {
+                    b.Navigation("HasServices");
+
                     b.Navigation("Rooms");
+                });
+
+            modelBuilder.Entity("WebApi.Models.HotelService", b =>
+                {
+                    b.Navigation("HasServices");
+                });
+
+            modelBuilder.Entity("WebApi.Models.Package", b =>
+                {
+                    b.Navigation("PackagePrice");
                 });
 
             modelBuilder.Entity("WebApi.Models.Room", b =>
@@ -721,6 +888,11 @@ namespace WebApi.Migrations
             modelBuilder.Entity("WebApi.Models.RoomType", b =>
                 {
                     b.Navigation("Rooms");
+                });
+
+            modelBuilder.Entity("WebApi.Models.Tour", b =>
+                {
+                    b.Navigation("Packages");
                 });
 
             modelBuilder.Entity("WebApi.Models.TourType", b =>

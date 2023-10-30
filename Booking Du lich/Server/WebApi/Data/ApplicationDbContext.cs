@@ -91,6 +91,17 @@ namespace WebApi1.Data
                 .HasKey(t => t.TourTypeId).HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
 
+            modelBuilder.Entity<BusinessPartner>()
+                .HasKey(b => b.Id).HasAnnotation("SqlServer:ValueGenerationStrategy",
+                  SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity<BusinessPartner>()
+                .HasMany(bp => bp.PartnerUser)
+                .WithOne(b => b.BusinessPartner)
+                .HasForeignKey(b => b.PartnerId);
+
+
+
             modelBuilder.Entity<Tour>()
                 .HasKey(t => t.TourId).HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
             modelBuilder.Entity<City>()
@@ -108,7 +119,33 @@ namespace WebApi1.Data
             modelBuilder.Entity<Tour>()
                 .HasOne(t => t.Approver)
                 .WithMany(a => a.ApprovalTours)
-                .HasForeignKey(t => t.ApproverID);  
+                .HasForeignKey(t => t.ApproverID);
+
+            modelBuilder.Entity<HasService>()
+                .HasKey(hs => new { hs.ServiceID, hs.HotelID });
+            modelBuilder.Entity<HasService>()
+                .HasOne(hs => hs.Service)
+                .WithMany(s => s.HasServices)
+                .HasForeignKey(s => s.ServiceID);
+            modelBuilder.Entity<HasService>()
+                .HasOne(hs => hs.Hotel)
+                .WithMany(h => h.HasServices)
+                .HasForeignKey(h => h.HotelID);
+
+            modelBuilder.Entity<Package>()
+                .HasKey(p => p.PackageID);
+            modelBuilder.Entity<Tour>()
+                .HasMany(t => t.Packages)
+                .WithOne(p => p.Tour)
+                .HasForeignKey(p => p.TourID);
+
+            modelBuilder.Entity<PackagePrice>()
+                .HasKey(pp => new { pp.PackageId, pp.ValidFrom });
+            modelBuilder.Entity<Package>()
+                .HasOne(p => p.PackagePrice)
+                .WithOne(pp => pp.Package)
+                .HasForeignKey<PackagePrice>(pp => pp.PackageId);
+
         }
 
         public DbSet<City> City { get; set; }
@@ -128,6 +165,14 @@ namespace WebApi1.Data
 
         public DbSet<BookRoom> BookRooms { get; set; }
         public DbSet<Tour> Tour { get; set; }
+
+        public DbSet<HasService> HasServices { get; set; }
+
+        public DbSet<Package> Packages { get; set; }
+
+        public DbSet<PackagePrice> PackagePrices { get; set; }
+
+        public DbSet<BusinessPartner> BusinessPartner { get; set; }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }

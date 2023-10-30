@@ -1,12 +1,15 @@
 import { City } from "../city/city";
+import { UserView } from "../userManager/userView";
 
 export interface Hotel {
   Id: number;
   HotelName: string;
   Address: string;
-  AvailableRoom: number;
   Description: string;
   PhotoPath: string;
-  Agents: any;
   City: City;
+  PostingDate: Date;
+  ApprovalDate: Date;
+  Poster: UserView
+  Approver: UserView
 }
