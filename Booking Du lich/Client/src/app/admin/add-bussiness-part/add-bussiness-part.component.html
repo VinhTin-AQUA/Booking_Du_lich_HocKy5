@@ -1,0 +1,62 @@
+<div class="wrapper">
+  <div class="form">
+    <form [formGroup]="addPartnerForm" (ngSubmit)="addSubmit()" autocomplete="off">
+      <div class="title font-bold text-[1.7em] mb-9">
+        <span>Thông tin khách sạn đối tác</span>
+      </div>
+
+      <!-- partner name -->
+      <div class="mb-3">
+        <label class="block mb-2">Tên khách sạn đối tác</label>
+        <input
+          [class]="inputValidation('partnerName')"
+          type="text"
+          formControlName="partnerName"
+          spellcheck="false"
+          placeholder="Tên khách sạn đối tác"
+        />
+      </div>
+
+      <!-- address -->
+      <div class="mb-3">
+        <label class="block mb-2">Địa chỉ</label>
+        <input
+          [class]="inputValidation('address')"
+          type="text"
+          formControlName="address"
+          spellcheck="false"
+          placeholder="Địa chỉ"
+        />
+      </div>
+
+      <!-- email -->
+      <div class="mb-3">
+        <label class="block mb-2">Email</label>
+        <input
+          [class]="inputValidation('email')"
+          type="text"
+          formControlName="email"
+          spellcheck="false"
+          placeholder="Email"
+        />
+      </div>
+
+
+			<!-- phone -->
+			<div class="mb-3">
+				<label class="block mb-2">Số điện thoại</label>
+				<input
+					[class]="inputValidation('phoneNumber')"
+					type="text"
+					formControlName="phoneNumber"
+					spellcheck="false"
+					placeholder="Số điện thoại"
+				/>
+			</div>
+
+      <div>
+        <button class="btn-primary w-full mb-2">Thêm</button>
+      </div>
+    </form>
+  </div>
+</div>
