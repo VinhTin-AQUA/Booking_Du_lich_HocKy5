@@ -13,5 +13,8 @@ namespace WebApi.Models
         [Display(Name = "Service name")]
         [Column(TypeName = "nvarchar(100)")]
         public string ServiceName { get; set; }
+
+        // KHoa ngoai
+        public ICollection<HasService> HasServices { get; set; }
     }
 }
