@@ -15,6 +15,6 @@ namespace WebApi.Interfaces
 
   
 
-        public Task<bool> UpdateRoom(BookRoom bookRoom);
+        public Task<bool> UpdateBookRoom(BookRoom bookRoom);
     }
 }

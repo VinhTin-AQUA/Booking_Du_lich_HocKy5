@@ -23,6 +23,8 @@ namespace WebApi.Models
 
         public BookRoom BookRoom { get; set; }
 
+        public BookTour BookTour { get; set; }
+
         public ICollection<Hotel> PostHotels { get;set; }
         public ICollection<Hotel> ApprovalHotels { get;set; }
         public int? PartnerId { get; set; }

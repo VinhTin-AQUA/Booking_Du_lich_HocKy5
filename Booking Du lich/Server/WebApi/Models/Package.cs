@@ -24,5 +24,7 @@ namespace WebApi.Models
         public Tour Tour { get; set; }
 
         public PackagePrice PackagePrice { get; set; }
+
+        public BookTour BookTour { get; set; }
     }
 }
