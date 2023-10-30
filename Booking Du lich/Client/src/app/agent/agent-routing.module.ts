@@ -7,6 +7,7 @@ import { BussinessInfoComponent } from './bussiness-info/bussiness-info.componen
 import { PostComponent } from './post/post.component';
 import { PostDetailComponent } from './post-detail/post-detail.component';
 import { AddRoomComponent } from './add-room/add-room.component';
+import { ManageRoomComponent } from './manage-room/manage-room.component';
 
 
 const routes: Routes = [
@@ -15,13 +16,14 @@ const routes: Routes = [
     component: AgentComponent,
     children: [
       { path: 'service', component: ServiceComponent, title: 'Các dịch vụ của khách sạn', },
-      { path: 'post', component: PostComponent, title: 'Quản lý chi nhánh', },
+      { path: 'post', component: PostComponent, title: 'Quản lý bài viết', },
       { path: 'post-detail/:id', component: PostDetailComponent, title: 'Thông tin bài viết', },
       { path: 'add-post', component: PostDetailComponent, title: 'Thêm bài viết', },
       { path: 'manage-room-type', component: ManageRoomTypeComponent, title: 'Quản lý loại phòng', },
       { path: 'bussiness-info', component: BussinessInfoComponent, title: 'Thông tin khách sạn', },
       { path: 'service', component: ServiceComponent, title: 'Quản lý dịch vụ', },
       { path: 'add-room', component: AddRoomComponent, title: 'Thêm phòng', },
+      { path: 'manage-rooms', component: ManageRoomComponent, title: 'Quản lý phòng', },
 
     ],
   },
