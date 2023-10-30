@@ -50,7 +50,7 @@ namespace WebApi.Repositories
             return roomPrice;
         }
 
-        public async Task<RoomPrice> GetRoomPriceByPrice(decimal price)
+        public async Task<RoomPrice> GetRoomPriceByPrice(double price)
         {
             var roomPrice = await context.RoomPrices
                 .Where(rt => rt.Price == price)
