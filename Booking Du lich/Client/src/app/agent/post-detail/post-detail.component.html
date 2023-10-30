@@ -1,7 +1,6 @@
 <div class="wrapper">
   <div class="container p-2 flex justify-start items-center gap-2">
     <div class="img-container">
-
       <!-- img -->
       <div class="flex gap-2">
         <input
@@ -47,8 +46,6 @@
             <img [src]="url.data" alt="" />
           </div>
         </div>
-
-				
       </div>
     </div>
 
@@ -63,9 +60,16 @@
         <!-- thanh pho -->
         <div class="text-[1.2em] mb-4">
           <label class="mr-1">Tỉnh / Thành phố</label>
-          <select class="input-field" formControlName="cityId">
-            <option *ngFor="let city of allCities" [value]="city.Id">{{city.Name}}</option>
+          <select class="input-field" formControlName="cityKey">
+            <option
+              *ngFor="let city of allCities"
+              [value]="city.Id"
+            >
+              {{ city.Name }}
+            </option>
           </select>
+
+          
         </div>
 
         <!-- địa chỉ -->
@@ -78,7 +82,7 @@
         <div class="text-[1.2em] mb-4">
           <label class="mr-1">Mô tả</label>
           <textarea
-          formControlName="description"
+            formControlName="description"
             class="input-field"
             name=""
             id=""
