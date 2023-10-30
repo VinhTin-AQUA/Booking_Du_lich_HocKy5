@@ -72,6 +72,7 @@ builder.Services.AddScoped<IRoomPriceRepository, RoomPriceRepository>();
 builder.Services.AddScoped<IBookRoomRepository, BookRoomRepository>();
 
 builder.Services.AddScoped<ITourTypeRepository, TourTypeRepository>();
+builder.Services.AddScoped<ITourRepository, TourRepository>();
 
 
 // JWT

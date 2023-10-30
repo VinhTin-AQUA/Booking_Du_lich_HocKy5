@@ -27,5 +27,6 @@ namespace WebApi.Models
 
         /*tham chiếu khóa ngoại*/
         public ICollection<Hotel> Hotels { get; set;}
+        public ICollection<Tour> Tours { get; set;}
     }
 }

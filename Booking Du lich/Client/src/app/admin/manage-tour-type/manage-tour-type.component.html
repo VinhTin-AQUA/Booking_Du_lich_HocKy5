@@ -1,1 +1,102 @@
-<h3>Thêm sửa xóa loại TourType sẽ ở đây</h3>
+<div class="wrapper">
+  <div class="p-2">
+    <div class="flex gap-2">
+      <button class="btn-primary">Search</button>
+
+      <input class="search-input" type="text" placeholder="Tên loại tour" />
+    </div>
+  </div>
+
+  <div class="flex">
+    <!--/list tour-->
+    <div class="list-tour">
+      <div class="tour-item" *ngFor="let tourType of tourTypes">
+        <div class="tour-header">
+          <mat-icon
+            class="icon edit-icon"
+            (click)="showUpdateTourTypeModal(tourType)"
+            >edit</mat-icon
+          >
+          <mat-icon
+            class="icon delete-icon"
+            (click)="showDeleteModal(tourType.TourTypeId)"
+            >delete_outline</mat-icon
+          >
+        </div>
+        <div class="tour-body">{{ tourType.TourTypeName }}</div>
+      </div>
+    </div>
+
+    <!-- add-tour -->
+    <div class="add-tour">
+      <span class="add-tour-header"> Thêm loại tour </span>
+      <form
+        [formGroup]="addFormSubmit"
+        (ngSubmit)="addSubmit()"
+        autocomplete="off"
+      >
+        <span
+          *ngIf="inputValidation('tourTypeName') !== ''"
+          class="text-red-500 mb-2 inline-block"
+        >
+          Tên loại tour không được bỏ trống
+        </span>
+        <input
+          formControlName="tourTypeName"
+          class="add-input"
+          [class]="inputValidation('tourTypeName')"
+          type="text"
+          placeholder="Tên loại tour"
+        />
+        <button class="btn-primary">Thêm loại tour</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- delete tourTypeModal -->
+<div *ngIf="isDeleteModal === true" class="delete-tour-type">
+  <div
+    class="container mx-auto mt-14 w-1/5 bg-[#fecaca] p-2 rounded border border-red-500"
+  >
+    <div class="mx-auto w-full text-center">
+      <label class="text-2xl text-red-500">Có chắc chắn muốn xóa</label>
+    </div>
+    <div class="mx-auto flex justify-start items-center gap-2">
+      <button class="btn-danger" (click)="deleteTourTypeSubmit()">Xóa</button>
+      <button class="btn-outline-primary" (click)="showDeleteModal(null)">
+        Quay lại
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- update tourTypeModal -->
+<div *ngIf="isUpdateModal === true" class="update-tour-type">
+  <div
+    class="container mx-auto mt-14 w-1/5 bg-[#93c5fd] p-2 rounded border border-blue-500"
+  >
+    <div class="mx-auto w-full text-center">
+      <label class="text-2xl text-red-500">Cập nhật</label>
+    </div>
+
+    <form [formGroup]="updateFormSubmit" (ngSubmit)="updateTourTypeSubmit()" autocomplete="off">
+
+      <div class="mb-3">
+        <label >Tên loại tour </label>
+        <input class="update-input" type="text" formControlName="tourTypeName">
+      </div>
+
+      <div class="mx-auto flex justify-start items-center gap-2">
+        <button class="btn-danger">Cập nhật</button>
+        <button
+          class="btn-outline-primary"
+          (click)="showUpdateTourTypeModal(null)"
+        >
+          Quay lại
+        </button>
+      </div>
+
+    </form>
+  </div>
+</div>

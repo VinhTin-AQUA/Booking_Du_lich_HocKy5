@@ -4,6 +4,8 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment.development';
 import { AddHotel } from '../shared/models/hotel/addHotel';
 import { Agent } from '../shared/models/hotel/addAgent';
+import { AddTourType } from '../shared/models/tour/addTourType';
+import { UpdateTourType } from '../shared/models/tour/updateTourType';
 
 @Injectable({
   providedIn: 'root',
@@ -60,23 +62,28 @@ export class AdminService {
     );
   }
 
-  addHotel(model: AddHotel) {
-    return this.http.post(`${environment.appUrl}/hotel/add-hotel`, model);
+  // tour type
+  addTourType(addTourType: AddTourType) {
+    return this.http.post(
+      `${environment.appUrl}/TourType/add-tourtype`,addTourType
+    );
   }
 
-  getAllHotels() {
-    return this.http.get(`${environment.appUrl}/hotel/get-all-hotels`);
+  getAllTours() {
+    return this.http.get(
+      `${environment.appUrl}/TourType/get-all-tourtypes`
+    );
   }
 
-  getHotelById(id: string | null){
-    return this.http.get(`${environment.appUrl}/hotel/get-hotel-by-id?id=${id}`);
+  deleteTourType(tourTypeId: number) {
+    return this.http.delete(
+      `${environment.appUrl}/TourType/delete-tourtype?id=${tourTypeId}`
+    );
   }
 
-  addAgent(model: Agent) {
-    return this.http.post(`${environment.appUrl}/hotel/add-agent`,model);
-  }
-
-  deleteHotel(hotelId: string | null) {
-    return this.http.delete(`${environment.appUrl}/hotel/delete-hotel?hotelId=${hotelId}`);
+  updateTourType(tourType: UpdateTourType) {
+    return this.http.put(
+      `${environment.appUrl}/TourType/update-tourtype`,tourType
+    );
   }
 }
