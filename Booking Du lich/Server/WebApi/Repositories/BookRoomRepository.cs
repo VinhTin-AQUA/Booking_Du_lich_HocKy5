@@ -49,7 +49,7 @@ namespace WebApi.Repositories
 
 
 
-        public async Task<bool> UpdateRoom(BookRoom bookRoom)
+        public async Task<bool> UpdateBookRoom(BookRoom bookRoom)
         {
             context.BookRooms.Update(bookRoom);
             return await Save();

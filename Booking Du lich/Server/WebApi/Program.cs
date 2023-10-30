@@ -83,6 +83,7 @@ builder.Services.AddScoped<IHasServiceRepository, HasServiceRepository>();
 
 builder.Services.AddScoped<IPackageRepository, PackageRepository>();
 builder.Services.AddScoped<IPackagePriceRepository, PackagePriceRepository>();
+builder.Services.AddScoped<IBookTourRepository, BookTourRepository>();
 
 // JWT
 builder.Services.AddScoped<JWTService>();
