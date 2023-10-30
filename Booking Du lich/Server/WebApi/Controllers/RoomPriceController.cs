@@ -69,10 +69,8 @@ namespace WebApi.Controllers
 
         [HttpGet("get-room-price-by-price")]
 
+
         public async Task<IActionResult> GetRoomTypeByName(double price)
-
-        public async Task<IActionResult> GetRoomPriceByPrice(decimal price)
-
         {
             var roomPrices = await roomPriceRepository.GetRoomPriceByPrice(price);
             if (roomPrices == null)
