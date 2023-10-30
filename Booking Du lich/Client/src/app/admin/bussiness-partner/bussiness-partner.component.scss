@@ -1,0 +1,40 @@
+.search-input {
+	@apply w-[200px] outline-none px-3 py-2 rounded border-2 duration-100;
+
+	&:focus {
+		box-shadow:  0px 0px 1px 1px #2563eb;
+	}
+}
+
+// list
+.list-bussiness {
+	@apply p-1 flex gap-2 flex-wrap;
+}
+
+.bussiness-item {
+	@apply max-w-[230px] p-2 rounded border-2 cursor-pointer duration-100;
+
+	&:hover {
+		box-shadow: 0px 0px 2px 2px #2563eb;
+	}
+
+	span {
+		@apply block;
+	}
+
+	.bussiness-header{
+		@apply text-[1.3em] font-bold border-b text-blue-600;
+	}
+
+	.bussiness-address {
+		@apply text-[0.8em];
+	}
+
+	.bussiness-email {
+		@apply font-bold underline;
+	}
+
+	.bussiness-phone {
+		@apply font-bold;
+	}
+}

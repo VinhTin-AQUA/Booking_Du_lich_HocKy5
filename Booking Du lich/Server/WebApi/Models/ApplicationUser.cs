@@ -25,6 +25,8 @@ namespace WebApi.Models
 
         public ICollection<Hotel> PostHotels { get;set; }
         public ICollection<Hotel> ApprovalHotels { get;set; }
+        public int? PartnerId { get; set; }
+        public BusinessPartner BusinessPartner { get; set; }
 
         public ICollection<Tour> PostTours { get; set; }
         public ICollection<Tour> ApprovalTours { get; set; }

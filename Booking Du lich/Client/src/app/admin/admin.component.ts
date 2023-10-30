@@ -9,6 +9,6 @@ import { Router } from '@angular/router';
 export class AdminComponent {
 
   constructor(private router: Router) {
-    router.navigateByUrl('/admin/manage-tour-type')
+    router.navigateByUrl('/admin/bussiness-partner')
   }
 }
