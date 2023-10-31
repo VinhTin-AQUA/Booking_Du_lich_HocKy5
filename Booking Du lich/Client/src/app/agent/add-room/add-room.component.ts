@@ -30,7 +30,6 @@ export class AddRoomComponent {
   hotelGroup: FormGroup = new FormGroup([]);
   submitted: boolean = false;
   cityId: number = 1;
-  cityCode: string = 'HN-(29->33,40)';
   imgNames: string[] = [];
 
   constructor(
@@ -90,7 +89,6 @@ export class AddRoomComponent {
           this.hotelGroup.controls['description'].setValue(
             res.hotel.Description
           );
-          this.cityCode = res.hotel.CityCode;
           this.cityId = res.hotel.CityId;
           this.imgNames = res.imgNames;
 
@@ -119,7 +117,6 @@ export class AddRoomComponent {
   onSelectCityChange(event: any) {
     const selectedOption = event.selectedOptions[0];
     this.cityId = selectedOption.value;
-    this.cityCode = selectedOption.dataset.citycode;
   }
 
   onSelectImg(event: any) {
@@ -207,7 +204,6 @@ export class AddRoomComponent {
       form.append('Address', this.hotelGroup.value.address);
       form.append('Description', this.hotelGroup.value.description);
       form.append('CityId', this.cityId.toString());
-      form.append('CityCode', this.cityCode);
       form.append('PosterID', this.userId);
 
       for (let file of this.newImgObjToAdd) {
@@ -236,7 +232,6 @@ export class AddRoomComponent {
       form.append('Address', this.hotelGroup.value.address);
       form.append('Description', this.hotelGroup.value.description);
       form.append('CityId', this.cityId.toString());
-      form.append('CityCode', this.cityCode);
       form.append('Id', this.hotelGroup.value.id);
 
       for (let file of this.newImgObjToAdd) {
