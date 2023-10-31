@@ -34,8 +34,6 @@ namespace WebApi.Controllers
                 return BadRequest(ModelState);
             }
 
-
-
             var hotel = await hotelRepository.GetHotelById(model.HotelID);
             var service = await serviceRepository.GetServiceById(model.ServiceID);
 
@@ -45,7 +43,6 @@ namespace WebApi.Controllers
                 Service = service,
                 HotelID = model.HotelID,
                 Hotel = hotel
-                
             };
 
             var result = await hasServiceRepository.AddHasService(newHasService);
@@ -82,7 +79,6 @@ namespace WebApi.Controllers
         public async Task<IActionResult> SearchServiceOfHotel(int hotelID)
         {
             var hasServices = await hasServiceRepository.SearchServiceByHotel(hotelID);
-            
 
             return Ok(new JsonResult(new { title = "Success", HasServices = hasServices }));
         }
