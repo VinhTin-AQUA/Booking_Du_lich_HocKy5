@@ -83,7 +83,7 @@ namespace WebApi.Controllers
         }
 
         [HttpPut("update-tour")]
-        public async Task<IActionResult> UpdateTour(List<IFormFile> files, [FromForm] UpdateTourDto model)
+        public async Task<IActionResult> UpdateTour([FromForm] List<IFormFile> files, [FromForm] UpdateTourDto model)
         {
             if (model == null)
             {
@@ -110,9 +110,6 @@ namespace WebApi.Controllers
             tour.TourTypeId = model.TourTypeId;
             tour.City = city;
             tour.TourType = tourType;
-            tour.PosterID = model.PosterID;
-            tour.ApproverID = model.ApproverID;
-            
 
             // lưu hình ảnh
             string urlImgFolder = "";
@@ -160,7 +157,9 @@ namespace WebApi.Controllers
                 return BadRequest(new JsonResult(new { title = "Error", mesage = "Tour not found" }));
             }
 
-            return Ok(tour);
+            string[] fileNames = imageService.GetAllFileOfFolder("tours",tour.TourId.ToString());
+
+            return Ok(new { tour, fileNames });
         }
 
         [HttpDelete("delete-tour")]
@@ -177,11 +176,14 @@ namespace WebApi.Controllers
                 return BadRequest(new JsonResult(new { title = "Error", message = "Tour was not found" }));
             }
 
+            var deleted = imageService.DeleteAllImages("tours",tour.TourId.ToString());
+
             var r = await tourRepository.DeleteTour(tour);
             if (r == false)
             {
                 return BadRequest(new JsonResult(new { title = "Error", message = "Something error" }));
             }
+
             return Ok(new JsonResult(new { title = "Success", message = "Tour delete successfully" }));
         }
 
@@ -205,6 +207,17 @@ namespace WebApi.Controllers
             {
                 return BadRequest();
             }
+            return Ok();
+        }
+
+        [HttpDelete("delete-img-tour")]
+        public IActionResult DeleteImgTour([FromQuery] string url, [FromQuery] string tourId)
+        {
+            if (string.IsNullOrEmpty(url))
+            {
+                return BadRequest();
+            }
+            imageService.DeleteImg(url);
             return Ok();
         }
     }

@@ -12,7 +12,8 @@ import { SharedService } from 'src/app/shared/shared.service';
 })
 export class ManageTourComponent {
   tours: Tour[] = [];
-
+  isShowDeleted: boolean = false;
+  tourIdDelete: number | null = null;
   constructor(
     private agentTourService: AgentTourService,
     private accountService: AccountService,
@@ -40,7 +41,34 @@ export class ManageTourComponent {
       });
   }
 
+  private resetListTout() {
+    const index = this.tours.findIndex((t) => t.TourId === this.tourIdDelete);
+    if (index !== -1) {
+      this.tours.splice(index, 1);
+    }
+  }
+
+  showDelete(tourId: number | null) {
+    this.isShowDeleted = !this.isShowDeleted;
+
+    if (this.isShowDeleted === true) {
+      this.tourIdDelete = tourId;
+    } else {
+      this.resetListTout();
+    }
+  }
+
   deleteTour() {
-    
+    if (this.tourIdDelete !== null) {
+      this.agentTourService.deleteTour(this.tourIdDelete).subscribe({
+        next: (_) => {
+          this.sharedService.showToastMessage('successXóa tour thành công');
+          this.showDelete(null);
+        },
+        error: (err) => {
+          this.sharedService.showToastMessage('Có lỗi khi xóa. Hãy thử lại');
+        },
+      });
+    }
   }
 }

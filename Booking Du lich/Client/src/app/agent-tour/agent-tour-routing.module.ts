@@ -12,7 +12,7 @@ const routes: Routes = [  {
   children: [
     { path: 'add-tour', component: AddTourComponent, title: 'Tour', },
     { path: 'manage-tour', component: ManageTourComponent, title: 'Quản lý tour', },
-    { path: 'update-tour', component: UpdateTourComponent, title: 'Cập nhật tour', },
+    { path: ':id/update-tour', component: UpdateTourComponent, title: 'Cập nhật tour', },
     { path: ':id/add-tour-type', component: AddTourTypeComponent, title: 'Thêm loại tour', },
   ],
 },];

@@ -31,4 +31,16 @@ export class AgentTourService {
   addTourType(form: FormData) {
     return this.http.post(`${environment.appUrl}/tourtype/add-tourtype`,form);
   }
+
+  deleteTour(tourId: number) {
+    return this.http.delete(`${environment.appUrl}/tour/delete-tour?tourId=${tourId}`);
+  }
+
+  deleteImg(url: string, tourId: number){
+    return this.http.delete(`${environment.appUrl}/tour/delete-img-tour?url=${url}&tourId=${tourId}`);
+  }
+
+  updateTour(form:FormData) {
+    return this.http.put(`${environment.appUrl}/tour/update-tour`,form);
+  }
 }
