@@ -21,7 +21,6 @@ export class ManageRoomComponent {
         if (params['id'] !== undefined) {
           this.hotelId = params['id'];
         }
-        console.log(this.hotelId);
         
         //this.resetHotelForm();
       },

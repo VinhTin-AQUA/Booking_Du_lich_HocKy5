@@ -1,0 +1,37 @@
+.search-input {
+  @apply w-[200px] outline-none px-3 py-2 rounded border-2 duration-100;
+
+  &:focus {
+    box-shadow: 0px 0px 1px 1px #2563eb;
+  }
+}
+
+.icon {
+  @apply duration-75;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+}
+
+.delete-icon {
+  color: red;
+  
+  &:hover {
+    box-shadow: 0px 0px 2px 2px red;
+  }
+}
+
+.edit-icon {
+  color: green;
+  
+  &:hover {
+    box-shadow: 0px 0px 2px 2px green;
+  }
+}
+
+.type-icon {
+  color: orange;
+  &:hover {
+    box-shadow: 0px 0px 2px 2px orange;
+  }
+}

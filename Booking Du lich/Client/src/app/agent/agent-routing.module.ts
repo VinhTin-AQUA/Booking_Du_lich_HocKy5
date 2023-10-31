@@ -22,7 +22,7 @@ const routes: Routes = [
       { path: 'manage-room-type', component: ManageRoomTypeComponent, title: 'Quản lý loại phòng', },
       { path: 'bussiness-info', component: BussinessInfoComponent, title: 'Thông tin khách sạn', },
       { path: ':id/service', component: ServiceComponent, title: 'Quản lý dịch vụ', },
-      { path: 'add-room', component: AddRoomComponent, title: 'Thêm phòng', },
+      { path: ':id/add-room', component: AddRoomComponent, title: 'Thêm phòng', },
       { path: ':id/manage-rooms', component: ManageRoomComponent, title: 'Quản lý phòng', },
 
     ],

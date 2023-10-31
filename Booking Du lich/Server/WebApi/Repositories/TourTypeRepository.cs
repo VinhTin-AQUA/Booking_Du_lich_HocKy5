@@ -35,7 +35,7 @@ namespace WebApi.Repositories
             return types;
         }
 
-        public async Task<TourType> GetTourTypeById(int id)
+        public async Task<TourType> GetTourTypeById(int? id)
         {
             var type = await context.TourType.Where(t => t.TourTypeId == id).FirstOrDefaultAsync();
             return type;

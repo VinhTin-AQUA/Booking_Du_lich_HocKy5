@@ -101,4 +101,7 @@ export class AgentService {
       `${environment.appUrl}/hasservice/delete-has-service?hotelID=${hotelId}&serviceId=${serviceId}`
     );
   }
+
+  // room
+  
 }

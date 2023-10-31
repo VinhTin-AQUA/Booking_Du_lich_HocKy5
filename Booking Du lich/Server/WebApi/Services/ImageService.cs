@@ -302,35 +302,31 @@ namespace WebApi.Services
             return result;
         }
 
+        // tour
         public async Task<string> UploadTourImages(List<IFormFile> files, Tour tour)
         {
             bool result = false;
             string urlImgFolder = "";
             try
             {
-                // thư mục chứa ảnh hotel và rooms
-                string folderOfTour = GetPath("hotels", tour.TourId.ToString());
-
-                string folderImgOfTour = "";
-                folderImgOfTour = GetPath(folderOfTour, "_imgTour");
+                string folderOfTour = GetPath("tours", tour.TourId.ToString());
 
                 // nếu chưa có thư mục chứa ảnh của hotel thì tạo mới
                 if (System.IO.Directory.Exists(folderOfTour) == false)
                 {
                     System.IO.Directory.CreateDirectory(folderOfTour);
-                    System.IO.Directory.CreateDirectory(folderImgOfTour);
                 }
 
                 // lưu ảnh hotel vào thư mục imgHotel
                 foreach (var file in files)
                 {
-                    result = await SaveFile(file, folderImgOfTour);
+                    result = await SaveFile(file, folderOfTour);
                     if (result == false)
                     {
                         break;
                     }
                 }
-                urlImgFolder = $"/hotels/{tour.TourId}/_imgTour";
+                urlImgFolder = $"/tours/{tour.TourId}";
             }
             catch { }
             return urlImgFolder;
