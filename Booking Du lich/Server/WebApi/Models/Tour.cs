@@ -34,7 +34,6 @@ namespace WebApi.Models
         // Khoa ngoai
             // city
         public int? CityId { get; set;}
-        public string? CityCode { get; set;}
         public City City { get; set;}
             // TourType
         public int? TourTypeId { get; set;}
