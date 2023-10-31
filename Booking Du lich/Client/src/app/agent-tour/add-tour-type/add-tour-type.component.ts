@@ -34,10 +34,17 @@ export class AddTourTypeComponent {
         }),
         mergeMap((tourId) => this.agentTourService.getTourById(tourId))
       )
-      .subscribe((tour: any) => {
-        if (tour !== null) {
-          this.tour = tour;
-        }
+      .subscribe({
+        next: (res: any) => {
+          if (res !== null) {
+            this.tour = res.tour;
+          }
+          console.log();
+          
+        },
+        error: (err) => {
+          console.log(err);
+        },
       });
 
     this.getAllTourTypes();
