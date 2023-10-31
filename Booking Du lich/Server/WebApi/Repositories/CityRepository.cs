@@ -45,7 +45,7 @@ namespace WebApi.Repositories
 
         public async Task<IEnumerable<City>> GetAllCities()
         {
-            var cities = await context.City.OrderBy(c => c.CityCode).ToListAsync();
+            var cities = await context.City.OrderBy(c => c.Name).ToListAsync();
             return cities;
         }
 

@@ -73,7 +73,6 @@
             <option
               *ngFor="let city of allCities"
               [value]="city.Id"
-              [attr.data-cityCode]="city.CityCode"
               [selected]="city.Id == cityId"
             >
               {{ city.Name }}

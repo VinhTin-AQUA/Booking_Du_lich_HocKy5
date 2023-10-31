@@ -38,13 +38,11 @@ export class CityManangerComponent implements OnInit {
     private sharedService: SharedService
   ) {
     this.formSubmit = this.formBuilder.group({
-      cityCode: [, [Validators.required]],
       name: ['', [Validators.required]],
     });
 
     this.formEdit = this.formBuilder.group({
       id: [, [Validators.required]],
-      cityCode: [, [Validators.required]],
       name: ['', [Validators.required]],
     });
   }
@@ -96,7 +94,6 @@ export class CityManangerComponent implements OnInit {
       formData.append('imgName', this.name);
       formData.append('file', this.file);
       formData.append('name', this.formSubmit.value.name);
-      formData.append('cityCode', this.formSubmit.value.cityCode);
 
       this.adminService.addCity(formData).subscribe({
         next: (res: any) => {
@@ -149,7 +146,6 @@ export class CityManangerComponent implements OnInit {
     if (this.editCityModal === true && city !== null) {
       this.formEdit.setValue({
         id: city.Id,
-        cityCode: city.CityCode,
         name: city.Name,
       });
       this.imgUrl = `${environment.imgUrl}/${city.PhotoPath}`;
@@ -167,7 +163,6 @@ export class CityManangerComponent implements OnInit {
       formData.append('file', this.file);
 
       formData.append('id', this.formEdit.value.id);
-      formData.append('cityCode', this.formEdit.value.cityCode);
       formData.append('name', this.formEdit.value.name);
 
       this.adminService.updateCity(formData).subscribe({
@@ -180,7 +175,6 @@ export class CityManangerComponent implements OnInit {
             (c) => c.Id === this.formEdit.value.id
           );
           if (cityUpdate !== null && cityUpdate !== undefined) {
-            cityUpdate.CityCode = this.formEdit.value.cityCode;
             cityUpdate.Name = this.formEdit.value.name;
             if (this.file !== undefined) {
               cityUpdate.PhotoPath = `/cities/${this.file.name}`;

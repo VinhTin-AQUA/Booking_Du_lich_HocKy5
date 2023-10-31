@@ -56,7 +56,6 @@ namespace WebApi.Controllers
                 ApprovalDate = null,
                 CityId = model.CityId,
                 City = City,
-                CityCode = model.CityCode,
                 ApproverID = null,
                 Approver = null,
             };

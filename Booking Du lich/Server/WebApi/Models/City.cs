@@ -10,9 +10,6 @@ namespace WebApi.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "{0} must be required")]
-        [Display(Name = "City Code")]
-        public string CityCode { get; set; }
 
         [Required(ErrorMessage = "{0} must be required")]
         [Display(Name = "City name")]
