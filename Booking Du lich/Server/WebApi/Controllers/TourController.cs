@@ -34,7 +34,7 @@ namespace WebApi.Controllers
         }
 
         [HttpPost("add-tour")]
-        public async Task<IActionResult> AddTour(AddTourDto model)
+        public async Task<IActionResult> AddTour([FromForm] List<IFormFile> files, [FromForm] AddTourDto model)
         {
             if (model == null)
             {
@@ -47,27 +47,38 @@ namespace WebApi.Controllers
             }
 
             var Poster = await authenRepository.GetUserById(model.PosterID);
-            var Approver = await authenRepository.GetUserById(model.ApproverID);
             var tour = new Tour
             {
                 TourName = model.TourName,
                 PosterID = model.PosterID,
-                ApproverID = model.ApproverID,
+                ApproverID = null,
                 Poster = Poster,
-                Approver = Approver,
+                Approver = null,
                 CityId = model.CityId,
                 TourTypeId = model.TourTypeId,
                 DepartureLocation = model.DepartureLocation,
+                DropOffLocation = model.DropOffLocation,
                 TourAddress = model.TourAddress,
                 Overview = model.Overview,
                 Schedule = model.Schedule,
-                PhotoPath = model.PhotoPath
+                PostingDate = DateTime.Now,
+                PhotoPath = ""
             };
             var result = await tourRepository.AddTour(tour);
+
             if (result == false)
             {
                 return BadRequest(new JsonResult(new { title = "Error", message = "Something error when add tour" }));
             }
+
+            // lưu hình ảnh
+            string urlImgFolder = "";
+            if (files != null)
+            {
+                urlImgFolder = await imageService.UploadTourImages(files, tour);
+                tour.PhotoPath = urlImgFolder;
+            }
+            await tourRepository.UpdateTour(tour);
             return Ok(new JsonResult(new { title = "Success", message = "Add Tour successfully", newTour = tour }));
         }
 
@@ -128,6 +139,13 @@ namespace WebApi.Controllers
             return Ok(tours);
         }
 
+        [HttpGet("get-tours-of-poster")]
+        public async Task<IActionResult> GetToursOfPoster(string posterId)
+        {
+            var list = await tourRepository.GetToursOfPoster(posterId);
+            return Ok(list);
+        }
+
         [HttpGet("get-tour-by-id")]
         public async Task<IActionResult> GetTourById([FromQuery] int? id)
         {
@@ -165,6 +183,29 @@ namespace WebApi.Controllers
                 return BadRequest(new JsonResult(new { title = "Error", message = "Something error" }));
             }
             return Ok(new JsonResult(new { title = "Success", message = "Tour delete successfully" }));
+        }
+
+        [HttpPut("add-type-to-tour")]
+        public async Task<IActionResult> AddTypeToTour([FromQuery] int? tourTypeId, [FromQuery] int? tourId)
+        {
+            if(tourTypeId == null || tourId == null)
+            {
+                return BadRequest();
+            }
+
+            var tour = await tourRepository.GetTourById(tourId);
+            var tourType = await tourTypeRepository.GetTourTypeById(tourTypeId);
+            if(tour == null || tourType == null)
+            {
+                return BadRequest();
+            }
+
+            var r = await tourRepository.AddTypeToTour(tourType, tour);
+            if(r == false)
+            {
+                return BadRequest();
+            }
+            return Ok();
         }
     }
 }

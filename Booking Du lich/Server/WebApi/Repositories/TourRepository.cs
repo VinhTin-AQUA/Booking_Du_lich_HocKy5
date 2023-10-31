@@ -31,9 +31,22 @@ namespace WebApi.Repositories
             return tours;
         }
 
+        public async Task<ICollection<Tour>> GetToursOfPoster(string posterId)
+        {
+            var list = await context.Tour
+                .Where(t => t.PosterID == posterId)
+                .Include(t => t.City)
+                .ToListAsync();
+            return list;
+        }
+
         public async Task<Tour> GetTourById(int? id)
         {
-            var tour = await context.Tour.Where(t => t.TourId == id).SingleOrDefaultAsync();
+            var tour = await context.Tour
+                .Where(t => t.TourId == id)
+                .Include(t => t.City)
+                .Include(t => t.TourType)
+                .SingleOrDefaultAsync();
             return tour;
         }
 
@@ -45,6 +58,13 @@ namespace WebApi.Repositories
 
         public async Task<bool> UpdateTour(Tour tour)
         {
+            context.Tour.Update(tour);
+            return await Save();
+        }
+
+        public async Task<bool> AddTypeToTour(TourType tourType, Tour tour)
+        {
+            tour.TourType = tourType;
             context.Tour.Update(tour);
             return await Save();
         }
