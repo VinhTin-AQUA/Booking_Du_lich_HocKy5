@@ -1,3 +1,62 @@
-<p>Giao diện thêm xóa sửa các dịch vụ hotel sẽ nằm ở đây</p>
+<div class="wrapper">
+  <div class="container flex h-screen">
+    <!-- list dịch vụ -->
+    <div class="list-container">
+      <div class="text-center text-xl font-bold">
+        <span>Danh sách dịch vụ</span>
+      </div>
 
+      <div class="list-service">
+        <div class="border-b p-1 flex justify-between items-center mb-2">
+          <span class="block">id eos qui</span>
+					<mat-icon class="icon delete-icon">arrow_forward</mat-icon>
+        </div>
+      </div>
+    </div>
+
+    <div class="action-service">
+			
+			<!-- chọn dịch vụ -->
+			<div class="mb-3 ">
+				<div class="text-center text-xl font-bold">
+					<span>Chọn dịch vụ</span>
+				</div>
+	
+				<div class="service-system">
+					<div class="border-b p-1 flex justify-between items-center mb-2">
+						<mat-icon class="icon tranf-icon">arrow_back</mat-icon>
+						<span class="block">id eos qui</span>
+					</div>
+				</div>
+	
+	
+			</div>
+	
+			<!-- thêm dịch vụ -->
+			<div>
+				<button class="btn-primary" (click)="showAddService()">
+					Thêm dịch vụ
+				</button>
+			</div>
+		</div>
+
+  </div>
+</div>
+
+<div class="add-wrapper" *ngIf="isShowAddService === true">
+	<div class="add-container">
+		<div class="text-center text-xl">Thêm dịch vụ</div>
+		<form [formGroup]="addServiceForm" (ngSubmit)="addServiceSubmit()" autocomplete="off">
+			<div class="mb-2">
+				<input class="input-service" type="text" placeholder="Tên dịch vụ" formControlName="serviceName">
+				<span *ngIf="submitted === true && addServiceForm.hasError('required','serviceName')" class="text-red-500">Tên dịch vụ không được bỏ trống</span>
+			</div>
+	
+			<div class="flex gap-2">
+				<button class="btn-primary" type="submit">Thêm</button>
+				<button class="btn-outline-primary" (click)="showAddService()">Trở lại</button>
+			</div>
+		</form>
+	</div>
+</div>
 
