@@ -21,9 +21,9 @@ const routes: Routes = [
       { path: 'add-post', component: PostDetailComponent, title: 'Thêm bài viết', },
       { path: 'manage-room-type', component: ManageRoomTypeComponent, title: 'Quản lý loại phòng', },
       { path: 'bussiness-info', component: BussinessInfoComponent, title: 'Thông tin khách sạn', },
-      { path: 'service', component: ServiceComponent, title: 'Quản lý dịch vụ', },
+      { path: ':id/service', component: ServiceComponent, title: 'Quản lý dịch vụ', },
       { path: 'add-room', component: AddRoomComponent, title: 'Thêm phòng', },
-      { path: 'manage-rooms', component: ManageRoomComponent, title: 'Quản lý phòng', },
+      { path: ':id/manage-rooms', component: ManageRoomComponent, title: 'Quản lý phòng', },
 
     ],
   },

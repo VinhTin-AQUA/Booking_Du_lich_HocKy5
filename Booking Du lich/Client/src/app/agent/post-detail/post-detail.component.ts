@@ -30,6 +30,7 @@ export class PostDetailComponent {
   cityId: number = 1;
   cityCode: string = 'HN-(29->33,40)';
   imgNames: string[] = [];
+  postingDate: Date | null = null;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -91,6 +92,7 @@ export class PostDetailComponent {
           this.cityCode = res.hotel.CityCode;
           this.cityId = res.hotel.CityId;
           this.imgNames = res.imgNames;
+          this.postingDate = res.hotel.PostingDate;
 
           for (let img of res.imgNames) {
             const arr = img.split('\\');
@@ -216,7 +218,9 @@ export class PostDetailComponent {
         next: (res: any) => {
           this.sharedService.showLoading(false);
           this.sharedService.showToastMessage('success' + res.Value.message);
-          this.router.navigateByUrl('/agent/post-detail/' + res.Value.newHotel.Id );
+          this.router.navigateByUrl(
+            '/agent/post-detail/' + res.Value.newHotel.Id
+          );
         },
         error: (err) => {
           this.sharedService.showLoading(false);

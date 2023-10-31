@@ -58,4 +58,13 @@ export class AgentService {
   updateRoom(form: FormData) {
     return this.http.put(`${environment.appUrl}/room/update-room`,form);
   }
+
+  // service
+  addNewService(serviceName: string) {
+    return this.http.post(`${environment.appUrl}/service/add-service`,{ServiceName:serviceName});
+  }
+
+  chooseService() {
+
+  }
 }
