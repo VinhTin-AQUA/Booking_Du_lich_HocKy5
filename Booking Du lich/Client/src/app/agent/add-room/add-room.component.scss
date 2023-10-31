@@ -1,0 +1,39 @@
+.img-container {
+	@apply w-full min-h-screen;
+}
+
+.list-img {
+	@apply w-full  border-2 rounded overflow-y-scroll;
+	height: calc(100vh - 120px);
+	.remove-img-icon {
+		@apply duration-75;
+		cursor: pointer;
+		height: 20px;
+		width: 20px;
+		font-size: 20px;
+		color: red;
+
+		&:hover {
+			box-shadow: 0px 0px 2px 2px gray;
+		}
+	}
+}
+
+.detail {
+	@apply container mx-auto md:w-[500px] p-5 rounded my-2;
+	box-shadow: 0px 0px 8px #a2a2a3;
+}
+
+.input-field {
+  @apply w-full p-2 border-none outline-none rounded duration-150;
+	border: 1px solid #b8b8b8;
+
+	&:focus {
+		box-shadow: 0px 0px 8px #2a75ed;
+		border: 1px solid #2a75ed;
+	}
+}
+
+textarea {
+	resize: none;
+}
