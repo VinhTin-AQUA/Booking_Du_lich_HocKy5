@@ -57,7 +57,10 @@ namespace WebApi.Repositories
         public async Task<IEnumerable<HasService>> SearchServiceByHotel(int hotelId)
         {
             var hasServices = await context.HasServices
-               .Where(hs => hs.HotelID == hotelId).ToListAsync();
+               .Where(hs => hs.HotelID == hotelId)
+               .Include(hs => hs.Hotel)
+               .Include(hs => hs.Service)
+               .ToListAsync();
 
             return hasServices;
         }

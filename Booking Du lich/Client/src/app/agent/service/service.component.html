@@ -6,10 +6,11 @@
         <span>Danh sách dịch vụ</span>
       </div>
 
+			<!-- old service -->
       <div class="list-service">
-        <div class="border-b p-1 flex justify-between items-center mb-2">
-          <span class="block">id eos qui</span>
-					<mat-icon class="icon delete-icon">arrow_forward</mat-icon>
+        <div class="border-b p-1 flex justify-between items-center mb-2" *ngFor="let service of oldServices">
+          <span class="block">{{service.Service.ServiceName}}</span>
+					<mat-icon (click)="removeServiceToHotel(service.ServiceID)" class="icon delete-icon">arrow_forward</mat-icon>
         </div>
       </div>
     </div>
@@ -22,13 +23,13 @@
 					<span>Chọn dịch vụ</span>
 				</div>
 	
+				<!-- system service -->
 				<div class="service-system">
-					<div class="border-b p-1 flex justify-between items-center mb-2">
-						<mat-icon class="icon tranf-icon">arrow_back</mat-icon>
-						<span class="block">id eos qui</span>
+					<div class="border-b p-1 flex justify-between items-center mb-2" *ngFor="let service of systemServices">
+						<mat-icon (click)="addServiceToHotel(service.ServiceId)" class="icon tranf-icon">arrow_back</mat-icon>
+						<span class="block">{{service.ServiceName}}</span>
 					</div>
 				</div>
-	
 	
 			</div>
 	
