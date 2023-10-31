@@ -1,1 +1,130 @@
-<p>add-room works!</p>
+<div class="wrapper">
+  <div class="container p-2 flex justify-start items-start gap-2">
+    <div class="img-container">
+      <!-- img -->
+      <div class="flex gap-2">
+        <input
+          #fileInput
+          (change)="onSelectImg($event)"
+          class="btn-primary"
+          type="file"
+          multiple
+        />
+        <button (click)="deleteAllImg()" class="btn-outline-danger">
+          Xoá tất cả ảnh
+        </button>
+      </div>
+
+      <!-- list img -->
+      <div class="list-img">
+        <div class="columns-2 md:columns-3 gap-2">
+          <div
+						*ngFor="let url of imgFiles"
+						class="break-inside-avoid mb-2 rounded border p-2"
+					>
+						<div class="">
+              <mat-icon (click)="removeImgSaved(url.data)" class="remove-img-icon"
+								>delete</mat-icon
+							>
+							<span class="block">{{ url.name }}</span>
+						</div>
+						<img [src]="envImgUrl + url.data" alt="" />
+					</div>
+
+          <div
+            *ngFor="let url of listNewImgUrls"
+            class="break-inside-avoid mb-2 rounded border"
+          >
+            <div class="">
+              <mat-icon
+                (click)="removeImgUnSave(url.data)"
+                class="remove-img-icon"
+                >delete</mat-icon
+              >
+              <span class="block">{{ url.name }}</span>
+            </div>
+            <img [src]="url.data" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="detail">
+      <form [formGroup]="hotelGroup" (ngSubmit)="submit()" autocomplete="off">
+        <!-- hotel name -->
+        <div class="text-[1.2em] mb-4">
+          <label class="mr-1">Số phòng</label>
+          <input formControlName="hotelName" class="input-field" type="text" />
+          <span class="text-red-500" *ngIf="submitted === true && hotelGroup.hasError('required','hotelName')">
+            Số phòng không được bỏ trống
+          </span>
+        </div>
+        <div class="text-[1.2em] mb-4">
+          <label class="mr-1">Tên phòng</label>
+          <input formControlName="hotelName" class="input-field" type="text" />
+          <span class="text-red-500" *ngIf="submitted === true && hotelGroup.hasError('required','hotelName')">
+            Tên phòng không được bỏ trống
+          </span>
+        </div>
+        <!-- thanh pho -->
+        <div class="text-[1.2em] mb-4">
+          <label class="mr-1">Loại phòng</label>
+          <select class="input-field">
+            <option value="">Phòng đơn</option>
+						<option value="">Phòng đôi</option>
+						<option value="">Khác</option>
+          </select>
+        </div>
+        <!-- giá phòng -->
+        <div class="text-[1.2em] mb-4">
+          <label class="mr-1">Giá phòng</label>
+          <input formControlName="hotelName" class="input-field" type="text" />
+          <span class="text-red-500" *ngIf="submitted === true && hotelGroup.hasError('required','hotelName')">
+            Giá phòng không được bỏ trống
+          </span>
+        </div>
+        <div class="flex">
+        <!-- Ngày áp dụng phòng -->
+        <div class="text-[1.2em] mb-4">
+          <label class="mr-1">Ngày áp dụng</label>
+          <input formControlName="hotelName" class="input-field" type="date" />
+          <span class="text-red-500" *ngIf="submitted === true && hotelGroup.hasError('required','hotelName')">
+            Ngày áp dụng không được bỏ trống
+          </span>
+        </div>
+        <!-- Ngày hết hạn phòng -->
+        <div class="text-[1.2em] mb-4">
+          <label class="mr-1">Ngày hết hạn</label>
+          <input formControlName="hotelName" class="input-field" type="date" />
+        </div>
+        </div>
+        <!-- IsAvailable-->
+        <div class="text-[1.2em] mb-4 flex w-full">
+          <label class=" w-36">Tình trạng phòng trống</label>
+          <input formControlName="hotelName" class=" w-20 " type="checkbox" />
+        </div>
+        <!-- mo ta -->
+        <div class="text-[1.2em] mb-4">
+          <label class="mr-1">Mô tả</label>
+          <textarea
+            formControlName="description"
+            class="input-field"
+            name=""
+            id=""
+            cols="30"
+            rows="5"
+          ></textarea>
+          <span class="text-red-500" *ngIf="submitted === true && hotelGroup.hasError('required','description')">
+            Mô tả Địa chỉ không được bỏ trống
+          </span>
+        </div>
+
+        
+
+        <div>
+          <button class="btn-primary w-full mb-2">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,5 @@
 <div class="wrapper">
   <div class="container">
-
     <!-- actions -->
     <div class="p-2 border-b flex justify-between items-center">
       <div class="flex gap-2">
@@ -9,10 +8,7 @@
       </div>
 
       <div>
-        <button
-          class="btn-primary"
-          routerLink="/agent/add-post"
-        >
+        <button class="btn-primary" routerLink="/agent/add-post">
           Thêm bài viết
         </button>
       </div>
@@ -20,347 +16,24 @@
 
     <!-- list -->
     <div class="posts">
+      <div
+        class="post-item"
+        *ngFor="let hotel of hotels"
+      >
+        <div (click)="deleteHotel(hotel.Id)" class="flex justify-end">
+          <mat-icon class="remove-img-icon">delete</mat-icon>
+        </div>
 
-      <div class="post-item" routerLink="/agent/post-detail/1" >
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn dsdsef</span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
+        <div routerLink="/agent/post-detail/{{ hotel.Id }}">
+          <span class="block text-[1.3em] font-bold">{{
+            hotel.HotelName
+          }}</span>
+          <span class="block"> {{ hotel.Address }} </span>
+          <span class="block font-bold">
+            Ngày đăng: {{ hotel.PostingDate | date : "dd-MM-yyyy" }}
+          </span>
+        </div>
 
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
-      </div>
-
-      <div class="post-item">
-        <span class="block text-[1.3em] font-bold"> Tên khách sạn </span>
-        <span class="block"> Địa chỉ </span>
-        <span class="block font-bold"> Ngày đăng: 11/02/2023 </span>
       </div>
     </div>
   </div>

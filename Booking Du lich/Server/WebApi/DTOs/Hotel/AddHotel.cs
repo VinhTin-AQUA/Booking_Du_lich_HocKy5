@@ -18,8 +18,8 @@ namespace WebApi.DTOs.Hotel
         [Column(TypeName = "nvarchar(max)")]
         public string? Description { get; set; }
 
-        public int CityId;
-        public int CityCode;
+        public int CityId { get; set; }
+        public string CityCode { get; set; }
 
         public string PosterID
         {
