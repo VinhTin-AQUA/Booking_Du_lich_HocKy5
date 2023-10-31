@@ -331,5 +331,30 @@ namespace WebApi.Services
             catch { }
             return urlImgFolder;
         }
+
+        public bool DeleteAllImages(params string[] folder)
+        {
+            var filePath = GetPath(folder);
+            if (Directory.Exists(filePath))
+            {
+                DirectoryInfo di = new DirectoryInfo(filePath);
+
+                foreach (FileInfo file in di.GetFiles())
+                {
+                    file.Delete();
+                }
+            }
+            return true;
+        }
+
+
+        public void DeleteImg(params string[] folder)
+        {
+            var filePath = GetPath(folder);
+            if (File.Exists(filePath))
+            {
+                File.Delete(filePath);
+            }
+        }
     }
 }
