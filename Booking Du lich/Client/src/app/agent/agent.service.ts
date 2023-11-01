@@ -72,6 +72,10 @@ export class AgentService {
     return this.http.put(`${environment.appUrl}/room/update-room`, form);
   }
 
+  deleteRoom(roomId: number | null) {
+    return this.http.delete(`${environment.appUrl}/room/delete-room?roomId=${roomId}`);
+  }
+
   // service
   addNewService(serviceName: string) {
     return this.http.post(`${environment.appUrl}/service/add-service`, {
@@ -102,6 +106,15 @@ export class AgentService {
     );
   }
 
-  // room
+  // room type
+  getAllRoomType() {
+    return this.http.get(`${environment.appUrl}/roomtype/get-all-room-types`)
+  }
+
+  addRoomType(form: FormData) {
+    return this.http.post(`${environment.appUrl}/roomtype/add-room-type`,form);
+  }
+
+  
   
 }

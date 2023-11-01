@@ -86,10 +86,8 @@
         <!-- loại phòng -->
         <div class="text-[1.2em] mb-4">
           <label class="mr-1">Loại phòng</label>
-          <select class="input-field">
-            <option value="">Phòng đơn</option>
-            <option value="">Phòng đôi</option>
-            <option value="">Khác</option>
+          <select formControlName="roomTypeId" class="input-field">
+            <option *ngFor="let type of roomTypes" [value]="type.RoomTypeId">{{type.RoomTypeName}}</option>
           </select>
         </div>
 

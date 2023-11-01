@@ -1,0 +1,83 @@
+<div class="wrapper">
+  <div class="container mx-auto">
+    <!-- hotel -->
+    <div class="hotel-detail mb-4">
+      <!-- img -->
+      <div class="list-img">
+        <div class="columns-2 md:columns-3 gap-2">
+          <div
+            *ngFor="let url of hotelImg"
+            class="break-inside-avoid mb-2 rounded border p-2"
+          >
+            <div class="">
+              <span class="block">{{ url.name }}</span>
+            </div>
+            <img [src]="imgBase + url.data" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="hotel !== null" class="hotel-info">
+        <div class="text-3xl font-bold">{{ hotel.HotelName }}</div>
+        <div>
+          Địa chỉ: <i>{{ hotel.Address }}</i>
+        </div>
+        <hr />
+        <div>{{ hotel.Description }}</div>
+      </div>
+    </div>
+
+    <div class="list-rooms">
+      <div class="text-xl font-bold">Các phòng</div>
+
+      <div class="rom-container">
+        <div class="w-full flex gap-2 justify-start items-start" *ngFor="let room of rooms; let i = index">
+
+					<!-- infor -->
+          <div class="w-1/2 border-2 h-[300px] max-h-[300px] p-2">
+            <div>
+              <strong>{{ room.RoomNumber }}</strong>
+            </div>
+            <div>
+              <strong>{{ room.RoomName }}</strong>
+            </div>
+            <div>
+              <i>{{ room.Description }}</i>
+            </div>
+            <div>
+              <p>{{ room.Description }}</p>
+            </div>
+            <div>
+              <p>Loại phòng{{ room.RoomType.RoomTypeName }}</p>
+            </div>
+            <div>
+              <p>Giá phòng: {{ room.RoomPrice.Price }}</p>
+            </div>
+
+						<div>
+							<button class="btn-primary" *ngIf="room.IsAvailable === true" routerLink="/city/book">Đặt phòng</button>
+							<button class="btn-primary" *ngIf="room.IsAvailable === false">Hết chỗ</button>
+            </div>
+          </div>
+
+					<!-- img -->
+					<div class="w-1/2 border-2 h-[300px] max-h-[300px]">
+						<img
+            *ngIf="fileNames[i] !== ''"
+              [src]="imgBase + fileNames[i]"
+              alt=""
+              class="max-w-[300px] max-h-[300px] rounded-t-lg"
+            />
+
+            <img
+            *ngIf="fileNames[i] === ''"
+              src="/assets/noimage.png"
+              alt=""
+              class="max-w-[300px] max-h-[300px] rounded-t-lg"
+            />
+					</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

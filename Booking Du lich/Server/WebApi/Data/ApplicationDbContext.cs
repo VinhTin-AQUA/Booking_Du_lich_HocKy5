@@ -55,6 +55,7 @@ namespace WebApi1.Data
                 .HasOne(h => h.Approver)
                 .WithMany(p => p.ApprovalHotels)
                 .HasForeignKey(p => p.ApproverID);
+
             modelBuilder.Entity<Room>()
                 .HasKey(r => r.Id).HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -76,6 +77,7 @@ namespace WebApi1.Data
                 .HasOne(r => r.RoomPrice)
                 .WithOne(rp => rp.Room)
                 .HasForeignKey<RoomPrice>(rp => rp.RoomId);
+
             modelBuilder.Entity<BookRoom>()
                 .HasKey(br => new { br.RoomID, br.UserID, br.CheckInDate }).HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
             modelBuilder.Entity<Room>()

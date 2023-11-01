@@ -205,5 +205,26 @@ namespace WebApi.Controllers
             imageService.DeleteAllImgHotel(hotelId);
             return Ok();
         }
+
+        [HttpGet("get-hotels-in-city")]
+        public async Task<IActionResult> GetCitiesInHotel([FromQuery] int cityId)
+        {
+            var hotels = await hotelRepository.GetHotelsInCity(cityId);
+            LinkedList<string> fileNames = new LinkedList<string>();
+
+            foreach (var hotel in hotels)
+            {
+                string[] imgNames = imageService.GetAllFileOfFolder("hotels",hotel.Id.ToString(), "_imgHotel");
+                if (fileNames.Any())
+                {
+                    fileNames.AddLast(imgNames[0]);
+                } else
+                {
+                    fileNames.AddLast("");
+                }
+            }
+
+            return Ok(new { hotels, fileNames });
+        } 
     }
 }
