@@ -23,11 +23,6 @@ export class HomeComponent {
     end: new FormControl<Date | null>(null),
   });
   _environment = environment;
-  
-  //search
-  rooms: number = 1;
-  people: number = 1;
-  isShowedDetailPeople: boolean = false;
 
   // city
   cities: City[] = [];
@@ -136,33 +131,13 @@ export class HomeComponent {
     console.log(JSON.stringify(this.range.value));
   }
 
-  increaseRooms() {
-    this.rooms++;
-  }
-
-  decreaseRooms() {
-    this.rooms <= 1 ? (this.rooms = 1) : this.rooms--;
-  }
-
-  increasePeolple() {
-    this.people++;
-  }
-
-  decreasePeolple() {
-    this.people <= 1 ? (this.people = 1) : this.people--;
-  }
-
-  showDetailPeople() {
-    this.isShowedDetailPeople = !this.isShowedDetailPeople;
-  }
 
   // destionation
   navigateToCity(city: City) {
-    const cityUrl = `city/${city.Name}`;
+    const cityUrl = `city/${city.Name}/${city.Id}`;
     this.router.navigate([cityUrl], { relativeTo: this.route });
-    this.sharedService.passObj(city);
     // Đặt title trên tab của trình duyệt
-    document.title = 'Hello ' + city.Name;
+    document.title = city.Name;
   }
 
   /* featured home */

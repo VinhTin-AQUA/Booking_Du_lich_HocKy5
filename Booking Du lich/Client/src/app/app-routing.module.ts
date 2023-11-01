@@ -28,6 +28,7 @@ const routes: Routes = [
     path: 'city',
     loadChildren: () =>
       import('../app/booking/booking.module').then((m) => m.BookingModule),
+      canActivate:[authGuard]
   },
   {
     path: 'admin',

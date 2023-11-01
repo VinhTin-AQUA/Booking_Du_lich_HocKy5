@@ -165,7 +165,13 @@ export class PostDetailComponent {
   removeImgUnSave(data: string) {
     const index = this.listNewImgUrls.findIndex((url) => url.data === data);
     if (index !== -1) {
+
+      const fileName = this.listNewImgUrls[index].name;
+      const _index = this.newImgObjToAdd.findIndex(
+        (u: any) => u.name === fileName
+      );
       this.listNewImgUrls.splice(index, 1);
+      this.newImgObjToAdd.splice(_index, 1);
     }
   }
 
@@ -233,9 +239,10 @@ export class PostDetailComponent {
       form.append('HotelName', this.hotelGroup.value.hotelName);
       form.append('Address', this.hotelGroup.value.address);
       form.append('Description', this.hotelGroup.value.description);
+      form.append('PosterID', this.userId);
       form.append('CityId', this.cityId.toString());
       form.append('Id', this.hotelGroup.value.id);
-
+      
       for (let file of this.newImgObjToAdd) {
         form.append('files', file);
       }

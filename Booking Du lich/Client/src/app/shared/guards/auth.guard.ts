@@ -23,7 +23,7 @@ export const authGuard: CanActivateFn = (route, state) => {
 
   if (roleSys === undefined && roleAccount !== Roles.USER) {
     if (roleAccount === Roles.ADMIN) {
-      return router.navigateByUrl('/admin');
+      return router.navigateByUrl('/admin/user-management');
     }
 
     if (roleAccount === Roles.EMPLOYEE) {

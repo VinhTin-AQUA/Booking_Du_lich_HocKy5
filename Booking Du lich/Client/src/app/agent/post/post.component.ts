@@ -41,6 +41,7 @@ export class PostComponent {
       .subscribe({
         next: (res: any) => {
           this.hotels = res.hotels;
+          
         },
         error: (err) => {
           console.log(err);

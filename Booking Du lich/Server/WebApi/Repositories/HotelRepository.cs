@@ -77,6 +77,12 @@ namespace WebApi.Repositories
             return await Save();
         }
 
-        
-    }
+        public async Task<ICollection<Hotel>> GetHotelsInCity(int cityId)
+        {
+            var hotels = await context.Hotel
+                .Where(h => h.CityId == cityId)
+                .ToListAsync();
+            return hotels;
+        }
+    } 
 }

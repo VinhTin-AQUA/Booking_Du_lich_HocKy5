@@ -1,39 +1,53 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { Hotel } from 'src/app/shared/models/hotel/hotel';
 import { SharedService } from 'src/app/shared/shared.service';
+import { BookingService } from '../booking.service';
+import { environment } from 'src/environments/environment.development';
 
 @Component({
   selector: 'app-city',
   templateUrl: './city.component.html',
-  styleUrls: ['./city.component.scss']
+  styleUrls: ['./city.component.scss'],
 })
 export class CityComponent {
   cityName: string | null = '';
+  cityId: number = -1;
   private subcription: Subscription | null = null;
-  
+
+  hotels: Hotel[] = [];
+  fileNames: string[] = [];
+  imgBase = environment.imgUrl
+
   constructor(
-    private activatedRoute: ActivatedRoute, 
+    private activatedRoute: ActivatedRoute,
     private sharedService: SharedService,
-    private router: Router) {
-    
-  }
+    private router: Router,
+    private bookService: BookingService
+  ) {}
 
   ngOnInit(): void {
-    // Sử dụng ActivatedRoute để lấy giá trị của tham số cityName từ URL
-    this.activatedRoute.paramMap.subscribe(params => {
-      this.cityName = params.get('cityName');
-      // Bây giờ, bạn có thể sử dụng this.cityName trong component của bạn
+    this.activatedRoute.params.subscribe((params) => {
+      this.cityName = params['cityName'];
+      this.cityId = params['id'];
     });
 
-    // lấy thông tin thành phố mà người dùng chọn
-    this.subcription = this.sharedService.passSubject$.subscribe(data => {
-      console.log(data);
-    })
+    this.getHotelsInCity();
   }
 
+  private getHotelsInCity() {
+    this.bookService.getHotelsInCity(this.cityId).subscribe({
+      next:(hotels: any) => {
+        this.hotels = hotels.hotels;
+        this.fileNames = hotels.fileNames;
+      },
+      error: (err) => {
+        console.log(err);
+      }
+    });
+  }
 
-  
   ngOnDestroy() {
     this.subcription?.unsubscribe();
   }

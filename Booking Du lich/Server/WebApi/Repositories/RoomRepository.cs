@@ -39,14 +39,20 @@ namespace WebApi.Repositories
         public async Task<IEnumerable<Room>> SearchRoomOfHotel(int? HotelId)
         {
             var rooms = await _context.Room
-                .Where(r => r.HotelId == HotelId).ToListAsync();
+                .Where(r => r.HotelId == HotelId)
+                .Include(r => r.Hotel)
+                .Include(r => r.RoomPrice)
+                .Include(r => r.RoomType)
+                .ToListAsync();
                
             return rooms;
         }
         public async Task<Room> GetRoomById(int? Id)
         {
             var room = await _context.Room
-                .Where(r => r.Id== Id).FirstOrDefaultAsync();
+                .Where(r => r.Id== Id)
+                .Include(r => r.Hotel)
+                .FirstOrDefaultAsync();
 
             return room;
         }

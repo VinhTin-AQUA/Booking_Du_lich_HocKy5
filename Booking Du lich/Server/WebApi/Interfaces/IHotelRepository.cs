@@ -15,5 +15,6 @@ namespace WebApi.Interfaces
         public Task<IdentityResult> DeleteAgent(ApplicationUser agent);
         public Task<bool> DeleteHotel(Hotel hotel);
         public Task<bool> UpdateHotel(Hotel hotel);
+        public Task<ICollection<Hotel>> GetHotelsInCity(int cityId);
     }
 }

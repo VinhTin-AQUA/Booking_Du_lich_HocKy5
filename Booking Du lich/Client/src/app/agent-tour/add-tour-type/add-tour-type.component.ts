@@ -39,8 +39,6 @@ export class AddTourTypeComponent {
           if (res !== null) {
             this.tour = res.tour;
           }
-          console.log();
-          
         },
         error: (err) => {
           console.log(err);

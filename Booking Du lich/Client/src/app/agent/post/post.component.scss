@@ -1,5 +1,5 @@
 .container {
-  @apply p-2;
+  @apply p-2 w-full;
 }
 
 .search-input {
@@ -11,8 +11,8 @@
 }
 
 .posts {
-  @apply flex gap-2 flex-wrap overflow-y-scroll p-2;
-  height: calc(100vh - 110px);
+  @apply  overflow-y-scroll p-2;
+  min-height: calc(100vh - 110px);
   max-height: calc(100vh - 110px);
 }
 

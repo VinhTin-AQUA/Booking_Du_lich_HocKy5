@@ -519,6 +519,9 @@ namespace WebApi.Migrations
                     b.Property<string>("PhotoPath")
                         .HasColumnType("varchar(250)");
 
+                    b.Property<int?>("RoomId")
+                        .HasColumnType("int");
+
                     b.Property<string>("RoomName")
                         .IsRequired()
                         .HasColumnType("nvarchar(250)");
@@ -529,6 +532,9 @@ namespace WebApi.Migrations
 
                     b.Property<int?>("RoomTypeId")
                         .HasColumnType("int");
+
+                    b.Property<DateTime?>("ValidFrom")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);

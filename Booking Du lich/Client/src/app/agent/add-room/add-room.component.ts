@@ -10,6 +10,7 @@ import { AdminService } from 'src/app/admin/admin.service';
 import { ImgShow } from 'src/app/shared/models/image/imgShow';
 import { environment } from 'src/environments/environment.development';
 import { City } from 'src/app/shared/models/city/city';
+import { RoomType } from 'src/app/shared/models/room/roomType';
 
 @Component({
   selector: 'app-add-room',
@@ -24,7 +25,7 @@ export class AddRoomComponent {
   imgFiles: ImgShow[] = []; // danh sách ảnh cũ
   @ViewChild('fileInput') fileInput!: ElementRef;
   envImgUrl = environment.imgUrl;
-
+  roomTypes: RoomType[]=[]
 
   roomGroup: FormGroup = new FormGroup([]);
   submitted: boolean = false;
@@ -49,7 +50,8 @@ export class AddRoomComponent {
       validFrom: [new Date().toISOString().substring(0, 10)],
       goodThru: [new Date().toISOString().substring(0, 10)],
       isAvailable: [true],
-      description: ['',[Validators.required]]
+      description: ['',[Validators.required]],
+      roomTypeId: [1]
     })
 
     this.activatedRoute.params.subscribe({
@@ -59,10 +61,18 @@ export class AddRoomComponent {
         }
       },
     });
+
+    this.getAllRoomRypes();
   }
 
   private clearFile() {
     this.fileInput.nativeElement.value = '';
+  }
+
+  private getAllRoomRypes() {
+    this.agentService.getAllRoomType().subscribe((rt: any)=>{ 
+      this.roomTypes = rt.Value.RoomTypes;
+    })
   }
 
 
@@ -115,7 +125,12 @@ export class AddRoomComponent {
   removeImgUnSave(data: string) {
     const index = this.listNewImgUrls.findIndex((url) => url.data === data);
     if (index !== -1) {
+      const fileName = this.listNewImgUrls[index].name;
+      const _index = this.newImgObjToAdd.findIndex(
+        (u: any) => u.name === fileName
+      );
       this.listNewImgUrls.splice(index, 1);
+      this.newImgObjToAdd.splice(_index, 1);
     }
   }
 
@@ -142,8 +157,39 @@ export class AddRoomComponent {
     this.submitted = true;
 
     if (this.roomGroup.valid) {
-      console.log(this.roomGroup.value);
-      
+      if(this.hotelID !== null){
+        this.sharedService.showLoading(true);
+        let form = new FormData();
+        form.append('RoomNumber', this.roomGroup.value.roomNumber);
+        form.append('Name', this.roomGroup.value.roomName);
+        form.append('Description', this.roomGroup.value.description);
+        form.append('IsAvailable', this.roomGroup.value.isAvailable);
+        form.append('RoomTypeId', this.roomGroup.value.roomTypeId);
+
+        form.append('ValidFrom', this.roomGroup.value.validFrom);
+        form.append('GoodThru', this.roomGroup.value.goodThru);
+        form.append('Price', this.roomGroup.value.price);
+        form.append('HotelId', this.hotelID.toString());
+  
+        for (let file of this.newImgObjToAdd) {
+          form.append('files', file);
+        }
+  
+        this.agentService.addRoom(form).subscribe({
+          next: (res: any) => {
+            this.sharedService.showLoading(false);
+            this.sharedService.showToastMessage('success' + res.Value.message);
+            this.router.navigateByUrl(
+              `/agent/${this.hotelID}/manage-rooms`
+            );
+          },
+          error: (err) => {
+            this.sharedService.showLoading(false);
+            this.sharedService.showToastMessage(err.error.Value.message);
+            console.log(err);
+          },
+        });
+      }
     }
   }
   

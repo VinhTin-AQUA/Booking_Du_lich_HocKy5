@@ -30,15 +30,18 @@
           </thead>
 
           <tbody>
-            <tr>
-              <td>517</td>
-              <td>Phong vip UTC2</td>
-              <td>Còn</td>
-              <td>Bình thường</td>
-              <td>5 triệu</td>
+            <tr *ngFor="let room of rooms">
+              <td>{{room.RoomNumber}}</td>
+              <td>{{room.RoomName}}</td>
+              <td *ngIf="room.IsAvailable === true">Còn</td>
+              <td *ngIf="room.IsAvailable === false">Đã đặt</td>
+              <td>{{room.RoomType.RoomTypeName}}</td>
+              <td>{{room.RoomPrice.Price}}</td>
               <td>
-                <mat-icon class="icon delete-icon" (click)="showDelete()">delete</mat-icon>
-                <mat-icon class="icon edit-icon">edit</mat-icon>
+                <div>
+                  <mat-icon class="icon delete-icon" (click)="showDelete(room.Id)">delete</mat-icon>
+                  <mat-icon class="icon edit-icon">edit</mat-icon>
+                </div>
               </td>
             </tr>
           </tbody>
@@ -53,8 +56,8 @@
     <h1 class="text-center text-red-600">Có chắc chắn muốn xóa?</h1>
     <div class="flex justify-center items-center gap-1">
       <div class="flex justify-center items-center gap-1">
-        <button class="btn-danger">Xóa</button>
-        <button class="btn-primary" (click)="showDelete()">Quay lại</button>
+        <button class="btn-danger" (click)="deleteSubmit()">Xóa</button>
+        <button class="btn-primary" (click)="showDelete(null)">Quay lại</button>
       </div>
     </div>
   </div>
