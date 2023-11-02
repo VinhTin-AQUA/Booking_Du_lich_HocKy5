@@ -16,6 +16,7 @@ using WebApi.Models.MailService;
 using WebApi.Services;
 using Microsoft.AspNetCore.Authorization;
 using System.ComponentModel.DataAnnotations;
+using WebApi.DTOs.UserManager;
 
 namespace WebApi1.Controllers
 {
@@ -27,13 +28,15 @@ namespace WebApi1.Controllers
         private readonly RoleManager<IdentityRole> _roleManage;
         private readonly IConfiguration _configuration;
         private readonly IEmailSender emailSender;
+        private readonly IUserManagerRepository userManagerRepository;
 
-        public AuthenticationController(IAuthenRepository authenRepository, RoleManager<IdentityRole> role, IConfiguration configuration, IEmailSender emailSender)
+        public AuthenticationController(IAuthenRepository authenRepository, RoleManager<IdentityRole> role, IConfiguration configuration, IEmailSender emailSender, IUserManagerRepository userManagerRepository)
         {
             this.authenRepository = authenRepository;
             _roleManage = role;
             _configuration = configuration;
             this.emailSender = emailSender;
+            this.userManagerRepository = userManagerRepository;
         }
 
         [HttpPost("sign-up")]
@@ -271,6 +274,32 @@ namespace WebApi1.Controllers
             return Ok(new JsonResult(new { title = "Succes", message = "Reset password successfully" }));
         }
 
+        [HttpPut("update-profile")]
+        public async Task<IActionResult> UpdateProfile(UserView model)
+        {
+            if(model == null)
+            {
+                return BadRequest();
+            }
+
+            var userExist = await userManagerRepository.GetUserById(model.Id);
+            if (userExist == null)
+            {
+                return BadRequest();
+            }
+
+            userExist.FirstName = model.FirstName;
+            userExist.LastName = model.LastName;
+            userExist.Address = model.Address;
+            userExist.PhoneNumber = model.PhoneNumber;
+            var r = await authenRepository.UpdateAccount(userExist);
+            if (r.Succeeded == false)
+            {
+                return BadRequest();
+            }
+
+            return Ok();
+        }
 
 
         // =============================================================================

@@ -14,7 +14,7 @@ namespace WebApi.DTOs.UserManager
         public bool EmailConfirmed { get; set; }
 
         public string PhoneNumber { get; set;}
-
+        public string Address { get; set; }
         public DateTimeOffset? LockoutEnd { get; set; }
     }
 }

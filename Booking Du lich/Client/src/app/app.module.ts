@@ -16,7 +16,6 @@ import { HomeComponent } from './home/home.component';
 import { SharedModule } from './shared/shared.module';
 import { JwtInterceptor } from './shared/interceptors/jwt.interceptors';
 import { AccessDeniedComponent } from './access-denied/access-denied.component';
-import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +24,6 @@ import { ProfileComponent } from './profile/profile.component';
     FooterComponent,
     HomeComponent,
     AccessDeniedComponent,
-    ProfileComponent,
   ],
   imports: [
     BrowserModule,

@@ -14,6 +14,7 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
 import { ResendEmailConfirmComponent } from './resend-email-confirm/resend-email-confirm.component';
 import { SendEmailResetPasswordComponent } from './send-email-reset-password/send-email-reset-password.component';
 import { LockoutEndComponent } from './lockout-end/lockout-end.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { LockoutEndComponent } from './lockout-end/lockout-end.component';
     ResendEmailConfirmComponent,
     SendEmailResetPasswordComponent,
     LockoutEndComponent,
+    ProfileComponent,
   ],
   imports: [
     CommonModule,
