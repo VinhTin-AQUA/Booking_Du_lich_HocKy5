@@ -42,6 +42,12 @@ export class AdminService {
     );
   }
 
+  getUserById(userId: string |undefined) {
+    return this.http.get(
+      `${environment.appUrl}/usermanager/get-user-by-id?userId=${userId}`
+    );
+  }
+
   lockUser(email: string) {
     return this.http.put(
       `${environment.appUrl}/usermanager/lock-user?email=${email}`,

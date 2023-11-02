@@ -4,7 +4,6 @@ import { HomeComponent } from './home/home.component';
 import { AccessDeniedComponent } from './access-denied/access-denied.component';
 import { Roles } from './shared/guards/roles';
 import { authGuard } from './shared/guards/auth.guard';
-import { ProfileComponent } from './profile/profile.component';
 
 
 const routes: Routes = [
@@ -51,9 +50,6 @@ const routes: Routes = [
     canActivate: [authGuard],
     data: { role: Roles.AGENTTOUR },
   },
-  {
-    path: 'profile', component: ProfileComponent, title: 'Profile'
-  }
 ];
 
 @NgModule({

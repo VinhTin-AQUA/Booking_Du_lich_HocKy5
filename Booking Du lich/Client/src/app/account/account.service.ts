@@ -10,6 +10,7 @@ import { ConfirmEmail } from '../shared/models/account/confirmEmail';
 import { User } from '../shared/models/account/user';
 import { ResendEmail } from '../shared/models/account/resendEmail';
 import { ResetPassword } from '../shared/models/account/resetPassword';
+import { UserView } from '../shared/models/userManager/userView';
 
 @Injectable({
   providedIn: 'root',
@@ -113,4 +114,9 @@ export class AccountService {
       model
     );
   }
+
+  updateAccount(model: UserView) {
+    return this.http.put(`${environment.appUrl}/authentication/update-profile`, model)
+  }
+
 }

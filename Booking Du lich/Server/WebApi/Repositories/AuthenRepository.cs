@@ -138,5 +138,11 @@ namespace WebApi1.Repositories
                 JWT = await jwtService.CreateJWT(user)
             };
         }
+
+        public async Task<IdentityResult> UpdateAccount(ApplicationUser user)
+        {
+            var r = await _userManage.UpdateAsync(user);
+            return r;
+        } 
     }
 }

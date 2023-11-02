@@ -25,7 +25,7 @@
 
       <div class="flex items-center justify-center gap-2" *ngIf="accountService.user$ | async as user">
 
-        <a class="btn-primary cursor-pointer" routerLink="/profile"
+        <a class="btn-primary cursor-pointer" routerLink="/account/profile"
           >Hello {{user.FirstName + ' ' + user.LastName}}</a
         >
 

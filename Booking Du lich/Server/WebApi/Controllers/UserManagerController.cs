@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using WebApi.DTOs.Authentication;
 using WebApi.DTOs.UserManager;
 using WebApi.Interfaces;
@@ -43,6 +44,26 @@ namespace WebApi.Controllers
             int totalUser = userView.Count();
 
             return Ok(new { users = userView, totalUser = totalUser });
+        }
+
+        [HttpGet("get-user-by-id")]
+        public async Task<IActionResult> GetUserById([FromQuery] string userId)
+        {
+            var userModel = await userManagerRepository.GetUserById(userId);
+
+            var user = new UserView
+            {
+                Id = userModel.Id,
+                FirstName = userModel.FirstName,
+                LastName = userModel.LastName,
+                Email = userModel.Email,
+                EmailConfirmed = userModel.EmailConfirmed,
+                PhoneNumber = userModel.PhoneNumber,
+                LockoutEnd = userModel.LockoutEnd,
+                Address = userModel.Address
+            };
+
+            return Ok(new { user });
         }
 
         [HttpPut("lock-user")]

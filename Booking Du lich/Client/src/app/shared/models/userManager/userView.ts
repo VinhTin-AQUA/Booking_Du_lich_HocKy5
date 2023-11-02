@@ -3,6 +3,7 @@ export interface UserView {
   FirstName: string;
   LastName: string;
   Email: string;
+  Address: string;
   EmailConfirmed: boolean;
   PhoneNumber: string | null;
   LockoutEnd: Date | null;
