@@ -1,0 +1,25 @@
+.wrapper {
+	@apply p-2 min-h-screen;
+}
+
+.nav-container {
+	@apply flex gap-2;
+
+	.nav-item {
+		@apply border-2 border-[#2563eb] p-2 rounded-lg cursor-pointer  duration-75;
+
+		//transition: all .5s ease;
+
+		&:hover {
+			@apply bg-[#2563eb] text-white;
+		}
+	}
+}
+
+.hotel-container {
+	@apply p-2 container mx-auto flex flex-wrap gap-2; 
+
+	.hotel-item {
+		@apply  border-2 w-[300px] h-auto rounded-md p-2;
+	}
+}
