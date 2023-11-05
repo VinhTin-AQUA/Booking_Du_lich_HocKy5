@@ -131,6 +131,21 @@ namespace WebApi.Controllers
             return Ok(cities);
         }
 
+
+        [HttpGet("hotels-not-approved")]
+        public async Task<IActionResult> HotelNotApproved()
+        {
+            var hotels = await hotelRepository.HotelNotApproved();
+            return Ok(hotels.ToList());
+        }
+
+        [HttpGet("hotels-approved")]
+        public async Task<IActionResult> HotelApproved()
+        {
+            var hotels = await hotelRepository.HotelApproved();
+            return Ok(hotels.ToList());
+        }
+
         [HttpGet("get-hotel-by-id")]
         public async Task<IActionResult> GetHotelById([FromQuery] int? id)
         {
@@ -225,6 +240,30 @@ namespace WebApi.Controllers
             }
 
             return Ok(new { hotels, fileNames });
-        } 
+        }
+
+        [HttpPut("approve")]
+        public async Task<IActionResult> Approve([FromQuery]string userId, [FromQuery]int hotelId)
+        {
+            var user = await authenRepository.GetUserById(userId);
+            var hotel = await hotelRepository.GetHotelById(hotelId);
+
+            if(user == null || hotel == null)
+            {
+                return BadRequest();
+            }
+
+            hotel.ApprovalDate = DateTime.Now;
+            hotel.Approver = user;
+            hotel.ApproverID = user.Id;
+            var r = await hotelRepository.UpdateHotel(hotel);
+
+            if (r == false)
+            {
+                return BadRequest();
+            }
+            return Ok();
+        }
+
     }
 }

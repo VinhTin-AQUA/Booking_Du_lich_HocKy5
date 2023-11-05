@@ -50,6 +50,13 @@ const routes: Routes = [
     canActivate: [authGuard],
     data: { role: Roles.AGENTTOUR },
   },
+  {
+    path: 'employee',
+    loadChildren: () =>
+      import('./employee/employee.module').then((m) => m.EmployeeModule),
+    canActivate: [authGuard],
+    data: { role: Roles.EMPLOYEE },
+  },
 ];
 
 @NgModule({
