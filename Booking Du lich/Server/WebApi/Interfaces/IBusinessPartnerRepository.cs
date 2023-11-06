@@ -6,7 +6,7 @@ namespace WebApi.Interfaces
     {
         public Task<bool> Save();
         public Task<bool> AddBusinessPartner(BusinessPartner businessPartner);
-        
+        public Task<BusinessPartner> GetBusinessPartnerByUser(ApplicationUser user);
         public Task<bool> DeleteBusinessPartner(BusinessPartner businessPartner);
         public Task<BusinessPartner> GetBusinessPartnerById(int? id);
         public Task<ICollection<BusinessPartner>> GetAllGetAllBusinessPartner();

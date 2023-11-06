@@ -6,6 +6,7 @@ namespace WebApi.DTOs.BusinessPartner
 {
     public class AddBusinessPartner
     {
+        public int Id { get; set; }
         [Required(ErrorMessage = "{0} must be require")]
         [Display(Name = "Business Partner")]
         [Column(TypeName = ("nvarchar(100)"))]

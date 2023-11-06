@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment.development';
+import { BusinessPartner } from '../shared/models/business-partner/businessPartner';
 
 @Injectable({
   providedIn: 'root',
@@ -73,15 +74,21 @@ export class AgentService {
   }
 
   deleteRoom(roomId: number | null) {
-    return this.http.delete(`${environment.appUrl}/room/delete-room?roomId=${roomId}`);
+    return this.http.delete(
+      `${environment.appUrl}/room/delete-room?roomId=${roomId}`
+    );
   }
 
   getRoomById(roomId: number | null) {
-    return this.http.get(`${environment.appUrl}/room/get-room-by-id?roomId=${roomId}`)
+    return this.http.get(
+      `${environment.appUrl}/room/get-room-by-id?roomId=${roomId}`
+    );
   }
 
   deleteAllImgRoom(roomId: number) {
-    return this.http.delete(`${environment.appUrl}/room/delete-all-img-room?roomId=${roomId}`)
+    return this.http.delete(
+      `${environment.appUrl}/room/delete-all-img-room?roomId=${roomId}`
+    );
   }
 
   // service
@@ -116,13 +123,24 @@ export class AgentService {
 
   // room type
   getAllRoomType() {
-    return this.http.get(`${environment.appUrl}/roomtype/get-all-room-types`)
+    return this.http.get(`${environment.appUrl}/roomtype/get-all-room-types`);
   }
 
   addRoomType(form: FormData) {
-    return this.http.post(`${environment.appUrl}/roomtype/add-room-type`,form);
+    return this.http.post(`${environment.appUrl}/roomtype/add-room-type`, form);
   }
 
-  
-  
+  // business partner
+  getBusinessPartner(userId: string | null) {
+    return this.http.get(
+      `${environment.appUrl}/businesspartner/get-business-partner-by-user?userId=${userId}`
+    );
+  }
+
+  updateBusPartber(model: BusinessPartner) {
+    return this.http.put(
+      `${environment.appUrl}/businesspartner/update-businesspartner`,
+      model
+    );
+  }
 }

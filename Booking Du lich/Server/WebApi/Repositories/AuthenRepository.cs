@@ -118,7 +118,10 @@ namespace WebApi1.Repositories
 
         public async Task<ApplicationUser> GetUserById(string id)
         {
-            var user = await _userManage.Users.Where(u => u.Id == id).FirstOrDefaultAsync();
+            var user = await _userManage.Users
+                .Where(u => u.Id == id)
+                .Include(u => u.BusinessPartner)
+                .FirstOrDefaultAsync();
             return user;
         }
 

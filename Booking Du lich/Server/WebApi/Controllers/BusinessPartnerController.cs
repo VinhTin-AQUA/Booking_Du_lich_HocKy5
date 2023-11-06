@@ -73,22 +73,19 @@ namespace WebApi.Controllers
         }
 
         [HttpPut("update-businesspartner")]
-        public async Task<IActionResult> UpdateBusinessPartner(AddBusinessPartner addBusinessPartner, [FromQuery] int id)
+        public async Task<IActionResult> UpdateBusinessPartner(AddBusinessPartner model)
         {
             // tim bp theo id
-            if(id == null)
-            {
-                return BadRequest();
-            }
-            var bp = await partnerRepository.GetBusinessPartnerById(id);
+            var bp = await partnerRepository.GetBusinessPartnerById(model.Id);
+
             if(bp == null)
             {
                 return BadRequest();
             }
-            bp.PartnerName = addBusinessPartner.PartnerName;
-            bp.Address = addBusinessPartner.Address;
-            bp.Email = addBusinessPartner.Email;
-            bp.PhoneNumber = addBusinessPartner.PhoneNumber;
+            bp.PartnerName = model.PartnerName;
+            bp.Address = model.Address;
+            bp.Email = model.Email;
+            bp.PhoneNumber = model.PhoneNumber;
 
             var b = await partnerRepository.UpdateBusinessPartner(bp);
             if(b == true)
@@ -168,5 +165,28 @@ namespace WebApi.Controllers
                 Message = $"Something error. Please try again"
             });
         }
+
+        [HttpGet("get-business-partner-by-user")]
+        public async Task<IActionResult> GetBusinessPartnerByUser([FromQuery] string userId)
+        {
+            if(string.IsNullOrEmpty(userId))
+            {
+                return BadRequest();
+            }
+             
+            var user = await authenRepository.GetUserById(userId);
+            if(user == null)
+            {
+                return BadRequest();
+            }
+
+            var bp = await partnerRepository.GetBusinessPartnerByUser(user);
+            if (bp == null)
+            {
+                return BadRequest(new {message = "Không tìm thấy thông tin khách sạn đối tác"});
+            }
+            return Ok(bp);
+        }
+
     }
 }
