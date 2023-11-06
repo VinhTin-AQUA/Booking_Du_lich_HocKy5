@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
-namespace WebApi.DTOs.BusinessPartner
+namespace WebApi.DTOs.Authentication
 {
-    public class AddAgentHotel
+    public class AddAgent
     {
 
         [Required(ErrorMessage = "{0} must be required")]

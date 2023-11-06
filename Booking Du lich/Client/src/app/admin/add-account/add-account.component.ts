@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, Query } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AccountService } from 'src/app/account/account.service';
 import { SharedService } from 'src/app/shared/shared.service';
 import { AdminService } from '../admin.service';
-import { AddAgentHotel } from 'src/app/shared/models/business-partner/addAgentHotel';
+import { AddAgent } from 'src/app/shared/models/business-partner/addAgent';
 
 @Component({
   selector: 'app-add-account',
@@ -19,8 +19,6 @@ export class AddAccountComponent {
 
   constructor(
     private formBuilder: FormBuilder,
-    private accountService: AccountService,
-    private router: Router,
     private sharedService: SharedService,
     private activatedRoute: ActivatedRoute,
     private adminService: AdminService
@@ -102,8 +100,8 @@ export class AddAccountComponent {
   }
 
   private addAgentHotel() {
-    if(this.busPartId !== null) {
-      const agent: AddAgentHotel = {
+    if (this.busPartId !== null) {
+      const agent: AddAgent = {
         FirstName: this.signUpForm.value.firstName,
         LastName: this.signUpForm.value.lastName,
         PhoneNumber: this.signUpForm.value.phoneNumber,
@@ -111,9 +109,8 @@ export class AddAccountComponent {
         Address: this.signUpForm.value.address,
         Password: this.signUpForm.value.password,
         BusPartId: this.busPartId,
-      }
-  
-  
+      };
+
       this.adminService.addAgentHotel(agent).subscribe({
         next: (_) => {
           this.sharedService.showToastMessage(
@@ -129,6 +126,28 @@ export class AddAccountComponent {
   }
 
   private addAgentTour() {
-
+    const agent: AddAgent = {
+      FirstName: this.signUpForm.value.firstName,
+      LastName: this.signUpForm.value.lastName,
+      PhoneNumber: this.signUpForm.value.phoneNumber,
+      Email: this.signUpForm.value.email,
+      Address: this.signUpForm.value.address,
+      Password: this.signUpForm.value.password,
+      BusPartId: 0,
+    };
+    this.sharedService.showLoading(true);
+    this.adminService.addAgentTour(agent).subscribe({
+      next: (_) => {
+        this.sharedService.showToastMessage(
+          'successThêm tài khoản đối tác thành công'
+        );
+        this.sharedService.showLoading(false);
+      },
+      error: (err) => {
+        console.log(err);
+        this.sharedService.showToastMessage('Có lỗi vui lòng thử lại');
+        this.sharedService.showLoading(false);
+      },
+    });
   }
 }

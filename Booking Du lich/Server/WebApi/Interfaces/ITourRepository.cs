@@ -15,5 +15,6 @@ namespace WebApi.Interfaces
         public Task<bool> DeleteTour(Tour tour);
         public Task<bool> UpdateTour(Tour tour);
         public Task<bool> AddTypeToTour(TourType tourType, Tour tour);
+        public Task<ICollection<ApplicationUser>> GetAgentTours();
     }
 }

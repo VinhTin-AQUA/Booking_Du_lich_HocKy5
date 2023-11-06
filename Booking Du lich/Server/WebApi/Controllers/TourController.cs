@@ -1,8 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using WebApi.DTOs.Authentication;
 using WebApi.DTOs.Tour;
 using WebApi.Interfaces;
 using WebApi.Models;
 using WebApi.Repositories;
+using WebApi.Services;
+using WebApi1.Models;
 using WebApi1.Repositories;
 
 namespace WebApi.Controllers
@@ -17,13 +20,15 @@ namespace WebApi.Controllers
         private readonly IAuthenRepository authenRepository;
         private readonly ICityRepository cityRepository;
         private readonly ITourTypeRepository tourTypeRepository;
+        private readonly IEmailSender emailSender;
 
         public TourController(ITourRepository tourRepository,
             IWebHostEnvironment hostEnvironment,
             IImageService imageService,
             IAuthenRepository authenRepository,
             ICityRepository cityRepository,
-            ITourTypeRepository tourTypeRepository)
+            ITourTypeRepository tourTypeRepository,
+            IEmailSender emailSender)
         {
             this.tourRepository = tourRepository;
             this.hostEnvironment = hostEnvironment;
@@ -31,6 +36,7 @@ namespace WebApi.Controllers
             this.authenRepository = authenRepository;
             this.cityRepository = cityRepository;
             this.tourTypeRepository = tourTypeRepository;
+            this.emailSender = emailSender;
         }
 
         [HttpPost("add-tour")]
@@ -219,6 +225,61 @@ namespace WebApi.Controllers
             }
             imageService.DeleteImg(url);
             return Ok();
+        }
+
+        [HttpPost("add-agent-tour")]
+        public async Task<IActionResult> AddAgentTour(AddAgent model)
+        {
+            if (model == null)
+            {
+                return BadRequest(new {message = ""});
+            }
+
+            var useExist = await authenRepository.GetUserByEmail(model.Email); 
+            if(useExist != null) 
+            {
+                return BadRequest(new { message = "Email này đã được đăng ký. Vui lòng sử dụng Email khác." });
+            }
+
+            var agent = new ApplicationUser
+            {
+                FirstName = model.FirstName,
+                LastName = model.LastName,
+                Email = model.Email,
+                Address = model.Address,
+                PhoneNumber = model.PhoneNumber,
+                UserName = model.Email
+            };
+
+            var result = await authenRepository.CreateUser(agent, model.Password);
+
+            if (!result.Succeeded)
+            {
+                return BadRequest(new JsonResult(new { title = "Error", message = "Register failed. Please try agian." }));
+            }
+            await authenRepository.AddRoleToUser(agent, "AgentTour");
+
+            if (await emailSender.SendEmailConfirmAsync(agent, "Rất vui khi bạn sử dụng ứng dụng của chúng tôi. Hãy xác thực tài khoản đối tác của bạn."))
+            {
+                return Ok(new JsonResult(new
+                {
+                    Status = "Success",
+                    Message = $"User created successfully and Send email to {agent.Email}"
+                }));
+            }
+            return StatusCode(StatusCodes.Status400BadRequest, new Response
+            {
+                Status = "Error",
+                Message = $"Something error. Please try again"
+            });
+        }
+
+        [HttpGet("get-agent-tours")]
+        public async Task<IActionResult> GetAgentTours()
+        {
+            var users = await tourRepository.GetAgentTours();
+
+            return Ok(users.ToList());
         }
     }
 }
