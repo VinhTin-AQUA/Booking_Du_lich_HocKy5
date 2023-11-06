@@ -9,9 +9,16 @@ namespace WebApi.Repositories
     public class TourRepository : ITourRepository
     {
         private readonly ApplicationDbContext context;
-        public TourRepository(ApplicationDbContext context)
+        private readonly UserManager<ApplicationUser> userManager;
+        private readonly RoleManager<IdentityRole> roleManager;
+
+        public TourRepository(ApplicationDbContext context, 
+            UserManager<ApplicationUser> userManager,
+            RoleManager<IdentityRole> roleManager)
         {
             this.context = context;
+            this.userManager = userManager;
+            this.roleManager = roleManager;
         }
         public async Task<bool> AddTour(Tour tour)
         {
@@ -67,6 +74,12 @@ namespace WebApi.Repositories
             tour.TourType = tourType;
             context.Tour.Update(tour);
             return await Save();
+        }
+
+        public async Task<ICollection<ApplicationUser>> GetAgentTours()
+        {
+            var users =await userManager.GetUsersInRoleAsync("AgentTour");
+            return users.ToList();
         }
     }
 }

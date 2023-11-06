@@ -117,18 +117,23 @@ namespace WebApi.Controllers
         }
 
         [HttpPost("add-agent-hotel")]
-        public async Task<IActionResult> AddAgentHotel(AddAgentHotel model)
+        public async Task<IActionResult> AddAgentHotel(AddAgent model)
         {
             if(model == null)
             {
-                return BadRequest();
+                return BadRequest(new { message = "" });
             }
             var busPart = await partnerRepository.GetBusinessPartnerById(model.BusPartId);
             var userExists = await authenRepository.GetUserByEmail(model.Email);
 
+            if (busPart == null)
+            {
+                return BadRequest(new { message = "" });
+            }
+
             if (busPart == null || userExists != null)
             {
-                return BadRequest();
+                return BadRequest(new { message = "Email này đã được đăng ký. Vui lòng sử dụng Email khác." });
             }
 
             var agent = new ApplicationUser

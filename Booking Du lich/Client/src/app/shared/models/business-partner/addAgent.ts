@@ -1,4 +1,4 @@
-export interface AddAgentHotel {
+export interface AddAgent {
 	FirstName: string;
 	LastName: string;
 	Email: string;

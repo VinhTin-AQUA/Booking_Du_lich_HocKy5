@@ -7,7 +7,7 @@ import { Agent } from '../shared/models/hotel/addAgent';
 import { AddTourType } from '../shared/models/tour/addTourType';
 import { UpdateTourType } from '../shared/models/tour/updateTourType';
 import { AddBusinessPartner } from '../shared/models/business-partner/addBusinessPartner';
-import { AddAgentHotel } from '../shared/models/business-partner/addAgentHotel';
+import { AddAgent } from '../shared/models/business-partner/addAgent';
 
 @Injectable({
   providedIn: 'root',
@@ -115,9 +115,21 @@ export class AdminService {
     );
   }
 
-  addAgentHotel(model: AddAgentHotel) {
+  addAgentHotel(model: AddAgent) {
     return this.http.post(
       `${environment.appUrl}/businesspartner/add-agent-hotel`,model
     );
   }
-}
+
+  // agent tour
+
+  addAgentTour(model: AddAgent) {
+    return this.http.post(
+      `${environment.appUrl}/tour/add-agent-tour`,model
+    );
+  }
+
+  getAgentTours() {
+    return this.http.get(`${environment.appUrl}/tour/get-agent-tours`)
+  }
+} 

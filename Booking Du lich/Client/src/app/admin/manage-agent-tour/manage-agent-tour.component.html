@@ -18,10 +18,13 @@
 
   <!-- list đối tác tour -->
   <div class="list-bussiness">
-    <div class="bussiness-item">
-      <span class="bussiness-header">Geoffrey Moore</span>
-      <span class="bussiness-email">Berge@gmail.com</span>
-      <span class="bussiness-phone">0833402853</span>
+    <div class="bussiness-item" *ngFor="let agent of agents">
+      <span class="bussiness-header">
+        {{agent.FirstName + ' ' + agent.LastName}}
+        <mat-icon class="icon delete-icon" (click)="delete(agent.Email)">delete</mat-icon> 
+      </span>
+      <span class="bussiness-email">{{agent.Email}}</span>
+      <span class="bussiness-phone">{{agent.PhoneNumber}}</span>
     </div>
   </div>
 </div>
