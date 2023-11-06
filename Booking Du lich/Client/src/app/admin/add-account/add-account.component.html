@@ -4,7 +4,7 @@
     class="container mx-auto md:w-[500px] p-5 rounded my-2"
   >
     <form [formGroup]="signUpForm" (ngSubmit)="submit()" autocomplete="off">
-      <div class="title font-bold text-[1.7em] mb-9">
+      <div class="title font-bold text-[1.7em] mb-3">
         <span>Thêm tài khoản cho đối tác</span>
       </div>
 
@@ -58,22 +58,10 @@
       <!-- loại đối tác -->
       <div class="text-[1.2em] mb-4">
         <label class="block mb-2">Loại đối tác</label>
-        <select [class]="inputValidation('agentType')">
-          <option value="hotel" selected>Đối tác khách sạn</option>
-          <option value="tour" selected>Đối tác tour du lịch</option>
+        <select [class]="inputValidation('agentType')" formControlName="agentType">
+          <option value="1" selected>Đối tác khách sạn</option>
+          <option value="2" selected>Đối tác tour du lịch</option>
         </select>
-        <span
-          class="text-red-500"
-          *ngIf="submitted === true && signUpForm.hasError('required', 'email')"
-        >
-          mail không được để trống
-        </span>
-        <span
-          class="text-red-500"
-          *ngIf="submitted === true && signUpForm.hasError('email', 'email')"
-        >
-          Email sai định dạng
-        </span>
       </div>
 
       <!-- email -->
@@ -90,13 +78,13 @@
           class="text-red-500"
           *ngIf="submitted === true && signUpForm.hasError('required', 'email')"
         >
-          Email is required
+          Email không được để trống
         </span>
         <span
           class="text-red-500"
           *ngIf="submitted === true && signUpForm.hasError('email', 'email')"
         >
-          Email is invalid
+          Email không hợp lệ
         </span>
       </div>
 

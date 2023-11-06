@@ -7,6 +7,7 @@ import { Agent } from '../shared/models/hotel/addAgent';
 import { AddTourType } from '../shared/models/tour/addTourType';
 import { UpdateTourType } from '../shared/models/tour/updateTourType';
 import { AddBusinessPartner } from '../shared/models/business-partner/addBusinessPartner';
+import { AddAgentHotel } from '../shared/models/business-partner/addAgentHotel';
 
 @Injectable({
   providedIn: 'root',
@@ -111,6 +112,12 @@ export class AdminService {
   deleteBusPart(id: number) {
     return this.http.delete(
       `${environment.appUrl}/businesspartner/delete-businesspartner?id=${id}`
+    );
+  }
+
+  addAgentHotel(model: AddAgentHotel) {
+    return this.http.post(
+      `${environment.appUrl}/businesspartner/add-agent-hotel`,model
     );
   }
 }
