@@ -96,6 +96,18 @@ namespace WebApi.Controllers
             return Ok(new JsonResult(new { title = "Success", message = "Add room successfully", newRoom = room }));
         }
 
+        [HttpGet("get-room-by-id")]
+        public async Task<IActionResult> GetRoomById([FromQuery]int roomId)
+        {
+            var room = await roomRepository.GetRoomById(roomId);
+            if (room == null)
+            {
+                return BadRequest();
+            }
+            var imgNames = imageService.GetAllFileOfFolder("hotels", room.Hotel.Id.ToString(), room.Id.ToString());
+            return Ok(new { room , imgNames });
+        } 
+
         [HttpGet("get-all-rooms")]
         public async Task<IActionResult> GetAllRooms()
         {

@@ -40,7 +40,7 @@
               <td>
                 <div>
                   <mat-icon class="icon delete-icon" (click)="showDelete(room.Id)">delete</mat-icon>
-                  <mat-icon class="icon edit-icon">edit</mat-icon>
+                  <mat-icon class="icon edit-icon" routerLink="/agent/edit-room/{{room.Id}}">edit</mat-icon>
                 </div>
               </td>
             </tr>
