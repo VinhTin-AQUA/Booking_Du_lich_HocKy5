@@ -200,7 +200,7 @@ namespace WebApi.Controllers
             foreach (var room in rooms)
             {
                 string[] imgNames = imageService.GetAllFileOfFolder("hotels", room.Hotel.Id.ToString(), room.Id.ToString(), "_imgHotel");
-                if (fileNames.Any())
+                if (imgNames != null)
                 {
                     fileNames.AddLast(imgNames[0]);
                 }
