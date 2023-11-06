@@ -1,6 +1,6 @@
 ﻿namespace WebApi.Seeds
 {
-    public class EmployeeSeed
+    public class SeedEmployee
     {
         public static readonly string Email = "employee@gmail.com";
         public static readonly string FirstName = "Nhân";

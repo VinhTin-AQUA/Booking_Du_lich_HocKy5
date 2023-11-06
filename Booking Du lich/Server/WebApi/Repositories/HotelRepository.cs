@@ -104,5 +104,13 @@ namespace WebApi.Repositories
                 .ToListAsync();
             return hotels;
         }
+
+        public async Task<ICollection<ApplicationUser>> GetAgentHotels(int partnerId)
+        {
+            var users = await userManager.Users.Where(u => u.PartnerId == partnerId)
+                .ToListAsync();
+
+            return users;
+        }
     } 
 }

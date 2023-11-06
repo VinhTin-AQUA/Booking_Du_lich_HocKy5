@@ -260,5 +260,11 @@ namespace WebApi.Controllers
             return Ok();
         }
 
+        [HttpGet("get-agent-hotels")]
+        public async Task<IActionResult> GetAgentHotel([FromQuery] int partnerId)
+        {
+            var users = await hotelRepository.GetAgentHotels(partnerId);
+            return Ok(users);
+        }
     }
 }

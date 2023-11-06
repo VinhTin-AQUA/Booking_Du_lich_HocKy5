@@ -118,15 +118,15 @@ namespace WebApi.Services
         {
             var employee = new ApplicationUser()
             {
-                UserName = EmployeeSeed.Email,
-                Email = EmployeeSeed.Email,
+                UserName = Seeds.SeedEmployee.Email,
+                Email = Seeds.SeedEmployee.Email,
                 EmailConfirmed = true,
-                FirstName = EmployeeSeed.FirstName,
-                LastName = EmployeeSeed.LastName,
-                Address = EmployeeSeed.Address,
+                FirstName = Seeds.SeedEmployee.FirstName,
+                LastName = Seeds.SeedEmployee.LastName,
+                Address = Seeds.SeedEmployee.Address,
             };
 
-            await userManager.CreateAsync(employee, EmployeeSeed.Password);
+            await userManager.CreateAsync(employee, Seeds.SeedEmployee.Password);
 
             await userManager.AddToRolesAsync(employee, new[] { SeedRole.EMPLOYEE_ROLE });
             await userManager.AddClaimsAsync(employee, new Claim[]
