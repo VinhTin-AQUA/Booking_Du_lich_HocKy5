@@ -23,7 +23,7 @@
 					{{ item.PartnerName }}	
 					<div>
             <mat-icon class="icon delete-icon" (click)="deleteBusPart(item.Id)" title="Xóa">delete</mat-icon>
-            <mat-icon class="icon add-account-icon" title="Xem tài khoản">people</mat-icon>
+            <mat-icon class="icon add-account-icon" routerLink="/admin/{{item.Id}}/manage-agent-hotel" title="Xem tài khoản">people</mat-icon>
             <mat-icon class="icon accounts-icon" routerLink="/admin/bussiness-partner/{{item.Id}}/add-account">add_circle</mat-icon>
           </div>
 				</span>

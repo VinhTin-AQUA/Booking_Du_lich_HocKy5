@@ -9,6 +9,7 @@ import { ManageTourTypeComponent } from './manage-tour-type/manage-tour-type.com
 import { BussinessPartnerComponent } from './bussiness-partner/bussiness-partner.component';
 import { AddBussinessPartComponent } from './add-bussiness-part/add-bussiness-part.component';
 import { ManageAgentTourComponent } from './manage-agent-tour/manage-agent-tour.component';
+import { ManageAgentHotelComponent } from './manage-agent-hotel/manage-agent-hotel.component';
 
 const routes: Routes = [
   {path: '', component: AdminComponent, 
@@ -16,15 +17,14 @@ const routes: Routes = [
       {path: '', redirectTo: 'user-management', pathMatch: 'full'},
       { path: 'user-management', component: UserMangementComponent, title: 'Quản lý người dùng' },
       { path: 'city-management', component: CityManangerComponent, title: 'Quản lý tỉnh thành phố' },
-
       { path: 'bussiness-partner/:id/add-account', component: AddAccountComponent, title: 'Cấp tài khoản' },
       { path: 'agent-tour/add-account', component: AddAccountComponent, title: 'Cấp tài khoản' },
-
       { path: 'manage-tour-type', component: ManageTourTypeComponent, title: 'Quản lý các loại tour' },
       { path: 'feedback', component: FeedBackComponent, title: 'Phản hồi' },
       { path: 'bussiness-partner', component: BussinessPartnerComponent, title: 'Quản lý các đối tác' },
       { path: 'bussiness-partner/add-bussiness-partner', component: AddBussinessPartComponent, title: 'Thêm đối tác' },
       { path: 'manage-agent-tour', component: ManageAgentTourComponent, title: 'Quản lý đói tác tour' },
+      { path: ':id/manage-agent-hotel', component: ManageAgentHotelComponent, title: 'Tài khoản đối tác khách sạn'}
     ],
   },
 ];

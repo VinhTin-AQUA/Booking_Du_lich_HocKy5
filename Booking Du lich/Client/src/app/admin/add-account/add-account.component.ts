@@ -111,15 +111,18 @@ export class AddAccountComponent {
         BusPartId: this.busPartId,
       };
 
+      this.sharedService.showLoading(true);
       this.adminService.addAgentHotel(agent).subscribe({
         next: (_) => {
           this.sharedService.showToastMessage(
             'successThêm tài khoản đối tác thành công'
           );
+          this.sharedService.showLoading(false);
         },
         error: (err) => {
           console.log(err);
           this.sharedService.showToastMessage('Có lỗi vui lòng thử lại');
+          this.sharedService.showLoading(false);
         },
       });
     }

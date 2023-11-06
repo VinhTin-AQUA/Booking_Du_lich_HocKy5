@@ -121,6 +121,10 @@ export class AdminService {
     );
   }
 
+  getAgentHotels(partnerId: number) {
+    return this.http.get(`${environment.appUrl}/hotel/get-agent-hotels?partnerId=${partnerId}`)
+  }
+
   // agent tour
 
   addAgentTour(model: AddAgent) {
