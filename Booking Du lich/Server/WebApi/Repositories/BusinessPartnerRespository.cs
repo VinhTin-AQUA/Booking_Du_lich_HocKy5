@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
+using System.Security;
 using WebApi.Interfaces;
 using WebApi.Models;
 using WebApi1.Data;
@@ -37,6 +38,16 @@ namespace WebApi.Repositories
             var bp = await context.BusinessPartner
                 .Where(b => b.Id == id)
                 .FirstOrDefaultAsync();
+            return bp;
+        }
+
+        public async Task<BusinessPartner> GetBusinessPartnerByUser(ApplicationUser user)
+        {
+            if (user.BusinessPartner == null)
+            {
+                return null;
+            }
+            var bp = await context.BusinessPartner.Where(bp => bp.Id == user.BusinessPartner.Id).FirstOrDefaultAsync();
             return bp;
         }
 
