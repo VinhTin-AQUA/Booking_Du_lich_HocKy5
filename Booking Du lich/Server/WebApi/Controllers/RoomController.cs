@@ -155,6 +155,19 @@ namespace WebApi.Controllers
             return Ok();
         }
 
+        [HttpDelete("delete-all-img-room")]
+        public async Task<IActionResult> DeleteAllImgRoom([FromQuery] int roomId)
+        {
+            var room = await roomRepository.GetRoomById(roomId);
+            if (room == null)
+            {
+                return Ok();
+            }
+
+            imageService.DeleteAllImages("hotels", room.Hotel.Id.ToString(), room.Id.ToString());
+            return Ok();
+        }
+
         [HttpDelete("delete-room")]
         public async Task<IActionResult> DeleteRoom([FromQuery] int? roomId)
         {
@@ -227,7 +240,7 @@ namespace WebApi.Controllers
         }
 
         [HttpPut("update-room")]
-        public async Task<IActionResult> UpdateRoom(List<IFormFile> files, [FromForm] EditRoomDTO model)
+        public async Task<IActionResult> UpdateRoom([FromForm] List<IFormFile> files, [FromForm] EditRoomDTO model)
         {
             if (model == null)
             {
@@ -245,6 +258,24 @@ namespace WebApi.Controllers
             roomExisted.Description = model.Description;
             roomExisted.IsAvailable = model.IsAvailable;
 
+            var roomType = await roomTypeRepository.GetRoomTypeById(model.RoomTypeId);
+
+            if(roomType != null)
+            {
+                roomExisted.RoomType = roomType;
+                roomExisted.RoomTypeId = roomType.RoomTypeId;
+            }
+
+            var price = await roomPriceRepository.GetRoomPriceById(model.Id);
+
+            if(price != null)
+            {
+                price.Price = model.Price;
+                price.ValidFrom = model.ValidFrom;
+                price.GoodThru = model.GoodThru;
+                await roomPriceRepository.UpdateRoomPrice(price);
+            }
+
             var resultUpdate = await roomRepository.UpdateRoom(roomExisted);
             if (resultUpdate == false)
             {
@@ -258,7 +289,6 @@ namespace WebApi.Controllers
                 urlImgFolder = await imageService.UploadImages(files, roomExisted.Hotel, roomExisted);
                 roomExisted.PhotoPath = urlImgFolder;
             }
-
             return Ok(new JsonResult(new { title = "Success", message = "Update room successfully" }));
         }
     }

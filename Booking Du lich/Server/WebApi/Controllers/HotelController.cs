@@ -131,7 +131,6 @@ namespace WebApi.Controllers
             return Ok(cities);
         }
 
-
         [HttpGet("hotels-not-approved")]
         public async Task<IActionResult> HotelNotApproved()
         {
@@ -211,13 +210,9 @@ namespace WebApi.Controllers
         }
 
         [HttpDelete("delete-all-img-hotel")]
-        public IActionResult DeleteAllImgHotel([FromQuery] string hotelId)
+        public IActionResult DeleteAllImgHotel([FromQuery] int hotelId)
         {
-            if (string.IsNullOrEmpty(hotelId))
-            {
-                return BadRequest();
-            }
-            imageService.DeleteAllImgHotel(hotelId);
+            imageService.DeleteAllImgHotel(hotelId.ToString());
             return Ok();
         }
 

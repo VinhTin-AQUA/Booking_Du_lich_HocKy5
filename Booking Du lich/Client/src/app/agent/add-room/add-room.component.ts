@@ -15,7 +15,7 @@ import { RoomType } from 'src/app/shared/models/room/roomType';
 @Component({
   selector: 'app-add-room',
   templateUrl: './add-room.component.html',
-  styleUrls: ['./add-room.component.scss']
+  styleUrls: ['./add-room.component.scss'],
 })
 export class AddRoomComponent {
   hotelID: number | null = null;
@@ -25,12 +25,12 @@ export class AddRoomComponent {
   imgFiles: ImgShow[] = []; // danh sách ảnh cũ
   @ViewChild('fileInput') fileInput!: ElementRef;
   envImgUrl = environment.imgUrl;
-  roomTypes: RoomType[]=[]
+  roomTypes: RoomType[] = [];
 
   roomGroup: FormGroup = new FormGroup([]);
   submitted: boolean = false;
   imgNames: string[] = [];
-  roomType: any;
+  //roomType: any;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -44,15 +44,21 @@ export class AddRoomComponent {
 
   ngOnInit() {
     this.roomGroup = this.formBuilder.group({
-      roomNumber: ['',[Validators.required]],
-      roomName: ['',[Validators.required]],
-      price: ['',[Validators.required, Validators.pattern('^[$]?[0-9]*(\.)?[0-9]?[0-9]?$')]],
+      roomNumber: ['', [Validators.required]],
+      roomName: ['', [Validators.required]],
+      price: [
+        '',
+        [
+          Validators.required,
+          Validators.pattern('^[$]?[0-9]*(.)?[0-9]?[0-9]?$'),
+        ],
+      ],
       validFrom: [new Date().toISOString().substring(0, 10)],
       goodThru: [new Date().toISOString().substring(0, 10)],
       isAvailable: [true],
-      description: ['',[Validators.required]],
-      roomTypeId: [1]
-    })
+      description: ['', [Validators.required]],
+      roomTypeId: [1],
+    });
 
     this.activatedRoute.params.subscribe({
       next: (params: any) => {
@@ -70,11 +76,10 @@ export class AddRoomComponent {
   }
 
   private getAllRoomRypes() {
-    this.agentService.getAllRoomType().subscribe((rt: any)=>{ 
+    this.agentService.getAllRoomType().subscribe((rt: any) => {
       this.roomTypes = rt.Value.RoomTypes;
-    })
+    });
   }
-
 
   onSelectImg(event: any) {
     for (let file of event.target.files) {
@@ -102,24 +107,9 @@ export class AddRoomComponent {
   }
 
   deleteAllImg() {
-              this.imgFiles = [];
-          this.listNewImgUrls = [];
-          this.newImgObjToAdd = [];
-    //if (this.hotelID !== null) {
-    //  this.agentService.deleteAllImgHotel(this.hotelID).subscribe({
-    //    next: (_) => {
-    //      this.sharedService.showToastMessage(
-    //        'success Delete all images successfully'
-    //      );
-    //      this.imgFiles = [];
-    //      this.listNewImgUrls = [];
-    //      this.newImgObjToAdd = [];
-    //    },
-    //    error: (_) => {
-    //      this.sharedService.showToastMessage('Please try again');
-    //    },
-    //  });
-    //}
+    this.imgFiles = [];
+    this.listNewImgUrls = [];
+    this.newImgObjToAdd = [];
   }
 
   removeImgUnSave(data: string) {
@@ -152,12 +142,11 @@ export class AddRoomComponent {
     });
   }
 
-  
   submit() {
     this.submitted = true;
 
     if (this.roomGroup.valid) {
-      if(this.hotelID !== null){
+      if (this.hotelID !== null) {
         this.sharedService.showLoading(true);
         let form = new FormData();
         form.append('RoomNumber', this.roomGroup.value.roomNumber);
@@ -170,18 +159,16 @@ export class AddRoomComponent {
         form.append('GoodThru', this.roomGroup.value.goodThru);
         form.append('Price', this.roomGroup.value.price);
         form.append('HotelId', this.hotelID.toString());
-  
+
         for (let file of this.newImgObjToAdd) {
           form.append('files', file);
         }
-  
+
         this.agentService.addRoom(form).subscribe({
           next: (res: any) => {
             this.sharedService.showLoading(false);
             this.sharedService.showToastMessage('success' + res.Value.message);
-            this.router.navigateByUrl(
-              `/agent/${this.hotelID}/manage-rooms`
-            );
+            this.router.navigateByUrl(`/agent/${this.hotelID}/manage-rooms`);
           },
           error: (err) => {
             this.sharedService.showLoading(false);
@@ -192,5 +179,4 @@ export class AddRoomComponent {
       }
     }
   }
-  
 }

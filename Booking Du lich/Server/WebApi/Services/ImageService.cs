@@ -347,7 +347,6 @@ namespace WebApi.Services
             return true;
         }
 
-
         public void DeleteImg(params string[] folder)
         {
             var filePath = GetPath(folder);
