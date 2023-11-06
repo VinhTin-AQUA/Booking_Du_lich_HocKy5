@@ -80,6 +80,10 @@ export class AgentService {
     return this.http.get(`${environment.appUrl}/room/get-room-by-id?roomId=${roomId}`)
   }
 
+  deleteAllImgRoom(roomId: number) {
+    return this.http.delete(`${environment.appUrl}/room/delete-all-img-room?roomId=${roomId}`)
+  }
+
   // service
   addNewService(serviceName: string) {
     return this.http.post(`${environment.appUrl}/service/add-service`, {

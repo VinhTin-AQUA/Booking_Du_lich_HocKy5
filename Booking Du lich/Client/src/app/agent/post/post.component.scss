@@ -17,7 +17,7 @@
 }
 
 .post-item {
-  @apply min-w-[200px] h-[100px] w-[220px] border-2 border-[#2563eb] p-2 rounded cursor-pointer duration-[50ms];
+  @apply min-w-[200px] h-auto w-[220px] border-2 border-[#2563eb] p-2 rounded cursor-pointer duration-[50ms];
 
   .remove-img-icon {
     @apply duration-75;

@@ -1,62 +1,125 @@
 <div
-  class="md:flex items-start justify-center py-12 2xl:px-20 md:px-6 px-4"
+  class="flex items-start justify-between py-5 px-1 min-h-screen"
   *ngIf="room !== null"
 >
+  <div class="w-1/2">
+    <div class="flex justify-start items-center gap-2">
+      <input
+        class="btn-primary"
+        type="file"
+        multiple
+        #fileInput
+        (change)="onSelectImg($event)"
+      />
+      <button class="btn-outline-danger" (click)="deleteAllImg()">
+        Xóa tất cả ảnh
+      </button>
+    </div>
 
-  <div class="list-img xl:w-2/6 lg:w-2/5 w-80 md:block hidden">
-    <div class="columns-1 gap-2">
-      <div
-        *ngFor="let url of imgFiles"
-        class="break-inside-avoid mb-2 rounded border p-2"
-      >
-        <img [src]="envImgUrl + url.data" alt="" />
+    <div class="list-img">
+      <div class="columns-1 md:columns-2 gap-2">
+        <div
+          *ngFor="let url of imgFiles"
+          class="break-inside-avoid mb-2 rounded border p-2"
+        >
+          <div class="">
+            <mat-icon (click)="removeImgSaved(url.data)" class="remove-img-icon"
+              >delete</mat-icon
+            >
+            <span class="block">{{ url.name }}</span>
+          </div>
+          <img [src]="envImgUrl + url.data" alt="" />
+        </div>
+
+        <div
+          *ngFor="let url of listNewImgUrls"
+          class="break-inside-avoid mb-2 rounded border p-2"
+        >
+          <div class="">
+            <mat-icon
+              (click)="removeImgUnSave(url.data)"
+              class="remove-img-icon"
+              >delete</mat-icon
+            >
+            <span class="block">{{ url.name }}</span>
+          </div>
+          <img [src]="url.data" alt="" />
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="xl:w-2/5 md:w-1/2 lg:ml-8 md:ml-6 md:mt-0 mt-6">
-    <div class="border-b border-gray-200 pb-6">
-      <h1 class="text-xl">Số phòng: {{ room.RoomNumber }}</h1>
-    </div>
+  <div class="w-1/2 ml-6 mt-0">
+    <form [formGroup]="updateForm" (ngSubmit)="submit()" autocomplete="off">
+      <div class="flex gap-2">
+        <div class="border-b border-gray-200 pb-6 form-group w-1/2">
+          <label class="text-sm">Số phòng:</label>
+          <input type="text" class="input-field" formControlName="roomNumber" />
+        </div>
 
-		<div class="border-b border-gray-200 pb-6">
-      <h3 class="text-xl">Tên phòng: {{ room.RoomName }}</h3>
-    </div>
+        <div class="border-b border-gray-200 pb-6 form-group w-1/2">
+          <label class="text-sm">Tên phòng:</label>
+          <input type="text" class="input-field" formControlName="name" />
+        </div>
+      </div>
 
-    <p
-      class="dark:bg-white dark:text-gray-900 outline-none text-base leading-none text-white bg-gray-800 w-full py-4"
-    >
-      {{room.Description}}
-    </p>
-    <div>
-      <p
-        class="xl:pr-48 text-base lg:leading-tight leading-normal text-gray-600 mt-7"
+      <div
+        class="border-b border-gray-200 pb-6 flex justify-start items-start gap-1"
       >
-        {{ room.Description }}
-      </p>
-      <p class="text-base leading-4 mt-7 text-gray-600">
-      	Giá phòng: <strong>{{ room.RoomPrice }}</strong>
-      </p>
+        <label class="text-sm">Mô tả:</label>
+        <!--<input type="text" class="input-field" formControlName="name">  -->
+        <textarea
+          class="input-field"
+          rows="5"
+          formControlName="description"
+        ></textarea>
+      </div>
 
-			<p class="text-base leading-4 mt-7 text-gray-600">
-      	Loại phòng: <strong>{{ room.RoomType.RoomTypeName }}</strong>
-      </p>
+      <div class="border-b border-gray-200 pb-6">
+        <div class="mb-2">
+          <label class="text-sm">Giá phòng:</label>
+          <input type="number" class="input-field" formControlName="price" />
+        </div>
 
-			<p class="text-base leading-4 mt-7 text-gray-600" *ngIf="room.IsAvailable === true">
-      	Loại phòng: <strong> Phòng còn trống </strong>
-      </p>
+        <div class="flex gap-2">
+          <div class="w-1/2">
+            <label class="text-sm">Ngày áp dụng:</label><br />
+            <input class="input-field mr-2" type="date" />
+          </div>
+          <div class="w-1/2">
+            <label class="text-sm">Ngày hết hạn:</label><br />
+            <input class="input-field" type="date" />
+          </div>
+        </div>
+      </div>
 
-			<p class="text-base leading-4 mt-7 text-gray-600" *ngIf="room.IsAvailable === false">
-      	Loại phòng: <strong> Phòng đã được đặt </strong>
-      </p>
+      <div class="border-b border-gray-200 pb-6 form-group">
+        <label class="text-sm">Giá phòng:</label>
+        <input type="number" class="input-field" formControlName="price" />
+      </div>
 
-    </div>
-    <div>
-      
-			<div>
-				<a class="btn-success" routerLink="/agent/{{room.Hotel.Id}}/manage-rooms">Quay lại</a>
-			</div>
+      <div class="border-b border-gray-200 pb-6 form-group">
+        <label class="text-sm">Còn trống:</label>
+        <input class="" type="checkbox" formControlName="isAvailable" />
+      </div>
 
-    </div>
+      <div class="border-b border-gray-200 pb-6 form-group">
+        <label class="text-sm">Loại phòng:</label>
+        <select formControlName="roomTypeId" class="input-field">
+          <option *ngFor="let type of roomTypes" [value]="type.RoomTypeId">{{type.RoomTypeName}}</option>
+        </select>
+      </div>
+
+      <div>
+        <div class="flex items-center justify-start gap-2">
+          <button class="btn-primary">Cập nhật</button>
+          <a
+            class="btn-success"
+            routerLink="/agent/{{ room.Hotel.Id }}/manage-rooms"
+            >Quay lại</a
+          >
+        </div>
+      </div>
+    </form>
   </div>
 </div>
