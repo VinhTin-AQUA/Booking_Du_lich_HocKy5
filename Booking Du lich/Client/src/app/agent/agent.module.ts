@@ -14,6 +14,7 @@ import { PostComponent } from './post/post.component';
 import { PostDetailComponent } from './post-detail/post-detail.component';
 import { AddRoomComponent } from './add-room/add-room.component';
 import { ManageRoomComponent } from './manage-room/manage-room.component';
+import { EditRoomComponent } from './edit-room/edit-room.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ManageRoomComponent } from './manage-room/manage-room.component';
     PostDetailComponent,
     AddRoomComponent,
     ManageRoomComponent,
+    EditRoomComponent,
   ],
   imports: [
     CommonModule,

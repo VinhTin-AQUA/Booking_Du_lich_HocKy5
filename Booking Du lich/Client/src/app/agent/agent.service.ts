@@ -76,6 +76,10 @@ export class AgentService {
     return this.http.delete(`${environment.appUrl}/room/delete-room?roomId=${roomId}`);
   }
 
+  getRoomById(roomId: number | null) {
+    return this.http.get(`${environment.appUrl}/room/get-room-by-id?roomId=${roomId}`)
+  }
+
   // service
   addNewService(serviceName: string) {
     return this.http.post(`${environment.appUrl}/service/add-service`, {

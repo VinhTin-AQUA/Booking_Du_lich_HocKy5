@@ -13,6 +13,7 @@ import { ManageAgentTourComponent } from './manage-agent-tour/manage-agent-tour.
 const routes: Routes = [
   {path: '', component: AdminComponent, 
     children: [
+      {path: '', redirectTo: 'user-managemen', pathMatch: 'full'},
       { path: 'user-management', component: UserMangementComponent, title: 'Quản lý người dùng' },
       { path: 'city-management', component: CityManangerComponent, title: 'Quản lý tỉnh thành phố' },
 

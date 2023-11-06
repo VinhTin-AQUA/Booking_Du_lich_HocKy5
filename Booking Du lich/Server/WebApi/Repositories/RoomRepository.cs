@@ -52,8 +52,9 @@ namespace WebApi.Repositories
             var room = await _context.Room
                 .Where(r => r.Id== Id)
                 .Include(r => r.Hotel)
+                .Include(r => r.RoomPrice)
+                .Include(r => r.RoomType)
                 .FirstOrDefaultAsync();
-
             return room;
         }
         public async Task<bool> RoomExisted(string numberRoom)

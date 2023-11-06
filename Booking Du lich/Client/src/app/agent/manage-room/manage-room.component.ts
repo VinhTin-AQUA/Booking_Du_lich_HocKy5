@@ -51,9 +51,9 @@ export class ManageRoomComponent {
   }
 
   resetRooms() {
-    const index = this.rooms.findIndex(r => r.Id === this.roomIdDelete)
-    if(index !== -1) {
-      this.rooms.splice(index,1)
+    const index = this.rooms.findIndex((r) => r.Id === this.roomIdDelete);
+    if (index !== -1) {
+      this.rooms.splice(index, 1);
     }
     this.roomIdDelete = null;
   }
@@ -62,12 +62,14 @@ export class ManageRoomComponent {
     this.agentService.deleteRoom(this.roomIdDelete).subscribe({
       next: (_) => {
         this.sharedService.showToastMessage('successXóa thành công');
-
+        this.resetRooms();
+        this.showDelete(null);
       },
       error: (err) => {
         console.log(err);
-        this.sharedService.showToastMessage('Có lỗi khi xóa. Hãy thử lại')
-      }
-    })
+        this.sharedService.showToastMessage('Có lỗi khi xóa. Hãy thử lại');
+        this.showDelete(null);
+      },
+    });
   }
 }

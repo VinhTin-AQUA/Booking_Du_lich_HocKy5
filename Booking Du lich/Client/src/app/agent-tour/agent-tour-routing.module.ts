@@ -10,6 +10,7 @@ const routes: Routes = [  {
   path: '',
   component: AgentTourComponent,
   children: [
+    {path: '', redirectTo: 'manage-tour', pathMatch: 'full'},
     { path: 'add-tour', component: AddTourComponent, title: 'Tour', },
     { path: 'manage-tour', component: ManageTourComponent, title: 'Quản lý tour', },
     { path: ':id/update-tour', component: UpdateTourComponent, title: 'Cập nhật tour', },

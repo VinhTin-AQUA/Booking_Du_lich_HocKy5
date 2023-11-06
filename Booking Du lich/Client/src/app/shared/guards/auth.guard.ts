@@ -23,7 +23,7 @@ export const authGuard: CanActivateFn = (route, state) => {
 
   if (roleSys === undefined && roleAccount !== Roles.USER) {
     if (roleAccount === Roles.ADMIN) {
-      return router.navigateByUrl('/admin/user-management');
+      return router.navigateByUrl('/admin');
     }
 
     if (roleAccount === Roles.EMPLOYEE) {
@@ -31,11 +31,11 @@ export const authGuard: CanActivateFn = (route, state) => {
     }
 
     if (roleAccount === Roles.AGENTHOTEL) {
-      return router.navigateByUrl('/agent/post');
+      return router.navigateByUrl('/agent');
     }
 
     if (roleAccount === Roles.AGENTTOUR) {
-      return router.navigateByUrl('/agent-tour/manage-tour');
+      return router.navigateByUrl('/agent-tour');
     }
   }
 
