@@ -21,6 +21,7 @@ namespace WebApi.Controllers
             this.context = context;
             this.partnerRepository = partnerRepository;
         }
+
         [HttpPost("add-businesspartner")]
         public async Task<IActionResult> AddBusinessPartner(AddBusinessPartner addBusinessPartner)
         {
@@ -30,7 +31,6 @@ namespace WebApi.Controllers
                 Address = addBusinessPartner.Address,
                 Email = addBusinessPartner.Email,
                 PhoneNumber = addBusinessPartner.PhoneNumber,
-
             };
            
             var r = await partnerRepository.AddBusinessPartner(businessPartner);
@@ -65,6 +65,7 @@ namespace WebApi.Controllers
             
            
         }
+
         [HttpPut("update-businesspartner")]
         public async Task<IActionResult> UpdateBusinessPartner(AddBusinessPartner addBusinessPartner, [FromQuery] int id)
         {
@@ -90,6 +91,7 @@ namespace WebApi.Controllers
             }
             return BadRequest();          
         }
+
         [HttpGet("get-businesspartness-by-id")]
         public async Task<IActionResult> GetBusinessPartnerById([FromQuery] int id)
         {
@@ -103,11 +105,12 @@ namespace WebApi.Controllers
            
 
         }
+
         [HttpGet("get-all-businesspartner")]
         public async Task<IActionResult> GetAllBusinessPartner()
         {
             var bp = await partnerRepository.GetAllGetAllBusinessPartner();
-            return Ok();
+            return Ok(bp);
         }
     }
 }

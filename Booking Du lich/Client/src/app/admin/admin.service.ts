@@ -6,6 +6,7 @@ import { AddHotel } from '../shared/models/hotel/addHotel';
 import { Agent } from '../shared/models/hotel/addAgent';
 import { AddTourType } from '../shared/models/tour/addTourType';
 import { UpdateTourType } from '../shared/models/tour/updateTourType';
+import { AddBusinessPartner } from '../shared/models/business-partner/addBusinessPartner';
 
 @Injectable({
   providedIn: 'root',
@@ -42,7 +43,7 @@ export class AdminService {
     );
   }
 
-  getUserById(userId: string |undefined) {
+  getUserById(userId: string | undefined) {
     return this.http.get(
       `${environment.appUrl}/usermanager/get-user-by-id?userId=${userId}`
     );
@@ -71,14 +72,13 @@ export class AdminService {
   // tour type
   addTourType(addTourType: AddTourType) {
     return this.http.post(
-      `${environment.appUrl}/TourType/add-tourtype`,addTourType
+      `${environment.appUrl}/TourType/add-tourtype`,
+      addTourType
     );
   }
 
   getAllTours() {
-    return this.http.get(
-      `${environment.appUrl}/TourType/get-all-tourtypes`
-    );
+    return this.http.get(`${environment.appUrl}/TourType/get-all-tourtypes`);
   }
 
   deleteTourType(tourTypeId: number) {
@@ -89,7 +89,28 @@ export class AdminService {
 
   updateTourType(tourType: UpdateTourType) {
     return this.http.put(
-      `${environment.appUrl}/TourType/update-tourtype`,tourType
+      `${environment.appUrl}/TourType/update-tourtype`,
+      tourType
+    );
+  }
+
+  // business partner
+  addBusinesspartner(model: AddBusinessPartner) {
+    return this.http.post(
+      `${environment.appUrl}/businesspartner/add-businesspartner`,
+      model
+    );
+  }
+
+  getAllBusinessPartners() {
+    return this.http.get(
+      `${environment.appUrl}/businesspartner/get-all-businesspartner`
+    );
+  }
+
+  deleteBusPart(id: number) {
+    return this.http.delete(
+      `${environment.appUrl}/businesspartner/delete-businesspartner?id=${id}`
     );
   }
 }

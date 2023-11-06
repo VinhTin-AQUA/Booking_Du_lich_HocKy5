@@ -1,6 +1,10 @@
 <div class="wrapper">
   <div class="form">
-    <form [formGroup]="addPartnerForm" (ngSubmit)="addSubmit()" autocomplete="off">
+    <form
+      [formGroup]="addPartnerForm"
+      (ngSubmit)="addSubmit()"
+      autocomplete="off"
+    >
       <div class="title font-bold text-[1.7em] mb-9">
         <span>Thông tin khách sạn đối tác</span>
       </div>
@@ -15,6 +19,14 @@
           spellcheck="false"
           placeholder="Tên khách sạn đối tác"
         />
+        <span
+          class="text-red-500"
+          *ngIf="
+            submitted === true && addPartnerForm.hasError('required', 'partnerName')
+          "
+        >
+          Tên không được bỏ trống
+        </span>
       </div>
 
       <!-- address -->
@@ -27,6 +39,14 @@
           spellcheck="false"
           placeholder="Địa chỉ"
         />
+        <span
+          class="text-red-500"
+          *ngIf="
+            submitted === true && addPartnerForm.hasError('required', 'address')
+          "
+        >
+          Địa chỉ không được bỏ trống
+        </span>
       </div>
 
       <!-- email -->
@@ -39,20 +59,51 @@
           spellcheck="false"
           placeholder="Email"
         />
+        <span
+          class="text-red-500"
+          *ngIf="
+            submitted === true && addPartnerForm.hasError('required', 'email')
+          "
+        >
+          Email không được bỏ trống
+        </span>
+        <span
+          class="text-red-500"
+          *ngIf="
+            submitted === true && addPartnerForm.hasError('email', 'email')
+          "
+        >
+          Email không hợp lệ
+        </span>
       </div>
 
-
-			<!-- phone -->
-			<div class="mb-3">
-				<label class="block mb-2">Số điện thoại</label>
-				<input
-					[class]="inputValidation('phoneNumber')"
-					type="text"
-					formControlName="phoneNumber"
-					spellcheck="false"
-					placeholder="Số điện thoại"
-				/>
-			</div>
+      <!-- phone -->
+      <div class="mb-3">
+        <label class="block mb-2">Số điện thoại</label>
+        <input
+          [class]="inputValidation('phoneNumber')"
+          type="text"
+          formControlName="phoneNumber"
+          spellcheck="false"
+          placeholder="Số điện thoại"
+        />
+        <span
+          class="text-red-500"
+          *ngIf="
+            submitted === true && addPartnerForm.hasError('required', 'phoneNumber')
+          "
+        >
+          Số điện không được bỏ trống
+        </span>
+        <span
+          class="text-red-500"
+          *ngIf="
+            submitted === true && addPartnerForm.hasError('pattern', 'phoneNumber')
+          "
+        >
+          Số điện không hợp lệ
+        </span>
+      </div>
 
       <div>
         <button class="btn-primary w-full mb-2">Thêm</button>
