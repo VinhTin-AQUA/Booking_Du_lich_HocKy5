@@ -86,6 +86,8 @@ export class DetailComponent {
       next: (res: any) => {
         this.rooms = res.Value.Rooms
         this.fileNames = res.Value.fileNames;
+        console.log(this.fileNames);
+        
       },
       error: (err) => {
         console.log(err);

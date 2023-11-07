@@ -95,10 +95,6 @@ namespace WebApi.Controllers
         [HttpDelete("delete-has-service")]
         public async Task<IActionResult> DeleteHasService([FromQuery] int hotelID, [FromQuery] int serviceId)
         {
-            if (hotelID == null || serviceId ==null)
-            {
-                return BadRequest(new JsonResult(new { title = "Error", message = "Missing parameter" }));
-            }
             var hasService = await hasServiceRepository.GetHasServiceByID(hotelID, serviceId);
 
             if (hasService == null)

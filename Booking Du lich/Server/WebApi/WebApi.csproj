@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Bogus" Version="34.0.2" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.22" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.22" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.23" />
@@ -35,8 +36,26 @@
   <ItemGroup>
     <Folder Include="Migrations\" />
     <Folder Include="wwwroot\images\cities\" />
-    <Folder Include="wwwroot\images\hotels\" />
-    <Folder Include="wwwroot\images\tours\" />
+    <Folder Include="wwwroot\images\hotels\10\6\" />
+    <Folder Include="wwwroot\images\hotels\7\1\" />
+    <Folder Include="wwwroot\images\hotels\7\2\" />
+    <Folder Include="wwwroot\images\hotels\7\3\" />
+    <Folder Include="wwwroot\images\hotels\7\4\" />
+    <Folder Include="wwwroot\images\hotels\7\5\" />
+    <Folder Include="wwwroot\images\hotels\7\6\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\images\tours\7\Charming-Danang-Show-Ticket-in-Da-Nang-Vietnam-0d8e2c3d-dd4d-4d0f-8f1a-a94036f33401.webp" />
+    <None Include="wwwroot\images\tours\7\Charming-Danang-Show-Ticket-in-Da-Nang-Vietnam-42f39f70-da7c-42e1-904a-7abc545d67c3.webp" />
+    <None Include="wwwroot\images\tours\7\Charming-Danang-Show-Ticket-in-Da-Nang-Vietnam-8942c8bd-5411-4097-8a72-45c72ff7e154.webp" />
+    <None Include="wwwroot\images\tours\7\Charming-Danang-Show-Ticket-in-Da-Nang-Vietnam-8c224799-cd10-4ee2-b552-c53cb67a778f.webp" />
+    <None Include="wwwroot\images\tours\7\Charming-Danang-Show-Ticket-in-Da-Nang-Vietnam-9b1b62d0-a1a6-4092-975b-2e007acfba15.webp" />
+    <None Include="wwwroot\images\tours\7\Charming-Danang-Show-Ticket-in-Da-Nang-Vietnam-cc774fa6-3432-4b74-a935-9a62e436a1ae.webp" />
+    <None Include="wwwroot\images\tours\7\Charming-Danang-Show-Ticket-in-Da-Nang-Vietnam-d895e976-f366-4509-8d9c-2ba38783cfe7.webp" />
+    <None Include="wwwroot\images\tours\7\Charming-Danang-Show-Ticket-in-Da-Nang-Vietnam-f3a31746-e135-4f7c-91b3-ffe785f969d1.webp" />
+    <None Include="wwwroot\images\tours\7\Charming-Danang-Show-Ticket-in-Da-Nang-Vietnam-fae44e19-e7f3-42eb-998e-e6c7b972d491.webp" />
+    <None Include="wwwroot\images\tours\7\Charming-Danang-Show-Ticket-in-Da-Nang-Vietnam-ff8e69fe-ccbe-4ea7-829a-db981d9bab7d.webp" />
   </ItemGroup>
 
 </Project>

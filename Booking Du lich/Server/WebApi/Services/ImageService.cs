@@ -55,11 +55,10 @@ namespace WebApi.Services
                 result = await SaveFile(file, folder);
                 return result;
             }
-            catch (Exception ex)
+            catch
             {
-
+                return false;
             }
-            return result;
         }
 
         public void DeleteCityImage(string fileName)

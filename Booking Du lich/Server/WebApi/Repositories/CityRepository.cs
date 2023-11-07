@@ -2,7 +2,7 @@
 using Microsoft.VisualBasic;
 using WebApi.Interfaces;
 using WebApi.Models;
-using WebApi1.Data;
+using WebApi.Data;
 
 namespace WebApi.Repositories
 {
@@ -31,7 +31,7 @@ namespace WebApi.Repositories
             return await Save();
         }
 
-        public async Task<City> GetCityById(int id)
+        public async Task<City> GetCityById(int? id)
         {
             var city = await context.City.Where(c => c.Id == id).FirstOrDefaultAsync();
             return city;

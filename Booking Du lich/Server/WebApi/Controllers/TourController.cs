@@ -5,8 +5,8 @@ using WebApi.Interfaces;
 using WebApi.Models;
 using WebApi.Repositories;
 using WebApi.Services;
-using WebApi1.Models;
-using WebApi1.Repositories;
+using WebApi.Models;
+using WebApi.Repositories;
 
 namespace WebApi.Controllers
 {

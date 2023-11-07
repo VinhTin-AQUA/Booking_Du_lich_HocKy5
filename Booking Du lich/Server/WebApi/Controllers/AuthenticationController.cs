@@ -3,22 +3,22 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
-using WebApi1.Models;
+using WebApi.Models;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using System;
 using WebApi.DTOs;
-using Microsoft.AspNetCore.WebUtilities;
+
 using WebApi.DTOs.Authentication;
 using WebApi.Interfaces;
-using WebApi.Models;
+
 using WebApi.Models.MailService;
-using WebApi.Services;
+
 using Microsoft.AspNetCore.Authorization;
-using System.ComponentModel.DataAnnotations;
+
 using WebApi.DTOs.UserManager;
 
-namespace WebApi1.Controllers
+namespace WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

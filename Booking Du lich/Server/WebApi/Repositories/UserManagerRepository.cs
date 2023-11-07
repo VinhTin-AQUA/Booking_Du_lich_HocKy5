@@ -21,7 +21,7 @@ namespace WebApi.Repositories
             return totalUser;
         }
 
-        public async Task<IEnumerable<ApplicationUser>> GetUsers(int currentPage, int pageSize, string? searchString)
+        public async Task<IEnumerable<ApplicationUser>> GetUsers(int currentPage, int pageSize, string searchString)
         {
             if (string.IsNullOrEmpty(searchString))
             {

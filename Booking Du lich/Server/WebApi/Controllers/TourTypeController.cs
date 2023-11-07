@@ -73,11 +73,6 @@ namespace WebApi.Controllers
         [HttpGet("get-tourtype-by-id")]
         public async Task<IActionResult> GetTourTypeById([FromQuery] int id)
         {
-            if (id == null)
-            {
-                return BadRequest();
-            }
-
             var type = await _tourTypeRepository.GetTourTypeById(id);
             if (type == null)
             {

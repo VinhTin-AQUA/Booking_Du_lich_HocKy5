@@ -208,7 +208,7 @@ export class UpdateTourComponent {
 
       this.agentTourService.updateTour(form).subscribe({
         next: (res) => {
-          this.sharedService.showToastMessage('successThêm tour thành công');
+          this.sharedService.showToastMessage('successCập nhật tour thành công');
         },
         error: (err) => {
           console.log(err);

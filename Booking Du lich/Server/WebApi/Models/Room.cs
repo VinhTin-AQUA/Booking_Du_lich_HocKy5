@@ -6,7 +6,7 @@ namespace WebApi.Models
     [Table("Room")]
     public class Room
     {
-        [Key]
+        [Key] 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
@@ -39,7 +39,9 @@ namespace WebApi.Models
         public RoomType RoomType { get; set; }
 
         public RoomPrice RoomPrice { get; set; }
+
         public int? RoomId { get; set; }
+
         public DateTime? ValidFrom { get; set; }
 
         public BookRoom BookRoom { get; set; }
