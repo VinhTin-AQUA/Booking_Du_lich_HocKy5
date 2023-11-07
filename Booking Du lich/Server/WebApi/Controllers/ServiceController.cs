@@ -29,7 +29,7 @@ namespace WebApi.Controllers
 
             if (await _serviceRepository.ServiceExisted(model.ServiceName) == true)
             {
-                return BadRequest(new JsonResult(new { title = "Error", message = "Service name has been already existed" }));
+                return BadRequest(new JsonResult(new { title = "Error", message = "Dịch vụ này đã tồn tại" }));
             }
 
             if (ModelState.IsValid == false)

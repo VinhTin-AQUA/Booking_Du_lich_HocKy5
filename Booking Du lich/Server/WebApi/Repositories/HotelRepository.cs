@@ -36,10 +36,30 @@ namespace WebApi.Repositories
             return hotels;
         }
 
+        public async Task<ICollection<Hotel>> HotelNotApproved()
+        {
+            var hotels = await context.Hotel
+                .Where(h => h.Approver == null)
+                .Include(h => h.Poster)
+                .ToListAsync();
+            return hotels;
+        }
+
+        public async Task<ICollection<Hotel>> HotelApproved()
+        {
+            var hotels = await context.Hotel
+                .Where(h => h.Approver != null)
+                .Include(h => h.Poster)
+                .Include(h => h.Approver)
+                .ToListAsync();
+            return hotels;
+        }
+
         public async Task<Hotel> GetHotelById(int? id)
         {
             var hotel = await context.Hotel
                 .Where(h => h.Id == id)
+                .Include(h => h.Poster)
                 .SingleOrDefaultAsync();
             return hotel;
         }
@@ -77,6 +97,20 @@ namespace WebApi.Repositories
             return await Save();
         }
 
-        
-    }
+        public async Task<ICollection<Hotel>> GetHotelsInCity(int cityId)
+        {
+            var hotels = await context.Hotel
+                .Where(h => h.CityId == cityId)
+                .ToListAsync();
+            return hotels;
+        }
+
+        public async Task<ICollection<ApplicationUser>> GetAgentHotels(int partnerId)
+        {
+            var users = await userManager.Users.Where(u => u.PartnerId == partnerId)
+                .ToListAsync();
+
+            return users;
+        }
+    } 
 }

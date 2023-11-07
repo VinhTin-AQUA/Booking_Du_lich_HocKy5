@@ -28,8 +28,8 @@ export class PostDetailComponent {
   hotelGroup: FormGroup = new FormGroup([]);
   submitted: boolean = false;
   cityId: number = 1;
-  cityCode: string = 'HN-(29->33,40)';
   imgNames: string[] = [];
+  postingDate: Date | null = null;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -88,9 +88,9 @@ export class PostDetailComponent {
           this.hotelGroup.controls['description'].setValue(
             res.hotel.Description
           );
-          this.cityCode = res.hotel.CityCode;
           this.cityId = res.hotel.CityId;
           this.imgNames = res.imgNames;
+          this.postingDate = res.hotel.PostingDate;
 
           for (let img of res.imgNames) {
             const arr = img.split('\\');
@@ -117,7 +117,6 @@ export class PostDetailComponent {
   onSelectCityChange(event: any) {
     const selectedOption = event.selectedOptions[0];
     this.cityId = selectedOption.value;
-    this.cityCode = selectedOption.dataset.citycode;
   }
 
   onSelectImg(event: any) {
@@ -166,7 +165,13 @@ export class PostDetailComponent {
   removeImgUnSave(data: string) {
     const index = this.listNewImgUrls.findIndex((url) => url.data === data);
     if (index !== -1) {
+
+      const fileName = this.listNewImgUrls[index].name;
+      const _index = this.newImgObjToAdd.findIndex(
+        (u: any) => u.name === fileName
+      );
       this.listNewImgUrls.splice(index, 1);
+      this.newImgObjToAdd.splice(_index, 1);
     }
   }
 
@@ -205,7 +210,6 @@ export class PostDetailComponent {
       form.append('Address', this.hotelGroup.value.address);
       form.append('Description', this.hotelGroup.value.description);
       form.append('CityId', this.cityId.toString());
-      form.append('CityCode', this.cityCode);
       form.append('PosterID', this.userId);
 
       for (let file of this.newImgObjToAdd) {
@@ -216,7 +220,9 @@ export class PostDetailComponent {
         next: (res: any) => {
           this.sharedService.showLoading(false);
           this.sharedService.showToastMessage('success' + res.Value.message);
-          this.router.navigateByUrl('/agent/post-detail/' + res.Value.newHotel.Id );
+          this.router.navigateByUrl(
+            '/agent/post-detail/' + res.Value.newHotel.Id
+          );
         },
         error: (err) => {
           this.sharedService.showLoading(false);
@@ -233,10 +239,10 @@ export class PostDetailComponent {
       form.append('HotelName', this.hotelGroup.value.hotelName);
       form.append('Address', this.hotelGroup.value.address);
       form.append('Description', this.hotelGroup.value.description);
+      form.append('PosterID', this.userId);
       form.append('CityId', this.cityId.toString());
-      form.append('CityCode', this.cityCode);
       form.append('Id', this.hotelGroup.value.id);
-
+      
       for (let file of this.newImgObjToAdd) {
         form.append('files', file);
       }

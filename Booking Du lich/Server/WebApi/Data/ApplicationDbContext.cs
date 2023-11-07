@@ -31,7 +31,7 @@ namespace WebApi1.Data
             /* xử lý tham chiếu khóa chính, khóa ngoại */
 
             modelBuilder.Entity<City>()
-                .HasKey(c => new { c.Id, c.CityCode })
+                .HasKey(c => new { c.Id })
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity<Hotel>()
@@ -40,7 +40,7 @@ namespace WebApi1.Data
             modelBuilder.Entity<City>()
                 .HasMany(c => c.Hotels)
                 .WithOne(h => h.City)
-                .HasForeignKey(h => new { h.CityId, h.CityCode });
+                .HasForeignKey(h => new { h.CityId });
 
             modelBuilder.Entity<Hotel>()
                 .HasMany(h => h.Rooms)
@@ -55,6 +55,7 @@ namespace WebApi1.Data
                 .HasOne(h => h.Approver)
                 .WithMany(p => p.ApprovalHotels)
                 .HasForeignKey(p => p.ApproverID);
+
             modelBuilder.Entity<Room>()
                 .HasKey(r => r.Id).HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -76,6 +77,7 @@ namespace WebApi1.Data
                 .HasOne(r => r.RoomPrice)
                 .WithOne(rp => rp.Room)
                 .HasForeignKey<RoomPrice>(rp => rp.RoomId);
+
             modelBuilder.Entity<BookRoom>()
                 .HasKey(br => new { br.RoomID, br.UserID, br.CheckInDate }).HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
             modelBuilder.Entity<Room>()
@@ -107,7 +109,7 @@ namespace WebApi1.Data
             modelBuilder.Entity<City>()
                 .HasMany(c => c.Tours)
                 .WithOne(t => t.City)
-                .HasForeignKey(t => new { t.CityId, t.CityCode });
+                .HasForeignKey(t => new { t.CityId });
             modelBuilder.Entity<TourType>()
                 .HasMany(c => c.Tours)
                 .WithOne(t => t.TourType)

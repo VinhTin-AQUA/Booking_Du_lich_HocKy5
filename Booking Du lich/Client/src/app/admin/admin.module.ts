@@ -15,6 +15,7 @@ import { ManageTourTypeComponent } from './manage-tour-type/manage-tour-type.com
 import { BussinessPartnerComponent } from './bussiness-partner/bussiness-partner.component';
 import { AddBussinessPartComponent } from './add-bussiness-part/add-bussiness-part.component';
 import { ManageAgentTourComponent } from './manage-agent-tour/manage-agent-tour.component';
+import { ManageAgentHotelComponent } from './manage-agent-hotel/manage-agent-hotel.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { ManageAgentTourComponent } from './manage-agent-tour/manage-agent-tour.
     BussinessPartnerComponent,
     AddBussinessPartComponent,
     ManageAgentTourComponent,
+    ManageAgentHotelComponent,
   ],
   imports: [
     CommonModule,

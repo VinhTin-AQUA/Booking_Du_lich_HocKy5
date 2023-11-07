@@ -1,0 +1,125 @@
+<div
+  class="flex items-start justify-between py-5 px-1 min-h-screen"
+  *ngIf="room !== null"
+>
+  <div class="w-1/2">
+    <div class="flex justify-start items-center gap-2">
+      <input
+        class="btn-primary"
+        type="file"
+        multiple
+        #fileInput
+        (change)="onSelectImg($event)"
+      />
+      <button class="btn-outline-danger" (click)="deleteAllImg()">
+        Xóa tất cả ảnh
+      </button>
+    </div>
+
+    <div class="list-img">
+      <div class="columns-1 md:columns-2 gap-2">
+        <div
+          *ngFor="let url of imgFiles"
+          class="break-inside-avoid mb-2 rounded border p-2"
+        >
+          <div class="">
+            <mat-icon (click)="removeImgSaved(url.data)" class="remove-img-icon"
+              >delete</mat-icon
+            >
+            <span class="block">{{ url.name }}</span>
+          </div>
+          <img [src]="envImgUrl + url.data" alt="" />
+        </div>
+
+        <div
+          *ngFor="let url of listNewImgUrls"
+          class="break-inside-avoid mb-2 rounded border p-2"
+        >
+          <div class="">
+            <mat-icon
+              (click)="removeImgUnSave(url.data)"
+              class="remove-img-icon"
+              >delete</mat-icon
+            >
+            <span class="block">{{ url.name }}</span>
+          </div>
+          <img [src]="url.data" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="w-1/2 ml-6 mt-0">
+    <form [formGroup]="updateForm" (ngSubmit)="submit()" autocomplete="off">
+      <div class="flex gap-2">
+        <div class="border-b border-gray-200 pb-6 form-group w-1/2">
+          <label class="text-sm">Số phòng:</label>
+          <input type="text" class="input-field" formControlName="roomNumber" />
+        </div>
+
+        <div class="border-b border-gray-200 pb-6 form-group w-1/2">
+          <label class="text-sm">Tên phòng:</label>
+          <input type="text" class="input-field" formControlName="name" />
+        </div>
+      </div>
+
+      <div
+        class="border-b border-gray-200 pb-6 flex justify-start items-start gap-1"
+      >
+        <label class="text-sm">Mô tả:</label>
+        <!--<input type="text" class="input-field" formControlName="name">  -->
+        <textarea
+          class="input-field"
+          rows="5"
+          formControlName="description"
+        ></textarea>
+      </div>
+
+      <div class="border-b border-gray-200 pb-6">
+        <div class="mb-2">
+          <label class="text-sm">Giá phòng:</label>
+          <input type="number" class="input-field" formControlName="price" />
+        </div>
+
+        <div class="flex gap-2">
+          <div class="w-1/2">
+            <label class="text-sm">Ngày áp dụng:</label><br />
+            <input class="input-field mr-2" type="date" />
+          </div>
+          <div class="w-1/2">
+            <label class="text-sm">Ngày hết hạn:</label><br />
+            <input class="input-field" type="date" />
+          </div>
+        </div>
+      </div>
+
+      <div class="border-b border-gray-200 pb-6 form-group">
+        <label class="text-sm">Giá phòng:</label>
+        <input type="number" class="input-field" formControlName="price" />
+      </div>
+
+      <div class="border-b border-gray-200 pb-6 form-group">
+        <label class="text-sm">Còn trống:</label>
+        <input class="" type="checkbox" formControlName="isAvailable" />
+      </div>
+
+      <div class="border-b border-gray-200 pb-6 form-group">
+        <label class="text-sm">Loại phòng:</label>
+        <select formControlName="roomTypeId" class="input-field">
+          <option *ngFor="let type of roomTypes" [value]="type.RoomTypeId">{{type.RoomTypeName}}</option>
+        </select>
+      </div>
+
+      <div>
+        <div class="flex items-center justify-start gap-2">
+          <button class="btn-primary">Cập nhật</button>
+          <a
+            class="btn-success"
+            routerLink="/agent/{{ room.Hotel.Id }}/manage-rooms"
+            >Quay lại</a
+          >
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

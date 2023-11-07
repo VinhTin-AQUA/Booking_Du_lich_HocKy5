@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, Query } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AccountService } from 'src/app/account/account.service';
 import { SharedService } from 'src/app/shared/shared.service';
+import { AdminService } from '../admin.service';
+import { AddAgent } from 'src/app/shared/models/business-partner/addAgent';
 
 @Component({
   selector: 'app-add-account',
@@ -13,19 +15,20 @@ export class AddAccountComponent {
   signUpForm: FormGroup = new FormGroup({});
   submitted: boolean = false;
   formSuccess: boolean = true;
+  busPartId: number | null = null;
 
   constructor(
     private formBuilder: FormBuilder,
-    private accountService: AccountService,
-    private router: Router,
-    private sharedService: SharedService
+    private sharedService: SharedService,
+    private activatedRoute: ActivatedRoute,
+    private adminService: AdminService
   ) {}
 
   ngOnInit(): void {
     this.signUpForm = this.formBuilder.group({
       firstName: ['', [Validators.required]],
       lastName: ['', [Validators.required]],
-      agentType: ['Agent Hotel', [Validators.required]],
+      agentType: ['1', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
       address: ['', [Validators.required]],
       phoneNumber: [
@@ -45,6 +48,20 @@ export class AddAccountComponent {
           Validators.maxLength(18),
         ],
       ],
+    });
+
+    this.getParams();
+  }
+
+  private getParams() {
+    this.activatedRoute.params.subscribe({
+      next: (params: any) => {
+        if (params['id'] === undefined) {
+          this.signUpForm.controls['agentType'].setValue('2');
+        } else {
+          this.busPartId = params['id'];
+        }
+      },
     });
   }
 
@@ -68,14 +85,72 @@ export class AddAccountComponent {
 
   submit() {
     this.submitted = true;
-
     this.formSuccess = true;
 
     if (this.signUpForm.invalid) {
       this.formSuccess = false;
-    } else {
-      console.log(this.signUpForm.value);
-      
+      return;
     }
+
+    if (this.busPartId !== null) {
+      this.addAgentHotel();
+    } else {
+      this.addAgentTour();
+    }
+  }
+
+  private addAgentHotel() {
+    if (this.busPartId !== null) {
+      const agent: AddAgent = {
+        FirstName: this.signUpForm.value.firstName,
+        LastName: this.signUpForm.value.lastName,
+        PhoneNumber: this.signUpForm.value.phoneNumber,
+        Email: this.signUpForm.value.email,
+        Address: this.signUpForm.value.address,
+        Password: this.signUpForm.value.password,
+        BusPartId: this.busPartId,
+      };
+
+      this.sharedService.showLoading(true);
+      this.adminService.addAgentHotel(agent).subscribe({
+        next: (_) => {
+          this.sharedService.showToastMessage(
+            'successThêm tài khoản đối tác thành công'
+          );
+          this.sharedService.showLoading(false);
+        },
+        error: (err) => {
+          console.log(err);
+          this.sharedService.showToastMessage('Có lỗi vui lòng thử lại');
+          this.sharedService.showLoading(false);
+        },
+      });
+    }
+  }
+
+  private addAgentTour() {
+    const agent: AddAgent = {
+      FirstName: this.signUpForm.value.firstName,
+      LastName: this.signUpForm.value.lastName,
+      PhoneNumber: this.signUpForm.value.phoneNumber,
+      Email: this.signUpForm.value.email,
+      Address: this.signUpForm.value.address,
+      Password: this.signUpForm.value.password,
+      BusPartId: 0,
+    };
+    this.sharedService.showLoading(true);
+    this.adminService.addAgentTour(agent).subscribe({
+      next: (_) => {
+        this.sharedService.showToastMessage(
+          'successThêm tài khoản đối tác thành công'
+        );
+        this.sharedService.showLoading(false);
+      },
+      error: (err) => {
+        console.log(err);
+        this.sharedService.showToastMessage('Có lỗi vui lòng thử lại');
+        this.sharedService.showLoading(false);
+      },
+    });
   }
 }

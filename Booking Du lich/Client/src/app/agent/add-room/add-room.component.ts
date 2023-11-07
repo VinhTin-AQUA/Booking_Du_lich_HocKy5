@@ -10,28 +10,27 @@ import { AdminService } from 'src/app/admin/admin.service';
 import { ImgShow } from 'src/app/shared/models/image/imgShow';
 import { environment } from 'src/environments/environment.development';
 import { City } from 'src/app/shared/models/city/city';
+import { RoomType } from 'src/app/shared/models/room/roomType';
 
 @Component({
   selector: 'app-add-room',
   templateUrl: './add-room.component.html',
-  styleUrls: ['./add-room.component.scss']
+  styleUrls: ['./add-room.component.scss'],
 })
 export class AddRoomComponent {
   hotelID: number | null = null;
-  userId: string = '';
 
   listNewImgUrls: ImgShow[] = []; // danh sách ảnh mới để hiển thị trên view
   newImgObjToAdd: any = []; // danh sách các đối tượng file gửi lên server
   imgFiles: ImgShow[] = []; // danh sách ảnh cũ
   @ViewChild('fileInput') fileInput!: ElementRef;
   envImgUrl = environment.imgUrl;
+  roomTypes: RoomType[] = [];
 
-  allCities: City[] = [];
-  hotelGroup: FormGroup = new FormGroup([]);
+  roomGroup: FormGroup = new FormGroup([]);
   submitted: boolean = false;
-  cityId: number = 1;
-  cityCode: string = 'HN-(29->33,40)';
   imgNames: string[] = [];
+  //roomType: any;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -44,11 +43,21 @@ export class AddRoomComponent {
   ) {}
 
   ngOnInit() {
-    this.hotelGroup = this.formBuilder.group({
-      id: [''],
-      hotelName: ['', [Validators.required]],
-      address: ['', [Validators.required]],
+    this.roomGroup = this.formBuilder.group({
+      roomNumber: ['', [Validators.required]],
+      roomName: ['', [Validators.required]],
+      price: [
+        '',
+        [
+          Validators.required,
+          Validators.pattern('^[$]?[0-9]*(.)?[0-9]?[0-9]?$'),
+        ],
+      ],
+      validFrom: [new Date().toISOString().substring(0, 10)],
+      goodThru: [new Date().toISOString().substring(0, 10)],
+      isAvailable: [true],
       description: ['', [Validators.required]],
+      roomTypeId: [1],
     });
 
     this.activatedRoute.params.subscribe({
@@ -56,70 +65,20 @@ export class AddRoomComponent {
         if (params['id'] !== undefined) {
           this.hotelID = params['id'];
         }
-        this.resetHotelForm();
       },
     });
 
-    this.adminService.getAllCities().subscribe({
-      next: (res: any) => {
-        this.allCities = res;
-      },
-      error: (err) => {
-        console.log(err);
-      },
-    });
-
-    this.getUserId();
-  }
-
-  private getUserId() {
-    this.accountService.user$.subscribe((u) => {
-      if (u !== null) {
-        this.userId = u.Id;
-      }
-    });
-  }
-
-  private resetHotelForm() {
-    if (this.hotelID !== null) {
-      this.agentService.getHotelById(this.hotelID).subscribe({
-        next: (res: any) => {
-          this.hotelGroup.controls['id'].setValue(res.hotel.Id);
-          this.hotelGroup.controls['hotelName'].setValue(res.hotel.HotelName);
-          this.hotelGroup.controls['address'].setValue(res.hotel.Address);
-          this.hotelGroup.controls['description'].setValue(
-            res.hotel.Description
-          );
-          this.cityCode = res.hotel.CityCode;
-          this.cityId = res.hotel.CityId;
-          this.imgNames = res.imgNames;
-
-          for (let img of res.imgNames) {
-            const arr = img.split('\\');
-            const imgName: string = arr[arr.length - 1];
-
-            const imgShow: ImgShow = {
-              name: imgName,
-              data: img,
-            };
-            this.imgFiles.push(imgShow);
-          }
-        },
-        error: (err) => {
-          console.log(err);
-        },
-      });
-    }
+    this.getAllRoomRypes();
   }
 
   private clearFile() {
     this.fileInput.nativeElement.value = '';
   }
 
-  onSelectCityChange(event: any) {
-    const selectedOption = event.selectedOptions[0];
-    this.cityId = selectedOption.value;
-    this.cityCode = selectedOption.dataset.citycode;
+  private getAllRoomRypes() {
+    this.agentService.getAllRoomType().subscribe((rt: any) => {
+      this.roomTypes = rt.Value.RoomTypes;
+    });
   }
 
   onSelectImg(event: any) {
@@ -148,27 +107,20 @@ export class AddRoomComponent {
   }
 
   deleteAllImg() {
-    if (this.hotelID !== null) {
-      this.agentService.deleteAllImgHotel(this.hotelID).subscribe({
-        next: (_) => {
-          this.sharedService.showToastMessage(
-            'success Delete all images successfully'
-          );
-          this.imgFiles = [];
-          this.listNewImgUrls = [];
-          this.newImgObjToAdd = [];
-        },
-        error: (_) => {
-          this.sharedService.showToastMessage('Please try again');
-        },
-      });
-    }
+    this.imgFiles = [];
+    this.listNewImgUrls = [];
+    this.newImgObjToAdd = [];
   }
 
   removeImgUnSave(data: string) {
     const index = this.listNewImgUrls.findIndex((url) => url.data === data);
     if (index !== -1) {
+      const fileName = this.listNewImgUrls[index].name;
+      const _index = this.newImgObjToAdd.findIndex(
+        (u: any) => u.name === fileName
+      );
       this.listNewImgUrls.splice(index, 1);
+      this.newImgObjToAdd.splice(_index, 1);
     }
   }
 
@@ -192,67 +144,39 @@ export class AddRoomComponent {
 
   submit() {
     this.submitted = true;
-    if (this.hotelID === null) {
-      this.addHotel();
-    } else {
-      this.updateHotel();
-    }
-  }
 
-  private addHotel() {
-    if (this.hotelGroup.valid) {
-      this.sharedService.showLoading(true);
-      let form = new FormData();
-      form.append('HotelName', this.hotelGroup.value.hotelName);
-      form.append('Address', this.hotelGroup.value.address);
-      form.append('Description', this.hotelGroup.value.description);
-      form.append('CityId', this.cityId.toString());
-      form.append('CityCode', this.cityCode);
-      form.append('PosterID', this.userId);
+    if (this.roomGroup.valid) {
+      if (this.hotelID !== null) {
+        this.sharedService.showLoading(true);
+        let form = new FormData();
+        form.append('RoomNumber', this.roomGroup.value.roomNumber);
+        form.append('Name', this.roomGroup.value.roomName);
+        form.append('Description', this.roomGroup.value.description);
+        form.append('IsAvailable', this.roomGroup.value.isAvailable);
+        form.append('RoomTypeId', this.roomGroup.value.roomTypeId);
 
-      for (let file of this.newImgObjToAdd) {
-        form.append('files', file);
+        form.append('ValidFrom', this.roomGroup.value.validFrom);
+        form.append('GoodThru', this.roomGroup.value.goodThru);
+        form.append('Price', this.roomGroup.value.price);
+        form.append('HotelId', this.hotelID.toString());
+
+        for (let file of this.newImgObjToAdd) {
+          form.append('files', file);
+        }
+
+        this.agentService.addRoom(form).subscribe({
+          next: (res: any) => {
+            this.sharedService.showLoading(false);
+            this.sharedService.showToastMessage('success' + res.Value.message);
+            this.router.navigateByUrl(`/agent/${this.hotelID}/manage-rooms`);
+          },
+          error: (err) => {
+            this.sharedService.showLoading(false);
+            this.sharedService.showToastMessage(err.error.Value.message);
+            console.log(err);
+          },
+        });
       }
-
-      this.agentService.addHotel(form).subscribe({
-        next: (res: any) => {
-          this.sharedService.showLoading(false);
-          this.sharedService.showToastMessage('success' + res.Value.message);
-          this.router.navigateByUrl('/agent/post-detail/' + res.Value.newHotel.Id );
-        },
-        error: (err) => {
-          this.sharedService.showLoading(false);
-          this.sharedService.showToastMessage(err.error.Value.message);
-        },
-      });
-    }
-  }
-
-  private updateHotel() {
-    if (this.hotelGroup.valid) {
-      this.sharedService.showLoading(true);
-      let form = new FormData();
-      form.append('HotelName', this.hotelGroup.value.hotelName);
-      form.append('Address', this.hotelGroup.value.address);
-      form.append('Description', this.hotelGroup.value.description);
-      form.append('CityId', this.cityId.toString());
-      form.append('CityCode', this.cityCode);
-      form.append('Id', this.hotelGroup.value.id);
-
-      for (let file of this.newImgObjToAdd) {
-        form.append('files', file);
-      }
-
-      this.agentService.updateHotel(form).subscribe({
-        next: (res: any) => {
-          this.sharedService.showLoading(false);
-          this.sharedService.showToastMessage('success' + res.Value.message);
-        },
-        error: (err) => {
-          this.sharedService.showLoading(false);
-          this.sharedService.showToastMessage(err.error.Value.message);
-        },
-      });
     }
   }
 }

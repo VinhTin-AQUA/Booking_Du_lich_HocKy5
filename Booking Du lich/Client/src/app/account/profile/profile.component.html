@@ -1,0 +1,123 @@
+<div class="wrapper">
+  <div
+    [class]="formSuccess === true ? 'form-success' : 'form-error'"
+    class="container mx-auto md:w-[500px] p-5 rounded my-2"
+  >
+    <form [formGroup]="submitForm" (ngSubmit)="submit()" autocomplete="off">
+      <div class="title font-bold text-[1.7em] mb-9">
+        <span>Your profile</span>
+      </div>
+
+      <div class="text-red-500" *ngFor="let i of errorMessages">
+        {{ i }} <br>
+      </div>
+
+      <div class="text-[1.2em] mb-4 flex gap-2 items-start justify-start">
+        <!-- first name -->
+        <div class="w-1/2">
+          <label class="block mb-2">Họ</label>
+          <input
+            [class]="inputValidation('firstName')"
+            type="text"
+            formControlName="firstName"
+            spellcheck="false"
+            placeholder="Nguyễn Văn"
+          />
+          <span
+            class="text-red-500"
+            *ngIf="
+              submitted === true && submitForm.hasError('required', 'firstName')
+            "
+          >
+            Họ không được để trống
+          </span>
+        </div>
+
+        <!-- last name -->
+        <div class="w-1/2">
+          <label class="block mb-2">Tên</label>
+          <input
+            [class]="inputValidation('lastName')"
+            type="text"
+            formControlName="lastName"
+            spellcheck="false"
+            placeholder="A"
+          />
+          <span
+            class="text-red-500"
+            *ngIf="
+              submitted === true && submitForm.hasError('required', 'lastName')
+            "
+          >
+            Tên không được để trống
+          </span>
+        </div>
+      </div>
+
+      <!-- email -->
+      <div class="text-[1.2em] mb-4">
+        <label class="block mb-2">Email</label>
+        <input
+          [class]="inputValidation('email')"
+          type="email"
+          formControlName="email"
+          spellcheck="false"
+					readonly
+        />
+      </div>
+
+      <!-- address -->
+      <div class="text-[1.2em] mb-4">
+        <label class="block mb-2">Địa chỉ</label>
+        <input
+          [class]="inputValidation('address')"
+          type="text"
+          formControlName="address"
+          spellcheck="false"
+          placeholder="450 Lê Văn Việt, Tăng Nhơn Phú A, Thủ Đức, Hồ Chí Minh"
+        />
+        <span
+          class="text-red-500"
+          *ngIf="
+            submitted === true && submitForm.hasError('required', 'address')
+          "
+        >
+          Địa chỉ không được để trống
+        </span>
+      </div>
+
+      <!-- phone number -->
+      <div class="text-[1.2em] mb-4">
+        <label class="block mb-2">Số điện thoại</label>
+        <input
+          [class]="inputValidation('phoneNumber')"
+          type="text"
+          formControlName="phoneNumber"
+          spellcheck="false"
+          placeholder="0123456789"
+        />
+        <span
+          class="text-red-500"
+          *ngIf="
+            submitted === true && submitForm.hasError('required', 'phoneNumber')
+          "
+        >
+          Số điện thoại không được để trống
+        </span>
+        <span
+          class="text-red-500"
+          *ngIf="
+            submitted === true && submitForm.hasError('pattern', 'phoneNumber')
+          "
+        >
+        Số điện thoại không hợp lệ
+        </span>
+      </div>
+
+      <div class="flex gap-2">
+        <button type="submit" class="btn-primary w-full mb-2">Lưu</button>
+        <a class="btn-outline-primary w-full mb-2" routerLink="/account/change-password">Đổi mật khẩu</a>
+      </div>
+    </form>
+  </div>
+</div>

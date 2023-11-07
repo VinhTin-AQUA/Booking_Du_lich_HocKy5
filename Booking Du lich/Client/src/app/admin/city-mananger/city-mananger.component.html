@@ -35,9 +35,6 @@
 						</div>
 					</div>
 					<img class="w-[230px] h-[230px]" [src]="_environment.imgUrl + '/' + city.PhotoPath" alt="no-img">
-					<div>
-						<span>CityCode:<b> {{city.CityCode}}</b></span><br>
-					</div>
 				</div>
 				
 			</div>
@@ -52,14 +49,7 @@
 			<div class="form">
 				<form [formGroup]="formSubmit" autocomplete="off" (ngSubmit)="submit()">
 
-					<span class="text-red-500" *ngIf="submitted === true && formSubmit.hasError('required','cityCode')">
-						CityCode must be required
-					</span>
-					<div class="form-group-add">
-						<label >City code</label>
-						<input class="form-add" formControlName="cityCode" type="number" >
-					</div>
-		
+
 					<span class="text-red-500" *ngIf="submitted === true && formSubmit.hasError('required','name')">
 						Name must be required
 					</span>
@@ -106,14 +96,6 @@
 		<div class="form-wrapper">
 			<div class="form">
 				<form [formGroup]="formEdit" autocomplete="off" (ngSubmit)="editSubmit()">
-
-					<span class="text-red-500" *ngIf="submitted === true && formEdit.hasError('required','cityCode')">
-						CityCode must be required
-					</span>
-					<div class="form-group-add">
-						<label >City code</label>
-						<input class="form-add" formControlName="cityCode" type="number" >
-					</div>
 		
 					<span class="text-red-500" *ngIf="submitted === true && formEdit.hasError('required','name')">
 						Name must be required

@@ -40,7 +40,6 @@ namespace WebApi.Controllers
             var result = await imageService.AddCityImage(file, "cities");
             var newCity = new City
             {
-                CityCode = model.CityCode,
                 Name = model.Name,
                 PhotoPath = "/cities/" + file.FileName,
             };
@@ -98,7 +97,6 @@ namespace WebApi.Controllers
                 cityExist.PhotoPath = "/cities/" + file.FileName;
             }
             cityExist.Name = model.Name;
-            cityExist.CityCode = model.CityCode;
            
             var resultUpdate = await cityRepository.UpdateCity(cityExist);
             if(resultUpdate == false)

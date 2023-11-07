@@ -42,6 +42,17 @@ namespace WebApi.Repositories
             return _users;
         }
 
+        public async Task<ApplicationUser> GetUserById(string userId)
+        {
+            if (string.IsNullOrEmpty(userId))
+            {
+                return null;
+            }
+
+            var user = await userManager.FindByIdAsync(userId);
+            return user;
+        }
+
         public async Task<IdentityResult> LockUser(ApplicationUser user)
         {
             DateTimeOffset? date = new DateTimeOffset(DateTime.Now.AddDays(3));

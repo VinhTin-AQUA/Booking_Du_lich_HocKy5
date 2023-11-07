@@ -36,6 +36,7 @@
     <Folder Include="Migrations\" />
     <Folder Include="wwwroot\images\cities\" />
     <Folder Include="wwwroot\images\hotels\" />
+    <Folder Include="wwwroot\images\tours\" />
   </ItemGroup>
 
 </Project>

@@ -19,7 +19,6 @@ namespace WebApi.DTOs.Hotel
         public string? Description { get; set; }
 
         public int CityId { get; set; }
-        public string CityCode { get; set; }
 
         public string PosterID
         {

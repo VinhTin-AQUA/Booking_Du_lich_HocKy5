@@ -2,18 +2,19 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AgentTourComponent } from './agent-tour.component';
 import { AddTourComponent } from './add-tour/add-tour.component';
-import { ManagePackageComponent } from './manage-package/manage-package.component';
 import { ManageTourComponent } from './manage-tour/manage-tour.component';
 import { UpdateTourComponent } from './update-tour/update-tour.component';
+import { AddTourTypeComponent } from './add-tour-type/add-tour-type.component';
 
 const routes: Routes = [  {
   path: '',
   component: AgentTourComponent,
   children: [
+    {path: '', redirectTo: 'manage-tour', pathMatch: 'full'},
     { path: 'add-tour', component: AddTourComponent, title: 'Tour', },
-    { path: 'manage-package', component: ManagePackageComponent, title: 'Manage package', },
-    { path: 'manage-tour', component: ManageTourComponent, title: 'Manage tour', },
-    { path: 'update-tour', component: UpdateTourComponent, title: 'Update tour', },
+    { path: 'manage-tour', component: ManageTourComponent, title: 'Quản lý tour', },
+    { path: ':id/update-tour', component: UpdateTourComponent, title: 'Cập nhật tour', },
+    { path: ':id/add-tour-type', component: AddTourTypeComponent, title: 'Thêm loại tour', },
   ],
 },];
 

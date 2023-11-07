@@ -21,7 +21,7 @@ namespace WebApi.Controllers
         }
 
         [HttpPost("add-tourtype")]
-        public async Task<IActionResult> AddTourType(AddTourTypeDto model)
+        public async Task<IActionResult> AddTourType([FromForm] AddTourTypeDto model)
         {
             if (model == null)
             {
@@ -30,7 +30,7 @@ namespace WebApi.Controllers
 
             if (await _tourTypeRepository.TourTypeExisted(model.TourTypeName) == true)
             {
-                return BadRequest(new JsonResult(new { title = "Error", message = "Tour type name has been already existed" }));
+                return BadRequest(new JsonResult(new { title = "Error", message = "Loại tour này đã tồn tại" }));
             }
 
             if (ModelState.IsValid == false)

@@ -333,9 +333,6 @@ namespace WebApi.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("CityCode")
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(50)");
@@ -344,7 +341,7 @@ namespace WebApi.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(70)");
 
-                    b.HasKey("Id", "CityCode")
+                    b.HasKey("Id")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.ToTable("City");
@@ -403,9 +400,6 @@ namespace WebApi.Migrations
                     b.Property<string>("ApproverID")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("CityCode")
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<int?>("CityId")
                         .HasColumnType("int");
 
@@ -430,9 +424,9 @@ namespace WebApi.Migrations
 
                     b.HasIndex("ApproverID");
 
-                    b.HasIndex("PosterID");
+                    b.HasIndex("CityId");
 
-                    b.HasIndex("CityId", "CityCode");
+                    b.HasIndex("PosterID");
 
                     b.ToTable("Hotel");
                 });
@@ -525,6 +519,9 @@ namespace WebApi.Migrations
                     b.Property<string>("PhotoPath")
                         .HasColumnType("varchar(250)");
 
+                    b.Property<int?>("RoomId")
+                        .HasColumnType("int");
+
                     b.Property<string>("RoomName")
                         .IsRequired()
                         .HasColumnType("nvarchar(250)");
@@ -535,6 +532,9 @@ namespace WebApi.Migrations
 
                     b.Property<int?>("RoomTypeId")
                         .HasColumnType("int");
+
+                    b.Property<DateTime?>("ValidFrom")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -600,9 +600,6 @@ namespace WebApi.Migrations
                     b.Property<string>("ApproverID")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("CityCode")
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<int?>("CityId")
                         .HasColumnType("int");
 
@@ -643,11 +640,11 @@ namespace WebApi.Migrations
 
                     b.HasIndex("ApproverID");
 
+                    b.HasIndex("CityId");
+
                     b.HasIndex("PosterID");
 
                     b.HasIndex("TourTypeId");
-
-                    b.HasIndex("CityId", "CityCode");
 
                     b.ToTable("Tour");
                 });
@@ -793,13 +790,13 @@ namespace WebApi.Migrations
                         .WithMany("ApprovalHotels")
                         .HasForeignKey("ApproverID");
 
+                    b.HasOne("WebApi.Models.City", "City")
+                        .WithMany("Hotels")
+                        .HasForeignKey("CityId");
+
                     b.HasOne("WebApi.Models.ApplicationUser", "Poster")
                         .WithMany("PostHotels")
                         .HasForeignKey("PosterID");
-
-                    b.HasOne("WebApi.Models.City", "City")
-                        .WithMany("Hotels")
-                        .HasForeignKey("CityId", "CityCode");
 
                     b.Navigation("Approver");
 
@@ -862,6 +859,10 @@ namespace WebApi.Migrations
                         .WithMany("ApprovalTours")
                         .HasForeignKey("ApproverID");
 
+                    b.HasOne("WebApi.Models.City", "City")
+                        .WithMany("Tours")
+                        .HasForeignKey("CityId");
+
                     b.HasOne("WebApi.Models.ApplicationUser", "Poster")
                         .WithMany("PostTours")
                         .HasForeignKey("PosterID");
@@ -869,10 +870,6 @@ namespace WebApi.Migrations
                     b.HasOne("WebApi.Models.TourType", "TourType")
                         .WithMany("Tours")
                         .HasForeignKey("TourTypeId");
-
-                    b.HasOne("WebApi.Models.City", "City")
-                        .WithMany("Tours")
-                        .HasForeignKey("CityId", "CityCode");
 
                     b.Navigation("Approver");
 

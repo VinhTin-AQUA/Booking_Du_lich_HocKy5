@@ -37,7 +37,6 @@ namespace WebApi.Models
 
         /*tham chiếu khóa ngoại*/
         public int? CityId { get; set; }
-        public string? CityCode { get; set; }
         public City City { get; set; }
 
         public ApplicationUser Poster { get; set; }

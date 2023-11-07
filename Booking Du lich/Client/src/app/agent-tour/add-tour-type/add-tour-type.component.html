@@ -1,0 +1,83 @@
+<div class="wrapper">
+  <div class="container flex h-screen">
+    <!-- action -->
+    <div class="action-service">
+      <!-- chọn tour -->
+      <div class="mb-3">
+        <div class="text-center text-xl font-bold">
+          <span>Chọn loại tour</span>
+        </div>
+
+        <!-- system service -->
+        <div class="service-system">
+          <div
+            class="border-b p-1 flex justify-between items-center mb-2"
+            *ngFor="let tourType of sysTourTypes"
+          >
+            <span class="block">{{ tourType.TourTypeName }}</span>
+            <mat-icon
+              (click)="addTypeToTour(tourType)"
+              class="icon tranf-icon"
+              >arrow_forward</mat-icon
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- thêm tour -->
+      <div>
+        <span class="">Nếu không có loại tour phù hợp ?</span>
+        <button class="btn-primary" (click)="showAddTourType()">
+          Thêm tour
+        </button>
+      </div>
+    </div>
+
+    <div class="list-container">
+      <div class="tpur-info" *ngIf="tour !== null">
+        <div class="text-[1.2em]">Tên tour: <strong>{{ tour.TourName }}</strong></div>
+				<div>Địa chỉ: <span>{{tour.TourAddress}}</span></div>
+				<div>Ngày đăng: <span>{{tour.PostingDate | date : "dd-MM-yyyy"}}</span></div>
+				<div>Tỉnh/Thành phố: <span>{{tour.City.Name}}</span></div>
+				<div>Địa điểm bắt đầu: <span>{{tour.DepartureLocation}}</span></div>
+				<div>Địa điểm bắt đầu: <span>{{tour.DropOffLocation}}</span></div>
+				<div>Loại tour: <strong>{{tour.TourType.TourTypeName}}</strong></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="add-wrapper" *ngIf="isShowAddTourType === true">
+  <div class="add-container">
+    <div class="text-center text-xl">Thêm dịch vụ</div>
+    <form
+      [formGroup]="addTourTypeForm"
+      (ngSubmit)="addTourTypeSubmit()"
+      autocomplete="off"
+    >
+      <div class="mb-2">
+        <input
+          class="input-service"
+          type="text"
+          placeholder="Tên dịch vụ"
+          formControlName="tourTypeName"
+        />
+        <span
+          *ngIf="
+            submitted === true &&
+            addTourTypeForm.hasError('required', 'tourTypeName')
+          "
+          class="text-red-500"
+          >Tên loại tour không được bỏ trống</span
+        >
+      </div>
+
+      <div class="flex gap-2">
+        <button class="btn-primary" type="submit">Thêm</button>
+        <button class="btn-outline-primary" (click)="showAddTourType()">
+          Trở lại
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

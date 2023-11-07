@@ -9,9 +9,16 @@ namespace WebApi.Repositories
     public class TourRepository : ITourRepository
     {
         private readonly ApplicationDbContext context;
-        public TourRepository(ApplicationDbContext context)
+        private readonly UserManager<ApplicationUser> userManager;
+        private readonly RoleManager<IdentityRole> roleManager;
+
+        public TourRepository(ApplicationDbContext context, 
+            UserManager<ApplicationUser> userManager,
+            RoleManager<IdentityRole> roleManager)
         {
             this.context = context;
+            this.userManager = userManager;
+            this.roleManager = roleManager;
         }
         public async Task<bool> AddTour(Tour tour)
         {
@@ -31,9 +38,22 @@ namespace WebApi.Repositories
             return tours;
         }
 
+        public async Task<ICollection<Tour>> GetToursOfPoster(string posterId)
+        {
+            var list = await context.Tour
+                .Where(t => t.PosterID == posterId)
+                .Include(t => t.City)
+                .ToListAsync();
+            return list;
+        }
+
         public async Task<Tour> GetTourById(int? id)
         {
-            var tour = await context.Tour.Where(t => t.TourId == id).SingleOrDefaultAsync();
+            var tour = await context.Tour
+                .Where(t => t.TourId == id)
+                .Include(t => t.City)
+                .Include(t => t.TourType)
+                .SingleOrDefaultAsync();
             return tour;
         }
 
@@ -47,6 +67,19 @@ namespace WebApi.Repositories
         {
             context.Tour.Update(tour);
             return await Save();
+        }
+
+        public async Task<bool> AddTypeToTour(TourType tourType, Tour tour)
+        {
+            tour.TourType = tourType;
+            context.Tour.Update(tour);
+            return await Save();
+        }
+
+        public async Task<ICollection<ApplicationUser>> GetAgentTours()
+        {
+            var users =await userManager.GetUsersInRoleAsync("AgentTour");
+            return users.ToList();
         }
     }
 }

@@ -1,1 +1,64 @@
-<p>manage-room works!</p>
+<div class="wrapper">
+  <div class="container h-screen">
+    <!-- actions -->
+    <div class="p-2 border-b flex justify-between items-center">
+      <div class="flex gap-2">
+        <button class="btn-primary">Tìm</button>
+        <input class="search-input" type="text" placeholder="Tên phòng" />
+      </div>
+
+      <div>
+        <button class="btn-primary" routerLink="/agent/{{hotelId}}/add-room">
+          Thêm phòng
+        </button>
+      </div>
+    </div>
+
+    <!-- list rooms -->
+    <div class="list-room">
+      <div class="room-item">
+        <table class="w-full">
+          <thead>
+            <tr>
+              <th class="text-left">Số phòng</th>
+              <th class="text-left">Tên phòng</th>
+              <th class="text-left">Còn trống</th>
+              <th class="text-left">Loại phòng</th>
+              <th class="text-left">Giá phòng</th>
+              <th class="text-left">Chức năng</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="let room of rooms">
+              <td>{{room.RoomNumber}}</td>
+              <td>{{room.RoomName}}</td>
+              <td *ngIf="room.IsAvailable === true">Còn</td>
+              <td *ngIf="room.IsAvailable === false">Đã đặt</td>
+              <td>{{room.RoomType.RoomTypeName}}</td>
+              <td>{{room.RoomPrice.Price}}</td>
+              <td>
+                <div>
+                  <mat-icon class="icon delete-icon" (click)="showDelete(room.Id)">delete</mat-icon>
+                  <mat-icon class="icon edit-icon" routerLink="/agent/edit-room/{{room.Id}}">edit</mat-icon>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="delete-modal" *ngIf="isShowDeleted === true">
+  <div class="delete-container">
+    <h1 class="text-center text-red-600">Có chắc chắn muốn xóa?</h1>
+    <div class="flex justify-center items-center gap-1">
+      <div class="flex justify-center items-center gap-1">
+        <button class="btn-danger" (click)="deleteSubmit()">Xóa</button>
+        <button class="btn-primary" (click)="showDelete(null)">Quay lại</button>
+      </div>
+    </div>
+  </div>
+</div>

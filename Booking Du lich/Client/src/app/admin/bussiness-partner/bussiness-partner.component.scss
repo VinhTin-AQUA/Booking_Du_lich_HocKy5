@@ -12,18 +12,14 @@
 }
 
 .bussiness-item {
-	@apply max-w-[230px] p-2 rounded border-2 cursor-pointer duration-100;
-
-	&:hover {
-		box-shadow: 0px 0px 2px 2px #2563eb;
-	}
+	@apply max-w-[230px] w-[230px] p-2 rounded border-2 duration-100;
 
 	span {
 		@apply block;
 	}
 
 	.bussiness-header{
-		@apply text-[1.3em] font-bold border-b text-blue-600;
+		@apply text-[1.3em] font-bold border-b text-blue-600 flex items-center justify-between;
 	}
 
 	.bussiness-address {
@@ -36,5 +32,39 @@
 
 	.bussiness-phone {
 		@apply font-bold;
+	}
+}
+
+.icon {
+	width: 25px;
+	height: 25px;
+	font-size: 25px;
+	cursor: pointer;
+}
+
+.delete-icon {
+	color: red;
+
+	&:hover {
+		color: rgb(100, 0, 0);
+		transition: all .5s ease;
+	}
+}
+
+.add-account-icon {
+	color: #0ea5e9;
+
+	&:hover {
+		color: #034a6b;
+		transition: all .5s ease;
+	}
+}
+
+.accounts-icon {
+	color: #22c55e;
+
+	&:hover {
+		color: #026c29;
+		transition: all .5s ease;
 	}
 }

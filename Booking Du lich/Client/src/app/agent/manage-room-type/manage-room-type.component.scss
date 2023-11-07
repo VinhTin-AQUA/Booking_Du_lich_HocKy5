@@ -1,0 +1,93 @@
+
+$icon_size: 20px;
+
+.wrapper {
+	//@apply h-screen;
+}
+
+.search-input {
+	@apply w-[200px] outline-none px-3 py-2 rounded border-2 duration-100;
+
+	&:focus {
+		box-shadow: 0px 0px 5px -1px #2563eb
+	}
+}
+
+.list-tour {
+	@apply  overflow-y-scroll w-1/2 p-2 border;
+	max-height: calc(100vh - 100px);
+
+	.tour-item {
+		@apply border min-h-[70px] rounded mb-2;
+		box-shadow: 0px 0px 5px -1px gray;
+
+		.tour-header {
+			@apply border-b flex justify-end items-center p-1;
+		}
+
+		.tour-body {
+			@apply text-2xl p-1;
+		}
+
+		.icon {
+			@apply cursor-pointer rounded duration-100;
+			width: $icon_size;
+			height: $icon_size;
+			font-size: $icon_size;
+			
+
+			&:hover {
+				@apply bg-gray-200;
+				font-weight: bold;
+			}
+		}
+
+		.edit-icon {
+			
+			color: green;
+		}
+
+		.delete-icon {
+			color: red;
+		}
+	}
+}
+
+.add-tour {
+	@apply w-1/2 h-full max-h-full border rounded	p-2;
+
+
+	.add-tour-header {
+		@apply text-xl font-bold text-center inline-block w-full p-3 mb-3 border-b text-[#2563eb];
+	}
+
+	.add-input {
+		@apply w-full outline-none px-3 py-2 rounded border-2 duration-100 mb-5;
+
+		&:focus {
+			box-shadow: 0px 0px 5px -1px blue
+		}
+	}
+}
+
+.input-filed-error {
+	box-shadow: 0px 0px 5px 1px red;
+}
+
+// delete
+.delete-tour-type {
+	@apply fixed top-0 left-0 w-full h-screen;
+}
+
+// update 
+.update-tour-type {
+	@apply fixed top-0 left-0 w-full h-screen;
+}
+
+.update-input {
+	@apply px-3 py-2 rounded outline-none border-none duration-100 w-full;
+
+	&:focus {
+		box-shadow: 0px 0px 5px -1px #1d4ed8;
+	}
+}

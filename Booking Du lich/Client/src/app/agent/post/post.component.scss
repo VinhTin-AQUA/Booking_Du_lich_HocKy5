@@ -1,5 +1,5 @@
 .container {
-  @apply p-2;
+  @apply p-2 w-full;
 }
 
 .search-input {
@@ -11,13 +11,13 @@
 }
 
 .posts {
-  @apply flex gap-2 flex-wrap overflow-y-scroll p-2;
-  height: calc(100vh - 110px);
+  @apply  overflow-y-scroll p-2;
+  min-height: calc(100vh - 110px);
   max-height: calc(100vh - 110px);
 }
 
 .post-item {
-  @apply min-w-[200px] h-[100px] w-[220px] border-2 border-[#2563eb] p-2 rounded cursor-pointer duration-[50ms];
+  @apply min-w-[200px] h-auto w-[220px] border-2 border-[#2563eb] p-2 rounded cursor-pointer duration-[50ms];
 
   .remove-img-icon {
     @apply duration-75;

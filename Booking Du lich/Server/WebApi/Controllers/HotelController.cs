@@ -56,7 +56,6 @@ namespace WebApi.Controllers
                 ApprovalDate = null,
                 CityId = model.CityId,
                 City = City,
-                CityCode = model.CityCode,
                 ApproverID = null,
                 Approver = null,
             };
@@ -132,6 +131,20 @@ namespace WebApi.Controllers
             return Ok(cities);
         }
 
+        [HttpGet("hotels-not-approved")]
+        public async Task<IActionResult> HotelNotApproved()
+        {
+            var hotels = await hotelRepository.HotelNotApproved();
+            return Ok(hotels.ToList());
+        }
+
+        [HttpGet("hotels-approved")]
+        public async Task<IActionResult> HotelApproved()
+        {
+            var hotels = await hotelRepository.HotelApproved();
+            return Ok(hotels.ToList());
+        }
+
         [HttpGet("get-hotel-by-id")]
         public async Task<IActionResult> GetHotelById([FromQuery] int? id)
         {
@@ -197,14 +210,61 @@ namespace WebApi.Controllers
         }
 
         [HttpDelete("delete-all-img-hotel")]
-        public IActionResult DeleteAllImgHotel([FromQuery] string hotelId)
+        public IActionResult DeleteAllImgHotel([FromQuery] int hotelId)
         {
-            if (string.IsNullOrEmpty(hotelId))
+            imageService.DeleteAllImgHotel(hotelId.ToString());
+            return Ok();
+        }
+
+        [HttpGet("get-hotels-in-city")]
+        public async Task<IActionResult> GetCitiesInHotel([FromQuery] int cityId)
+        {
+            var hotels = await hotelRepository.GetHotelsInCity(cityId);
+            LinkedList<string> fileNames = new LinkedList<string>();
+
+            foreach (var hotel in hotels)
+            {
+                string[] imgNames = imageService.GetAllFileOfFolder("hotels",hotel.Id.ToString(), "_imgHotel");
+                if (imgNames != null)
+                {
+                    fileNames.AddLast(imgNames[0]);
+                } else
+                {
+                    fileNames.AddLast("");
+                }
+            }
+
+            return Ok(new { hotels, fileNames });
+        }
+
+        [HttpPut("approve")]
+        public async Task<IActionResult> Approve([FromQuery]string userId, [FromQuery]int hotelId)
+        {
+            var user = await authenRepository.GetUserById(userId);
+            var hotel = await hotelRepository.GetHotelById(hotelId);
+
+            if(user == null || hotel == null)
             {
                 return BadRequest();
             }
-            imageService.DeleteAllImgHotel(hotelId);
+
+            hotel.ApprovalDate = DateTime.Now;
+            hotel.Approver = user;
+            hotel.ApproverID = user.Id;
+            var r = await hotelRepository.UpdateHotel(hotel);
+
+            if (r == false)
+            {
+                return BadRequest();
+            }
             return Ok();
+        }
+
+        [HttpGet("get-agent-hotels")]
+        public async Task<IActionResult> GetAgentHotel([FromQuery] int partnerId)
+        {
+            var users = await hotelRepository.GetAgentHotels(partnerId);
+            return Ok(users);
         }
     }
 }

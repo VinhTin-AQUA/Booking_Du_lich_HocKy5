@@ -23,7 +23,8 @@ namespace WebApi.DTOs.Room
 
         public int RoomTypeId { get; set; }
 
-        
-       
+        public double Price { get; set; }
+        public DateTime? GoodThru { get; set; }
+        public DateTime? ValidFrom { get; set; }
     }
 }

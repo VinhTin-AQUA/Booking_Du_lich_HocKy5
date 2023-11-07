@@ -4,7 +4,6 @@ import { HomeComponent } from './home/home.component';
 import { AccessDeniedComponent } from './access-denied/access-denied.component';
 import { Roles } from './shared/guards/roles';
 import { authGuard } from './shared/guards/auth.guard';
-import { ProfileComponent } from './profile/profile.component';
 
 
 const routes: Routes = [
@@ -28,6 +27,7 @@ const routes: Routes = [
     path: 'city',
     loadChildren: () =>
       import('../app/booking/booking.module').then((m) => m.BookingModule),
+      canActivate:[authGuard]
   },
   {
     path: 'admin',
@@ -51,8 +51,12 @@ const routes: Routes = [
     data: { role: Roles.AGENTTOUR },
   },
   {
-    path: 'profile', component: ProfileComponent, title: 'Profile'
-  }
+    path: 'employee',
+    loadChildren: () =>
+      import('./employee/employee.module').then((m) => m.EmployeeModule),
+    canActivate: [authGuard],
+    data: { role: Roles.EMPLOYEE },
+  },
 ];
 
 @NgModule({

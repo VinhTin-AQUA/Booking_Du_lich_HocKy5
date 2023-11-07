@@ -7,34 +7,40 @@ namespace WebApi.Models
     public class Tour
     {
         public int TourId { get; set; }
+
         [Required(ErrorMessage = "{0} must be required")]
         [Display(Name = "Tour name")]
         [Column(TypeName = "nvarchar(100)")]
         public string TourName { get; set;}
+
         [Display(Name = "Address")]
         [Column(TypeName = "nvarchar(250)")]
         public string TourAddress {  get; set;}
+
         [Display(Name = "Overview")]
         [Column(TypeName = "nvarchar(max)")]
         public string Overview { get; set;}
+
         [Display(Name = "Schedule")]
         [Column(TypeName = "nvarchar(max)")]
         public string Schedule {  get; set;}
+
         [Display(Name = "Departure Location")]
         [Column(TypeName = "nvarchar(200)")]
         public string DepartureLocation {  get; set;}
+
         [Display(Name = "Drop Off Location")]
         [Column(TypeName = "nvarchar(200)")]
         public string DropOffLocation { get; set;}
+
         [Required(ErrorMessage = "{0} must be at least one image")]
         [Display(Name = "Images")]
         [Column(TypeName = "nvarchar(70)")]
-        public string PhotoPath {  get; set;}
+        public string PhotoPath { get; set;}
 
         // Khoa ngoai
             // city
         public int? CityId { get; set;}
-        public string? CityCode { get; set;}
         public City City { get; set;}
             // TourType
         public int? TourTypeId { get; set;}

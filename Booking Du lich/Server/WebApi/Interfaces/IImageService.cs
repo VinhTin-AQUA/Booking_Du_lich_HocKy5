@@ -21,5 +21,8 @@ namespace WebApi.Interfaces
         public Task<string> UploadImages(List<IFormFile> files, Hotel hotel, params Room[] room);
         public Task<string> UploadTourImages(List<IFormFile> files, Tour tour);
         public string[] GetAllFileOfFolder(params string[] folder);
+
+        public bool DeleteAllImages(params string[] folder);
+        public void DeleteImg(params string[] folder);
     }
 }

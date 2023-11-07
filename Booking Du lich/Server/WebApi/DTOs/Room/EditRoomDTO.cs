@@ -21,7 +21,11 @@ namespace WebApi.DTOs.Room
 
         public bool IsAvailable { get; set; }
 
-        public int HotelId { get; set; }
+        public DateTime ValidFrom { get; set; }
+        public DateTime GoodThru { get; set; }
+
+        public double Price { get; set; }
+
         public int RoomTypeId { get; set; }
 
     }

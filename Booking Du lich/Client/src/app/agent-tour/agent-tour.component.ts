@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-agent-tour',
@@ -7,7 +6,4 @@ import { Router } from '@angular/router';
   styleUrls: ['./agent-tour.component.scss']
 })
 export class AgentTourComponent {
-  constructor(private router: Router) {
-    router.navigateByUrl('/agent-tour/add-tour')
-  }
 }

@@ -31,7 +31,7 @@ namespace WebApi.Controllers
         }
 
         [HttpPost("add-room")]
-        public async Task<IActionResult> AddRoom(List<IFormFile> files, [FromForm] AddRoomDTO model)
+        public async Task<IActionResult> AddRoom([FromForm] List<IFormFile> files, [FromForm] AddRoomDTO model)
         {
             if (model == null)
             {
@@ -46,6 +46,7 @@ namespace WebApi.Controllers
             var hotel = await hotelRepository.GetHotelById(model.HotelId);
             var roomType = await roomTypeRepository.GetRoomTypeById(model.RoomTypeId);
             
+
             if (hotel == null)
             {
                 return BadRequest(new JsonResult(new { title = "Error", message = "Hotel không tìm thấy" }));
@@ -70,6 +71,20 @@ namespace WebApi.Controllers
                 return BadRequest(new JsonResult(new { title = "Error", message = "Something error when add hotel" }));
             }
 
+            var roomPrice = new RoomPrice
+            {
+                Price = model.Price,
+                ValidFrom = model.ValidFrom,
+                GoodThru = model.GoodThru,
+                RoomId = room.Id,
+                Room = room,
+            };
+            await roomPriceRepository.AddRoomPrice(roomPrice);
+            room.RoomPrice = roomPrice;
+            //room.RoomId = roomType.RoomId;
+            room.ValidFrom = room.ValidFrom;
+
+
             string photoPath = "";
             if (files != null)
             {
@@ -80,6 +95,18 @@ namespace WebApi.Controllers
 
             return Ok(new JsonResult(new { title = "Success", message = "Add room successfully", newRoom = room }));
         }
+
+        [HttpGet("get-room-by-id")]
+        public async Task<IActionResult> GetRoomById([FromQuery]int roomId)
+        {
+            var room = await roomRepository.GetRoomById(roomId);
+            if (room == null)
+            {
+                return BadRequest();
+            }
+            var imgNames = imageService.GetAllFileOfFolder("hotels", room.Hotel.Id.ToString(), room.Id.ToString());
+            return Ok(new { room , imgNames });
+        } 
 
         [HttpGet("get-all-rooms")]
         public async Task<IActionResult> GetAllRooms()
@@ -96,23 +123,6 @@ namespace WebApi.Controllers
             }
             return Ok(new { rooms = rooms.ToList() , firstImages = firstImages });
         }
-
-        //[HttpGet("get-room-by-id")]
-        //public async Task<IActionResult> GetRoomById([FromQuery] int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return BadRequest();
-        //    }
-
-        //    var room = await roomRepository.GetRoomById(id);
-        //    if (room == null)
-        //    {
-        //        return BadRequest(new JsonResult(new { title = "Error", mesage = "Room not found" }));
-        //    }
-
-        //    return Ok(room);
-        //}
 
         [HttpGet("get-images-of-room")]
         public async Task<IActionResult> GetImagesOfRoom([FromQuery]int? roomId)
@@ -145,6 +155,19 @@ namespace WebApi.Controllers
             return Ok();
         }
 
+        [HttpDelete("delete-all-img-room")]
+        public async Task<IActionResult> DeleteAllImgRoom([FromQuery] int roomId)
+        {
+            var room = await roomRepository.GetRoomById(roomId);
+            if (room == null)
+            {
+                return Ok();
+            }
+
+            imageService.DeleteAllImages("hotels", room.Hotel.Id.ToString(), room.Id.ToString());
+            return Ok();
+        }
+
         [HttpDelete("delete-room")]
         public async Task<IActionResult> DeleteRoom([FromQuery] int? roomId)
         {
@@ -164,6 +187,8 @@ namespace WebApi.Controllers
             {
                 return BadRequest(new JsonResult(new { title = "Error", message = "Something error" }));
             }
+
+            imageService.DeleteAllImages("hotels",room.Hotel.Id.ToString(),room.Id.ToString());
             return Ok(new JsonResult(new { title = "Success", message = "Room delete successfully" }));
         }
 
@@ -192,13 +217,30 @@ namespace WebApi.Controllers
             {
                 return BadRequest(new JsonResult(new { title = "Error", message = "Missing parameter" }));
             }
-
+            
             var rooms = await roomRepository.SearchRoomOfHotel(HotelId);
-            return Ok(new JsonResult(new { title = "Success", Rooms = rooms }));
+
+            LinkedList<string> fileNames = new LinkedList<string>();
+
+            foreach (var room in rooms)
+            {
+                string[] imgNames = imageService.GetAllFileOfFolder("hotels", room.Hotel.Id.ToString(), room.Id.ToString(), "_imgHotel");
+                if (imgNames != null)
+                {
+                    fileNames.AddLast(imgNames[0]);
+                }
+                else
+                {
+                    fileNames.AddLast("");
+                }
+            }
+
+
+            return Ok(new JsonResult(new { title = "Success", Rooms = rooms, fileNames = fileNames }));
         }
 
         [HttpPut("update-room")]
-        public async Task<IActionResult> UpdateRoom(List<IFormFile> files, [FromForm] EditRoomDTO model)
+        public async Task<IActionResult> UpdateRoom([FromForm] List<IFormFile> files, [FromForm] EditRoomDTO model)
         {
             if (model == null)
             {
@@ -216,6 +258,24 @@ namespace WebApi.Controllers
             roomExisted.Description = model.Description;
             roomExisted.IsAvailable = model.IsAvailable;
 
+            var roomType = await roomTypeRepository.GetRoomTypeById(model.RoomTypeId);
+
+            if(roomType != null)
+            {
+                roomExisted.RoomType = roomType;
+                roomExisted.RoomTypeId = roomType.RoomTypeId;
+            }
+
+            var price = await roomPriceRepository.GetRoomPriceById(model.Id);
+
+            if(price != null)
+            {
+                price.Price = model.Price;
+                price.ValidFrom = model.ValidFrom;
+                price.GoodThru = model.GoodThru;
+                await roomPriceRepository.UpdateRoomPrice(price);
+            }
+
             var resultUpdate = await roomRepository.UpdateRoom(roomExisted);
             if (resultUpdate == false)
             {
@@ -229,7 +289,6 @@ namespace WebApi.Controllers
                 urlImgFolder = await imageService.UploadImages(files, roomExisted.Hotel, roomExisted);
                 roomExisted.PhotoPath = urlImgFolder;
             }
-
             return Ok(new JsonResult(new { title = "Success", message = "Update room successfully" }));
         }
     }

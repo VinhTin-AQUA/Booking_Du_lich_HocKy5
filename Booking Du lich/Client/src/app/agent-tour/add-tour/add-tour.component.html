@@ -1,102 +1,163 @@
 <div class="wrapper">
+  <div class="form-container">
+    <!-- image -->
+    <div class="mb-3">
+      <div class="form-group">
+        <input
+          #fileInput
+          (change)="onSelectImg($event)"
+          class="form-control"
+          type="file"
+          multiple
+        />
+      </div>
 
-	<div class="form-container">
+      <!-- img list -->
+      <div
+        class="w-full h-[450px] overflow-y-scroll p-2 rounded border border-blue-500"
+      >
+        <div class="columns-2 md:columns-3 gap-2">
+          <div
+            class="break-inside-avoid mb-2 rounded border max-w-[500px] p-1"
+            *ngFor="let img of listNewImgUrls"
+          >
+            <mat-icon (click)="removeImgUnSave(img.data)" class="remove-img-icon">delete</mat-icon>
+            <span class="break-words">{{ img.name }}</span>
+            <img [src]="img.data" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
 
-		<!-- image -->
-		<div class="mb-3">
-			<div class="form-group">
-				<input #fileInput (change)="onSelectImg($event)" class="form-control" type="file" multiple>
-			</div>
+    <form [formGroup]="addTourGroup" (ngSubmit)="submit()" autocomplete="off">
+      <!-- thành phố và loại tour -->
+      <div class="flex gap-2">
+        <!-- cities -->
+        <div class="form-group w-1/2">
+          <label class="w-1/3">Chọn thành phố</label>
+          <select formControlName="cityId" class="form-control">
+            <option *ngFor="let city of allCities" [value]="city.Id">
+              {{ city.Name }}
+            </option>
+          </select>
+        </div>
 
-			<!-- img list -->
-			<div class="w-full h-[450px] overflow-y-scroll p-2 rounded border border-blue-500">
-				<div class="columns-2 md:columns-3 gap-2">
+        <!-- loai phong -->
+        <div class="form-group w-1/2">
+          <label class="w-1/3">Loại tour</label>
+          <select formControlName="tourTypeId" class="form-control">
+            <option *ngFor="let type of allTourTypes" [value]="type.TourTypeId">
+              {{ type.TourTypeName }}
+            </option>
+          </select>
+        </div>
+      </div>
 
-					<div class="break-inside-avoid mb-2 rounded border max-w-[500px] p-1" *ngFor="let img of listNewImgUrls">
-						<mat-icon
-              class="remove-img-icon"
-              >delete</mat-icon
-            >
-						<span class="break-words">{{img.name}}</span>
-						<img [src]="img.data" alt="">
-					</div>
-				</div>
-			</div>
+      <!-- tên tour và địa chỉ tour -->
+      <div class="flex gap-2">
+        <div class="form-group w-1/2">
+          <label class="w-1/3">Tên tour</label>
+          <input
+            formControlName="tourName"
+            class="form-control"
+            type="text"
+            placeholder="Tên tour"
+						[class]="
+            submitted === true &&
+            addTourGroup.hasError('required', 'tourName')
+              ? 'bg-red-200'
+              : ''
+          "
+          />
+        </div>
 
-		</div>
+        <div class="form-group w-1/2">
+          <label class="w-1/3">Địa chỉ tour</label>
+          <input
+            formControlName="tourAddress"
+            class="form-control"
+            type="text"
+            placeholder="Địa chỉ"
+						[class]="
+            submitted === true &&
+            addTourGroup.hasError('required', 'tourAddress')
+              ? 'bg-red-200'
+              : ''
+          "
+          />
+        </div>
+      </div>
 
-		<form action="" class="">
+      <!-- overview -->
+      <div class="form-group">
+        <label class="w-1/6">Over View</label>
+        <textarea
+          formControlName="overview"
+          class="form-control"
+          cols="30"
+          rows="6"
+					[class]="
+            submitted === true &&
+            addTourGroup.hasError('required', 'overview')
+              ? 'bg-red-200'
+              : ''
+          "
+        ></textarea>
+      </div>
 
-			<!-- thành phố và loại tour -->
-			<div class="flex gap-2">
-				<!-- cities -->
-				<div class="form-group w-1/2">
-					<label class="w-1/3">Chọn thành phố</label>
-					<select class="form-control">
-						<option value="">HCM</option>
-						<option value="">HN</option>
-						<option value="">KH</option>
-					</select>
-				</div>
+      <!-- lịch trình -->
+      <div class="form-group">
+        <label class="w-1/6">Lịch trình</label>
+        <textarea
+          formControlName="schedule"
+          class="form-control"
+          cols="30"
+          rows="6"
+					[class]="
+            submitted === true &&
+            addTourGroup.hasError('required', 'schedule')
+              ? 'bg-red-200'
+              : ''
+          "
+        ></textarea>
+      </div>
 
-				<!-- loai phong -->
-				<div class="form-group w-1/2">
-					<label  class="w-1/3">Loai tour</label>
-					<select class="form-control">
-						<option value="">Tour 1</option>
-						<option value="">Tour 2</option>
-						<option value="">Tour 3</option>
-					</select>
-				</div>
-			</div>
-			
-			<!-- tên tour và địa chỉ tour -->
-			<div class="flex gap-2">
-				<div class="form-group w-1/2">
-					<label class="w-1/3">Tên tour</label>
-					<input class="form-control" type="text" placeholder="Tên tour" />
-				</div>
-	
-				<div class="form-group w-1/2">
-					<label class="w-1/3">Địa chỉ tour</label>
-					<input class="form-control" type="text" placeholder="Địa chỉ" />
-				</div>
-			</div>
+      <!-- địa điểm bắt đầu  -->
+      <div class="form-group">
+        <label class="w-1/6">Địa điểm bắt đầu</label>
+        <input
+          formControlName="departureLocation"
+          class="form-control"
+          type="text"
+					[class]="
+            submitted === true &&
+            addTourGroup.hasError('required', 'departureLocation')
+              ? 'bg-red-200'
+              : ''
+          "
+        />
+      </div>
 
-			<!-- overview -->
-			<div class="form-group">
-				<label class="w-1/6">Over View</label>
-				<textarea class="form-control" cols="30" rows="6"></textarea>
-			</div>
+      <!-- địa điểm kết thúc -->
+      <div class="form-group">
+        <label class="w-1/6">Địa điểm kết thúc</label>
+        <input
+          formControlName="dropOffLocation"
+          class="form-control"
+          type="text"
+          [class]="
+            submitted === true &&
+            addTourGroup.hasError('required', 'dropOffLocation')
+              ? 'bg-red-200'
+              : ''
+          "
+        />
+      </div>
 
-			<!-- lịch trình -->
-			<div class="form-group">
-				<label class="w-1/6">Lịch trình</label>
-				<textarea class="form-control" cols="30" rows="6"></textarea>
-			</div>
-
-			<!-- địa điểm bắt đầu  -->
-			<div class="form-group">
-				<label class="w-1/6">Địa điểm bắt đầu</label>
-				<textarea class="form-control" cols="30" rows="6"></textarea>
-			</div>
-
-			<!-- địa điểm kết thúc -->
-			<div class="form-group">
-				<label class="w-1/6">Địa điểm kết thúc</label>
-				<textarea class="form-control" cols="30" rows="6"></textarea>
-			</div>
-
-			<!-- thêm -->
-			<div>
-				<button class="btn-primary w-1/2 mx-auto">Thêm</button>
-			</div>
-			
-		</form>
-	</div>
-
-
-
-
-
+      <!-- thêm -->
+      <div>
+        <button class="btn-primary w-1/2 mx-auto">Thêm</button>
+      </div>
+    </form>
+  </div>
 </div>

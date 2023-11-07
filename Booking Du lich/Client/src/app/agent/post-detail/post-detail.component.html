@@ -13,10 +13,10 @@
         <button (click)="deleteAllImg()" class="btn-outline-danger">
           Xoá tất cả ảnh
         </button>
-        <button  class="btn-primary" routerLink="/agent/manage-rooms">
+        <button *ngIf="hotelID !== null" class="btn-primary" routerLink="/agent/{{hotelID}}/manage-rooms">
           Quản lý phòng
         </button>
-        <button class="btn-primary" routerLink="/agent/service">
+        <button *ngIf="hotelID !== null" class="btn-primary" routerLink="/agent/{{hotelID}}/service">
           Quản lý dịch vụ
         </button>
       </div>
@@ -73,7 +73,6 @@
             <option
               *ngFor="let city of allCities"
               [value]="city.Id"
-              [attr.data-cityCode]="city.CityCode"
               [selected]="city.Id == cityId"
             >
               {{ city.Name }}
@@ -108,11 +107,11 @@
 
         <!-- ngày đăng -->
         <div class="text-[1.2em] mb-4" *ngIf="hotelID !== null">
-          <span>Ngày đăng: 12/02/2003</span>
+          <span>Ngày đăng: {{postingDate | date : "dd-MM-yyyy"}}</span>
         </div>
 
         <div>
-          <button class="btn-primary w-full mb-2">Save</button>
+          <button class="btn-primary w-full mb-2">Lưu</button>
         </div>
       </form>
     </div>

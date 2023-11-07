@@ -23,5 +23,6 @@ namespace WebApi.Interfaces
         public Task<ApplicationUser> GetUserById(string id);
         public Task<bool> IsLockedOut(ApplicationUser user);
         public Task<UserDto> CreateApplicationUserDto(ApplicationUser user);
+        public Task<IdentityResult> UpdateAccount(ApplicationUser user);
     }
 }

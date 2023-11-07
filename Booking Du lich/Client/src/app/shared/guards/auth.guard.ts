@@ -21,7 +21,7 @@ export const authGuard: CanActivateFn = (route, state) => {
   const decoded: any = jwt_decode(jwt);
   const roleAccount = decoded.role;
 
-  if (roleSys === undefined) {
+  if (roleSys === undefined && roleAccount !== Roles.USER) {
     if (roleAccount === Roles.ADMIN) {
       return router.navigateByUrl('/admin');
     }
@@ -31,7 +31,7 @@ export const authGuard: CanActivateFn = (route, state) => {
     }
 
     if (roleAccount === Roles.AGENTHOTEL) {
-      return router.navigateByUrl('/agent/post');
+      return router.navigateByUrl('/agent');
     }
 
     if (roleAccount === Roles.AGENTTOUR) {
@@ -39,8 +39,9 @@ export const authGuard: CanActivateFn = (route, state) => {
     }
   }
 
-  if (roleAccount !== roleSys) {
+  if (roleAccount !== roleSys && roleAccount !== Roles.USER) {
     return router.navigateByUrl('/access-denied');
   }
+  
   return true;
 };
