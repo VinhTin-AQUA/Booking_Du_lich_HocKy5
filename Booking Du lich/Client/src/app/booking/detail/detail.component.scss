@@ -1,7 +1,8 @@
 .list-img {
-	@apply max-h-[500px] overflow-y-scroll mb-4;
+	@apply max-h-[400px] overflow-y-scroll mb-4;
 }
 
 .hotel-info {
-	@apply w-2/3 border p-2;
+	@apply w-auto p-2 mx-36 space-y-5 border-2 border-gray-200 ;
 }
+

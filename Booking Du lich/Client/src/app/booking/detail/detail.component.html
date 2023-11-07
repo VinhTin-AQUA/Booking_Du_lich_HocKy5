@@ -1,31 +1,38 @@
-<div class="wrapper">
-  <div class="container mx-auto">
-    <!-- hotel -->
-    <div class="hotel-detail mb-4">
-      <!-- img -->
-      <div class="list-img">
-        <div class="columns-2 md:columns-3 gap-2">
-          <div
-            *ngFor="let url of hotelImg"
-            class="break-inside-avoid mb-2 rounded border p-2"
-          >
-            <div class="">
-              <span class="block">{{ url.name }}</span>
-            </div>
-            <img [src]="imgBase + url.data" alt="" />
-          </div>
-        </div>
-      </div>
+<div class="mx-32 flex items-start justify-center w-auto h-auto py-24 sm:py-8 px-4">
+    <div class="w-full relative flex items-center justify-center">
+      <button aria-label="slide backward" class="absolute z-30 left-0 ml-8 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer" (click)="goPrev()">
+        <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7 1L1 7L7 13" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+      <div class="w-full h-full mx-auto overflow-x-hidden overflow-y-hidden">
+        <div id="slider" class="h-full flex gap-2 items-center justify-start transition ease-out duration-700">
 
-      <div *ngIf="hotel !== null" class="hotel-info">
-        <div class="text-3xl font-bold">{{ hotel.HotelName }}</div>
-        <div>
-          Địa chỉ: <i>{{ hotel.Address }}</i>
+          <div class="flex flex-shrink-0 relative w-[400px] max-w-[400px] h-[400px] sm:w-auto" *ngFor="let img of hotelImg">
+            <img [src]="baseImg + img.data" [alt]="hotel?.HotelName" class="rounded-lg object-cover object-center w-full" />
+            <div class="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
+               <div class="flex h-full items-end pb-6">
+                <h3 class="text-md lg:text-2xl font-semibold leading-5 lg:leading-6 text-white">{{hotel?.HotelName}}</h3>
+              </div> 
+            </div>
+          </div>
+          
         </div>
-        <hr />
-        <div>{{ hotel.Description }}</div>
       </div>
+      <button aria-label="slide forward" class="absolute z-30 right-0 mr-8 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400" (click)="goNext()">
+        <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 1L7 7L1 13" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
     </div>
+  </div>
+  <!--================================================================================-->
+  <div *ngIf="hotel !== null" class="hotel-info  ">
+    <div class="text-3xl font-bold hover:underlineg]">{{ hotel.HotelName }}</div>
+    <div class="text-lg">
+          Địa chỉ: <i>{{ hotel.Address }}</i>
+    </div>
+
 
     <div class="list-rooms">
       <div class="text-xl font-bold">Các phòng</div>
@@ -58,26 +65,8 @@
 							<button class="btn-primary" *ngIf="room.IsAvailable === true" routerLink="/city/book">Đặt phòng</button>
 							<button class="btn-primary" *ngIf="room.IsAvailable === false">Hết chỗ</button>
             </div>
-          </div>
 
-					<!-- img -->
-					<div class="w-1/2 border-2 h-[300px] max-h-[300px]">
-						<img
-            *ngIf="fileNames[i] !== ''"
-              [src]="imgBase + fileNames[i]"
-              alt=""
-              class="max-w-[300px] max-h-[300px] rounded-t-lg"
-            />
-
-            <img
-            *ngIf="fileNames[i] === ''"
-              src="/assets/noimage.png"
-              alt=""
-              class="max-w-[300px] max-h-[300px] rounded-t-lg"
-            />
-					</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+      <hr />
+      <div class="text-lg">{{ hotel.Description }}</div>
+ </div>
+  
