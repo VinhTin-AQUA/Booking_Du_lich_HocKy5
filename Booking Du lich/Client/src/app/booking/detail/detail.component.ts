@@ -75,8 +75,6 @@ export class DetailComponent {
         };
         this.hotelImg.push(imgShow);
       }
-
-      console.log(this.hotelImg);
     })
   }
 
