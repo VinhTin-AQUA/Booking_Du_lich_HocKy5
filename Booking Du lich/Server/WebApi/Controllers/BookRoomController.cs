@@ -91,7 +91,7 @@ namespace WebApi.Controllers
         [HttpDelete("delete-book-room")]
         public async Task<IActionResult> DeleteRoom([FromQuery] string userID, [FromQuery] int roomID, [FromQuery] DateTime? checkInDate)
         {
-            if (userID == null || roomID == null || checkInDate ==null)
+            if (userID == null || roomID == null || checkInDate == null)
             {
                 return BadRequest(new JsonResult(new { title = "Error", message = "Missing parameter" }));
             }

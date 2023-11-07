@@ -2,7 +2,7 @@
 using System.Xml.Linq;
 using WebApi.Interfaces;
 using WebApi.Models;
-using WebApi1.Data;
+using WebApi.Data;
 
 namespace WebApi.Repositories
 {
@@ -43,7 +43,7 @@ namespace WebApi.Repositories
             return roomType;
         }
 
-        public async Task<RoomType> GetRoomTypeByName(string? name)
+        public async Task<RoomType> GetRoomTypeByName(string name)
         {
             var roomType = await context.RoomType
                 .Where(rt => rt.RoomTypeName == name)

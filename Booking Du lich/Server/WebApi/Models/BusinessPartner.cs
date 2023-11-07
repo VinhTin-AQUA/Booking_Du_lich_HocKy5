@@ -31,8 +31,5 @@ namespace WebApi.Models
 
          // tham chiếu khóa ngoại
          public ICollection<ApplicationUser> PartnerUser { get; set; }
-
-
-
     }
 }

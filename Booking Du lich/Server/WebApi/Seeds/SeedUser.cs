@@ -1,12 +1,44 @@
-﻿namespace WebApi.Seeds
+﻿using Bogus;
+using Microsoft.AspNetCore.Identity;
+using System.Security.Claims;
+using WebApi.Models;
+using WebApi.Data;
+
+namespace WebApi.Seeds
 {
-    public class SeedUser
+    public static class SeedUser
     {
-        public static readonly string Email = "user@gmail.com";
-        public static readonly string FirstName = "Người";
-        public static readonly string LastName = "dùng";
-        public static readonly string Password = "user123";
-        public static readonly string Address = "Khanh Hoa";
-        public static readonly string Phone = "0123456789";
+        public static async Task SeedUsersAsync(UserManager<ApplicationUser> userManager)
+        {
+            string fakePassword = "default123";
+            var passwordHasher = new PasswordHasher<IdentityUser>();
+            string hashedPassword = passwordHasher.HashPassword(null, fakePassword);
+
+            Faker<ApplicationUser> fk = new Faker<ApplicationUser>();
+
+            fk.RuleFor(u => u.FirstName, f => f.Name.FirstName());
+            fk.RuleFor(u => u.LastName, f => f.Name.LastName());
+            fk.RuleFor(u => u.Email, (f, u) => f.Internet.Email(u.FirstName, u.LastName));
+            fk.RuleFor(u => u.NormalizedEmail, (f, u) => u.Email.ToUpper());
+            fk.RuleFor(u => u.EmailConfirmed, f => true);
+            fk.RuleFor(u => u.UserName, (f, u) => u.Email);
+            fk.RuleFor(u => u.NormalizedUserName, (f, u) => u.UserName.ToUpper());
+            fk.RuleFor(u => u.PhoneNumber, f => f.Phone.PhoneNumber("##########"));
+            fk.RuleFor(u => u.PasswordHash, f => hashedPassword);
+            fk.RuleFor(u => u.Address, f => f.Address.FullAddress());
+
+            for (int i = 1; i <= 500; i++)
+            {
+                ApplicationUser user = fk.Generate();
+
+                await userManager.CreateAsync(user);
+
+                await userManager.AddToRolesAsync(user, new[] { SeedRole.USER_ROLE });
+                await userManager.AddClaimsAsync(user, new Claim[]
+                {
+                    new Claim(ClaimTypes.Email, user.Email),
+                });
+            }
+        }
     }
 }

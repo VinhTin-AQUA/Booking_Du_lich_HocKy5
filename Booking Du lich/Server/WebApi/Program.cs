@@ -12,8 +12,8 @@ using WebApi.Models;
 using WebApi.Models.MailService;
 using WebApi.Repositories;
 using WebApi.Services;
-using WebApi1.Data;
-using WebApi1.Repositories;
+using WebApi.Data;
+using WebApi.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 

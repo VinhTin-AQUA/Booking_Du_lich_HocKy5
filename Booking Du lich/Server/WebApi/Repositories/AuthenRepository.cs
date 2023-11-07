@@ -7,7 +7,7 @@ using WebApi.Interfaces;
 using WebApi.Models;
 using WebApi.Services;
 
-namespace WebApi1.Repositories
+namespace WebApi.Repositories
 {
     public class AuthenRepository : IAuthenRepository
     {

@@ -1,11 +1,10 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using System.Reflection.Metadata;
 using WebApi.Models;
 
-namespace WebApi1.Data
+namespace WebApi.Data
 {
     public partial class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {

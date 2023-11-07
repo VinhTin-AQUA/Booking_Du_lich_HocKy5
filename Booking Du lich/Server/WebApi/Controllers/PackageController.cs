@@ -96,10 +96,6 @@ namespace WebApi.Controllers
         [HttpDelete("delete-package")]
         public async Task<IActionResult> DeletePackage([FromQuery] int packageId)
         {
-            if (packageId == null)
-            {
-                return BadRequest(new JsonResult(new { title = "Error", message = "Missing parameter" }));
-            }
             var package = await packageRepository.GetPackageById(packageId);
 
             if (package == null)
