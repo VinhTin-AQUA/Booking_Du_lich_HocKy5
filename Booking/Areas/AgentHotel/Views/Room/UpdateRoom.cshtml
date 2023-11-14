@@ -1,0 +1,133 @@
+﻿@model Room
+
+@{
+    ViewData["Title"] = "Cập nhật phòng";
+    SelectList roomTypes = ViewBag.roomTypes;
+    string[] imgRooms = ViewBag.imgRooms;
+    string baseImgUrl = ViewBag.BaseImgUrl;
+}
+
+<div class="card">
+    <div class="card-header">
+        <div class="card-title">Thông tin chi nhánh</div>
+    </div>
+
+    <div class="card-body">
+        <form asp-action="UpdateRoom" class="d-block" enctype="multipart/form-data">
+            <div class="row">
+
+                <div class="col-sm-6 col-12">
+                    <div class="card-border">
+                        <div class="card-border-title">Thông tin cơ bản</div>
+                        <div class="card-border-body">
+                            <div class="row">
+                                <input type="hidden" asp-for="@Model.Id" />
+                                <div class="col-sm-6 col-12">
+                                    <div class="mb-3">
+                                        <label asp-for="RoomName" class="form-label"></label>
+                                        <input asp-for="RoomName" type="text" class="form-control" placeholder="Nhập tên phòng">
+                                        <span asp-validation-for="RoomName" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6 col-12">
+                                    <div class="mb-3">
+                                        <label asp-for="RoomNumber" class="form-label"></label>
+                                        <input asp-for="RoomNumber" type="text" class="form-control" placeholder="Nhập số phòng">
+                                        <span asp-validation-for="RoomNumber" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6 col-12">
+                                    <div class="mb-3">
+                                        <label asp-for="RoomTypeId" class="form-label"></label>
+                                        <select asp-for="RoomTypeId" asp-items="@roomTypes" class="form-control">
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6 col-12">
+                                    <div class=" mb-3">
+                                        <label asp-for="IsAvailable" class="form-label"></label>
+                                        <div class="input-group">
+                                            <input asp-for="IsAvailable" type="checkbox" class="form-check">
+                                            <span>Còn trống</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-12 ">
+                    <div class="card-border ">
+                        <div class="card-border-title">Mô tả</div>
+                        <div class="card-border-body ">
+                            <div class="row">
+                                <div class="col-sm-12 col-12">
+                                    <div class="mb-0">
+                                        <label asp-for="Description" class="form-label"></label>
+                                        <textarea asp-for="Description" rows="9" class="form-control"
+                                                  placeholder="Nhập mô tả"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                @* choose img *@
+                <div class="col-sm-12 col-12">
+                    <div class="card-border">
+                        <div class="card-border-title">Chọn ảnh cho khách sạn <input name="files" accept=".png, .jpg, .jpeg" id="fileInput" onchange="onSelect()" class="form-control" type="file" multiple /></div>
+                        <div class="card-border-body">
+                            <div id="dropzone" class="dropzone-dark">
+                                <div class="dropzone needsclick dz-clickable" id="demo-upload">
+                                    <div class="dz-message needsclick">
+                                        <div id="images" class="boad-grid">
+                                            @if (imgRooms != null)
+                                            {
+                                                @foreach (var url in imgRooms)
+                                                {
+                                                    <img src="@(baseImgUrl)/@url" class="img-item" width="350" />
+                                                }
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-12">
+                    <div class="custom-btn-group flex-end">
+                        <button type="submit" class="btn btn-light">Cập phòng</button>
+                        <button type="reset" class="btn btn-success">Reset</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    function onSelect() {
+        let fileInput = document.querySelector('#fileInput');
+        let selectedImage = document.getElementById('images');
+        const files = fileInput.files;
+
+        selectedImage.innerHTML = '';
+        for (let file of files) {
+            var imageUrl = URL.createObjectURL(file);
+            var imgElement = document.createElement('img');
+            imgElement.src = imageUrl;
+            imgElement.width = 350;
+            imgElement.classList.add("img-item");
+
+            // Hiển thị ảnh trên thẻ img
+            selectedImage.appendChild(imgElement);
+        }
+    }
+</script>

@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewData["Title"] = "Thêm loại phòng";
+}
+
+<form asp-area="AgentHotel" asp-controller="RoomType" asp-action="AddRoomType">
+	<div class="login-box">
+		<div class="login-form">
+
+			<div class="mb-3">
+				<label class="form-label">Tên loại phòng</label>
+				<input asp-for="@Model" name="typeName" type="text" class="form-control">
+				<span class="text-danger">@ViewBag.err</span>
+			</div>
+
+			<div class="login-form-footer">
+				<button type="submit" class="btn">
+					<span class="icon"> <i class="bi bi-arrow-right-circle"></i> </span>
+					Thêm
+				</button>
+			</div>
+		</div>
+	</div>
+</form>
+
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+}

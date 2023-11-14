@@ -1,0 +1,140 @@
+﻿@model string;
+
+@{
+    ViewData["Title"] = "Quản lý người dùng";
+
+    List<AppUser> users = ViewBag.Users;
+    int currentPage = ViewBag.currentPage;
+    int pageSize = ViewBag.pageSize;
+    int total = ViewBag.total;
+    string searchString = ViewBag.SearchString;
+    int index = currentPage * pageSize;
+}
+
+<link rel="stylesheet" href="~/css/user-manager/user-manager.css" />
+
+<div class="card">
+    <div class="card-header">
+        <div class="card-title w-100">
+            <div class="d-flex gap-2 justify-content-between">
+                <span class="d-block">Danh sách người dùng</span>
+                <!-- Search container start -->
+                <form class="search-container">
+
+                    <!-- Search input group start -->
+                    <div class="input-group border border-2 rounded">
+                        <input type="text" asp-for="@Model" name="searchString" class="form-control" placeholder="Nhập tên người dùng">
+                        <button class="btn" type="submit">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </div>
+                    <!-- Search input group end -->
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-body">
+
+        <div class="table-responsive">
+            <table class="table v-middle">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Tên</th>
+                        <th>Email</th>
+                        <th class="text-center">Xác thực</th>
+                        <th>Số điện thoại</th>
+                        <th>Khóa</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (users != null && users.Count() > 0)
+                    {
+                        @foreach (var u in users)
+                        {
+                            <tr>
+                                <td>
+                                    @(++index)
+                                </td>
+                                <td>
+                                    @(u.FirstName) @(u.LastName)
+                                </td>
+                                <td>@u.Email</td>
+                                <td class="text-center">
+                                    @if (u.EmailConfirmed == true)
+                                    {
+                                        <span class="text-green td-status"><i class="bi bi-check-circle"></i></span>
+                                    }
+                                    else
+                                    {
+                                        <span class="text-danger td-status"><i class="fa-solid fa-circle-xmark"></i></span>
+                                    }
+                                </td>
+                                <td>@u.PhoneNumber</td>
+                                <td>
+                                    @if (u.LockoutEnd != null)
+                                    {
+                                        <span class="badge badge-sm bg-gradient-warning text-danger">@u.LockoutEnd.Value.ToString("dd/MM/yyyy HH:mm:ss")</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge badge-sm bg-gradient-success text-black">Chưa khóa</span>
+                                    }
+                                </td>
+                                <td>
+                                    <a asp-action="Detail" asp-route-userId="@u.Id">
+                                        <span class="fs-4 text-success">
+                                            <i class="fa-solid fa-pen-to-square"></i>
+                                        </span>
+                                   </a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        @* pagination *@
+        <nav aria-label="col-12 Page navigation">
+            <ul class="pagination">
+                <li class="page-item">
+                    <a class="page-link" aria-label="Previous" asp-area="Admin" asp-controller="UserManager" asp-action="Index" asp-route-currentPage="@(currentPage - 1)" asp-route-searchString="@Model">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+
+                @if (currentPage <= 1)
+                {
+                    <li class="page-item">
+                        <a class="page-link  @(currentPage == 0 ? "actived" : "")" asp-area="Admin" asp-controller="UserManager" asp-action="Index" asp-route-currentPage="0" asp-route-searchString="@Model">
+                            1
+                        </a>
+                    </li>
+
+                    <li class="page-item"><a class="page-link @(currentPage == 1 ? "actived" : "")" asp-area="Admin" asp-controller="UserManager" asp-action="Index" asp-route-currentPage="1" asp-route-data="@Model" asp-route-searchString="@Model">2</a></li>
+
+                    <li class="page-item"><a class="page-link " asp-area="Admin" asp-controller="UserManager" asp-action="Index" asp-route-currentPage="2" asp-route-searchString="@Model">3</a></li>
+                }
+                else
+                {
+                    @for (int i = currentPage - 1; i <= currentPage + 1; i++)
+                    {
+                        if (i > 0 && i <= total)
+                        {
+                            <li class="page-item"><a class="page-link @(currentPage == i ? "actived" : "") " asp-area="Admin" asp-controller="UserManager" asp-action="Index" asp-route-currentPage="@i" asp-route-searchString="@Model">@(i + 1)</a></li>
+                        }
+                    }
+                }
+
+                <li class="page-item">
+                    <a class="page-link" aria-label="Next" asp-area="Admin" asp-controller="UserManager" asp-action="Index" asp-route-currentPage="@(currentPage + 1)" asp-route-searchString="@Model">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>

@@ -1,0 +1,63 @@
+﻿@model string;
+
+@{
+    /*
+     * obj[0]: title
+     * obj[1]: name1
+     * obj[2]: name2
+     * obj[3]: identity (email, id,...)
+     * obj[4]: type (user, city, agent,..)
+     */
+    string[] obj = Model.Split(',');
+}
+
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+
+                <!-- title -->
+                <h5 class="modal-title" id="exampleModalLabel">@obj[0]</h5>
+                <button type="button" class="btn-danger rounded-full" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="fa-solid fa-x"></i>
+                </button>
+            </div>
+
+            <!-- question -->
+            <div class="modal-body">
+                Bạn có muốn xóa: @obj[1] @obj[2]
+            </div>
+
+            <div class="modal-footer">
+
+                @switch (obj[4])
+                {
+                    case "user":
+                        <a type="button" class="btn btn-danger" asp-area="Admin" asp-controller="UserManager" asp-action="DeleteUser" asp-route-email="@obj[3]">Xóa</a>
+                        break;
+                    case "city":
+                        <a type="button" class="btn btn-danger" asp-area="Admin" asp-controller="City" asp-action="DeleteCity" asp-route-cityId="@obj[3]">Xóa</a>
+                        break;
+                    case "partner":
+                        <a type="button" class="btn btn-danger" asp-area="Admin" asp-controller="AgentHotelManager" asp-action="DeletePartner" asp-route-partnerId="@obj[3]">Xóa</a>
+                        break;
+                    case "agentHotel":
+                        <a type="button" class="btn btn-danger" asp-area="Admin" asp-controller="AgentHotelManager" asp-action="DeleteAgentHotel" asp-route-email="@obj[3]">Xóa</a>
+                        break;
+
+                    case "agentTour":
+                        <a type="button" class="btn btn-danger" asp-area="Admin" asp-controller="AgentTourManager" asp-action="DeleteAgentTour" asp-route-email="@obj[3]">Xóa</a>
+                        break;
+                    case "hotel":
+                        <a type="button" class="btn btn-danger" asp-area="AgentHotel" asp-controller="Hotel" asp-action="DeleteHotel" asp-route-hotelId="@obj[3]">Xóa</a>
+                        break;
+                    default:
+                        break;
+                }
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Trở lại</button>
+            </div>
+        </div>
+    </div>
+</div>
+

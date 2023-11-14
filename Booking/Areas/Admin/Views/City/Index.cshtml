@@ -1,0 +1,67 @@
+﻿@{
+    ViewData["Title"] = "Quản lý tỉnh thành phố";
+    List<City> cities = ViewBag.Cities;
+    string baseImgUrl = ViewBag.BaseImgUrl;
+
+}
+
+
+<link rel="stylesheet" href="~/css/city-manager/city-manager.css" asp-append-version="true" />
+
+<div class="row">
+
+    <section class="section-products">
+        <div class="container">
+
+            <!-- Navbar -->
+            <nav class="navbar navbar-main navbar-expand-lg px-0  shadow-none border-radius-xl" id="navbarBlur" data-scroll="true">
+                <form asp-area="Admin" asp-controller="City" asp-action="Index" class="container-fluid py-1">
+                    <div class="mt-sm-0 mt-2 me-md-0 me-sm-4 d-flex" id="navbar">
+                        <div class="search-container">
+
+                            <!-- Search input group start -->
+                            <div class="input-group border border-2 rounded">
+                                <input type="text" asp-for="@Model" name="searchString" class="form-control me-2" placeholder="Nhập tên người dùng">
+                                <button class="btn" type="submit">
+                                    <i class="bi bi-search"></i>
+                                </button>
+                            </div>
+                            <!-- Search input group end -->
+                        </div>
+
+                        <div class="ms-md-auto pe-md-3 d-flex align-items-center ">
+                            <a asp-action="AddCity" class="ms-2 btn btn-outline-primary  rounded my-auto">Thêm tỉnh / thành</a>
+                        </div>
+                    </div>
+                </form>
+            </nav>
+
+            <div class="row">
+                @if (cities != null && cities.Count() > 0)
+                {
+                    foreach (var city in cities)
+                    {
+                        <!-- Single Product -->
+                        <div class="col-md-6 col-lg-4 col-xl-3">
+                            <div id="product-1" class="single-product ">
+                                <div class="part-1 d-flex justify-content-center border border-secondary rounded">
+                                    <img class="img-fluid" src="@(baseImgUrl + city.PhotoPath)" alt="@city.PhotoPath">
+                                    <ul class="">
+                                        <li><a asp-action="CityDetail" asp-route-cityId="@city.Id" class="text-success rounded cursor-pointer"><i class="fs-5 fa-solid fa-pen-to-square"></i></a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="part-2">
+                                    <h3 class="product-title">@city.Name</h3>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </section>
+</div>
+
+
+
