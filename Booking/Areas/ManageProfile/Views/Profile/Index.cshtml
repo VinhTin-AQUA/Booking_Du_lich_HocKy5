@@ -1,0 +1,84 @@
+﻿@model EditProfile
+@{
+    ViewData["Title"] = "Thông tin cá nhân";
+    AppUser user = ViewBag.User;
+}
+
+<link rel="stylesheet" href="~/css/profile.css" asp-append-version="true" />
+
+<div class="container rounded bg-white mb-5">
+    <div class="row">
+
+        <div class="col-md-3 border-right">
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold">Edogaru</span><span class="text-black-50">edogaru@mail.com.my</span><span> </span></div>
+        </div>
+
+        <div class="col-md-5 border-right">
+            <form asp-area="ManageProfile" asp-controller="Profile" asp-action="UpdateProfile" class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="text-right">Thông tin của bạn</h4>
+                </div>
+
+                <div class="row mt-2">
+                    <div class="col-md-6">
+                        <label asp-for="FirstName" class="labels"></label>
+                        <input asp-for="FirstName" type="text" class="form-control" placeholder="Họ" value="@user.FirstName">
+                        <span asp-validation-for="FirstName" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="LastName" class="labels"></label>
+                        <input asp-for="LastName" type="text" class="form-control" value="@user.LastName" placeholder="Tên">
+                        <span asp-validation-for="LastName" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-md-12">
+                        <label class="labels" asp-for="PhoneNumber"></label>
+                        <input asp-for=PhoneNumber type="text" class="form-control" placeholder="Số điện thoại" value="@user.PhoneNumber">
+                        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-12">
+                        <label asp-for="Address" class="labels"></label>
+                        <input asp-for="Address" type="text" class="form-control" placeholder="enter address line 1" value="@user.Address">
+                        <span asp-validation-for="Address" class="text-danger"></span>
+                        </div>
+
+                    <div class="col-md-12">
+                        <label asp-for="@user.Email" class="labels"></label>
+                        <input asp-for="Email" type="email" class="form-control" placeholder="enter address line 2" value="@user.Email" readonly>
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+
+                   @*  <div class="col-md-12"><label class="labels">State</label><input type="text" class="form-control" placeholder="enter address line 2" value=""></div>
+                    <div class="col-md-12"><label class="labels">Area</label><input type="text" class="form-control" placeholder="enter address line 2" value=""></div>
+                    <div class="col-md-12"><label class="labels">Email ID</label><input type="text" class="form-control" placeholder="enter email id" value=""></div>
+                    <div class="col-md-12"><label class="labels">Education</label><input type="text" class="form-control" placeholder="education" value=""></div> *@
+                </div>
+                @* <div class="row mt-3">
+                    <div class="col-md-6"><label class="labels">Country</label><input type="text" class="form-control" placeholder="country" value=""></div>
+                    <div class="col-md-6"><label class="labels">State/Region</label><input type="text" class="form-control" value="" placeholder="state"></div>
+                </div> *@
+                <div class="mt-5 text-center">
+                    <button class="btn btn-primary w-auto" type="submit">Cập nhật</button>
+                    <a class="btn btn-outline-primary w-auto" asp-area="ManageProfile" asp-controller="Profile" asp-action="ChangePassword" asp-route-email="@user.Email" >Đổi mật khẩu</a>
+                </div>
+            </form>
+        </div>
+       @*  <div class="col-md-4">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center experience"><span>Edit Experience</span><span class="border px-3 p-1 add-experience"><i class="fa fa-plus"></i>&nbsp;Experience</span></div><br>
+                <div class="col-md-12"><label class="labels">Experience in Designing</label><input type="text" class="form-control" placeholder="experience" value=""></div> <br>
+                <div class="col-md-12"><label class="labels">Additional Details</label><input type="text" class="form-control" placeholder="additional details" value=""></div>
+            </div>
+        </div> *@
+    </div>
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,70 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #4A148C;
+    border-color: #4A148C;
+    padding: 12px;
+    font-weight: 700;
+    border-radius: 41px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.btn-outline-primary {
+    border-color: #4A148C;
+    color: #4A148C;
+    padding: 12px;
+    font-weight: 700;
+    border-radius: 41px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #4a148c;
+    outline: 0;
+    box-shadow: none;
+}
+
+.bg-custom {
+    background-color: #4A148C;
+}
+
+
+/*Masonry Layout */
+.boad-grid {
+    column-count: 3;
+    column-gap: 2;
+}
+
+.img-item {
+    -webkit-column-break-inside: avoid;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    margin-bottom: 5px;
+}

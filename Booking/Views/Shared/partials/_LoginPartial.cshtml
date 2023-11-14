@@ -1,0 +1,32 @@
+﻿@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
+@{
+    var user = await UserManager.GetUserAsync(User);
+
+}
+@if (SignInManager.IsSignedIn(User))
+{
+    <a href="#" id="userSettings" class="user-settings" data-toggle="dropdown" aria-haspopup="true">
+        <span class="user-name d-none d-md-block">@user.FirstName @user.LastName</span>
+        <span class="avatar">
+            <img src="~/assets/admin-layout/images/user.png" alt="Admin Templates">
+            <span class="status online"></span>
+        </span>
+    </a>
+
+    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="userSettings">
+        <div class="header-profile-actions">
+            <a asp-area="ManageProfile" asp-controller="Profile" asp-action="Index">Thông tin cá nhân</a>
+            <a href="account-settings.html">Cài đặt</a>
+            <a asp-area="Authentication" asp-controller="Authentication" asp-action="Logout">Đăng xuất</a>
+        </div>
+    </div>
+}
+else
+{
+    <div>
+        <a asp-area="Authentication" asp-controller="Authentication" asp-action="Login" class="btn btn-primary">Đăng nhập</a>
+        <a asp-area="Authentication" asp-controller="Authentication" asp-action="SignUp" type="button" class="btn btn-primary">Đăng ký</a>
+    </div>
+}
+

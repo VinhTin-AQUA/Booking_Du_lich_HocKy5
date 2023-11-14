@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewData["Title"] = "Page not found";
+}
+
+
+<link rel="stylesheet" href="~/css/page-not-found/main.min.css" asp-append-version="true" />
+
+<!-- Error screen start -->
+<div class="error-screen">
+	<img src="~/assets/page-not-found/earth.png" class="earth d-none d-lg-block" alt="Admin Panels" />
+	<img src="~/assets/page-not-found/moon.png" class="moon d-none d-lg-block" alt="Admin Dashboard" />
+	<img src="~/assets/page-not-found/rocket.svg" class="rocket d-none d-lg-block" alt="Admin Template" />
+	<div class="contents">
+		<h1 class="mt-5">404</h1>
+		<h3 class="fw-bold mb-5">
+			We're sorry but it looks like that page doesn't exist anymore.
+		</h3>
+		<a href="#" class="btn fw-bold fs-5 rounded-5 px-5 py-3 mb-5">My Dashboard</a>
+	</div>
+	<div class="astronaut-container">
+		<img class="astronaut d-none d-lg-block" src="~/assets/page-not-found/astronaut.svg" alt="Admin Dashboard Templates" />
+	</div>
+</div>
+<!-- Error screen end -->
