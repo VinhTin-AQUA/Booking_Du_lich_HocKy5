@@ -1,0 +1,115 @@
+﻿@{
+    ViewData["Title"] = "Danh sách phòng";
+
+    List<Room> roomsOfHotel = ViewBag.RoomsOfHotel;
+    List<string> imgRooms = ViewBag.ImgRooms;
+    string baseImgUrl = ViewBag.BaseImgUrl;
+    int n = roomsOfHotel.Count();
+
+    int hotelId = ViewBag.HotelId;
+
+}
+
+
+<div class="card">
+    <div class="card-header">
+        <div class="card-title w-100">
+            <div class="d-flex gap-2 justify-content-between">
+                <span class="d-block">Danh sách chi nhánh</span>
+                <!-- Search container start -->
+                <form class="search-container" asp-action="Index" asp-route-hotelId="@hotelId">
+                    <div class="d-flex gap-2 align-items-center">
+                        <!-- Search input group start -->
+                        <div class="input-group border border-2 rounded">
+                            <input type="text" name="searchString" class="form-control" placeholder="Nhập tên phòng">
+                            <button class="btn" type="submit">
+                                <i class="bi bi-search"></i>
+                            </button>
+                        </div>
+                        <!-- Search input group end -->
+                        <div class="" style="width: 200px;">
+                            <a asp-action="AddRoom" asp-route-hotelId="@hotelId" class="ms-2 btn btn-outline-primary w-auto text-nowrap rounded my-auto">Thêm phòng</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="card-body">
+        <div class="table-responsive">
+
+            <table class="table v-middle">
+                <thead>
+                    <tr>
+                        <th class="w-25">Hình ảnh</th>
+                        <th>Tên phòng</th>
+                        <th>Số phòng</th>
+                        <th>Loại phòng</th>
+                        <th>Tình trạng</th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @if (roomsOfHotel.Count() > 0)
+                    {
+                        @for (int i = 0; i < n; i++)
+                        {
+                            <tr class="fs-6">
+
+                                <td>
+                                    <div class="media-box">
+
+                                        @if (imgRooms[i] != "")
+                                        {
+                                            <img src="@(baseImgUrl + roomsOfHotel[i].PhotoPath)/@imgRooms[i]" class="media-avatar img-fluid d-block mx-auto" style="height: 200px;" alt="Bootstrap Gallery">
+                                        }
+                                        else
+                                        {
+                                            <img src="@(baseImgUrl)/no-image.jpg" class="media-avatar img-fluid d-block mx-auto" style="height: 200px;" alt="Bootstrap Gallery">
+                                        }
+                                    </div>
+                                </td>
+
+                                <td>@roomsOfHotel[i].RoomName</td>
+
+                                <td>@roomsOfHotel[i].RoomNumber</td>
+
+                                <td>
+                                    <span class="">@roomsOfHotel[i].RoomType.RoomTypeName</span>
+                                </td>
+
+                                <td>
+                                    @if (@roomsOfHotel[i].IsAvailable == true)
+                                    {
+                                        <span class="text-success">Còn trống</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="text-warning">Đã đặt</span>
+                                    }
+                                    
+                                </td>
+
+                                <td>
+                                    <a asp-action="UpdateRoom" asp-route-roomId="@roomsOfHotel[i].Id">
+                                        <span class="fs-4 text-success">
+                                            <i class="fa-solid fa-pen-to-square"></i>
+                                        </span>
+                                    </a>
+                                    <a asp-controller="RoomPrice" asp-action="Index" asp-route-roomId="@roomsOfHotel[i].Id" asp-route-roomId="@roomsOfHotel[i].Id">
+                                        <span class="fs-4 text-danger">
+                                            <i class="fa-solid fa-dollar-sign"></i>
+                                        </span>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

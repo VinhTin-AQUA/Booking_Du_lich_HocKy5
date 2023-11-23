@@ -1,0 +1,121 @@
+﻿@model AddHotel
+@{
+    ViewData["Title"] = "Thêm chi nhánh";
+    SelectList cities = ViewBag.citySelect;
+}
+
+<div class="card">
+    <div class="card-header">
+        <div class="card-title">Thông tin chi nhánh</div>
+    </div>
+    <div class="card-body">
+        <form asp-action="AddHotel" class="d-block" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-sm-6 col-12">
+                    <div class="card-border">
+                        <div class="card-border-title">Thông tin cơ bản</div>
+                        <div class="card-border-body">
+                            <div class="row">
+                                <div class="col-sm-12 col-12">
+                                    <div class="mb-3">
+                                        <label asp-for="HotelName" class="form-label"></label>
+                                        <div class="input-group">
+                                            <input asp-for="HotelName" type="text" class="form-control" placeholder="Tên Khách sạn">
+                                            <span class="text-danger" asp-validation-for="HotelName"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-12">
+                                    <div class=" mb-3">
+                                        <label asp-for="Address" class="form-label"></label>
+                                        <div class="input-group">
+                                            <input asp-for="Address" type="text" class="form-control" placeholder="Địa chỉ chi nhánh">
+                                            <span class="text-danger" asp-validation-for="Address"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-12">
+                                    <div class="mb-0">
+                                        <label class="form-label">Chọn thành phố</label>
+                                        <div class="input-group">
+                                            <select class="form-control" asp-for="CityId" asp-items="@cities"></select>
+                                            <span asp-validation-for="CityId" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-12 ">
+                    <div class="card-border ">
+                        <div class="card-border-title">Mô tả</div>
+                        <div class="card-border-body ">
+                            <div class="row">
+                                <div class="col-sm-12 col-12">
+                                    <div class="mb-0">
+                                        <label asp-for="Description" class="form-label"></label>
+                                        <textarea asp-for="Description" rows="9" class="form-control"
+                                                  placeholder="Nhập mô tả"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                @* choose img *@
+                <div class="col-sm-12 col-12">
+                    <div class="card-border">
+                        <div class="card-border-title">Chọn ảnh cho khách sạn <input name="files" accept=".png, .jpg, .jpeg" id="fileInput" onchange="onSelect()" class="form-control" type="file" multiple /></div>
+                        <div class="card-border-body">
+                            <div id="dropzone" class="dropzone-dark">
+                                <div class="dropzone needsclick dz-clickable" id="demo-upload">
+                                    <div class="dz-message needsclick">
+                                        <div id="images" class="boad-grid">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-12">
+                    <div class="custom-btn-group flex-end">
+                        <button type="submit" class="btn btn-light">Thêm chi nhánh</button>
+                        <button type="reset" class="btn btn-success">Reset</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+
+<script>
+    function onSelect() {
+        let fileInput = document.querySelector('#fileInput');
+        let selectedImage = document.getElementById('images');
+        const files = fileInput.files;
+
+        selectedImage.innerHTML = '';
+        for (let file of files) {
+            var imageUrl = URL.createObjectURL(file);
+            var imgElement = document.createElement('img');
+            imgElement.src = imageUrl;
+            imgElement.width = 350;
+            imgElement.classList.add("img-item");
+
+            // Hiển thị ảnh trên thẻ img
+            selectedImage.appendChild(imgElement);
+        }
+    }
+</script>

@@ -1,0 +1,156 @@
+body {
+  background: radial-gradient(at 70% 100%, #2a2b2d, #000306);
+}
+
+/******** 10.2 Stars Blink Animation ********/
+@-webkit-keyframes stars-blink {
+  10% {
+    opacity: 0.3;
+  }
+  30% {
+    opacity: 0.7;
+  }
+  70% {
+    opacity: 0.5;
+  }
+  90% {
+    opacity: 0.8;
+  }
+}
+@keyframes stars-blink {
+  10% {
+    opacity: 0.3;
+  }
+  30% {
+    opacity: 0.7;
+  }
+  70% {
+    opacity: 0.5;
+  }
+  90% {
+    opacity: 0.8;
+  }
+}
+/******** 10.3 Earth Rotate Animation ********/
+@-webkit-keyframes earth-spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes earth-spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+/******** 10.4 Rocket Launch Animation ********/
+@-webkit-keyframes rocket-launch {
+  100% {
+    -webkit-transform: translate(1250px, -1900px);
+  }
+}
+@keyframes rocket-launch {
+  100% {
+    transform: translate(1250px, -1900px);
+  }
+}
+/******** 10.5 Astronaut Animation ********/
+@-webkit-keyframes astronaut-movement {
+  100% {
+    -moz-transform: translate(-120px, -120px);
+  }
+}
+@keyframes astronaut-movement {
+  100% {
+    -webkit-transform: translate(-120px, -120px);
+  }
+}
+@-webkit-keyframes astronaut-rotate {
+  100% {
+    -moz-transform: rotate(-900deg);
+  }
+}
+@keyframes astronaut-rotate {
+  100% {
+    -webkit-transform: rotate(-900deg);
+  }
+}
+/******** 10.6 Error Screen ********/
+.error-screen {
+  position: relative;
+  color: #ffffff;
+  height: 100vh;
+}
+.error-screen:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: url(../images/stars.svg) repeat;
+  animation: stars-blink 3s linear infinite;
+  background-size: 100%;
+  background-attachment: fixed;
+}
+.error-screen .earth {
+  position: absolute;
+  bottom: 30%;
+  left: 10%;
+  -webkit-animation: earth-spin 150s linear infinite;
+  -moz-animation: earth-spin 150s linear infinite;
+  animation: earth-spin 150s linear infinite;
+  width: 110px;
+  height: 110px;
+}
+.error-screen .moon {
+  position: absolute;
+  top: 20%;
+  left: 25%;
+  width: 60px;
+  height: 60px;
+}
+.error-screen .rocket {
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  animation: rocket-launch 200s linear infinite;
+  width: 40px;
+  height: 40px;
+}
+.error-screen .astronaut-container {
+  position: absolute;
+  bottom: 15%;
+  right: 10%;
+  will-change: transform;
+  animation: astronaut-movement 75s infinite linear both alternate;
+}
+.error-screen .astronaut-container .astronaut {
+  animation: astronaut-rotate 240s infinite linear both alternate;
+  width: 120px;
+}
+.error-screen .contents {
+  text-align: center;
+  z-index: 1000;
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+  z-index: 1000;
+  position: relative;
+}
+.error-screen .contents h1 {
+  font-size: 12rem;
+  font-family: "Rubik Mono One";
+}
+
+/* CSS */
+.btn {
+  color: #ffffff;
+  background-color: #70787b;
+  background-image: radial-gradient(90% 85% at 90% 85%, rgba(0, 0, 0, 0.3) 0%, transparent 50%), radial-gradient(65% 85% at 25% 20%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 0) 100%);
+}
+.btn:hover {
+  background-color: #3d4245;
+}

@@ -1,0 +1,56 @@
+﻿@{
+    ViewData["Title"] = "Thêm thành phố";
+}
+
+<link rel="stylesheet" href="~/css//city-manager/add-city.css" asp-append-version="true" />
+
+<div class="container d-flex justify-content-center">
+    <figure class="card card-product-grid card-lg">
+
+        @* img *@
+        <div class="img-wrap" data-abc="true">
+            <img id="selectedImage" src="~/resources/images/no-image.jpg">
+        </div>
+
+        <form asp-action="AddCity" enctype="multipart/form-data">
+            <div class="bottom-wrap-payment">
+
+                <figcaption class="info-wrap m-0 py-0">
+                    <div class="row">
+                        <div class="col-md-12 col-xs-3 ">
+                            <input onchange="a()" id="fileInput" name="fileInput" type="file" class="form-control border border-dark" accept=".jpg, .npg, .jpeg" />
+                        </div>
+                    </div>
+                </figcaption>
+
+                <figcaption class="info-wrap py-0">
+                    <div class="row">
+
+                        <div class="ms-md-auto pe-md-3 d-flex align-items-center ">
+                            <div class="input-group input-group-outline d-flex flex-column ">
+                                <span class="text-danger">@(!string.IsNullOrWhiteSpace(TempData["Error"] as string) ? TempData["Error"] : "")</span> <br />
+                                <input name="cityName" type="text" class="form-control w-100" placeholder="Nhập tên tỉnh / thành">
+                            </div>
+                        </div>
+                    </div>
+                </figcaption>
+            </div>
+
+            <div class="bottom-wrap">
+                <button type="submit" class="btn btn-primary float-right" data-abc="true"> Thêm </button>
+                <a href="#" class="btn btn-warning float-left" data-abc="true"> Quay lại </a>
+            </div>
+        </form>
+    </figure>
+</div>
+
+<script>
+    function a() {
+        let fileInput = document.querySelector('#fileInput');
+        let selectedImage = document.getElementById('selectedImage');
+        const file = fileInput.files[0];
+        var imageUrl = URL.createObjectURL(file);
+        // Hiển thị ảnh trên thẻ img
+        selectedImage.src = imageUrl;
+    }
+</script>

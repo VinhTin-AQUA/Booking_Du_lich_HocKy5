@@ -1,0 +1,91 @@
+﻿@model SignUpModel
+
+@{
+    ViewData["Title"] = "Đăng ký";
+}
+
+
+<div class="card card-registration mt-2">
+    <div class="row g-0">
+        <div class="col-xl-6 d-none d-xl-block">
+            @* <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.webp"
+            alt="Sample photo" class="img-fluid"
+            style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" /> *@
+        </div>
+
+        <form asp-area="Authentication" asp-controller="Authentication" asp-action="SignUp" class="col-xl-6">
+            <div class="card-body text-black">
+                <h3 class="mb-2 text-uppercase">Đăng ký tài khoản</h3>
+
+                @* first name , last name *@
+                <div class="row">
+                    <div class="col-md-6 mb-2">
+                        <div class="form-outline">
+                            <label asp-for="FirstName" class="form-label" for="form3Example1m"></label>
+                            <input asp-for="FirstName" type="text" id="form3Example1m" class="form-control form-control-lg" />
+                            <span class="text-danger" asp-validation-for="FirstName"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-2">
+                        <div class="form-outline">
+                            <label asp-for="LastName" class="form-label" for="form3Example1n"></label>
+                            <input asp-for="LastName" type="text" id="form3Example1n" class="form-control form-control-lg" />
+                            <span class="text-danger" asp-validation-for="LastName"></span>
+                        </div>
+                    </div>
+                </div>
+
+                @* email, address *@
+                <div class="row">
+                    <div class="col-md-6 mb-2">
+                        <div class="form-outline">
+                            <label asp-for="Email" class="form-label" for="form3Example1m1"></label>
+                            <input asp-for="Email" type="text" id="form3Example1m1" class="form-control form-control-lg" />
+                            <span class="text-danger" asp-validation-for="Email"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <div class="form-outline">
+                            <label asp-for="Address" class="form-label" for="form3Example1n1"></label>
+                            <input asp-for="Address" type="text" id="form3Example1n1" class="form-control form-control-lg" />
+                            <span class="text-danger" asp-validation-for="Address"></span>
+                        </div>
+                    </div>
+                </div>
+
+                @* phone *@
+                <div class="form-outline mb-2">
+                    <label asp-for="PhoneNumber" class="form-label" for="form3Example8"></label>
+                    <input asp-for="PhoneNumber" type="text" id="form3Example8" class="form-control form-control-lg" />
+                    <span class="text-danger" asp-validation-for="PhoneNumber"></span>
+                </div>
+
+                @* password *@
+                <div class="form-outline mb-2">
+                    <label asp-for="Password" class="form-label" for="form3Example8"></label>
+                    <input asp-for="Password" type="password" id="form3Example8" class="form-control form-control-lg" />
+                    <span class="text-danger" asp-validation-for="Password"></span>
+                </div>
+
+                @* confirm password *@
+                <div class="form-outline mb-2">
+                    <label asp-for="ConfirmPassword" class="form-label" for="form3Example8"></label>
+                    <input asp-for="ConfirmPassword" type="password" id="form3Example8" class="form-control form-control-lg" />
+                    <span class="text-danger" asp-validation-for="ConfirmPassword"></span>
+                </div>
+
+                <div class="d-flex justify-content-end pt-2">
+                    <button type="submit" class="btn btn-primary btn-lg ms-2">Đăng ký</button>
+                    <a class="btn btn-outline-primary btn-lg ms-2">Đã có tài khoản? Đăng nhập</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

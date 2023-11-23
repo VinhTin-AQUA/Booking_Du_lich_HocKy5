@@ -1,0 +1,64 @@
+﻿@model RoomPrice
+@{
+	ViewData["Title"] = "Thêm giá cho phòng";
+	int roomId = ViewBag.RoomId;
+}
+
+
+<div class="card">
+	<div class="card-body">
+		<form class="row" asp-action="UpdateRoomPrice" asp-route-roomId="@roomId">
+			<div class="mx-auto col-sm-6 col-12">
+				<div class="card-border">
+					<div class="card-border-title">Thông tin giá phòng</div>
+					<div class="card-border-body">
+						<div class="row">
+							<div class="col-sm-6 col-12">
+
+			@* 					<input type="hidden" asp-for="RoomId" />
+								<input type="hidden" asp-for="ValidFrom" /> *@
+
+								<div class="mb-3">
+									<label asp-for="ValidFrom" class="form-label"></label>
+									<input asp-for="ValidFrom" type="date" class="form-control" placeholder="Ngày áp dụng" readonly>
+									<span asp-validation-for="ValidFrom" class="text-danger"></span>
+								</div>
+							</div>
+
+							<div class="col-sm-6 col-12">
+								<div class="mb-3">
+									<label asp-for="GoodThru" class="form-label"></label>
+									<input asp-for="GoodThru" type="date" class="form-control" placeholder="Ngày kết thúc" readonly>
+									<span asp-validation-for="GoodThru" class="text-danger"></span>
+								</div>
+							</div>
+							<div class="col-sm-12 col-12">
+								<div class="mb-3">
+									<label asp-for="Price" class="form-label"></label>
+									<input asp-for="Price" type="number" class="form-control" placeholder="Giá phòng" readonly>
+									<span asp-validation-for="Price" class="text-danger"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-sm-12 col-12">
+				<div class="custom-btn-group flex-end">
+					@* <button type="submit" class="btn btn-success">Thêm giá phòng</button> *@
+					<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteRoomPrice">Xóa</button>
+				</div>
+			</div>
+		</form>
+
+	</div>
+</div>
+
+@await Html.PartialAsync("partials/_DeleteRoomPricePartial",@$"{Model.RoomId},{Model.ValidFrom}")
+
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+}
