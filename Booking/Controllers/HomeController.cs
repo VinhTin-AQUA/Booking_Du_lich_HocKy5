@@ -40,13 +40,16 @@ namespace Booking.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-
+        [Route("search-tours")]
+        [HttpGet]
         public IActionResult SearchTour()
         {
             return View();
         }
 
-        public IActionResult TourDetail()
+		[Route("tour-detail")]
+		[HttpGet]
+		public IActionResult TourDetail()
         {
             return View();
         }
