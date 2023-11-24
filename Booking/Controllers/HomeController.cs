@@ -39,5 +39,17 @@ namespace Booking.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+
+        public IActionResult SearchTour()
+        {
+            return View();
+        }
+
+        public IActionResult TourDetail()
+        {
+            return View();
+        }
+
     }
 }
