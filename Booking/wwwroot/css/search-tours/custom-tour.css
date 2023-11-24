@@ -1,0 +1,55 @@
+﻿.search-location-custom {
+    border-bottom-left-radius: var(--bs-border-radius-xxl) !important;
+    border-top-left-radius: var(--bs-border-radius-xxl) !important;
+}
+
+.search-icon-custom {
+    border-bottom-right-radius: var(--bs-border-radius-xxl) !important;
+    border-top-right-radius: var(--bs-border-radius-xxl) !important;
+}
+
+.btn-tour-custom {
+    width: 40px;
+    height: 40px;
+    color: var(--bs-btn-color);
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    border: var(--bs-btn-border-width) solid var(--bs-btn-border-color);
+    border-radius: var(--bs-btn-border-radius);
+    background-color: var(--bs-btn-bg);
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.btn-outline-secondary-custom:hover {
+    color: #ffffff;
+    background: #151d28;
+    border: 1px solid #151d28;
+}
+
+.activity-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .activity-item > a {
+        color: gray;
+        font-weight: 500;
+        transition: 400ms;
+    }
+
+    .activity-item:hover a {
+        background-color: #ddf0ff;
+    }
+
+
+.tour-actived {
+    border-bottom: 2px solid #55acee !important;
+}
+
+    .tour-actived > a {
+        color: #55acee !important;
+    }
