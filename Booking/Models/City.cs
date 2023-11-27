@@ -23,5 +23,6 @@ namespace Booking.Models
         /*tham chiếu khóa ngoại*/
         public ICollection<Hotel>? Hotels { get; set;}
         public ICollection<Tour>? Tours { get; set;}
+        public ICollection<TouristAttraction> TouristAttractions { get; set;}
     }
 }

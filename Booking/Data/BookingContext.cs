@@ -156,6 +156,12 @@ public partial class BookingContext : IdentityDbContext<AppUser>
             .HasOne(u => u.BookTour)
             .WithOne(bt => bt.User)
             .HasForeignKey<BookTour>(bt => bt.UserID);
+
+        modelBuilder.Entity<TouristAttraction>().HasKey(ta => ta.TouristAttractionId).HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+        modelBuilder.Entity<City>()
+            .HasMany(c => c.TouristAttractions)
+            .WithOne(t => t.City)
+            .HasForeignKey(t => t.CityId);
     }
 
     public DbSet<City> City { get; set; }
@@ -173,6 +179,7 @@ public partial class BookingContext : IdentityDbContext<AppUser>
     public DbSet<PackagePrice> PackagePrices { get; set; }
     public DbSet<BusinessPartner> BusinessPartner { get; set; }
     public DbSet<BookTour> BookTours { get; set; }
+    public DbSet<TouristAttraction> TouristAttractions { get; set; }
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }
