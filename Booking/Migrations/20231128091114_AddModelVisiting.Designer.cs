@@ -4,6 +4,7 @@ using Booking.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Booking.Migrations
 {
     [DbContext(typeof(BookingContext))]
-    partial class BookingContextModelSnapshot : ModelSnapshot
+    [Migration("20231128091114_AddModelVisiting")]
+    partial class AddModelVisiting
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -574,8 +577,6 @@ namespace Booking.Migrations
 
                     b.HasKey("TourId", "TouristAttractionId");
 
-                    b.HasIndex("TouristAttractionId");
-
                     b.ToTable("Visitings");
                 });
 
@@ -885,25 +886,6 @@ namespace Booking.Migrations
                     b.Navigation("City");
                 });
 
-            modelBuilder.Entity("Booking.Models.Visiting", b =>
-                {
-                    b.HasOne("Booking.Models.Tour", "Tour")
-                        .WithMany("Visitings")
-                        .HasForeignKey("TourId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Booking.Models.TouristAttraction", "TouristAttraction")
-                        .WithMany("Visitings")
-                        .HasForeignKey("TouristAttractionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Tour");
-
-                    b.Navigation("TouristAttraction");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -1020,13 +1002,6 @@ namespace Booking.Migrations
             modelBuilder.Entity("Booking.Models.Tour", b =>
                 {
                     b.Navigation("Packages");
-
-                    b.Navigation("Visitings");
-                });
-
-            modelBuilder.Entity("Booking.Models.TouristAttraction", b =>
-                {
-                    b.Navigation("Visitings");
                 });
 #pragma warning restore 612, 618
         }

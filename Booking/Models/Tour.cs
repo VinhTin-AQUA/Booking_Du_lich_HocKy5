@@ -58,5 +58,7 @@ namespace Booking.Models
         public AppUser? Approver { get; set; }
 
         public ICollection<Package>? Packages { get; set; }
+
+        public ICollection<Visiting> Visitings { get; set; } 
     }
 }
