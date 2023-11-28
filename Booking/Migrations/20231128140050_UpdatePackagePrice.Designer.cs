@@ -4,6 +4,7 @@ using Booking.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Booking.Migrations
 {
     [DbContext(typeof(BookingContext))]
-    partial class BookingContextModelSnapshot : ModelSnapshot
+    [Migration("20231128140050_UpdatePackagePrice")]
+    partial class UpdatePackagePrice
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -544,21 +547,6 @@ namespace Booking.Migrations
                     b.ToTable("Tour");
                 });
 
-            modelBuilder.Entity("Booking.Models.TourType", b =>
-                {
-                    b.Property<int>("TourId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
-
-                    b.HasKey("TourId", "CategoryId");
-
-                    b.HasIndex("CategoryId");
-
-                    b.ToTable("TourTypes");
-                });
-
             modelBuilder.Entity("Booking.Models.TouristAttraction", b =>
                 {
                     b.Property<int>("TouristAttractionId")
@@ -898,25 +886,6 @@ namespace Booking.Migrations
                     b.Navigation("TourType");
                 });
 
-            modelBuilder.Entity("Booking.Models.TourType", b =>
-                {
-                    b.HasOne("Booking.Models.Category", "Category")
-                        .WithMany("TourTypes")
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Booking.Models.Tour", "Tour")
-                        .WithMany("TourTypes")
-                        .HasForeignKey("TourId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Category");
-
-                    b.Navigation("Tour");
-                });
-
             modelBuilder.Entity("Booking.Models.TouristAttraction", b =>
                 {
                     b.HasOne("Booking.Models.City", "City")
@@ -1016,11 +985,6 @@ namespace Booking.Migrations
                     b.Navigation("PartnerUser");
                 });
 
-            modelBuilder.Entity("Booking.Models.Category", b =>
-                {
-                    b.Navigation("TourTypes");
-                });
-
             modelBuilder.Entity("Booking.Models.City", b =>
                 {
                     b.Navigation("Hotels");
@@ -1066,8 +1030,6 @@ namespace Booking.Migrations
             modelBuilder.Entity("Booking.Models.Tour", b =>
                 {
                     b.Navigation("Packages");
-
-                    b.Navigation("TourTypes");
 
                     b.Navigation("Visitings");
                 });

@@ -135,7 +135,7 @@ public partial class BookingContext : IdentityDbContext<AppUser>
             .HasForeignKey(p => p.TourID);
 
         modelBuilder.Entity<PackagePrice>()
-            .HasKey(pp => new { pp.PackageId, pp.ValidFrom });
+            .HasKey(pp => pp.PriceId).HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
         modelBuilder.Entity<Package>()
             .HasOne(p => p.PackagePrice)
             .WithOne(pp => pp.Package)
@@ -169,6 +169,17 @@ public partial class BookingContext : IdentityDbContext<AppUser>
             .HasMany(ta => ta.Visitings)
             .WithOne(v => v.TouristAttraction)
             .HasForeignKey(v => v.TouristAttractionId);
+
+        modelBuilder.Entity<TourType>()
+            .HasKey(tt => new { tt.TourId, tt.CategoryId });
+        modelBuilder.Entity<Tour>()
+            .HasMany(t => t.TourTypes)
+            .WithOne(tt => tt.Tour)
+            .HasForeignKey(tt => tt.TourId);
+        modelBuilder.Entity<Category>()
+            .HasMany(c => c.TourTypes)
+            .WithOne(tt => tt.Category)
+            .HasForeignKey(tt => tt.CategoryId);
     }
 
     public DbSet<City> City { get; set; }
@@ -189,6 +200,7 @@ public partial class BookingContext : IdentityDbContext<AppUser>
     public DbSet<TouristAttraction> TouristAttractions { get; set; }
 
     public DbSet<Visiting> Visitings { get; set; }
+    public DbSet<TourType> TourTypes { get; set; }
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }
