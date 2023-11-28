@@ -11,7 +11,6 @@ namespace Booking.Interfaces
         public Task<Package> GetPackageById(int packageId);
 
         public Task<ICollection<Package>> SearchPackageOfTour(int tourId);
-        public Task<ICollection<Package>> SearchPackageByMaxPeople(int maxPeople);
         public Task<bool> DeletePackage(Package package);
 
         public Task<bool> UpdatePackage(Package package);
