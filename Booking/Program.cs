@@ -35,7 +35,7 @@ builder.Services.AddScoped<IRoomTypeRepository, RoomTypeRepository>();
 builder.Services.AddScoped<IServiceRepository, ServiceRepository>();
 builder.Services.AddScoped<IRoomPriceRepository, RoomPriceRepository>();
 builder.Services.AddScoped<IBookRoomRepository, BookRoomRepository>();
-builder.Services.AddScoped<ITourTypeRepository, TourTypeRepository>();
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IBusinessPartnerRepository, BusinessPartnerRespository>();
 builder.Services.AddScoped<ITourRepository, TourRepository>();
 builder.Services.AddScoped<IHasServiceRepository, HasServiceRepository>();

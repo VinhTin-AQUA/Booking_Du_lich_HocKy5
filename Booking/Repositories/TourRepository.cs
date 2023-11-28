@@ -70,7 +70,7 @@ namespace WebApi.Repositories
             return await Save();
         }
 
-        public async Task<bool> AddTypeToTour(TourType tourType, Tour tour)
+        public async Task<bool> AddTypeToTour(Category tourType, Tour tour)
         {
             tour.TourType = tourType;
             context.Tour.Update(tour);
