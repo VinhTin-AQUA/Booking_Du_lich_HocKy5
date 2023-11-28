@@ -7,5 +7,9 @@ namespace Booking.Models
         public int TourId { get; set; }
         
         public int TouristAttractionId { get; set; }
+
+        public Tour? Tour { get; set; }
+
+        public TouristAttraction? TouristAttraction { get; set; }
     }
 }
