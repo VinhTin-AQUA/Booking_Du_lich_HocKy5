@@ -20,9 +20,6 @@ namespace Booking.Models
         [Column(TypeName = "nvarchar(max)")]
         public string Decription { get; set; }
 
-        [Required(ErrorMessage = "{0} must be required")]
-        public int MaxPeople { get; set; }
-
         //--
         public Tour Tour { get; set; }
 

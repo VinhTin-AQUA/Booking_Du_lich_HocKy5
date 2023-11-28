@@ -46,14 +46,6 @@ namespace Booking.Repositories
             return r > 0;
         }
 
-        public async Task<ICollection<Package>> SearchPackageByMaxPeople(int maxPeople)
-        {
-            var packages = await context.Packages
-                .Where(p => p.MaxPeople == maxPeople)
-                .ToListAsync();
-            return packages;
-        }
-
         public async Task<ICollection<Package>> SearchPackageOfTour(int tourId)
         {
             var packages = await context.Packages

@@ -89,8 +89,8 @@ public partial class BookingContext : IdentityDbContext<AppUser>
             .WithOne(br => br.User)
             .HasForeignKey<BookRoom>(br => br.UserID);
 
-        modelBuilder.Entity<TourType>()
-            .HasKey(t => t.TourTypeId).HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+        modelBuilder.Entity<Category>()
+            .HasKey(c => c.CategoryId).HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
         modelBuilder.Entity<BusinessPartner>()
             .HasKey(b => b.Id).HasAnnotation("SqlServer:ValueGenerationStrategy",
@@ -107,10 +107,6 @@ public partial class BookingContext : IdentityDbContext<AppUser>
             .HasMany(c => c.Tours)
             .WithOne(t => t.City)
             .HasForeignKey(t => new { t.CityId });
-        modelBuilder.Entity<TourType>()
-            .HasMany(c => c.Tours)
-            .WithOne(t => t.TourType)
-            .HasForeignKey(t => t.TourTypeId);
         modelBuilder.Entity<Tour>()
             .HasOne(t => t.Poster)
             .WithMany(p => p.PostTours)
@@ -170,7 +166,7 @@ public partial class BookingContext : IdentityDbContext<AppUser>
     public DbSet<Contact> Contact { get; set; }
     public DbSet<RoomType> RoomType { get; set; }
     public DbSet<HotelService> HotelService { get; set; }
-    public DbSet<TourType> TourType { get; set; }
+    public DbSet<Category> Categories { get; set; }
     public DbSet<RoomPrice> RoomPrices { get; set; }
     public DbSet<BookRoom> BookRooms { get; set; }
     public DbSet<Tour> Tour { get; set; }
