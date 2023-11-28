@@ -135,7 +135,7 @@ public partial class BookingContext : IdentityDbContext<AppUser>
             .HasForeignKey(p => p.TourID);
 
         modelBuilder.Entity<PackagePrice>()
-            .HasKey(pp => new { pp.PackageId, pp.ValidFrom });
+            .HasKey(pp => pp.PriceId).HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
         modelBuilder.Entity<Package>()
             .HasOne(p => p.PackagePrice)
             .WithOne(pp => pp.Package)

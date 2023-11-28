@@ -8,11 +8,11 @@ namespace Booking.Models
     [Table("PackagePrice")]
     public class PackagePrice
     {
+        [Key]
+        public int PriceId { get; set; }
         [Required(ErrorMessage = "{0} must be required")]
         [Display(Name = "Price")]
         public double Price { get; set; }
-
-        [Key]
         [DataType(DataType.Date)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime? ValidFrom { get; set; }
@@ -20,8 +20,6 @@ namespace Booking.Models
         [DataType(DataType.Date)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime? GoodThru { get; set; }
-
-        [Key]
         public int PackageId { get; set; }
 
         [AllowNull]
