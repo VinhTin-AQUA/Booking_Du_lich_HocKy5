@@ -158,6 +158,10 @@ public partial class BookingContext : IdentityDbContext<AppUser>
             .HasMany(c => c.TouristAttractions)
             .WithOne(t => t.City)
             .HasForeignKey(t => t.CityId);
+
+        modelBuilder.Entity<Visiting>()
+            .HasKey(v => new { v.TourId, v.TouristAttractionId});
+
     }
 
     public DbSet<City> City { get; set; }
@@ -176,6 +180,8 @@ public partial class BookingContext : IdentityDbContext<AppUser>
     public DbSet<BusinessPartner> BusinessPartner { get; set; }
     public DbSet<BookTour> BookTours { get; set; }
     public DbSet<TouristAttraction> TouristAttractions { get; set; }
+
+    public DbSet<Visiting> Visitings { get; set; }
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }
