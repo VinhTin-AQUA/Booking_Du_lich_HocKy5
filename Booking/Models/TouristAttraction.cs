@@ -20,5 +20,7 @@ namespace Booking.Models
         // Tham chiếu khóa ngoại CityId
         public int? CityId { get; set; }
         public City? City { get; set; }
+
+        public ICollection<Visiting> Visitings { get; set; }
     }
 }
