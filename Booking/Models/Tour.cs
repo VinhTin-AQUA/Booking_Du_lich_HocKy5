@@ -48,7 +48,7 @@ namespace Booking.Models
         public City City { get; set;}
             // TourType
         public int? TourTypeId { get; set;}
-        public TourType? TourType { get; set;}
+        public Category? TourType { get; set;}
             // User
         public DateTime? PostingDate { get; set; }
         public DateTime? ApprovalDate { get; set; }
