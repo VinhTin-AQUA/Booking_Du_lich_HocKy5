@@ -21,12 +21,7 @@ namespace Booking.Models
         [Column(TypeName = "nvarchar(250)")]
         public string? Address { get; set; }
 
-        public BookRoom? BookRoom { get; set; }
-
         public BookTour? BookTour { get; set; }
-
-        public ICollection<Hotel>? PostHotels { get; set; }
-        public ICollection<Hotel>? ApprovalHotels { get; set; }
         public int? PartnerId { get; set; }
         public BusinessPartner? BusinessPartner { get; set; }
 

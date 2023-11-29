@@ -4,6 +4,7 @@ using Booking.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Booking.Migrations
 {
     [DbContext(typeof(BookingContext))]
-    partial class BookingContextModelSnapshot : ModelSnapshot
+    [Migration("20231129021118_RemoveBookRoom")]
+    partial class RemoveBookRoom
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -223,6 +226,88 @@ namespace Booking.Migrations
                     b.ToTable("Contact");
                 });
 
+            modelBuilder.Entity("Booking.Models.HasService", b =>
+                {
+                    b.Property<int>("ServiceID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("HotelID")
+                        .HasColumnType("int");
+
+                    b.HasKey("ServiceID", "HotelID");
+
+                    b.HasIndex("HotelID");
+
+                    b.ToTable("HasService");
+                });
+
+            modelBuilder.Entity("Booking.Models.Hotel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(250)");
+
+                    b.Property<DateTime?>("ApprovalDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ApproverID")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int?>("CityId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("HotelName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(250)");
+
+                    b.Property<string>("PhotoPath")
+                        .HasColumnType("varchar(250)");
+
+                    b.Property<string>("PosterID")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime?>("PostingDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.HasIndex("ApproverID");
+
+                    b.HasIndex("CityId");
+
+                    b.HasIndex("PosterID");
+
+                    b.ToTable("Hotel");
+                });
+
+            modelBuilder.Entity("Booking.Models.HotelService", b =>
+                {
+                    b.Property<int>("ServiceId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ServiceId"));
+
+                    b.Property<string>("ServiceName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("ServiceId")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.ToTable("Service");
+                });
+
             modelBuilder.Entity("Booking.Models.Package", b =>
                 {
                     b.Property<int>("PackageID")
@@ -276,6 +361,90 @@ namespace Booking.Migrations
                         .IsUnique();
 
                     b.ToTable("PackagePrice");
+                });
+
+            modelBuilder.Entity("Booking.Models.Room", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("HotelId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsAvailable")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("PhotoPath")
+                        .HasColumnType("varchar(250)");
+
+                    b.Property<int?>("RoomId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("RoomName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(250)");
+
+                    b.Property<string>("RoomNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(250)");
+
+                    b.Property<int?>("RoomTypeId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("ValidFrom")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.HasIndex("HotelId");
+
+                    b.HasIndex("RoomTypeId");
+
+                    b.ToTable("Room");
+                });
+
+            modelBuilder.Entity("Booking.Models.RoomPrice", b =>
+                {
+                    b.Property<int>("RoomId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("ValidFrom")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("GoodThru")
+                        .HasColumnType("datetime2");
+
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
+
+                    b.HasKey("RoomId", "ValidFrom")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.ToTable("RoomPrice");
+                });
+
+            modelBuilder.Entity("Booking.Models.RoomType", b =>
+                {
+                    b.Property<int>("RoomTypeId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RoomTypeId"));
+
+                    b.Property<string>("RoomTypeName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(250)");
+
+                    b.HasKey("RoomTypeId");
+
+                    b.ToTable("RoomType");
                 });
 
             modelBuilder.Entity("Booking.Models.Tour", b =>
@@ -563,6 +732,46 @@ namespace Booking.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("Booking.Models.HasService", b =>
+                {
+                    b.HasOne("Booking.Models.Hotel", "Hotel")
+                        .WithMany("HasServices")
+                        .HasForeignKey("HotelID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Booking.Models.HotelService", "Service")
+                        .WithMany("HasServices")
+                        .HasForeignKey("ServiceID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Hotel");
+
+                    b.Navigation("Service");
+                });
+
+            modelBuilder.Entity("Booking.Models.Hotel", b =>
+                {
+                    b.HasOne("Booking.Models.AppUser", "Approver")
+                        .WithMany("ApprovalHotels")
+                        .HasForeignKey("ApproverID");
+
+                    b.HasOne("Booking.Models.City", "City")
+                        .WithMany("Hotels")
+                        .HasForeignKey("CityId");
+
+                    b.HasOne("Booking.Models.AppUser", "Poster")
+                        .WithMany("PostHotels")
+                        .HasForeignKey("PosterID");
+
+                    b.Navigation("Approver");
+
+                    b.Navigation("City");
+
+                    b.Navigation("Poster");
+                });
+
             modelBuilder.Entity("Booking.Models.Package", b =>
                 {
                     b.HasOne("Booking.Models.Tour", "Tour")
@@ -583,6 +792,32 @@ namespace Booking.Migrations
                         .IsRequired();
 
                     b.Navigation("Package");
+                });
+
+            modelBuilder.Entity("Booking.Models.Room", b =>
+                {
+                    b.HasOne("Booking.Models.Hotel", "Hotel")
+                        .WithMany("Rooms")
+                        .HasForeignKey("HotelId");
+
+                    b.HasOne("Booking.Models.RoomType", "RoomType")
+                        .WithMany("Rooms")
+                        .HasForeignKey("RoomTypeId");
+
+                    b.Navigation("Hotel");
+
+                    b.Navigation("RoomType");
+                });
+
+            modelBuilder.Entity("Booking.Models.RoomPrice", b =>
+                {
+                    b.HasOne("Booking.Models.Room", "Room")
+                        .WithMany("RoomPrices")
+                        .HasForeignKey("RoomId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Room");
                 });
 
             modelBuilder.Entity("Booking.Models.Tour", b =>
@@ -714,9 +949,13 @@ namespace Booking.Migrations
 
             modelBuilder.Entity("Booking.Models.AppUser", b =>
                 {
+                    b.Navigation("ApprovalHotels");
+
                     b.Navigation("ApprovalTours");
 
                     b.Navigation("BookTour");
+
+                    b.Navigation("PostHotels");
 
                     b.Navigation("PostTours");
                 });
@@ -733,9 +972,23 @@ namespace Booking.Migrations
 
             modelBuilder.Entity("Booking.Models.City", b =>
                 {
+                    b.Navigation("Hotels");
+
                     b.Navigation("TouristAttractions");
 
                     b.Navigation("Tours");
+                });
+
+            modelBuilder.Entity("Booking.Models.Hotel", b =>
+                {
+                    b.Navigation("HasServices");
+
+                    b.Navigation("Rooms");
+                });
+
+            modelBuilder.Entity("Booking.Models.HotelService", b =>
+                {
+                    b.Navigation("HasServices");
                 });
 
             modelBuilder.Entity("Booking.Models.Package", b =>
@@ -745,6 +998,16 @@ namespace Booking.Migrations
 
                     b.Navigation("PackagePrice")
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Booking.Models.Room", b =>
+                {
+                    b.Navigation("RoomPrices");
+                });
+
+            modelBuilder.Entity("Booking.Models.RoomType", b =>
+                {
+                    b.Navigation("Rooms");
                 });
 
             modelBuilder.Entity("Booking.Models.Tour", b =>
