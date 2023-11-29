@@ -11,14 +11,12 @@ namespace Booking.Repositories
 {
     public class BusinessPartnerRespository : IBusinessPartnerRepository
     {
-        private readonly BookingContext context ;
-        private readonly IHotelRepository hotelRepository;
+        private readonly BookingContext context;
         private readonly UserManager<AppUser> userManager;
 
-        public BusinessPartnerRespository(BookingContext context, IHotelRepository hotelRepository, UserManager<AppUser> userManager)
+        public BusinessPartnerRespository(BookingContext context, UserManager<AppUser> userManager)
         {
             this.context = context;
-            this.hotelRepository = hotelRepository;
             this.userManager = userManager;
         }
 
