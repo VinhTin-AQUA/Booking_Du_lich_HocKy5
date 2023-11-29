@@ -21,7 +21,7 @@ namespace Booking.Models
         public string? PhotoPath { get; set; }
 
         /*tham chiếu khóa ngoại*/
-        public ICollection<Tour>? Tours { get; set;}
+      
         public ICollection<TouristAttraction> TouristAttractions { get; set;}
     }
 }

@@ -4,6 +4,7 @@ using Booking.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Booking.Migrations
 {
     [DbContext(typeof(BookingContext))]
-    partial class BookingContextModelSnapshot : ModelSnapshot
+    [Migration("20231129044511_RemoveRelationshipTour_City")]
+    partial class RemoveRelationshipTour_City
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -329,6 +332,8 @@ namespace Booking.Migrations
 
                     b.HasIndex("PosterID");
 
+                    b.HasIndex("TourTypeId");
+
                     b.ToTable("Tour");
                 });
 
@@ -582,9 +587,15 @@ namespace Booking.Migrations
                         .WithMany("PostTours")
                         .HasForeignKey("PosterID");
 
+                    b.HasOne("Booking.Models.Category", "TourType")
+                        .WithMany()
+                        .HasForeignKey("TourTypeId");
+
                     b.Navigation("Approver");
 
                     b.Navigation("Poster");
+
+                    b.Navigation("TourType");
                 });
 
             modelBuilder.Entity("Booking.Models.TourType", b =>

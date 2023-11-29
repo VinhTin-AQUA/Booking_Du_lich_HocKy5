@@ -4,6 +4,7 @@ using Booking.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Booking.Migrations
 {
     [DbContext(typeof(BookingContext))]
-    partial class BookingContextModelSnapshot : ModelSnapshot
+    [Migration("20231129040505_UpdateRelationshipPackagePrice")]
+    partial class UpdateRelationshipPackagePrice
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -123,7 +126,11 @@ namespace Booking.Migrations
 
                     b.HasKey("PackageId", "UserID", "DepartureDate");
 
-                    b.HasIndex("UserID");
+                    b.HasIndex("PackageId")
+                        .IsUnique();
+
+                    b.HasIndex("UserID")
+                        .IsUnique();
 
                     b.ToTable("BookTour");
                 });
@@ -287,6 +294,10 @@ namespace Booking.Migrations
                     b.Property<string>("ApproverID")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<int?>("CityId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
                     b.Property<string>("DepartureLocation")
                         .HasColumnType("nvarchar(200)");
 
@@ -327,7 +338,11 @@ namespace Booking.Migrations
 
                     b.HasIndex("ApproverID");
 
+                    b.HasIndex("CityId");
+
                     b.HasIndex("PosterID");
+
+                    b.HasIndex("TourTypeId");
 
                     b.ToTable("Tour");
                 });
@@ -534,14 +549,14 @@ namespace Booking.Migrations
             modelBuilder.Entity("Booking.Models.BookTour", b =>
                 {
                     b.HasOne("Booking.Models.Package", "Package")
-                        .WithMany("BookTours")
-                        .HasForeignKey("PackageId")
+                        .WithOne("BookTour")
+                        .HasForeignKey("Booking.Models.BookTour", "PackageId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Booking.Models.AppUser", "User")
-                        .WithMany("BookTours")
-                        .HasForeignKey("UserID")
+                        .WithOne("BookTour")
+                        .HasForeignKey("Booking.Models.BookTour", "UserID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -578,13 +593,27 @@ namespace Booking.Migrations
                         .WithMany("ApprovalTours")
                         .HasForeignKey("ApproverID");
 
+                    b.HasOne("Booking.Models.City", "City")
+                        .WithMany("Tours")
+                        .HasForeignKey("CityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Booking.Models.AppUser", "Poster")
                         .WithMany("PostTours")
                         .HasForeignKey("PosterID");
 
+                    b.HasOne("Booking.Models.Category", "TourType")
+                        .WithMany()
+                        .HasForeignKey("TourTypeId");
+
                     b.Navigation("Approver");
 
+                    b.Navigation("City");
+
                     b.Navigation("Poster");
+
+                    b.Navigation("TourType");
                 });
 
             modelBuilder.Entity("Booking.Models.TourType", b =>
@@ -689,7 +718,7 @@ namespace Booking.Migrations
                 {
                     b.Navigation("ApprovalTours");
 
-                    b.Navigation("BookTours");
+                    b.Navigation("BookTour");
 
                     b.Navigation("PostTours");
                 });
@@ -707,11 +736,14 @@ namespace Booking.Migrations
             modelBuilder.Entity("Booking.Models.City", b =>
                 {
                     b.Navigation("TouristAttractions");
+
+                    b.Navigation("Tours");
                 });
 
             modelBuilder.Entity("Booking.Models.Package", b =>
                 {
-                    b.Navigation("BookTours");
+                    b.Navigation("BookTour")
+                        .IsRequired();
 
                     b.Navigation("PackagePrices");
                 });

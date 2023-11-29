@@ -43,7 +43,6 @@ namespace WebApi.Repositories
         {
             var list = await context.Tour
                 .Where(t => t.PosterID == posterId)
-                .Include(t => t.City)
                 .ToListAsync();
             return list;
         }
@@ -52,8 +51,6 @@ namespace WebApi.Repositories
         {
             var tour = await context.Tour
                 .Where(t => t.TourId == id)
-                .Include(t => t.City)
-                .Include(t => t.TourType)
                 .SingleOrDefaultAsync();
             return tour;
         }
@@ -70,9 +67,9 @@ namespace WebApi.Repositories
             return await Save();
         }
 
-        public async Task<bool> AddTypeToTour(Category tourType, Tour tour)
+        public async Task<bool> AddTypeToTour(TourType tourType, Tour tour)
         {
-            tour.TourType = tourType;
+            tour.TourTypes.Add(tourType) ;
             context.Tour.Update(tour);
             return await Save();
         }

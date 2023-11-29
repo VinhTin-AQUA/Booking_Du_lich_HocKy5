@@ -14,6 +14,6 @@ namespace Booking.Models
         [Column(TypeName = "nvarchar(500)")]
         public string CategoryName { get; set; }
 
-        public ICollection<TourType> TourTypes { get; set; }
+        public ICollection<TourType>? TourTypes { get; set; }
     }
 }

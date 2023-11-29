@@ -43,12 +43,10 @@ namespace Booking.Models
         public string? PhotoPath { get; set;}
 
         // Khoa ngoai
-            // city
-        public int? CityId { get; set;}
-        public City City { get; set;}
+       
             // TourType
         public int? TourTypeId { get; set;}
-        public Category? TourType { get; set;}
+        
             // User
         public DateTime? PostingDate { get; set; }
         public DateTime? ApprovalDate { get; set; }
