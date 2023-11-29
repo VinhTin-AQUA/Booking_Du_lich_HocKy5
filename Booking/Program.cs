@@ -44,6 +44,7 @@ builder.Services.AddScoped<IPackagePriceRepository, PackagePriceRepository>();
 builder.Services.AddScoped<IBookTourRepository, BookTourRepository>();
 builder.Services.AddScoped<ITouristAttraction, TouristAttractionRepository>();
 builder.Services.AddScoped<ITourTypeRepository, TourTypeRepository>();
+builder.Services.AddScoped<IVisitingRepository, VisitingRepository>();
 
 //identity
 builder.Services.AddIdentity<AppUser, IdentityRole>()
