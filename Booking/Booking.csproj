@@ -30,7 +30,6 @@
   <ItemGroup>
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Models\AgentTourManager\" />
-    <Folder Include="Areas\AgentHotel\Data\" />
     <Folder Include="Areas\Authentication\Data\" />
     <Folder Include="Areas\ManageProfile\Data\" />
     <Folder Include="wwwroot\assets\admin-layout\" />

@@ -29,21 +29,15 @@ builder.Services.AddScoped<IAuthenRepository, AuthenRepository>();
 builder.Services.AddScoped<ICityRepository, CityRepository>();
 builder.Services.AddScoped<IImageService, ImageService>();
 builder.Services.AddScoped<IUserManagerRepository, UserManagerRepository>();
-builder.Services.AddScoped<IHotelRepository, HotelRepository>();
-builder.Services.AddScoped<IRoomRepository, RoomRepository>();
-builder.Services.AddScoped<IRoomTypeRepository, RoomTypeRepository>();
-builder.Services.AddScoped<IServiceRepository, ServiceRepository>();
-builder.Services.AddScoped<IRoomPriceRepository, RoomPriceRepository>();
-builder.Services.AddScoped<IBookRoomRepository, BookRoomRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IBusinessPartnerRepository, BusinessPartnerRespository>();
 builder.Services.AddScoped<ITourRepository, TourRepository>();
-builder.Services.AddScoped<IHasServiceRepository, HasServiceRepository>();
 builder.Services.AddScoped<IPackageRepository, PackageRepository>();
 builder.Services.AddScoped<IPackagePriceRepository, PackagePriceRepository>();
 builder.Services.AddScoped<IBookTourRepository, BookTourRepository>();
 builder.Services.AddScoped<ITouristAttraction, TouristAttractionRepository>();
 builder.Services.AddScoped<ITourTypeRepository, TourTypeRepository>();
+builder.Services.AddScoped<IVisitingRepository, VisitingRepository>();
 
 //identity
 builder.Services.AddIdentity<AppUser, IdentityRole>()
