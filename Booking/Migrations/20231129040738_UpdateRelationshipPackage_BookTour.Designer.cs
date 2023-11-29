@@ -4,6 +4,7 @@ using Booking.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Booking.Migrations
 {
     [DbContext(typeof(BookingContext))]
-    partial class BookingContextModelSnapshot : ModelSnapshot
+    [Migration("20231129040738_UpdateRelationshipPackage_BookTour")]
+    partial class UpdateRelationshipPackage_BookTour
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -123,7 +126,8 @@ namespace Booking.Migrations
 
                     b.HasKey("PackageId", "UserID", "DepartureDate");
 
-                    b.HasIndex("UserID");
+                    b.HasIndex("UserID")
+                        .IsUnique();
 
                     b.ToTable("BookTour");
                 });
@@ -548,8 +552,8 @@ namespace Booking.Migrations
                         .IsRequired();
 
                     b.HasOne("Booking.Models.AppUser", "User")
-                        .WithMany("BookTours")
-                        .HasForeignKey("UserID")
+                        .WithOne("BookTour")
+                        .HasForeignKey("Booking.Models.BookTour", "UserID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -711,7 +715,7 @@ namespace Booking.Migrations
                 {
                     b.Navigation("ApprovalTours");
 
-                    b.Navigation("BookTours");
+                    b.Navigation("BookTour");
 
                     b.Navigation("PostTours");
                 });

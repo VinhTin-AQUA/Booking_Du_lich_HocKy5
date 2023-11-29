@@ -4,6 +4,7 @@ using Booking.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Booking.Migrations
 {
     [DbContext(typeof(BookingContext))]
-    partial class BookingContextModelSnapshot : ModelSnapshot
+    [Migration("20231129035450_UpdateFKOfPackage_BookTour")]
+    partial class UpdateFKOfPackage_BookTour
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -123,7 +126,8 @@ namespace Booking.Migrations
 
                     b.HasKey("PackageId", "UserID", "DepartureDate");
 
-                    b.HasIndex("UserID");
+                    b.HasIndex("UserID")
+                        .IsUnique();
 
                     b.ToTable("BookTour");
                 });
@@ -268,7 +272,8 @@ namespace Booking.Migrations
                     b.HasKey("PriceId")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.HasIndex("PackageId");
+                    b.HasIndex("PackageId")
+                        .IsUnique();
 
                     b.ToTable("PackagePrice");
                 });
@@ -548,8 +553,8 @@ namespace Booking.Migrations
                         .IsRequired();
 
                     b.HasOne("Booking.Models.AppUser", "User")
-                        .WithMany("BookTours")
-                        .HasForeignKey("UserID")
+                        .WithOne("BookTour")
+                        .HasForeignKey("Booking.Models.BookTour", "UserID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -572,8 +577,8 @@ namespace Booking.Migrations
             modelBuilder.Entity("Booking.Models.PackagePrice", b =>
                 {
                     b.HasOne("Booking.Models.Package", "Package")
-                        .WithMany("PackagePrices")
-                        .HasForeignKey("PackageId")
+                        .WithOne("PackagePrice")
+                        .HasForeignKey("Booking.Models.PackagePrice", "PackageId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -711,7 +716,7 @@ namespace Booking.Migrations
                 {
                     b.Navigation("ApprovalTours");
 
-                    b.Navigation("BookTours");
+                    b.Navigation("BookTour");
 
                     b.Navigation("PostTours");
                 });
@@ -737,7 +742,8 @@ namespace Booking.Migrations
                 {
                     b.Navigation("BookTours");
 
-                    b.Navigation("PackagePrices");
+                    b.Navigation("PackagePrice")
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Booking.Models.Tour", b =>

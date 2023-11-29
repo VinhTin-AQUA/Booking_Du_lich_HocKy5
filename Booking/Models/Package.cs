@@ -23,8 +23,8 @@ namespace Booking.Models
         //--
         public Tour Tour { get; set; }
 
-        public PackagePrice PackagePrice { get; set; }
+        public ICollection<PackagePrice>? PackagePrices { get; set; }
 
-        public BookTour BookTour { get; set; }
+        public ICollection<BookTour>? BookTours { get; set; }
     }
 }

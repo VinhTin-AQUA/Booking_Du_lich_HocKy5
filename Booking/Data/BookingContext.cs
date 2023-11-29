@@ -74,21 +74,21 @@ public partial class BookingContext : IdentityDbContext<AppUser>
         modelBuilder.Entity<PackagePrice>()
             .HasKey(pp => pp.PriceId).HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
         modelBuilder.Entity<Package>()
-            .HasOne(p => p.PackagePrice)
+            .HasMany(p => p.PackagePrices)
             .WithOne(pp => pp.Package)
-            .HasForeignKey<PackagePrice>(pp => pp.PackageId);
+            .HasForeignKey(pp => pp.PackageId);
 
         modelBuilder.Entity<BookTour>()
             .HasKey(bt => new { bt.PackageId, bt.UserID, bt.DepartureDate });
 
         modelBuilder.Entity<Package>()
-             .HasOne(p => p.BookTour)
+             .HasMany(p => p.BookTours)
              .WithOne(bt => bt.Package)
-             .HasForeignKey<BookTour>(bt => bt.PackageId);
+             .HasForeignKey(bt => bt.PackageId);
         modelBuilder.Entity<AppUser>()
-            .HasOne(u => u.BookTour)
+            .HasMany(u => u.BookTours)
             .WithOne(bt => bt.User)
-            .HasForeignKey<BookTour>(bt => bt.UserID);
+            .HasForeignKey(bt => bt.UserID);
 
         modelBuilder.Entity<TouristAttraction>().HasKey(ta => ta.TouristAttractionId).HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
         modelBuilder.Entity<City>()
