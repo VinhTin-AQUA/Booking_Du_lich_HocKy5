@@ -51,10 +51,7 @@ public partial class BookingContext : IdentityDbContext<AppUser>
 
         modelBuilder.Entity<Tour>()
             .HasKey(t => t.TourId).HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-        modelBuilder.Entity<City>()
-            .HasMany(c => c.Tours)
-            .WithOne(t => t.City)
-            .HasForeignKey(t => new { t.CityId });
+        
         modelBuilder.Entity<Tour>()
             .HasOne(t => t.Poster)
             .WithMany(p => p.PostTours)
