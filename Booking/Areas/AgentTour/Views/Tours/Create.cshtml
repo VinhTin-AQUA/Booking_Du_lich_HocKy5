@@ -1,0 +1,87 @@
+﻿@model Booking.Models.Tour
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    string postId = ViewBag.UserId;
+}
+
+<h1>Create</h1>
+
+<h4>Tour</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TourName" class="control-label">Name</label>
+                <input asp-for="TourName" class="form-control" />
+                <span asp-validation-for="TourName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TourAddress" class="control-label">TourAddress</label>
+                <input asp-for="TourAddress" class="form-control" />
+                <span asp-validation-for="TourAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Overview" class="control-label">Overview</label>
+                <input asp-for="Overview" class="form-control" />
+                <span asp-validation-for="Overview" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Schedule" class="control-label">Schedule</label>
+                <input asp-for="Schedule" class="form-control" />
+                <span asp-validation-for="Schedule" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DepartureLocation" class="control-label">DepartureLocation</label>
+                <input asp-for="DepartureLocation" class="form-control" />
+                <span asp-validation-for="DepartureLocation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DropOffLocation" class="control-label">DropOffLocation</label>
+                <input asp-for="DropOffLocation" class="form-control" />
+                <span asp-validation-for="DropOffLocation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhotoPath" class="control-label">PhotoPath</label>
+                <input asp-for="PhotoPath" class="form-control" />
+                <span asp-validation-for="PhotoPath" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TourTypeId" class="control-label">TourTypeId</label>
+                <input asp-for="TourTypeId" class="form-control" />
+                <span asp-validation-for="TourTypeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PostingDate" class="control-label">PostingDate</label>
+                <input asp-for="PostingDate" class="form-control" />
+                <span asp-validation-for="PostingDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApprovalDate" class="control-label">ApprovalDate</label>
+                <input asp-for="ApprovalDate" class="form-control" />
+                <span asp-validation-for="ApprovalDate" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="PostId" class="control-label">PostId</label>
+                <input asp-for="PostId" class="form-control" value ="@postId " readonly/>
+                <span asp-validation-for="PostId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+               
+                <button type="submit" class="btn btn-success">Thêm Tour</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

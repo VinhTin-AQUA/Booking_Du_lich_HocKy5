@@ -23,16 +23,19 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.9" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.11" />
     <PackageReference Include="NETCore.MailKit" Version="2.1.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Models\AgentTourManager\" />
+    <Folder Include="Areas\AgentTour\Data\" />
+    <Folder Include="Areas\AgentTour\Models\" />
     <Folder Include="Areas\Authentication\Data\" />
     <Folder Include="Areas\ManageProfile\Data\" />
     <Folder Include="wwwroot\assets\admin-layout\" />
+    <Folder Include="wwwroot\css\TourDetail\" />
     <Folder Include="wwwroot\js\admin\" />
   </ItemGroup>
 

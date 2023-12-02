@@ -1,0 +1,83 @@
+.input-custom {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px groove lightgray;
+}
+
+.form-custom {
+    border: 1px groove lightgray;
+}
+
+.btn-custom {
+    margin-right: 310px;
+    margin-top: 10px;
+}
+
+.container {
+    height: fit-content;
+    width: fit-content;
+}
+
+.row-custom {
+    margin: 0;
+}
+
+.card-custom {
+    width: 830px;
+    height: fit-content;
+}
+
+.container1 {
+    height: 300px;
+}
+
+.img {
+    overflow-y: scroll;
+    width: 800px;
+}
+
+.h4 {
+    padding-left: 340px;
+}
+
+.date {
+    width: 800px;
+}
+
+.space {
+    gap: 500px;
+}
+
+.color {
+    color: rgb(224, 49, 38);
+    ;
+    font-size: larger;
+    font-weight: 600;
+}
+
+.color2 {
+    font-size: xx-large;
+    font-weight: 600;
+    color: black;
+}
+
+.ul {
+    list-style-type: square;
+}
+
+.li {
+    padding-left: 50px;
+}
+
+.border {
+    border: 0cap;
+}
+
+.sd {
+    border: 1px groove rgba(0, 0, 0, 0.1);
+    box-shadow: none;
+}
+
+    .sd:hover {
+        box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.1);
+    }
