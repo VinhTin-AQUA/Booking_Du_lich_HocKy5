@@ -4,6 +4,7 @@
 }
 <link rel="stylesheet" href="~/css/Tourdetail/style.css">
 <!-- Search -->
+
 <div class="wrapper search-container d-flex justify-content-center input-custom">
 
     <!-- Search input group start -->
@@ -17,7 +18,7 @@
 
 </div>
 <!--package choose-->
-<div class="search-container ">
+<div class="search-container form-custom ">
     <div class="py-2 w-auto d-flex justify-content-center">
 
 
@@ -95,7 +96,7 @@
 </div>
 
 
-<div class="content-wrapper-scroll">
+<div class="content-wrapper-scroll ">
 
     <!-- Content wrapper start -->
     <div class="content-wrapper Container overflow-hidden">
@@ -311,14 +312,15 @@
         <!-- Card end -->
     </div>
 </div>
-<h4 class="h4 ">Các lựa chọn gói</h4>
+<h4 class="h4 col-lg-1 col-xl-12 d-flex justify-content-start">Các lựa chọn gói</h4>
 <!--Lựa chọn ngày tháng-->
-<div class="wrapper col-xl-12 col-12 d-flex justify-content-center">
+<div class="col-lg-12 col-12 d-flex justify-content-center ">
+
     <!-- Card start -->
-    <div class="wrapper card">
-        <div class="card-body ">
-            <div class="m-0 date">
-                <div class="form-label container">Ngày tháng</div>
+    <div class="wrapper card date">
+        <div class="card-body  ">
+            <div class="m-0 ">
+                <div class="form-label ">Datepicker</div>
                 <div class="input-group">
                     <span class="input-group-text">
                         <i class="bi bi-calendar4"></i>
@@ -328,29 +330,13 @@
             </div>
         </div>
     </div>
+    <!-- Card end -->
+
 </div>
 <!-- Card end -->
 <!-- Các lựa chọn gói-->
-<div class="wrapper col-xl-12 col-12 d-flex justify-content-center">
-    <div class="wrapper card rounded-4 shadow date">
-        <div class="card-header">
-            <div class="card-title">Featured</div>
-        </div>
-        <div class="wrapper card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="mb-3">With supporting text below as a natural lead-in to additional content.</p>
-
-            <div class="d-flex justify-content-center space">
-                <p class="color">1000000đ</p>
-                <a asp-action="booktour" class="btn btn-info " asp-route-packageId="1">Chọn</a>
-            </div>
-        </div>
-
-    </div>
-</div>
-
 <div class="col-xl-12 col-12 d-flex justify-content-center">
-    <div class="wrapper card rounded-4 shadow date">
+    <div class="wrapper card rounded-4 date sd">
         <div class="card-header">
             <div class="card-title">Featured</div>
         </div>
@@ -358,28 +344,49 @@
             <h5 class="card-title">Special title treatment</h5>
             <p class="mb-3">With supporting text below as a natural lead-in to additional content.</p>
 
+
             <div class="d-flex justify-content-center space">
                 <p class="color">1000000đ</p>
-                <a asp-action="booktour" class="btn btn-info" asp-route-packageId="2">Chọn</a>
+                <a asp-action="booktour" class="btn btn-info " asp-route-packageId="1">Chọn</a>
+
             </div>
         </div>
 
     </div>
 </div>
 
+<div class="col-xl-12 col-12 d-flex justify-content-center ">
+    <div class="wrapper card rounded-4 date sd">
+        <div class="card-header">
+            <div class="card-title">Featured</div>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="mb-3">With supporting text below as a natural lead-in to additional content.</p>
+
+
+            <div class="d-flex justify-content-center space">
+                <p class="color">1000000đ</p>
+                <a asp-action="booktour" class="btn btn-info" asp-route-packageId="2">Chọn</a>
+
+            </div>
+        </div>
+
+    </div>
+</div>
 <!-- Có gì?-->
 <div class="wrapper col-xl-12 col-12 d-flex justify-content-center ">
     <!-- Card start -->
-    <div class="wrapper card ">
+    <div class="wrapper card date ">
         <div class="card-header ">
             <div class="card-title">Bao gồm những gì</div>
         </div>
-        <div class="card-body container">
-            <div class="scroll300 date li">
-                <ul style="list-style-type: circle ">
-                    <li>Enjoy over a hundred different activities and facilities at the Ho May Park</li>
-                    <li>Ride the park cable car and see the spectacular views of Vung Tau's cityscape</li>
-                    <li>Ride the park cable car and see the spectacular views of Vung Tau's cityscape</li>
+        <div class="card-body  col-12 col-xl-12">
+            <div class="scroll300 container">
+                <ul>
+                    <li><i class="bi bi-check-circle"></i>Enjoy over a hundred different activities and facilities at the Ho May Park</li>
+                    <li><i class="bi bi-check-circle"></i>Ride the park cable car and see the spectacular views of Vung Tau's cityscape</li>
+                    <li><i class="bi bi-check-circle"></i>Ride the park cable car and see the spectacular views of Vung Tau's cityscape</li>
                 </ul>
             </div>
         </div>
@@ -390,7 +397,7 @@
 <!-- thong tin tour, cau hoi thuong gap, chinh sach huy-->
 <!-- Row start -->
 <div class=" col-xl-12 col-12 d-flex justify-content-center ">
-    <div class="wrapper card card-custom ">
+    <div class="wrapper  card-custom ">
 
         <div class="card-body ">
             <div class="accordion " id="accordionPanelsStayOpenExample">
