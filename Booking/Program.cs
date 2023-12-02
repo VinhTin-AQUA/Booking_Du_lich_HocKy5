@@ -211,6 +211,16 @@ app.MapAreaControllerRoute(
 
 #endregion
 
+#region AgentTour
+app.MapAreaControllerRoute(
+    name: "AgentTour",
+    areaName: "AgentTour",
+    pattern: "{controller=Tours}/{action=Index}/{id?}");
+
+
+
+#endregion
+
 using var scope = app.Services.CreateScope();
 try
 {

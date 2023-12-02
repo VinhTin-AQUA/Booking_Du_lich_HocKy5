@@ -44,7 +44,7 @@ namespace Booking.Services
             if (await userManager.Users.AnyAsync() == false)
             {
                 //await SeedAgentHotel.SeedAgentAsync(userManager); //   
-                //await SeedAgentTour.SeedAgentAsync(userManager); // 
+                await SeedAgentTour.SeedAgentAsync(userManager);  
                 //await SeedEmployee.SeedEmployeeAsync(userManager); // 
 
                 await SeedAdmin.SeedAdminAsync(userManager);
