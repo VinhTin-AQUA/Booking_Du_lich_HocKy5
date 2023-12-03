@@ -13,12 +13,14 @@ namespace Booking.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly UserManager<AppUser> _userManager;
         private readonly IBookTourRepository _bookTourRepository;
+        private readonly IPackagePriceRepository _packagePriceRepository;
 
-        public HomeController(ILogger<HomeController> logger, UserManager<AppUser> userManager, IBookTourRepository bookTourRepository)
+        public HomeController(ILogger<HomeController> logger, UserManager<AppUser> userManager, IBookTourRepository bookTourRepository, IPackagePriceRepository packagePriceRepository)
         {
             _logger = logger;
             _userManager = userManager;
             _bookTourRepository = bookTourRepository;
+            _packagePriceRepository = packagePriceRepository;
         }
 
         public IActionResult Index()
@@ -69,11 +71,17 @@ namespace Booking.Controllers
         [Route("book-tour/{packageId}")]
         [HttpGet]
 
-        public IActionResult BookTour(int packageId)
+        public async Task<IActionResult> BookTour(int packageId)
         {
+            var packagePrice =await _packagePriceRepository.GetPackagePriceByID(packageId, DateTime.Now);
+            if(packagePrice == null)
+            {
+                return NotFound();
+            }
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             ViewBag.packageId = packageId;
             ViewBag.userId = userId;
+            ViewBag.price = packagePrice.Price;
             return View();
         }
 

@@ -5,6 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     int packageId = ViewBag.packageId;
     var userId = ViewBag.userId;
+    var price = ViewBag.price;
 }
 
 <h1>BookTour @packageId</h1>
@@ -16,26 +17,26 @@
         <form asp-action="BookTour">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="UserID" class="control-label"></label>
+                <label asp-for="UserID" class="control-label">UserID</label>
                 <input asp-for="UserID" class="form-control" value="@userId" readonly />
             </div>
             <div class="form-group">
-                <label asp-for="PackageId" class="control-label"></label>
+                <label asp-for="PackageId" class="control-label">PackageId</label>
                 <input asp-for="PackageId" class="form-control" value="@packageId" readonly/>
             </div>
             <div class="form-group">
-                <label asp-for="DepartureDate" class="control-label"></label>
+                <label asp-for="DepartureDate" class="control-label">DepartureDate</label>
                 <input asp-for="DepartureDate" class="form-control" />
                 <span asp-validation-for="DepartureDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="BookingDate" class="control-label"></label>
+                <label asp-for="BookingDate" class="control-label">BookingDate</label>
                 <input asp-for="BookingDate" class="form-control" />
                 <span asp-validation-for="BookingDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Price" class="control-label"></label>
-                <input asp-for="Price" class="form-control" />
+                <label asp-for="Price" class="control-label">Price</label>
+                <input asp-for="Price" class="form-control" value="@price" readonly/>
                 <span asp-validation-for="Price" class="text-danger"></span>
             </div>
             <div class="form-group">
