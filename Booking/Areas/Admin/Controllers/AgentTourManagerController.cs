@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Booking.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Route("agent-tour")]
+    [Route("agent-tour-management")]
     public class AgentTourManagerController : Controller
     {
         private readonly ITourRepository tourRepository;
