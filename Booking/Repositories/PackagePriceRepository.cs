@@ -2,6 +2,7 @@
 using Booking.Interfaces;
 using Booking.Models;
 using Booking.Data;
+using Microsoft.AspNetCore.Components.Forms;
 
 namespace Booking.Repositories
 {
@@ -43,7 +44,7 @@ namespace Booking.Repositories
         public async Task<PackagePrice> GetPackagePriceByID(int? id, DateTime? validFrom)
         {
             var packagePrice = await context.PackagePrices
-                 .Where(pp => pp.PackageId == id && pp.ValidFrom == validFrom)
+                 .Where(pp => pp.PackageId == id && pp.ValidFrom <= validFrom && validFrom <= pp.GoodThru)
                  .FirstOrDefaultAsync();
             return packagePrice;
         }
@@ -55,6 +56,7 @@ namespace Booking.Repositories
                 .FirstOrDefaultAsync();
             return packagePrice;
         }
+
 
         public async Task<bool> Save()
         {
