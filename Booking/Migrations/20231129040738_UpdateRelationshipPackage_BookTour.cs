@@ -10,9 +10,9 @@ namespace Booking.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropIndex(
-                name: "IX_BookTour_PackageId",
-                table: "BookTour");
+            //migrationBuilder.DropIndex(
+            //    name: "IX_BookTour_PackageId",
+            //    table: "BookTour");
         }
 
         /// <inheritdoc />

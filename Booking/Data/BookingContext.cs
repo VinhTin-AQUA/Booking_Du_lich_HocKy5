@@ -104,7 +104,7 @@ public partial class BookingContext : IdentityDbContext<AppUser>
             .WithOne(v => v.TouristAttraction)
             .HasForeignKey(v => v.TouristAttractionId);
 
-        modelBuilder.Entity<TourType>()
+        modelBuilder.Entity<TourCategory>()
             .HasKey(tt => new { tt.TourId, tt.CategoryId });
         modelBuilder.Entity<Tour>()
             .HasMany(t => t.TourTypes)
@@ -127,7 +127,7 @@ public partial class BookingContext : IdentityDbContext<AppUser>
     public DbSet<TouristAttraction> TouristAttractions { get; set; }
 
     public DbSet<Visiting> Visitings { get; set; }
-    public DbSet<TourType> TourTypes { get; set; }
+    public DbSet<TourCategory> TourTypes { get; set; }
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }
