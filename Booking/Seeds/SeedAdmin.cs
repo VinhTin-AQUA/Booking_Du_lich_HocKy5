@@ -6,7 +6,7 @@ namespace Booking.Seeds
 {
     public static class SeedAdmin
     {
-        public static readonly string Email = "tinhovinh@gmail.com";
+        public static readonly string Email = "admin@gmail.com";
         public static readonly string FirstName = "";
         public static readonly string LastName = "Admin";
         public static readonly string Password = "admin123";
