@@ -44,9 +44,9 @@ namespace Booking.Models
 
         // Khoa ngoai
        
-            // TourType
-        public int? TourTypeId { get; set;}
-		public ICollection<TourType> TourTypes { get; set; }
+        // TourType
+
+		public ICollection<TourCategory> TourTypes { get; set; }
 
 		// User
 		public DateTime? PostingDate { get; set; }
