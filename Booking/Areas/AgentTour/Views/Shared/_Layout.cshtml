@@ -66,37 +66,13 @@
 				<div class="sidebarMenuScroll">
 					<ul>
 
-						@* quản lý người dùng *@
-						<li class="">
-							<a id="admin" class="nav-link" asp-area="Admin" asp-controller="UserManager" asp-action="Index">
-								<i class="bi bi-people-fill"></i>
-								<span class="menu-text">Quản lý người dùng</span>
-							</a>
-						</li>
-
-						@* quản lý tỉnh thành *@
-						<li class="">
-							<a id="city" class="nav-link" asp-area="Admin" asp-controller="City" asp-action="Index">
-								<i class="bi bi-building"></i>
-								<span class="menu-text">Quản lý tỉnh / thành</span>
-							</a>
-						</li>
-
-						@* quản lý đối tác tour du lịch  *@
- 						<li>
-							<a id="agent-tour" class="nav-link" asp-area="Admin" asp-controller="AgentTourManager" asp-action="Index">
-								<i class="bi bi-journals"></i>
-								<span class="menu-text">Đối tác tour du lịch</span>
-							</a>
-						</li> 
-
 						@* quản lý đối tác tour du lịch *@
-@* 						<li>
+						<li>
 							<a id="agent-tour" class="nav-link" asp-area="AgentTour" asp-controller="Tours" asp-action="Index">
 								<i class="bi bi-journals"></i>
 								<span class="menu-text">Đối tác tour du lịch</span>
 							</a>
-						</li> *@
+						</li>
 
 						<li class="sidebar-dropdown active">
 							<a href="#">
@@ -540,7 +516,9 @@
                 $('#admin').addClass('sidebar-menu-active');
             } else if (currentPath.startsWith('/city-manager')) {
                 $('#city').addClass('sidebar-menu-active');
-            } else if (currentPath.startsWith('/agent-tour')) {
+            } else if (currentPath.startsWith('/agent-hotel-manager')) {
+                $('#agent-hotel').addClass('sidebar-menu-active');
+			} else if (currentPath.startsWith('/agent-tour')) {
 				$('#agent-tour').addClass('sidebar-menu-active');
 			}
         });

@@ -18,7 +18,7 @@ using Booking.Services;
 namespace Booking.Areas.AgentTour.Controllers
 {
     [Area("AgentTour")]
-    [Route("agent-tour-managent")]
+    [Route("agent-tour")]
     public class ToursController : Controller
     {
 
@@ -36,14 +36,13 @@ namespace Booking.Areas.AgentTour.Controllers
         public async Task<IActionResult> Index()
         {
             var tours = await _tourRepository.GetAllTours();
-            return View(tours);
+            ViewBag.Tours = tours.ToList();
+            return View();
         }
 
         [Route("details/{id}")]
         public async Task<IActionResult> Details(int? id)
         {
-            
-
             var tour = await _tourRepository.GetTourById(id);
             if (tour == null)
             {
@@ -57,15 +56,15 @@ namespace Booking.Areas.AgentTour.Controllers
         public IActionResult Create()
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            ViewBag.UserId = userId;    
+            ViewBag.UserId = userId;
+
             return View();
         }
 
        
         [HttpPost]
         [Route("create")]
-    
-        public async Task<IActionResult> Create(Tour tour, List<IFormFile> fileInputs)
+        public async Task<IActionResult> Create(Tour tour, List<int> tp , List<IFormFile> fileInputs)
         {
             var userId =  User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (tour == null)
@@ -75,23 +74,19 @@ namespace Booking.Areas.AgentTour.Controllers
             Tour newTour = new Tour()
             {
                 TourName = tour.TourName,
+                TourAddress = tour.TourAddress,
                 Overview = tour.Overview,
                 Schedule = tour.Schedule,
                 DepartureLocation = tour.DepartureLocation,
                 DropOffLocation = tour.DropOffLocation,
-
-                ApproverID = "",
+                ApproverID = null,
                 PosterID = userId,
-                ApprovalDate = tour.ApprovalDate,
-
-                PostingDate = tour.PostingDate,
-
+                ApprovalDate = null,
+                PostingDate = null,
             };
            
             if (ModelState.IsValid)
             {
-                
-              
                 if (fileInputs == null)
                 {
                     newTour.PhotoPath = "/no-image.jpg";

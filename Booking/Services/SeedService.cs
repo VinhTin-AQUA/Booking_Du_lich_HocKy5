@@ -43,12 +43,10 @@ namespace Booking.Services
 
             if (await userManager.Users.AnyAsync() == false)
             {
-                //await SeedAgentHotel.SeedAgentAsync(userManager); //   
-                await SeedAgentTour.SeedAgentAsync(userManager);  
-                //await SeedEmployee.SeedEmployeeAsync(userManager); // 
-
-                await SeedAdmin.SeedAdminAsync(userManager);
-                await SeedUser.SeedUsersAsync(userManager);
+                await SeedAgentTour.SeedAgentAsync(userManager); // tour
+                await SeedEmployee.SeedEmployeeAsync(userManager); // employee
+                await SeedAdmin.SeedAdminAsync(userManager); // admin
+                await SeedUser.SeedUsersAsync(userManager); // user
             }
 
             if (await context.City.AnyAsync() == false)
