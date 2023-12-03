@@ -46,18 +46,21 @@ namespace Booking.Models
        
             // TourType
         public int? TourTypeId { get; set;}
-        
-            // User
-        public DateTime? PostingDate { get; set; }
+		public ICollection<TourType> TourTypes { get; set; }
+
+		// User
+		public DateTime? PostingDate { get; set; }
         public DateTime? ApprovalDate { get; set; }
+
         public string? PosterID { get; set; }
-        public string? ApproverID { get; set; }
-        public AppUser? Poster { get; set; }
+		public AppUser? Poster { get; set; }
+
+		public string? ApproverID { get; set; }
         public AppUser? Approver { get; set; }
 
         public ICollection<Package>? Packages { get; set; }
 
         public ICollection<Visiting> Visitings { get; set; }
-        public ICollection<TourType> TourTypes { get; set; }
+        
     }
 }

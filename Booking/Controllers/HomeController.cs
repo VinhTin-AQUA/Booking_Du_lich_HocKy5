@@ -30,14 +30,9 @@ namespace Booking.Controllers
                 return RedirectToAction("Index", "UserManager", new {area = "Admin"});
             }
 
-            if (User.IsInRole(SeedRole.AGENTHOTEL_ROLE))
-            {
-                return RedirectToAction("Index", "BusinessInfo", new { area = "AgentHotel" });
-            }
-
             if (User.IsInRole(SeedRole.AGENTTOUR_ROLE))
             {
-                return RedirectToAction("Index", "agent-tour-managent");
+                return RedirectToAction("Index", "agent-tour");
             }
 
             return View();
