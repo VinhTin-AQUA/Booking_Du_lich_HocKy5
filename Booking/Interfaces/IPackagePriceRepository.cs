@@ -12,7 +12,7 @@ namespace Booking.Interfaces
 
         public Task<PackagePrice> GetPackagePriceById(int? id);
         public Task<PackagePrice> GetPackagePriceByID(int? id, DateTime? validFrom);
-       
+
         public Task<bool> DeletePackagePrice(PackagePrice PackagePrice);
 
 

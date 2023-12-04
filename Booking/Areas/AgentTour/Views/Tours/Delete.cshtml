@@ -4,11 +4,10 @@
     ViewData["Title"] = "Delete";
 }
 
-<h1>Delete</h1>
+<h1>Xóa tour</h1>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Bạn có muốn xóa tour du lịch này không?</h3>
 <div>
-    <h4>Tour</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -17,71 +16,11 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.TourName)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TourAddress)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TourAddress)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Overview)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Overview)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Schedule)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Schedule)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DepartureLocation)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DepartureLocation)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DropOffLocation)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DropOffLocation)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.PhotoPath)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.PhotoPath)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.PostingDate)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.PostingDate)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ApprovalDate)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ApprovalDate)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Poster)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Poster.Id)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Approver)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Approver.Id)
-        </dd>
     </dl>
     
     <form asp-action="Delete">
-        <input type="hidden" asp-for="TourId" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
+        <input type="hidden" value="@Model.TourId" name="id" />
+        <input type="submit" value="Xóa" class="btn btn-danger" /> |
+        <a asp-action="Index">Quay trở lại</a>
     </form>
 </div>

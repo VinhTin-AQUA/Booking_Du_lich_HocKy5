@@ -1,5 +1,4 @@
 ﻿using Booking.Models;
-using Microsoft.AspNetCore.Identity;
 
 namespace Booking.Interfaces
 {

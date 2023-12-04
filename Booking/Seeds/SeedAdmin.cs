@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Booking.Models;
+using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
-using Booking.Models;
 
 namespace Booking.Seeds
 {
