@@ -35,9 +35,10 @@ builder.Services.AddScoped<ITourRepository, TourRepository>();
 builder.Services.AddScoped<IPackageRepository, PackageRepository>();
 builder.Services.AddScoped<IPackagePriceRepository, PackagePriceRepository>();
 builder.Services.AddScoped<IBookTourRepository, BookTourRepository>();
-builder.Services.AddScoped<ITouristAttraction, TouristAttractionRepository>();
+//builder.Services.AddScoped<ITouristAttraction, TouristAttractionRepository>();
 builder.Services.AddScoped<ITourTypeRepository, TourTypeRepository>();
-builder.Services.AddScoped<IVisitingRepository, VisitingRepository>();
+//builder.Services.AddScoped<IVisitingRepository, VisitingRepository>();
+builder.Services.AddScoped<ICityTourRepository, CityTourRepository>();
 
 //identity
 builder.Services.AddIdentity<AppUser, IdentityRole>()
