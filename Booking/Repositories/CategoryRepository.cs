@@ -58,5 +58,11 @@ namespace WebApi.Repositories
             context.Categories.Update(category);
             return await Save();
         }
-    }
+
+		public async Task<Category> GetCategoryByName(string? name)
+		{
+			var category = await context.Categories.Where(c => c.CategoryName == name).FirstOrDefaultAsync();
+            return category;
+		}
+	}
 }

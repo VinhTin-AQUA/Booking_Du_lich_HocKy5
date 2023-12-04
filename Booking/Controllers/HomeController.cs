@@ -76,7 +76,7 @@ namespace Booking.Controllers
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             ViewBag.packageId = packageId;
             ViewBag.userId = userId;
-            ViewBag.price = packagePrice.Price;
+            ViewBag.price = packagePrice.AdultPrice;
             return View();
         }
 
