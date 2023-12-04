@@ -12,7 +12,7 @@ namespace Booking.Areas.ManageProfile.Controllers
     {
         private readonly IAuthenRepository authenRepository;
 
-        
+
         public ProfileController(IAuthenRepository authenRepository)
         {
             this.authenRepository = authenRepository;
@@ -29,19 +29,19 @@ namespace Booking.Areas.ManageProfile.Controllers
         [HttpPost]
         public async Task<IActionResult> UpdateProfile(EditProfile model)
         {
-            if(model == null)
+            if (model == null)
             {
                 return RedirectToAction("Index");
             }
 
-            if(ModelState.IsValid == false)
+            if (ModelState.IsValid == false)
             {
                 return RedirectToAction("Index");
             }
 
             var user = await authenRepository.GetUserByEmail(model.Email);
 
-            if(user == null)
+            if (user == null)
             {
                 return RedirectToAction("Logout", "Authentication");
             }
@@ -52,7 +52,7 @@ namespace Booking.Areas.ManageProfile.Controllers
             user.Address = model.Address;
 
             var result = await authenRepository.UpdateAccount(user);
-            if(result.Succeeded == false)
+            if (result.Succeeded == false)
             {
                 Notice notice = new Notice()
                 {
@@ -77,20 +77,20 @@ namespace Booking.Areas.ManageProfile.Controllers
         [Route("change-password/{email}")]
         public async Task<IActionResult> ChangePassword(ChangePassword model)
         {
-            if(ModelState.IsValid == false)
+            if (ModelState.IsValid == false)
             {
                 return View();
             }
 
             var user = await authenRepository.GetUserByEmail(model.Email);
 
-            if(user == null)
+            if (user == null)
             {
                 return RedirectToAction("Logout", "Authentication");
             }
 
             var result = await authenRepository.ChangePassword(user, model.OldPassword, model.NewPassword);
-            if(result.Succeeded==false)
+            if (result.Succeeded == false)
             {
                 Notice notice = new Notice
                 {

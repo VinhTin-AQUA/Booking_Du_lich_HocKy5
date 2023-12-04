@@ -1,11 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Diagnostics;
-using System.Security;
-using Booking.Models;
-using Booking.Data;
+﻿using Booking.Data;
 using Booking.Interfaces;
+using Booking.Models;
 using Booking.Seeds;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 namespace Booking.Repositories
 {
@@ -47,12 +45,12 @@ namespace Booking.Repositories
             return await Save();
         }
 
-		public async Task<bool> DeleteAgents(BusinessPartner partner)
+        public async Task<bool> DeleteAgents(BusinessPartner partner)
         {
-			var agents = await GetAgentsPartner(partner.Id);
+            var agents = await GetAgentsPartner(partner.Id);
             context.Users.RemoveRange(agents);
             return await Save();
-		}
+        }
 
         public async Task<ICollection<AppUser>> GetAgentsPartner(int partnerId)
         {
@@ -66,7 +64,7 @@ namespace Booking.Repositories
 
         public async Task<bool> DeleteBusinessPartner(BusinessPartner businessPartner)
         {
-            if(businessPartner == null) 
+            if (businessPartner == null)
             {
                 return false;
             }

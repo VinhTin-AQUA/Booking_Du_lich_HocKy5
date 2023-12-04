@@ -1,9 +1,9 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
+﻿using Booking.Data;
 using Booking.Interfaces;
 using Booking.Models;
-using Booking.Data;
 using Booking.Seeds;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 namespace WebApi.Repositories
 {
@@ -13,7 +13,7 @@ namespace WebApi.Repositories
         private readonly UserManager<AppUser> userManager;
         private readonly RoleManager<IdentityRole> roleManager;
 
-        public TourRepository(BookingContext context, 
+        public TourRepository(BookingContext context,
             UserManager<AppUser> userManager,
             RoleManager<IdentityRole> roleManager)
         {
@@ -69,7 +69,7 @@ namespace WebApi.Repositories
 
         public async Task<bool> AddTypeToTour(TourCategory tourType, Tour tour)
         {
-            tour.TourTypes.Add(tourType) ;
+            tour.TourCategories.Add(tourType);
             context.Tour.Update(tour);
             return await Save();
         }

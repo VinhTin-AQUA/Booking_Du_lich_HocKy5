@@ -1,5 +1,4 @@
-﻿using Booking.Models;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Booking.Models
@@ -15,7 +14,7 @@ namespace Booking.Models
 
         [Key]
         public DateTime? DepartureDate { get; set; }
-       
+
         public DateTime? BookingDate { get; set; }
 
         // khoa ngoai

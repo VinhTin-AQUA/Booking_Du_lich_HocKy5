@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Booking.Models;
+﻿using Booking.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
@@ -51,7 +49,7 @@ public partial class BookingContext : IdentityDbContext<AppUser>
 
         modelBuilder.Entity<Tour>()
             .HasKey(t => t.TourId).HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-        
+
         modelBuilder.Entity<Tour>()
             .HasOne(t => t.Poster)
             .WithMany(p => p.PostTours)
@@ -107,11 +105,11 @@ public partial class BookingContext : IdentityDbContext<AppUser>
         modelBuilder.Entity<TourCategory>()
             .HasKey(tt => new { tt.TourId, tt.CategoryId });
         modelBuilder.Entity<Tour>()
-            .HasMany(t => t.TourTypes)
+            .HasMany(t => t.TourCategories)
             .WithOne(tt => tt.Tour)
             .HasForeignKey(tt => tt.TourId);
         modelBuilder.Entity<Category>()
-            .HasMany(c => c.TourTypes)
+            .HasMany(c => c.TourCategories)
             .WithOne(tt => tt.Category)
             .HasForeignKey(tt => tt.CategoryId);
 
@@ -127,7 +125,7 @@ public partial class BookingContext : IdentityDbContext<AppUser>
             .HasForeignKey(ct => ct.CityId);
     }
 
-	public DbSet<City> City { get; set; }
+    public DbSet<City> City { get; set; }
     public DbSet<Contact> Contact { get; set; }
     public DbSet<Category> Categories { get; set; }
     public DbSet<Tour> Tour { get; set; }
@@ -138,7 +136,7 @@ public partial class BookingContext : IdentityDbContext<AppUser>
     //public DbSet<TouristAttraction> TouristAttractions { get; set; }
 
     //public DbSet<Visiting> Visitings { get; set; }
-    public DbSet<TourCategory> TourTypes { get; set; }
+    public DbSet<TourCategory> TourCategories { get; set; }
     public DbSet<CityTour> CityTour { get; set; }
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);

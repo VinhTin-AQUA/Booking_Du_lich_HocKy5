@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
-using System.Xml.Linq;
 
 namespace Booking.Models
 {
@@ -13,9 +12,9 @@ namespace Booking.Models
         [Required(ErrorMessage = "{0} must be required")]
         [Display(Name = "Adult Price")]
         public double AdultPrice { get; set; }
-		[Display(Name = "Child Price")]
-		public double ChildPrice { get; set; }
-		[DataType(DataType.Date)]
+        [Display(Name = "Child Price")]
+        public double ChildPrice { get; set; }
+        [DataType(DataType.Date)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime? ValidFrom { get; set; }
 

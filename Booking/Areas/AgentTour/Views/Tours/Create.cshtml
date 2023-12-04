@@ -5,138 +5,168 @@
     string postId = ViewBag.UserId;
 }
 
+<link rel="stylesheet" href="~/css/Tour/create.css">
+
 <div class="card">
-	<div class="card-header">
-		<div class="card-title">Thêm tour</div>
-	</div>
+    <div class="card-header">
+        <div class="card-title">Thêm tour</div>
+    </div>
 
-	<div class="card-body">
-		
-		<form asp-action="Create">
-			<div class="row">
-				<div class="col-sm-6 col-12">
-					<div class="card-border">
-						<div class="card-border-title">Thông tin</div>
-						<div class="card-border-body">
+    <div class="card-body">
 
-							<div class="row">
-								<div class="col-sm-12 col-12">
-									<div class="mb-3">
-										<label class="form-label">Tên tour <span class="text-red">*</span></label>
-										<input asp-for="TourName" type="text" class="form-control" placeholder="Nhập tên tour">
-										<span asp-validation-for="TourName" class="text-danger"></span>
-									</div>
-								</div>
+        <form method="post" asp-area="AgentTour" asp-controller="Tours" asp-action="Create" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-sm-6 col-12">
+                    <div class="card-border">
+                        <div class="card-border-title">Thông tin</div>
+                        <div class="card-border-body">
 
-								<div class="col-sm-12 col-12">
-									<div class="mb-3">
-										<label class="form-label">Địa chi <span class="text-red">*</span></label>
-										<input asp-for="TourAddress" type="text" class="form-control" placeholder="Nhập địa chỉ tour">
-										<span asp-validation-for="TourAddress" class="text-danger"></span>
-									</div>
-								</div>
+                            <div class="row">
+                                <div class="col-sm-12 col-12">
+                                    <div class="mb-3">
+                                        <label asp-for="TourName" class="form-label"></label> <span class="text-red">*</span>
+                                        <input asp-for="TourName" type="text" class="form-control" placeholder="Nhập tên tour">
+                                        <span asp-validation-for="TourName" class="text-danger"></span>
+                                    </div>
+                                </div>
 
-								<div class="col-sm-12 col-12">
-									<div class="mb-0">
-										<label class="form-label">Tổng quan về tour <span class="text-red">*</span></label>
-										<textarea asp-for="Overview" rows="4" class="form-control" placeholder="Nhập tổng quan"></textarea>
-										<span asp-validation-for="Overview" class="text-danger"></span>
-									</div>
-								</div>
+                                <div class="col-sm-12 col-12">
+                                    <div class="mb-3">
+                                        <label asp-for="TourAddress" class="form-label"></label> <span class="text-red">*</span>
+                                        <input asp-for="TourAddress" type="text" class="form-control" placeholder="Nhập địa chỉ tour">
+                                        <span asp-validation-for="TourAddress" class="text-danger"></span>
+                                    </div>
+                                </div>
 
-								<input type="hidden" asp-for="PosterID" value="@postId" />
-							</div>
-						</div>
-					</div>
-				</div>
+                                <div class="col-sm-12 col-12">
+                                    <div class="mb-0">
+                                        <label asp-for="Overview" class="form-label"></label> <span class="text-red">*</span>
+                                        <textarea asp-for="Overview" rows="4" class="form-control" placeholder="Nhập tổng quan"></textarea>
+                                        <span asp-validation-for="Overview" class="text-danger"></span>
+                                    </div>
+                                </div>
 
-				<div class="col-sm-6 col-12">
-					<div class="card-border">
-						<div class="card-border-title">Thông tin tiếp</div>
-						<div class="card-border-body">
+                                <input type="hidden" asp-for="PosterID" value="@postId" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-							<div class="row">
-								<div class="col-sm-6 col-12">
-									<div class="mb-3">
-										<label class="form-label">Địa điểm đón khách <span class="text-red">*</span></label>
-										<input asp-for="DepartureLocation" type="text" class="form-control" placeholder="Nhập địa điểm đón khách">
-										<span asp-validation-for="DepartureLocation" class="text-danger"></span>
-									</div>
-								</div>
-								<div class="col-sm-6 col-12">
-									<div class="mb-3">
-										<label class="form-label">Địa điểm trả khách <span class="text-red">*</span></label>
-										<input asp-for="DropOffLocation" type="text" class="form-control" placeholder="Nhập địa điểm trả khách">
-										<span asp-validation-for="DropOffLocation" class="text-danger"></span>
-									</div>
-								</div>
+                <div class="col-sm-6 col-12">
+                    <div class="card-border">
+                        <div class="card-border-title">Thông tin tiếp</div>
+                        <div class="card-border-body">
 
-								<div class="col-sm-12 col-12">
-									<div class="mb-0">
-										<label class="form-label">Lịch trình <span class="text-red">*</span></label>
-										<textarea asp-for="Schedule" rows="4" class="form-control" placeholder="Địa điểm thứ 1&#10;Địa điểm thứ 2&#10;Địa điểm thứ 3"></textarea>
-										<span asp-validation-for="Schedule" class="text-danger"></span>
-									</div>
-								</div>
-								<div class="col-sm-12 col-12">
-									<div class="mb-3">
-										<label class="form-label">Loại tour <span class="text-red">*</span></label>
-										<select class="form-control" multiple>
-											<option value="1" selected>Chuyến tham quan (Mặc định)</option>
-											<option value="2">Ngoài trời</option>
-											<option value="3">Di chuyển</option>
-											<option value="4">Ẩm thực</option>
-											<option value="5">Điểm tham quan</option>
-											<option value="6">Sự kiện</option>
-											<option value="7">Sức khỏe</option>
-											<option value="8">Văn hóa</option>
-											<option value="9">Trong nhà</option>
-										</select>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+                            <div class="row">
+                                <div class="col-sm-6 col-12">
+                                    <div class="mb-3">
+                                        <label asp-for="DepartureLocation" class="form-label"></label> <span class="text-red">*</span>
+                                        <input asp-for="DepartureLocation" type="text" class="form-control" placeholder="Nhập địa điểm đón khách">
+                                        <span asp-validation-for="DepartureLocation" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-12">
+                                    <div class="mb-3">
+                                        <label asp-for="DropOffLocation" class="form-label"></label> <span class="text-red">*</span>
+                                        <input asp-for="DropOffLocation" type="text" class="form-control" placeholder="Nhập địa điểm trả khách">
+                                        <span asp-validation-for="DropOffLocation" class="text-danger"></span>
+                                    </div>
+                                </div>
 
-				<div class="col-sm-12 col-12">
-					<div class="card-border">
-						<div class="card-border-title">Product Images</div>
-						<div class="card-border-body">
+                                <div class="col-sm-12 col-12">
+                                    <div class="mb-0">
+                                        <label asp-for="Schedule" class="form-label"></label> <span class="text-red">*</span>
+                                        <textarea asp-for="Schedule" rows="4" class="form-control" placeholder="Địa điểm thứ 1&#10;Địa điểm thứ 2&#10;Địa điểm thứ 3"></textarea>
+                                        <span asp-validation-for="Schedule" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-12">
+                                    <div class="mb-3">
+                                        <label class="form-label">Loại tour <span class="text-red">*</span></label>
+                                        <select name="tourCategoryIds" class="form-control" multiple>
+                                            <option value="1" selected>Chuyến tham quan (Mặc định)</option>
+                                            <option value="2">Ngoài trời</option>
+                                            <option value="3">Di chuyển</option>
+                                            <option value="4">Ẩm thực</option>
+                                            <option value="5">Điểm tham quan</option>
+                                            <option value="6">Sự kiện</option>
+                                            <option value="7">Sức khỏe</option>
+                                            <option value="8">Văn hóa</option>
+                                            <option value="9">Trong nhà</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-							<div id="dropzone" class="dropzone-dark">
-								<form action="/upload" class="dropzone needsclick dz-clickable" id="demo-upload">
+                <div class="col-sm-12 col-12">
+                    <div class="card-border">
+                        <div class="card-border-title">Ảnh</div>
+                        <div class="card-border-body">
+                            <div id="dropzone" class="dropzone-dark">
+                                <input onchange="onSelectFile()" accept=".jpg, .png" id="fileInputs" name="fileInputs" type="file" class="form-control mb-2" multiple />
+                                <div id="img-container" class="board-grid">
+                                    <span class="note needsclick">
+                                        Trống
+                                    </span>
+                                </div>
+                                <button onclick="deleteAllImg()" type="button" class="btn btn-warning">Xóa hết ảnh</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-									<div class="dz-message needsclick">
-										<button type="button" class="dz-button">
-											Drop files here or click to
-											upload.
-										</button><br>
-										<span class="note needsclick">
-											(This is just a demo dropzone. Selected files are
-											<strong>not</strong> actually uploaded.)
-										</span>
-									</div>
-
-								</form>
-							</div>
-
-						</div>
-					</div>
-				</div>
-
-				<div class="col-sm-12 col-12">
-					<div class="custom-btn-group flex-end">
-						@* <button type="button" class="btn btn-light">Cancel</button> *@
-						<button type="submit" href="products.html" class="btn btn-success">Lưu</button>
-					</div>
-				</div>
-			</div>
-		</form>
-
-	</div>
+                <div class="col-sm-12 col-12">
+                    <div class="custom-btn-group flex-end">
+                        @* <button type="button" class="btn btn-light">Cancel</button> *@
+                        <button type="submit" class="btn btn-success">Lưu</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
+
+<script defer>
+
+    function onSelectFile() {
+        const fileInputs = document.getElementById('fileInputs');
+        const imgContainer = document.getElementById('img-container');
+
+        if (fileInputs.files.length > 0) {
+            imgContainer.innerHTML = '';
+            
+            for (let file of fileInputs.files) {
+                var imgDiv = document.createElement('div');
+                imgDiv.classList.add('img-container-item');
+
+                var imageUrl = URL.createObjectURL(file);
+                var imgElement = document.createElement('img');
+                imgElement.src = imageUrl;
+                imgElement.classList.add('img-tour');
+
+                imgDiv.appendChild(imgElement);
+                imgContainer.appendChild(imgDiv)
+            }
+        }
+    }
+
+    function deleteAllImg() {
+        const imgContainer = document.getElementById('img-container');
+        const fileInputs = document.getElementById('fileInputs');
+        fileInputs.value = '';
+
+        imgContainer.innerHTML = `<span class="note needsclick">
+                    Trống
+                </span>`
+    }
+
+</script>

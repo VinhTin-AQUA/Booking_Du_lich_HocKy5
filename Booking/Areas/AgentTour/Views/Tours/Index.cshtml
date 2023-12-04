@@ -18,14 +18,14 @@
 
                     <!-- Search input group start -->
                     <div class="input-group border border-2 rounded d-inline-block">
-                        <input type="text" asp-for="@Model" name="searchString" class="form-control" placeholder="Nhập tên người dùng">
+                        <input type="text" asp-for="@Model" name="searchString" class="form-control" placeholder="Nhập tên tour">
                         <button class="btn" type="submit">
                             <i class="bi bi-search"></i>
                         </button>
                     </div>
 
                     <div class="custom-btn-group">
-                        <a asp-area="AgentTour" asp-action="Create" asp-controller="agent-tour" class="btn btn-primary" class="btn btn-info"><i class="bi bi-plus-square"></i></a>
+                        <a asp-area="AgentTour" asp-action="Create" asp-controller="Tours" class="btn btn-primary" class="btn btn-info"><i class="bi bi-plus-square"></i></a>
                     </div>
                     <!-- Search input group end -->
                 </form>
@@ -68,18 +68,32 @@
                                 </td>
                                 <td> @(tour.DropOffLocation)</td>
                                 <td>
-                                    @(tour.PostingDate)
+                                    @if(tour.PostingDate == null)
+                                    {
+                                        <span>Chưa duyệt</span>
+                                    }
+                                    else
+                                    {
+                                        @(tour.PostingDate)
+                                    }
                                 </td>
                                 <td>
-                                    <a asp-action="Detail" asp-route-id="@tour.TourId">
+                                    <a asp-area="AgentTour" asp-controller="Tours" asp-action="Details" asp-route-id="@tour.TourId">
                                         <span class="fs-4 text-success">
-                                            <i class="fa-solid fa-pen-to-square"></i>
+                                            <i class="fa-solid fa-circle-info" style="color: #1be218;"></i>
                                         </span>
-                                    </a> |
+                                    </a>
 
                                     <a asp-action="Edit" asp-route-id="@tour.TourId">
                                         <span class="fs-4 text-success">
-                                            <i class="fa-solid fa-pen-to-square" style="color: #0fd212;"></i>
+                                            <i class="fa-solid fa-pen-to-square" style="color: #dfc311;"></i>
+                                        </span>
+                                    </a>
+
+
+                                    <a asp-action="Delete" asp-route-id="@tour.TourId">
+                                        <span class="fs-4 text-success">
+                                            <i class="fa-solid fa-trash" style="color: #ff0000;"></i>
                                         </span>
                                     </a>
                                 </td>

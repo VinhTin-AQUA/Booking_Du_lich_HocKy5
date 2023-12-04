@@ -1,7 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Booking.Data;
 using Booking.Interfaces;
 using Booking.Models;
-using Booking.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace Booking.Repositories
 {
@@ -35,7 +35,7 @@ namespace Booking.Repositories
         public async Task<Package> GetPackageById(int packageId)
         {
             var package = await context.Packages
-               .Where(p => p.PackageID == packageId )
+               .Where(p => p.PackageID == packageId)
                .FirstOrDefaultAsync();
             return package;
         }

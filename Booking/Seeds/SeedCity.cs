@@ -1,6 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Booking.Data;
 using Booking.Models;
-using Booking.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace WebApi.Seeds
 {

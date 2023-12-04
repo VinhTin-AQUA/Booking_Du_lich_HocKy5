@@ -27,7 +27,7 @@ namespace Booking.Controllers
         {
             if (User.IsInRole(SeedRole.ADMIN_ROLE))
             {
-                return RedirectToAction("Index", "UserManager", new {area = "Admin"});
+                return RedirectToAction("Index", "UserManager", new { area = "Admin" });
             }
 
             if (User.IsInRole(SeedRole.AGENTTOUR_ROLE))
@@ -56,9 +56,9 @@ namespace Booking.Controllers
             return View();
         }
 
-		[Route("tour-detail")]
-		[HttpGet]
-		public IActionResult TourDetail()
+        [Route("tour-detail")]
+        [HttpGet]
+        public IActionResult TourDetail()
         {
             return View();
         }
@@ -68,8 +68,8 @@ namespace Booking.Controllers
 
         public async Task<IActionResult> BookTour(int packageId)
         {
-            var packagePrice =await _packagePriceRepository.GetPackagePriceByID(packageId, DateTime.Now);
-            if(packagePrice == null)
+            var packagePrice = await _packagePriceRepository.GetPackagePriceByID(packageId, DateTime.Now);
+            if (packagePrice == null)
             {
                 return NotFound();
             }
@@ -86,20 +86,21 @@ namespace Booking.Controllers
         public async Task<IActionResult> BookTour(int packageId, BookTour model)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if(packageId == null || userId == null)
+            if (packageId == null || userId == null)
             {
                 return NotFound();
 
             }
-            BookTour newBookTour = new BookTour() {
+            BookTour newBookTour = new BookTour()
+            {
                 UserID = userId,
                 PackageId = packageId,
                 DepartureDate = model.DepartureDate,
                 BookingDate = model.BookingDate,
                 Price = model.Price
-                };
+            };
             var r = await _bookTourRepository.AddBookTour(newBookTour);
-            if(r == false)
+            if (r == false)
             {
                 return View();
             }

@@ -1,10 +1,8 @@
 ﻿
+using Booking.Models;
+using Booking.Seeds;
 using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
-using Booking.Models;
-using Booking.Data;
-using Bogus;
-using Booking.Seeds;
 
 namespace WebApi.Seeds
 {
@@ -49,23 +47,23 @@ namespace WebApi.Seeds
             //    });
             //}
 
-			var agentTour = new AppUser()
-			{
-				UserName = Email,
-				Email = Email,
-				EmailConfirmed = true,
-				FirstName = FirstName,
-				LastName = LastName,
-				Address = Address,
-			};
+            var agentTour = new AppUser()
+            {
+                UserName = Email,
+                Email = Email,
+                EmailConfirmed = true,
+                FirstName = FirstName,
+                LastName = LastName,
+                Address = Address,
+            };
 
-			await userManager.CreateAsync(agentTour, Password);
+            await userManager.CreateAsync(agentTour, Password);
 
-			await userManager.AddToRolesAsync(agentTour, new[] { SeedRole.AGENTTOUR_ROLE });
-			await userManager.AddClaimsAsync(agentTour, new Claim[]
-			{
-					new Claim(ClaimTypes.Email, agentTour.Email),
-			});
-		}
+            await userManager.AddToRolesAsync(agentTour, new[] { SeedRole.AGENTTOUR_ROLE });
+            await userManager.AddClaimsAsync(agentTour, new Claim[]
+            {
+                    new Claim(ClaimTypes.Email, agentTour.Email),
+            });
+        }
     }
 }

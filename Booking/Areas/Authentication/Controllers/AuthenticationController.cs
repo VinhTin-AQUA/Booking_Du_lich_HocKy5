@@ -1,12 +1,9 @@
-﻿using Azure;
-using Booking.Areas.Authentication.Models.Authentication;
+﻿using Booking.Areas.Authentication.Models.Authentication;
 using Booking.Interfaces;
 using Booking.Models;
 using Booking.Models.Notification;
-using Booking.Seeds;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using NuGet.Common;
 
 namespace Booking.Areas.Authentication.Controllers
 {
@@ -169,7 +166,7 @@ namespace Booking.Areas.Authentication.Controllers
                 return View();
             }
 
-            
+
             return RedirectToAction("Index", "Home");
         }
 
@@ -214,7 +211,7 @@ namespace Booking.Areas.Authentication.Controllers
                 Title = "Kiểm tra email của bạn",
                 Description = "Tiếp tục xac thực email của bạn để sử dụng dịch vụ của chúng tôi"
             };
-            return RedirectToAction("notification","notice", notice);
+            return RedirectToAction("notification", "notice", notice);
         }
 
         [Route("forgot-password")]
@@ -243,7 +240,7 @@ namespace Booking.Areas.Authentication.Controllers
                 Notice notice = new Notice
                 {
                     Title = "Kiểm tra email của bạn để lấy lại mật khẩu",
-                    Description ="Xin cảm ơn đã sử dụng dịch vụ của chúng tôi"
+                    Description = "Xin cảm ơn đã sử dụng dịch vụ của chúng tôi"
                 };
                 return RedirectToAction("Notification", "notice", notice);
             }
@@ -263,7 +260,7 @@ namespace Booking.Areas.Authentication.Controllers
         [HttpPost]
         public async Task<IActionResult> ResetPassword(ResetPassword model)
         {
-            if (model == null) 
+            if (model == null)
             {
                 Notice notice = new Notice
                 {

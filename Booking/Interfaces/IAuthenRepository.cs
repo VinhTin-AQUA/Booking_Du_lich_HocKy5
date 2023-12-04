@@ -1,8 +1,6 @@
 ﻿using Booking.Models;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.WebUtilities;
 using System.Security.Claims;
-using System.Text;
 
 namespace Booking.Interfaces
 {
