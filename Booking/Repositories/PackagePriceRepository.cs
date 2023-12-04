@@ -49,13 +49,13 @@ namespace Booking.Repositories
             return packagePrice;
         }
 
-        public async Task<PackagePrice> GetPackagePriceByPrice(double price)
-        {
-            var packagePrice = await context.PackagePrices
-                .Where(pp => pp.Price == price)
-                .FirstOrDefaultAsync();
-            return packagePrice;
-        }
+        //public async Task<PackagePrice> GetPackagePriceByPrice(double price)
+        //{
+        //    var packagePrice = await context.PackagePrices
+        //        .Where(pp => pp.Price == price)
+        //        .FirstOrDefaultAsync();
+        //    return packagePrice;
+        //}
 
 
         public async Task<bool> Save()

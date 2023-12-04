@@ -11,9 +11,11 @@ namespace Booking.Models
         [Key]
         public int PriceId { get; set; }
         [Required(ErrorMessage = "{0} must be required")]
-        [Display(Name = "Price")]
-        public double Price { get; set; }
-        [DataType(DataType.Date)]
+        [Display(Name = "Adult Price")]
+        public double AdultPrice { get; set; }
+		[Display(Name = "Child Price")]
+		public double ChildPrice { get; set; }
+		[DataType(DataType.Date)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime? ValidFrom { get; set; }
 

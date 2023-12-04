@@ -19,6 +19,7 @@ namespace Booking.Models
 
         [Column(TypeName = "nvarchar(max)")]
         public string Decription { get; set; }
+        public int MaxPeople { get; set; }
 
         //--
         public Tour Tour { get; set; }

@@ -8,7 +8,7 @@ namespace Booking.Interfaces
         public Task<bool> AddPackPrice(PackagePrice packagePrice);
 
         public Task<ICollection<PackagePrice>> GetAllPackagePrices();
-        public Task<PackagePrice> GetPackagePriceByPrice(double price);
+        //public Task<PackagePrice> GetPackagePriceByPrice(double price);
 
         public Task<PackagePrice> GetPackagePriceById(int? id);
         public Task<PackagePrice> GetPackagePriceByID(int? id, DateTime? validFrom);

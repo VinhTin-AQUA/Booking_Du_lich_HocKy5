@@ -4,6 +4,7 @@ using Booking.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Booking.Migrations
 {
     [DbContext(typeof(BookingContext))]
-    partial class BookingContextModelSnapshot : ModelSnapshot
+    [Migration("20231204013648_UpdatePackage")]
+    partial class UpdatePackage
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -256,17 +259,14 @@ namespace Booking.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PriceId"));
 
-                    b.Property<double>("AdultPrice")
-                        .HasColumnType("float");
-
-                    b.Property<double>("ChildPrice")
-                        .HasColumnType("float");
-
                     b.Property<DateTime?>("GoodThru")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("PackageId")
                         .HasColumnType("int");
+
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
 
                     b.Property<DateTime?>("ValidFrom")
                         .HasColumnType("datetime2");
@@ -325,9 +325,6 @@ namespace Booking.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<int?>("TourTypeId")
-                        .HasColumnType("int");
-
                     b.HasKey("TourId")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -338,7 +335,7 @@ namespace Booking.Migrations
                     b.ToTable("Tour");
                 });
 
-            modelBuilder.Entity("Booking.Models.TourType", b =>
+            modelBuilder.Entity("Booking.Models.TourCategory", b =>
                 {
                     b.Property<int>("TourId")
                         .HasColumnType("int");
@@ -350,7 +347,7 @@ namespace Booking.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("TourTypes");
+                    b.ToTable("TourCategory");
                 });
 
             modelBuilder.Entity("Booking.Models.TouristAttraction", b =>
@@ -593,7 +590,7 @@ namespace Booking.Migrations
                     b.Navigation("Poster");
                 });
 
-            modelBuilder.Entity("Booking.Models.TourType", b =>
+            modelBuilder.Entity("Booking.Models.TourCategory", b =>
                 {
                     b.HasOne("Booking.Models.Category", "Category")
                         .WithMany("TourTypes")
