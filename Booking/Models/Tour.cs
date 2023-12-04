@@ -60,7 +60,8 @@ namespace Booking.Models
 
         public ICollection<Package>? Packages { get; set; }
 
-        public ICollection<Visiting> Visitings { get; set; }
-        
+        //public ICollection<Visiting> Visitings { get; set; }
+        public ICollection<CityTour> CityTours { get; set; }
+
     }
 }
