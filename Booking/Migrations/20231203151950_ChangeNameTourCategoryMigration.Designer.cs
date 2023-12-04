@@ -4,6 +4,7 @@ using Booking.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Booking.Migrations
 {
     [DbContext(typeof(BookingContext))]
-    partial class BookingContextModelSnapshot : ModelSnapshot
+    [Migration("20231203151950_ChangeNameTourCategoryMigration")]
+    partial class ChangeNameTourCategoryMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -231,9 +234,6 @@ namespace Booking.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("MaxPeople")
-                        .HasColumnType("int");
-
                     b.Property<string>("PackageName")
                         .IsRequired()
                         .HasColumnType("nvarchar(250)");
@@ -256,17 +256,14 @@ namespace Booking.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PriceId"));
 
-                    b.Property<double>("AdultPrice")
-                        .HasColumnType("float");
-
-                    b.Property<double>("ChildPrice")
-                        .HasColumnType("float");
-
                     b.Property<DateTime?>("GoodThru")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("PackageId")
                         .HasColumnType("int");
+
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
 
                     b.Property<DateTime?>("ValidFrom")
                         .HasColumnType("datetime2");

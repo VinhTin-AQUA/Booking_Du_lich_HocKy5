@@ -13,13 +13,13 @@ namespace Booking.Repositories
         {
             this.context = context;
         }
-        public async Task<bool> AddTourType(TourType tourType)
+        public async Task<bool> AddTourType(TourCategory tourType)
         {
             context.TourTypes.Add(tourType);
             return await Save();
         }
 
-        public async Task<bool> DeleteTourType(TourType tourType)
+        public async Task<bool> DeleteTourType(TourCategory tourType)
         {
             if (tourType == null)
                 return false;
@@ -27,13 +27,13 @@ namespace Booking.Repositories
             return await Save();
         }
 
-        public async Task<TourType?> GetTourTypeByCategoryId(int categoryId)
+        public async Task<TourCategory?> GetTourTypeByCategoryId(int categoryId)
         {
             var tourType = await context.TourTypes.Where(tt => tt.CategoryId == categoryId).SingleOrDefaultAsync();
             return tourType;
         }
 
-        public async Task<TourType?> GetTourTypeByTourId(int tourId)
+        public async Task<TourCategory?> GetTourTypeByTourId(int tourId)
         {
             var tourType = await context.TourTypes.Where(tt => tt.TourId == tourId).SingleOrDefaultAsync();
             return tourType;
@@ -45,7 +45,7 @@ namespace Booking.Repositories
             return s > 0;
         }
 
-        public async Task<bool> UpdateTourType(TourType tourType)
+        public async Task<bool> UpdateTourType(TourCategory tourType)
         {
             context.TourTypes.Update(tourType);
             return await Save();
