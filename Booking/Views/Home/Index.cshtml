@@ -47,7 +47,14 @@
 					<div class="product-card city-temp-item">
 						<img class="product-card-img-top" src="https://pix6.agoda.net/geo/city/13170/1_13170_02.jpg?ca=6&ce=1&s=396x298&ar=4x3" alt="Bootstrap Gallery">
 						<div class="product-card-body ">
-							<h5 class="product-title">Hồ Chí Minh</h5>
+@* 									START TEST *@
+							<a>
+								<h5 class="product-title">
+									<a asp-action="searchtour" asp-route-cityName="Hồ Chí Minh">Hồ Chí Minh</a>
+								</h5>
+							</a>
+							@* 		END TEST *@
+@* 							<h5 class="product-title">Hồ Chí Minh</h5> *@
 						</div>
 					</div>
 

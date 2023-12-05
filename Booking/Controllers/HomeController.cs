@@ -14,13 +14,15 @@ namespace Booking.Controllers
         private readonly UserManager<AppUser> _userManager;
         private readonly IBookTourRepository _bookTourRepository;
         private readonly IPackagePriceRepository _packagePriceRepository;
+        private readonly ITourRepository _tourRepository;
 
-        public HomeController(ILogger<HomeController> logger, UserManager<AppUser> userManager, IBookTourRepository bookTourRepository, IPackagePriceRepository packagePriceRepository)
+        public HomeController(ILogger<HomeController> logger, UserManager<AppUser> userManager, IBookTourRepository bookTourRepository, IPackagePriceRepository packagePriceRepository, ITourRepository tourRepository)
         {
             _logger = logger;
             _userManager = userManager;
             _bookTourRepository = bookTourRepository;
             _packagePriceRepository = packagePriceRepository;
+            _tourRepository = tourRepository;
         }
 
         public IActionResult Index()
@@ -49,11 +51,16 @@ namespace Booking.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        [Route("search-tours")]
+        [Route("search-tours/{cityName}")]
         [HttpGet]
-        public IActionResult SearchTour()
+        public async Task<IActionResult> SearchTour(string cityName)
         {
-            return View();
+            var tourList = await _tourRepository.GetTourByCityName(cityName);
+            if (tourList == null)
+            {
+                return NotFound();
+            }
+            return View(tourList);
         }
 
         [Route("tour-detail")]

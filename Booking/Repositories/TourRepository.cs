@@ -4,6 +4,7 @@ using Booking.Models;
 using Booking.Seeds;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace WebApi.Repositories
 {
@@ -12,14 +13,17 @@ namespace WebApi.Repositories
         private readonly BookingContext context;
         private readonly UserManager<AppUser> userManager;
         private readonly RoleManager<IdentityRole> roleManager;
+        private readonly ICityRepository cityRepository;
 
         public TourRepository(BookingContext context,
             UserManager<AppUser> userManager,
-            RoleManager<IdentityRole> roleManager)
+            RoleManager<IdentityRole> roleManager,
+			ICityRepository cityRepository)
         {
             this.context = context;
             this.userManager = userManager;
             this.roleManager = roleManager;
+            this.cityRepository = cityRepository;
         }
         public async Task<bool> AddTour(Tour tour)
         {
@@ -113,5 +117,15 @@ namespace WebApi.Repositories
 
             return _agentTours.ToList();
         }
-    }
+
+        public async Task<ICollection<Tour>> GetTourByCityName(string? cityName)
+        {
+            City cityTemp = await cityRepository.GetCityByName(cityName);
+            var tours = await context.City.Where(city => city.Id == cityTemp.Id)
+         .Join(context.CityTour, c => c.Id, ct => ct.CityId, (c, ct) => new { c, ct })
+                              .Join(context.Tour, cct => cct.ct.TourId, t => t.TourId, (cct, t) => new { cct, t })
+                              .Select(ts => ts.t).ToListAsync();
+            return tours;
+		}
+	}
 }
