@@ -81,9 +81,10 @@ namespace Booking.Repositories
             return r;
         }
 
-
-
-
-
-    }
+		public async Task<City> GetCityByName(string? name)
+		{
+            var city = await context.City.Where(c => c.Name == name).FirstOrDefaultAsync();
+            return city;
+		}
+	}
 }
