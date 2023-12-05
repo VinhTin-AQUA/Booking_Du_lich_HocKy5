@@ -188,6 +188,11 @@ app.MapAreaControllerRoute(
     areaName: "AgentTour",
     pattern: "{controller=Tours}/{action=Index}/{id?}");
 
+app.MapAreaControllerRoute(
+    name: "AgentTour",
+    areaName: "AgentTour",
+    pattern: "{controller=Package}/{action=Index}/{id?}");
+
 
 
 #endregion

@@ -1,0 +1,244 @@
+﻿@model Package
+
+@{
+    ViewData["Title"] = "Thêm gói mới";
+    int tourId = ViewBag.TourId;
+}
+
+<!-- Content wrapper start -->
+<div class="content-wrapper h-100">
+    <!-- Row start -->
+    <div class="row">
+        <div class="col-sm-12 col-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Thêm gói mới</div>
+                </div>
+
+                <div class="card-body">
+                    <!-- Row start -->
+                    <div class="row">
+                        <div class="col-xxl-8 col-sm-8 col-12">
+                            <div class="row">
+                                <div class="col-sm-6 col-12">
+                                    <div class="mb-3">
+                                        <label asp-for="PackageName" class="form-label"></label>
+                                        <input id="packageName" asp-for="PackageName" type="text" class="form-control" />
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6 col-12">
+                                    <div class="mb-3">
+                                        <label asp-for="MaxPeople" class="form-label"></label>
+                                        <input id="maxPeople" asp-for="MaxPeople" type="number" class="form-control" />
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="mb-2">
+                                        <label asp-for="Description" class="form-label"></label>
+                                        <textarea id="decription" asp-for="Description" rows="20" class="form-control"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4 col-12">
+                            <div class="product-list-card">
+                                <h5>Giá</h5>
+                                <div id="price-container"
+                                     style="height: 250px; overflow-y: scroll; ">
+                                </div>
+                            </div>
+
+                            <div class="product-list-card">
+                                <div class="row">
+                                    <div class="col-12 col-md-6">
+                                        <label for="">Giá trẻ em</label>
+                                        <input id="childPrice"
+                                               type="number"
+                                               value="0"
+                                               class="form-control" />
+                                        <label for="">Ngày áp dụng</label>
+                                        <input id="validFrom"
+                                               type="date"
+                                               class="form-control" />
+                                    </div>
+
+                                    <div class="col-12 col-md-6">
+                                        <label for="">Giá người lớn</label>
+                                        <input id="adultPrice"
+                                               type="number"
+                                               value="0"
+                                               class="form-control" />
+                                        <label for="">Ngày kết thúc</label>
+                                        <input id="goodThru"
+                                               type="date"
+                                               class="form-control" />
+                                    </div>
+                                </div>
+
+                                <div class="row mt-2">
+                                    <div class="col-12">
+                                        <button onclick="addPrice()"
+                                                class="btn btn-primary"
+                                                type="button">
+                                            Thêm giá
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-xxl-12">
+                                    <div class="">
+                                        <button type="button" onclick="save()" class="btn btn-success btn w-100">
+                                            Lưu
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script defer>
+    let prices = [];
+
+    function addPrice() {
+        let childPriceElement = document.getElementById("childPrice");
+        let adultPriceElement = document.getElementById("adultPrice");
+        let validFromElement = document.getElementById("validFrom");
+        let goodThruElement = document.getElementById("goodThru");
+
+
+        if (childPriceElement.value < 0 || adultPriceElement.value < 0) {
+            alert("Giá phải lớn hơn hoặc bằng 0");
+        }
+        else if (validFromElement.value === "") {
+            alert("Hãy chọn ngành áp dụng");
+        } else if (goodThruElement.value === "") {
+            alert("Hãy chọn ngành kết thúc");
+        } else if (validFromElement.value > goodThruElement.value) {
+            alert("Ngày áp dụng phải nhỏ hơn hoặc bằng ngày hết hạn");
+        } else {
+            const price = {
+                childPrice: childPriceElement.value,
+                adultPrice: adultPriceElement.value,
+                validFrom: validFromElement.value,
+                goodThru: goodThruElement.value,
+            };
+
+            prices.push(price);
+            loadPrices();
+        }
+    }
+
+    function loadPrices() {
+        let priceContainer = document.getElementById("price-container");
+        priceContainer.innerHTML = '';
+
+        for (let price of prices) {
+            // Tạo các thẻ HTML
+            var outerDiv = document.createElement("div");
+            outerDiv.className =
+                "product-list-block border-bottom border-2 p-2";
+
+            var innerDiv = document.createElement("div");
+            innerDiv.className =
+                "d-flex justify-content-between align-items-center";
+
+            var detailsDiv = document.createElement("div");
+            detailsDiv.className = "product-list-details w-100";
+
+            var titleDiv = document.createElement("div");
+            titleDiv.className = "d-flex justify-content-between";
+
+            var title1 = document.createElement("h5");
+            title1.className = "product-list-title";
+            title1.textContent = "Giá trẻ em: " + price.childPrice;
+
+            var title2 = document.createElement("h5");
+            title2.className = "product-list-title";
+            title2.textContent = "Giá người lớn: " + price.adultPrice;
+
+            var dateDiv = document.createElement("div");
+            dateDiv.className = "d-flex justify-content-between";
+
+            var startDateDiv = document.createElement("div");
+            startDateDiv.textContent = "Ngày áp dụng:";
+            var startDateStrong = document.createElement("strong");
+            startDateStrong.className = "text-success";
+            startDateStrong.textContent = price.validFrom;
+            startDateDiv.appendChild(startDateStrong);
+
+            var endDateDiv = document.createElement("div");
+            endDateDiv.textContent = "Ngày kết thúc:";
+            var endDateStrong = document.createElement("strong");
+            endDateStrong.className = "text-success";
+            endDateStrong.textContent = price.goodThru;
+            endDateDiv.appendChild(endDateStrong);
+
+            var iconDiv = document.createElement("div");
+            var iconSpan = document.createElement("span");
+            var iconI = document.createElement("i");
+            iconI.className = "fa-solid fa-x";
+            iconI.style.color = "#df0c0c";
+            iconSpan.appendChild(iconI);
+            iconDiv.appendChild(iconSpan);
+
+            // Thêm các thẻ con vào thẻ cha
+            titleDiv.appendChild(title1);
+            titleDiv.appendChild(title2);
+
+            dateDiv.appendChild(startDateDiv);
+            dateDiv.appendChild(endDateDiv);
+
+            detailsDiv.appendChild(titleDiv);
+            detailsDiv.appendChild(dateDiv);
+
+            innerDiv.appendChild(detailsDiv);
+            innerDiv.appendChild(iconDiv);
+
+            outerDiv.appendChild(innerDiv);
+
+            // Thêm mainDiv vào body (hoặc một phần tử khác trong DOM)
+            priceContainer.appendChild(outerDiv);
+        }
+    }
+
+    function save() {
+
+        var packageName = document.getElementById('packageName').value;
+        var maxPeople = document.getElementById('maxPeople').value;
+        var decription = document.getElementById('decription').value;
+
+        $.ajax({
+            url: '@Url.Action("Create", "Package", @tourId)',
+            type: 'POST',
+            dataType: 'json',
+            data: { prices, packageName, maxPeople, decription },
+            success: function (response) {
+                // Xử lý phản hồi từ máy chủ (nếu cần)
+                console.log(response);
+            },
+            success: function (data) {
+                if (data.success == false) {
+                    window.location.href = '@Url.Action("Error", "Error")';
+                } else {
+                    window.location.href = '@Url.Action("PackagesTour", "Package", new { id = "__PARAM__" })'.replace('__PARAM__',data.tourId);
+                }
+            },
+            error: function (e) {
+                console.log(e);
+                alert('Đã xảy ra lỗi khi gửi yêu cầu.');
+            }
+        });
+    }
+
+</script>

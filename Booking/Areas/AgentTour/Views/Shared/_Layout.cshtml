@@ -70,7 +70,15 @@
 						<li>
 							<a id="agent-tour" class="nav-link" asp-area="AgentTour" asp-controller="Tours" asp-action="Index">
 								<i class="bi bi-journals"></i>
-								<span class="menu-text">Đối tác tour du lịch</span>
+								<span class="menu-text">Quản lý tour</span>
+							</a>
+						</li>
+
+						@* quản lý gói *@
+						<li>
+							<a id="package" class="nav-link" asp-area="AgentTour" asp-controller="Package" asp-action="Index">
+								<i class="bi bi-journals"></i>
+								<span class="menu-text">Quản lý gói</span>
 							</a>
 						</li>
 
@@ -510,14 +518,10 @@
 			
 
             // Thêm lớp "active" cho li có ID tương ứng với đường dẫn hiện tại
-            if (currentPath.startsWith('/user-management')) {
-                $('#admin').addClass('sidebar-menu-active');
-            } else if (currentPath.startsWith('/city-manager')) {
-                $('#city').addClass('sidebar-menu-active');
-            } else if (currentPath.startsWith('/agent-hotel-manager')) {
-                $('#agent-hotel').addClass('sidebar-menu-active');
-			} else if (currentPath.startsWith('/agent-tour')) {
+			if (currentPath.startsWith('/agent-tour')) {
 				$('#agent-tour').addClass('sidebar-menu-active');
+			} else if (currentPath.startsWith('/packages')) {
+				$('#package').addClass('sidebar-menu-active');
 			}
         });
     </script>
