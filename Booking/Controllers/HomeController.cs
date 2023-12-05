@@ -3,6 +3,7 @@ using Booking.Models;
 using Booking.Seeds;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using NuGet.Protocol;
 using System.Diagnostics;
 using System.Security.Claims;
 
@@ -53,8 +54,12 @@ namespace Booking.Controllers
 
         [Route("search-tours/{cityName}")]
         [HttpGet]
-        public async Task<IActionResult> SearchTour(string cityName)
+        public async Task<IActionResult> SearchTour(string? cityName)
         {
+            if(cityName == null)
+            {
+                return View("~/Views/Error/Error.cshtml");
+            }
             var tourList = await _tourRepository.GetTourByCityName(cityName);
             if (tourList == null)
             {
@@ -63,11 +68,20 @@ namespace Booking.Controllers
             return View(tourList);
         }
 
-        [Route("tour-detail")]
+        [Route("tour-detail/{tourId}")]
         [HttpGet]
-        public IActionResult TourDetail()
+        public async Task<IActionResult> TourDetail(int? tourId)
         {
-            return View();
+            if(tourId == null)
+            {
+                return View("~/Views/Error/Error.cshtml");
+            }
+            Tour tour = await _tourRepository.GetTourById(tourId);
+            if(tour == null)
+            {
+                return NotFound();
+            }
+            return View(tour);
         }
 
         [Route("book-tour/{packageId}")]
