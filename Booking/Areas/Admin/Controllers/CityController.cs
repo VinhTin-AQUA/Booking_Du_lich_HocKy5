@@ -13,7 +13,7 @@ namespace Booking.Areas.Admin.Controllers
         private readonly ICityRepository cityRepository;
         private readonly IImageService imageService;
 
-        public CityController(AppConfigs appConfigs, 
+        public CityController(AppConfigs appConfigs,
             ICityRepository cityRepository,
             IImageService imageService)
         {
@@ -40,7 +40,7 @@ namespace Booking.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> AddCity(string cityName, IFormFile fileInput)
         {
-            if(string.IsNullOrEmpty(cityName))
+            if (string.IsNullOrEmpty(cityName))
             {
                 TempData["Error"] = "Vui lòng nhập tên tỉnh / thành";
                 return View();
@@ -54,14 +54,14 @@ namespace Booking.Areas.Admin.Controllers
             if (fileInput == null)
             {
                 city.PhotoPath = "/no-image.jpg";
-            } 
+            }
             else
             {
-                var rImage =await imageService.AddCityImage(fileInput, "cities");
-                if(rImage == false)
+                var rImage = await imageService.AddCityImage(fileInput, "cities");
+                if (rImage == false)
                 {
                     city.PhotoPath = "/no-image.jpg";
-                } 
+                }
                 else
                 {
                     city.PhotoPath = $"/cities/{fileInput.FileName}";
@@ -97,10 +97,10 @@ namespace Booking.Areas.Admin.Controllers
             }
             city.Name = model.Name;
 
-            if(fileInput != null)
+            if (fileInput != null)
             {
                 var rImage = await imageService.UpdateCityImage(city.PhotoPath, fileInput, "cities");
-                if(rImage == false)
+                if (rImage == false)
                 {
                     city.PhotoPath = "/no-image.jpg";
                 }
@@ -119,7 +119,7 @@ namespace Booking.Areas.Admin.Controllers
         {
             var city = await cityRepository.GetCityById(cityId);
 
-            if(city == null)
+            if (city == null)
             {
                 return RedirectToAction("Index");
             }

@@ -82,7 +82,7 @@ namespace Booking.Repositories
             return resetResult;
         }
 
-        public async Task<IdentityResult> ChangePassword(AppUser user,string currentPassword, string newPassword)
+        public async Task<IdentityResult> ChangePassword(AppUser user, string currentPassword, string newPassword)
         {
             var r = await _userManage.ChangePasswordAsync(user, currentPassword, newPassword);
             return r;
@@ -111,7 +111,7 @@ namespace Booking.Repositories
             return result;
         }
 
-        
+
         // role
 
         public async Task AddRoleToUser(AppUser user, string role)

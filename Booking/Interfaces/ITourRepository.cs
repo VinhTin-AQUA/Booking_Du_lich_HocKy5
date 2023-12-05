@@ -1,5 +1,4 @@
 ﻿using Booking.Models;
-using Microsoft.AspNetCore.Identity;
 
 namespace Booking.Interfaces
 {
@@ -18,6 +17,6 @@ namespace Booking.Interfaces
 
         public Task<int> TotalAgent(string searchString = "");
         public Task<ICollection<AppUser>> GetAgentTours(int currentPage, int pageSize, string? searchString);
-        
+
     }
 }

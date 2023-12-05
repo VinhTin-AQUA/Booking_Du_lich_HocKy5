@@ -1,12 +1,8 @@
-﻿using Bogus;
+﻿using Booking.Data;
+using Booking.Models;
+using Booking.Seeds;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using System.Security.Claims;
-using Booking.Data;
-using Booking.Interfaces;
-using Booking.Models;
-using Booking.Repositories;
-using Booking.Seeds;
 using WebApi.Seeds;
 
 namespace Booking.Services

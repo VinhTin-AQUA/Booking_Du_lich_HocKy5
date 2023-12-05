@@ -1,7 +1,6 @@
 ﻿using Booking.Areas.Admin.Models.AgentHotelManager;
 using Booking.Interfaces;
 using Booking.Models;
-using Booking.Repositories;
 using Booking.Seeds;
 using Microsoft.AspNetCore.Mvc;
 
@@ -46,7 +45,7 @@ namespace Booking.Areas.Admin.Controllers
         }
 
         [Route("add-account-agent-tour")]
-        public IActionResult AddAccount() 
+        public IActionResult AddAccount()
         {
             AddAgent addAgent = new AddAgent();
             return View(addAgent);
@@ -89,7 +88,7 @@ namespace Booking.Areas.Admin.Controllers
         public async Task<IActionResult> AgentTourDetail(string id)
         {
             var agent = await authenRepository.GetUserById(id);
-            if(agent == null)
+            if (agent == null)
             {
                 return RedirectToAction("Error", "Error", (object)"Không tìm thấy thông tin");
             }

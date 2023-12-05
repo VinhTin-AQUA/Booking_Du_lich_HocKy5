@@ -39,7 +39,7 @@ namespace Booking.Migrations
                 name: "FK_Visitings_TouristAttraction_TouristAttractionId",
                 table: "Visitings");
 
-           
+
         }
     }
 }
