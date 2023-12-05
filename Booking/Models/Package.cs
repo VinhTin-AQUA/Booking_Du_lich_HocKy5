@@ -6,16 +6,20 @@ namespace Booking.Models
     [Table("Package")]
     public class Package
     {
-        [Required(ErrorMessage = "{0} must be required")]
+        [Required(ErrorMessage = "{0} không được bỏ trống")]
         public int PackageID { get; set; }
 
        
         [Column(TypeName = "nvarchar(250)")]
-        [Required(ErrorMessage = "{0} must be required")]
+        [Required(ErrorMessage = "{0} không được bỏ trống")]
+        [Display(Name = "Tên gói")]
         public string PackageName { get; set; }
 
         [Column(TypeName = "nvarchar(max)")]
-        public string Decription { get; set; }
+        [Display(Name = "Mô tả")]
+        public string Description { get; set; }
+
+        [Display(Name = "Số người tối đa")]
         public int MaxPeople { get; set; }
 
         //--
