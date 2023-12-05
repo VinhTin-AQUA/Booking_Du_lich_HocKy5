@@ -4,6 +4,7 @@
     List<Tour> tours = ViewBag.Tours;
     List<string> images= ViewBag.Images;
     string baseImgUrl = "https://localhost:7231/resources/images";
+    List<int> packagesTotal = ViewBag.PackagesTotal;
 }
 
 <div class="page-wrapper">
@@ -15,9 +16,9 @@
             <div class="row">
                 <div class="col-sm-12 col-12">
                     <div class="card">
-                        <!--<div class="card-header">
-                          <div class="card-title">Items Added</div>
-                        </div>-->
+                        <div class="card-header">
+                          <div class="card-title">Các tour</div>
+                        </div>
 
                         <div class="card-body">
                             <!-- Row start -->
@@ -34,16 +35,16 @@
                                             <div class="product-added-card-body w-50">
                                                 <h4 class="">@tours[i].TourName</h4>
 
-                                                <h6 class="">Một số gói</h6>
+                                                @* <h6 class="">Một số gói</h6> *@
+
                                                 <div class="product-added-description overflow-hidden">
                                                     <ul class="">
                                                         <li>
                                                             <span class="text-nowrap d-block text-truncate">
-                                                                gói 1 nnnnnnnnnn nnnnnnnnnnn nnnnnnnnnnnnnn
-                                                                nnnnnnnnnn nnnnnnnnnnn nn
+                                                                Tổng số gói: <strong>@packagesTotal[i]</strong>
                                                             </span>
                                                         </li>
-                                                        <li>
+                                                        @* <li>
                                                             <span class="text-nowrap d-block text-truncate">
                                                                 gói 1 nnnnnnnnnn nnnnnnnnnnn nnnnnnnnnnnnnn
                                                                 nnnnnnnnnn nnnnnnnnnnn nn
@@ -54,11 +55,12 @@
                                                                 gói 1 nnnnnnnnnn nnnnnnnnnnn nnnnnnnnnnnnnn
                                                                 nnnnnnnnnn nnnnnnnnnnn nn
                                                             </span>
-                                                        </li>
+                                                        </li> *@
                                                     </ul>
                                                 </div>
+
                                                 <div class="product-added-actions">
-                                                    <a asp-action="PackagesTour" asp-route-id="@tours[i].TourId" class="btn btn-success">Chỉnh sửa gói</a>
+                                                    <a asp-action="PackagesTour" asp-route-id="@tours[i].TourId" class="btn btn-success">Chỉnh sửa gói của tour</a>
                                                 </div>
                                             </div>
                                         </div>

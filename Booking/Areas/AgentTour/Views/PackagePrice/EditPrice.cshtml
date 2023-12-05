@@ -1,0 +1,86 @@
+﻿@model PackagePrice
+@{
+    ViewData["Title"] = "Chỉnh sửa giá";
+}
+
+<div class="content-wrapper h-100">
+    <div class="card">
+
+        <div class="card-header">
+            Chỉnh sửa giá gói
+        </div>
+
+        <div class="card-body"> 
+            <div class="row">
+                <div class="product-card">
+                    <form asp-action="EditPrice">
+                        <div class="product-card-body">
+
+                            <div class="form-group">
+                                <label class="form-label" asp-for="@Model.ChildPrice"></label>
+								<div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="fa-solid fa-money-check" style="color:#fcd34d"></i>
+                                    </span>
+                                    <input asp-for="@Model.ChildPrice" type="text" class="form-control">
+								</div>
+                                <span asp-validation-for="ChildPrice" class="text-danger"></span>
+							</div>
+
+                            <div class="form-group">
+                                <label class="form-label" asp-for="@Model.AdultPrice"></label>
+								<div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="fa-solid fa-money-check" style="color:#fcd34d"></i>
+                                    </span>
+                                    <input asp-for="@Model.AdultPrice" type="text" class="form-control">
+								</div>
+                                <span asp-validation-for="AdultPrice" class="text-danger"></span>
+							</div>
+
+                            <div class="form-group">
+                                <label class="form-label" asp-for="@Model.ValidFrom"></label>
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="fa-solid fa-money-check" style="color:#2563eb"></i>
+                                    </span>
+                                    @{
+                                        var validFrom = DateTime.Parse(Model.ValidFrom.ToString());
+                                    }
+                                    <input asp-for="@validFrom" type="date" class="form-control">
+                                </div>
+                                <span asp-validation-for="ValidFrom" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" asp-for="@Model.GoodThru"></label>
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="fa-solid fa-money-check" style="color:#2563eb"></i>
+                                    </span>
+                                    @{
+                                        var goodThru = DateTime.Parse(Model.GoodThru.ToString());
+                                    }
+                                    <input asp-for="@goodThru" type="date" class="form-control">
+                                </div>
+                                <span asp-validation-for="GoodThru" class="text-danger"></span>
+                            </div>
+
+                            <input type="hidden" asp-for="@Model.PriceId" />
+
+                            <div class="product-actions mt-2">
+                                <button class="btn btn-success addToCart">Lưu</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

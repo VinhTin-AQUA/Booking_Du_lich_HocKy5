@@ -1,0 +1,69 @@
+﻿@{
+    ViewData["Title"] = "Quản lý giá";
+    List<PackagePrice> packagePrices = ViewBag.PackagePrice;
+    int packageId = ViewBag.PackageId;
+}
+
+
+<div class="content-wrapper h-100">
+    <!-- Row start -->
+    <div class="row">
+        <div class="col-sm-12 col-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <a asp-action="AddPrice" asp-route-packageId="@packageId" class="btn btn-info"><i class="bi bi-plus-square"></i> Thêm giá</a>
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <!-- Row start -->
+                    <div class="row">
+
+                        @foreach (var packagePrice in packagePrices)
+                        {
+                            <div class="col-xxl-3 col-md-4 col-sm-6 col-12">
+                                <div class="product-card">
+                                    <div class="product-card-body">
+
+                                        <div class="product-description">
+                                            <i class="fa-solid fa-money-check" style="color:#fcd34d"></i>
+                                            Giá cho người lớn: <strong>@packagePrice.AdultPrice</strong>
+                                        </div>
+
+                                        <div class="product-description">
+                                            <i class="fa-solid fa-money-check" style="color: #fcd34d"></i>
+                                            Giá cho trẻ nhỏ: <strong>@packagePrice.ChildPrice</strong>
+                                        </div>
+
+                                        <div class="product-description">
+                                            <i class="fa-solid fa-calendar-days" style="color: #2563eb"></i>
+                                            Ngày áp dụng: @if (@packagePrice.ValidFrom != null)
+                                            {
+                                                DateTime date = DateTime.Parse(packagePrice.ValidFrom.ToString());
+                                                <strong>@date.ToString("dd/MM/yyyy")</strong>
+                                            }
+                                        </div>
+
+                                        <div class="product-description">
+                                            <i class="fa-solid fa-calendar-days" style="color: #2563eb"></i>
+                                            Ngày hết hạn: @if (@packagePrice.GoodThru != null)
+                                            {
+                                                DateTime date = DateTime.Parse(packagePrice.GoodThru.ToString());
+                                                <strong>@date.ToString("dd/MM/yyyy")</strong>
+                                            }
+                                        </div>
+
+                                        <div class="product-actions">
+                                            <a asp-action="EditPrice" asp-route-packagePriceId="@packagePrice.PriceId" class="btn btn-success addToCart">Chỉnh sửa</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

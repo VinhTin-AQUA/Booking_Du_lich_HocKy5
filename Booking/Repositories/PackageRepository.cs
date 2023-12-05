@@ -32,10 +32,18 @@ namespace Booking.Repositories
             return packages;
         }
 
+        public async Task<ICollection<Package>> GetPackagesOfTour(int tourId)
+        {
+            var packages = await context.Packages
+                .Where(p => p.TourID == tourId).ToListAsync();
+            return packages;
+        }
+
         public async Task<Package> GetPackageById(int packageId)
         {
             var package = await context.Packages
                .Where(p => p.PackageID == packageId)
+               .Include(p => p.PackagePrices)
                .FirstOrDefaultAsync();
             return package;
         }

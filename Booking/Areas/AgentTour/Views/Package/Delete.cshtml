@@ -1,0 +1,26 @@
+﻿@model Booking.Models.Package
+
+@{
+    ViewData["Title"] = "Xóa package";
+}
+
+<h1>Xóa package</h1>
+
+<h3>Bạn có muốn xóa gói này không?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PackageName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PackageName)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" value="@Model.PackageID" name="id" />
+        <input type="submit" value="Xóa" class="btn btn-danger" /> |
+        <a asp-action="PackagesTour" asp-route-id="@Model.TourID">Quay trở lại</a>
+    </form>
+</div>

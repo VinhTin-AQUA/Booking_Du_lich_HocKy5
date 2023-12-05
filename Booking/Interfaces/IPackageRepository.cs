@@ -8,6 +8,10 @@ namespace Booking.Interfaces
         public Task<bool> AddPackage(Package package);
 
         public Task<ICollection<Package>> GetAllPackages();
+
+        public Task<ICollection<Package>> GetPackagesOfTour(int tourId);
+
+
         public Task<Package> GetPackageById(int packageId);
 
         public Task<ICollection<Package>> SearchPackageOfTour(int tourId);
