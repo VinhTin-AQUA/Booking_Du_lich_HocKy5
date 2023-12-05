@@ -13,7 +13,7 @@
     <div class="card-header">
         <div class="card-title w-100">
             <div class="d-flex gap-2 justify-content-between">
-                <span class="d-block">Danh sách gói</span>
+                <span class="d-block">Danh sách gói của tour</span>
 
                 <!-- Search container start -->
                 <form class="search-container d-flex justify-content-start align-items-center gap-2">
@@ -67,24 +67,30 @@
                                 <td> @(package.MaxPeople)</td>
                                 
                                 <td>
-                                    <a asp-area="AgentTour" asp-controller="Package" asp-action="Details" asp-route-id="@package.PackageID">
+                                    <a asp-area="AgentTour" asp-controller="Package" asp-action="Details" asp-route-id="@package.PackageID" title="chi tiết">
                                         <span class="fs-4 text-success">
                                             <i class="fa-solid fa-circle-info" style="color: #1be218;"></i>
                                         </span>
                                     </a>
 
-                                    <a asp-area="AgentTour" asp-controller="Package" asp-action="Edit" asp-route-id="@package.PackageID">
+                                    <a asp-area="AgentTour" asp-controller="Package" asp-action="Edit" asp-route-id="@package.PackageID" title="chỉnh sửa">
                                         <span class="fs-4 text-success">
                                             <i class="fa-solid fa-pen-to-square" style="color: #dfc311;"></i>
                                         </span>
                                     </a>
 
-
-                                    <a asp-area="AgentTour" asp-controller="Package" asp-action="Delete" asp-route-id="@package.PackageID">
+                                    <a asp-area="AgentTour" asp-controller="Package" asp-action="Delete" asp-route-id="@package.PackageID" title="xóa">
                                         <span class="fs-4 text-success">
                                             <i class="fa-solid fa-trash" style="color: #ff0000;"></i>
                                         </span>
                                     </a>
+
+                                    <a asp-area="AgentTour" asp-controller="PackagePrice" asp-action="Index" asp-route-packageId="@package.PackageID" title="giá">
+                                        <span class="fs-4 text-success">
+                                            <i class="fa-solid fa-cubes" style="color: #9333ea"></i>
+                                        </span>
+                                    </a>
+
                                 </td>
                             </tr>
                         }

@@ -24,13 +24,13 @@ namespace Booking.Areas.AgentTour.Controllers
             this.packagePriceRepository = packagePriceRepository;
         }
 
-
         public async Task<IActionResult> Index()
         {
             var tours = await tourRepository.GetAllTours();
             ViewBag.Tours = tours.ToList();
 
             List<string> images = new List<string>();
+            List<int> packagesTotal = new List<int>();
 
             foreach (var tour in tours)
             {
@@ -39,12 +39,16 @@ namespace Booking.Areas.AgentTour.Controllers
                 if (imgUrls != null)
                 {
                     images.Add(imgUrls[0]);
-                } else
+                }
+                else
                 {
-					images.Add(tour.PhotoPath);
-				}
+                    images.Add(tour.PhotoPath);
+                }
+                var packgs = await packageRepository.GetPackagesOfTour(tour.TourId);
+                packagesTotal.Add(packgs.Count());
             }
             ViewBag.Images = images;
+            ViewBag.PackagesTotal = packagesTotal;
             return View();
         }
 
@@ -55,21 +59,20 @@ namespace Booking.Areas.AgentTour.Controllers
             var packages = await packageRepository.SearchPackageOfTour(id);
             ViewBag.Packages = packages;
             ViewBag.TourId = id;
-
             return View();
         }
 
         [HttpGet]
-        [Route("them-goi-moi/{tourId}")]
+        [Route("add-new-package/{tourId}")]
         public IActionResult Create(int tourId)
         {
             ViewBag.TourId = tourId;
             return View();
         }
 
-        [Route("them-goi-moi/{tourId}")]
+        [Route("add-new-package/{tourId}")]
         [HttpPost]
-        public async Task<IActionResult> Create( int tourId, List<PackagePrice> prices, string packageName, string decription, int maxPeople)
+        public async Task<IActionResult> Create(int tourId, List<PackagePrice> prices, string packageName, string decription, int maxPeople)
         {
             var tour = await tourRepository.GetTourById(tourId);
 
@@ -117,7 +120,64 @@ namespace Booking.Areas.AgentTour.Controllers
         public async Task<IActionResult> Details(int id)
         {
             var package = await packageRepository.GetPackageById(id);
+
             return View(package);
         }
+
+        [Route("delete-package/{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var package = await packageRepository.GetPackageById(id);
+            return View(package);
+        }
+
+        [Route("delete-package/{id}")]
+        [HttpPost]
+        public async Task<IActionResult> DeleteAsync(int id)
+        {
+            var package = await packageRepository.GetPackageById(id);
+
+            if (package == null)
+            {
+                return RedirectToAction("Index");
+            }
+            int tourId = package.TourID;
+
+            var r = await packageRepository.DeletePackage(package);
+
+            if (r == false)
+            {
+                return View(package);
+            }
+
+            return RedirectToAction("PackagesTour", new { id = tourId });
+        }
+
+        [Route("edit-package/{id}")]
+        public async Task<IActionResult> Edit(int id)
+        {
+            var package = await packageRepository.GetPackageById(id);
+            return View(package);
+        }
+
+        [Route("edit-package/{id}")]
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id, string packageName, string decription, int maxPeople)
+        {
+            var package = await packageRepository.GetPackageById(id);
+
+            if (package == null)
+            {
+                return Json(new {success = false});
+            }
+
+            package.PackageName = packageName;
+            package.Description = decription;
+            package.MaxPeople = maxPeople;
+            var r = await packageRepository.UpdatePackage(package);
+            return Json(new { success = r, packageId = package.PackageID });
+        }
+
+
     }
 }

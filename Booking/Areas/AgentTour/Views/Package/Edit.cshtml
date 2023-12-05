@@ -1,0 +1,84 @@
+﻿@model Package
+
+@{
+    ViewData["Title"] = "Chỉnh sửa gói";
+}
+
+<!-- Content wrapper start -->
+<div class="content-wrapper h-100">
+    <!-- Row start -->
+    <div class="row">
+        <div class="col-sm-12 col-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Chỉnh sửa</div>
+                </div>
+
+                <div class="card-body">
+                    <!-- Row start -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-sm-6 col-12">
+                                    <div class="mb-3">
+                                        <label asp-for="PackageName" class="form-label"></label>
+                                        <input id="packageName" asp-for="PackageName" type="text" class="form-control" />
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6 col-12">
+                                    <div class="mb-3">
+                                        <label asp-for="MaxPeople" class="form-label"></label>
+                                        <input id="maxPeople" asp-for="MaxPeople" type="number" class="form-control" />
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="mb-2">
+                                        <label asp-for="Description" class="form-label"></label>
+                                        <textarea id="decription" asp-for="Description" rows="20" class="form-control"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <button onclick="save()" type="button" class="btn btn-primary">Lưu thay đổi</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script defer>
+    function save() {
+
+        var packageName = document.getElementById('packageName').value;
+        var maxPeople = document.getElementById('maxPeople').value;
+        var decription = document.getElementById('decription').value;
+
+        $.ajax({
+            url: '@Url.Action("Edit", "Package", Model.PackageID)',
+            type: 'POST',
+            dataType: 'json',
+            data: { packageName, maxPeople, decription },
+            success: function (data) {
+                if (data.success == false) {
+                    window.location.href = '@Url.Action("Error", "Error")';
+                } else {
+                    window.location.href = '@Url.Action("Edit", "Package", new { id = "__PARAM__" })'.replace('__PARAM__', data.packageId);
+                }
+            },
+            error: function (e) {
+                console.log(e);
+                alert('Đã xảy ra lỗi khi gửi yêu cầu.');
+            }
+        });
+    }
+
+</script>
