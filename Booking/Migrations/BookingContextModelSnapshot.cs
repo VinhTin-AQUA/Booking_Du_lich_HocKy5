@@ -198,6 +198,21 @@ namespace Booking.Migrations
                     b.ToTable("City");
                 });
 
+            modelBuilder.Entity("Booking.Models.CityTour", b =>
+                {
+                    b.Property<int>("TourId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CityId")
+                        .HasColumnType("int");
+
+                    b.HasKey("TourId", "CityId");
+
+                    b.HasIndex("CityId");
+
+                    b.ToTable("CityTour");
+                });
+
             modelBuilder.Entity("Booking.Models.Contact", b =>
                 {
                     b.Property<int>("Id")
@@ -227,9 +242,12 @@ namespace Booking.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PackageID"));
 
-                    b.Property<string>("Decription")
+                    b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("MaxPeople")
+                        .HasColumnType("int");
 
                     b.Property<string>("PackageName")
                         .IsRequired()
@@ -253,14 +271,17 @@ namespace Booking.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PriceId"));
 
+                    b.Property<double>("AdultPrice")
+                        .HasColumnType("float");
+
+                    b.Property<double>("ChildPrice")
+                        .HasColumnType("float");
+
                     b.Property<DateTime?>("GoodThru")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("PackageId")
                         .HasColumnType("int");
-
-                    b.Property<double>("Price")
-                        .HasColumnType("float");
 
                     b.Property<DateTime?>("ValidFrom")
                         .HasColumnType("datetime2");
@@ -288,6 +309,7 @@ namespace Booking.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("DepartureLocation")
+                        .IsRequired()
                         .HasColumnType("nvarchar(200)");
 
                     b.Property<string>("DropOffLocation")
@@ -295,11 +317,11 @@ namespace Booking.Migrations
                         .HasColumnType("nvarchar(200)");
 
                     b.Property<string>("Overview")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhotoPath")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(70)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PosterID")
                         .HasColumnType("nvarchar(450)");
@@ -319,9 +341,6 @@ namespace Booking.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<int?>("TourTypeId")
-                        .HasColumnType("int");
-
                     b.HasKey("TourId")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -332,7 +351,7 @@ namespace Booking.Migrations
                     b.ToTable("Tour");
                 });
 
-            modelBuilder.Entity("Booking.Models.TourType", b =>
+            modelBuilder.Entity("Booking.Models.TourCategory", b =>
                 {
                     b.Property<int>("TourId")
                         .HasColumnType("int");
@@ -344,49 +363,7 @@ namespace Booking.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("TourTypes");
-                });
-
-            modelBuilder.Entity("Booking.Models.TouristAttraction", b =>
-                {
-                    b.Property<int>("TouristAttractionId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TouristAttractionId"));
-
-                    b.Property<string>("Address")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(500)");
-
-                    b.Property<int?>("CityId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("TouristAttractionName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(500)");
-
-                    b.HasKey("TouristAttractionId")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.HasIndex("CityId");
-
-                    b.ToTable("TouristAttraction");
-                });
-
-            modelBuilder.Entity("Booking.Models.Visiting", b =>
-                {
-                    b.Property<int>("TourId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TouristAttractionId")
-                        .HasColumnType("int");
-
-                    b.HasKey("TourId", "TouristAttractionId");
-
-                    b.HasIndex("TouristAttractionId");
-
-                    b.ToTable("Visitings");
+                    b.ToTable("TourCategory");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -550,6 +527,25 @@ namespace Booking.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("Booking.Models.CityTour", b =>
+                {
+                    b.HasOne("Booking.Models.City", "City")
+                        .WithMany("CityTours")
+                        .HasForeignKey("CityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Booking.Models.Tour", "Tour")
+                        .WithMany("CityTours")
+                        .HasForeignKey("TourId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("City");
+
+                    b.Navigation("Tour");
+                });
+
             modelBuilder.Entity("Booking.Models.Package", b =>
                 {
                     b.HasOne("Booking.Models.Tour", "Tour")
@@ -587,16 +583,16 @@ namespace Booking.Migrations
                     b.Navigation("Poster");
                 });
 
-            modelBuilder.Entity("Booking.Models.TourType", b =>
+            modelBuilder.Entity("Booking.Models.TourCategory", b =>
                 {
                     b.HasOne("Booking.Models.Category", "Category")
-                        .WithMany("TourTypes")
+                        .WithMany("TourCategories")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Booking.Models.Tour", "Tour")
-                        .WithMany("TourTypes")
+                        .WithMany("TourCategories")
                         .HasForeignKey("TourId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -604,34 +600,6 @@ namespace Booking.Migrations
                     b.Navigation("Category");
 
                     b.Navigation("Tour");
-                });
-
-            modelBuilder.Entity("Booking.Models.TouristAttraction", b =>
-                {
-                    b.HasOne("Booking.Models.City", "City")
-                        .WithMany("TouristAttractions")
-                        .HasForeignKey("CityId");
-
-                    b.Navigation("City");
-                });
-
-            modelBuilder.Entity("Booking.Models.Visiting", b =>
-                {
-                    b.HasOne("Booking.Models.Tour", "Tour")
-                        .WithMany("Visitings")
-                        .HasForeignKey("TourId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Booking.Models.TouristAttraction", "TouristAttraction")
-                        .WithMany("Visitings")
-                        .HasForeignKey("TouristAttractionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Tour");
-
-                    b.Navigation("TouristAttraction");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -701,12 +669,12 @@ namespace Booking.Migrations
 
             modelBuilder.Entity("Booking.Models.Category", b =>
                 {
-                    b.Navigation("TourTypes");
+                    b.Navigation("TourCategories");
                 });
 
             modelBuilder.Entity("Booking.Models.City", b =>
                 {
-                    b.Navigation("TouristAttractions");
+                    b.Navigation("CityTours");
                 });
 
             modelBuilder.Entity("Booking.Models.Package", b =>
@@ -718,16 +686,11 @@ namespace Booking.Migrations
 
             modelBuilder.Entity("Booking.Models.Tour", b =>
                 {
+                    b.Navigation("CityTours");
+
                     b.Navigation("Packages");
 
-                    b.Navigation("TourTypes");
-
-                    b.Navigation("Visitings");
-                });
-
-            modelBuilder.Entity("Booking.Models.TouristAttraction", b =>
-                {
-                    b.Navigation("Visitings");
+                    b.Navigation("TourCategories");
                 });
 #pragma warning restore 612, 618
         }

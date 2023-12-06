@@ -1,0 +1,106 @@
+﻿@model Booking.Models.Package
+
+@{
+    ViewData["Title"] = "Chi tiết gói";
+
+    // var schedules = Model.Schedule.Split("\n");
+    string baseImgUrl = "https://localhost:7231/resources/images";
+    string[] imgUrls = ViewBag.ImgUrls;
+}
+
+<link rel="stylesheet" href="~/css/Tour/details.css">
+
+<div class="content-wrapper-scroll ">
+
+    <div class="col-lg-12 col-12 d-flex justify-content-center ">
+        <div class="wrapper card date" style="width: 90%; height: 100%">
+            <div class="card-header">
+                <div class="card-title fs-4 fw-bold">@Model.PackageName</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- thong tin khac -->
+    <div class="col-lg-12 col-12 d-flex justify-content-center ">
+
+        <div class="wrapper card date" style="width: 90%; height: 100%">
+            <div class="card-header">
+                <div class="card-title">Thông tin khác</div>
+            </div>
+
+            <div class="card-body  ">
+                <div class="m-0 ">
+                    <ul>
+                        <li>
+                            <span style="color: #2563eb"><i class="fa-solid fa-user-group"></i></i></span>
+                            Số lượng tối đa: <strong>@Model.MaxPeople người</strong>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- mo tả -->
+    <div class="col-lg-12 col-12 d-flex justify-content-center ">
+
+        <!-- Card start -->
+        <div class="wrapper card date" style="width: 90%; height: 100%">
+            <div class="card-header">
+                <div class="card-title">Mô tả</div>
+            </div>
+
+            <div class="card-body  ">
+                <div class="m-0 ">
+                    @Model.Description
+                </div>
+            </div>
+        </div>
+        <!-- Card end -->
+    </div>
+
+    <!-- price -->
+    <div class=" col-xl-12 col-12 d-flex justify-content-center">
+        <!-- Card start -->
+        <div class="wrapper card" style="width: 90%; height: 100%">
+
+            <div class="card-header ">
+                <div class="card-title">Giá</div>
+            </div>
+
+            <div class="card-body " style="width: 100%; height: 100%">
+                <div class="scroll300 img" style="width: 100%; height: 100%">
+                    <div class="timeline-activity" style="width: 100%; height: 100%">
+
+                        @if (Model.PackagePrices != null)
+                        {
+                            foreach (var packagePrice in Model.PackagePrices)
+                            {
+                                <div class="activity-log">
+                                    <div class="log-details">
+                                        Giá cho trẻ nhỏ: <strong>@packagePrice.ChildPrice</strong>
+                                    </div>
+
+                                    <div class="log-details">
+                                        Giá cho người lớn: <strong>@packagePrice.AdultPrice</strong>
+                                    </div>
+
+                                    <div class="log-details">
+                                        Ngày áp dụng: <strong>@packagePrice.ValidFrom</strong>
+                                    </div>
+
+                                    <div class="log-details">
+                                        Ngày kết thúc: <strong>@packagePrice.GoodThru</strong>
+                                    </div>
+                                </div>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

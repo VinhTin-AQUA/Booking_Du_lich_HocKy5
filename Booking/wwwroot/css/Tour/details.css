@@ -78,6 +78,39 @@
     box-shadow: none;
 }
 
-    .sd:hover {
-        box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.1);
+.sd:hover {
+    box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+.board-grid {
+    columns: 3;
+    gap: 1rem !important; /* 24px */
+}
+
+/*@media screen and (min-width: 768px) {
+    .board-grid {
+        columns: 4;
+        gap: 1.5rem !important;  
     }
+}
+
+@media screen and (min-width: 102   4px) {
+    .board-grid {
+        columns: 5;
+        gap: 1.5rem !important; 
+    }
+}*/
+
+.img-container {
+    break-inside: avoid;
+    margin-right: 4px;
+    width: 325px;
+    height: auto !important;
+    margin-bottom: 3px;
+}
+
+.img-tour {
+    border-radius: 5px;
+    width: 325px;
+    height: auto !important;
+}

@@ -1,91 +1,187 @@
 ﻿@model Booking.Models.Tour
 
 @{
-    ViewData["Title"] = "Details";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Thông tin chi tiết";
+
+    var schedules = Model.Schedule.Split("\n");
+    string baseImgUrl = "https://localhost:7231/resources/images";
+    string[] imgUrls = ViewBag.ImgUrls;
 }
 
-<h1>Details</h1>
+<link rel="stylesheet" href="~/css/Tour/details.css">
 
-<div>
-    <h4>Tour</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TourName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TourName)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TourAddress)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TourAddress)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Overview)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Overview)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Schedule)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Schedule)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DepartureLocation)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DepartureLocation)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DropOffLocation)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DropOffLocation)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.PhotoPath)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.PhotoPath)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TourTypeId)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TourTypeId)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.PostingDate)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.PostingDate)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ApprovalDate)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ApprovalDate)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Poster)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Poster.Id)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Approver)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Approver.Id)
-        </dd>
-    </dl>
+<div class="content-wrapper-scroll ">
+    <!-- anh -->
+    <div class="row justify-content-center row-custom">
+        <div class="col-11">
+            <div class="card ">
+                <div class="card-body">
+                    <div style="max-height: 640px; overflow-y:scroll;">
+                        <div class="board-grid">
+                            @foreach (var url in imgUrls)
+                            {
+                                <div class="img-item">
+                                    <img class="img-tour" src="@baseImgUrl/@url" />
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-12 col-12 d-flex justify-content-center ">
+        <div class="wrapper card date" style="width: 90%; height: 100%">
+            <div class="card-header">
+                <div class="card-title fs-4 fw-bold">@Model.TourName</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- thong tin khac -->
+    <div class="col-lg-12 col-12 d-flex justify-content-center ">
+
+   
+        <div class="wrapper card date" style="width: 90%; height: 100%">
+            <div class="card-header">
+                <div class="card-title">Thông tin khác</div>
+            </div>
+
+            <div class="card-body  ">
+                <div class="m-0 ">
+                    <ul>
+                        <li>
+                            <i class="fa-solid fa-calendar-days" style="color: #fbbf24"></i>
+                            Ngày đăng: <strong>@Model.PostingDate</strong>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-calendar-days" style="color: #a3e635"></i>
+                            Ngày duyệt:
+                            @if (Model.ApprovalDate == null)
+                            {
+                                <strong> Chưa duyệt</strong>
+                            }
+                            else
+                            {
+                                @Model.ApprovalDate
+                            }
+                        </li>
+                        <li><i class="fa-solid fa-location-dot" style="color: #3b82f6"></i> Địa điểm đón khách: <strong>@Model.DepartureLocation</strong></li>
+                        <li><i class="fa-solid fa-location-dot" style="color: #e11d48"></i> Địa kiểm trả khách: <strong>@Model.DropOffLocation</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!--Tong quan-->
+    <div class="col-lg-12 col-12 d-flex justify-content-center ">
+        
+        <!-- Card start -->
+        <div class="wrapper card date" style="width: 90%; height: 100%">
+            <div class="card-header">
+                <div class="card-title">Tổng quan</div>
+            </div>
+
+            <div class="card-body  ">
+                <div class="m-0 ">
+                    @Model.Overview
+                </div>
+            </div>
+        </div>
+        <!-- Card end -->
+
+    </div>
+
+    <!-- lịch trình -->
+    <div class=" col-xl-12 col-12 d-flex justify-content-center">
+        <!-- Card start -->
+        <div class="wrapper card" style="width: 90%; height: 100%">
+
+            <div class="card-header ">
+                <div class="card-title">Lịch trình</div>
+            </div>
+
+            <div class="card-body " style="width: 100%; height: 100%">
+                <div class="scroll300 img" style="width: 100%; height: 100%">
+                    <div class="timeline-activity" style="width: 100%; height: 100%">
+
+                        @for (int i = 0; i < schedules.Length; i++)
+                        {
+                            <div class="activity-log">
+                                <p class="log-name">Địa điểm @(i+1)</p>
+                                <div class="log-details">
+                                    @schedules[i]
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Card end -->
+    </div>
+
+    <div class="text-center"><h4 class="">Các lựa chọn gói</h4></div>
+
+    <!-- Các lựa chọn gói-->
+
+    <div class="col-xl-12 col-12 d-flex justify-content-center">
+        <div class="wrapper card rounded-4 date sd" style="width: 90%; height: 100%">
+            <div class="card-header">
+                <div class="card-title">Featured</div>
+            </div>
+            <div class="card-body" style="width: 100%; height: 100%">
+                <h5 class="card-title">Special title treatment</h5>
+                <p class="mb-3">With supporting text below as a natural lead-in to additional content.</p>
+
+      @*           <div class="d-flex justify-content-between space">
+                    <p class="color">1000000đ</p>
+                    <a asp-action="booktour" class="btn btn-info " asp-route-packageId="1">Chọn</a>
+                </div> *@
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-12 col-12 d-flex justify-content-center ">
+        <div class="wrapper card rounded-4 date sd" style="width: 90%; height: 100%">
+            <div class="card-header">
+                <div class="card-title">Featured</div>
+            </div>
+            <div class="card-body" style="width: 100%; height: 100%">
+                <h5 class="card-title">Special title treatment</h5>
+                <p class="mb-3">With supporting text below as a natural lead-in to additional content.</p>
+
+ @*                <div class="d-flex justify-content-between space">
+                    <p class="color">1000000đ</p>
+                    <a asp-action="booktour" class="btn btn-info" asp-route-packageId="2">Chọn</a>
+                </div> *@
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Có gì?-->
+    <div class="wrapper col-xl-12 col-12 d-flex justify-content-center ">
+        <!-- Card start -->
+        <div class="wrapper card date " style="width: 90%; height: 100%">
+            <div class="card-header ">
+                <div class="card-title">Bao gồm những gì</div>
+            </div>
+            <div class="card-body  col-12 col-xl-12">
+                <div class="scroll300">
+                    <ul>
+                        <li><i class="bi bi-check-circle"></i>Enjoy over a hundred different activities and facilities at the Ho May Park</li>
+                        <li><i class="bi bi-check-circle"></i>Ride the park cable car and see the spectacular views of Vung Tau's cityscape</li>
+                        <li><i class="bi bi-check-circle"></i>Ride the park cable car and see the spectacular views of Vung Tau's cityscape</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Card end -->
+    </div>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.TourId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+
+

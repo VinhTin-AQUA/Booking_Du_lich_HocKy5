@@ -1,102 +1,148 @@
-﻿@model IEnumerable<Booking.Models.Tour>
-
-@{
-    ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+﻿@{
+    ViewData["Title"] = "Quản lý tour";
+    List<Tour> tours = ViewBag.Tours;
+    int index = 0;
 }
 
-<h1>Index</h1>
 
-<p>
-    <a asp-area="AgentTour" asp-action="Error" asp-controller="agent-tour-managent" class="btn btn-primary">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.TourName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TourAddress)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Overview)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Schedule)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DepartureLocation)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DropOffLocation)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PhotoPath)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TourTypeId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PostingDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ApprovalDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Poster)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Approver)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.TourName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TourAddress)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Overview)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Schedule)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DepartureLocation)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DropOffLocation)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PhotoPath)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TourTypeId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PostingDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ApprovalDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Poster.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Approver.Id)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.TourId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.TourId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.TourId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<link rel="stylesheet" href="~/css/user-manager/user-manager.css" />
+
+<div class="card">
+    <div class="card-header">
+        <div class="card-title w-100">
+            <div class="d-flex gap-2 justify-content-between">
+                <span class="d-block">Danh sách tour</span>
+
+                <!-- Search container start -->
+                <form class="search-container d-flex justify-content-start align-items-center gap-2">
+
+                    <!-- Search input group start -->
+                    <div class="input-group border border-2 rounded d-inline-block">
+                        <input type="text" asp-for="@Model" name="searchString" class="form-control" placeholder="Nhập tên tour">
+                        <button class="btn" type="submit">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </div>
+
+                    <div class="custom-btn-group">
+                        <a asp-area="AgentTour" asp-action="Create" asp-controller="Tours" class="btn btn-primary" class="btn btn-info"><i class="bi bi-plus-square"></i></a>
+                    </div>
+                    <!-- Search input group end -->
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="card-body">
+
+        <div class="table-responsive">
+            <table class="table v-middle">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Tên tour</th>
+                        <th>Địa chỉ</th>
+                        @* <th class="text-center">Xác thực</th> *@
+                        <th>Địa điểm đón khách</th>
+                        <th>Địa điểm trả khách</th>
+                        <th>Ngày đăng</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (tours != null && tours.Count() > 0)
+                    {
+                        @foreach (var tour in tours)
+                        {
+                            <tr>
+                                <td>
+                                    @(++index)
+                                </td>
+                                <td>
+                                    @(tour.TourName)
+                                </td>
+                                <td>@(tour.TourAddress)</td>
+                                <td class="text-center">
+                                    @(tour.DepartureLocation)
+                                </td>
+                                <td> @(tour.DropOffLocation)</td>
+                                <td>
+                                    @if(tour.PostingDate == null)
+                                    {
+                                        <span>Chưa duyệt</span>
+                                    }
+                                    else
+                                    {
+                                        @(tour.PostingDate)
+                                    }
+                                </td>
+                                <td>
+                                    <a asp-area="AgentTour" asp-controller="Tours" asp-action="Details" asp-route-id="@tour.TourId">
+                                        <span class="fs-4 text-success">
+                                            <i class="fa-solid fa-circle-info" style="color: #1be218;"></i>
+                                        </span>
+                                    </a>
+
+                                    <a asp-action="Edit" asp-route-id="@tour.TourId">
+                                        <span class="fs-4 text-success">
+                                            <i class="fa-solid fa-pen-to-square" style="color: #dfc311;"></i>
+                                        </span>
+                                    </a>
+
+
+                                    <a asp-action="Delete" asp-route-id="@tour.TourId">
+                                        <span class="fs-4 text-success">
+                                            <i class="fa-solid fa-trash" style="color: #ff0000;"></i>
+                                        </span>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        @* pagination *@
+        @* <nav aria-label="col-12 Page navigation">
+            <ul class="pagination">
+                <li class="page-item">
+                    <a class="page-link" aria-label="Previous" asp-area="Admin" asp-controller="UserManager" asp-action="Index" asp-route-currentPage="@(currentPage - 1)" asp-route-searchString="@Model">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+
+                @if (currentPage <= 1)
+                {
+                    <li class="page-item">
+                        <a class="page-link  @(currentPage == 0 ? "actived" : "")" asp-area="Admin" asp-controller="UserManager" asp-action="Index" asp-route-currentPage="0" asp-route-searchString="@Model">
+                            1
+                        </a>
+                    </li>
+
+                    <li class="page-item"><a class="page-link @(currentPage == 1 ? "actived" : "")" asp-area="Admin" asp-controller="UserManager" asp-action="Index" asp-route-currentPage="1" asp-route-data="@Model" asp-route-searchString="@Model">2</a></li>
+
+                    <li class="page-item"><a class="page-link " asp-area="Admin" asp-controller="UserManager" asp-action="Index" asp-route-currentPage="2" asp-route-searchString="@Model">3</a></li>
+                }
+                else
+                {
+                    @for (int i = currentPage - 1; i <= currentPage + 1; i++)
+                    {
+                        if (i > 0 && i <= total)
+                        {
+                            <li class="page-item"><a class="page-link @(currentPage == i ? "actived" : "") " asp-area="Admin" asp-controller="UserManager" asp-action="Index" asp-route-currentPage="@i" asp-route-searchString="@Model">@(i + 1)</a></li>
+                        }
+                    }
+                }
+
+                <li class="page-item">
+                    <a class="page-link" aria-label="Next" asp-area="Admin" asp-controller="UserManager" asp-action="Index" asp-route-currentPage="@(currentPage + 1)" asp-route-searchString="@Model">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav> *@
+    </div>
+</div>
+

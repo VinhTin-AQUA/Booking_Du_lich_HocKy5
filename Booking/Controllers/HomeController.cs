@@ -3,6 +3,7 @@ using Booking.Models;
 using Booking.Seeds;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using NuGet.Protocol;
 using System.Diagnostics;
 using System.Security.Claims;
 
@@ -14,30 +15,27 @@ namespace Booking.Controllers
         private readonly UserManager<AppUser> _userManager;
         private readonly IBookTourRepository _bookTourRepository;
         private readonly IPackagePriceRepository _packagePriceRepository;
+        private readonly ITourRepository _tourRepository;
 
-        public HomeController(ILogger<HomeController> logger, UserManager<AppUser> userManager, IBookTourRepository bookTourRepository, IPackagePriceRepository packagePriceRepository)
+        public HomeController(ILogger<HomeController> logger, UserManager<AppUser> userManager, IBookTourRepository bookTourRepository, IPackagePriceRepository packagePriceRepository, ITourRepository tourRepository)
         {
             _logger = logger;
             _userManager = userManager;
             _bookTourRepository = bookTourRepository;
             _packagePriceRepository = packagePriceRepository;
+            _tourRepository = tourRepository;
         }
 
         public IActionResult Index()
         {
             if (User.IsInRole(SeedRole.ADMIN_ROLE))
             {
-                return RedirectToAction("Index", "UserManager", new {area = "Admin"});
-            }
-
-            if (User.IsInRole(SeedRole.AGENTHOTEL_ROLE))
-            {
-                return RedirectToAction("Index", "BusinessInfo", new { area = "AgentHotel" });
+                return RedirectToAction("Index", "UserManager", new { area = "Admin" });
             }
 
             if (User.IsInRole(SeedRole.AGENTTOUR_ROLE))
             {
-                return RedirectToAction("Index", "agent-tour-managent");
+                return RedirectToAction("Index", "agent-tour");
             }
 
             return View();
@@ -54,18 +52,36 @@ namespace Booking.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        [Route("search-tours")]
+        [Route("search-tours/{cityName}")]
         [HttpGet]
-        public IActionResult SearchTour()
+        public async Task<IActionResult> SearchTour(string? cityName)
         {
-            return View();
+            if(cityName == null)
+            {
+                return View("~/Views/Error/Error.cshtml");
+            }
+            var tourList = await _tourRepository.GetTourByCityName(cityName);
+            if (tourList == null)
+            {
+                return NotFound();
+            }
+            return View(tourList);
         }
 
-		[Route("tour-detail")]
-		[HttpGet]
-		public IActionResult TourDetail()
+        [Route("tour-detail/{tourId}")]
+        [HttpGet]
+        public async Task<IActionResult> TourDetail(int? tourId)
         {
-            return View();
+            if(tourId == null)
+            {
+                return View("~/Views/Error/Error.cshtml");
+            }
+            Tour tour = await _tourRepository.GetTourById(tourId);
+            if(tour == null)
+            {
+                return NotFound();
+            }
+            return View(tour);
         }
 
         [Route("book-tour/{packageId}")]
@@ -73,15 +89,15 @@ namespace Booking.Controllers
 
         public async Task<IActionResult> BookTour(int packageId)
         {
-            var packagePrice =await _packagePriceRepository.GetPackagePriceByID(packageId, DateTime.Now);
-            if(packagePrice == null)
+            var packagePrice = await _packagePriceRepository.GetPackagePriceByID(packageId, DateTime.Now);
+            if (packagePrice == null)
             {
                 return NotFound();
             }
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             ViewBag.packageId = packageId;
             ViewBag.userId = userId;
-            ViewBag.price = packagePrice.Price;
+            ViewBag.price = packagePrice.AdultPrice;
             return View();
         }
 
@@ -91,20 +107,21 @@ namespace Booking.Controllers
         public async Task<IActionResult> BookTour(int packageId, BookTour model)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if(packageId == null || userId == null)
+            if (packageId == null || userId == null)
             {
                 return NotFound();
 
             }
-            BookTour newBookTour = new BookTour() {
+            BookTour newBookTour = new BookTour()
+            {
                 UserID = userId,
                 PackageId = packageId,
                 DepartureDate = model.DepartureDate,
                 BookingDate = model.BookingDate,
                 Price = model.Price
-                };
+            };
             var r = await _bookTourRepository.AddBookTour(newBookTour);
-            if(r == false)
+            if (r == false)
             {
                 return View();
             }

@@ -9,45 +9,120 @@
 }
 
 <h1>BookTour @packageId</h1>
+<link rel="stylesheet" href="~/css/Tour/booktour.css">
+<!--thông tin tour-->
+<!--start-->
+<div class="col-lg-12 col-12 d-flex justify-content-center">
+    <div class="col-sm-6 col-12 bg-color card-border bd">
+        <div class="product-added-card">
+            <img class="product-added-img" src="assets/images/food/img7.jpg" alt="Admin Panel">
+            <div class="product-added-card-body">
+                <h3 class="product-added-title ">Tên tour Tên tour Tên tour Tên tour Tên tour Tên tour Tên tour</h3>
 
-<h4>BookTour</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="BookTour">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="UserID" class="control-label">UserID</label>
-                <input asp-for="UserID" class="form-control" value="@userId" readonly />
+                <div class="product-added-description">
+                    Lettuce, cucumbers, tomatoes, scallions, corn, chicken with tangy barbecue ranch dressing.
+                </div>
+                <div class="icon d-flex">
+                    <i class="bi bi-calendar2-week"></i>
+                    <p>Ngày tháng</p>
+                </div>
+                <div class="icon d-flex">
+                    <i class="bi bi-file-person"></i>
+                    <p>Số lượng khách</p>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="PackageId" class="control-label">PackageId</label>
-                <input asp-for="PackageId" class="form-control" value="@packageId" readonly/>
-            </div>
-            <div class="form-group">
-                <label asp-for="DepartureDate" class="control-label">DepartureDate</label>
-                <input asp-for="DepartureDate" class="form-control" />
-                <span asp-validation-for="DepartureDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="BookingDate" class="control-label">BookingDate</label>
-                <input asp-for="BookingDate" class="form-control" />
-                <span asp-validation-for="BookingDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Price" class="control-label">Price</label>
-                <input asp-for="Price" class="form-control" value="@price" readonly/>
-                <span asp-validation-for="Price" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
+        <div class="row">
+            <div class="col-sm-8 col-10"><p class="font1"> Tổng chi phí</p></div>
+            <div class="col-sm-4 col-10 "><p class="font">  100000000vnd</p> </div>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<div class="col-lg-12 col-12 d-flex justify-content-center ">
+    <!--chi tiet lien he (khach hang)-->
+    <!-- Card start -->
+    <div class="col-sm-6 col-12 ">
+        <div class="card-border bg-color sd">
+            <div class="card-border-title">Chi tiết liên hệ</div>
+            <div class="card-border-body">
+
+                <div class="row">
+                    <div class="col-sm-6 col-12">
+                        <div class="mb-3">
+                            <label class="form-label">Họ <span class="text-red">*</span></label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-12">
+                        <div class="mb-3">
+                            <label class="form-label">Tên <span class="text-red">*</span></label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-12">
+                        <div class="mb-3">
+                            <label class="form-label">Email <span class="text-red">*</span></label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-12">
+                        <div class="mb-3">
+                            <label class="form-label">Số điện thoại <span class="text-red">*</span></label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Card end -->
+</div>
+
+<div class="col-lg-12 col-12 d-flex justify-content-center ">
+    <!--chi tiet lien he (khach hang)-->
+    <!-- Card start -->
+    <div class="col-sm-6 col-12 ">
+        <div class="card-border bg-color sd">
+            <div class="card-border-title">Chi tiết liên hệ - Du khách chính (vé)</div>
+            <div class="card-border-body">
+
+                <div class="row">
+                    <div class="col-sm-12 col-12">
+                        <div class="mb-3">
+                            <label class="form-label">Họ <span class="text-red">*</span></label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-12">
+                        <div class="mb-3">
+                            <label class="form-label">Tên <span class="text-red">*</span></label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-12">
+                        <div class="mb-0">
+                            <label class="form-label">Yêu cầu thêm(tùy chọn) <span class="text-red">*</span></label>
+                            <textarea rows="4" class="form-control"
+                                      placeholder=""></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Card end -->
+</div>
+
+<!--Thanh toán-->
+<div class="col-lg-12 col-12 d-flex justify-content-center ">
+    <div class="form-check mb-3">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">Bằng cách tiếp tục tôi đồng ý với điều khoản sử dụng của họ</label>
+    </div>
+</div>
+<div class="col-lg-12 col-12 d-flex justify-content-center ">
+    <button type="button" class="btn btn-info col-sm-6 font1">Tiếp tục thanh toán</button>
 </div>
 
 @section Scripts {

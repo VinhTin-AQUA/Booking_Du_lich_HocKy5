@@ -8,7 +8,6 @@ using Booking.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using WebApi.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -35,9 +34,10 @@ builder.Services.AddScoped<ITourRepository, TourRepository>();
 builder.Services.AddScoped<IPackageRepository, PackageRepository>();
 builder.Services.AddScoped<IPackagePriceRepository, PackagePriceRepository>();
 builder.Services.AddScoped<IBookTourRepository, BookTourRepository>();
-builder.Services.AddScoped<ITouristAttraction, TouristAttractionRepository>();
-builder.Services.AddScoped<ITourTypeRepository, TourTypeRepository>();
-builder.Services.AddScoped<IVisitingRepository, VisitingRepository>();
+//builder.Services.AddScoped<ITouristAttraction, TouristAttractionRepository>();
+builder.Services.AddScoped<ITourCategoryRepository, TourCategoryRepository>();
+//builder.Services.AddScoped<IVisitingRepository, VisitingRepository>();
+builder.Services.AddScoped<ICityTourRepository, CityTourRepository>();
 
 //identity
 builder.Services.AddIdentity<AppUser, IdentityRole>()
@@ -172,43 +172,14 @@ app.MapAreaControllerRoute(
     pattern: "{controller=UserManager}/{action=Index}/{id?}");
 
 app.MapAreaControllerRoute(
-	name: "CityManager",
-	areaName: "Admin",
-	pattern: "{controller=City}/{action=Index}/{id?}");
+    name: "CityManager",
+    areaName: "Admin",
+    pattern: "{controller=City}/{action=Index}/{id?}");
 
 app.MapAreaControllerRoute(
     name: "AgentHotelManager",
     areaName: "Admin",
     pattern: "{controller=AgentHotelManager}/{action=Index}/{id?}");
-#endregion
-
-#region Hotel agent route
-
-app.MapAreaControllerRoute(
-    name: "AgentHotel",
-    areaName: "AgentHotel",
-    pattern: "{controller=BusinessInfo}/{action=Index}/{id?}");
-
-app.MapAreaControllerRoute(
-	name: "Hotel",
-	areaName: "AgentHotel",
-	pattern: "{controller=Hotel}/{action=Index}/{id?}");
-
-app.MapAreaControllerRoute(
-	name: "RoomType",
-	areaName: "AgentHotel",
-	pattern: "{controller=RoomType}/{action=Index}/{id?}");
-
-app.MapAreaControllerRoute(
-	name: "Room",
-	areaName: "AgentHotel",
-	pattern: "{controller=Room}/{action=Index}/{id?}");
-
-app.MapAreaControllerRoute(
-    name: "RoomPrice",
-    areaName: "AgentHotel",
-    pattern: "{controller=RoomPrice}/{action=Index}/{id?}");
-
 #endregion
 
 #region AgentTour
@@ -217,7 +188,15 @@ app.MapAreaControllerRoute(
     areaName: "AgentTour",
     pattern: "{controller=Tours}/{action=Index}/{id?}");
 
+app.MapAreaControllerRoute(
+    name: "AgentTour",
+    areaName: "AgentTour",
+    pattern: "{controller=Package}/{action=Index}/{id?}");
 
+app.MapAreaControllerRoute(
+    name: "AgentTour",
+    areaName: "AgentTour",
+    pattern: "{controller=PackagePrice}/{action=Index}/{id?}");
 
 #endregion
 

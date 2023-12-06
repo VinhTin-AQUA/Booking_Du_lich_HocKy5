@@ -1,6 +1,9 @@
-﻿namespace Booking.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Booking.Models
 {
-    public class TourType
+    [Table("TourCategory")]
+    public class TourCategory
     {
         public int TourId { get; set; }
         public int CategoryId { get; set; }

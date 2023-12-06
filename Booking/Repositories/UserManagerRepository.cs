@@ -1,8 +1,8 @@
-﻿using Booking.Models;
+﻿using Booking.Interfaces;
+using Booking.Models;
+using Booking.Seeds;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Booking.Interfaces;
-using Booking.Seeds;
 
 namespace Booking.Repositories
 {
@@ -35,7 +35,7 @@ namespace Booking.Repositories
             if (string.IsNullOrEmpty(searchString))
             {
                 var users = await userManager.Users
-                .Where(u=>u.Email != SeedAdmin.Email)
+                .Where(u => u.Email != SeedAdmin.Email)
                 .Skip(currentPage * pageSize)
                 .Take(pageSize)
                 .ToListAsync();
@@ -46,7 +46,7 @@ namespace Booking.Repositories
                 .Where(u => (u.FirstName.ToLower().Contains(searchString.ToLower()) || u.LastName.ToLower().Contains(searchString.ToLower())) && u.Email != SeedAdmin.Email)
                 .Skip(currentPage * pageSize)
                 .Take(pageSize)
-                
+
                 .ToListAsync();
             return _users;
         }

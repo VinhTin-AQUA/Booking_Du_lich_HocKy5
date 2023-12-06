@@ -1,8 +1,7 @@
 ﻿using Bogus;
+using Booking.Models;
 using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
-using Booking.Models;
-using Booking.Data;
 
 namespace Booking.Seeds
 {

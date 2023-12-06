@@ -82,21 +82,21 @@
 							</a>
 						</li>
 
-						@* quản lý đối tác khách sạn *@
-						<li>
-							<a id="agent-hotel" class="nav-link" asp-area="Admin" asp-controller="AgentHotelManager" asp-action="Index">
-								<i class="bi bi-journals"></i>
-								<span class="menu-text">Đối tác khách sạn</span>
-							</a>
-						</li>
-
-						@* quản lý đối tác tour du lịch *@
-						<li>
+						@* quản lý đối tác tour du lịch  *@
+ 						<li>
 							<a id="agent-tour" class="nav-link" asp-area="Admin" asp-controller="AgentTourManager" asp-action="Index">
 								<i class="bi bi-journals"></i>
 								<span class="menu-text">Đối tác tour du lịch</span>
 							</a>
-						</li>
+						</li> 
+
+						@* quản lý đối tác tour du lịch *@
+@* 						<li>
+							<a id="agent-tour" class="nav-link" asp-area="AgentTour" asp-controller="Tours" asp-action="Index">
+								<i class="bi bi-journals"></i>
+								<span class="menu-text">Đối tác tour du lịch</span>
+							</a>
+						</li> *@
 
 						<li class="sidebar-dropdown active">
 							<a href="#">
@@ -540,9 +540,7 @@
                 $('#admin').addClass('sidebar-menu-active');
             } else if (currentPath.startsWith('/city-manager')) {
                 $('#city').addClass('sidebar-menu-active');
-            } else if (currentPath.startsWith('/agent-hotel-manager')) {
-                $('#agent-hotel').addClass('sidebar-menu-active');
-			} else if (currentPath.startsWith('/agent-tour')) {
+            } else if (currentPath.startsWith('/agent-tour')) {
 				$('#agent-tour').addClass('sidebar-menu-active');
 			}
         });

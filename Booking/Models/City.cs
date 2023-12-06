@@ -1,5 +1,4 @@
-﻿using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Booking.Models
@@ -21,7 +20,8 @@ namespace Booking.Models
         public string? PhotoPath { get; set; }
 
         /*tham chiếu khóa ngoại*/
-      
-        public ICollection<TouristAttraction> TouristAttractions { get; set;}
+
+        //public ICollection<TouristAttraction> TouristAttractions { get; set;}
+        public ICollection<CityTour> CityTours { get; set; }
     }
 }

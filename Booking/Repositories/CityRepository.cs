@@ -2,7 +2,6 @@
 using Booking.Interfaces;
 using Booking.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.VisualBasic;
 
 
 namespace Booking.Repositories
@@ -47,7 +46,7 @@ namespace Booking.Repositories
         public async Task<IEnumerable<City>> GetAllCities(string searchString = "")
         {
             List<City> cities;
-            if(string.IsNullOrEmpty(searchString))
+            if (string.IsNullOrEmpty(searchString))
             {
                 cities = await context.City.OrderBy(c => c.Name).ToListAsync();
             }
@@ -69,7 +68,7 @@ namespace Booking.Repositories
             context.City.Remove(city);
             return await Save();
         }
-        
+
         public async Task<bool> UpdateCity(City city)
         {
             context.City.Update(city);
@@ -81,10 +80,11 @@ namespace Booking.Repositories
             var r = await context.City.Where(c => c.Name.ToLower().Contains(searchString.ToLower())).ToListAsync();
             return r;
         }
-        
 
-        
-
-
-    }
+		public async Task<City> GetCityByName(string? name)
+		{
+            var city = await context.City.Where(c => c.Name == name).FirstOrDefaultAsync();
+            return city;
+		}
+	}
 }

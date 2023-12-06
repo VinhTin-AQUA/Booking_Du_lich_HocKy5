@@ -9,11 +9,11 @@ namespace Booking.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int CategoryId { get; set; }
 
-        [Required(ErrorMessage = "{0} must be required")]
-        [Display(Name = "Category name")]
+        [Required(ErrorMessage = "{0} không được bỏ trống")]
+        [Display(Name = "Tên loại tour")]
         [Column(TypeName = "nvarchar(500)")]
         public string CategoryName { get; set; }
 
-        public ICollection<TourType>? TourTypes { get; set; }
+        public ICollection<TourCategory>? TourCategories { get; set; }
     }
 }

@@ -7,6 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Areas\AgentTour\Data\**" />
+    <Compile Remove="Areas\AgentTour\Models\**" />
+    <Content Remove="Areas\AgentTour\Data\**" />
+    <Content Remove="Areas\AgentTour\Models\**" />
+    <EmbeddedResource Remove="Areas\AgentTour\Data\**" />
+    <EmbeddedResource Remove="Areas\AgentTour\Models\**" />
+    <None Remove="Areas\AgentTour\Data\**" />
+    <None Remove="Areas\AgentTour\Models\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Bogus" Version="34.0.2" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Cookies" Version="2.2.0" />
@@ -30,13 +41,11 @@
   <ItemGroup>
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Models\AgentTourManager\" />
-    <Folder Include="Areas\AgentTour\Data\" />
-    <Folder Include="Areas\AgentTour\Models\" />
     <Folder Include="Areas\Authentication\Data\" />
     <Folder Include="Areas\ManageProfile\Data\" />
     <Folder Include="wwwroot\assets\admin-layout\" />
-    <Folder Include="wwwroot\css\TourDetail\" />
     <Folder Include="wwwroot\js\admin\" />
+    <Folder Include="wwwroot\resources\images\tours\" />
   </ItemGroup>
 
 </Project>

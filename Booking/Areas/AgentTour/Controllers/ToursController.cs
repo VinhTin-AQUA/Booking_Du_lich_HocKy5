@@ -1,55 +1,54 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using Booking.Data;
+﻿using Booking.Interfaces;
 using Booking.Models;
 using Microsoft.AspNetCore.Identity;
-using Booking.Interfaces;
-using Booking.Repositories;
-using WebApi.Repositories;
+using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
-using Booking.Services;
 
 
 namespace Booking.Areas.AgentTour.Controllers
 {
     [Area("AgentTour")]
-    [Route("agent-tour-managent")]
+    [Route("agent-tour")]
     public class ToursController : Controller
     {
 
         private readonly ITourRepository _tourRepository;
         private readonly UserManager<AppUser> _userManager;
         private readonly IImageService _imageService;
+        private readonly ITourCategoryRepository tourCategoryRepository;
+        private readonly ICategoryRepository categoryRepository;
 
-        public ToursController(ITourRepository tourRepository, UserManager<AppUser> userManager, IImageService imageService)
+        public ToursController(ITourRepository tourRepository,
+            UserManager<AppUser> userManager,
+            IImageService imageService,
+            ITourCategoryRepository tourCategoryRepository,
+            ICategoryRepository categoryRepository)
         {
             _tourRepository = tourRepository;
             _userManager = userManager;
             _imageService = imageService;
+            this.tourCategoryRepository = tourCategoryRepository;
+            this.categoryRepository = categoryRepository;
         }
 
         public async Task<IActionResult> Index()
         {
             var tours = await _tourRepository.GetAllTours();
-            return View(tours);
+            ViewBag.Tours = tours.ToList();
+            return View();
         }
 
         [Route("details/{id}")]
         public async Task<IActionResult> Details(int? id)
         {
-            
-
             var tour = await _tourRepository.GetTourById(id);
+
             if (tour == null)
             {
                 return NotFound();
             }
-
+            var imgUrls = _imageService.GetAllFileOfFolder("tours", tour.TourId.ToString());
+            ViewBag.ImgUrls = imgUrls;
             return View(tour);
         }
 
@@ -57,152 +56,180 @@ namespace Booking.Areas.AgentTour.Controllers
         public IActionResult Create()
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            ViewBag.UserId = userId;    
+            ViewBag.UserId = userId;
+
             return View();
         }
 
-       
         [HttpPost]
         [Route("create")]
-    
-        public async Task<IActionResult> Create(Tour tour, List<IFormFile> fileInputs)
+        public async Task<IActionResult> Create(Tour model, List<int> tourCategoryIds, List<IFormFile> fileInputs)
         {
-            var userId =  User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (tour == null)
+            if (model == null)
             {
                 return NotFound();
             }
-            Tour newTour = new Tour()
-            {
-                TourName = tour.TourName,
-                Overview = tour.Overview,
-                Schedule = tour.Schedule,
-                DepartureLocation = tour.DepartureLocation,
-                DropOffLocation = tour.DropOffLocation,
 
-                ApproverID = "",
-                PosterID = userId,
-                ApprovalDate = tour.ApprovalDate,
-
-                PostingDate = tour.PostingDate,
-
-            };
-           
             if (ModelState.IsValid)
             {
-                
-              
-                if (fileInputs == null)
+                Tour newTour = new Tour()
                 {
-                    newTour.PhotoPath = "/no-image.jpg";
-                }
-                else
-                {
-                    var rImage = await _imageService.UploadTourImages(fileInputs, newTour);
-                    if(rImage == null)
-                    {
-                        return View(); 
-                    }
-                    string[] paths = new string[fileInputs.Count];
-
-                    for(int i = 0; i < fileInputs.Count; i++)
-                    {
-                        paths[i] = fileInputs[i].FileName;
-                    }
-
-                    newTour.PhotoPath = paths.ToString();
-                }
-
-               
+                    TourName = model.TourName,
+                    TourAddress = model.TourAddress,
+                    Overview = model.Overview,
+                    Schedule = model.Schedule,
+                    DepartureLocation = model.DepartureLocation,
+                    DropOffLocation = model.DropOffLocation,
+                    ApproverID = null,
+                    PosterID = model.PosterID,
+                    ApprovalDate = null,
+                    PostingDate = DateTime.Now,
+                    PhotoPath = "/no-image.jpg"
+                };
 
                 var r = await _tourRepository.AddTour(newTour);
-                if(r == false)
+                if (r == false)
                 {
                     return RedirectToAction("Error");
-
                 }
-                return RedirectToAction("Index");
 
+                foreach (var tourCategoryd in tourCategoryIds)
+                {
+                    var category = await categoryRepository.GetCategoryById(tourCategoryd);
+                    var tourCategory = new TourCategory
+                    {
+                        CategoryId = tourCategoryd,
+                        TourId = newTour.TourId,
+                        Tour = newTour,
+                        Category = category
+                    };
+                    await tourCategoryRepository.AddTourCategory(tourCategory);
+                }
+
+                if (fileInputs != null)
+                {
+                    var rImage = await _imageService.UploadImages(fileInputs, "tours", newTour.TourId.ToString());
+
+                    newTour.PhotoPath = rImage;
+                    await _tourRepository.UpdateTour(newTour);
+                }
+
+
+                return RedirectToAction("Index");
             }
             return RedirectToAction("Error");
-
         }
 
         [Route("edit/{id}")]
         public async Task<IActionResult> Edit(int? id)
         {
-
-
             var tour = await _tourRepository.GetTourById(id);
             if (tour == null)
             {
                 return NotFound();
             }
-            
+            var imgUrls = _imageService.GetAllFileOfFolder("tours", tour.TourId.ToString());
+            ViewBag.ImgUrls = imgUrls;
+
+            var tourCategories = await tourCategoryRepository.GetTourCategoryByTourId(tour.TourId);
+            var tourCategoryIds = tourCategories.Select(tc => tc.CategoryId).ToList();
+            ViewBag.TourCategories = tourCategoryIds;
+
+            var categories = await categoryRepository.GetAllCategories();
+            ViewBag.Categories = categories.ToList();
+
             return View(tour);
         }
 
-      
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Route("edit/{id}")]
-        public async Task<IActionResult> Edit(int? id, Tour tour)
+        public async Task<IActionResult> Edit(int? id, Tour model, List<int> tourCategoryIds, List<IFormFile> fileInputs)
         {
-            if(id ==null || tour == null)
+            if (model == null)
             {
                 return NotFound();
             }
-           
+            var tour = await _tourRepository.GetTourById(id);
+            if (tour == null)
+            {
+                return NotFound();
+            }
+
             if (ModelState.IsValid)
             {
-                try
-                {
-                    var r = await _tourRepository.UpdateTour(tour);
-                    if(r == false)
-                    {
-                        return RedirectToAction("Error");
-                    }
-                }
-                catch (Exception ex)
+                tour.TourName = model.TourName;
+                tour.TourAddress = model.TourAddress;
+                tour.Overview = model.Overview;
+                tour.Schedule = model.Schedule;
+                tour.DepartureLocation = model.DepartureLocation;
+                tour.DropOffLocation = model.DropOffLocation;
+
+                var r = await _tourRepository.UpdateTour(tour);
+                if (r == false)
                 {
                     return RedirectToAction("Error");
                 }
-                return RedirectToAction("Index");
+
+
+                var rRemoveOldTourCategories = await tourCategoryRepository.DeleteTourCategoriesByTourId(tour.TourId);
+
+
+                if(rRemoveOldTourCategories == true)
+                {
+                    foreach (var tourCategoryId in tourCategoryIds)
+                    {
+                        var category = await categoryRepository.GetCategoryById(tourCategoryId);
+                        var tourCategory = new TourCategory
+                        {
+                            CategoryId = tourCategoryId,
+                            TourId = tour.TourId,
+                            Tour = tour,
+                            Category = category
+                        };
+                        await tourCategoryRepository.AddTourCategory(tourCategory);
+                    }
+                }
+
+
+                if (fileInputs != null)
+                {
+                    var rDeleteAllImages = _imageService.DeleteAllImages("tours", tour.TourId.ToString());
+                    var rImage = await _imageService.UploadImages(fileInputs, "tours", tour.TourId.ToString());
+                }
+
+                return RedirectToAction("Edit", new { id });
             }
             return RedirectToAction("Error");
-
         }
 
         [Route("delete/{id}")]
         public async Task<IActionResult> Delete(int? id)
         {
-
             var tour = await _tourRepository.GetTourById(id);
             if (tour == null)
             {
                 return NotFound();
             }
-
             return View(tour);
         }
 
-       
+
         [HttpPost]
         [Route("delete/{id}")]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-
             var tour = await _tourRepository.GetTourById(id);
 
             if (tour != null)
             {
-                var r = await _tourRepository.UpdateTour(tour);
-                if(r == false)
+                var r = await _tourRepository.DeleteTour(tour);
+                if (r == false)
                 {
                     return RedirectToAction("Error");
                 }
+                _imageService.DeleteAllImages("tours", id.ToString());
                 return RedirectToAction("Index");
-
             }
             return RedirectToAction("Error");
         }

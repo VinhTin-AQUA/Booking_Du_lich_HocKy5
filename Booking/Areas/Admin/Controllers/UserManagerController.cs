@@ -7,7 +7,7 @@ namespace Booking.Areas.Admin.Controllers
 {
     [Area("Admin")]
     [Route("user-management")]
-    [Authorize(Roles = "Admin")]
+    //[Authorize(Roles = "Admin")]
     public class UserManagerController : Controller
     {
         private readonly IUserManagerRepository userManagerRepository;
@@ -58,9 +58,9 @@ namespace Booking.Areas.Admin.Controllers
         {
             var user = await authenRepository.GetUserByEmail(email);
 
-            if(user == null)
+            if (user == null)
             {
-                return RedirectToAction("Error","Error", (object)"Không tìm thấy người dùng");
+                return RedirectToAction("Error", "Error", (object)"Không tìm thấy người dùng");
             }
 
             var r = await userManagerRepository.DeleteUser(user);
@@ -86,7 +86,7 @@ namespace Booking.Areas.Admin.Controllers
 
             IdentityResult r;
 
-            if(user.LockoutEnd == null)
+            if (user.LockoutEnd == null)
             {
                 r = await userManagerRepository.LockUser(user);
             }
@@ -99,9 +99,8 @@ namespace Booking.Areas.Admin.Controllers
             {
                 return RedirectToAction("Error", "Error", (object)"Có lỗi xảy ra");
             }
-            return RedirectToAction("Detail", "UserManager", new {userId = user.Id });
+            return RedirectToAction("Detail", "UserManager", new { userId = user.Id });
         }
-
 
     }
 }

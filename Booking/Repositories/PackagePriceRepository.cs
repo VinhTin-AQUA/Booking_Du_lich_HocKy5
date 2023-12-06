@@ -1,8 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Booking.Data;
 using Booking.Interfaces;
 using Booking.Models;
-using Booking.Data;
-using Microsoft.AspNetCore.Components.Forms;
+using Microsoft.EntityFrameworkCore;
 
 namespace Booking.Repositories
 {
@@ -33,10 +32,18 @@ namespace Booking.Repositories
             return packagePrices;
         }
 
+        public async Task<ICollection<PackagePrice>> GetPackagePricesOfPackge(int packageId)
+        {
+            var packagePrices = await context.PackagePrices
+                .Where(pp => pp.PackageId ==  packageId)
+                .ToListAsync();
+            return packagePrices;
+        }
+
         public async Task<PackagePrice> GetPackagePriceById(int? id)
         {
             var packagePrice = await context.PackagePrices
-                  .Where(pp => pp.PackageId == id)
+                  .Where(pp => pp.PriceId == id)
                   .FirstOrDefaultAsync();
             return packagePrice;
         }
@@ -49,13 +56,13 @@ namespace Booking.Repositories
             return packagePrice;
         }
 
-        public async Task<PackagePrice> GetPackagePriceByPrice(double price)
-        {
-            var packagePrice = await context.PackagePrices
-                .Where(pp => pp.Price == price)
-                .FirstOrDefaultAsync();
-            return packagePrice;
-        }
+        //public async Task<PackagePrice> GetPackagePriceByPrice(double price)
+        //{
+        //    var packagePrice = await context.PackagePrices
+        //        .Where(pp => pp.Price == price)
+        //        .FirstOrDefaultAsync();
+        //    return packagePrice;
+        //}
 
 
         public async Task<bool> Save()
