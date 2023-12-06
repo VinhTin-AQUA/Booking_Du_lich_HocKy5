@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewData["Title"] = "Quản lý gói";
+    List<Tour> tours = ViewBag.Tours;
+    List<string> images= ViewBag.Images;
+    string baseImgUrl = "https://localhost:7231/resources/images";
+    List<int> packagesTotal = ViewBag.PackagesTotal;
+}
+
+<div class="page-wrapper">
+    <!-- Content wrapper scroll start -->
+    <div class="content-wrapper-scroll">
+        <!-- Content wrapper start -->
+        <div class="content-wrapper h-100">
+            <!-- Row start -->
+            <div class="row">
+                <div class="col-sm-12 col-12">
+                    <div class="card">
+                        <div class="card-header">
+                          <div class="card-title">Các tour</div>
+                        </div>
+
+                        <div class="card-body">
+                            <!-- Row start -->
+
+                            <div class="row">
+
+                                @for(int i = 0; i < tours.Count();i++)
+                                {
+                                    <div class="col-xxl-6 col-sm-12 col-12">
+                                        <div class="product-added-card">
+                                            <img class="product-added-img"
+                                                 src="@baseImgUrl/@images[i]"
+                                                 alt="Admin Panel" />
+                                            <div class="product-added-card-body w-50">
+                                                <h4 class="">@tours[i].TourName</h4>
+
+                                                @* <h6 class="">Một số gói</h6> *@
+
+                                                <div class="product-added-description overflow-hidden">
+                                                    <ul class="">
+                                                        <li>
+                                                            <span class="text-nowrap d-block text-truncate">
+                                                                Tổng số gói: <strong>@packagesTotal[i]</strong>
+                                                            </span>
+                                                        </li>
+                                                        @* <li>
+                                                            <span class="text-nowrap d-block text-truncate">
+                                                                gói 1 nnnnnnnnnn nnnnnnnnnnn nnnnnnnnnnnnnn
+                                                                nnnnnnnnnn nnnnnnnnnnn nn
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="text-nowrap d-block text-truncate">
+                                                                gói 1 nnnnnnnnnn nnnnnnnnnnn nnnnnnnnnnnnnn
+                                                                nnnnnnnnnn nnnnnnnnnnn nn
+                                                            </span>
+                                                        </li> *@
+                                                    </ul>
+                                                </div>
+
+                                                <div class="product-added-actions">
+                                                    <a asp-action="PackagesTour" asp-route-id="@tours[i].TourId" class="btn btn-success">Chỉnh sửa gói của tour</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                            <!-- Row end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Row end -->
+        </div>
+        <!-- Content wrapper end -->
+    </div>
+</div>
+
