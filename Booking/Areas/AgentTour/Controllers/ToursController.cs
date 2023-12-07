@@ -17,18 +17,21 @@ namespace Booking.Areas.AgentTour.Controllers
         private readonly IImageService _imageService;
         private readonly ITourCategoryRepository tourCategoryRepository;
         private readonly ICategoryRepository categoryRepository;
+        private readonly IPackageRepository packageRepository;
 
         public ToursController(ITourRepository tourRepository,
             UserManager<AppUser> userManager,
             IImageService imageService,
             ITourCategoryRepository tourCategoryRepository,
-            ICategoryRepository categoryRepository)
+            ICategoryRepository categoryRepository,
+            IPackageRepository packageRepository)
         {
             _tourRepository = tourRepository;
             _userManager = userManager;
             _imageService = imageService;
             this.tourCategoryRepository = tourCategoryRepository;
             this.categoryRepository = categoryRepository;
+            this.packageRepository = packageRepository;
         }
 
         public async Task<IActionResult> Index()
@@ -49,6 +52,11 @@ namespace Booking.Areas.AgentTour.Controllers
             }
             var imgUrls = _imageService.GetAllFileOfFolder("tours", tour.TourId.ToString());
             ViewBag.ImgUrls = imgUrls;
+
+            var packages = await packageRepository.GetPackagesOfTour(tour.TourId);
+            ViewBag.Packages = packages;
+
+
             return View(tour);
         }
 
