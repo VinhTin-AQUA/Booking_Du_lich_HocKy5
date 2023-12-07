@@ -52,7 +52,7 @@ namespace Booking.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        [Route("search-tours/{cityName}")]
+        [Route("home/search-tours/{cityName}")]
         [HttpGet]
         public async Task<IActionResult> SearchTour(string? cityName)
         {
