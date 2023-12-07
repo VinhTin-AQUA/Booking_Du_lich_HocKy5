@@ -42,6 +42,8 @@
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Models\AgentTourManager\" />
     <Folder Include="Areas\Authentication\Data\" />
+    <Folder Include="Areas\Employee\Data\" />
+    <Folder Include="Areas\Employee\Models\" />
     <Folder Include="Areas\ManageProfile\Data\" />
     <Folder Include="wwwroot\assets\admin-layout\" />
     <Folder Include="wwwroot\js\admin\" />

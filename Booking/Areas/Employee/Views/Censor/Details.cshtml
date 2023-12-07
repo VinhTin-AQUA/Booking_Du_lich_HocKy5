@@ -1,0 +1,223 @@
+﻿@model Booking.Models.Tour
+
+@{
+    ViewData["Title"] = "Thông tin chi tiết";
+
+    var schedules = Model.Schedule.Split("\n");
+    string baseImgUrl = "https://localhost:7231/resources/images";
+    string[] imgUrls = ViewBag.ImgUrls;
+    int tourId = ViewBag.TourId;
+    List<Package> packages = ViewBag.Packages;
+
+    bool hasCensored = ViewBag.HasCensored;
+    AppUser poster = ViewBag.Poster;
+}
+
+<link rel="stylesheet" href="~/css/Tour/details.css">
+
+<div class="content-wrapper-scroll ">
+    <!-- anh -->
+    <div class="row justify-content-center row-custom">
+        <div class="col-11">
+            <div class="card ">
+                <div class="card-body">
+                    <div style="max-height: 640px; overflow-y:scroll;">
+                        <div class="board-grid">
+                            @foreach (var url in imgUrls)
+                            {
+                                <div class="img-item">
+                                    <img class="img-tour" src="@baseImgUrl/@url" />
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- người đăng -->
+    <div class="col-xl-12 col-12 d-flex justify-content-center">
+        <div class="wrapper card rounded-4 date sd" style="width: 90%; height: 100%">
+            <div class="card-body" style="width: 100%; height: 100%">
+                <div>Người đăng:<strong>@poster.FirstName + @poster.LastName</strong></div>
+                <div>Email:<strong>@poster.EmailConfirmed</strong></div>
+                <div>Số điện thoại:<strong>@poster.PhoneNumber</strong></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- tour name -->
+    <div class="col-lg-12 col-12 d-flex justify-content-center ">
+        <div class="wrapper card date" style="width: 90%; height: 100%">
+            <div class="card-header">
+                <div class="card-title fs-4 fw-bold">@Model.TourName</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- thong tin khac -->
+    <div class="col-lg-12 col-12 d-flex justify-content-center ">
+
+        <div class="wrapper card date" style="width: 90%; height: 100%">
+            <div class="card-header">
+                <div class="card-title">Thông tin khác</div>
+            </div>
+
+            <div class="card-body  ">
+                <div class="m-0 ">
+                    <ul>
+                        <li>
+                            <i class="fa-solid fa-calendar-days" style="color: #fbbf24"></i>
+                            Ngày đăng: <strong>@Model.PostingDate</strong>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-calendar-days" style="color: #a3e635"></i>
+                            Ngày duyệt:
+                            @if (Model.ApprovalDate == null)
+                            {
+                                <strong> Chưa duyệt</strong>
+                            }
+                            else
+                            {
+                                @Model.ApprovalDate
+                            }
+                        </li>
+                        <li><i class="fa-solid fa-location-dot" style="color: #3b82f6"></i> Địa điểm đón khách: <strong>@Model.DepartureLocation</strong></li>
+                        <li><i class="fa-solid fa-location-dot" style="color: #e11d48"></i> Địa kiểm trả khách: <strong>@Model.DropOffLocation</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!--Tong quan-->
+    <div class="col-lg-12 col-12 d-flex justify-content-center ">
+
+        <!-- Card start -->
+        <div class="wrapper card date" style="width: 90%; height: 100%">
+            <div class="card-header">
+                <div class="card-title">Tổng quan</div>
+            </div>
+
+            <div class="card-body  ">
+                <div class="m-0 ">
+                    @Model.Overview
+                </div>
+            </div>
+        </div>
+        <!-- Card end -->
+
+    </div>
+
+    <!-- lịch trình -->
+    <div class=" col-xl-12 col-12 d-flex justify-content-center">
+        <!-- Card start -->
+        <div class="wrapper card" style="width: 90%; height: 100%">
+
+            <div class="card-header ">
+                <div class="card-title">Lịch trình</div>
+            </div>
+
+            <div class="card-body " style="width: 100%; height: 100%">
+                <div class="scroll300 img" style="width: 100%; height: 100%">
+                    <div class="timeline-activity" style="width: 100%; height: 100%">
+
+                        @for (int i = 0; i < schedules.Length; i++)
+                        {
+                            <div class="activity-log">
+                                <p class="log-name">Địa điểm @(i + 1)</p>
+                                <div class="log-details">
+                                    @schedules[i]
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Card end -->
+    </div>
+
+    <div class="text-center"><h4 class="">Các lựa chọn gói</h4></div>
+
+    <!-- Các lựa chọn gói-->
+    @foreach (var package in packages)
+    {
+        <div class="col-xl-12 col-12 d-flex justify-content-center">
+            <div class="wrapper card rounded-4 date sd" style="width: 90%; height: 100%">
+                <div class="card-header">
+                    <div class="card-title">@package.PackageName</div>
+                </div>
+                <div class="card-header">
+                    <div class="card-title">Số người tối đa: @package.MaxPeople</div>
+                </div>
+                <div class="card-header">
+                    <div class="card-title"><p class="mb-3">Mô tả: @package.Description</p></div>
+                </div>
+                <div class="card-body" style="width: 100%; height: 100%">
+                    @if (package.PackagePrices != null)
+                    {
+                        <p class="mb-3 font-bold fs-6">Giá gói</p>
+                        @foreach (var price in package.PackagePrices)
+                        {
+                            <div class=" border-2 border-bottom">
+                                <div class="product-description">
+                                    <i class="fa-solid fa-money-check" style="color:#fcd34d"></i>
+                                    Giá cho người lớn: <strong>@price.AdultPrice</strong>
+                                </div>
+
+                                <div class="product-description">
+                                    <i class="fa-solid fa-money-check" style="color: #fcd34d"></i>
+                                    Giá cho trẻ nhỏ: <strong>@price.ChildPrice</strong>
+                                </div>
+
+                                <div class="product-description">
+                                    <i class="fa-solid fa-calendar-days" style="color: #2563eb"></i>
+                                    Ngày áp dụng: @if (@price.ValidFrom != null)
+                                    {
+                                        DateTime date = DateTime.Parse(price.ValidFrom.ToString());
+                                        <strong>@date.ToString("dd/MM/yyyy")</strong>
+                                    }
+                                </div>
+
+                                <div class="product-description">
+                                    <i class="fa-solid fa-calendar-days" style="color: #2563eb"></i>
+                                    Ngày hết hạn: @if (@price.GoodThru != null)
+                                    {
+                                        DateTime date = DateTime.Parse(price.GoodThru.ToString());
+                                        <strong>@date.ToString("dd/MM/yyyy")</strong>
+                                    }
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    }
+
+    @if (hasCensored == false)
+    {
+        <div class="col-xl-12 col-12 d-flex justify-content-center">
+            <div class="wrapper card rounded-4 date sd" style="width: 90%; height: 100%">
+                <div class="card-body" style="width: 100%; height: 100%">
+                    <a asp-action="Censoring" asp-route-tourId="@tourId" class="btn btn-success">Duyệt</a>
+                </div>
+            </div>
+        </div>
+    } 
+    else
+    {
+        <div class="col-xl-12 col-12 d-flex justify-content-center">
+            <div class="wrapper card rounded-4 date sd" style="width: 90%; height: 100%">
+                <div class="card-body" style="width: 100%; height: 100%">
+                    <a asp-action="UnCensoring" asp-route-tourId="@tourId" class="btn btn-warning">Hủy duyệt</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+

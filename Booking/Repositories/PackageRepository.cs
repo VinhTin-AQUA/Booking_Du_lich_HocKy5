@@ -35,7 +35,9 @@ namespace Booking.Repositories
         public async Task<ICollection<Package>> GetPackagesOfTour(int tourId)
         {
             var packages = await context.Packages
-                .Where(p => p.TourID == tourId).ToListAsync();
+                .Where(p => p.TourID == tourId)
+                .Include(p => p.PackagePrices)
+                .ToListAsync();
             return packages;
         }
 

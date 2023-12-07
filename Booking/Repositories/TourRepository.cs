@@ -55,6 +55,8 @@ namespace WebApi.Repositories
         {
             var tour = await context.Tour
                 .Where(t => t.TourId == id)
+                .Include(t => t.Approver)
+                .Include(t => t.Poster)
                 .SingleOrDefaultAsync();
             return tour;
         }

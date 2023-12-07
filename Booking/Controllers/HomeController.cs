@@ -38,7 +38,12 @@ namespace Booking.Controllers
                 return RedirectToAction("Index", "agent-tour");
             }
 
-            return View();
+			if (User.IsInRole(SeedRole.EMPLOYEE_ROLE))
+			{
+				return RedirectToAction("Index", "Censor", new { area = "Employee" });
+			}
+
+			return View();
         }
 
         public IActionResult Privacy()
