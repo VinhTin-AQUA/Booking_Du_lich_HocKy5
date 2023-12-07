@@ -68,14 +68,7 @@
                                 </td>
                                 <td> @(tour.DropOffLocation)</td>
                                 <td>
-                                    @if(tour.PostingDate == null)
-                                    {
-                                        <span>Chưa duyệt</span>
-                                    }
-                                    else
-                                    {
-                                        @(tour.PostingDate)
-                                    }
+                                    @(tour.PostingDate)
                                 </td>
                                 <td>
                                     <a asp-area="AgentTour" asp-controller="Tours" asp-action="Details" asp-route-id="@tour.TourId">
