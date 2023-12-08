@@ -47,7 +47,6 @@
     <Folder Include="Areas\ManageProfile\Data\" />
     <Folder Include="wwwroot\assets\admin-layout\" />
     <Folder Include="wwwroot\js\admin\" />
-    <Folder Include="wwwroot\resources\images\tours\" />
   </ItemGroup>
 
 </Project>

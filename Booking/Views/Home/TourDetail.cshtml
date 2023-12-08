@@ -1,4 +1,5 @@
-﻿
+﻿@model Booking.Models.Tour
+
 @{
     ViewData["Title"] = "Thông tin chi tiết";
 }
@@ -22,37 +23,9 @@
 <div class="search-container form-custom ">
     <div class="py-2 w-auto d-flex justify-content-center">
 
-
-        <div class="activity-item  w-auto d-inline-block w-auto">
-            <a class="fs-6 btn rounded-5 px-2 py-1 color2"
-               data-mdb-ripple-init
-               href="#!"
-               role="button">
-
-                Tổng quan
-            </a>
-        </div>
-
-        <div class="activity-item  w-auto d-inline-block w-auto">
-            <a class="fs-6 btn color2 rounded-5 px-2 py-1"
-               data-mdb-ripple-init
-               href="#!"
-               role="button">
-                Các lựa chọn gói
-
-            </a>
-        </div>
-
-        <div class="activity-item  w-auto d-inline-block w-auto">
-            <a class="fs-6 btn color2 rounded-5 px-2 py-1"
-               data-mdb-ripple-init
-               href="#!"
-               role="button">
-                Có gì?
-
-            </a>
-        </div>
-
+    var schedules = Model.Schedule.Split("\n");
+    string baseImgUrl = "https://localhost:7231/resources/images";
+    string[] imgUrls = ViewBag.ImgUrls;
         <div class="activity-item  w-auto d-inline-block w-auto">
             <a class="fs-6 btn color2 rounded-5 px-2 py-1"
                data-mdb-ripple-init
@@ -94,6 +67,11 @@
     </div>
 </div>
 
+    List<Package> packages = ViewBag.Packages;
+}
+
+
+<link rel="stylesheet" href="~/css/Tour/details.css">
 
 <div class="content-wrapper-scroll ">
 
@@ -124,137 +102,77 @@
                                 </div>
                                 <div class="carousel-item">
                                     <img src="~/assets/admin-layout/images/food/img6.jpg" class="d-block w-100" alt="Vico Admin Carousel">
+    <!-- anh -->
+    <div class="row justify-content-center row-custom">
+        <div class="col-11">
+            <div class="card ">
+                <div class="card-body">
+                    <div style="max-height: 640px; overflow-y:scroll;">
+                        <div class="board-grid">
+                            @foreach (var url in imgUrls)
+                            {
+                                <div class="img-item">
+                                    <img class="img-tour" src="@baseImgUrl/@url" />
                                 </div>
-                            </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-                                    data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-                                    data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4  col-12">
-                <div class="card">
-                    <div class="card-body">
-                        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-indicators">
-                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
-                                        class="active" aria-current="true" aria-label="Slide 1"></button>
-                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                                        aria-label="Slide 2"></button>
-                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                                        aria-label="Slide 3"></button>
-                            </div>
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="~/assets/admin-layout/images/food/img8.jpg" class="d-block w-100" alt="Best Admin Dashboards">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="~/assets/admin-layout/images/food/img2.jpg" class="d-block w-100" alt="Best Admin Dashboards">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="~/assets/admin-layout/images/food/img9.jpg" class="d-block w-100" alt="Best Admin Dashboards">
-                                </div>
-                            </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                                    data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                                    data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            </button>
+                            }
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row justify-content-center row-custom">
-            <div class="col-xl-4 col-12">
-                <div class="card">
-                    <div class="card-body">
-                        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-                            <div class="carousel-indicators">
-                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
-                                        class="active" aria-current="true" aria-label="Slide 1"></button>
-                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                                        aria-label="Slide 2"></button>
-                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                                        aria-label="Slide 3"></button>
-                            </div>
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="~/assets/admin-layout/images/food/img3.jpg" class="d-block w-100" alt="Best Admin Dashboards">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="~/assets/admin-layout/images/food/img9.jpg" class="d-block w-100" alt="Best Admin Dashboards">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="~/assets/admin-layout/images/food/img5.jpg" class="d-block w-100" alt="Best Admin Dashboards">
-                                </div>
-                            </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
-                                    data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
-                                    data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-12">
-                <div class="card">
-                    <div class="card-body">
-                        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-indicators">
-                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
-                                        class="active" aria-current="true" aria-label="Slide 1"></button>
-                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                                        aria-label="Slide 2"></button>
-                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                                        aria-label="Slide 3"></button>
-                            </div>
-                            <div class="carousel-inner">
-                                <div class="carousel-item active" data-bs-interval="10000">
-                                    <img src="~/assets/admin-layout/images/food/img7.jpg" class="d-block w-100" alt="Best Admin Dashboards">
-                                </div>
-                                <div class="carousel-item" data-bs-interval="5000">
-                                    <img src="~/assets/admin-layout/images/food/img2.jpg" class="d-block w-100" alt="Best Admin Dashboards">
-                                </div>
-                                <div class="carousel-item" data-bs-interval="2500">
-                                    <img src="~/assets/admin-layout/images/food/img8.jpg" class="d-block w-100" alt="Best Admin Dashboards">
-                                </div>
-                            </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
-                                    data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
-                                    data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    </div>
 
-        <!-- Row end -->
+    <div class="col-lg-12 col-12 d-flex justify-content-center ">
+        <div class="wrapper card date" style="width: 90%; height: 100%">
+            <div class="card-header">
+                <div class="card-title fs-4 fw-bold">@Model.TourName</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- thong tin khac -->
+    <div class="col-lg-12 col-12 d-flex justify-content-center ">
+
+        <div class="wrapper card date" style="width: 90%; height: 100%">
+            <div class="card-header">
+                <div class="card-title">Thông tin khác</div>
+            </div>
+
+            <div class="card-body  ">
+                <div class="m-0 ">
+                    <ul>
+                        <li>
+                            <i class="fa-solid fa-calendar-days" style="color: #fbbf24"></i>
+                            Ngày đăng: <strong>@Model.PostingDate</strong>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-calendar-days" style="color: #a3e635"></i>
+                            Ngày duyệt:
+                            @if (Model.ApprovalDate == null)
+                            {
+                                <strong> Chưa duyệt</strong>
+                            }
+                            else
+                            {
+                                @Model.ApprovalDate
+                            }
+                        </li>
+                        <li><i class="fa-solid fa-location-dot" style="color: #3b82f6"></i> Địa điểm đón khách: <strong>@Model.DepartureLocation</strong></li>
+                        <li><i class="fa-solid fa-location-dot" style="color: #e11d48"></i> Địa kiểm trả khách: <strong>@Model.DropOffLocation</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
     </div>
     <!-- Content wrapper end -->
     <h4 class=" h4 mb-3">Tour name : Vé Sun World Hạ Long</h4>
+
     <!--Tong quan-->
-    <div class=" col-xl-12 col-12 d-flex justify-content-center">
+    <div class="col-lg-12 col-12 d-flex justify-content-center ">
+
         <!-- Card start -->
+
         <div class="wrapper card date ">
             <div class="card-header ">
                 <div class="card-title">Tổng quan</div>
@@ -271,65 +189,42 @@
                         </li>
                         <li>Thử ngay vòng đu quay Sun Wheel, một trong những vòng đu quay cao nhất thế giới</li>
                     </ul>
+
+        <div class="wrapper card date" style="width: 90%; height: 100%">
+            <div class="card-header">
+                <div class="card-title">Tổng quan</div>
+            </div>
+
+            <div class="card-body  ">
+                <div class="m-0 ">
+                    @Model.Overview
+
                 </div>
             </div>
         </div>
         <!-- Card end -->
+
     </div>
 </div>
 <h4 class="h4 col-lg-1 col-xl-12 d-flex justify-content-start mb-3">Các lựa chọn gói</h4>
 <!--Lựa chọn ngày tháng-->
 <div class="col-lg-12 col-12 d-flex justify-content-center ">
 
-    <!-- Card start -->
-    <div class="wrapper card date">
-        <div class="card-body  ">
-            <div class="m-0 ">
-                <div class="form-label ">Datepicker</div>
-                <div class="input-group">
-                    <span class="input-group-text">
-                        <i class="bi bi-calendar4"></i>
-                    </span>
-                    <input type="text" class="form-control datepicker">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Card end -->
-
-</div>
-<!-- Card end -->
-<!-- Các lựa chọn gói-->
-<div class="col-xl-12 col-12 d-flex justify-content-center">
-    <div class="wrapper card rounded-4 date sd">
-        <div class="card-header">
-            <div class="card-title">Featured</div>
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="mb-3">With supporting text below as a natural lead-in to additional content.</p>
-
-
-            <div class="d-flex justify-content-center space">
-                <p class="color">1000000đ</p>
-                <a asp-action="booktour" class="btn btn-info " asp-route-packageId="1">Chọn</a>
-
-            </div>
-        </div>
 
     </div>
-</div>
 
-<div class="col-xl-12 col-12 d-flex justify-content-center ">
-    <div class="wrapper card rounded-4 date sd">
-        <div class="card-header">
-            <div class="card-title">Featured</div>
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="mb-3">With supporting text below as a natural lead-in to additional content.</p>
+    <!-- lịch trình -->
+    <div class=" col-xl-12 col-12 d-flex justify-content-center">
+        <!-- Card start -->
+        <div class="wrapper card" style="width: 90%; height: 100%">
 
+            <div class="card-header ">
+                <div class="card-title">Lịch trình</div>
+            </div>
 
+            <div class="card-body " style="width: 100%; height: 100%">
+                <div class="scroll300 img" style="width: 100%; height: 100%">
+                    <div class="timeline-activity" style="width: 100%; height: 100%">
             <div class="d-flex justify-content-center space">
                 <p class="color">1000000đ</p>
                 <a asp-action="booktour" class="btn btn-info" asp-route-packageId="2">Chọn</a>
@@ -389,41 +284,36 @@
                             Developed 30 multipurpose Bootstrap
                             4 Admin Templates
                         </div>
+
+                        @for (int i = 0; i < schedules.Length; i++)
+                        {
+                            <div class="activity-log">
+                                <p class="log-name">Địa điểm @(i + 1)</p>
+                                <div class="log-details">
+                                    @schedules[i]
+                                </div>
+                            </div>
+                        }
+
                     </div>
                 </div>
             </div>
         </div>
+        <!-- Card end -->
     </div>
-    <!-- Card end -->
-</div>
 
-<!-- thong tin tour, cau hoi thuong gap, chinh sach huy-->
-<!-- Row start -->
-<div class=" col-xl-12 col-12 d-flex justify-content-center ">
-    <div class="wrapper  card-custom ">
+    <div class="text-center"><h4 class="">Các lựa chọn gói</h4></div>
 
-        <div class="card-body ">
-            <div class="accordion " id="accordionPanelsStayOpenExample">
-                <div class="accordion-item ">
-                    <h2 class="accordion-header " id="panelsStayOpen-headingOne">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
-                                aria-controls="panelsStayOpen-collapseOne">
-                            Thông tin tour
-                        </button>
-                    </h2>
-                    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
-                         aria-labelledby="panelsStayOpen-headingOne">
-                        <div class="accordion-body ">
-                            <strong>This is the first item's accordion body.</strong> It is shown by default, until
-                            the collapse plugin adds the appropriate classes that we use to style each element. These
-                            classes control the overall appearance, as well as the showing and hiding via CSS
-                            transitions. You can modify any of this with custom CSS or overriding our default
-                            variables. It's also worth noting that just about any HTML can go within the
-                            <code>.accordion-body</code>, though the transition does limit overflow.
-                        </div>
-                    </div>
+    <!-- Các lựa chọn gói-->
+    @foreach (var package in packages)
+    {
+        var info = System.Globalization.CultureInfo.GetCultureInfo("vi-VN");
+        <div class="col-xl-12 col-12 d-flex justify-content-center">
+            <div class="wrapper card rounded-4 date sd" style="width: 90%; height: 100%">
+                <div class="card-header">
+                    <div class="card-title">@package.PackageName</div>
                 </div>
+
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -443,32 +333,58 @@
                             <code>.accordion-body</code>, though the transition does limit overflow.
                         </div>
                     </div>
+
+                <div class="card-header">
+                    <div class="card-title">Số người tối đa: @package.MaxPeople</div>
+
                 </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
-                                aria-controls="panelsStayOpen-collapseThree">
-                            Câu hỏi thường gặp
-                        </button>
-                    </h2>
-                    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
-                         aria-labelledby="panelsStayOpen-headingThree">
-                        <div class="accordion-body">
-                            <strong>This is the third item's accordion body.</strong> It is hidden by default, until
-                            the collapse plugin adds the appropriate classes that we use to style each element. These
-                            classes control the overall appearance, as well as the showing and hiding via CSS
-                            transitions. You can modify any of this with custom CSS or overriding our default
-                            variables. It's also worth noting that just about any HTML can go within the
-                            <code>.accordion-body</code>, though the transition does limit overflow.
-                        </div>
-                    </div>
+                <div class="card-header">
+                    <div class="card-title"><p class="mb-3">Mô tả: @package.Description</p></div>
+                </div>
+                <div class="card-body" style="width: 100%; height: 100%">
+                    @if (package.PackagePrices != null)
+                    {
+                        <p class="mb-3 font-bold fs-6">Giá gói</p>
+                        @foreach (var price in package.PackagePrices)
+                        {
+                            <div class=" border-2 border-bottom">
+                                <div class="product-description">
+                                    <i class="fa-solid fa-money-check" style="color:#fcd34d"></i>
+                                    Giá cho người lớn: <strong>@string.Format(info, "{0:c}", @price.AdultPrice)</strong>
+                                </div>
+
+                                <div class="product-description">
+                                    <i class="fa-solid fa-money-check" style="color: #fcd34d"></i>
+                                    Giá cho trẻ nhỏ: <strong>@string.Format(info, "{0:c}", @price.ChildPrice)</strong>
+                                </div>
+
+                                <div class="product-description">
+                                    <i class="fa-solid fa-calendar-days" style="color: #2563eb"></i>
+                                    Ngày áp dụng: @if (@price.ValidFrom != null)
+                                    {
+                                        DateTime date = DateTime.Parse(price.ValidFrom.ToString());
+                                        <strong>@date.ToString("dd/MM/yyyy")</strong>
+                                    }
+                                </div>
+
+                                <div class="product-description">
+                                    <i class="fa-solid fa-calendar-days" style="color: #2563eb"></i>
+                                    Ngày hết hạn: @if (@price.GoodThru != null)
+                                    {
+                                        DateTime date = DateTime.Parse(price.GoodThru.ToString());
+                                        <strong>@date.ToString("dd/MM/yyyy")</strong>
+                                    }
+                                </div>
+                                <div class="w-100 " style="display:flex">
+                                    <a class="btn btn-warning w-50 mx-auto rounded-pill mt-3 mb-2">Chọn Gói</a>
+                                </div>
+                            </div>
+                        }
+                    }
                 </div>
             </div>
         </div>
-    </div>
+    }
 </div>
 
-<!-- Row end -->
 
-<!-- Content wrapper end -->
