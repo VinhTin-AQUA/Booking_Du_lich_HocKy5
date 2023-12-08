@@ -18,5 +18,7 @@ namespace Booking.Interfaces
         public Task<int> TotalAgent(string searchString = "");
         public Task<ICollection<AppUser>> GetAgentTours(int currentPage, int pageSize, string? searchString);
 
-    }
+		public double GetPriceOfTour( Tour tour);
+
+	}
 }
