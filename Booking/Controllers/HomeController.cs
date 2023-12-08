@@ -1,7 +1,9 @@
 ﻿using Booking.Configs;
 using Booking.Interfaces;
 using Booking.Models;
+using Booking.Repositories;
 using Booking.Seeds;
+using Booking.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using NuGet.Protocol;
@@ -18,8 +20,10 @@ namespace Booking.Controllers
         private readonly IBookTourRepository _bookTourRepository;
         private readonly IPackagePriceRepository _packagePriceRepository;
         private readonly ITourRepository _tourRepository;
+        private readonly IImageService _imageService;
+        private readonly IPackageRepository _packageRepository;
 
-        public HomeController(AppConfigs appConfigs, ILogger<HomeController> logger, UserManager<AppUser> userManager, IBookTourRepository bookTourRepository, IPackagePriceRepository packagePriceRepository, ITourRepository tourRepository)
+        public HomeController(IPackageRepository packageRepository,IImageService imageService, AppConfigs appConfigs, ILogger<HomeController> logger, UserManager<AppUser> userManager, IBookTourRepository bookTourRepository, IPackagePriceRepository packagePriceRepository, ITourRepository tourRepository)
         {
             _appConfigs = appConfigs;
 			_logger = logger;
@@ -27,6 +31,8 @@ namespace Booking.Controllers
             _bookTourRepository = bookTourRepository;
             _packagePriceRepository = packagePriceRepository;
             _tourRepository = tourRepository;
+            _imageService = imageService;
+            _packageRepository = packageRepository;
         }
 
         public IActionResult Index()
@@ -89,16 +95,22 @@ namespace Booking.Controllers
         [HttpGet]
         public async Task<IActionResult> TourDetail(int? tourId)
         {
-            if(tourId == null)
-            {
-                return View("~/Views/Error/Error.cshtml");
-            }
-            Tour tour = await _tourRepository.GetTourById(tourId);
-            if(tour == null)
+            var tour = await _tourRepository.GetTourById(tourId);
+
+            if (tour == null)
             {
                 return NotFound();
             }
+            var imgUrls = _imageService.GetAllFileOfFolder("tours", tour.TourId.ToString());
+            ViewBag.ImgUrls = imgUrls;
+
+            var packages = await _packageRepository.GetPackagesOfTour(tour.TourId);
+            ViewBag.Packages = packages;
+
+
             return View(tour);
+
+            
         }
 
         [Route("book-tour/{packageId}")]
