@@ -1,4 +1,5 @@
-﻿using Booking.Interfaces;
+﻿using Booking.Configs;
+using Booking.Interfaces;
 using Booking.Models;
 using Booking.Seeds;
 using Microsoft.AspNetCore.Identity;
@@ -11,15 +12,17 @@ namespace Booking.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+		private readonly AppConfigs _appConfigs;
+		private readonly ILogger<HomeController> _logger;
         private readonly UserManager<AppUser> _userManager;
         private readonly IBookTourRepository _bookTourRepository;
         private readonly IPackagePriceRepository _packagePriceRepository;
         private readonly ITourRepository _tourRepository;
 
-        public HomeController(ILogger<HomeController> logger, UserManager<AppUser> userManager, IBookTourRepository bookTourRepository, IPackagePriceRepository packagePriceRepository, ITourRepository tourRepository)
+        public HomeController(AppConfigs appConfigs, ILogger<HomeController> logger, UserManager<AppUser> userManager, IBookTourRepository bookTourRepository, IPackagePriceRepository packagePriceRepository, ITourRepository tourRepository)
         {
-            _logger = logger;
+            _appConfigs = appConfigs;
+			_logger = logger;
             _userManager = userManager;
             _bookTourRepository = bookTourRepository;
             _packagePriceRepository = packagePriceRepository;
@@ -57,7 +60,7 @@ namespace Booking.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        [Route("search-tours/{cityName}")]
+        [Route("home/search-tours/{cityName}")]
         [HttpGet]
         public async Task<IActionResult> SearchTour(string? cityName)
         {
@@ -66,11 +69,20 @@ namespace Booking.Controllers
                 return View("~/Views/Error/Error.cshtml");
             }
             var tourList = await _tourRepository.GetTourByCityName(cityName);
+            List<double> prices = new List<double>();
+            foreach(var tour in tourList)
+            {
+                double price =  _tourRepository.GetPriceOfTour(tour);
+                prices.Add(price);
+            }
             if (tourList == null)
             {
                 return NotFound();
             }
-            return View(tourList);
+            ViewBag.tourList = tourList;
+			ViewBag.BaseImgUrl = _appConfigs.BaseImgUrl;
+            ViewBag.prices = prices;
+			return View();
         }
 
         [Route("tour-detail/{tourId}")]
