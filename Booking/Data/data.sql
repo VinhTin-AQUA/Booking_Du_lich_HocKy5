@@ -25,7 +25,7 @@ INSERT INTO Tour(TourName,TourAddress,Overview,Schedule,DepartureLocation,DropOf
 		["Ben Tre","Enjoy a local lunch with Vietnamese dishes (vegan food available) After lunch, we take a boat trip to Ben Tre - known as the coconut kingdom - a charming town that is famous for its coconut plantations, fruit orchards. You can take a leisurely bike ride through the countryside. Learn about how coconut products are produced in the region. Around 3:00pm head back to Ho Chi Minh City. Arrive approximately at 4:50PM.","Thời gian: 2 tiếng (xấp xỉ)"]]',
 	N'123 Lý Tự Trọng, Phường Bến Thành, Quận 1, Thành phố Hồ Chí Minh, Việt Nam',
 	N'123 Lý Tự Trọng, Phường Bến Thành, Quận 1, Thành phố Hồ Chí Minh, Việt Nam',
-	N'/tous/1'
+	N'/tours/1'
 );
 
 INSERT INTO Tour(TourName,TourAddress,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath) VALUES(
@@ -35,7 +35,7 @@ INSERT INTO Tour(TourName,TourAddress,Overview,Schedule,DepartureLocation,DropOf
 	N'[["Cu Chi Tunnels","Around 7:35AM or 12:10PM. Start with pickup from the center of Ho Chi Minh City or meet at the meeting point then depart for Cu Chi Tunnels. After 1.5 hour drive, we arrive at the Tunnels where You''ll have the opportunity to explore the tunnel system, which includes narrow passageways, hidden entrances, and underground chambers. Learn about the daily life of the Cu Chi guerrilla fighters and how they managed to survive in the tunnels. You can crawl distances through the tunnels that were used by the guerrilla fighters during the Vietnam War. You may see kitchens, living quarters, among other things used during the war. Learn about how different types traps were created and set up. Visit the weapon rooms and learn how the ingenious soldiers made them. You can also safely try your hand at the shooting range with an AK-47. After exploration, we travel back to Ho Chi Minh City. Arrive approximately at 3:00pm for the morning tour and 6:50pm for the afternoon tour.","Thời gian: 3 tiếng (xấp xỉ)","Bao gồm vé vào cửa"]]',
 	N'123 Lý Tự Trọng, Phường Bến Thành, Quận 1, Thành phố Hồ Chí Minh, Việt Nam',
 	N'123 Lý Tự Trọng, Phường Bến Thành, Quận 1, Thành phố Hồ Chí Minh, Việt Nam',
-	N'/tous/2'
+	N'/tours/2'
 );
 
 INSERT INTO Tour(TourName,TourAddress,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath) VALUES(
@@ -52,7 +52,7 @@ INSERT INTO Tour(TourName,TourAddress,Overview,Schedule,DepartureLocation,DropOf
 	   ["Ben Thanh Market","Ben Thanh Market in Ho Chi Minh City''s District 1 is a great place to buy local handicrafts, branded goods, Vietnamese art and other souvenirs. Here, you’ll find eating stalls inside the market where you can get a taste of hawker-style Vietnamese cuisine or simply cool off with a cold drink when the bargaining becomes too much.","The market is big, difficult to navigate at times and certainly best avoided during the hottest part of the day but all the same its well worth a look. When night falls, restaurants around the perimeter of the market open their doors creating a vibrant street side scene filling the air with the scents of wok-fried noodles, barbecued fish and meats. One of Saigon’s oldest landmarks, Ben Thanh offers a great atmosphere that is absolutely authentically Vietnamese","Thời gian: 50 phút (xấp xỉ)","Bao gồm vé vào cửa"]]',
 	N'Depends on package',
 	N'Depends on package',
-	N'/tous/3'
+	N'/tours/3'
 );
 
 INSERT INTO Tour(TourName,TourAddress,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath) VALUES(

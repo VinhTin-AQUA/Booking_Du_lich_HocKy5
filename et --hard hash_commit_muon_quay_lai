@@ -1,0 +1,258 @@
+[33mcommit 8ceaa535f5e4202ca1efb07940bf8499be6539ce[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mho_vinh_tin[m[33m, [m[1;31morigin/new[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/ho_vinh_tin[m[33m, [m[1;31morigin/NguyenNgocTieuThu[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 651617a d7872d3
+Author: NguyenNgocTieuThuu <145995895+NguyenNgocTieuThuu@users.noreply.github.com>
+Date:   Fri Dec 8 20:53:22 2023 +0700
+
+    Merge pull request #242 from VinhTin-AQUA/NguyenNgocTieuThu
+    
+    tourdetail
+
+[33mcommit d7872d314ff62941e7a795a6f0b68965c92179cc[m
+Merge: e34ca2c 651617a
+Author: NguyenNgocTieuThuu <145995895+NguyenNgocTieuThuu@users.noreply.github.com>
+Date:   Fri Dec 8 20:53:12 2023 +0700
+
+    Merge branch 'main' into NguyenNgocTieuThu
+
+[33mcommit e34ca2c1ede626d5f33b6a65b91baec9e9228d5a[m
+Author: NguyenNgocTieuThuu <Nguyennngoctieuthu2207@gmail.com>
+Date:   Fri Dec 8 20:49:57 2023 +0700
+
+    tour_detail
+
+[33mcommit 651617a585c98e6876c2249c2a617e8f91c94121[m
+Merge: 4c3db3f e19f5e9
+Author: Nguyen Tien Dat <116078423+7iendat@users.noreply.github.com>
+Date:   Fri Dec 8 16:26:28 2023 +0700
+
+    Merge pull request #249 from VinhTin-AQUA/tien_dat
+    
+    fix something
+
+[33mcommit e19f5e94f01bff800096ce2236b4f045690b7fe7[m[33m ([m[1;31morigin/tien_dat[m[33m)[m
+Author: 7iendat <datnguyentien0803@gmail.com>
+Date:   Fri Dec 8 16:25:58 2023 +0700
+
+    fix something
+
+[33mcommit 4c3db3f65077cc6c0c0799e3095aa9c3f7dd5f57[m
+Merge: f3ed13b 9a9eb33
+Author: Nguyen Tien Dat <116078423+7iendat@users.noreply.github.com>
+Date:   Fri Dec 8 16:10:17 2023 +0700
+
+    Merge pull request #248 from VinhTin-AQUA/tien_dat
+    
+    render data in detail tour
+
+[33mcommit 9a9eb33696103099140f1f05cc27dd5a3aa57389[m
+Merge: e143cb9 4020cd1
+Author: 7iendat <datnguyentien0803@gmail.com>
+Date:   Fri Dec 8 16:08:55 2023 +0700
+
+    Merge branch 'tien_dat' of https://github.com/VinhTin-AQUA/Booking_Du_lich_HocKy5 into tien_dat
+
+[33mcommit e143cb95b706aeb4496462035d34c755eb500cf2[m
+Author: 7iendat <datnguyentien0803@gmail.com>
+Date:   Fri Dec 8 16:08:33 2023 +0700
+
+    render data in detail tour
+
+[33mcommit 4020cd19b7bf849b2bf91dd9f938c9788a75eb2e[m
+Merge: 3d304cb f3ed13b
+Author: Nguyen Tien Dat <116078423+7iendat@users.noreply.github.com>
+Date:   Fri Dec 8 15:11:03 2023 +0700
+
+    Merge pull request #245 from VinhTin-AQUA/main
+    
+    update branch
+
+[33mcommit f3ed13bf5f218b4965439702888c5f8150374185[m
+Merge: c653f4e 3d304cb
+Author: Nguyen Tien Dat <116078423+7iendat@users.noreply.github.com>
+Date:   Fri Dec 8 15:10:12 2023 +0700
+
+    Merge pull request #244 from VinhTin-AQUA/tien_dat
+    
+    render data in search-tour view
+
+[33mcommit 3d304cb85da6fee8bce43cca06cc00b6fcf23b9e[m
+Author: 7iendat <datnguyentien0803@gmail.com>
+Date:   Fri Dec 8 15:09:26 2023 +0700
+
+    render data in search-tour view
+
+[33mcommit c653f4e25bdd6b4a1fc030c8b05b964c16ef2406[m
+Merge: 758d4b3 762b4b5
+Author: Bùi Tấn Phát <103013376+krphat@users.noreply.github.com>
+Date:   Fri Dec 8 14:19:49 2023 +0700
+
+    Merge pull request #243 from VinhTin-AQUA/buiTanPhat
+    
+    Bui tan phat
+
+[33mcommit 762b4b5b9aa05a714dd0908c6ee1d7ba02e29cfe[m
+Author: Bùi Tấn Phát <103013376+krphat@users.noreply.github.com>
+Date:   Fri Dec 8 14:19:28 2023 +0700
+
+    add update.sql file
+
+[33mcommit 92fdab0e176221c96e4896cfa44a4a270684d2d2[m
+Author: NguyenNgocTieuThuu <Nguyennngoctieuthu2207@gmail.com>
+Date:   Fri Dec 8 12:07:37 2023 +0700
+
+    tourdetail
+
+[33mcommit b2d4a82a7bb7a6eb5852e96e86dc69442e8538fb[m
+Merge: 83a1cf2 758d4b3
+Author: Bùi Tấn Phát <103013376+krphat@users.noreply.github.com>
+Date:   Fri Dec 8 09:38:23 2023 +0700
+
+    Merge pull request #241 from VinhTin-AQUA/main
+    
+    .
+
+[33mcommit e81d5c253b4ea1cf3556524d1bb2e93ef81af8ed[m
+Merge: 24948d0 fb5a86e
+Author: 7iendat <datnguyentien0803@gmail.com>
+Date:   Thu Dec 7 15:23:59 2023 +0700
+
+    Merge branch 'tien_dat' of https://github.com/VinhTin-AQUA/Booking_Du_lich_HocKy5 into tien_dat
+
+[33mcommit 24948d073d47fca1ab30d4e0c344dd5959e6570d[m
+Author: 7iendat <datnguyentien0803@gmail.com>
+Date:   Thu Dec 7 15:23:52 2023 +0700
+
+    add fuc search
+
+[33mcommit fb5a86ebabc2e057c7792bc7ae6412542821e1c5[m
+Merge: 3c5e70f 758d4b3
+Author: Nguyen Tien Dat <116078423+7iendat@users.noreply.github.com>
+Date:   Thu Dec 7 15:21:13 2023 +0700
+
+    Merge pull request #240 from VinhTin-AQUA/main
+    
+    update branch
+
+[33mcommit 758d4b357b2f3f9e0f855ce490ffab56d60828e0[m
+Merge: b85d3a1 83a1cf2
+Author: Bùi Tấn Phát <103013376+krphat@users.noreply.github.com>
+Date:   Thu Dec 7 15:13:47 2023 +0700
+
+    Merge pull request #239 from VinhTin-AQUA/buiTanPhat
+    
+    add test data
+
+[33mcommit 83a1cf29a783a629f355edfd627801adf22ac097[m
+Author: Bùi Tấn Phát <103013376+krphat@users.noreply.github.com>
+Date:   Thu Dec 7 15:13:21 2023 +0700
+
+    add test data
+
+[33mcommit b85d3a16f354da2ad6c10e708fd2f990144a3162[m
+Merge: e56f051 3251c7c
+Author: Bùi Tấn Phát <103013376+krphat@users.noreply.github.com>
+Date:   Thu Dec 7 15:10:14 2023 +0700
+
+    Merge pull request #238 from VinhTin-AQUA/buiTanPhat
+    
+    Bui tan phat
+
+[33mcommit 3251c7c691e2705339ab24a5a6bb19ab0f49c119[m
+Merge: 3967877 e56f051
+Author: Bùi Tấn Phát <103013376+krphat@users.noreply.github.com>
+Date:   Thu Dec 7 15:09:52 2023 +0700
+
+    Merge pull request #237 from VinhTin-AQUA/main
+    
+    .
+
+[33mcommit e56f0515244094af16c972e300bd308ec70b20e3[m
+Merge: 7129d3e 80f02ef
+Author: VinhTin-AQUA <111964067+VinhTin-AQUA@users.noreply.github.com>
+Date:   Wed Dec 6 21:05:53 2023 +0700
+
+    Merge pull request #236 from VinhTin-AQUA/ho_vinh_tin
+    
+    thêm chức năng duyệt tour
+
+[33mcommit 80f02ef1b552b6eccef7ef0e0328bdd46768d141[m
+Author: VinhTin-AQUA <tinhovinh@gmail.com>
+Date:   Wed Dec 6 21:05:18 2023 +0700
+
+    thêm chức năng duyệt tour
+
+[33mcommit 3c5e70f88871d0f9fc93e6ef86aab722f82f9f01[m
+Merge: 88a0e4f 7129d3e
+Author: Nguyen Tien Dat <116078423+7iendat@users.noreply.github.com>
+Date:   Wed Dec 6 14:51:20 2023 +0700
+
+    Merge pull request #235 from VinhTin-AQUA/main
+    
+    update branch
+
+[33mcommit 7129d3eaba0d227646da2763dabbfb10eb193cae[m
+Merge: 707b96b 57d4766
+Author: NguyenNgocTieuThuu <145995895+NguyenNgocTieuThuu@users.noreply.github.com>
+Date:   Wed Dec 6 10:38:29 2023 +0700
+
+    Merge pull request #234 from VinhTin-AQUA/NguyenNgocTieuThu
+    
+    booktour_interface
+
+[33mcommit 57d4766f18648afbbeaf83c263af871d0d4fcf1e[m
+Author: NguyenNgocTieuThuu <Nguyennngoctieuthu2207@gmail.com>
+Date:   Wed Dec 6 10:37:51 2023 +0700
+
+    booktour_interface
+
+[33mcommit 39678772be9b6bc0e89b7b95f543d959dcaaefee[m
+Merge: 9a09cfd 707b96b
+Author: Bùi Tấn Phát <103013376+krphat@users.noreply.github.com>
+Date:   Wed Dec 6 08:07:53 2023 +0700
+
+    Merge pull request #233 from VinhTin-AQUA/main
+    
+    .
+
+[33mcommit 707b96bd2736b7b98b194c4cd3f7ac4c320d0469[m
+Merge: cc1409c 78c90c6
+Author: VinhTin-AQUA <111964067+VinhTin-AQUA@users.noreply.github.com>
+Date:   Wed Dec 6 00:40:30 2023 +0700
+
+    Merge pull request #232 from VinhTin-AQUA/ho_vinh_tin
+    
+    thêm chức năng thêm sửa xóa package price
+
+[33mcommit 78c90c665129d10127408f7f5d52e6bbdb89e4ed[m
+Author: VinhTin-AQUA <tinhovinh@gmail.com>
+Date:   Wed Dec 6 00:40:09 2023 +0700
+
+    thêm chức năng thêm sửa xóa package price
+
+[33mcommit cc1409c3235a815f75508356155b341fac8177d9[m
+Merge: f72fe15 8635c93
+Author: VinhTin-AQUA <111964067+VinhTin-AQUA@users.noreply.github.com>
+Date:   Tue Dec 5 20:34:15 2023 +0700
+
+    Merge pull request #231 from VinhTin-AQUA/ho_vinh_tin
+    
+    thêm gói cho tour
+
+[33mcommit 8635c939804407894c269e70df3690c66ae0bbf9[m
+Author: VinhTin-AQUA <tinhovinh@gmail.com>
+Date:   Tue Dec 5 20:33:53 2023 +0700
+
+    thêm gói cho tour
+
+[33mcommit f72fe153687b1f70fbb6bc383f290279b5d1e9c2[m
+Merge: 6801353 9a09cfd
+Author: Bùi Tấn Phát <103013376+krphat@users.noreply.github.com>
+Date:   Tue Dec 5 16:59:21 2023 +0700
+
+    Merge pull request #230 from VinhTin-AQUA/buiTanPhat
+    
+    add Data.sql
+
+[33mcommit 9a09cfd11c78f69aafdd9b123175b469df596a6f[m
+Author: Bùi Tấn Phát <103013376+krphat@users.noreply.github.com>
+Date:   Tue De
