@@ -124,7 +124,7 @@
 			</div>
 		</div>
 
-		<div class="card-body">
+@* 		<div class="card-body">
 
 			<!-- Row start -->
 			<div id="city-items" class="row">
@@ -278,11 +278,12 @@
 			</div>
 			<!-- Row end -->
 
-		</div>
+		</div> *@
 	</div>
 </div>
 
-<script defer src="~/js/home/home-custom.js"></script>
+@* <script defer src="~/js/home/home-custom.js"></script> *@
+
 <script type="text/javascript">
 	function SearchCity() {
 		let cityName = document.getElementById("cityName").value;
@@ -292,5 +293,6 @@
 		// Use template literals to construct the URL with parameters
 		myLink.href = `@Url.Action("search-tours")/${encodeURIComponent(cityName)}`;
 	}
+
 
 </script>
