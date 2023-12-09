@@ -7,6 +7,7 @@ using Booking.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using NuGet.Protocol;
+using System.Collections;
 using System.Diagnostics;
 using System.Security.Claims;
 
@@ -55,6 +56,31 @@ namespace Booking.Controllers
 			return View();
         }
 
+        //[Route("home/get-tour/{cityName}")]
+        //[HttpGet]
+        //public async Task<IActionResult> GetTour(string? cityName)
+        //{
+        //    if (cityName == null)
+        //    {
+        //        return View("~/Views/Error/Error.cshtml");
+        //    }
+        //    var tourList = await _tourRepository.GetTourByCityName(cityName);
+        //    List<double> prices = new List<double>();
+        //    foreach (var tour in tourList)
+        //    {
+        //        double price = _tourRepository.GetPriceOfTour(tour);
+        //        prices.Add(price);
+        //    }
+        //    if (tourList == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    ViewBag.tourList = tourList;
+        //    ViewBag.BaseImgUrl = _appConfigs.BaseImgUrl;
+        //    ViewBag.prices = prices;
+        //    return PartialView("~/Views/Shared/partials/_ListTourPartial.cshtml");
+        //}
+
         public IActionResult Privacy()
         {
             return View();
@@ -70,15 +96,15 @@ namespace Booking.Controllers
         [HttpGet]
         public async Task<IActionResult> SearchTour(string? cityName)
         {
-            if(cityName == null)
+            if (cityName == null)
             {
                 return View("~/Views/Error/Error.cshtml");
             }
             var tourList = await _tourRepository.GetTourByCityName(cityName);
             List<double> prices = new List<double>();
-            foreach(var tour in tourList)
+            foreach (var tour in tourList)
             {
-                double price =  _tourRepository.GetPriceOfTour(tour);
+                double price = _tourRepository.GetPriceOfTour(tour);
                 prices.Add(price);
             }
             if (tourList == null)
@@ -86,9 +112,9 @@ namespace Booking.Controllers
                 return NotFound();
             }
             ViewBag.tourList = tourList;
-			ViewBag.BaseImgUrl = _appConfigs.BaseImgUrl;
+            ViewBag.BaseImgUrl = _appConfigs.BaseImgUrl;
             ViewBag.prices = prices;
-			return View();
+            return View();
         }
 
         [Route("tour-detail/{tourId}")]

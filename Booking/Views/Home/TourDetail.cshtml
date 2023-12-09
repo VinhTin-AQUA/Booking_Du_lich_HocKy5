@@ -4,7 +4,8 @@
     ViewData["Title"] = "Thông tin chi tiết";
 
     var schedules = Model.Schedule.Split("\n");
-    string baseImgUrl = "https://localhost:7231/resources/images";
+    // string baseImgUrl = "https://localhost:7231/resources/images";
+    string baseImgUrl = "https://localhost:44335/resources/images";
     string[] imgUrls = ViewBag.ImgUrls;
 
     List<Package> packages = ViewBag.Packages;
