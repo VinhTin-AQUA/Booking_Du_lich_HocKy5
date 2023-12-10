@@ -144,7 +144,7 @@ namespace Booking.Controllers
 
         public async Task<IActionResult> BookTour(int packageId)
         {
-            var packagePrice = await _packagePriceRepository.GetPackagePriceByID(packageId, DateTime.Now);
+            var packagePrice = await _packagePriceRepository.GetPackagePriceByPackageId(packageId);
             if (packagePrice == null)
             {
                 return NotFound();

@@ -48,10 +48,10 @@ namespace Booking.Repositories
             return packagePrice;
         }
 
-        public async Task<PackagePrice> GetPackagePriceByID(int? id, DateTime? validFrom)
+        public async Task<PackagePrice> GetPackagePriceByPackageId(int? packageId)
         {
             var packagePrice = await context.PackagePrices
-                 .Where(pp => pp.PackageId == id && pp.ValidFrom <= validFrom && validFrom <= pp.GoodThru)
+                 .Where(pp => pp.PackageId == packageId).OrderByDescending(pp => pp.PriceId)
                  .FirstOrDefaultAsync();
             return packagePrice;
         }
