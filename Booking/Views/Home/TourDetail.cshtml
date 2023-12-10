@@ -18,20 +18,40 @@
     <!-- anh -->
     <div class="row justify-content-center row-custom">
         <div class="col-11">
-            <div class="card ">
-                <div class="card-body">
-                    <div style="max-height: 640px; overflow-y:scroll;">
-                        <div class="board-grid">
-                            @foreach (var url in imgUrls)
+
+@*                             @foreach (var url in imgUrls)
                             {
                                 <div class="img-item">
                                     <img class="img-tour" src="@baseImgUrl/@url" />
                                 </div>
-                            }
-                        </div>
+                            } *@
+
+                @*                             start test class="d-block w-100" *@
+
+            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="@baseImgUrl/@imgUrls[0]" class="d-block w-100" alt="...">
                     </div>
+
+                    @for (int i = 1; i < imgUrls.Length; i++)
+                    {
+                        <div class="carousel-item">
+                            <img src="@baseImgUrl/@imgUrls[i]" class="d-block w-100" alt="...">
+                        </div>
+                    }
                 </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
+
+@*                             end test *@
         </div>
     </div>
 
@@ -48,28 +68,12 @@
 
         <div class="wrapper card date" style="width: 90%; height: 100%">
             <div class="card-header">
-                <div class="card-title">Thông tin khác</div>
+                <div class="card-title">Địa điểm khởi hành và trở về</div>
             </div>
 
             <div class="card-body  ">
                 <div class="m-0 ">
                     <ul>
-                        <li>
-                            <i class="fa-solid fa-calendar-days" style="color: #fbbf24"></i>
-                            Ngày đăng: <strong>@Model.PostingDate</strong>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-calendar-days" style="color: #a3e635"></i>
-                            Ngày duyệt:
-                            @if (Model.ApprovalDate == null)
-                            {
-                                <strong> Chưa duyệt</strong>
-                            }
-                            else
-                            {
-                                @Model.ApprovalDate
-                            }
-                        </li>
                         <li><i class="fa-solid fa-location-dot" style="color: #3b82f6"></i> Địa điểm đón khách: <strong>@Model.DepartureLocation</strong></li>
                         <li><i class="fa-solid fa-location-dot" style="color: #e11d48"></i> Địa kiểm trả khách: <strong>@Model.DropOffLocation</strong></li>
                     </ul>
@@ -138,9 +142,9 @@
                 <div class="card-header">
                     <div class="card-title">@package.PackageName</div>
                 </div>
-                <div class="card-header">
+@*                 <div class="card-header">
                     <div class="card-title">Số người tối đa: @package.MaxPeople</div>
-                </div>
+                </div> *@
                 <div class="card-header">
                     <div class="card-title"><p class="mb-3">Mô tả: @package.Description</p></div>
                 </div>
@@ -160,26 +164,8 @@
                                     <i class="fa-solid fa-money-check" style="color: #fcd34d"></i>
                                     Giá cho trẻ nhỏ: <strong>@string.Format(info, "{0:c}", @price.ChildPrice)</strong>
                                 </div>
-
-                                <div class="product-description">
-                                    <i class="fa-solid fa-calendar-days" style="color: #2563eb"></i>
-                                    Ngày áp dụng: @if (@price.ValidFrom != null)
-                                    {
-                                        DateTime date = DateTime.Parse(price.ValidFrom.ToString());
-                                        <strong>@date.ToString("dd/MM/yyyy")</strong>
-                                    }
-                                </div>
-
-                                <div class="product-description">
-                                    <i class="fa-solid fa-calendar-days" style="color: #2563eb"></i>
-                                    Ngày hết hạn: @if (@price.GoodThru != null)
-                                    {
-                                        DateTime date = DateTime.Parse(price.GoodThru.ToString());
-                                        <strong>@date.ToString("dd/MM/yyyy")</strong>
-                                    }
-                                </div>
                                 <div class="w-100 " style="display:flex">
-                                    <a class="btn btn-warning w-50 mx-auto rounded-pill mt-3 mb-2">Chọn Gói</a>
+                                    <a class="btn btn-warning w-50 mx-auto rounded-pill mt-3 mb-2" asp-action="booktour" asp-route-packageId=@package.PackageID>Chọn Gói</a>
                                 </div>
                             </div>
                         }
