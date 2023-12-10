@@ -11,13 +11,8 @@ namespace Booking.Models
 
         [Required(ErrorMessage = "{0} không được bỏ trống")]
         [Display(Name = "Tên tour")]
-        [Column(TypeName = "nvarchar(100)")]
+        [Column(TypeName = "nvarchar(500)")]
         public string TourName { get; set; }
-
-        [Display(Name = "Địa chỉ")]
-        [Column(TypeName = "nvarchar(250)")]
-        [Required(ErrorMessage = "{0} không được bỏ trống")]
-        public string TourAddress { get; set; }
 
         [Display(Name = "Tổng quan")]
         [Column(TypeName = "nvarchar(max)")]

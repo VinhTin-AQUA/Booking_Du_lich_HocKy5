@@ -83,7 +83,6 @@ namespace Booking.Areas.AgentTour.Controllers
                 Tour newTour = new Tour()
                 {
                     TourName = model.TourName,
-                    TourAddress = model.TourAddress,
                     Overview = model.Overview,
                     Schedule = model.Schedule,
                     DepartureLocation = model.DepartureLocation,
@@ -167,7 +166,6 @@ namespace Booking.Areas.AgentTour.Controllers
             if (ModelState.IsValid)
             {
                 tour.TourName = model.TourName;
-                tour.TourAddress = model.TourAddress;
                 tour.Overview = model.Overview;
                 tour.Schedule = model.Schedule;
                 tour.DepartureLocation = model.DepartureLocation;
