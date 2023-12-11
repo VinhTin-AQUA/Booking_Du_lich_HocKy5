@@ -103,20 +103,30 @@ namespace Booking.Controllers
             var tourList = await _tourRepository.GetTourByCityName(cityName);
 
             List<double> prices = new List<double>();
-
+            List<string> imgUrls = new List<string>();
             foreach (var tour in tourList)
             {
                 var price = _tourRepository.GetPricesOfTour(tour);
                 prices.AddRange(price);
+                var imgUrlsTemp = _imageService.GetAllFileOfFolder("tours", tour.TourId.ToString());
+
+                if(imgUrlsTemp != null)
+                {
+                    imgUrls.Add(imgUrlsTemp[0]);
+                }
+                else
+                {
+                    imgUrls.Add("no-image.jpg");
+                }
             }
-
-
-
 
             if (tourList == null)
             {
                 return NotFound();
             }
+
+            ViewBag.imgUrls = imgUrls;
+
             ViewBag.tourList = tourList;
             ViewBag.BaseImgUrl = _appConfigs.BaseImgUrl;
             ViewBag.prices = prices;

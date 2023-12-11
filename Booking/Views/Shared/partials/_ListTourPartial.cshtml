@@ -2,6 +2,8 @@
     List<Tour> tours = ViewBag.tourList;
     string baseImgUrl = ViewBag.BaseImgUrl;
     List<double> prices = ViewBag.prices;
+
+    List<string> imgUrls = ViewBag.imgUrls;
 }
 <link rel="stylesheet" href="~/css/search-tours/custom-tour.css" />
 
@@ -13,24 +15,9 @@
             var info = System.Globalization.CultureInfo.GetCultureInfo("vi-VN");
             for (int i = 0; i < tours.Count(); i++)
             {
-                string folderPath = @"wwwroot/resources/images/" + tours[i].PhotoPath;
-
-                List<string> files = new List<string>();
-
-                if (Directory.Exists(folderPath))
-                {
-                    files.AddRange(Directory.GetFiles(folderPath));
-                }
-                else
-                {
-                    files.Add("no-image.jpg");
-                }
-
-                string tmp = files[0];
-
                 <div class="col-xxl-3 col-md-4 col-sm-6 col-12">
                     <div class="product-card">
-                        <img class="product-card-img-top" src="@baseImgUrl/@tmp" alt="No image">
+                        <img class="product-card-img-top" src="@baseImgUrl/@imgUrls[i]" alt="No image">
                         <div class="product-card-body">
                             <h5 class="product-title">@tours[i].TourName</h5>
                             <div class="product-price">
