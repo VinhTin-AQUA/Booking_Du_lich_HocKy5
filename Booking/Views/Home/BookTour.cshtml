@@ -10,6 +10,7 @@
 
 <h1>BookTour @packageId</h1>
 <link rel="stylesheet" href="~/css/Tour/booktour.css">
+<link rel="stylesheet" href="~/js/booktour/booktour.js">
 <!--thông tin tour-->
 <!--start-->
 <div class="col-lg-12 col-12 d-flex justify-content-center">
@@ -32,6 +33,27 @@
                 </div>
             </div>
         </div>
+
+        <div class="row mb-4">
+            <div class="d-flex justify-between mb-2">
+                <p class=" font2 col-12 col-sm-7">Người lớn (10-90)</p>
+                <div class="d-flex justify-between col-12 col-sm-5">
+                    <span onclick="minus()" class="plus justify-center ">-</span>
+                    <input id="counter" aria-label="input" class="border dark:text-white border-gray-300 dark:bg-transparent h-full text-center w-14 pb-1 " type="text" value="1" />
+                    <span onclick="plus()" class="plus">+</span>
+                </div>
+            </div>
+
+            <div class="d-flex justify-between">
+                <p class="font2 col-12 col-sm-7">Trẻ em (3-9)</p>
+                <div class="d-flex justify-between col-12 col-sm-5">
+                    <span onclick="minus()" class="plus justify-center">-</span>
+                    <input id="counter" aria-label="input" class="border dark:text-white border-gray-300 dark:bg-transparent h-full text-center w-14 pb-1" type="text" value="1" />
+                    <span onclick="plus()" class="plus">+</span>
+                </div>
+            </div>
+        </div>
+
         <div class="row">
             <div class="col-sm-8 col-10"><p class="font1"> Tổng chi phí</p></div>
             <div class="col-sm-4 col-10 "><p class="font">  100000000vnd</p> </div>
