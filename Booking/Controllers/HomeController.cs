@@ -101,12 +101,18 @@ namespace Booking.Controllers
                 return View("~/Views/Error/Error.cshtml");
             }
             var tourList = await _tourRepository.GetTourByCityName(cityName);
+
             List<double> prices = new List<double>();
+
             foreach (var tour in tourList)
             {
-                double price = _tourRepository.GetPriceOfTour(tour);
-                prices.Add(price);
+                var price = _tourRepository.GetPricesOfTour(tour);
+                prices.AddRange(price);
             }
+
+
+
+
             if (tourList == null)
             {
                 return NotFound();

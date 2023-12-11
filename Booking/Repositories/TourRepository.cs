@@ -124,31 +124,32 @@ namespace WebApi.Repositories
         public async Task<ICollection<Tour>> GetTourByCityName(string? cityName)
         {
             City cityTemp = await cityRepository.GetCityByName(cityName);
+
+            if (cityTemp == null)
+            {
+                return new List<Tour>();
+            }
+
             var tours = await context.City.Where(city => city.Id == cityTemp.Id)
-         .Join(context.CityTour, c => c.Id, ct => ct.CityId, (c, ct) => new { c, ct })
-                              .Join(context.Tour, cct => cct.ct.TourId, t => t.TourId, (cct, t) => new { cct, t })
-                              .Select(ts => ts.t).ToListAsync();
+                .Join(context.CityTour, c => c.Id, ct => ct.CityId, (c, ct) => new { c, ct })
+                .Join(context.Tour, cct => cct.ct.TourId, t => t.TourId, (cct, t) => new { cct, t })
+                .Select(ts => ts.t).ToListAsync();
             return tours;
 		}
 
-		public double GetPriceOfTour(Tour tour)
+		public List<double> GetPricesOfTour(Tour tour)
 		{
-            
-            
 		    var tourR =  context.Tour.Where(t => t.TourId == tour.TourId);
-				var result = tourR.Join(context.Packages, t => t.TourId, p => p.TourID, (t, p) => new {t,p})
+
+				var adultPrices = tourR.Join(context.Packages, t => t.TourId, p => p.TourID, (t, p) => new {t,p})
                                 .Join(context.PackagePrices, p => p.p.PackageID, pp => pp.PackageId, (p,pp) => new {p, pp})
-                                .Select(x => new
-                                {
+                                .Select(x => 
                                     x.pp.AdultPrice
-                                })
+                                )
                                 .ToList();
 
-            double price =  result.Min(u => u.AdultPrice);
 			
-		    return  price;
-			
-            
+		    return adultPrices;
 		}
 	}
 }
