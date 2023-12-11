@@ -302,7 +302,6 @@ function onSelectCity(x) {
         generateElements(dl)
 
     }
-
 }
 
 function generateElements(array) {

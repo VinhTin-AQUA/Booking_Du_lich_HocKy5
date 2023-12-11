@@ -14,7 +14,7 @@ namespace Booking.Interfaces
         public Task<ICollection<PackagePrice>> GetPackagePricesOfPackge(int packageId);
 
         public Task<PackagePrice> GetPackagePriceById(int? id);
-        public Task<PackagePrice> GetPackagePriceByID(int? id, DateTime? validFrom);
+        public Task<PackagePrice> GetPackagePriceByPackageId(int? packageId);
 
         public Task<bool> DeletePackagePrice(PackagePrice PackagePrice);
 

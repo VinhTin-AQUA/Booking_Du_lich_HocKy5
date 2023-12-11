@@ -83,7 +83,7 @@ namespace Booking.Repositories
 
 		public async Task<City> GetCityByName(string? name)
 		{
-            var city = await context.City.Where(c => c.Name == name).FirstOrDefaultAsync();
+            var city = await context.City.Where(c => c.Name.ToLower().Contains(name.ToLower())).FirstOrDefaultAsync();
             return city;
 		}
 	}
