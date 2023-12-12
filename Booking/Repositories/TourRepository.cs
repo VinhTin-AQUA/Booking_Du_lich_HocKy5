@@ -124,31 +124,45 @@ namespace WebApi.Repositories
         public async Task<ICollection<Tour>> GetTourByCityName(string? cityName)
         {
             City cityTemp = await cityRepository.GetCityByName(cityName);
+
+            if (cityTemp == null)
+            {
+                return new List<Tour>();
+            }
+
             var tours = await context.City.Where(city => city.Id == cityTemp.Id)
-         .Join(context.CityTour, c => c.Id, ct => ct.CityId, (c, ct) => new { c, ct })
-                              .Join(context.Tour, cct => cct.ct.TourId, t => t.TourId, (cct, t) => new { cct, t })
-                              .Select(ts => ts.t).ToListAsync();
+                .Join(context.CityTour, c => c.Id, ct => ct.CityId, (c, ct) => new { c, ct })
+                .Join(context.Tour, cct => cct.ct.TourId, t => t.TourId, (cct, t) => new { cct, t })
+                .Select(ts => ts.t).ToListAsync();
             return tours;
 		}
 
-		public double GetPriceOfTour(Tour tour)
-		{
-            
-            
-		    var tourR =  context.Tour.Where(t => t.TourId == tour.TourId);
-				var result = tourR.Join(context.Packages, t => t.TourId, p => p.TourID, (t, p) => new {t,p})
-                                .Join(context.PackagePrices, p => p.p.PackageID, pp => pp.PackageId, (p,pp) => new {p, pp})
-                                .Select(x => new
-                                {
-                                    x.pp.AdultPrice
-                                })
-                                .ToList();
+        public async Task<ICollection<Tour>> GetTourByCategory(int categoryId, int cityId)
+        {
+            var tours = from tour in context.Tour
+                        join cityTour in context.CityTour on tour.TourId equals cityTour.TourId
+                        join city in context.City on cityTour.CityId equals city.Id
+                        join tourCategory in context.TourCategories on tour.TourId equals tourCategory.TourId
+                        where tourCategory.CategoryId == categoryId && city.Id == cityId
+                        select tour;
+            return tours.ToList();
+        }
 
-            double price =  result.Min(u => u.AdultPrice);
-			
-		    return  price;
-			
-            
-		}
+
+		public async Task<double> GetMinPriceOfTour(Tour tour)
+		{
+            var prices = await (from pr in context.PackagePrices
+                                join package in context.Packages on pr.PackageId equals package.PackageID
+                                join t in context.Tour on package.TourID equals tour.TourId
+                                where t.TourId == tour.TourId
+                                select pr.AdultPrice).ToListAsync();
+
+            if (prices.Any())
+            {
+                double price = prices.Min();
+                return price;
+            }
+            return -1;
+        }
 	}
 }
