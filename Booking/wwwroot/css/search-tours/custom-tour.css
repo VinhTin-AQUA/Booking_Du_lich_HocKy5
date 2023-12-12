@@ -53,3 +53,15 @@
 .tour-actived > a {
     color: #55acee !important;
 }
+
+.limited-lines {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 2; /* Số hàng muốn hiển thị */
+}
+
+.limited-lines::after {
+    content: "...";
+    display: block;
+}

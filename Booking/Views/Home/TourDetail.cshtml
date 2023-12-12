@@ -4,8 +4,8 @@
     ViewData["Title"] = "Thông tin chi tiết";
 
     var schedules = Model.Schedule.Split("\n");
-    // string baseImgUrl = "https://localhost:7231/resources/images";
-    string baseImgUrl = "https://localhost:44335/resources/images";
+    string baseImgUrl = "https://localhost:7231/resources/images";
+    // string baseImgUrl = "https://localhost:44335/resources/images";
     string[] imgUrls = ViewBag.ImgUrls;
 
     List<Package> packages = ViewBag.Packages;
@@ -31,13 +31,13 @@
             <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="@baseImgUrl/@imgUrls[0]" class="d-block w-100" alt="...">
+                        <img  src="@baseImgUrl/@imgUrls[0]" class="d-block w-100" alt="no-ing">
                     </div>
 
                     @for (int i = 1; i < imgUrls.Length; i++)
                     {
                         <div class="carousel-item">
-                            <img src="@baseImgUrl/@imgUrls[i]" class="d-block w-100" alt="...">
+                            <img src="@baseImgUrl/@imgUrls[i]" class="d-block " alt="...">
                         </div>
                     }
                 </div>
