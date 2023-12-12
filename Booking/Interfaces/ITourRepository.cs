@@ -8,6 +8,7 @@ namespace Booking.Interfaces
         public Task<bool> AddTour(Tour tour);
         public Task<Tour> GetTourById(int? id);
         public Task<ICollection<Tour>> GetTourByCityName(string? cityName);
+        public  Task<ICollection<Tour>> GetTourByCategory(int categoryId, int cityId);
         public Task<ICollection<Tour>> GetAllTours();
         public Task<ICollection<Tour>> GetToursOfPoster(string posterId);
         //public Task<IdentityResult> AdddAgent(ApplicationUser agent, string password);
@@ -18,7 +19,7 @@ namespace Booking.Interfaces
         public Task<int> TotalAgent(string searchString = "");
         public Task<ICollection<AppUser>> GetAgentTours(int currentPage, int pageSize, string? searchString);
 
-		public double GetPriceOfTour( Tour tour);
+		public Task<double> GetMinPriceOfTour( Tour tour);
 
 	}
 }

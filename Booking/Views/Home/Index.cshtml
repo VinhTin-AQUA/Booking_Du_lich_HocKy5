@@ -1,16 +1,9 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Trang chủ";
 }
-
-@* <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div> *@
-
 
 
 <link  rel="stylesheet" href="~/css/home/home-custom.css" />
-
 
 <div>
 	<div class="search-home-container">
@@ -18,29 +11,32 @@
 			<div class="col-12">
 				<div class="maintenance-message w-50 mx-auto">
 					<div class="col-12">
-						<div class="card">
+						<form asp-action="SearchTours" asp-controller="Home" method="get">
+							<div class="card">
 
-							<div class="text-center fs-4 fw-bold my-3 text-primary">
-								<span>Tìm cuộc phiêu lưu tiếp theo của quý khách</span>
-							</div>
+								<div class="text-center fs-4 fw-bold my-3 text-primary">
+									<span>Tìm cuộc phiêu lưu tiếp theo của quý khách</span>
+								</div>
 
-							<div class="card-body">
-								<div class="input-group">
-									<span class="input-group-text">
-										<i class="bi bi-search"></i>
-									</span>
-									<input  name="cityName" id="cityName" type="text" class="form-control" placeholder="Nhập địa điểm bạn muốn đến" value="" >
+								<div class="card-body">
+									<div class="input-group">
+										@* <span class="input-group-text">
+											<i class="bi bi-search"></i>
+										</span> *@
+										<select name="cityName" id="searchSelect" class="form-control" >
+											<option value=""></option>
+										</select>
+										@* <input name="cityName" id="city-name" type="text" class="form-control" placeholder="Nhập địa điểm bạn muốn đến"> *@
+									</div>
+								</div>
+
+								<div class="card-footer">
+									<div class="mt-3">
+										<button type="submit" class="btn btn-primary"><i class="bi bi-search"></i> Tìm kiếm</button>
+									</div>
 								</div>
 							</div>
-
-							<div class="card-footer">
-								<div class="mt-3">
-									<!--<a href="index.html" class=" w-100 btn btn-primary">Tìm kiếm</a>-->
-									<a id="myLink" class="btn btn-primary" onclick="SearchCity()" ><i class="bi bi-search"></i></i> Tìm kiếm</a>
-									@* <button type="button" class="btn btn-info w-100"><i class="bi bi-search"></i></i> Tìm kiếm</button> *@
-								</div> 
-							</div>
-						</div>
+						</form>
 					</div>
 				</div> 
 			</div>
@@ -283,16 +279,37 @@
 </div>
 
 @* <script defer src="~/js/home/home-custom.js"></script> *@
+@section Scripts
+{
+	<script>
+		$(document).ready(function () {
+			let cityNames = [];
+			$.ajax({
+				url: '@Url.Action("GetAllCities", "City")',
+				type: 'GET',
+				dataType: 'json',
+				data: { key: 'value' },
+				success: function (data) {
+					cityNames = data.cityNames;
+					$("#searchSelect").select2({
+						data: cityNames,
+						placeholder: "Nhập tên thành phố",
+						allowClear: true
+					});
+				},
+				error: function (jqXHR, textStatus, errorThrown) {
+					// Xử lý lỗi
+					console.log('AJAX Error:', textStatus, errorThrown);
 
-<script type="text/javascript">
-	function SearchCity() {
-		let cityName = document.getElementById("cityName").value;
-		
-		var myLink = document.getElementById("myLink");
-
-		// Use template literals to construct the URL with parameters
-		myLink.href = `@Url.Action("search-tours")/${encodeURIComponent(cityName)}`;
-	}
+					// Chi tiết lỗi từ đối tượng jqXHR
+					console.log('Status Code:', jqXHR.status);
+					console.log('Response Text:', jqXHR.responseText);
+				}
+			});
 
 
-</script>
+			
+		});
+	</script>
+}
+
