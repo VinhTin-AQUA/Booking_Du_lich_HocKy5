@@ -13,6 +13,7 @@ using System.Security.Claims;
 
 namespace Booking.Controllers
 {
+    //[Route("home")]
     public class HomeController : Controller
     {
 		private readonly AppConfigs _appConfigs;
@@ -21,10 +22,19 @@ namespace Booking.Controllers
         private readonly IBookTourRepository _bookTourRepository;
         private readonly IPackagePriceRepository _packagePriceRepository;
         private readonly ITourRepository _tourRepository;
-        private readonly IImageService _imageService;
+		private readonly ICityRepository cityRepository;
+		private readonly IImageService _imageService;
         private readonly IPackageRepository _packageRepository;
 
-        public HomeController(IPackageRepository packageRepository,IImageService imageService, AppConfigs appConfigs, ILogger<HomeController> logger, UserManager<AppUser> userManager, IBookTourRepository bookTourRepository, IPackagePriceRepository packagePriceRepository, ITourRepository tourRepository)
+        public HomeController(IPackageRepository packageRepository,
+            IImageService imageService, 
+            AppConfigs appConfigs, 
+            ILogger<HomeController> logger, 
+            UserManager<AppUser> userManager, 
+            IBookTourRepository bookTourRepository, 
+            IPackagePriceRepository packagePriceRepository, 
+            ITourRepository tourRepository,
+            ICityRepository cityRepository)
         {
             _appConfigs = appConfigs;
 			_logger = logger;
@@ -32,7 +42,8 @@ namespace Booking.Controllers
             _bookTourRepository = bookTourRepository;
             _packagePriceRepository = packagePriceRepository;
             _tourRepository = tourRepository;
-            _imageService = imageService;
+			this.cityRepository = cityRepository;
+			_imageService = imageService;
             _packageRepository = packageRepository;
         }
 
@@ -92,25 +103,81 @@ namespace Booking.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        [Route("home/search-tours/{cityName}")]
-        [HttpGet]
-        public async Task<IActionResult> SearchTour(string? cityName)
+
+		[HttpGet]
+		[Route("search-tours")]
+        public async Task<IActionResult> SearchTours([FromQuery]string? cityName)
         {
             if (cityName == null)
             {
                 return View("~/Views/Error/Error.cshtml");
             }
+
+            var city = await cityRepository.GetCityByName(cityName);
+            if(city == null)
+            {
+                return View("~/Views/Error/Error.cshtml");
+            }
+
             var tourList = await _tourRepository.GetTourByCityName(cityName);
+            
+            List<double> prices = new List<double>();
+            List<string> imgUrls = new List<string>();
+              
+
+			foreach (var tour in tourList)
+            {
+                var price = await _tourRepository.GetMinPriceOfTour(tour);
+                prices.Add(price);
+
+                var imgUrlsTemp = _imageService.GetAllFileOfFolder("tours", tour.TourId.ToString());
+
+                if(imgUrlsTemp != null)
+                {
+                    imgUrls.Add(imgUrlsTemp[0]);
+                }
+                else
+                {
+                    imgUrls.Add("no-image.jpg");
+                }
+            }
+
+            if (tourList == null)
+            {
+                return NotFound();
+            }
+
+            ViewBag.imgUrls = imgUrls;
+            ViewBag.tourList = tourList;
+            ViewBag.BaseImgUrl = _appConfigs.BaseImgUrl;
+            ViewBag.prices = prices;
+            ViewBag.CityId = city.Id;
+
+			return View();
+        }
+
+
+        [Route("search-tours-by-category")]
+        [HttpGet]
+        public async Task<IActionResult> SearchTourByCategory(int categoryId, int cityId)
+        {
+            var city = await cityRepository.GetCityById(cityId);
+            if (categoryId <= -1)
+            {
+                return RedirectToAction("SearchTour", new { city.Name });
+            }
+
+            var tourList = await _tourRepository.GetTourByCategory(categoryId, cityId);
 
             List<double> prices = new List<double>();
             List<string> imgUrls = new List<string>();
             foreach (var tour in tourList)
             {
-                var price = _tourRepository.GetPricesOfTour(tour);
-                prices.AddRange(price);
+                var price = await _tourRepository.GetMinPriceOfTour(tour);
+                prices.Add(price);
                 var imgUrlsTemp = _imageService.GetAllFileOfFolder("tours", tour.TourId.ToString());
 
-                if(imgUrlsTemp != null)
+                if (imgUrlsTemp != null)
                 {
                     imgUrls.Add(imgUrlsTemp[0]);
                 }
@@ -130,8 +197,10 @@ namespace Booking.Controllers
             ViewBag.tourList = tourList;
             ViewBag.BaseImgUrl = _appConfigs.BaseImgUrl;
             ViewBag.prices = prices;
-            return View();
+            ViewBag.CityId = city.Id;
+            return View("SearchTours");
         }
+
 
         [Route("tour-detail/{tourId}")]
         [HttpGet]
