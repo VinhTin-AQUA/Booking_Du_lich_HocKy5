@@ -124,7 +124,6 @@ namespace Booking.Controllers
             List<double> prices = new List<double>();
             List<string> imgUrls = new List<string>();
               
-
 			foreach (var tour in tourList)
             {
                 var price = await _tourRepository.GetMinPriceOfTour(tour);
@@ -151,8 +150,8 @@ namespace Booking.Controllers
             ViewBag.tourList = tourList;
             ViewBag.BaseImgUrl = _appConfigs.BaseImgUrl;
             ViewBag.prices = prices;
-            ViewBag.CityId = city.Id;
-
+            ViewBag.city = city;
+            ViewBag.CategoryId = -1;
 			return View();
         }
 
@@ -162,12 +161,15 @@ namespace Booking.Controllers
         public async Task<IActionResult> SearchTourByCategory(int categoryId, int cityId)
         {
             var city = await cityRepository.GetCityById(cityId);
+            ICollection<Tour> tourList = new List<Tour>();
             if (categoryId <= -1)
             {
-                return RedirectToAction("SearchTour", new { city.Name });
+                tourList = await _tourRepository.GetTourByCityName(city.Name);
             }
-
-            var tourList = await _tourRepository.GetTourByCategory(categoryId, cityId);
+            else
+            {
+                tourList = await _tourRepository.GetTourByCategory(categoryId, cityId);
+            }
 
             List<double> prices = new List<double>();
             List<string> imgUrls = new List<string>();
@@ -197,7 +199,8 @@ namespace Booking.Controllers
             ViewBag.tourList = tourList;
             ViewBag.BaseImgUrl = _appConfigs.BaseImgUrl;
             ViewBag.prices = prices;
-            ViewBag.CityId = city.Id;
+            ViewBag.city = city;
+            ViewBag.CategoryId = categoryId;
             return View("SearchTours");
         }
 
