@@ -137,19 +137,32 @@ namespace WebApi.Repositories
             return tours;
 		}
 
-		public List<double> GetPricesOfTour(Tour tour)
+        public async Task<ICollection<Tour>> GetTourByCategory(int categoryId, int cityId)
+        {
+            var tours = from tour in context.Tour
+                        join cityTour in context.CityTour on tour.TourId equals cityTour.TourId
+                        join city in context.City on cityTour.CityId equals city.Id
+                        join tourCategory in context.TourCategories on tour.TourId equals tourCategory.TourId
+                        where tourCategory.CategoryId == categoryId && city.Id == cityId
+                        select tour;
+            return tours.ToList();
+        }
+
+
+		public async Task<double> GetMinPriceOfTour(Tour tour)
 		{
-		    var tourR =  context.Tour.Where(t => t.TourId == tour.TourId);
+            var prices = await (from pr in context.PackagePrices
+                                join package in context.Packages on pr.PackageId equals package.PackageID
+                                join t in context.Tour on package.TourID equals tour.TourId
+                                where t.TourId == tour.TourId
+                                select pr.AdultPrice).ToListAsync();
 
-				var adultPrices = tourR.Join(context.Packages, t => t.TourId, p => p.TourID, (t, p) => new {t,p})
-                                .Join(context.PackagePrices, p => p.p.PackageID, pp => pp.PackageId, (p,pp) => new {p, pp})
-                                .Select(x => 
-                                    x.pp.AdultPrice
-                                )
-                                .ToList();
-
-			
-		    return adultPrices;
-		}
+            if (prices.Any())
+            {
+                double price = prices.Min();
+                return price;
+            }
+            return -1;
+        }
 	}
 }
