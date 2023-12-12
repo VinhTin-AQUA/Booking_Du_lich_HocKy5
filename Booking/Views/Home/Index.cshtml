@@ -3,313 +3,303 @@
 }
 
 
-<link  rel="stylesheet" href="~/css/home/home-custom.css" />
+<link rel="stylesheet" href="~/css/home/home-custom.css" />
 
 <div>
-	<div class="search-home-container">
-		<div class="row justify-content-center align-items-center m-0">
-			<div class="col-12">
-				<div class="maintenance-message w-50 mx-auto">
-					<div class="col-12">
-						<form asp-action="SearchTours" asp-controller="Home" method="get">
-							<div class="card">
+    <div class="search-home-container">
+        <div class="row justify-content-center align-items-center m-0">
+            <div class="col-12">
+                <div class="maintenance-message w-50 mx-auto">
+                    <div class="col-12">
+                        <form asp-action="SearchTours" asp-controller="Home" method="get">
+                            <div class="card">
 
-								<div class="text-center fs-4 fw-bold my-3 text-primary">
-									<span>Tìm cuộc phiêu lưu tiếp theo của quý khách</span>
-								</div>
+                                <div class="text-center fs-4 fw-bold my-3 text-primary">
+                                    <span>Tìm cuộc phiêu lưu tiếp theo của quý khách</span>
+                                </div>
 
-								<div class="card-body">
-									<div class="input-group">
-										@* <span class="input-group-text">
-											<i class="bi bi-search"></i>
-										</span> *@
-										<select name="cityName" id="searchSelect" class="form-control" >
-											<option value=""></option>
-										</select>
-										@* <input name="cityName" id="city-name" type="text" class="form-control" placeholder="Nhập địa điểm bạn muốn đến"> *@
-									</div>
-								</div>
+                                <div class="card-body">
+                                    <div class="">
+                                        <select name="cityName" id="searchSelect" class="form-control w-100">
+                                            <option value=""></option>
+                                        </select>
+                                    </div>
+                                </div>
 
-								<div class="card-footer">
-									<div class="mt-3">
-										<button type="submit" class="btn btn-primary"><i class="bi bi-search"></i> Tìm kiếm</button>
-									</div>
-								</div>
-							</div>
-						</form>
-					</div>
-				</div> 
-			</div>
-			<div class="col-12 bg-light rounded w-75 city-temp-container">
-				<div class="d-flex gap-3 justify-content-between align-items-center">
+                                <div class="card-footer">
+                                    <div class="mt-3">
+                                        <button type="submit" class="btn btn-primary"><i class="bi bi-search"></i> Tìm kiếm</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
 
-					<div class="product-card city-temp-item">
-						<img class="product-card-img-top" src="https://pix6.agoda.net/geo/city/13170/1_13170_02.jpg?ca=6&ce=1&s=396x298&ar=4x3" alt="Bootstrap Gallery">
-						<div class="product-card-body ">
-@* 									START TEST *@
-							<a>
-								<h5 class="product-title">
-									<a asp-action="searchtour" asp-route-cityName="Hồ Chí Minh">Hồ Chí Minh</a>
-								</h5>
-							</a>
-							@* 		END TEST *@
-@* 							<h5 class="product-title">Hồ Chí Minh</h5> *@
-						</div>
-					</div>
+            <div class="col-12 bg-light rounded w-75 city-temp-container">
+                <div class="d-flex gap-3 justify-content-between align-items-center">
 
-					<div class="product-card city-temp-item">
-						<img class="product-card-img-top" src="https://pix6.agoda.net/geo/city/2758/065f4f2c9fa263611ab65239ecbeaff7.jpg?ce=0&s=396x298&ar=4x3" alt="Bootstrap Gallery">
-						<div class="product-card-body">
-							<h5 class="product-title">Hà Nội</h5>
-						</div>
-					</div>
+                    <a asp-action="SearchTours" asp-route-cityName="Hồ Chí Minh" class="product-card city-temp-item d-block">
+                        <img class="product-card-img-top" src="https://pix6.agoda.net/geo/city/13170/1_13170_02.jpg?ca=6&ce=1&s=396x298&ar=4x3" alt="Bootstrap Gallery">
+                        <div class="product-card-body ">
+                            <h5 class="product-title">
+                                Hồ Chí Minh
+                            </h5>
+                        </div>
+                    </a>
 
-					<div class="product-card city-temp-item">
-						<img class="product-card-img-top" src="https://pix6.agoda.net/geo/city/17190/1_17190_02.jpg?ca=6&ce=1&s=396x298&ar=4x3" alt="Bootstrap Gallery">
-						<div class="product-card-body">
-							<h5 class="product-title">Vũng Tàu</h5>
-						</div>
-					</div>
+                    <a asp-action="SearchTours" asp-route-cityName="Hà Nội" class="product-card city-temp-item d-block">
+                        <img class="product-card-img-top" src="https://pix6.agoda.net/geo/city/2758/065f4f2c9fa263611ab65239ecbeaff7.jpg?ce=0&s=396x298&ar=4x3" alt="Bootstrap Gallery">
+                        <div class="product-card-body">
+                            <h5 class="product-title">Hà Nội</h5>
+                        </div>
+                    </a>
 
-					<div class="product-card city-temp-item">
-						<img class="product-card-img-top" src="https://pix6.agoda.net/geo/city/16440/1_16440_02.jpg?ca=6&ce=1&s=396x298&ar=4x3" alt="Bootstrap Gallery">
-						<div class="product-card-body">
-							<h5 class="product-title">Đà Nẵng</h5>
-						</div>
-					</div>
+                    <a asp-action="SearchTours" asp-route-cityName="Vũng Tàu" class="product-card city-temp-item d-block">
+                        <img class="product-card-img-top" src="https://pix6.agoda.net/geo/city/17190/1_17190_02.jpg?ca=6&ce=1&s=396x298&ar=4x3" alt="Bootstrap Gallery">
+                        <div class="product-card-body">
+                            <h5 class="product-title">Vũng Tàu</h5>
+                        </div>
+                    </a>
 
-					<div class="product-card city-temp-item">
-						<img class="product-card-img-top" src="https://pix6.agoda.net/geo/city/15932/1_15932_02.jpg?ca=6&ce=1&s=396x298&ar=4x3" alt="Bootstrap Gallery">
-						<div class="product-card-body">
-							<h5 class="product-title">Đà Lạt</h5>
-						</div>
-					</div>
+                    <a asp-action="SearchTours" asp-route-cityName="Đà Nẵng" class="product-card city-temp-item d-block">
+                        <img class="product-card-img-top" src="https://pix6.agoda.net/geo/city/16440/1_16440_02.jpg?ca=6&ce=1&s=396x298&ar=4x3" alt="Bootstrap Gallery">
+                        <div class="product-card-body">
+                            <h5 class="product-title">Đà Nẵng</h5>
+                        </div>
+                    </a>
 
-					<div class="product-card city-temp-item">
-						<img class="product-card-img-top" src="https://pix6.agoda.net/geo/city/2679/1_2679_02.jpg?ca=6&ce=1&s=396x298&ar=4x3" alt="Bootstrap Gallery">
-						<div class="product-card-body">
-							<h5 class="product-title">Nha Trang</h5>
-						</div>
-					</div>
+                    <a asp-action="SearchTours" asp-route-cityName="Thiên Huế" class="product-card city-temp-item d-block">
+                        <img class="product-card-img-top" src="https://pix6.agoda.net/geo/city/15932/1_15932_02.jpg?ca=6&ce=1&s=396x298&ar=4x3" alt="Bootstrap Gallery">
+                        <div class="product-card-body">
+                            <h5 class="product-title">Thiên Huế</h5>
+                        </div>
+                    </a>
 
-				</div>
-			</div>
+                    <a asp-action="SearchTours" asp-route-cityName="Khánh Hòa" class="product-card city-temp-item d-block">
+                        <img class="product-card-img-top" src="https://pix6.agoda.net/geo/city/2679/1_2679_02.jpg?ca=6&ce=1&s=396x298&ar=4x3" alt="Bootstrap Gallery">
+                        <div class="product-card-body">
+                            <h5 class="product-title">Khánh Hòa</h5>
+                        </div>
+                    </a>
 
-		</div>
-		<!-- Row end -->
-	</div>
+                </div>
+            </div>
 
-	<!-- một số tour cho 1 vài địa điểm -->
+        </div>
+        <!-- Row end -->
+    </div>
 
-	<div class="card container mx-auto">
-		<div class="card-header ">
-			<div class="card-title w-100 text-center fs-4">Những địa điểm nổi bật được đề xuất cho quý khách</div>
-		</div>
+    <!-- một số tour cho 1 vài địa điểm -->
 
-		<div class="card">
-			<div class="card-body">
-				<div class="custom-badge-group">
-					<div class="mx-auto">
-						<span id="hcm" class="badge city-item fs-6 active-city-item" onclick="onSelectCity('hcm')">Hồ Chí Minh</span>
-						<span id="hn" class="badge city-item fs-6" onclick="onSelectCity('hn')">Hà Nội</span>
-						<span id="vt" class="badge city-item fs-6" onclick="onSelectCity('vt')">Vũng Tàu</span>
-						<span id="dn" class="badge city-item fs-6" onclick="onSelectCity('dn')">Đà Nẵng</span>
-						<span id="dl" class="badge city-item fs-6" onclick="onSelectCity('dl')">Đà Lạt</span>
-					</div>
-				</div>
-			</div>
-		</div>
+    <div class="card container mx-auto">
+        <div class="card-header ">
+            <div class="card-title w-100 text-center fs-4">Những địa điểm nổi bật được đề xuất cho quý khách</div>
+        </div>
 
-@* 		<div class="card-body">
+        <div class="card">
+            <div class="card-body">
+                <div class="custom-badge-group">
+                    <div class="mx-auto">
+                        <span id="hcm" class="badge city-item fs-6 active-city-item" onclick="onSelectCity('hcm')">Hồ Chí Minh</span>
+                        <span id="hn" class="badge city-item fs-6" onclick="onSelectCity('hn')">Hà Nội</span>
+                        <span id="vt" class="badge city-item fs-6" onclick="onSelectCity('vt')">Vũng Tàu</span>
+                        <span id="dn" class="badge city-item fs-6" onclick="onSelectCity('dn')">Đà Nẵng</span>
+                        <span id="dl" class="badge city-item fs-6" onclick="onSelectCity('dl')">Đà Lạt</span>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-			<!-- Row start -->
-			<div id="city-items" class="row">
+        @* 		<div class="card-body">
 
-				<div class="col-xxl-3 col-md-4 col-sm-6 col-12">
-					<div class="product-card">
-						<img class="product-card-img-top" src="~/assets/admin-layout/images/food/img6.jpg" alt="Bootstrap Gallery">
-						<div class="product-card-body">
-							<h5 class="product-title">Green Salad</h5>
-							<div class="product-price">
-								<span class="disount-price">VNĐ 20</span>
-							</div>
-							<div class="product-description">
-								Xuartz movement, manufactured by Zitizen watch co., ltd.
-							</div>
-							<div class="product-actions">
-								<button class="btn btn-success addToCart">Xem</button>
-							</div>
-						</div>
-					</div>
+        <!-- Row start -->
+        <div id="city-items" class="row">
 
-				</div>
+        <div class="col-xxl-3 col-md-4 col-sm-6 col-12">
+        <div class="product-card">
+        <img class="product-card-img-top" src="~/assets/admin-layout/images/food/img6.jpg" alt="Bootstrap Gallery">
+        <div class="product-card-body">
+        <h5 class="product-title">Green Salad</h5>
+        <div class="product-price">
+        <span class="disount-price">VNĐ 20</span>
+        </div>
+        <div class="product-description">
+        Xuartz movement, manufactured by Zitizen watch co., ltd.
+        </div>
+        <div class="product-actions">
+        <button class="btn btn-success addToCart">Xem</button>
+        </div>
+        </div>
+        </div>
 
-				<div class="col-xxl-3 col-md-4 col-sm-6 col-12">
-					<div class="product-card">
-						<img class="product-card-img-top" src="~/assets/admin-layout/images/food/img1.jpg" alt="Bootstrap Gallery">
-						<div class="product-card-body">
-							<h5 class="product-title">Nicoise Salad</h5>
-							<div class="product-price">
-								<span class="disount-price">VNĐ 19</span>
-							</div>
+        </div>
 
-							<div class="product-description">
-								Xuartz movement, manufactured by Zitizen watch co., ltd.
-							</div>
-							<div class="product-actions">
-								<button class="btn btn-success addToCart">Xem</button>
-							</div>
-						</div>
-					</div>
-				</div>
+        <div class="col-xxl-3 col-md-4 col-sm-6 col-12">
+        <div class="product-card">
+        <img class="product-card-img-top" src="~/assets/admin-layout/images/food/img1.jpg" alt="Bootstrap Gallery">
+        <div class="product-card-body">
+        <h5 class="product-title">Nicoise Salad</h5>
+        <div class="product-price">
+        <span class="disount-price">VNĐ 19</span>
+        </div>
 
-				<div class="col-xxl-3 col-md-4 col-sm-6 col-12">
-					<div class="product-card">
-						<img class="product-card-img-top" src="~/assets/admin-layout/images/food/img8.jpg" alt="Bootstrap Gallery">
-						<div class="product-card-body">
-							<h5 class="product-title">Augustin Salad</h5>
-							<div class="product-price">
-								<span class="disount-price">VNĐ 18</span>
-							</div>
-							<div class="product-description">
-								Xuartz movement, manufactured by Zitizen watch co., ltd.
-							</div>
-							<div class="product-actions">
-								<button class="btn btn-success addToCart">Xem</button>
-							</div>
-						</div>
-					</div>
-				</div>
+        <div class="product-description">
+        Xuartz movement, manufactured by Zitizen watch co., ltd.
+        </div>
+        <div class="product-actions">
+        <button class="btn btn-success addToCart">Xem</button>
+        </div>
+        </div>
+        </div>
+        </div>
 
-				<div class="col-xxl-3 col-md-4 col-sm-6 col-12">
-					<div class="product-card">
-						<img class="product-card-img-top" src="~/assets/admin-layout/images/food/img9.jpg" alt="Bootstrap Gallery">
-						<div class="product-card-body">
-							<h5 class="product-title">Bagatelle Salad</h5>
-							<div class="product-price">
-								<span class="disount-price">VNĐ 15</span>
-							</div>
-							<div class="product-description">
-								Xuartz movement, manufactured by Zitizen watch co., ltd.
-							</div>
-							<div class="product-actions">
-								<button class="btn btn-success addToCart">Xem</button>
-							</div>
-						</div>
-					</div>
-				</div>
+        <div class="col-xxl-3 col-md-4 col-sm-6 col-12">
+        <div class="product-card">
+        <img class="product-card-img-top" src="~/assets/admin-layout/images/food/img8.jpg" alt="Bootstrap Gallery">
+        <div class="product-card-body">
+        <h5 class="product-title">Augustin Salad</h5>
+        <div class="product-price">
+        <span class="disount-price">VNĐ 18</span>
+        </div>
+        <div class="product-description">
+        Xuartz movement, manufactured by Zitizen watch co., ltd.
+        </div>
+        <div class="product-actions">
+        <button class="btn btn-success addToCart">Xem</button>
+        </div>
+        </div>
+        </div>
+        </div>
 
-				<div class="col-xxl-3 col-md-4 col-sm-6 col-12">
-					<div class="product-card">
-						<img class="product-card-img-top" src="~/assets/admin-layout/images/food/img2.jpg" alt="Bootstrap Gallery">
-						<div class="product-card-body">
-							<h5 class="product-title">Salade Lyonnaise</h5>
-							<div class="product-price">
-								<span class="disount-price">VNĐ 21</span>
-							</div>
-							<div class="product-description">
-								Xuartz movement, manufactured by Zitizen watch co., ltd.
-							</div>
-							<div class="product-actions">
-								<button class="btn btn-success addToCart">Xem</button>
-							</div>
-						</div>
-					</div>
-				</div>
+        <div class="col-xxl-3 col-md-4 col-sm-6 col-12">
+        <div class="product-card">
+        <img class="product-card-img-top" src="~/assets/admin-layout/images/food/img9.jpg" alt="Bootstrap Gallery">
+        <div class="product-card-body">
+        <h5 class="product-title">Bagatelle Salad</h5>
+        <div class="product-price">
+        <span class="disount-price">VNĐ 15</span>
+        </div>
+        <div class="product-description">
+        Xuartz movement, manufactured by Zitizen watch co., ltd.
+        </div>
+        <div class="product-actions">
+        <button class="btn btn-success addToCart">Xem</button>
+        </div>
+        </div>
+        </div>
+        </div>
 
-				<div class="col-xxl-3 col-md-4 col-sm-6 col-12">
-					<div class="product-card">
-						<img class="product-card-img-top" src="~/assets/admin-layout/images/food/img3.jpg" alt="Bootstrap Gallery">
-						<div class="product-card-body">
-							<h5 class="product-title">Cendrillon Salad</h5>
-							<div class="product-price">
-								<span class="disount-price">VNĐ 9</span>
-							</div>
-							<div class="product-description">
-								Xuartz movement, manufactured by Zitizen watch co., ltd.
-							</div>
-							<div class="product-actions">
-								<button class="btn btn-success addToCart">Xem</button>
-							</div>
-						</div>
-					</div>
-				</div>
+        <div class="col-xxl-3 col-md-4 col-sm-6 col-12">
+        <div class="product-card">
+        <img class="product-card-img-top" src="~/assets/admin-layout/images/food/img2.jpg" alt="Bootstrap Gallery">
+        <div class="product-card-body">
+        <h5 class="product-title">Salade Lyonnaise</h5>
+        <div class="product-price">
+        <span class="disount-price">VNĐ 21</span>
+        </div>
+        <div class="product-description">
+        Xuartz movement, manufactured by Zitizen watch co., ltd.
+        </div>
+        <div class="product-actions">
+        <button class="btn btn-success addToCart">Xem</button>
+        </div>
+        </div>
+        </div>
+        </div>
 
-				<div class="col-xxl-3 col-md-4 col-sm-6 col-12">
-					<div class="product-card">
-						<img class="product-card-img-top" src="~/assets/admin-layout/images/food/img3.jpg" alt="Bootstrap Gallery">
-						<div class="product-card-body">
-							<h5 class="product-title">Espagnole Salad</h5>
-							<div class="product-price">
-								<span class="disount-price">VNĐ 27</span>
-							</div>
-							<div class="product-description">
-								Xuartz movement, manufactured by Zitizen watch co., ltd.
-							</div>
-							<div class="product-actions">
-								<button class="btn btn-success addToCart">Xem</button>
-							</div>
-						</div>
-					</div>
-				</div>
+        <div class="col-xxl-3 col-md-4 col-sm-6 col-12">
+        <div class="product-card">
+        <img class="product-card-img-top" src="~/assets/admin-layout/images/food/img3.jpg" alt="Bootstrap Gallery">
+        <div class="product-card-body">
+        <h5 class="product-title">Cendrillon Salad</h5>
+        <div class="product-price">
+        <span class="disount-price">VNĐ 9</span>
+        </div>
+        <div class="product-description">
+        Xuartz movement, manufactured by Zitizen watch co., ltd.
+        </div>
+        <div class="product-actions">
+        <button class="btn btn-success addToCart">Xem</button>
+        </div>
+        </div>
+        </div>
+        </div>
 
-				<div class="col-xxl-3 col-md-4 col-sm-6 col-12">
-					<div class="product-card">
-						<img class="product-card-img-top" src="~/assets/admin-layout/images/food/img5.jpg" alt="Bootstrap Gallery">
-						<div class="product-card-body">
-							<h5 class="product-title">Grande Duchesse</h5>
-							<div class="product-price">
-								<span class="disount-price">VNĐ 25</span>
-							</div>
-							<div class="product-description">
-								Xuartz movement, manufactured by Zitizen watch co., ltd.
-							</div>
-							<div class="product-actions">
-								<button class="btn btn-success addToCart">Xem</button>
-							</div>
-						</div>
-					</div>
-				</div>
+        <div class="col-xxl-3 col-md-4 col-sm-6 col-12">
+        <div class="product-card">
+        <img class="product-card-img-top" src="~/assets/admin-layout/images/food/img3.jpg" alt="Bootstrap Gallery">
+        <div class="product-card-body">
+        <h5 class="product-title">Espagnole Salad</h5>
+        <div class="product-price">
+        <span class="disount-price">VNĐ 27</span>
+        </div>
+        <div class="product-description">
+        Xuartz movement, manufactured by Zitizen watch co., ltd.
+        </div>
+        <div class="product-actions">
+        <button class="btn btn-success addToCart">Xem</button>
+        </div>
+        </div>
+        </div>
+        </div>
 
-			</div>
-			<!-- Row end -->
+        <div class="col-xxl-3 col-md-4 col-sm-6 col-12">
+        <div class="product-card">
+        <img class="product-card-img-top" src="~/assets/admin-layout/images/food/img5.jpg" alt="Bootstrap Gallery">
+        <div class="product-card-body">
+        <h5 class="product-title">Grande Duchesse</h5>
+        <div class="product-price">
+        <span class="disount-price">VNĐ 25</span>
+        </div>
+        <div class="product-description">
+        Xuartz movement, manufactured by Zitizen watch co., ltd.
+        </div>
+        <div class="product-actions">
+        <button class="btn btn-success addToCart">Xem</button>
+        </div>
+        </div>
+        </div>
+        </div>
 
-		</div> *@
-	</div>
+        </div>
+        <!-- Row end -->
+
+        </div> *@
+    </div>
 </div>
 
 @* <script defer src="~/js/home/home-custom.js"></script> *@
 @section Scripts
 {
-	<script>
-		$(document).ready(function () {
-			let cityNames = [];
-			$.ajax({
-				url: '@Url.Action("GetAllCities", "City")',
-				type: 'GET',
-				dataType: 'json',
-				data: { key: 'value' },
-				success: function (data) {
-					cityNames = data.cityNames;
-					$("#searchSelect").select2({
-						data: cityNames,
-						placeholder: "Nhập tên thành phố",
-						allowClear: true
-					});
-				},
-				error: function (jqXHR, textStatus, errorThrown) {
-					// Xử lý lỗi
-					console.log('AJAX Error:', textStatus, errorThrown);
+    <script>
+        $(document).ready(function () {
+            let cityNames = [];
+            $.ajax({
+                url: '@Url.Action("GetAllCities", "City")',
+                type: 'GET',
+                dataType: 'json',
+                data: { key: 'value' },
+                success: function (data) {
+                    cityNames = data.cityNames;
+                    $("#searchSelect").select2({
+                        data: cityNames,
+                        placeholder: "Nhập tên thành phố",
+                        allowClear: true,
+                        selectionCssClass: "w-100"
+                    });
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    // Xử lý lỗi
+                    console.log('AJAX Error:', textStatus, errorThrown);
 
-					// Chi tiết lỗi từ đối tượng jqXHR
-					console.log('Status Code:', jqXHR.status);
-					console.log('Response Text:', jqXHR.responseText);
-				}
-			});
-
-
-			
-		});
-	</script>
+                    // Chi tiết lỗi từ đối tượng jqXHR
+                    console.log('Status Code:', jqXHR.status);
+                    console.log('Response Text:', jqXHR.responseText);
+                }
+            });
+        });
+    </script>
 }
 
