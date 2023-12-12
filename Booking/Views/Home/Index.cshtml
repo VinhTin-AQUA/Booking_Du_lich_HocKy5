@@ -20,10 +20,13 @@
 
 								<div class="card-body">
 									<div class="input-group">
-										<span class="input-group-text">
+										@* <span class="input-group-text">
 											<i class="bi bi-search"></i>
-										</span>
-										<input name="cityName" type="text" class="form-control" placeholder="Nhập địa điểm bạn muốn đến">
+										</span> *@
+										<select name="cityName" id="searchSelect" class="form-control" >
+											<option value=""></option>
+										</select>
+										@* <input name="cityName" id="city-name" type="text" class="form-control" placeholder="Nhập địa điểm bạn muốn đến"> *@
 									</div>
 								</div>
 
@@ -276,16 +279,37 @@
 </div>
 
 @* <script defer src="~/js/home/home-custom.js"></script> *@
-@* 
-<script type="text/javascript">
-	function SearchCity() {
-		let cityName = document.getElementById("cityName").value;
-		
-		var myLink = document.getElementById("myLink");
+@section Scripts
+{
+	<script>
+		$(document).ready(function () {
+			let cityNames = [];
+			$.ajax({
+				url: '@Url.Action("GetAllCities", "City")',
+				type: 'GET',
+				dataType: 'json',
+				data: { key: 'value' },
+				success: function (data) {
+					cityNames = data.cityNames;
+					$("#searchSelect").select2({
+						data: cityNames,
+						placeholder: "Nhập tên thành phố",
+						allowClear: true
+					});
+				},
+				error: function (jqXHR, textStatus, errorThrown) {
+					// Xử lý lỗi
+					console.log('AJAX Error:', textStatus, errorThrown);
 
-		// Use template literals to construct the URL with parameters
-		myLink.href = `@Url.Action("search-tours")/${encodeURIComponent(cityName)}`;
-	}
+					// Chi tiết lỗi từ đối tượng jqXHR
+					console.log('Status Code:', jqXHR.status);
+					console.log('Response Text:', jqXHR.responseText);
+				}
+			});
 
 
-</script> *@
+			
+		});
+	</script>
+}
+
