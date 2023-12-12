@@ -19,8 +19,8 @@
                                 </div>
 
                                 <div class="card-body">
-                                    <div class="input-group">
-                                        <select name="cityName" id="searchSelect" class="form-control">
+                                    <div class="">
+                                        <select name="cityName" id="searchSelect" class="form-control w-100">
                                             <option value=""></option>
                                         </select>
                                     </div>
@@ -286,7 +286,8 @@
                     $("#searchSelect").select2({
                         data: cityNames,
                         placeholder: "Nhập tên thành phố",
-                        allowClear: true
+                        allowClear: true,
+                        selectionCssClass: "w-100"
                     });
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
@@ -298,9 +299,6 @@
                     console.log('Response Text:', jqXHR.responseText);
                 }
             });
-
-
-
         });
     </script>
 }
