@@ -25,6 +25,7 @@ namespace Booking.Controllers
 		private readonly ICityRepository cityRepository;
 		private readonly IImageService _imageService;
         private readonly IPackageRepository _packageRepository;
+        private readonly IUserManagerRepository _userManagerRepository;
 
         public HomeController(IPackageRepository packageRepository,
             IImageService imageService, 
@@ -34,7 +35,8 @@ namespace Booking.Controllers
             IBookTourRepository bookTourRepository, 
             IPackagePriceRepository packagePriceRepository, 
             ITourRepository tourRepository,
-            ICityRepository cityRepository)
+            ICityRepository cityRepository, IUserManagerRepository userManagerRepository)
+             
         {
             _appConfigs = appConfigs;
 			_logger = logger;
@@ -45,6 +47,7 @@ namespace Booking.Controllers
 			this.cityRepository = cityRepository;
 			_imageService = imageService;
             _packageRepository = packageRepository;
+            _userManagerRepository = userManagerRepository;
         }
 
         public IActionResult Index()
@@ -233,14 +236,24 @@ namespace Booking.Controllers
         public async Task<IActionResult> BookTour(int packageId)
         {
             var packagePrice = await _packagePriceRepository.GetPackagePriceByPackageId(packageId);
+            var packageSelected = await _packageRepository.GetPackageById(packageId);
             if (packagePrice == null)
             {
                 return NotFound();
             }
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if(userId == null)
+            {
+                return Unauthorized();
+            }
+            var user = await _userManagerRepository.GetUserById(userId);
+
             ViewBag.packageId = packageId;
             ViewBag.userId = userId;
-            ViewBag.price = packagePrice.AdultPrice;
+            ViewBag.AdultPrice = packagePrice.AdultPrice;
+            ViewBag.ChildPrice = packagePrice.ChildPrice;
+            ViewBag.package = packageSelected;
+            ViewBag.user = user;
             return View();
         }
 
