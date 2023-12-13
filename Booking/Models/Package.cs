@@ -28,7 +28,6 @@ namespace Booking.Models
         public Tour Tour { get; set; }
 
         public ICollection<PackagePrice>? PackagePrices { get; set; }
-
         public ICollection<BookTour>? BookTours { get; set; }
     }
 }

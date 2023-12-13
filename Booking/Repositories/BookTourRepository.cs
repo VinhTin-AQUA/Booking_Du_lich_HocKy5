@@ -33,10 +33,10 @@ namespace Booking.Repositories
             return bookTours;
         }
 
-        public async Task<BookTour?> GetBookTourByID(string userID, int packageID, DateTime? DepartureDate)
+        public async Task<BookTour?> GetBookTourByID(int bookTourId)
         {
             var bookTour = await context.BookTours
-                .Where(bt => bt.UserID == userID && bt.DepartureDate == DepartureDate && bt.PackageId == packageID)
+                .Where(bt => bt.BookTourId == bookTourId)
                 .FirstOrDefaultAsync();
             return bookTour;
         }
