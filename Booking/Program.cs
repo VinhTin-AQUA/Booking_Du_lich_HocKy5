@@ -38,6 +38,7 @@ builder.Services.AddScoped<IBookTourRepository, BookTourRepository>();
 builder.Services.AddScoped<ITourCategoryRepository, TourCategoryRepository>();
 //builder.Services.AddScoped<IVisitingRepository, VisitingRepository>();
 builder.Services.AddScoped<ICityTourRepository, CityTourRepository>();
+builder.Services.AddScoped<IBookTourDetailRepository, BookTourDetailRepository>();
 
 //identity
 builder.Services.AddIdentity<AppUser, IdentityRole>()

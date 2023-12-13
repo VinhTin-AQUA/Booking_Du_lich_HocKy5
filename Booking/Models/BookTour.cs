@@ -7,22 +7,21 @@ namespace Booking.Models
     public class BookTour
     {
         [Key]
+        public int BookTourId { get; set; }
         public string UserID { get; set; }
-
-        [Key]
         public int PackageId { get; set; }
-
-        [Key]
         public DateTime? DepartureDate { get; set; }
-
         public DateTime? BookingDate { get; set; }
+        public double? Price { get; set; }
+        public string? SpecialRequirements { get; set; }
 
         // khoa ngoai
+
+        public ICollection<BookTourDetail>? BookTourDetails { get; set; }
 
         public Package? Package { get; set; }
 
         public AppUser? User { get; set; }
 
-        public double Price { get; set; }
     }
 }
