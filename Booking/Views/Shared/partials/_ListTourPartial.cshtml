@@ -24,10 +24,10 @@
             @{
                 for (int i = 0; i < tours.Count(); i++)
                 {
-                    <div class="col-xxl-3 col-md-4 col-sm-6 col-12">
-                        <div class="product-card" style="height:300px">
-                            <img class="product-card-img-top" style="width: 229px; height: 153px" src="@baseImgUrl/@imgUrls[i]" alt="No image">
-                            <div class="product-card-body">
+                    <div class="col-xxl-3 col-md-4 col-sm-6 col-12 cus-tour">
+                        <div class="product-card cus-card" style="height:100%; margin:0; padding:2px">
+                            <img class="product-card-img-top" style="width: 100%; height: 153px" src="@baseImgUrl/@imgUrls[i]" alt="No image">
+                            <div class="product-card-body ">
                                 <div class="product-title limited-lines">
                                     <h5 style="">@tours[i].TourName </h5>
                                 </div>
@@ -49,7 +49,7 @@
 
                             <div class="product-card-footer">
                                 <div class="product-actions">
-                                    <a class="btn btn-success addToCart" asp-action="tourdetail" asp-route-tourId=@tours[i].TourId>Xem</a>
+                                    <a class="btn btn-primary addToCart" asp-action="tourdetail" asp-route-tourId=@tours[i].TourId>Xem</a>
                                 </div>
                             </div>
                         </div>
