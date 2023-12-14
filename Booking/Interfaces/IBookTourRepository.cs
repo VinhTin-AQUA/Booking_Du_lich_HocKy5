@@ -7,7 +7,7 @@ namespace Booking.Interfaces
         public Task<bool> Save();
         public Task<bool> AddBookTour(BookTour bookTour);
         public Task<ICollection<BookTour>> GetAllBookTour();
-        public Task<BookTour?> GetBookTourByID(string userID, int packageID, DateTime? DepartureDate);
+        public Task<BookTour?> GetBookTourByID(int bookTourId);
 
         public Task<bool> DeleteBookTour(BookTour bookTour);
 
