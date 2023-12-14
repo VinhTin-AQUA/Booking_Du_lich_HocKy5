@@ -229,7 +229,6 @@ namespace Booking.Controllers
 
         [Route("book-tour/{packageId}")]
         [HttpGet]
-
         public async Task<IActionResult> BookTour(int packageId)
         {
             var packagePrice = await _packagePriceRepository.GetPackagePriceByPackageId(packageId);
@@ -246,7 +245,6 @@ namespace Booking.Controllers
 
         [Route("book-tour/{packageId}")]
         [HttpPost]
-
         public async Task<IActionResult> BookTour(int packageId, BookTour model)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);

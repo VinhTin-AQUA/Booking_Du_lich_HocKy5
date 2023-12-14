@@ -1,40 +1,76 @@
-﻿@model Booking.Models.BookTour
+﻿﻿@model Booking.Models.BookTour
 
 @{
     ViewData["Title"] = "BookTour";
     Layout = "~/Views/Shared/_Layout.cshtml";
     int packageId = ViewBag.packageId;
     var userId = ViewBag.userId;
-    var price = ViewBag.price;
+    var adultPrice = ViewBag.AdultPrice;
+    var childPrice = ViewBag.ChildPrice;
+    var packageSelected = ViewBag.package;
+    var user = ViewBag.user;
 }
 
-<h1>BookTour @packageId</h1>
+
 <link rel="stylesheet" href="~/css/Tour/booktour.css">
+@* <link rel="stylesheet" href="~/js/booktour/booktour.js"> *@
+<script language="JavaScript" type="text/javascript" src="~/js/booktour/booktour.js"></script>
 <!--thông tin tour-->
 <!--start-->
 <div class="col-lg-12 col-12 d-flex justify-content-center">
     <div class="col-sm-6 col-12 bg-color card-border bd">
         <div class="product-added-card">
-            <img class="product-added-img" src="assets/images/food/img7.jpg" alt="Admin Panel">
+            
             <div class="product-added-card-body">
-                <h3 class="product-added-title ">Tên tour Tên tour Tên tour Tên tour Tên tour Tên tour Tên tour</h3>
+                <h3 class="product-added-title ">@packageSelected.PackageName</h3>
 
                 <div class="product-added-description">
-                    Lettuce, cucumbers, tomatoes, scallions, corn, chicken with tangy barbecue ranch dressing.
+                    Mô tả: @packageSelected.Description
                 </div>
-                <div class="icon d-flex">
-                    <i class="bi bi-calendar2-week"></i>
-                    <p>Ngày tháng</p>
+                <div class="icon d-flex my-2">
+                    
+                    <label class="">Ngày khỏi hành: </label>
+                    <input class="mx-3" type="date" id = "departureDate" name="departureDate"/>
+                    
                 </div>
                 <div class="icon d-flex">
                     <i class="bi bi-file-person"></i>
-                    <p>Số lượng khách</p>
+                    <span class="mx-1">Số người tham gia: </span>
+                    <input class=" border border-light text-center" id="totalParticipation" readonly value="0" type="text" style="width:50px"/> 
                 </div>
             </div>
         </div>
+
+        <div class="row mb-4">
+            <div class="d-flex justify-between mb-2">
+                <p class=" font2 col-12 col-sm-7">Người lớn(10-90):</p>
+                <div class="d-flex justify-between col-12 col-sm-5">
+                    <span onclick="MinusQuantityOfAdult(@adultPrice, @childPrice)" class="alter-quantity">-</span>
+                    <input id="quantityAdult" aria-label="input" class="border dark:text-white border-gray-300 dark:bg-transparent h-full text-center w-14 pb-1 mx-2" type="text" value="0"  readonly />
+                    <span onclick="PlusQuantityOfAdult(@adultPrice, @childPrice)" class="alter-quantity">+</span>
+                </div>
+            </div>
+
+            <div class="d-flex justify-between">
+                <p class="font2 col-12 col-sm-7">Trẻ em(3-9):</p>
+                <div class="d-flex justify-between col-12 col-sm-5">
+                    <span onclick="MinusQuantityOfChild(@adultPrice, @childPrice)" class="alter-quantity">-</span>
+
+                    <input id="quantityChild" aria-label="input" class="border dark:text-white border-gray-300 dark:bg-transparent h-full text-center w-14 pb-1 mx-2" type="text" value="0" readonly onchange="Sum(@adultPrice, @childPrice)()" />
+                    <span onclick="PlusQuantityOfChild(@adultPrice, @childPrice)" class="alter-quantity">+</span>
+                    
+                </div>
+            </div>
+        </div>
+
         <div class="row">
-            <div class="col-sm-8 col-10"><p class="font1"> Tổng chi phí</p></div>
-            <div class="col-sm-4 col-10 "><p class="font">  100000000vnd</p> </div>
+            <div class="col-sm-8 col-10"><p class="font1">Tổng chi phí:</p></div>
+            <div class="col-sm-4 col-10 ">
+                <div class="flex">
+                    <input class="w-75 border border-light text-center" id="sumPrice" type="text" readonly value="0" />
+                    <span>VNĐ</span>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -51,25 +87,25 @@
                     <div class="col-sm-6 col-12">
                         <div class="mb-3">
                             <label class="form-label">Họ <span class="text-red">*</span></label>
-                            <input type="text" class="form-control" placeholder="">
+                            <input type="text" class="form-control" placeholder="" value="@user.LastName" readonly>
                         </div>
                     </div>
                     <div class="col-sm-6 col-12">
                         <div class="mb-3">
                             <label class="form-label">Tên <span class="text-red">*</span></label>
-                            <input type="text" class="form-control" placeholder="">
+                            <input type="text" class="form-control" placeholder="" value="@user.FirstName">
                         </div>
                     </div>
                     <div class="col-sm-12 col-12">
                         <div class="mb-3">
                             <label class="form-label">Email <span class="text-red">*</span></label>
-                            <input type="text" class="form-control" placeholder="">
+                            <input type="text" class="form-control" placeholder="" value="@user.Email">
                         </div>
                     </div>
                     <div class="col-sm-12 col-12">
                         <div class="mb-3">
                             <label class="form-label">Số điện thoại <span class="text-red">*</span></label>
-                            <input type="text" class="form-control" placeholder="">
+                            <input type="text" class="form-control" placeholder="" value="@user.PhoneNumber">
                         </div>
                     </div>
                 </div>
@@ -127,4 +163,10 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    
 }
+
+
+
+
+    
