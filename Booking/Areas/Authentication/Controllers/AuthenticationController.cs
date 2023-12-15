@@ -115,19 +115,21 @@ namespace Booking.Areas.Authentication.Controllers
 
         [Route("login")]
         [HttpGet]
-        public async Task<IActionResult> Login()
+        public async Task<IActionResult> Login(int? returnUrl = null)
         {
             if (await authenRepository.GetUserSignedIn(User) != null)
             {
                 return RedirectToAction("Index", "Home");
             }
+            ViewBag.ReturnUrl = returnUrl;
             return View();
         }
 
         [Route("login")]
         [HttpPost]
-        public async Task<IActionResult> Login(SignInModel signInModel)
+        public async Task<IActionResult> Login(SignInModel signInModel, [FromQuery]int? returnUrl = null)
         {
+
             if (signInModel == null || string.IsNullOrEmpty(signInModel.Email) || string.IsNullOrEmpty(signInModel.Password))
             {
                 ModelState.AddModelError("Email", "Sai tài khoản hoặc mật khẩu");
@@ -166,8 +168,13 @@ namespace Booking.Areas.Authentication.Controllers
                 return View();
             }
 
+			if (returnUrl != null)
+			{
+				return RedirectToAction("TourDetail", "Home", new { tourId = returnUrl });
+			}
 
-            return RedirectToAction("Index", "Home");
+
+			return RedirectToAction("Index", "Home");
         }
 
         [Route("logout")]
