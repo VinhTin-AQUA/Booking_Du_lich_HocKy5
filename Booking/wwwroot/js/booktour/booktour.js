@@ -90,13 +90,13 @@ function RenderCardInfo() {
                     <div class="col-sm-12 col-12">
                         <div class="mb-3">
                             <label class="form-label">Họ <span class="text-red">*</span></label>
-                            <input type="text" class="form-control" placeholder="" id = "firstNameAdult">
+                            <input type="text" class="form-control" placeholder="" id = "firstNameAdult-${i}">
                         </div>
                     </div>
                     <div class="col-sm-12 col-12">
                         <div class="mb-3">
                             <label class="form-label">Tên <span class="text-red">*</span></label>
-                            <input type="text" class="form-control" placeholder="" id = "lastNameAdult">
+                            <input type="text" class="form-control" placeholder="" id = "lastNameAdult-${i}">
                         </div>
                     </div>
                 </div>
@@ -110,27 +110,27 @@ function RenderCardInfo() {
         }
 
         if (parseInt(quantityChild) > 0) {
-            for (var i = parseInt(quantityAdult) + 1; i <= parseInt(total); i++) {
+            for (var i = 1; i <= parseInt(quantityChild); i++) {
                 let childElement = `
             <div class="col-lg-12 col-12 d-flex justify-content-center ">
     <!--chi tiet lien he-->
     <!-- Card start -->
     <div class="col-sm-6 col-12 ">
         <div class="card-border bg-color sd">
-            <div class="card-border-title">Du khách ${i} - TRẺ EM</div>
+            <div class="card-border-title">Du khách ${parseInt(quantityAdult) + i} - TRẺ EM</div>
             <div class="card-border-body">
 
                 <div class="row">
                     <div class="col-sm-12 col-12">
                         <div class="mb-3">
                             <label class="form-label">Họ <span class="text-red">*</span></label>
-                            <input type="text" class="form-control" placeholder="" id = "firstNameChild">
+                            <input type="text" class="form-control" placeholder="" id = "firstNameChild-${i}">
                         </div>
                     </div>
                     <div class="col-sm-12 col-12">
                         <div class="mb-3">
                             <label class="form-label">Tên <span class="text-red">*</span></label>
-                            <input type="text" class="form-control" placeholder="" id = "lastNameChild">
+                            <input type="text" class="form-control" placeholder="" id = "lastNameChild-${i}">
                         </div>
                     </div>
                 </div>
