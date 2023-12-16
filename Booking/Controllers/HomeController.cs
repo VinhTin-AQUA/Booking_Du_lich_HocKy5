@@ -290,5 +290,13 @@ namespace Booking.Controllers
         {
             return View();
         }
+
+        [Route("Checkout")]
+        [HttpGet]
+        public async Task<IActionResult> Checkout()
+        {
+            return View();
+        }
+
     }
 }
