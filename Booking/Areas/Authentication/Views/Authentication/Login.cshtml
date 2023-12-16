@@ -1,10 +1,11 @@
 ﻿@model SignInModel
 @{
-    ViewData["Title"] = "Đăng nhập";
+	ViewData["Title"] = "Đăng nhập";
+	int returnUrl = ViewBag.ReturnUrl;
 }
 
 
-<form asp-area="Authentication" asp-controller="Authentication" asp-action="Login">
+<form asp-area="Authentication" asp-controller="Authentication" asp-action="Login" asp-route-returnUrl="@returnUrl">
 	<div class="login-box">
 		<div class="login-form">
 			<a href="index.html" class="login-logo mx-auto">

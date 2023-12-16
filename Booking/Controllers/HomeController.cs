@@ -240,10 +240,11 @@ namespace Booking.Controllers
             {
                 return NotFound();
             }
+
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if(userId == null)
             {
-                return Unauthorized();
+                return RedirectToAction("Login", "Authentication",new {returnUrl = packageSelected.TourID } );
             }
             var user = await _userManagerRepository.GetUserById(userId);
 

@@ -40,5 +40,19 @@
     cursor: pointer;
 }
 
+.pl {
+    padding-left: 20px;
+}
+
+.iconpay {
+    height: 30px;
+    width: 35px;
+    margin-right: 10px;
+}
+
+.bg-color1 {
+    background-color: blue;
+}
+
 
 
