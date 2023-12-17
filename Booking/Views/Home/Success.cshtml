@@ -1,1 +1,24 @@
-﻿
+﻿@model string;
+@{
+    ViewData["Title"] = "Thanh toán thành công";
+    var name = "@dotlottie";
+}
+
+
+
+<div style="display:flex; justify-content:center">
+    <script src="https://unpkg.com/@name/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+
+    <dotlottie-player src="https://lottie.host/c762f792-587c-4f24-b4ed-f33d2a5ba0a2/49hilaCuKw.json" background="transparent" speed="1.2" style="width: 300px; height: 300px; " loop autoplay></dotlottie-player>
+
+    
+</div>
+
+    <h2 style="text-align:center">Đăng kí thành công!</h2>
+<h4 style="text-align:center">Cảm ơn bạn đã sử dụng dịch vụ.</h4>
+
+
+<div style="width:100%; display:flex; justify-content:center; margin-top:30px; color:cornflowerblue">
+<a  asp-action="index" asp-controller="Home" >Quay lại trang chủ</a>
+
+</div>
