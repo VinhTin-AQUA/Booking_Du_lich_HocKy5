@@ -331,26 +331,29 @@ namespace Booking.Controllers
                 return NotFound();
 
             }
-            BookTour newBookTour = new BookTour()
-            {
-                UserID = userId,
-                PackageId = packageId,
-                DepartureDate = model.DepartureDate,
-                BookingDate = model.BookingDate,
-                Price = model.Price
-            };
-            var r = await _bookTourRepository.AddBookTour(newBookTour);
-            if (r == false)
-            {
-                return View();
-            }
+            model.UserID = userId;
+            model.PackageId = packageId;
+            model.BookingDate = DateTime.Now;
+            //var r = await _bookTourRepository.AddBookTour(model);
+            //if (r == false)
+            //{
+            //    return View();
+            //}
+            Package package = await _packageRepository.GetPackageById(packageId);
+            Tour tour = await _tourRepository.GetTourById(package.TourID);
 
-            return RedirectToAction("Success");
+            ViewBag.tourName = tour.TourName;
+            ViewBag.packageName = package.PackageName;
+            ViewBag.price = model.Price;
+            ViewBag.numOfTourist = Request.Form["totalParticipation"];
+            ViewBag.departureDate = DateTime.Now.Date;
+
+            return View("Checkout");
         }
 
         [Route("success")]
         [HttpGet]
-        public IActionResult Success()
+        public async Task<IActionResult> Success()
         {
             return View();
         }

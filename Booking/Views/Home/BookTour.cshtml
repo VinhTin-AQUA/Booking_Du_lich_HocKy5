@@ -17,141 +17,152 @@
 <script language="JavaScript" type="text/javascript" src="~/js/booktour/booktour.js"></script>
 <!--thông tin tour-->
 <!--start-->
-<div class="col-lg-12 col-12 d-flex justify-content-center">
-    <div class="col-sm-6 col-12 bg-color card-border bd">
-        <div class="product-added-card">
-            
-            <div class="product-added-card-body">
-                <h3 class="product-added-title ">@packageSelected.PackageName</h3>
 
-                <div class="product-added-description">
-                    Mô tả: @packageSelected.Description
-                </div>
-                <div class="icon d-flex my-2">
-                    
-                    <label class="">Ngày khỏi hành: </label>
-                    <input class="mx-3" type="date" id = "departureDate" name="departureDate"/>
-                    
-                </div>
-                <div class="icon d-flex">
-                    <i class="bi bi-file-person"></i>
-                    <span class="mx-1">Số người tham gia: </span>
-                    <input class=" border border-light text-center form-control" id="totalParticipation" readonly value="0" type="text" style="width:50px" onchange="RenderCardInfo()" />
-                </div>
-            </div>
-        </div>
+@using (Html.BeginForm("BookTour", "Home", FormMethod.Post))
+{
+    <div class="col-lg-12 col-12 d-flex justify-content-center">
+        <div class="col-sm-6 col-12 bg-color card-border bd">
+            <div class="product-added-card">
 
-        <div class="row mb-4">
-            <div class="d-flex justify-between mb-2">
-                <p class=" font2 col-12 col-sm-7">Người lớn(10-90):</p>
-                <div class="d-flex justify-between col-12 col-sm-5">
-                    <span onclick="MinusQuantityOfAdult(@adultPrice, @childPrice)" class="alter-quantity">-</span>
-                    <input id="quantityAdult" aria-label="input" class="border dark:text-white border-gray-300 dark:bg-transparent h-full text-center w-14 pb-1 mx-2 form-control" type="text" value="0" readonly />
-                    <span onclick="PlusQuantityOfAdult(@adultPrice, @childPrice)" class="alter-quantity">+</span>
-                </div>
-            </div>
+                <div class="product-added-card-body">
+                    <h3 class="product-added-title ">@packageSelected.PackageName</h3>
 
-            <div class="d-flex justify-between">
-                <p class="font2 col-12 col-sm-7">Trẻ em(3-9):</p>
-                <div class="d-flex justify-between col-12 col-sm-5">
-                    <span onclick="MinusQuantityOfChild(@adultPrice, @childPrice)" class="alter-quantity">-</span>
-
-                    <input id="quantityChild" aria-label="input" class="border dark:text-white border-gray-300 dark:bg-transparent h-full text-center w-14 pb-1 mx-2 form-control" type="text" value="0" readonly onchange="Sum(@adultPrice, @childPrice)()" />
-                    <span onclick="PlusQuantityOfChild(@adultPrice, @childPrice)" class="alter-quantity">+</span>
-                    
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-8 col-10"><p class="font1">Tổng chi phí:</p></div>
-            <div class="col-sm-4 col-10 ">
-                <div class="flex">
-                    <input class="w-75 border border-light text-center font btn" id="sumPrice" type="text" readonly value="0" />
-                    <span>VNĐ</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-<div class="col-lg-12 col-12 d-flex justify-content-center " >
-    <!--chi tiet lien he (khach hang)-->
-    <!-- Card start -->
-    <div class="col-sm-6 col-12 ">
-        <div class="card-border bg-color">
-            <div class="card-border-title">Chi tiết liên hệ</div>
-            <div class="card-border-body">
-
-                <div class="row">
-                    <div class="col-sm-6 col-12">
-                        <div class="mb-3">
-                            <label class="form-label">Họ <span class="text-red">*</span></label>
-                            <input type="text" class="form-control" placeholder="" value="@user.LastName" readonly>
-                        </div>
+                    <div class="product-added-description">
+                        Mô tả: @packageSelected.Description
                     </div>
-                    <div class="col-sm-6 col-12">
-                        <div class="mb-3">
-                            <label class="form-label">Tên <span class="text-red">*</span></label>
-                            <input type="text" class="form-control" placeholder="" value="@user.FirstName">
-                        </div>
+                    <div class="icon d-flex my-2">
+
+                        <label class="">Ngày khỏi hành: </label>
+                        @*                     <input class="mx-3" type="date" id = "departureDate" name="departureDate"/> *@
+                        @Html.TextBoxFor(model => model.DepartureDate, new {@type = "date", @id = "departureDate", @name = "departureDate", @class = "mx-3"})
                     </div>
-                    <div class="col-sm-12 col-12">
-                        <div class="mb-3">
-                            <label class="form-label">Email <span class="text-red">*</span></label>
-                            <input type="text" class="form-control" placeholder="" value="@user.Email">
-                        </div>
+                    <div class="icon d-flex">
+                        <i class="bi bi-file-person"></i>
+                        <span class="mx-1">Số người tham gia: </span>
+
+@*                         <input class=" border border-light text-center form-control" id="totalParticipation" readonly value="0" type="text" style="width:50px" onchange="RenderCardInfo()" /> *@
+                        @Html.TextBox("totalParticipation", 0, new {@class = "border border-light text-center form-control", @value = "0", @id = "totalParticipation", @readonly = "readonly", @style = "width:50px", @onchange = "RenderCardInfo()"})
+
                     </div>
-                    <div class="col-sm-12 col-12">
-                        <div class="mb-3">
-                            <label class="form-label">Số điện thoại <span class="text-red">*</span></label>
-                            <input type="text" class="form-control" placeholder="" value="@user.PhoneNumber">
-                        </div>
+                </div>
+            </div>
+
+            <div class="row mb-4">
+                <div class="d-flex justify-between mb-2">
+                    <p class=" font2 col-12 col-sm-7">Người lớn(10-90):</p>
+                    <div class="d-flex justify-between col-12 col-sm-5">
+                        <span onclick="MinusQuantityOfAdult(@adultPrice, @childPrice)" class="alter-quantity">-</span>
+                        <input id="quantityAdult" aria-label="input" class="border dark:text-white border-gray-300 dark:bg-transparent h-full text-center w-14 pb-1 mx-2 form-control" type="text" value="0" readonly />
+                        <span onclick="PlusQuantityOfAdult(@adultPrice, @childPrice)" class="alter-quantity">+</span>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-between">
+                    <p class="font2 col-12 col-sm-7">Trẻ em(3-9):</p>
+                    <div class="d-flex justify-between col-12 col-sm-5">
+                        <span onclick="MinusQuantityOfChild(@adultPrice, @childPrice)" class="alter-quantity">-</span>
+
+                        <input id="quantityChild" aria-label="input" class="border dark:text-white border-gray-300 dark:bg-transparent h-full text-center w-14 pb-1 mx-2 form-control" type="text" value="0" readonly onchange="Sum(@adultPrice, @childPrice)()" />
+                        <span onclick="PlusQuantityOfChild(@adultPrice, @childPrice)" class="alter-quantity">+</span>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-8 col-10"><p class="font1">Tổng chi phí:</p></div>
+                <div class="col-sm-4 col-10 ">
+                    <div class="flex">
+                        @*                     <input class="w-75 border border-light text-center font btn" id="sumPrice" type="text" readonly value="0" /> *@
+                        @Html.TextBoxFor(model => model.Price, new {@type = "text", @value = "0", @id = "sumPrice", @class = "w-75 border border-light text-center font btn", @readonly="readonly"})
+                        <span>VNĐ</span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Card end -->
-</div>
 
-<div id="card-info">
-</div>
 
-<div class="col-lg-12 col-12 d-flex justify-content-center ">
-    <!--chi tiet lien he (khach hang)-->
-    <!-- Card start -->
-    <div class="col-sm-6 col-12 ">
-        <div class="card-border bg-color">
-            <div class="card-border-body">
-                <div class="row">
-                    <div class="col-sm-12 col-12">
-                        <div class="mb-0">
-                            <label class="form-label">Yêu cầu thêm(tùy chọn) <span class="text-red">*</span></label>
-                            <textarea rows="4" class="form-control"
-                                      placeholder=""></textarea>
+
+    <div class="col-lg-12 col-12 d-flex justify-content-center ">
+        <!--chi tiet lien he (khach hang)-->
+        <!-- Card start -->
+        <div class="col-sm-6 col-12 ">
+            <div class="card-border bg-color">
+                <div class="card-border-title">Chi tiết liên hệ</div>
+                <div class="card-border-body">
+
+                    <div class="row">
+                        <div class="col-sm-6 col-12">
+                            <div class="mb-3">
+                                <label class="form-label">Họ <span class="text-red">*</span></label>
+                                <input type="text" class="form-control" placeholder="" value="@user.LastName" readonly>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12">
+                            <div class="mb-3">
+                                <label class="form-label">Tên <span class="text-red">*</span></label>
+                                <input type="text" class="form-control" placeholder="" value="@user.FirstName">
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-12">
+                            <div class="mb-3">
+                                <label class="form-label">Email <span class="text-red">*</span></label>
+                                <input type="text" class="form-control" placeholder="" value="@user.Email">
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-12">
+                            <div class="mb-3">
+                                <label class="form-label">Số điện thoại <span class="text-red">*</span></label>
+                                <input type="text" class="form-control" placeholder="" value="@user.PhoneNumber">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- Card end -->
     </div>
-    <!-- Card end -->
-</div>
+
+    <div id="card-info">
+    </div>
+
+    <div class="col-lg-12 col-12 d-flex justify-content-center ">
+        <!--chi tiet lien he (khach hang)-->
+        <!-- Card start -->
+        <div class="col-sm-6 col-12 ">
+            <div class="card-border bg-color">
+                <div class="card-border-body">
+                    <div class="row">
+                        <div class="col-sm-12 col-12">
+                            <div class="mb-0">
+                                <label class="form-label">Yêu cầu thêm(tùy chọn) <span class="text-red">*</span></label>
+                                @*                             <textarea rows="4" class="form-control"
+                            placeholder=""></textarea> *@
+                                @Html.TextAreaFor(model => model.SpecialRequirements, new {@rows = 4, @class="form-control", @placeholder=""})
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Card end -->
+    </div>
 
 
-<!--Thanh toán-->
-<div class="col-lg-12 col-12 d-flex justify-content-center ">
-    <div class="form-check mb-3">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-        <label class="form-check-label" for="flexCheckDefault">Bằng cách tiếp tục tôi đồng ý với điều khoản sử dụng của họ</label>
+    <!--Thanh toán-->
+    <div class="col-lg-12 col-12 d-flex justify-content-center ">
+        <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">Bằng cách tiếp tục tôi đồng ý với điều khoản sử dụng của họ</label>
+        </div>
     </div>
-</div>
-<div class="col-lg-12 col-12 d-flex justify-content-center ">
-    <a asp-action="checkout" asp-controller="home" class="btn btn-info col-sm-6 font1">Tiếp tục thanh toán</a>
-</div>
+    <div class="col-lg-12 col-12 d-flex justify-content-center ">
+@*         <a asp-action="checkout" asp-controller="home" class="btn btn-info col-sm-6 font1">Tiếp tục thanh toán</a> *@
+        <button type="submit" class="btn btn-info col-sm-6 font1">Đặt ngay</button>
+    </div>
+}
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
