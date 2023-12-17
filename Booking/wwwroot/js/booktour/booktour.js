@@ -62,6 +62,9 @@ function PlusQuantityOfAdult(adult, child) {
 }
 
 function RenderCardInfo() {
+
+    let quantityChild = document.querySelector("#quantityChild").value;
+    let quantityAdult = document.querySelector("#quantityAdult").value;
     let total = document.querySelector("#totalParticipation").value;
 
     let parentCard = document.querySelector("#card-info");
@@ -73,34 +76,27 @@ function RenderCardInfo() {
             parentCard.removeChild(parentCard.firstChild);
         }
         let childs = [];
-        for (var i = 0; i < parseInt(total); i++) {
+        for (var i = 1; i <= parseInt(quantityAdult); i++) {
             let childElement = `
             <div class="col-lg-12 col-12 d-flex justify-content-center ">
     <!--chi tiet lien he-->
     <!-- Card start -->
     <div class="col-sm-6 col-12 ">
         <div class="card-border bg-color sd">
-            <div class="card-border-title">Chi tiết liên hệ - Du khách ${i+1} (vé)</div>
+            <div class="card-border-title">Du khách ${i} - NGƯỜI LỚN</div>
             <div class="card-border-body">
 
                 <div class="row">
                     <div class="col-sm-12 col-12">
                         <div class="mb-3">
                             <label class="form-label">Họ <span class="text-red">*</span></label>
-                            <input type="text" class="form-control" placeholder="">
+                            <input type="text" class="form-control" placeholder="" id = "firstNameAdult-${i}">
                         </div>
                     </div>
                     <div class="col-sm-12 col-12">
                         <div class="mb-3">
                             <label class="form-label">Tên <span class="text-red">*</span></label>
-                            <input type="text" class="form-control" placeholder="">
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-12">
-                        <div class="mb-0">
-                            <label class="form-label">Yêu cầu thêm(tùy chọn) <span class="text-red">*</span></label>
-                            <textarea rows="4" class="form-control"
-                                      placeholder=""></textarea>
+                            <input type="text" class="form-control" placeholder="" id = "lastNameAdult-${i}">
                         </div>
                     </div>
                 </div>
@@ -112,6 +108,42 @@ function RenderCardInfo() {
             `
             childs.push(childElement);
         }
+
+        if (parseInt(quantityChild) > 0) {
+            for (var i = 1; i <= parseInt(quantityChild); i++) {
+                let childElement = `
+            <div class="col-lg-12 col-12 d-flex justify-content-center ">
+    <!--chi tiet lien he-->
+    <!-- Card start -->
+    <div class="col-sm-6 col-12 ">
+        <div class="card-border bg-color sd">
+            <div class="card-border-title">Du khách ${parseInt(quantityAdult) + i} - TRẺ EM</div>
+            <div class="card-border-body">
+
+                <div class="row">
+                    <div class="col-sm-12 col-12">
+                        <div class="mb-3">
+                            <label class="form-label">Họ <span class="text-red">*</span></label>
+                            <input type="text" class="form-control" placeholder="" id = "firstNameChild-${i}">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-12">
+                        <div class="mb-3">
+                            <label class="form-label">Tên <span class="text-red">*</span></label>
+                            <input type="text" class="form-control" placeholder="" id = "lastNameChild-${i}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Card end -->
+</div>
+            `
+                childs.push(childElement);
+            }
+        }
+
         parentCard.innerHTML = childs.join("");
 
     }

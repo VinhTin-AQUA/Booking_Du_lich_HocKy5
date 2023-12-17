@@ -45,3 +45,15 @@
     border-bottom: 2px solid rgb(99, 148, 245);
 }
 
+.limited-lines {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 2; /* Số hàng muốn hiển thị */
+}
+
+    .limited-lines::after {
+        content: "...";
+        display: block;
+    }
+
