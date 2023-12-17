@@ -16,14 +16,15 @@
 
 <div class="content-wrapper-scroll ">
     <!-- anh -->
-    <div class="row justify-content-center row-custom">
-        <div class="col-11">
+    <div class="col-10 col-sm-12 d-flex justify-content-center row-custom">
+        <div class="col-12 col-sm-10">
+            <div class="card">
+                <div class="card-body">
             <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
+                <div class="carousel-inner h ">
                     <div class="carousel-item active img-container">
                         <img src="@baseImgUrl/@imgUrls[0]" class="d-block img-tour" alt="no-ing">
                     </div>
-
                     @for (int i = 1; i < imgUrls.Length; i++)
                     {
                         <div class="carousel-item img-container">
@@ -36,16 +37,17 @@
                     <span class="visually-hidden">Previous</span>
                 </button>
 
-                <button class="carousel-control-next bg-secondary" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <button class="carousel-control-next bg-secondary " type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                            <span class="carousel-control-next-icon " aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
         </div>
     </div>
-
-    <div class="col-lg-12 col-12 d-flex justify-content-center ">
-        <div class="wrapper card date" style="width: 90%; height: 100%">
+ </div>
+</div>
+    <div class="col-sm-12 col-12 d-flex justify-content-center ">
+        <div class="wrapper card d-flex justify-content-center col-12 col-sm-10">
             <div class="card-header">
                 <div class="card-title fs-4 fw-bold">@Model.TourName</div>
             </div>
@@ -55,7 +57,7 @@
     <!-- thong tin khac -->
     <div class="col-lg-12 col-12 d-flex justify-content-center ">
 
-        <div class="wrapper card date" style="width: 90%; height: 100%">
+        <div class="wrapper card col-sm-8 col-12">
             <div class="card-header">
                 <div class="card-title">Địa điểm khởi hành và trở về</div>
             </div>
@@ -73,7 +75,7 @@
 
     <!--Tong quan-->
     <div class="col-lg-12 col-12 d-flex justify-content-center ">
-        <div class="wrapper card date" style="width: 90%; height: 100%">
+        <div class="wrapper card card col-sm-8 col-12">
             <div class="card-header">
                 <div class="card-title">Tổng quan</div>
             </div>
@@ -89,13 +91,13 @@
     <!-- lịch trình -->
     <div class=" col-xl-12 col-12 d-flex justify-content-center">
         <!-- Card start -->
-        <div class="card" style="width: 90%; height: 100%">
+        <div class="card col-sm-8 col-12">
 
             <div class="card-header ">
                 <div class="card-title">Lịch trình</div>
             </div>
 
-            <div class="card-body " style="width: 100%; height: 100%">
+            <div class="card-body col-sm-8 col-12">
                 <div class="scroll300 img" style="width: 100%; height: 250%">
                     <div class="timeline-activity" style="width: 100%; height: auto !important">
                         @if (schedules.Length < 0)
@@ -141,7 +143,7 @@
     @if (packages.Count() == 0)
     {
         <div class=" col-xl-12 col-12 d-flex justify-content-center">
-            <div class="wrapper card" style="width: 90%; height: 100%">
+            <div class="wrapper card col-12 col-sm-8" style="width: 90%; height: 100%">
                 <div class="card-body " style="width: 100%; height: 100%">
                     <div class="scroll300 img" style="width: 100%; height: 100%">
                         <div class="timeline-activity" style="width: 100%; height: 100%">
@@ -157,14 +159,14 @@
         @foreach (var package in packages)
         {
             <div class="col-xl-12 col-12 d-flex justify-content-center">
-                <div class="wrapper card rounded-4 date sd" style="width: 90%; height: 100%">
+                <div class="wrapper card rounded-4  sd col-sm-8 col-12">
                     <div class="card-header">
                         <div class="card-title">@package.PackageName</div>
                     </div>
                     <div class="card-header">
                         <div class="card-title"><p class="mb-3">Mô tả: @package.Description</p></div>
                     </div>
-                    <div class="card-body" style="width: 100%; height: 100%">
+                    <div class="card-body ">
                         @if (package.PackagePrices != null)
                         {
                             <p class="mb-3 font-bold fs-6">Giá gói</p>
