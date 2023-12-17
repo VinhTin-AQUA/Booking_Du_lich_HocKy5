@@ -208,6 +208,70 @@ namespace Booking.Controllers
         }
 
 
+        [Route("get-some-tours")]
+        [HttpGet]
+        public async Task<IActionResult> GetTourOutStanding(string? cityName)
+        {
+            if (cityName == null)
+            {
+                return Json(new {status = false});
+            }
+
+            var city = await cityRepository.GetCityByName(cityName);
+            if(city == null)
+            {
+                return Json(new { status = false });
+            }
+
+            var allTourtoursOfCity = await _tourRepository.GetTourByCityName(cityName);
+            var tourList = allTourtoursOfCity.Take(8).ToList();
+
+            List<double> prices = new List<double>();
+            List<string> imgUrls = new List<string>();
+              
+			foreach (var tour in tourList)
+            {
+                var price = await _tourRepository.GetMinPriceOfTour(tour);
+                prices.Add(price);
+
+                var imgUrlsTemp = _imageService.GetAllFileOfFolder("tours", tour.TourId.ToString());
+
+                if(imgUrlsTemp != null)
+                {
+                    imgUrls.Add(imgUrlsTemp[0]);
+                }
+                else
+                {
+                    imgUrls.Add("no-image.jpg");
+                }
+            }
+
+            if (tourList == null)
+            {
+                return NotFound();
+            }
+
+            List<object> tourOutstanding = new List<object>();
+
+            for (int i = 0; i < tourList.Count(); i ++)
+            {
+                var tour = new
+                {
+                    tourId = tourList[i].TourId,
+                    tourName = tourList[i].TourName,
+                    overview = tourList[i].Overview,
+                    price = prices[i],
+                    imgUrl = _appConfigs.BaseImgUrl +"/"+ imgUrls[i]
+                };
+                tourOutstanding.Add(tour);
+            }
+
+            //var tourOutstanding = tourList.Select(t => new { t.TourName, t.Overview }).ToList();
+
+            return Json(new { status = true, tourOutstanding });
+        }
+
+
         [Route("tour-detail/{tourId}")]
         [HttpGet]
         public async Task<IActionResult> TourDetail(int? tourId)

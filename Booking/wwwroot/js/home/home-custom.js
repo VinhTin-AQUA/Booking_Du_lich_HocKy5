@@ -275,9 +275,7 @@ const dl = [
 // hàm sự kiện
 function onSelectCity(x) {
     let cityItem = document.querySelectorAll('.city-item');
-
-
-
+    
     for (let item of cityItem) {
         item.classList.remove('active-city-item');
     }
