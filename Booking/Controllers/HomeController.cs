@@ -345,7 +345,12 @@ namespace Booking.Controllers
             ViewBag.packageName = package.PackageName;
             ViewBag.price = model.Price;
             ViewBag.numOfTourist = Request.Form["totalParticipation"];
-            ViewBag.departureDate = DateTime.Now.Date;
+            ViewBag.departureDate = Convert.ToString(DateTime.Now.Date).Substring(0,10);
+
+            // End Processing View Checkout
+
+            // Start Processing BookTourDetail
+
             int numOfChild = Convert.ToInt32(Request.Form["quantityChild"]);
             int numOfAdult = Convert.ToInt32(Request.Form["quantityAdult"]);
             for (int i = 1; i <= numOfAdult; ++i)
@@ -374,9 +379,9 @@ namespace Booking.Controllers
 
             ViewBag.myLst = lst_bookTourDetail;
             int a = 1;
-
-            ViewBag.image = _imageService.GetAllFileOfFolder("tours", package.TourID.ToString())[0];
+ ViewBag.image = _imageService.GetAllFileOfFolder("tours", package.TourID.ToString())[0];
             ViewBag.BaseImgUrl = _appConfigs.BaseImgUrl;
+            // End Processing BookTourDetail
 
             return View("Checkout");
         }

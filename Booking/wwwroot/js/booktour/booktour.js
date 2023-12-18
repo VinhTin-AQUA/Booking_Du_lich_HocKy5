@@ -90,13 +90,13 @@ function RenderCardInfo() {
                     <div class="col-sm-12 col-12">
                         <div class="mb-3">
                             <label class="form-label">Họ <span class="text-red">*</span></label>
-                            @Html.TextBox("firstNameAdult-${i}",0,new{@type="text",@class="form-control",@placeholder="",@id="firstNameAdult-${i}"})
+                            <input type="text" class="form-control" name="firstNameAdult-${i}" id="firstNameAdult-${i}" />
                         </div>
                     </div>
                     <div class="col-sm-12 col-12">
                         <div class="mb-3">
                             <label class="form-label">Tên <span class="text-red">*</span></label>
-                            @Html.TextBox("lastNameAdult-${i}",0,new{@type="text",@class="form-control",@placeholder="",@id="lastNameAdult-${i}"})
+                            <input type="text" class="form-control" name="lastNameAdult-${i}" id="lastNameAdult-${i}" />
                         </div>
                     </div>
                 </div>
@@ -124,13 +124,14 @@ function RenderCardInfo() {
                     <div class="col-sm-12 col-12">
                         <div class="mb-3">
                             <label class="form-label">Họ <span class="text-red">*</span></label>
-                            @Html.TextBox("firstNameChild-${i}",0,new{@type="text",@class="form-control",@placeholder="",@id="firstNameChild-${i}"})
+
+                            <input type="text" class="form-control" name="firstNameChild-${i}" id="firstNameChild-${i}" />
                         </div>
                     </div>
                     <div class="col-sm-12 col-12">
                         <div class="mb-3">
                             <label class="form-label">Tên <span class="text-red">*</span></label>
-                            @Html.TextBox("firstNameChild-${i}",0,new{@type="text",@class="form-control",@placeholder="",@id="lastNameChild-${i}"})
+                            <input type="text" class="form-control" name="lastNameChild-${i}" id="lastNameChild-${i}" />
                         </div>
                     </div>
                 </div>
