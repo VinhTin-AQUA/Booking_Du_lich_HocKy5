@@ -325,6 +325,7 @@ namespace Booking.Controllers
         [HttpPost]
         public async Task<IActionResult> BookTour(int packageId, BookTour model)
         {
+            List<BookTourDetail> lst_bookTourDetail = new List<BookTourDetail>();
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (packageId == null || userId == null)
             {
@@ -334,24 +335,48 @@ namespace Booking.Controllers
             model.UserID = userId;
             model.PackageId = packageId;
             model.BookingDate = DateTime.Now;
-            //var r = await _bookTourRepository.AddBookTour(model);
-            //if (r == false)
-            //{
-            //    return View();
-            //}
+
             Package package = await _packageRepository.GetPackageById(packageId);
             Tour tour = await _tourRepository.GetTourById(package.TourID);
+
+            // Start Processing View Checkout
 
             ViewBag.tourName = tour.TourName;
             ViewBag.packageName = package.PackageName;
             ViewBag.price = model.Price;
             ViewBag.numOfTourist = Request.Form["totalParticipation"];
             ViewBag.departureDate = DateTime.Now.Date;
+            int numOfChild = Convert.ToInt32(Request.Form["quantityChild"]);
+            int numOfAdult = Convert.ToInt32(Request.Form["quantityAdult"]);
+            for (int i = 1; i <= numOfAdult; ++i)
+            {
+                BookTourDetail btd = new BookTourDetail()
+                {
+                    FirstNameTourist = Convert.ToString(Request.Form[$"firstNameAdult-{i}"]),
+                    LastNameTourist = Convert.ToString(Request.Form[$"lastNameAdult-{i}"]),
+                    IsAdult = true
+                };
+                lst_bookTourDetail.Add(btd);
+            }
+            if (numOfChild > 0)
+            {
+                for (int i = 1; i <= numOfChild; ++i)
+                {
+                    BookTourDetail btd = new BookTourDetail()
+                    {
+                        FirstNameTourist = Convert.ToString(Request.Form[$"firstNameChild-{i}"]),
+                        LastNameTourist = Convert.ToString(Request.Form[$"lastNameChild-{i}"]),
+                        IsAdult = false
+                    };
+                    lst_bookTourDetail.Add(btd);
+                }
+            }
 
-            // lấy ảnh
+            ViewBag.myLst = lst_bookTourDetail;
+            int a = 1;
+
             ViewBag.image = _imageService.GetAllFileOfFolder("tours", package.TourID.ToString())[0];
             ViewBag.BaseImgUrl = _appConfigs.BaseImgUrl;
-
 
             return View("Checkout");
         }
