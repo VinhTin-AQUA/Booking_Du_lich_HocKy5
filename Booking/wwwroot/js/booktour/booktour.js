@@ -90,13 +90,13 @@ function RenderCardInfo() {
                     <div class="col-sm-12 col-12">
                         <div class="mb-3">
                             <label class="form-label">Họ <span class="text-red">*</span></label>
-                            <input type="text" class="form-control" placeholder="" id = "firstNameAdult-${i}">
+                            @Html.TextBox("firstNameAdult-${i}",0,new{@type="text",@class="form-control",@placeholder="",@id="firstNameAdult-${i}"})
                         </div>
                     </div>
                     <div class="col-sm-12 col-12">
                         <div class="mb-3">
                             <label class="form-label">Tên <span class="text-red">*</span></label>
-                            <input type="text" class="form-control" placeholder="" id = "lastNameAdult-${i}">
+                            @Html.TextBox("lastNameAdult-${i}",0,new{@type="text",@class="form-control",@placeholder="",@id="lastNameAdult-${i}"})
                         </div>
                     </div>
                 </div>
@@ -124,13 +124,13 @@ function RenderCardInfo() {
                     <div class="col-sm-12 col-12">
                         <div class="mb-3">
                             <label class="form-label">Họ <span class="text-red">*</span></label>
-                            <input type="text" class="form-control" placeholder="" id = "firstNameChild-${i}">
+                            @Html.TextBox("firstNameChild-${i}",0,new{@type="text",@class="form-control",@placeholder="",@id="firstNameChild-${i}"})
                         </div>
                     </div>
                     <div class="col-sm-12 col-12">
                         <div class="mb-3">
                             <label class="form-label">Tên <span class="text-red">*</span></label>
-                            <input type="text" class="form-control" placeholder="" id = "lastNameChild-${i}">
+                            @Html.TextBox("firstNameChild-${i}",0,new{@type="text",@class="form-control",@placeholder="",@id="lastNameChild-${i}"})
                         </div>
                     </div>
                 </div>
