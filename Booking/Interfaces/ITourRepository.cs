@@ -11,7 +11,7 @@ namespace Booking.Interfaces
         public  Task<ICollection<Tour>> GetTourByCategory(int categoryId, int cityId);
         public Task<ICollection<Tour>> GetAllTours(int currentPage, int pageSize);
 
-        public Task<ICollection<Tour>> SearchTour(int currentPage, int pageSize, string searchString);
+        public Task<ICollection<Tour>> SearchTour(string searchString);
 
         public Task<ICollection<Tour>> GetToursOfPoster(string posterId);
         //public Task<IdentityResult> AdddAgent(ApplicationUser agent, string password);

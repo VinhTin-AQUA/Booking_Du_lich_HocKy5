@@ -81,6 +81,7 @@ namespace Booking.Areas.Authentication.Controllers
 
             if (await emailSender.SendEmailConfirmAsync(user, "confirm-email", token) == true)
             {
+                ViewBag.ReturnUrl = -1;
                 return View("login");
             }
             ModelState.AddModelError(string.Empty, "Có lỗi. Xin vui lòng thử lại.");
@@ -90,6 +91,7 @@ namespace Booking.Areas.Authentication.Controllers
         [HttpGet("confirm-email")]
         public async Task<IActionResult> ConfirmEmail([FromQuery] string token, [FromQuery] string email)
         {
+            ViewBag.ReturnUrl = -1;
             if (token == null || email == null)
             {
                 return View("SignUp");

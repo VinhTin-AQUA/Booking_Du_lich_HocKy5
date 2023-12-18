@@ -47,6 +47,11 @@ namespace WebApi.Repositories
                     .ToListAsync();
                 return _tours;
             }
+
+            if (currentPage == -1)
+            {
+                currentPage = 0;
+            }
             var tours = await context.Tour
                 .Skip(currentPage * pageSize)
                 .Take(pageSize)
@@ -54,12 +59,10 @@ namespace WebApi.Repositories
             return tours;
         }
 
-        public async Task<ICollection<Tour>> SearchTour(int currentPage, int pageSize, string searchString)
+        public async Task<ICollection<Tour>> SearchTour(string searchString)
         {
             var tours = await context.Tour
                 .Where(t => t.TourName.ToLower().Contains(searchString.ToLower()))
-                .Skip(currentPage * pageSize)
-                .Take(pageSize)
                 .ToListAsync();
             return tours;
         }
