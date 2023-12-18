@@ -27,12 +27,14 @@
 
                                 @for(int i = 0; i < tours.Count();i++)
                                 {
-                                    <div class="col-xxl-6 col-sm-12 col-12">
+                                    <div class="col-sm-4 col-12 ">
                                         <div class="product-added-card">
-                                            <img class="product-added-img"
-                                                 src="@baseImgUrl/@images[i]"
-                                                 alt="Admin Panel" />
-                                            <div class="product-added-card-body w-50">
+                                            <div class="product-added-card-body col-12 col-sm-12 ">
+
+                                                <img class="product-added-img col-12 col-sm-12"
+                                                     src="@baseImgUrl/@images[i]"
+                                                     alt="Admin Panel" />
+
                                                 <h4 class="">@tours[i].TourName</h4>
 
                                                 @* <h6 class="">Một số gói</h6> *@
