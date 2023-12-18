@@ -26,7 +26,7 @@ namespace Booking.Areas.AgentTour.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var tours = await tourRepository.GetAllTours();
+            var tours = await tourRepository.GetAllTours(-1, -1);
             ViewBag.Tours = tours.ToList();
 
             List<string> images = new List<string>();

@@ -173,7 +173,6 @@ namespace Booking.Areas.Authentication.Controllers
 				return RedirectToAction("TourDetail", "Home", new { tourId = returnUrl });
 			}
 
-
 			return RedirectToAction("Index", "Home");
         }
 

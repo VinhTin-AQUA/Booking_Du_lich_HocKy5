@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "Thông tin chi tiết";
 
-    var schedules = Model.Schedule.Split("\n");
+    var schedules = Model.Schedule.Split("~~");
     string baseImgUrl = "https://localhost:7231/resources/images";
     string[] imgUrls = ViewBag.ImgUrls;
     int tourId = ViewBag.TourId;
@@ -40,9 +40,19 @@
     <div class="col-xl-12 col-12 d-flex justify-content-center">
         <div class="wrapper card rounded-4 date sd" style="width: 90%; height: 100%">
             <div class="card-body" style="width: 100%; height: 100%">
-                <div>Người đăng:<strong>@poster.FirstName + @poster.LastName</strong></div>
-                <div>Email:<strong>@poster.EmailConfirmed</strong></div>
-                <div>Số điện thoại:<strong>@poster.PhoneNumber</strong></div>
+                <div>Người đăng: <strong>@poster.FirstName @poster.LastName</strong></div>
+                <div>Email: <strong>@poster.Email</strong></div>
+                <div>
+                    Số điện thoại:
+                    @if (poster.PhoneNumber == null)
+                    {
+                        <strong>Trống</strong>
+                    }
+                    else
+                    {
+                        <strong> @poster.PhoneNumber</strong>
+                    }
+                </div>
             </div>
         </div>
     </div>
@@ -126,11 +136,21 @@
 
                         @for (int i = 0; i < schedules.Length; i++)
                         {
+                            string[] scheduleDetails = schedules[i].Split("\n");
                             <div class="activity-log">
-                                <p class="log-name">Địa điểm @(i + 1)</p>
-                                <div class="log-details">
-                                    @schedules[i]
-                                </div>
+                                @foreach (var item in scheduleDetails)
+                                {
+                                    if (item.StartsWith("~"))
+                                    {
+                                        <p class="log-name">@item.Substring(1)</p>
+                                    }
+                                    else if (item != "")
+                                    {
+                                        <div class="log-details">
+                                            @item
+                                        </div>
+                                    }
+                                }
                             </div>
                         }
                     </div>
@@ -207,7 +227,7 @@
                 </div>
             </div>
         </div>
-    } 
+    }
     else
     {
         <div class="col-xl-12 col-12 d-flex justify-content-center">
