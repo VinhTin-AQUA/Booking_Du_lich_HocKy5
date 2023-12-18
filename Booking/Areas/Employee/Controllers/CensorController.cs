@@ -30,7 +30,7 @@ namespace Booking.Areas.Employee.Controllers
 
         public async Task<IActionResult> Index([FromQuery] int currentPage = 0, [FromQuery] int pageSize = 7, [FromQuery] string searchString = "")
         {
-            if(searchString != "")
+            if (searchString != "")
             {
                 return RedirectToAction("SearchTour", new { currentPage, pageSize, searchString });
             }
@@ -44,11 +44,11 @@ namespace Booking.Areas.Employee.Controllers
             }
 
             var tours = await tourRepository.GetAllTours(currentPage, pageSize);
-            
 
-            if(tours.Count() <=0)
+
+            if (tours.Count() <= 0)
             {
-                tours = await tourRepository.GetAllTours(currentPage-1, pageSize);
+                tours = await tourRepository.GetAllTours(currentPage - 1, pageSize);
                 currentPage = currentPage - 1;
             }
             ViewBag.total = tours.Count() % pageSize == 0 ? tours.Count() / pageSize : tours.Count() / pageSize + 1;
@@ -62,12 +62,15 @@ namespace Booking.Areas.Employee.Controllers
 
         [HttpGet]
         [Route("search-tour")]
-        public async Task<IActionResult> SearchTour([FromQuery] int currentPage = 0, [FromQuery] int pageSize = 7, [FromQuery]string searchString = "")
+        public async Task<IActionResult> SearchTour([FromQuery] int currentPage = 0, [FromQuery] int pageSize = 7, [FromQuery] string searchString = "")
         {
-            if(searchString == "")
+            if (searchString == "")
             {
                 return RedirectToAction("Index");
             }
+
+            var toursWithName = await tourRepository.SearchTour(searchString);
+            ViewBag.total = toursWithName.Count() % pageSize == 0 ? toursWithName.Count() / pageSize : toursWithName.Count() / pageSize + 1;
 
             if (currentPage < 0)
             {
@@ -78,15 +81,9 @@ namespace Booking.Areas.Employee.Controllers
                 currentPage = ViewBag.total;
             }
 
-            var tours = await tourRepository.SearchTour(currentPage, pageSize, searchString);
-
-            if (tours.Count() <= 0)
-            {
-                tours = await tourRepository.SearchTour(currentPage-1, pageSize, searchString);
-                currentPage = currentPage - 1;
-            }
-            ViewBag.total = tours.Count() % pageSize == 0 ? tours.Count() / pageSize : tours.Count() / pageSize + 1;
-
+            var tours = toursWithName
+                        .Skip(currentPage * pageSize)
+                        .Take(pageSize).ToList();
 
             ViewBag.Tours = tours.ToList();
             ViewBag.currentPage = currentPage;
@@ -131,7 +128,7 @@ namespace Booking.Areas.Employee.Controllers
             tour.Approver = user;
             tour.ApproverID = user.Id;
             var r = await tourRepository.UpdateTour(tour);
-            if(r == false)
+            if (r == false)
             {
                 return RedirectToAction("Error", "Error");
             }
