@@ -5,11 +5,12 @@ using Booking.Seeds;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System.Drawing.Printing;
 
 namespace WebApi.Repositories
 {
 
-	public class TourRepository : ITourRepository
+    public class TourRepository : ITourRepository
     {
         private readonly BookingContext context;
         private readonly UserManager<AppUser> userManager;
@@ -19,7 +20,7 @@ namespace WebApi.Repositories
         public TourRepository(BookingContext context,
             UserManager<AppUser> userManager,
             RoleManager<IdentityRole> roleManager,
-			ICityRepository cityRepository)
+            ICityRepository cityRepository)
         {
             this.context = context;
             this.userManager = userManager;
@@ -38,9 +39,28 @@ namespace WebApi.Repositories
             return await Save();
         }
 
-        public async Task<ICollection<Tour>> GetAllTours()
+        public async Task<ICollection<Tour>> GetAllTours(int currentPage, int pageSize)
         {
-            var tours = await context.Tour.ToListAsync();
+            if (currentPage == -1 && pageSize == -1)
+            {
+                var _tours = await context.Tour
+                    .ToListAsync();
+                return _tours;
+            }
+            var tours = await context.Tour
+                .Skip(currentPage * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+            return tours;
+        }
+
+        public async Task<ICollection<Tour>> SearchTour(int currentPage, int pageSize, string searchString)
+        {
+            var tours = await context.Tour
+                .Where(t => t.TourName.ToLower().Contains(searchString.ToLower()))
+                .Skip(currentPage * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
             return tours;
         }
 
@@ -135,7 +155,7 @@ namespace WebApi.Repositories
                 .Join(context.Tour, cct => cct.ct.TourId, t => t.TourId, (cct, t) => new { cct, t })
                 .Select(ts => ts.t).ToListAsync();
             return tours;
-		}
+        }
 
         public async Task<ICollection<Tour>> GetTourByCategory(int categoryId, int cityId)
         {
@@ -149,8 +169,8 @@ namespace WebApi.Repositories
         }
 
 
-		public async Task<double> GetMinPriceOfTour(Tour tour)
-		{
+        public async Task<double> GetMinPriceOfTour(Tour tour)
+        {
             var prices = await (from pr in context.PackagePrices
                                 join package in context.Packages on pr.PackageId equals package.PackageID
                                 join t in context.Tour on package.TourID equals tour.TourId
@@ -164,5 +184,5 @@ namespace WebApi.Repositories
             }
             return -1;
         }
-	}
+    }
 }

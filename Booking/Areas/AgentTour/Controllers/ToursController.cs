@@ -36,7 +36,7 @@ namespace Booking.Areas.AgentTour.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var tours = await _tourRepository.GetAllTours();
+            var tours = await _tourRepository.GetAllTours(-1,-1);
             ViewBag.Tours = tours.ToList();
             return View();
         }
