@@ -1,7 +1,13 @@
-﻿@{
+﻿@model string;
+@{
     ViewData["Title"] = "Quản lý tour";
     List<Tour> tours = ViewBag.Tours;
-    int index = 0;
+    
+    int currentPage = ViewBag.currentPage;
+    int pageSize = ViewBag.pageSize;
+    int total = ViewBag.total;
+    string searchString = ViewBag.SearchString;
+    int index = currentPage * pageSize;
 }
 
 
@@ -14,7 +20,7 @@
                 <span class="d-block">Danh sách tour</span>
 
                 <!-- Search container start -->
-                <form class="search-container d-flex justify-content-start align-items-center gap-2">
+                <form asp-action="SearchTours" method="get" class="search-container d-flex justify-content-start align-items-center gap-2">
 
                     <!-- Search input group start -->
                     <div class="input-group border border-2 rounded d-inline-block">
@@ -45,7 +51,7 @@
                         <th>Địa điểm đón khách</th>
                         <th>Địa điểm trả khách</th>
                         <th>Ngày đăng</th>
-                        <th></th>
+                        <th style="width: 20%"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -94,10 +100,10 @@
         </div>
 
         @* pagination *@
-        @* <nav aria-label="col-12 Page navigation">
+        <nav aria-label="col-12 Page navigation">
             <ul class="pagination">
                 <li class="page-item">
-                    <a class="page-link" aria-label="Previous" asp-area="Admin" asp-controller="UserManager" asp-action="Index" asp-route-currentPage="@(currentPage - 1)" asp-route-searchString="@Model">
+                    <a class="page-link" aria-label="Previous" asp-area="AgentTour" asp-controller="Tours" asp-action="Index" asp-route-currentPage="@(currentPage - 1)" asp-route-searchString="@Model">
                         <span aria-hidden="true">&laquo;</span>
                     </a>
                 </li>
@@ -105,33 +111,33 @@
                 @if (currentPage <= 1)
                 {
                     <li class="page-item">
-                        <a class="page-link  @(currentPage == 0 ? "actived" : "")" asp-area="Admin" asp-controller="UserManager" asp-action="Index" asp-route-currentPage="0" asp-route-searchString="@Model">
+                        <a class="page-link  @(currentPage == 0 ? "actived" : "")" asp-area="AgentTour" asp-controller="Tours" asp-action="Index" asp-route-currentPage="0" asp-route-searchString="@Model">
                             1
                         </a>
                     </li>
 
-                    <li class="page-item"><a class="page-link @(currentPage == 1 ? "actived" : "")" asp-area="Admin" asp-controller="UserManager" asp-action="Index" asp-route-currentPage="1" asp-route-data="@Model" asp-route-searchString="@Model">2</a></li>
+                    <li class="page-item"><a class="page-link @(currentPage == 1 ? "actived" : "")" asp-area="AgentTour" asp-controller="Tours" asp-action="Index" asp-route-currentPage="1" asp-route-data="@Model" asp-route-searchString="@Model">2</a></li>
 
-                    <li class="page-item"><a class="page-link " asp-area="Admin" asp-controller="UserManager" asp-action="Index" asp-route-currentPage="2" asp-route-searchString="@Model">3</a></li>
+                    <li class="page-item"><a class="page-link " asp-area="AgentTour" asp-controller="Tours" asp-action="Index" asp-route-currentPage="2" asp-route-searchString="@Model">3</a></li>
                 }
                 else
                 {
                     @for (int i = currentPage - 1; i <= currentPage + 1; i++)
                     {
-                        if (i > 0 && i <= total)
+                        if (i > 0)
                         {
-                            <li class="page-item"><a class="page-link @(currentPage == i ? "actived" : "") " asp-area="Admin" asp-controller="UserManager" asp-action="Index" asp-route-currentPage="@i" asp-route-searchString="@Model">@(i + 1)</a></li>
+                            <li class="page-item"><a class="page-link @(currentPage == i ? "actived" : "") " asp-area="AgentTour" asp-controller="Tours" asp-action="Index" asp-route-currentPage="@i" asp-route-searchString="@Model">@(i + 1)</a></li>
                         }
                     }
                 }
 
                 <li class="page-item">
-                    <a class="page-link" aria-label="Next" asp-area="Admin" asp-controller="UserManager" asp-action="Index" asp-route-currentPage="@(currentPage + 1)" asp-route-searchString="@Model">
+                    <a class="page-link" aria-label="Next" asp-area="AgentTour" asp-controller="Tours" asp-action="Index" asp-route-currentPage="@(currentPage + 1)" asp-route-searchString="@Model">
                         <span aria-hidden="true">&raquo;</span>
                     </a>
                 </li>
             </ul>
-        </nav> *@
+        </nav>
     </div>
 </div>
 

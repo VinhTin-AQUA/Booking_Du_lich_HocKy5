@@ -34,12 +34,63 @@ namespace Booking.Areas.AgentTour.Controllers
             this.packageRepository = packageRepository;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index([FromQuery] int currentPage = 0, [FromQuery] int pageSize = 6, [FromQuery]string searchString = "")
         {
-            var tours = await _tourRepository.GetAllTours(-1,-1);
+            if (searchString != "")
+            {
+                return RedirectToAction("SearchTours", new { currentPage, pageSize, searchString });
+            }
+
+            var tours = await _tourRepository.GetAllTours(currentPage, pageSize);
+            ViewBag.total = tours.Count() % pageSize == 0 ? tours.Count() / pageSize : tours.Count() / pageSize + 1;
+
+            if (currentPage < 0)
+            {
+                currentPage = 0;
+            }
+
+            else if (currentPage > ViewBag.total)
+            {
+                currentPage = ViewBag.total;
+            }
+
             ViewBag.Tours = tours.ToList();
-            return View();
+            ViewBag.currentPage = currentPage;
+            ViewBag.pageSize = pageSize;
+            ViewBag.Tours = tours.ToList();
+            ViewBag.SearchString = searchString;
+           
+            return View((object)searchString);
         }
+
+        [HttpGet]
+        [Route("search-tours")]
+        public async Task<IActionResult> SearchTours([FromQuery] int currentPage = 0, [FromQuery] int pageSize = 6, [FromQuery] string searchString = "")
+        {
+            var allToursWithName = await _tourRepository.SearchTour(searchString);
+
+            ViewBag.total = allToursWithName.Count() % pageSize == 0 ? allToursWithName.Count() / pageSize : allToursWithName.Count() / pageSize + 1;
+
+            if (currentPage < 0)
+            {
+                currentPage = 0;
+            }
+
+            else if (currentPage > ViewBag.total)
+            {
+                currentPage = ViewBag.total;
+            }
+            var tours = allToursWithName
+                        .Skip(currentPage * pageSize)
+                        .Take(pageSize).ToList();
+
+            ViewBag.currentPage = currentPage;
+            ViewBag.pageSize = pageSize;
+            ViewBag.Tours = tours.ToList();
+            ViewBag.SearchString = searchString;
+            return View("Index", (object)searchString);
+        }
+
 
         [Route("details/{id}")]
         public async Task<IActionResult> Details(int? id)
@@ -181,7 +232,7 @@ namespace Booking.Areas.AgentTour.Controllers
                 var rRemoveOldTourCategories = await tourCategoryRepository.DeleteTourCategoriesByTourId(tour.TourId);
 
 
-                if(rRemoveOldTourCategories == true)
+                if (rRemoveOldTourCategories == true)
                 {
                     foreach (var tourCategoryId in tourCategoryIds)
                     {
