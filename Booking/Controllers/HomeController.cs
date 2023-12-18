@@ -348,6 +348,11 @@ namespace Booking.Controllers
             ViewBag.numOfTourist = Request.Form["totalParticipation"];
             ViewBag.departureDate = DateTime.Now.Date;
 
+            // lấy ảnh
+            ViewBag.image = _imageService.GetAllFileOfFolder("tours", package.TourID.ToString())[0];
+            ViewBag.BaseImgUrl = _appConfigs.BaseImgUrl;
+
+
             return View("Checkout");
         }
 
@@ -362,6 +367,7 @@ namespace Booking.Controllers
         [HttpGet]
         public async Task<IActionResult> Checkout()
         {
+
             return View();
         }
 

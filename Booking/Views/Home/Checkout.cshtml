@@ -1,6 +1,10 @@
 ﻿@{
     ViewData["Title"] = "Checkout";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+    string baseImgUrl = ViewBag.BaseImgUrl;
+    var imgUrl = ViewBag.image;
+
 }
 <link rel="stylesheet" href="~/css/Tour/booktour.css">
 
@@ -8,7 +12,9 @@
     <div class="col-sm-6 col-12 bg-color card-border bd">
         <p>Thanh toán an toàn</p>
         <div class="product-added-card">
-            <img class="product-added-img" src="assets/images/food/img7.jpg" alt="Admin Panel">
+
+            <img class="product-added-img" src="@baseImgUrl/@imgUrl" alt="Admin Panel">
+
             <div class="product-added-card-body">
                 <h3 class="product-added-title ">@ViewBag.tourName</h3>
                 <div class="product-added-description">
@@ -33,7 +39,6 @@
 
 <div class="col-lg-12 col-12 d-flex justify-content-center">
     <div class="col-sm-6 col-12 bg-color card-border bd">
-
 
         <div class="transactions-container ">
             <div class="transaction-block">
