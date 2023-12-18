@@ -20,7 +20,7 @@ namespace Booking.Areas.Admin.Controllers
         }
 
 
-        public async Task<IActionResult> Index([FromQuery] int currentPage = 0, [FromQuery] int pageSize = 5, string searchString = "")
+        public async Task<IActionResult> Index([FromQuery] int currentPage = 0, [FromQuery] int pageSize = 7, string searchString = "")
         {
             var totalUser = userManagerRepository.TotalUsers(searchString);
             ViewBag.total = totalUser % pageSize == 0 ? totalUser / pageSize : totalUser / pageSize + 1;

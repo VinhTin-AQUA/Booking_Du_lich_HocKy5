@@ -1076,8 +1076,7 @@ Bao gồm vé vào cửa',N'Hà Nội, Việt Nam', N'Hà Nội, Việt Nam', '/
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Best seller Halong Bay Day cruise: Sung Sot cave, Titop, kayaking', N'Thưởng thức món nướng Hàn Quốc bằng phiếu giảm giá tiền mặt tại GoGi House
 Voucher áp dụng cho tất cả chi nhánh GoGi House được chỉ định tại Việt Nam
-Thưởng thức bữa ăn tại nhà hàng rộng rãi, tiện nghi', N'
-Lịch trình tự do',N'57B P. Đinh Tiên Hoàng, Hàng Bạc, Hoàn Kiếm, Hà Nội, Việt Nam', N'57B P. Đinh Tiên Hoàng, Hàng Bạc, Hoàn Kiếm, Hà Nội, Việt Nam', '/tours/12');
+Thưởng thức bữa ăn tại nhà hàng rộng rãi, tiện nghi', N'Lịch trình tự do',N'57B P. Đinh Tiên Hoàng, Hàng Bạc, Hoàn Kiếm, Hà Nội, Việt Nam', N'57B P. Đinh Tiên Hoàng, Hàng Bạc, Hoàn Kiếm, Hà Nội, Việt Nam', '/tours/12');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Hanoi Motorbike Tours: FOOD + CULTURE + SIGHT +FUN By Vintage Motorbike', N'Điểm nổi bật: Du ngoạn cả ngày quanh Vịnh Hạ Long với hướng dẫn viên và phi hành đoàn chuyên nghiệp
 Chọn hành trình dài hơn trên Vịnh Hạ Long mang lại nhiều cơ hội thư giãn và giải trí hơn
@@ -1158,8 +1157,7 @@ LƯU Ý: Hãy ăn một ít đồ ăn trước buổi tập vì chúng ta sẽ u
 Thời gian: 3 tiếng (xấp xỉ)',N'1 Tràng Tiền, Phan Chu Trinh, Hoàn Kiếm, Hà Nội, Việt Nam', N'1 Tràng Tiền, Phan Chu Trinh, Hoàn Kiếm, Hà Nội, Việt Nam', '/tours/15');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Private transfer between Hanoi Airport (HAN) and Hanoi Old Quarter', N'Đặt dịch vụ đưa đón riêng một chiều giữa sân bay Nội Bài và khách sạn của bạn ở Phố Cổ Hà Nội
-Nhận dịch vụ giao hàng tận nơi với tài xế chuyên nghiệp và xe riêng có máy lạnh.', N'
-Lịch trình tự do',N'Phú Minh, Sóc Sơn, Hà Nội, Việt Nam', N'Phú Minh, Sóc Sơn, Hà Nội, Việt Nam', '/tours/16');
+Nhận dịch vụ giao hàng tận nơi với tài xế chuyên nghiệp và xe riêng có máy lạnh.', N'Lịch trình tự do',N'Phú Minh, Sóc Sơn, Hà Nội, Việt Nam', N'Phú Minh, Sóc Sơn, Hà Nội, Việt Nam', '/tours/16');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Noi Bai Airport Pick-up (Private Ride Airport to Hanoi Hotels)', N'Xe của chúng tôi là sự lựa chọn tốt nhất cho chuyến đi của bạn với tài xế nói tiếng Anh cơ bản. Nó làm cho chuyến đi của bạn dường như ngắn hơn và thoải mái hơn. Bạn chỉ cần cảm thấy thư giãn trên xe, bỏ lại những muộn phiền để chiêm ngưỡng cảnh quan hai bên đường trong quá trình di chuyển. Đặt phòng với chúng tôi bạn sẽ có:
 Đội xe thuộc thế hệ mới nhất.
@@ -1168,8 +1166,7 @@ Không có chi phí ẩn
 Lái xe chuyên nghiệp
 Ưu đãi giá rẻ nhất
 Không mất thêm chi phí thời gian chờ đợi trong trường hợp chuyến bay bị hoãn.
-Đội ngũ hỗ trợ chuyên nghiệp và trách nhiệm 24/24', N'
-Lịch trình tự do',N'Phú Minh, Sóc Sơn, Hà Nội, Việt Nam', N'Phú Minh, Sóc Sơn, Hà Nội, Việt Nam', '/tours/17');
+Đội ngũ hỗ trợ chuyên nghiệp và trách nhiệm 24/24', N'Lịch trình tự do',N'Phú Minh, Sóc Sơn, Hà Nội, Việt Nam', N'Phú Minh, Sóc Sơn, Hà Nội, Việt Nam', '/tours/17');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Day Tour | Hercules Cruise Ha Long Bay + Optional Round-trip Transportation Options Included + Lunch Included + Kayak Experience (Vietnam / Sightseeing Boat)', N'Việc đặt chỗ có thể được thực hiện đến 21:00 ngày hôm trước theo giờ Việt Nam! Bạn có thể sử dụng nó ngay cả khi bạn đột nhiên muốn trải nghiệm nó.
 Tặng bánh sinh nhật vào ngày sinh nhật
@@ -1222,8 +1219,7 @@ Không có chi phí ẩn
 Lái xe chuyên nghiệp
 Ưu đãi giá rẻ nhất
 Không mất thêm chi phí thời gian chờ đợi trong trường hợp chuyến bay bị hoãn.
-Đội ngũ hỗ trợ chuyên nghiệp và trách nhiệm 24/24', N'
-Lịch trình tự do',N'1 Tràng Tiền, Phan Chu Trinh, Hoàn Kiếm, Hà Nội, Việt Nam', N'1 Tràng Tiền, Phan Chu Trinh, Hoàn Kiếm, Hà Nội, Việt Nam', '/tours/19');
+Đội ngũ hỗ trợ chuyên nghiệp và trách nhiệm 24/24', N'Lịch trình tự do',N'1 Tràng Tiền, Phan Chu Trinh, Hoàn Kiếm, Hà Nội, Việt Nam', N'1 Tràng Tiền, Phan Chu Trinh, Hoàn Kiếm, Hà Nội, Việt Nam', '/tours/19');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'[EXTRA 12% OFF] Day Tour | Discover Ha Long Bay With Alova Deluxe Cruise from Hanoi (Multiple Languages Tour Guide)', N'Con tàu thép hiện đại và an toàn với nội thất và không khí tươm tất cho những chuyến đi thú vị
 Tham quan hang động đẹp nhất, Đảo Titov với bãi biển và chèo thuyền kayak/thuyền tre
@@ -1283,14 +1279,12 @@ Trải nghiệm dịch vụ đưa đón khách sạn thoải mái ở Phố Cổ
 Khám phá khu chợ địa phương và tìm hiểu cách hiểu rõ hơn về cách chọn nguyên liệu tươi cho món ăn của bạn
 Học cách chế biến các món ăn truyền thống đích thực của Việt Nam và quan sát văn hóa địa phương
 Nếm thử các loại rượu vang địa phương độc đáo và đặc biệt cùng với bữa ăn của bạn
-Có sẵn các lựa chọn ăn chay', N'
-Lịch trình tự do',N'57B Dinh Tien Hoang, Hang Trong, Hoan Kiem, Hanoi', N'57B Dinh Tien Hoang, Hang Trong, Hoan Kiem, Hanoi', '/tours/23');
+Có sẵn các lựa chọn ăn chay', N'Lịch trình tự do',N'57B Dinh Tien Hoang, Hang Trong, Hoan Kiem, Hanoi', N'57B Dinh Tien Hoang, Hang Trong, Hoan Kiem, Hanoi', '/tours/23');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Tour of Ha Giang, Dong Van, Ma Pi Leng, Nho Que River, and Du Gia village', N'Cà phê ĐẶC BIỆT nếm thử Robusta, Arabica và pha Robusta với Arabica với 03 loại cà phê
 Chuyên gia/chuyên gia cà phê nói tiếng Anh
 Bí quyết pha chế 03 loại cà phê tại lớp
-Đón và trả khách tại khách sạn bằng xe riêng và tài xế', N'
-Lịch trình tự do',N'Tp. Hà Giang, Hà Giang, Việt Nam', N'Tp. Hà Giang, Hà Giang, Việt Nam', '/tours/24');
+Đón và trả khách tại khách sạn bằng xe riêng và tài xế', N'Lịch trình tự do',N'Tp. Hà Giang, Hà Giang, Việt Nam', N'Tp. Hà Giang, Hà Giang, Việt Nam', '/tours/24');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'5 Traditional Dishes Hanoi Cooking Class with Market Trip', N'✔️ ✔️ ✔️ ĐIỂM NỔI BẬT ✔️ ✔️ ✔️ ✔️ Tour du lịch thành phố Hà Nội nửa ngày ✔️ Tham quan làng địa phương ở Hà Giang ✔️ Có cơ hội khám phá cuộc sống và văn hóa thực tế của người dân địa phương ✔️ Phong cảnh ngoạn mục của Hà Giang', N'
 ~Ngày 1 – Nghỉ đêm trên xe buýt/xe Limousine
@@ -1568,8 +1562,7 @@ INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,Ph
     VALUES(N'Skip the Line: Thang Long Water Puppet Theater Entrance Tickets', N'Trải nghiệm sự thoải mái khi đi lại với dịch vụ Xe buýt Nằm này, đưa bạn đi lại liền mạch giữa Hà Nội và Sapa.
 Du lịch thoải mái trên giường ngủ trên xe buýt giữa Hà Nội và Sapa
 Ngắm nhìn khung cảnh ngoạn mục của vùng núi Việt Nam trong suốt hành trình
-Chọn từ nhiều thời gian khởi hành khác nhau để phù hợp với lịch trình của bạn', N'
-Lịch trình tự do',N'57B Dinh Tien Hoang - Hoan Kiem - Ha Noi,', N'57B Dinh Tien Hoang - Hoan Kiem - Ha Noi,', '/tours/26');
+Chọn từ nhiều thời gian khởi hành khác nhau để phù hợp với lịch trình của bạn', N'Lịch trình tự do',N'57B Dinh Tien Hoang - Hoan Kiem - Ha Noi,', N'57B Dinh Tien Hoang - Hoan Kiem - Ha Noi,', '/tours/26');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Skip the Line: Thang Long Water Puppet Theater Entrance Tickets', N'Việc đặt chỗ có thể được thực hiện đến 21:00 ngày hôm trước theo giờ Việt Nam! Bạn có thể sử dụng nó ngay cả khi bạn đột nhiên muốn trải nghiệm nó.
 Tặng bánh sinh nhật vào ngày sinh nhật
@@ -1690,8 +1683,7 @@ Tham quan thủy cung lớn với hàng trăm sinh vật biển độc đáo
 Cho cá ăn và ngủ dưới biển và thưởng thức chương trình ''Nàng tiên cá''
 Ngoài ra còn chặn: Sun World Hạ Long, Vé Show Tinh Hoa Bắc Bộ tại Hà Nội
 Di chuyển: Xe buýt Hop-On Hop-Off Hà Nội
-Những điều cần thiết khi đi du lịch: Dịch vụ xin visa điện tử du lịch Việt Nam | Visa điện tử Việt Nam khi đến', N'
-Lịch trình tự do',N'57B Dinh Tien Hoang - Hoan Kiem - Ha Noi,', N'57B Dinh Tien Hoang - Hoan Kiem - Ha Noi,', '/tours/30');
+Những điều cần thiết khi đi du lịch: Dịch vụ xin visa điện tử du lịch Việt Nam | Visa điện tử Việt Nam khi đến', N'Lịch trình tự do',N'57B Dinh Tien Hoang - Hoan Kiem - Ha Noi,', N'57B Dinh Tien Hoang - Hoan Kiem - Ha Noi,', '/tours/30');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Amazing Package At Serene Spa', N'Bỏ qua việc xếp hàng và rắc rối với dịch vụ đặt trước bao gồm vé vào cổng múa rối nước. Chọn từ một số lịch chiếu để phù hợp với lịch trình du lịch của bạn. Hãy đến nhà hát 15 phút trước giờ chiếu và chuẩn bị trải nghiệm một trong những loại hình nghệ thuật truyền thống đáng nhớ nhất của Việt Nam trực tiếp trên sân khấu.', N'
 ~Múa rối nước Thăng Long
@@ -1773,8 +1765,7 @@ INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,Ph
     VALUES(N'Skip the Line - Water Puppet Entrance Ticket', N'Sol Spa là ốc đảo của sự tái tạo và làm đẹp, cung cấp dịch vụ chữa bệnh cho tất cả khách hàng. Nó cũng cung cấp một khung cảnh đô thị tách biệt độc đáo để trẻ hóa và thư giãn.
 Thư giãn tại một nơi nghỉ dưỡng độc đáo cung cấp sự kết hợp giữa các liệu pháp tinh vi nhất thế giới kết hợp với các phương pháp chữa bệnh của khu vực địa phương
 Nuông chiều bản thân với các dịch vụ đa dạng của các gói massage toàn diện
-Trải nghiệm di sản tuyệt đẹp của khu phố cổ', N'
-Lịch trình tự do',N'31 P. Lò Sũ, street, Hoàn Kiếm, Hà Nội 100000, Việt Nam', N'31 P. Lò Sũ, street, Hoàn Kiếm, Hà Nội 100000, Việt Nam', '/tours/36');
+Trải nghiệm di sản tuyệt đẹp của khu phố cổ', N'Lịch trình tự do',N'31 P. Lò Sũ, street, Hoàn Kiếm, Hà Nội 100000, Việt Nam', N'31 P. Lò Sũ, street, Hoàn Kiếm, Hà Nội 100000, Việt Nam', '/tours/36');
 ----------------------------------------------------------
 ----------------------------------------------------------
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
@@ -1785,21 +1776,18 @@ Kỹ thuật massage điện kết hợp các liệu pháp cổ xưa độc quy�
 Phác đồ chuyên biệt, khoa học được thiết kế riêng cho từng khách hàng, tối ưu hóa hiệu quả trị liệu và thư giãn
 Ngoài ra còn chặn: Sun World Hạ Long, Vé Show Tinh Hoa Bắc Bộ tại Hà Nội
 Di chuyển: Xe buýt Hop-On Hop-Off Hà Nội
-Những điều cần thiết khi đi du lịch: Dịch vụ xin visa điện tử du lịch Việt Nam | Visa điện tử Việt Nam khi đến', N'
-Lịch trình tự do',N'57B Dinh Tien Hoang - Hoan Kiem - Ha Noi,', N'57B Dinh Tien Hoang - Hoan Kiem - Ha Noi,', '/tours/37');
+Những điều cần thiết khi đi du lịch: Dịch vụ xin visa điện tử du lịch Việt Nam | Visa điện tử Việt Nam khi đến', N'Lịch trình tự do',N'57B Dinh Tien Hoang - Hoan Kiem - Ha Noi,', N'57B Dinh Tien Hoang - Hoan Kiem - Ha Noi,', '/tours/37');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'[2D1N Tour] Sapa – Cat Cat – Trekking Lao Chai – Ta Van - Ham Rong (From Hanoi, Transfer By 9s D-car)', N'Tham gia một kỳ nghỉ thư giãn ở trung tâm Hà Nội và tận hưởng một ngày tại Serene Spa
 Yêu thích cơ sở vật chất của spa sẽ ngay lập tức đưa bạn vào tâm trạng bình tĩnh
 Chọn từ một loạt các phương pháp trị liệu của Serene Spa, từ mát-xa nhẹ nhàng đến chăm sóc da mặt.
 Có tùy chọn lựa chọn giữa hai chi nhánh, tùy theo chi nhánh nào gần vị trí của bạn nhất!
-Tận hưởng sự thân mật của phòng riêng cho tất cả các gói spa ngoại trừ Chăm sóc bàn chân.', N'
-Lịch trình tự do',N'Hanoi Old Quarter', N'Hanoi Old Quarter', '/tours/38');
+Tận hưởng sự thân mật của phòng riêng cho tất cả các gói spa ngoại trừ Chăm sóc bàn chân.', N'Lịch trình tự do',N'Hanoi Old Quarter', N'Hanoi Old Quarter', '/tours/38');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'BEST SELLER- 2 Day/1 Night Cruise with All-Inclusive in Halong', N'Tận hưởng dịch vụ với khuyến mãi giờ vàng từ 09:00 - 11:00 sáng hàng ngày
 Thư giãn với các liệu pháp spa hoàn hảo ngay trung tâm Hà Nội
 Hãy thử mát-xa bằng que tre đặc trưng hoặc đánh thức các giác quan của bạn bằng liệu pháp mát-xa nhiều tay
-Tận hưởng ưu đãi giảm giá độc quyền từ KKday!', N'
-Lịch trình tự do',N'Hà Nội, Việt Nam', N'Hà Nội, Việt Nam', '/tours/39');
+Tận hưởng ưu đãi giảm giá độc quyền từ KKday!', N'Lịch trình tự do',N'Hà Nội, Việt Nam', N'Hà Nội, Việt Nam', '/tours/39');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Cozy Bay Halong 5-Star Day Cruise, Buffet, Cave, Kayak, Swimming', N'L''essence Spa Group mang đến trải nghiệm spa độc quyền với các phương pháp trị liệu được tạo ra bằng cách kết hợp hài hòa các kỹ thuật phương Đông tốt nhất và bí quyết thảo dược Việt Nam. Mỗi liệu pháp đặc biệt tại spa tuyệt vời của chúng tôi đều mang đến cho bạn những trải nghiệm và cảm giác tuyệt vời nhất mà bạn từng được tận hưởng.
 Bữa trưa hoặc bữa tối miễn phí cho gói 120 phút
@@ -1808,8 +1796,7 @@ Tận hưởng dịch vụ cao cấp trong sự riêng tư ngay tại phòng đi
 Một loạt các phương pháp điều trị sáng tạo được thiết kế phù hợp với mong muốn cá nhân của bạn
 Ngoài ra còn chặn: Sun World Hạ Long, Vé Show Tinh Hoa Bắc Bộ tại Hà Nội
 Di chuyển: Xe buýt Hop-On Hop-Off Hà Nội
-Những điều cần thiết khi đi du lịch: Dịch vụ xin visa điện tử du lịch Việt Nam | Visa điện tử Việt Nam khi đến', N'
-Lịch trình tự do',N'1 Tràng Tiền, Phan Chu Trinh, Hoàn Kiếm, Hà Nội, Việt Nam', N'1 Tràng Tiền, Phan Chu Trinh, Hoàn Kiếm, Hà Nội, Việt Nam', '/tours/40');
+Những điều cần thiết khi đi du lịch: Dịch vụ xin visa điện tử du lịch Việt Nam | Visa điện tử Việt Nam khi đến', N'Lịch trình tự do',N'1 Tràng Tiền, Phan Chu Trinh, Hoàn Kiếm, Hà Nội, Việt Nam', N'1 Tràng Tiền, Phan Chu Trinh, Hoàn Kiếm, Hà Nội, Việt Nam', '/tours/40');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Skip the Line: Thang Long Water Puppet Theater Entrance Tickets', N'Bỏ qua việc xếp hàng và rắc rối với dịch vụ đặt trước bao gồm Vé vào cổng múa rối nước. Chọn Lịch chiếu phù hợp với lịch trình du lịch của bạn.
 Hãy đến rạp 20 phút trước giờ chiếu tại Văn phòng của chúng tôi để đổi voucher lấy vé thật và chuẩn bị trải nghiệm một trong những loại hình nghệ thuật truyền thống đáng nhớ nhất của Việt Nam trực tiếp trên sân khấu.', N'
@@ -2908,8 +2895,7 @@ Nếu bạn đặt "Lựa chọn Vịnh Lan Hạ"
 => Tham quan: Vịnh Lan Hạ, Hang Tối & Sáng, khu vực đảo Cát Bà hoặc Trang trại Ngọc trai HOẶC Hang trên đảo, Chèo thuyền kayak/Bơi quanh khu vực nước tinh khiết/đảo nhỏ/đá.
 Nếu bạn đặt "Tùy chọn Vịnh Bái Tử Long"
 => Đón ~ 08:00 - 08:30 từ khu phố cổ Hà Nội
-=> Tham quan: Động Thiên Cảnh Sơn, bãi biển hoang sơ xinh đẹp, làng nổi Vùng Viêng. Chèo thuyền Kayak/Bơi quanh làng nổi/đảo nhỏ/đá', N'
-Lịch trình tự do',N'Phú Minh, Sóc Sơn, Hà Nội, Việt Nam', N'Phú Minh, Sóc Sơn, Hà Nội, Việt Nam', '/tours/53');
+=> Tham quan: Động Thiên Cảnh Sơn, bãi biển hoang sơ xinh đẹp, làng nổi Vùng Viêng. Chèo thuyền Kayak/Bơi quanh làng nổi/đảo nhỏ/đá', N'Lịch trình tự do',N'Phú Minh, Sóc Sơn, Hà Nội, Việt Nam', N'Phú Minh, Sóc Sơn, Hà Nội, Việt Nam', '/tours/53');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Day Tour | Hercules Cruise Ha Long Bay + Optional Round-trip Transportation Options Included + Lunch Included + Kayak Experience (Vietnam / Sightseeing Boat)', N'Thưởng thức món nướng Hàn Quốc bằng phiếu giảm giá tiền mặt tại GoGi House
 Voucher áp dụng cho tất cả chi nhánh GoGi House được chỉ định tại Việt Nam
@@ -2991,12 +2977,10 @@ Bạn sẽ nhận được:
 Những câu chuyện chưa kể về cà phê Việt Nam
 Trải nghiệm thực hành pha chế và nếm thử 5 tách cà phê nổi tiếng nhất Việt Nam: Cà phê trứng Hà Nội, Cà phê dừa, Cà phê đá sữa, Cà phê Pour Over, Cà phê đặc trưng với mứt & rượu vang địa phương
 Mua cà phê nguyên chất và chất lượng cao nhất của Việt Nam mà nước ta có thể sản xuất được
-LƯU Ý: Hãy ăn một ít đồ ăn trước buổi tập vì chúng ta sẽ uống rất nhiều cà phê!', N'
-Lịch trình tự do',N'No. 1 Trang Tien, Hoan Kiem, Hanoi', N'No. 1 Trang Tien, Hoan Kiem, Hanoi', '/tours/57');
+LƯU Ý: Hãy ăn một ít đồ ăn trước buổi tập vì chúng ta sẽ uống rất nhiều cà phê!', N'Lịch trình tự do',N'No. 1 Trang Tien, Hoan Kiem, Hanoi', N'No. 1 Trang Tien, Hoan Kiem, Hanoi', '/tours/57');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'[EXTRA 12% OFF] Day Tour | Discover Ha Long Bay With Alova Deluxe Cruise from Hanoi (Multiple Languages Tour Guide)', N'Đặt dịch vụ đưa đón riêng một chiều giữa sân bay Nội Bài và khách sạn của bạn ở Phố Cổ Hà Nội
-Nhận dịch vụ giao hàng tận nơi với tài xế chuyên nghiệp và xe riêng có máy lạnh.', N'
-Lịch trình tự do',N'Hanoi Old Quarter', N'Hanoi Old Quarter', '/tours/58');
+Nhận dịch vụ giao hàng tận nơi với tài xế chuyên nghiệp và xe riêng có máy lạnh.', N'Lịch trình tự do',N'Hanoi Old Quarter', N'Hanoi Old Quarter', '/tours/58');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Day Tour | Explore Ha Long Bay on Excursion Luxury Cruise with Buffet Lunch ( With English Guide)', N'Xe của chúng tôi là sự lựa chọn tốt nhất cho chuyến đi của bạn với tài xế nói tiếng Anh cơ bản. Nó làm cho chuyến đi của bạn dường như ngắn hơn và thoải mái hơn. Bạn chỉ cần cảm thấy thư giãn trên xe, bỏ lại những muộn phiền để chiêm ngưỡng cảnh quan hai bên đường trong quá trình di chuyển. Đặt phòng với chúng tôi bạn sẽ có:
 Đội xe thuộc thế hệ mới nhất.
@@ -3049,8 +3033,7 @@ Hãy thoải mái đặt một trải nghiệm du lịch thỏa mãn với sự 
 <>
 ★ Chuyến tham quan du lịch Vịnh Hạ Long không chỉ bao gồm các hoạt động mà còn cho phép bạn tìm hiểu về văn hóa và lịch sử Việt Nam từ hướng dẫn viên người Anh.
 ★ Khóa học du ngoạn 6 giờ một ngày quanh Vịnh Hạ Long cung cấp nội dung giống hệt như kế hoạch du ngoạn qua đêm!
-★ Đây là một sản phẩm tiết kiệm chi phí cho phép bạn nghỉ tại một khách sạn ở Hà Nội và thực hiện chuyến đi trong ngày đến Vịnh Hạ Long để tận hưởng Vịnh Hạ Long với kế hoạch giống như một chuyến du ngoạn qua đêm.', N'
-Lịch trình tự do',N'Hanoi', N'Hanoi', '/tours/60');
+★ Đây là một sản phẩm tiết kiệm chi phí cho phép bạn nghỉ tại một khách sạn ở Hà Nội và thực hiện chuyến đi trong ngày đến Vịnh Hạ Long để tận hưởng Vịnh Hạ Long với kế hoạch giống như một chuyến du ngoạn qua đêm.', N'Lịch trình tự do',N'Hanoi', N'Hanoi', '/tours/60');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'2D1N Tour | Sapa Trekking Tour by Luxury Limousine Transfer', N'Xe của chúng tôi là sự lựa chọn tốt nhất cho chuyến đi của bạn với tài xế nói tiếng Anh cơ bản. Nó làm cho chuyến đi của bạn dường như ngắn hơn và thoải mái hơn. Bạn chỉ cần cảm thấy thư giãn trên xe, bỏ lại những muộn phiền để chiêm ngưỡng cảnh quan hai bên đường trong quá trình di chuyển. Đặt phòng với chúng tôi bạn sẽ có:
 Đội xe thuộc thế hệ mới nhất.
@@ -3112,16 +3095,14 @@ LƯU Ý: Hãy ăn một ít đồ ăn trước buổi tập vì chúng ta sẽ u
 ~Ngõ 173 Đường Hoàng Hoa Thám
 Thời gian: 4.5 tiếng (xấp xỉ)',N'57B Dinh Tien Hoang - Hoan Kiem - Ha Noi,', N'57B Dinh Tien Hoang - Hoan Kiem - Ha Noi,', '/tours/63');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
-    VALUES(N'Halong Bay Cruise 1 Day - 2 Days/1 Night or 3 Days/2 Night included Pick up', N'Chương trình thú vị này là cách lý tưởng để tận hưởng trải nghiệm văn hóa và ẩm thực đích thực. Nó hoàn hảo cho những người yêu thích ẩm thực và đam mê nấu ăn muốn học cách nấu các món ăn truyền thống của Việt Nam cho gia đình và bạn bè, cũng như cho những du khách thích phiêu lưu muốn khám phá nhiều thứ hơn là chỉ tham quan thành phố tuyệt vời của chúng tôi.', N'
-Lịch trình tự do',N'57B P. Đinh Tiên Hoàng, Hàng Bạc, Hoàn Kiếm, Hà Nội, Việt Nam', N'57B P. Đinh Tiên Hoàng, Hàng Bạc, Hoàn Kiếm, Hà Nội, Việt Nam', '/tours/64');
+    VALUES(N'Halong Bay Cruise 1 Day - 2 Days/1 Night or 3 Days/2 Night included Pick up', N'Chương trình thú vị này là cách lý tưởng để tận hưởng trải nghiệm văn hóa và ẩm thực đích thực. Nó hoàn hảo cho những người yêu thích ẩm thực và đam mê nấu ăn muốn học cách nấu các món ăn truyền thống của Việt Nam cho gia đình và bạn bè, cũng như cho những du khách thích phiêu lưu muốn khám phá nhiều thứ hơn là chỉ tham quan thành phố tuyệt vời của chúng tôi.', N'Lịch trình tự do',N'57B P. Đinh Tiên Hoàng, Hàng Bạc, Hoàn Kiếm, Hà Nội, Việt Nam', N'57B P. Đinh Tiên Hoàng, Hàng Bạc, Hoàn Kiếm, Hà Nội, Việt Nam', '/tours/64');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Skip the Line: Water Puppet Entrance Tickets', N'Tận hưởng chuyến phiêu lưu kéo dài nửa ngày bằng cách tham quan chợ địa phương ở Hà Nội trước khi tham gia lớp học nấu ăn, nơi bạn sẽ học cách làm chủ nhiều món ăn truyền thống của Việt Nam.
 Trải nghiệm dịch vụ đưa đón khách sạn thoải mái ở Phố Cổ Hà Nội
 Khám phá khu chợ địa phương và tìm hiểu cách hiểu rõ hơn về cách chọn nguyên liệu tươi cho món ăn của bạn
 Học cách chế biến các món ăn truyền thống đích thực của Việt Nam và quan sát văn hóa địa phương
 Nếm thử các loại rượu vang địa phương độc đáo và đặc biệt cùng với bữa ăn của bạn
-Có sẵn các lựa chọn ăn chay', N'
-Lịch trình tự do',N'31 P. Lò Sũ, street, Hoàn Kiếm, Hà Nội 100000, Việt Nam', N'31 P. Lò Sũ, street, Hoàn Kiếm, Hà Nội 100000, Việt Nam', '/tours/65');
+Có sẵn các lựa chọn ăn chay', N'Lịch trình tự do',N'31 P. Lò Sũ, street, Hoàn Kiếm, Hà Nội 100000, Việt Nam', N'31 P. Lò Sũ, street, Hoàn Kiếm, Hà Nội 100000, Việt Nam', '/tours/65');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Skip the Line: Thang Long Water Puppet Theater Entrance Tickets', N'Cà phê ĐẶC BIỆT nếm thử Robusta, Arabica và pha Robusta với Arabica với 03 loại cà phê
 Chuyên gia/chuyên gia cà phê nói tiếng Anh
@@ -3399,8 +3380,7 @@ Lúc này, bạn có 2 lựa chọn để quay lại Hà Nội:
 - Tham quan thác Hà Thành, nghỉ ngơi, ăn tối sau đó lên xe giường nằm lúc 20h. Trở về Hà Nội lúc 4 giờ sáng.
 Thời gian: 5 tiếng (xấp xỉ)',N'57B Dinh Tien Hoang - Hoan Kiem - Ha Noi,', N'57B Dinh Tien Hoang - Hoan Kiem - Ha Noi,', '/tours/66');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
-    VALUES(N'Amazing Package At Serene Spa', N'✔️ ✔️ ✔️ ĐIỂM NỔI BẬT ✔️ ✔️ ✔️ ✔️ Tour du lịch thành phố Hà Nội nửa ngày ✔️ Tham quan làng địa phương ở Hà Giang ✔️ Có cơ hội khám phá cuộc sống và văn hóa thực tế của người dân địa phương ✔️ Phong cảnh ngoạn mục của Hà Giang', N'
-Lịch trình tự do',N'58 P. Mã Mây, Hàng Buồm, Hoàn Kiếm, Hà Nội, Việt Nam', N'58 P. Mã Mây, Hàng Buồm, Hoàn Kiếm, Hà Nội, Việt Nam', '/tours/67');
+    VALUES(N'Amazing Package At Serene Spa', N'✔️ ✔️ ✔️ ĐIỂM NỔI BẬT ✔️ ✔️ ✔️ ✔️ Tour du lịch thành phố Hà Nội nửa ngày ✔️ Tham quan làng địa phương ở Hà Giang ✔️ Có cơ hội khám phá cuộc sống và văn hóa thực tế của người dân địa phương ✔️ Phong cảnh ngoạn mục của Hà Giang', N'Lịch trình tự do',N'58 P. Mã Mây, Hàng Buồm, Hoàn Kiếm, Hà Nội, Việt Nam', N'58 P. Mã Mây, Hàng Buồm, Hoàn Kiếm, Hà Nội, Việt Nam', '/tours/67');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Unique massage', N'Trải nghiệm sự thoải mái khi đi lại với dịch vụ Xe buýt Nằm này, đưa bạn đi lại liền mạch giữa Hà Nội và Sapa.
 Du lịch thoải mái trên giường ngủ trên xe buýt giữa Hà Nội và Sapa
@@ -3518,8 +3498,7 @@ Cơ hội tham quan Di sản thiên nhiên thế giới xinh đẹp Vịnh Hạ 
 Bữa trưa buffet ngon miệng với hơn 30 món ngon, đặc trưng với các món ngon hải sản địa phương
 Bao gồm tiệc trà chiều trên boong tắm nắng
 Lựa chọn giữa tham quan Sun World Hạ Long và nghỉ dưỡng dưới đại dương trên bãi biển Bãi Cháy
-Ngắm nhìn những nét đẹp nhất của văn hóa miền Bắc Việt Nam được khắc họa trong Vé xem Tinh Hoa Bắc Bộ tại Hà Nội | Việt Nam', N'
-Lịch trình tự do',N'15 P. Bát Đàn, Hàng Gai, Hoàn Kiếm, Hà Nội, Việt Nam', N'15 P. Bát Đàn, Hàng Gai, Hoàn Kiếm, Hà Nội, Việt Nam', '/tours/71');
+Ngắm nhìn những nét đẹp nhất của văn hóa miền Bắc Việt Nam được khắc họa trong Vé xem Tinh Hoa Bắc Bộ tại Hà Nội | Việt Nam', N'Lịch trình tự do',N'15 P. Bát Đàn, Hàng Gai, Hoàn Kiếm, Hà Nội, Việt Nam', N'15 P. Bát Đàn, Hàng Gai, Hoàn Kiếm, Hà Nội, Việt Nam', '/tours/71');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'BEST SELLER- 2 Day/1 Night Cruise with All-Inclusive in Halong', N'Nằm trong quần thể Vincom Mega Mall Times City, VinKE và Thủy cung Vinpear là điểm đến yêu thích của các gia đình, đặc biệt là những gia đình có con nhỏ. Nơi này mang đến cho trẻ em cơ hội tuyệt vời để trải nghiệm công việc mơ ước của mình tại VinKE và chuyến đi đến thế giới đại dương huyền bí tại thủy cung khổng lồ!
 Mang theo trẻ em để chúng thử sức với những công việc mơ ước và các trò chơi hướng dẫn nghề nghiệp thú vị
@@ -3604,14 +3583,12 @@ Thời kỳ đầu, múa rối nước thể hiện cuộc sống đời thườ
 Đặt vé, sau đó vé và tờ rơi chương trình, đầy đủ thông tin chi tiết về chương trình, sẽ được chuyển đến khách sạn của bạn. Chỉ cần mang theo vé và thưởng thức buổi biểu diễn.
 Bao gồm vé vào cửa',N'229 Cái Bèo, Bến bèo, Cát Hải, Hải Phòng, Việt Nam', N'229 Cái Bèo, Bến bèo, Cát Hải, Hải Phòng, Việt Nam', '/tours/76');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
-    VALUES(N'BEST SELLER- 2 Day/1 Night Cruise with All-Inclusive in Halong', N'Đặt vé xem múa rối nước tại Hà Nội vào thời gian bạn muốn. Không cần phải xếp hàng dài để kiểm tra phòng trống. Nhận vé tại văn phòng chúng tôi trước giờ biểu diễn 30 phút sau đó miễn xếp hàng để vào xem buổi biểu diễn. Thưởng thức màn trình diễn truyền thống độc đáo của Việt Nam này.', N'
-Lịch trình tự do',N'Hà Nội, Việt Nam', N'Hà Nội, Việt Nam', '/tours/77');
+    VALUES(N'BEST SELLER- 2 Day/1 Night Cruise with All-Inclusive in Halong', N'Đặt vé xem múa rối nước tại Hà Nội vào thời gian bạn muốn. Không cần phải xếp hàng dài để kiểm tra phòng trống. Nhận vé tại văn phòng chúng tôi trước giờ biểu diễn 30 phút sau đó miễn xếp hàng để vào xem buổi biểu diễn. Thưởng thức màn trình diễn truyền thống độc đáo của Việt Nam này.', N'Lịch trình tự do',N'Hà Nội, Việt Nam', N'Hà Nội, Việt Nam', '/tours/77');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Lan Ha - Ha Long Bay - Dau Be island 2D/1N from Cat Ba in less touristy areas.', N'Sol Spa là ốc đảo của sự tái tạo và làm đẹp, cung cấp dịch vụ chữa bệnh cho tất cả khách hàng. Nó cũng cung cấp một khung cảnh đô thị tách biệt độc đáo để trẻ hóa và thư giãn.
 Thư giãn tại một nơi nghỉ dưỡng độc đáo cung cấp sự kết hợp giữa các liệu pháp tinh vi nhất thế giới kết hợp với các phương pháp chữa bệnh của khu vực địa phương
 Nuông chiều bản thân với các dịch vụ đa dạng của các gói massage toàn diện
-Trải nghiệm di sản tuyệt đẹp của khu phố cổ', N'
-Lịch trình tự do',N'223 Một Tháng Tư, TT. Cát Bà, Cát Hải, Hải Phòng, Việt Nam', N'223 Một Tháng Tư, TT. Cát Bà, Cát Hải, Hải Phòng, Việt Nam', '/tours/78');
+Trải nghiệm di sản tuyệt đẹp của khu phố cổ', N'Lịch trình tự do',N'223 Một Tháng Tư, TT. Cát Bà, Cát Hải, Hải Phòng, Việt Nam', N'223 Một Tháng Tư, TT. Cát Bà, Cát Hải, Hải Phòng, Việt Nam', '/tours/78');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Lan Ha - Ha Long Bay 1 Day boat trip - Kayaking from Cat Ba, avoid the crowds.', N'Trải nghiệm niềm hạnh phúc thuần khiết tại Kadupul Spa. Các phương pháp trị liệu độc quyền sẽ tiếp thêm năng lượng và giúp bạn thư giãn, tạo ra những rung cảm tích cực. Tìm sự thanh thản trong im lặng. Đặt bây giờ.
 Tận hưởng và thư giãn trong sự im lặng thuần khiết nhất trước sự hối hả và nhộn nhịp hàng ngày
@@ -3620,21 +3597,18 @@ Kỹ thuật massage điện kết hợp các liệu pháp cổ xưa độc quy�
 Phác đồ chuyên biệt, khoa học được thiết kế riêng cho từng khách hàng, tối ưu hóa hiệu quả trị liệu và thư giãn
 Ngoài ra còn chặn: Sun World Hạ Long, Vé Show Tinh Hoa Bắc Bộ tại Hà Nội
 Di chuyển: Xe buýt Hop-On Hop-Off Hà Nội
-Những điều cần thiết khi đi du lịch: Dịch vụ xin visa điện tử du lịch Việt Nam | Visa điện tử Việt Nam khi đến', N'
-Lịch trình tự do',N'223 Một Tháng Tư, TT. Cát Bà, Cát Hải, Hải Phòng, Việt Nam', N'223 Một Tháng Tư, TT. Cát Bà, Cát Hải, Hải Phòng, Việt Nam', '/tours/79');
+Những điều cần thiết khi đi du lịch: Dịch vụ xin visa điện tử du lịch Việt Nam | Visa điện tử Việt Nam khi đến', N'Lịch trình tự do',N'223 Một Tháng Tư, TT. Cát Bà, Cát Hải, Hải Phòng, Việt Nam', N'223 Một Tháng Tư, TT. Cát Bà, Cát Hải, Hải Phòng, Việt Nam', '/tours/79');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Lan Ha Bay-Cat Ba Island 2D1N Cruise with Meals, Kayaking, Biking', N'Tham gia một kỳ nghỉ thư giãn ở trung tâm Hà Nội và tận hưởng một ngày tại Serene Spa
 Yêu thích cơ sở vật chất của spa sẽ ngay lập tức đưa bạn vào tâm trạng bình tĩnh
 Chọn từ một loạt các phương pháp trị liệu của Serene Spa, từ mát-xa nhẹ nhàng đến chăm sóc da mặt.
 Có tùy chọn lựa chọn giữa hai chi nhánh, tùy theo chi nhánh nào gần vị trí của bạn nhất!
-Tận hưởng sự thân mật của phòng riêng cho tất cả các gói spa ngoại trừ Chăm sóc bàn chân.', N'
-Lịch trình tự do',N'229 Cái Bèo, Bến bèo, Cát Hải, Hải Phòng, Việt Nam', N'229 Cái Bèo, Bến bèo, Cát Hải, Hải Phòng, Việt Nam', '/tours/80');
+Tận hưởng sự thân mật của phòng riêng cho tất cả các gói spa ngoại trừ Chăm sóc bàn chân.', N'Lịch trình tự do',N'229 Cái Bèo, Bến bèo, Cát Hải, Hải Phòng, Việt Nam', N'229 Cái Bèo, Bến bèo, Cát Hải, Hải Phòng, Việt Nam', '/tours/80');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'BOUTIQUE CRUISE 2 Days 1 Night Explore Lan Ha Bay & Cat Ba islanD', N'Tận hưởng dịch vụ với khuyến mãi giờ vàng từ 09:00 - 11:00 sáng hàng ngày
 Thư giãn với các liệu pháp spa hoàn hảo ngay trung tâm Hà Nội
 Hãy thử mát-xa bằng que tre đặc trưng hoặc đánh thức các giác quan của bạn bằng liệu pháp mát-xa nhiều tay
-Tận hưởng ưu đãi giảm giá độc quyền từ KKday!', N'
-Lịch trình tự do',N'229 Cái Bèo, Bến bèo, Cát Hải, Hải Phòng, Việt Nam', N'229 Cái Bèo, Bến bèo, Cát Hải, Hải Phòng, Việt Nam', '/tours/81');
+Tận hưởng ưu đãi giảm giá độc quyền từ KKday!', N'Lịch trình tự do',N'229 Cái Bèo, Bến bèo, Cát Hải, Hải Phòng, Việt Nam', N'229 Cái Bèo, Bến bèo, Cát Hải, Hải Phòng, Việt Nam', '/tours/81');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'BEST SELLER- 2 Day/1 Night Cruise with All-Inclusive in Halong', N'L''essence Spa Group mang đến trải nghiệm spa độc quyền với các phương pháp trị liệu được tạo ra bằng cách kết hợp hài hòa các kỹ thuật phương Đông tốt nhất và bí quyết thảo dược Việt Nam. Mỗi liệu pháp đặc biệt tại spa tuyệt vời của chúng tôi đều mang đến cho bạn những trải nghiệm và cảm giác tuyệt vời nhất mà bạn từng được tận hưởng.
 Bữa trưa hoặc bữa tối miễn phí cho gói 120 phút
@@ -4805,18 +4779,15 @@ Nếu bạn đặt "Lựa chọn Vịnh Lan Hạ"
 => Tham quan: Vịnh Lan Hạ, Hang Tối & Sáng, khu vực đảo Cát Bà hoặc Trang trại Ngọc trai HOẶC Hang trên đảo, Chèo thuyền kayak/Bơi quanh khu vực nước tinh khiết/đảo nhỏ/đá.
 Nếu bạn đặt "Tùy chọn Vịnh Bái Tử Long"
 => Đón ~ 08:00 - 08:30 từ khu phố cổ Hà Nội
-=> Tham quan: Động Thiên Cảnh Sơn, bãi biển hoang sơ xinh đẹp, làng nổi Vùng Viêng. Chèo thuyền Kayak/Bơi quanh làng nổi/đảo nhỏ/đá', N'
-Lịch trình tự do',N'146 Doan Khue, Khue My Ward, Ngu Hanh Son District, Da Nang City', N'146 Doan Khue, Khue My Ward, Ngu Hanh Son District, Da Nang City', '/tours/94');
+=> Tham quan: Động Thiên Cảnh Sơn, bãi biển hoang sơ xinh đẹp, làng nổi Vùng Viêng. Chèo thuyền Kayak/Bơi quanh làng nổi/đảo nhỏ/đá', N'Lịch trình tự do',N'146 Doan Khue, Khue My Ward, Ngu Hanh Son District, Da Nang City', N'146 Doan Khue, Khue My Ward, Ngu Hanh Son District, Da Nang City', '/tours/94');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Hue Imperial City Full-Day Tour from Da Nang', N'Thưởng thức món nướng Hàn Quốc bằng phiếu giảm giá tiền mặt tại GoGi House
 Voucher áp dụng cho tất cả chi nhánh GoGi House được chỉ định tại Việt Nam
-Thưởng thức bữa ăn tại nhà hàng rộng rãi, tiện nghi', N'
-Lịch trình tự do',N'36 Bạch Đằng, Street, Hải Châu, Đà Nẵng 550000, Việt Nam', N'36 Bạch Đằng, Street, Hải Châu, Đà Nẵng 550000, Việt Nam', '/tours/95');
+Thưởng thức bữa ăn tại nhà hàng rộng rãi, tiện nghi', N'Lịch trình tự do',N'36 Bạch Đằng, Street, Hải Châu, Đà Nẵng 550000, Việt Nam', N'36 Bạch Đằng, Street, Hải Châu, Đà Nẵng 550000, Việt Nam', '/tours/95');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Shuttle Bus: Round-Trip Transfer to Hoi An & My Son from Da Nang', N'Với không gian gần gũi, quen thuộc với chất liệu gỗ mộc mạc cùng họa tiết chim công đặc trưng của những năm 1900, không gian tại Công là nơi ghé thăm thân thương cho những tâm hồn hoài niệm. vào một đêm hẹn hò.
 Ở Công, có những thức uống được sáng tạo từ sự biến tấu, giao thoa văn hóa được thể hiện khéo léo, tinh tế trong tách cà phê tưởng chừng đơn giản.
-Không chỉ có cà phê, với thực đơn của Công là cả một bầu trời tâm huyết, sáng tạo để mang lại sự hài lòng nhất cho thực khách.', N'
-Lịch trình tự do',N'99 Vo Nguyen Giap, Bac My An, Ngu Hanh Son, Da Nang, Vietnam', N'99 Vo Nguyen Giap, Bac My An, Ngu Hanh Son, Da Nang, Vietnam', '/tours/96');
+Không chỉ có cà phê, với thực đơn của Công là cả một bầu trời tâm huyết, sáng tạo để mang lại sự hài lòng nhất cho thực khách.', N'Lịch trình tự do',N'99 Vo Nguyen Giap, Bac My An, Ngu Hanh Son, Da Nang, Vietnam', N'99 Vo Nguyen Giap, Bac My An, Ngu Hanh Son, Da Nang, Vietnam', '/tours/96');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'My Xuan Night Cruise on Han River in Da Nang | Vietnam', N'Hòa mình vào không khí náo nhiệt tại K-Pub để thưởng thức món nướng đường phố Hàn Quốc đích thực và thỏa sức lựa chọn ẩm thực với hơn 30 món
 Thực đơn dễ dàng gọi món với các combo đặt tên theo kích cỡ như trống lớn cho 4-6 người, trống nhỏ cho 2-4 người.
@@ -4880,11 +4851,9 @@ INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,Ph
     VALUES(N'Surf Lessons', N'Phòng rất rộng rãi với giường thoải mái lớn tuyệt vời. Rất sạch sẽ trong suốt.
 Nhân viên thật tuyệt vời và không thể hữu ích hơn. Dịch vụ tuyệt vời! Thức ăn rất phong phú và đáng yêu.
 Với tuyến đường mới đến Vịnh Lan Hạ vừa được Công ty chúng tôi xây dựng cách đây 1 năm, thời gian từ Hà Nội đến Vịnh Hạ Long đã rút ngắn, chỉ còn 2,5 giờ đi xe buýt, chúng tôi rất nhanh chóng đến được cảng và nhận phòng sang trọng. du thuyền,
-Chúng tôi sẽ đưa bạn đến Đảo Cát Bà và cả Vịnh Lan Hạ, điều đó có nghĩa là tuyến đường của chúng tôi xa hơn các hành trình khác chỉ đi vòng quanh Vịnh Hạ Long * CABON ĐƠN CHO MỘT NGƯỜI SẼ PHỤ THUỘC THÊM 35USD', N'
-Lịch trình tự do',N'35 An Thượng 5, Ngũ Hành Sơn, Đà Nẵng 550000, Việt Nam', N'35 An Thượng 5, Ngũ Hành Sơn, Đà Nẵng 550000, Việt Nam', '/tours/98');
+Chúng tôi sẽ đưa bạn đến Đảo Cát Bà và cả Vịnh Lan Hạ, điều đó có nghĩa là tuyến đường của chúng tôi xa hơn các hành trình khác chỉ đi vòng quanh Vịnh Hạ Long * CABON ĐƠN CHO MỘT NGƯỜI SẼ PHỤ THUỘC THÊM 35USD', N'Lịch trình tự do',N'35 An Thượng 5, Ngũ Hành Sơn, Đà Nẵng 550000, Việt Nam', N'35 An Thượng 5, Ngũ Hành Sơn, Đà Nẵng 550000, Việt Nam', '/tours/98');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
-    VALUES(N'Ba Na Hills & Golden Bridge Day Tour from Da Nang', N'Xe Cát Bà Discovery là dòng xe sang trọng bậc nhất tuyến Cát Bà – Hà Nội, có hướng dẫn viên nói tiếng Anh, nước uống miễn phí. Dịch vụ đưa đón tại khách sạn', N'
-Lịch trình tự do',N'45 Võ Văn Kiệt, Phước Mỹ, Sơn Trà, Đà Nẵng 550000, Việt Nam', N'45 Võ Văn Kiệt, Phước Mỹ, Sơn Trà, Đà Nẵng 550000, Việt Nam', '/tours/99');
+    VALUES(N'Ba Na Hills & Golden Bridge Day Tour from Da Nang', N'Xe Cát Bà Discovery là dòng xe sang trọng bậc nhất tuyến Cát Bà – Hà Nội, có hướng dẫn viên nói tiếng Anh, nước uống miễn phí. Dịch vụ đưa đón tại khách sạn', N'Lịch trình tự do',N'45 Võ Văn Kiệt, Phước Mỹ, Sơn Trà, Đà Nẵng 550000, Việt Nam', N'45 Võ Văn Kiệt, Phước Mỹ, Sơn Trà, Đà Nẵng 550000, Việt Nam', '/tours/99');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Ba Na Hills & Golden Bridge Tour: Cable Car, Fantasy Park, Buffet', N'Xe đưa đón từ Cát Bà đi Hà Giang, Xe Limousine đón và trả khách tại khách sạn. Wifi/Nước/Ăn nhẹ miễn phí trên xe buýt.', N'
 ~Ngày 1 – Hà Nội - Catba - Vịnh Lan Hạ
@@ -5075,8 +5044,7 @@ Xe Limousine đưa đón tuyến Hà Nội – Hạ Long – Hà Nội, đi theo
 ~7PG9Q46H+8Q9
 Thời gian: 9 tiếng (xấp xỉ)',N'Da Nang International Airport', N'Da Nang International Airport', '/tours/106');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
-    VALUES(N'Hue Imperial City Full-Day Tour from Da Nang', N'dsfgsdgfdbgdf fgyuguhgjjhgfjhgh fgydfgbhjdfhgdhgf fgyjuyjytjtyjtyjtyjjt hgjfgjfgjhfdghdfg fghyjftghjgfjgfh fghjdfghdfhgfdh', N'
-Lịch trình tự do',N'36 Bạch Đằng, Street, Hải Châu, Đà Nẵng 550000, Việt Nam', N'36 Bạch Đằng, Street, Hải Châu, Đà Nẵng 550000, Việt Nam', '/tours/107');
+    VALUES(N'Hue Imperial City Full-Day Tour from Da Nang', N'dsfgsdgfdbgdf fgyuguhgjjhgfjhgh fgydfgbhjdfhgdhgf fgyjuyjytjtyjtyjtyjjt hgjfgjfgjhfdghdfg fghyjftghjgfjgfh fghjdfghdfhgfdh', N'Lịch trình tự do',N'36 Bạch Đằng, Street, Hải Châu, Đà Nẵng 550000, Việt Nam', N'36 Bạch Đằng, Street, Hải Châu, Đà Nẵng 550000, Việt Nam', '/tours/107');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'6-Hour Cooking Class in Danang (JDN1)', N'Nhận phiếu quà tặng và bắt đầu mua sắm tại potico.vn
 Chuyển phát nhanh 90 phút tại Hà Nội và TP.HCM
@@ -5117,8 +5085,7 @@ Tại sao chọn chúng tôi:
 Nhóm nhỏ (Tối đa 12 người)
 Hành trình độc đáo (chỉ chúng tôi cung cấp tuyến đường này)
 Lựa chọn điểm đến và hành trình
-Dịch vụ tốt nhất và vận chuyển mới', N'
-Lịch trình tự do',N'10 Trần Quốc Toản, Hải Châu 1, Hải Châu, Đà Nẵng 550000, Việt Nam', N'10 Trần Quốc Toản, Hải Châu 1, Hải Châu, Đà Nẵng 550000, Việt Nam', '/tours/109');
+Dịch vụ tốt nhất và vận chuyển mới', N'Lịch trình tự do',N'10 Trần Quốc Toản, Hải Châu 1, Hải Châu, Đà Nẵng 550000, Việt Nam', N'10 Trần Quốc Toản, Hải Châu 1, Hải Châu, Đà Nẵng 550000, Việt Nam', '/tours/109');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Half Day Walking Tour | Da Nang Street Food Tasting', N'Tận hưởng chuyến đi thú vị dọc theo Sông Hàn quyến rũ ở Đà Nẵng khi bạn lên du thuyền Mỹ Xuân. Ngắm nhìn các điểm tham quan nổi tiếng và nghe các buổi biểu diễn âm nhạc trực tiếp trên tàu khi bạn dành buổi chiều uống rượu cùng bạn bè và gia đình.
 Chiêm ngưỡng cảnh đêm sông Hàn rực rỡ từ du thuyền Mỹ Xuân sang trọng
@@ -5215,8 +5182,7 @@ Tại sao chọn chúng tôi:
 Nhóm nhỏ (Tối đa 12 người)
 Hành trình độc đáo (chỉ chúng tôi cung cấp tuyến đường này)
 Lựa chọn điểm đến và hành trình
-Dịch vụ tốt nhất và vận chuyển mới', N'
-Lịch trình tự do',N'279 Đ. Mai Đăng Chơn, Hoà Hải, Ngũ Hành Sơn, Đà Nẵng 550000, Việt Nam', N'279 Đ. Mai Đăng Chơn, Hoà Hải, Ngũ Hành Sơn, Đà Nẵng 550000, Việt Nam', '/tours/114');
+Dịch vụ tốt nhất và vận chuyển mới', N'Lịch trình tự do',N'279 Đ. Mai Đăng Chơn, Hoà Hải, Ngũ Hành Sơn, Đà Nẵng 550000, Việt Nam', N'279 Đ. Mai Đăng Chơn, Hoà Hải, Ngũ Hành Sơn, Đà Nẵng 550000, Việt Nam', '/tours/114');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Jolie Da nang cooking class only (JDN3)', N'Tận hưởng chuyến đi thú vị dọc theo Sông Hàn quyến rũ ở Đà Nẵng khi bạn lên du thuyền Mỹ Xuân. Ngắm nhìn các điểm tham quan nổi tiếng và nghe các buổi biểu diễn âm nhạc trực tiếp trên tàu khi bạn dành buổi chiều uống rượu cùng bạn bè và gia đình.
 Chiêm ngưỡng cảnh đêm sông Hàn rực rỡ từ du thuyền Mỹ Xuân sang trọng
@@ -5283,8 +5249,7 @@ Một người hướng dẫn có trình độ và kinh nghiệm sẽ đồng h�
 Chúng tôi có áo chống nắng cho mùa hè và bộ đồ lặn cho mùa đông để chúng tôi có thể lướt sóng quanh năm.
 Chúng tôi có mức giá thuê ván lướt sóng nửa ngày tuyệt vời cho người mới bắt đầu.
 Quy mô lớp học nhỏ đảm bảo sự quan tâm cá nhân từ người hướng dẫn của bạn.
-Chúng tôi nằm cách Bãi biển Mỹ Khê ở Đà Nẵng một quãng đi bộ ngắn, được coi là một trong 10 bãi biển hàng đầu thế giới (Forbes) với điều kiện hoàn hảo để lướt sóng.', N'
-Lịch trình tự do',N'Little Ba Na Hills Restaurant', N'Little Ba Na Hills Restaurant', '/tours/118');
+Chúng tôi nằm cách Bãi biển Mỹ Khê ở Đà Nẵng một quãng đi bộ ngắn, được coi là một trong 10 bãi biển hàng đầu thế giới (Forbes) với điều kiện hoàn hảo để lướt sóng.', N'Lịch trình tự do',N'Little Ba Na Hills Restaurant', N'Little Ba Na Hills Restaurant', '/tours/118');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'My Son Sanctuary Discovery Half-Day Tour', N'Đón và trả khách bởi tài xế chuyên nghiệp nên bạn không phải lo lắng về việc quy hoạch các tuyến đường giao thông.
 Cung cấp các loại xe phù hợp với nhu cầu của bạn.
@@ -5320,8 +5285,7 @@ Trải nghiệm đưa đón khách sạn tiện lợi trong trung tâm thành ph
 Có thể bạn muốn ghé thăm: Vé Công viên Giải trí Vinwonders Nam Hội An | Việt Nam
 Vé Sun World Bà Nà Hills
 Đưa đón riêng: Đưa đón riêng giữa Sân bay Quốc tế Đà Nẵng (DAD) và Đà Nẵng, Hội An, Huế, Bà Nà Hills | Việt Nam
-Du lịch cần thiết: Dịch vụ xin visa điện tử du lịch Việt Nam | Visa điện tử Việt Nam khi đến', N'
-Lịch trình tự do',N'No. 99 Vo Nguyen Giap, Bac My An, Ngu Hanh Son, Da Nang City', N'No. 99 Vo Nguyen Giap, Bac My An, Ngu Hanh Son, Da Nang City', '/tours/120');
+Du lịch cần thiết: Dịch vụ xin visa điện tử du lịch Việt Nam | Visa điện tử Việt Nam khi đến', N'Lịch trình tự do',N'No. 99 Vo Nguyen Giap, Bac My An, Ngu Hanh Son, Da Nang City', N'No. 99 Vo Nguyen Giap, Bac My An, Ngu Hanh Son, Da Nang City', '/tours/120');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Sun World Ba Na Hills Ticket', N'Dạo quanh đường phố Đà Nẵng trên xe máy với hướng dẫn viên địa phương riêng
 Chiêm ngưỡng sắc hồng rực rỡ của Nhà thờ Đà Nẵng
@@ -5351,8 +5315,7 @@ INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,Ph
 Dạo quanh đường phố Đà Nẵng bằng xe máy và trải nghiệm văn hóa địa phương
 Lên thuyền và thưởng thức cảnh đêm tuyệt đẹp dọc Sông Hàn
 Thưởng thức hương vị đậm đà hương vị Việt Nam với đồ ăn nhẹ miễn phí
-Ghé thăm nhiều điểm tham quan trong một đêm với hướng dẫn viên nói tiếng Anh', N'
-Lịch trình tự do',N'Bà Nà - Suối Mơ, Hòa Vang, Da Nang, Vietnam', N'Bà Nà - Suối Mơ, Hòa Vang, Da Nang, Vietnam', '/tours/122');
+Ghé thăm nhiều điểm tham quan trong một đêm với hướng dẫn viên nói tiếng Anh', N'Lịch trình tự do',N'Bà Nà - Suối Mơ, Hòa Vang, Da Nang, Vietnam', N'Bà Nà - Suối Mơ, Hòa Vang, Da Nang, Vietnam', '/tours/122');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'One-Day Golf Tour From Da Nang To BRG Da Nang Golf Resort | Vietnam', N'Xe của chúng tôi với tài xế giàu kinh nghiệm nói tiếng Anh cơ bản là sự lựa chọn tốt nhất cho chuyến đi của bạn. Dịch vụ đưa đón chuyên nghiệp giúp bạn cảm thấy chuyến đi của mình ngắn gọn và thoải mái hơn. Bạn chỉ cần cảm thấy thư giãn trên xe, bỏ lại những muộn phiền phía sau để chiêm ngưỡng cảnh đẹp hai bên đường trong quá trình di chuyển. Ngoài ra còn một số tính năng nổi bật khác mà bạn sẽ có khi đặt phòng với chúng tôi:
 Đội xe thuộc thế hệ mới nhất.
@@ -5361,14 +5324,12 @@ Giá rẻ & không có chi phí ẩn
 Tài xế chuyên nghiệp nói tiếng Anh cơ bản
 Không tốn thêm chi phí cho thời gian chờ đợi.
 Đội ngũ hỗ trợ có trách nhiệm 24 giờ
-Luôn đi đường cao tốc cho chuyến đi.', N'
-Lịch trình tự do',N'Hoa Hai Ward, Ngu Hanh Son, Danang City, Vietnam', N'Hoa Hai Ward, Ngu Hanh Son, Danang City, Vietnam', '/tours/123');
+Luôn đi đường cao tốc cho chuyến đi.', N'Lịch trình tự do',N'Hoa Hai Ward, Ngu Hanh Son, Danang City, Vietnam', N'Hoa Hai Ward, Ngu Hanh Son, Danang City, Vietnam', '/tours/123');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'One-Day Golf Tour From Da Nang To Montgomerie Links Golf Club', N'Lounge mở cửa 24 giờ hàng ngày
 Cung cấp đầy đủ tiện ích từ ăn uống, nghỉ ngơi, giải trí, làm việc
 Thoát khỏi sự hỗn loạn của một sân bay ồn ào, đông đúc trong khi chờ chuyến bay của bạn.
-Trải nghiệm không gian sang trọng và trang nhã', N'
-Lịch trình tự do',N'Da Nang City', N'Da Nang City', '/tours/124');
+Trải nghiệm không gian sang trọng và trang nhã', N'Lịch trình tự do',N'Da Nang City', N'Da Nang City', '/tours/124');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Combo: Tradictional Bamboo Dragon Cruise & Vietnamese Tasty Beer', N'Thưởng thức món nướng Hàn Quốc bằng phiếu giảm giá tiền mặt tại GoGi House
 Voucher áp dụng cho tất cả chi nhánh GoGi House được chỉ định tại Việt Nam
@@ -5453,8 +5414,7 @@ INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,Ph
     VALUES(N'Foot Massage, Body Massage,Thai Massage, Facial, Body care, Waxing', N'Có cơ hội tìm hiểu về ẩm thực và văn hóa Việt Nam khi bạn tham gia lớp học nấu ăn thú vị này trong chuyến đi đến Đà Nẵng!
 Nhận hướng dẫn từng bước về cách nấu các món ăn Việt Nam đơn giản nhưng ngon miệng từ gia đình địa phương thân thiện của bạn
 Áp dụng phương pháp thực hành vào bài học của bạn, sau đó nếm thử những sáng tạo của riêng bạn trong bữa trưa hoặc bữa tối
-Hiểu rõ hơn về cuộc sống, văn hóa và câu chuyện địa phương từ chủ nhà của bạn, những người cũng thông thạo tiếng Anh và tiếng Trung', N'
-Lịch trình tự do',N'98 Thạch Lam, Phước Mỹ, Sơn Trà, Đà Nẵng 550000, Việt Nam', N'98 Thạch Lam, Phước Mỹ, Sơn Trà, Đà Nẵng 550000, Việt Nam', '/tours/130');
+Hiểu rõ hơn về cuộc sống, văn hóa và câu chuyện địa phương từ chủ nhà của bạn, những người cũng thông thạo tiếng Anh và tiếng Trung', N'Lịch trình tự do',N'98 Thạch Lam, Phước Mỹ, Sơn Trà, Đà Nẵng 550000, Việt Nam', N'98 Thạch Lam, Phước Mỹ, Sơn Trà, Đà Nẵng 550000, Việt Nam', '/tours/130');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Foot Massage with Hot Stone 60 mins - Lotus My Khe', N'Bị mê hoặc bởi màn trình diễn văn hóa thể hiện lịch sử, truyền thống và vẻ đẹp của Đà Nẵng thông qua âm nhạc, khiêu vũ và hình ảnh tuyệt đẹp.
 Khám phá nhiều chủ đề khác nhau, từ lịch sử cảng biển Đà Nẵng ven biển đến vị thế hiện tại là một đô thị hiện đại và thịnh vượng
@@ -5465,21 +5425,18 @@ Ngồi thư giãn và xem chương trình trong nhà hát được xây dựng c
 Thời gian: 6 tiếng (xấp xỉ)',N'139 Nguyễn Văn Thoại, An Hải Đông, Sơn Trà, Đà Nẵng 550000, Việt Nam', N'139 Nguyễn Văn Thoại, An Hải Đông, Sơn Trà, Đà Nẵng 550000, Việt Nam', '/tours/131');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Motorbike tour 3D2N (small group with easy riders)', N'8.00: Tập trung tại số 9 phố Hàm Tử và đến một trong những khu vườn hữu cơ ở Đà Nẵng, nơi bạn dành 30 phút với nông dân địa phương để hiểu thêm về cuộc sống thực sự của nông dân Việt Nam 9.00: Đi đến chợ cung cấp lớn nhất ở Đà Nẵng Nang, mua đồ tươi sống cho lớp học nấu ăn, tìm hiểu cách mua sắm của người Việt. 09h45: Nghỉ ngơi uống tách cà phê, chia sẻ câu chuyện của mình với mọi người. 10:00: Đến nhà Jolie, nơi bạn sẽ được thưởng thức đồ uống chào mừng đáng yêu của Jolie xinh đẹp. Sau đó, hãy lắng nghe những câu chuyện của cô về cuộc sống sinh viên, v.v. 10h30: Đến giờ nấu ăn!!! 12h30: Thưởng thức bữa ăn do chính tay bạn nấu.
-13.00: Chơi piano/guitar (nếu có thể) và quay về chỗ ở của mình bằng cách ôm lấy chính mình', N'
-Lịch trình tự do',N'city, 02 Alley 80 Lý Tự Trọng, Ward, Hà Giang, 310000, Việt Nam', N'city, 02 Alley 80 Lý Tự Trọng, Ward, Hà Giang, 310000, Việt Nam', '/tours/132');
+13.00: Chơi piano/guitar (nếu có thể) và quay về chỗ ở của mình bằng cách ôm lấy chính mình', N'Lịch trình tự do',N'city, 02 Alley 80 Lý Tự Trọng, Ward, Hà Giang, 310000, Việt Nam', N'city, 02 Alley 80 Lý Tự Trọng, Ward, Hà Giang, 310000, Việt Nam', '/tours/132');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Ha Giang Loop 4 Day trip with Easy Rider', N'Đắm chìm trong hành trình ẩm thực hấp dẫn, chế biến món Bánh mì thơm ngon & nhâm nhi Cà phê Phin trong bầu không khí phương Đông đặc trưng của Cửa hàng áo dài Viet Sense.
 Trải nghiệm sự kết hợp thú vị giữa bánh mì Việt Nam và cà phê phin Phin
 Thưởng thức món ăn nhẹ tự chế biến thơm ngon
 Đắm mình trong bầu không khí phương Đông độc đáo của Cửa hàng áo dài Viet Sense, hoàn hảo để chụp ảnh sau bữa ăn
-Khám phá trải nghiệm thuê áo dài cùng Viet Sense tại đây', N'
-Lịch trình tự do',N'Tp. Hà Giang, Hà Giang, Việt Nam', N'Tp. Hà Giang, Hà Giang, Việt Nam', '/tours/133');
+Khám phá trải nghiệm thuê áo dài cùng Viet Sense tại đây', N'Lịch trình tự do',N'Tp. Hà Giang, Hà Giang, Việt Nam', N'Tp. Hà Giang, Hà Giang, Việt Nam', '/tours/133');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Ha Giang loop 3 or 4 days with easy riders', N'Lounge mở cửa 24 giờ hàng ngày
 Cung cấp đầy đủ tiện ích từ ăn uống, nghỉ ngơi, giải trí, làm việc
 Thoát khỏi sự hỗn loạn của một sân bay ồn ào, đông đúc trong khi chờ chuyến bay của bạn.
-Trải nghiệm không gian sang trọng và trang nhã', N'
-Lịch trình tự do',N'249F Đường 20/8, P. Nguyễn Trãi, Hà Giang, 310000, Việt Nam', N'249F Đường 20/8, P. Nguyễn Trãi, Hà Giang, 310000, Việt Nam', '/tours/134');
+Trải nghiệm không gian sang trọng và trang nhã', N'Lịch trình tự do',N'249F Đường 20/8, P. Nguyễn Trãi, Hà Giang, 310000, Việt Nam', N'249F Đường 20/8, P. Nguyễn Trãi, Hà Giang, 310000, Việt Nam', '/tours/134');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'From Ha Giang: 2 Day 1 Night Loop Tour by car or motorbike', N'Chiêm ngưỡng toàn cảnh Đà Nẵng từ trên cao, một trải nghiệm ngoạn mục khó tìm thấy ở nơi nào khác.
 Tham quan địa danh chùa Linh Ứng với tượng Quán Âm uy nghi và những chiếc thuyền đánh cá đầy màu sắc của bãi biển Mỹ Khê.
@@ -5498,8 +5455,7 @@ INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,Ph
     VALUES(N'From Ha Giang City: Amazing Ha Giang Loop 2 Days 1 Night', N'Hãy tham gia tour du lịch riêng nửa ngày thanh thản ở Nha Trang này bao gồm các chuyến tham quan Ngũ Hành Sơn xinh đẹp, Động Âm Phủ và Chùa Linh Ứng.
 Khám phá vẻ đẹp dưới lòng đất của Động Âm Phủ với những khối thạch nhũ phức tạp và những bức tượng tôn giáo
 Tham quan chùa Linh Ứng yên bình và tâm linh nằm trên đỉnh một trong những ngọn đồi của Ngũ Hành Sơn và tận hưởng tầm nhìn toàn cảnh ngoạn mục
-Chiêm ngưỡng vẻ đẹp thiên nhiên của Ngũ Hành Sơn', N'
-Lịch trình tự do',N'Phương Thiện, Tp. Hà Giang, Hà Giang, Việt Nam', N'Phương Thiện, Tp. Hà Giang, Hà Giang, Việt Nam', '/tours/136');
+Chiêm ngưỡng vẻ đẹp thiên nhiên của Ngũ Hành Sơn', N'Lịch trình tự do',N'Phương Thiện, Tp. Hà Giang, Hà Giang, Việt Nam', N'Phương Thiện, Tp. Hà Giang, Hà Giang, Việt Nam', '/tours/136');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'A Day of Picnicking and Relaxation', N'Đảm bảo 100% xe nếu đặt trước
 Giá cố định và không có chi phí ẩn
@@ -5507,8 +5463,7 @@ Hoàn hảo cho các nhóm lớn hơn, đặc biệt là cho các gia đình, ph
 Tham quan 2 công viên giải trí hấp dẫn:
 Vé Công Viên Giải Trí Vinwonders Nam Hội An | Việt Nam
 Vé Sun World Bà Nà Hills
-Du lịch cần thiết: Dịch vụ xin visa điện tử du lịch Việt Nam | Visa điện tử Việt Nam khi đến', N'
-Lịch trình tự do',N'249F Đường 20/8, P. Nguyễn Trãi, Hà Giang, 310000, Việt Nam', N'249F Đường 20/8, P. Nguyễn Trãi, Hà Giang, 310000, Việt Nam', '/tours/137');
+Du lịch cần thiết: Dịch vụ xin visa điện tử du lịch Việt Nam | Visa điện tử Việt Nam khi đến', N'Lịch trình tự do',N'249F Đường 20/8, P. Nguyễn Trãi, Hà Giang, 310000, Việt Nam', N'249F Đường 20/8, P. Nguyễn Trãi, Hà Giang, 310000, Việt Nam', '/tours/137');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Motorbike tour 3D2N (small group with easy riders)', N'Khám phá trải nghiệm về đêm độc đáo với vé Bà Nà Hills được thiết kế đặc biệt của chúng tôi. Đắm mình vào những bức ảnh toàn cảnh về đêm quyến rũ làm thay đổi cảnh quan thành phố Đà Nẵng. Chứng kiến những buổi biểu diễn trực tiếp đầy mê hoặc nhằm tôn vinh tinh hoa văn hóa Việt Nam. Tận hưởng kỳ nghỉ lãng mạn hay chuyến đi chơi đáng nhớ với vé đêm Bà Nà Hills.
 Chứng kiến vẻ đẹp mê hoặc của Bà Nà Hills khi nơi đây biến hóa dưới ánh đèn rực rỡ
@@ -5575,8 +5530,7 @@ Các điệu múa và âm nhạc dân gian truyền thống kết hợp hoàn h�
 Nhưng chương trình cũng nắm bắt được năng lượng và phong cách đương đại của thành phố. Đèn neon phản chiếu trang phục hiện đại của vũ công khi nhịp điệu nhạc pop hòa quyện với giai điệu truyền thống. Đó là sự kết hợp giữa cũ và mới phản ánh tâm hồn kép của Đà Nẵng.
 Bao gồm vé vào cửa',N'279 Bãi Cháy, Thành phố Hạ Long, Quảng Ninh, Việt Nam', N'279 Bãi Cháy, Thành phố Hạ Long, Quảng Ninh, Việt Nam', '/tours/142');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
-    VALUES(N'Bus ticket Ha Giang to Hanoi: Sleeping - Limousine - Cabin Bus', N'Trải nghiệm trái tim và tâm hồn của Việt Nam thông qua sự kết hợp ngoạn mục giữa khiêu vũ, âm nhạc và văn hóa. Chương trình này là một hiện tượng văn hóa, mang âm nhạc truyền thống và đích thực của Việt Nam vào cuộc sống. Đặt chỗ trước đảm bảo bạn có được một chỗ cho trải nghiệm khó quên này.', N'
-Lịch trình tự do',N'Hà Nội, Việt Nam', N'Hà Nội, Việt Nam', '/tours/143');
+    VALUES(N'Bus ticket Ha Giang to Hanoi: Sleeping - Limousine - Cabin Bus', N'Trải nghiệm trái tim và tâm hồn của Việt Nam thông qua sự kết hợp ngoạn mục giữa khiêu vũ, âm nhạc và văn hóa. Chương trình này là một hiện tượng văn hóa, mang âm nhạc truyền thống và đích thực của Việt Nam vào cuộc sống. Đặt chỗ trước đảm bảo bạn có được một chỗ cho trải nghiệm khó quên này.', N'Lịch trình tự do',N'Hà Nội, Việt Nam', N'Hà Nội, Việt Nam', '/tours/143');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Trekking The Northern Trails of Vietnam 9 days 8 nights', N'Khám phá nơi bảo tồn trọn vẹn cảnh quan thiên nhiên, kết hợp kiến trúc và phong thủy
 Dịch vụ chăm sóc sức khỏe và sắc đẹp chất lượng cao trong không gian trong lành, yên tĩnh giữa thiên nhiên
@@ -5586,15 +5540,13 @@ Bạn có thể muốn ghé thăm 2 công viên giải trí tuyệt vời:
 Vé Sun World Bà Nà Hills
 Vé Công Viên Giải Trí Vinwonders Nam Hội An | Việt Nam
 Đưa đón riêng: Đưa đón riêng giữa Sân bay Quốc tế Đà Nẵng (DAD) và Đà Nẵng, Hội An, Huế, Bà Nà Hills | Việt Nam
-Du lịch cần thiết: Dịch vụ xin visa điện tử du lịch Việt Nam | Visa điện tử Việt Nam khi đến', N'
-Lịch trình tự do',N'Hà Nội, Việt Nam', N'Hà Nội, Việt Nam', '/tours/144');
+Du lịch cần thiết: Dịch vụ xin visa điện tử du lịch Việt Nam | Visa điện tử Việt Nam khi đến', N'Lịch trình tự do',N'Hà Nội, Việt Nam', N'Hà Nội, Việt Nam', '/tours/144');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Ha Giang to Sa Pa Comfortable Bus Transfer', N'Thư giãn tại The Trees Spa Đà Nẵng, một spa sang trọng và thân mật tọa lạc tại Đà Nẵng, Việt Nam. Tận hưởng các phương pháp trị liệu spa sáng tạo, cơ sở vật chất hiện đại và dịch vụ đặc biệt. Trải nghiệm các nhà trị liệu lành nghề để trẻ hóa tóc, chăm sóc da và trị liệu cơ thể.
 Tận hưởng sự tiện lợi của việc đón và trả khách tại khách sạn của bạn
 Trải nghiệm các liệu pháp spa sáng tạo và cá nhân hóa phù hợp với sở thích của bạn
 Thư giãn dưới sự chăm sóc của các nhà trị liệu lành nghề, những người cung cấp dịch vụ hàng đầu
-Tận dụng cơ sở vật chất hiện đại để mang lại sự thoải mái và hài lòng tối đa', N'
-Lịch trình tự do',N'60 Minh Khai, P. Minh Khai, Hà Giang, Việt Nam', N'60 Minh Khai, P. Minh Khai, Hà Giang, Việt Nam', '/tours/145');
+Tận dụng cơ sở vật chất hiện đại để mang lại sự thoải mái và hài lòng tối đa', N'Lịch trình tự do',N'60 Minh Khai, P. Minh Khai, Hà Giang, Việt Nam', N'60 Minh Khai, P. Minh Khai, Hà Giang, Việt Nam', '/tours/145');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Private transfer Between Hanoi or Noi Bai airport to Ha Giang', N'Lợi ích vượt trội cho sức khỏe: Tăng cường tuần hoàn máu & trao đổi chất, giảm căng thẳng & tăng huyết áp, ngủ ngon hơn, v.v.
 Hồ bơi nước nóng Mikazuki Water Park 365 có khu vui chơi trong nhà sử dụng nước ấm quanh năm, khu tắm khoáng nóng Onsen phù hợp cho cả gia đình
@@ -5602,8 +5554,7 @@ Các lựa chọn combo bao gồm suối nước nóng, công viên nước và 
 Có thể bạn muốn ghé thăm: Vé Công viên Giải trí Vinwonders Nam Hội An | Việt Nam
 Vé Sun World Bà Nà Hills
 Đưa đón riêng: Đưa đón riêng giữa Sân bay Quốc tế Đà Nẵng (DAD) và Đà Nẵng, Hội An, Huế, Bà Nà Hills | Việt Nam
-Du lịch cần thiết: Dịch vụ xin visa điện tử du lịch Việt Nam | Visa điện tử Việt Nam khi đến', N'
-Lịch trình tự do',N'Phú Minh, Sóc Sơn, Hà Nội, Việt Nam', N'Phú Minh, Sóc Sơn, Hà Nội, Việt Nam', '/tours/146');
+Du lịch cần thiết: Dịch vụ xin visa điện tử du lịch Việt Nam | Visa điện tử Việt Nam khi đến', N'Lịch trình tự do',N'Phú Minh, Sóc Sơn, Hà Nội, Việt Nam', N'Phú Minh, Sóc Sơn, Hà Nội, Việt Nam', '/tours/146');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Ha Giang Jeep Tours : 2 DAY JOURNEY OFF THE BEATEN TRACK', N'Hãy thư giãn tại ốc đảo xanh giữa lòng thành phố Đà Nẵng. Hãy thử các kiểu xông hơi và massage y học cổ truyền khác nhau để trải nghiệm sự chuyển hóa cơ thể. Tìm sự thanh thản trong sự im lặng và thư giãn trong nội thất đẹp mắt và được thiết kế đẹp mắt của các phòng.
 Vị trí thuận tiện bên sông Hàn
@@ -5612,20 +5563,17 @@ Yên tâm trong tay hệ thống quản lý chất lượng với tiện ích v�
 Có thể bạn muốn ghé thăm: Vé Công viên Giải trí Vinwonders Nam Hội An | Việt Nam
 Vé Sun World Bà Nà Hills
 Đưa đón riêng: Đưa đón riêng giữa Sân bay Quốc tế Đà Nẵng (DAD) và Đà Nẵng, Hội An, Huế, Bà Nà Hills | Việt Nam
-Du lịch cần thiết: Dịch vụ xin visa điện tử du lịch Việt Nam | Visa điện tử Việt Nam khi đến', N'
-Lịch trình tự do',N'Km 9 đường đi Đồng Văn, Thuận Hoà, Hà Giang, 310000, Việt Nam', N'Km 9 đường đi Đồng Văn, Thuận Hoà, Hà Giang, 310000, Việt Nam', '/tours/147');
+Du lịch cần thiết: Dịch vụ xin visa điện tử du lịch Việt Nam | Visa điện tử Việt Nam khi đến', N'Lịch trình tự do',N'Km 9 đường đi Đồng Văn, Thuận Hoà, Hà Giang, 310000, Việt Nam', N'Km 9 đường đi Đồng Văn, Thuận Hoà, Hà Giang, 310000, Việt Nam', '/tours/147');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Tour of Ha Giang, Dong Van, Ma Pi Leng, Nho Que River, and Du Gia village', N'Trải nghiệm sự thư giãn hoàn toàn tại Oani Spa, nơi kết hợp các phong cách trị liệu hiện đại và truyền thống của Việt Nam và Bali để làm hài lòng và làm hài lòng những vị khách quý mến của chúng tôi.
 Khám phá các phương pháp trị liệu đỉnh cao tại Oani Spa, một trong những spa trị liệu tốt nhất Đà Nẵng
 Đánh giá cao thiết kế kiến trúc tinh xảo, lấy cảm hứng từ truyền thống Việt Nam và sự mê hoặc của Bali, đảm bảo bầu không khí thanh bình cho tất cả du khách
-Nhận sự chăm sóc từ các nhà trị liệu có tay nghề cao với nhiều năm kinh nghiệm trong việc cung cấp các dịch vụ mát-xa sang trọng cho khách hàng từ khắp nơi trên thế giới', N'
-Lịch trình tự do',N'Tp. Hà Giang, Hà Giang, Việt Nam', N'Tp. Hà Giang, Hà Giang, Việt Nam', '/tours/148');
+Nhận sự chăm sóc từ các nhà trị liệu có tay nghề cao với nhiều năm kinh nghiệm trong việc cung cấp các dịch vụ mát-xa sang trọng cho khách hàng từ khắp nơi trên thế giới', N'Lịch trình tự do',N'Tp. Hà Giang, Hà Giang, Việt Nam', N'Tp. Hà Giang, Hà Giang, Việt Nam', '/tours/148');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'2 Days Camping Tour in Angel Eye Mountain and Ban Gioc Waterfall', N'Nhận phiếu quà tặng và bắt đầu mua sắm tại potico.vn
 Chuyển phát nhanh 90 phút tại Hà Nội và TP.HCM
 Hoa chất lượng cao và nhiều sự lựa chọn đáp ứng nhu cầu của bạn - món quà tuyệt vời nhất cho người thân yêu của bạn
-Potico là nơi đáng tin cậy để bạn trao tặng những món quà tuyệt vời nhất cho người thân yêu', N'
-Lịch trình tự do',N'Số 024 tổ dân phố 11 (tổ 23 cũ, Nà Cạn, Cao Bằng, 21000, Việt Nam', N'Số 024 tổ dân phố 11 (tổ 23 cũ, Nà Cạn, Cao Bằng, 21000, Việt Nam', '/tours/149');
+Potico là nơi đáng tin cậy để bạn trao tặng những món quà tuyệt vời nhất cho người thân yêu', N'Lịch trình tự do',N'Số 024 tổ dân phố 11 (tổ 23 cũ, Nà Cạn, Cao Bằng, 21000, Việt Nam', N'Số 024 tổ dân phố 11 (tổ 23 cũ, Nà Cạn, Cao Bằng, 21000, Việt Nam', '/tours/149');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Trekking Ban Gioc Waterfall to Hidden Village on Unique Route', N'Tự may áo dài tại Đà Nẵng với dịch vụ cắt may nhanh của Viet Sense. Nhận trang phục theo yêu cầu trong vòng hai giờ với giao hàng miễn phí tại trung tâm Đà Nẵng.
 Tự may áo dài Việt Nam trong chuyến đi Đà Nẵng với thợ may địa phương lành nghề
@@ -7028,12 +6976,10 @@ Những điều cần biết về cuộc phiêu lưu:
 Tôi là hướng dẫn viên du lịch và cũng là tài xế xe máy (tôi chở bạn an toàn nhé). Chúng tôi có trình điều khiển tốt nếu bạn là một nhóm.
 Chúng tôi có thể đón bạn tại nhà nghỉ của bạn ở Hà Giang, Hoặc tôi cung cấp giường ngủ tập thể miễn phí tại Công ty TNHH Du lịch Rồng Hà Giang.
 Chúng tôi sẽ đưa bạn đến những địa điểm đặc biệt (những địa điểm nổi tiếng nhất và cũng không phải địa điểm du lịch)
-Hy vọng bạn đặt vé với Mỹ để khám phá văn hóa của tôi và cung đường Hà Giang', N'
-Lịch trình tự do',N'2QHH+4G2, Phạm Hùng, Mỹ Đình, Từ Liêm, Hà Nội, Việt Nam', N'2QHH+4G2, Phạm Hùng, Mỹ Đình, Từ Liêm, Hà Nội, Việt Nam', '/tours/160');
+Hy vọng bạn đặt vé với Mỹ để khám phá văn hóa của tôi và cung đường Hà Giang', N'Lịch trình tự do',N'2QHH+4G2, Phạm Hùng, Mỹ Đình, Từ Liêm, Hà Nội, Việt Nam', N'2QHH+4G2, Phạm Hùng, Mỹ Đình, Từ Liêm, Hà Nội, Việt Nam', '/tours/160');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Hanoi - Cao Bang - The 14th Level Me Pia Windy Pass On Unique Route 2Days/1Night', N'Nhóm của chúng tôi từ Ha Giang Road Trip sẽ đưa bạn đi qua vùng nông thôn miền núi xinh đẹp của Hà Giang, Tam Sơn, Yên Minh, Đồng Văn và thị trấn Mèo Vạc, chúng ta sẽ khám phá văn hóa Dao Đỏ, văn hóa H''mông, văn hóa Tày, Nhà dân địa phương, Vua H''Mông Dinh thự, đèo Mã Pí Lèng, chợ địa phương
-Khám phá những điểm nổi bật của tỉnh Hà Giang với hướng dẫn viên địa phương. Bạn sẽ được trải nghiệm những cảnh quan đẹp, nền văn hóa, di tích lịch sử và các địa danh nổi tiếng.', N'
-Lịch trình tự do',N'Hoàn Kiếm, Hà Nội, Việt Nam', N'Hoàn Kiếm, Hà Nội, Việt Nam', '/tours/161');
+Khám phá những điểm nổi bật của tỉnh Hà Giang với hướng dẫn viên địa phương. Bạn sẽ được trải nghiệm những cảnh quan đẹp, nền văn hóa, di tích lịch sử và các địa danh nổi tiếng.', N'Lịch trình tự do',N'Hoàn Kiếm, Hà Nội, Việt Nam', N'Hoàn Kiếm, Hà Nội, Việt Nam', '/tours/161');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'[2D1N Tour] Sapa – Cat Cat – Trekking Lao Chai – Ta Van - Ham Rong (From Hanoi, Transfer By 9s D-car)', N'Một số khía cạnh của dịch vụ vận tải khiến chúng tôi nổi bật so với đối thủ cạnh tranh:
 Trước khi khởi hành, tài xế hoặc hướng dẫn viên của chúng tôi phải xác nhận rằng bạn đang ở đúng nơi. Điều này được thực hiện để tránh bất kỳ mối nguy hiểm tiềm ẩn hoặc sự nhầm lẫn nào có thể xảy ra do đặt sai vị trí.
@@ -7042,8 +6988,7 @@ Các tài xế chuyên nghiệp của chúng tôi được đào tạo để cun
 Dịch vụ giao hàng tận nơi: Với dịch vụ giao hàng tận nơi, hướng dẫn viên của chúng tôi sẽ đảm bảo rằng bạn sẽ đến được điểm đến của mình.
 Dịch vụ đưa đón này mang lại chuyến đi thư giãn trên xe buýt sang trọng với Wi-Fi và nước khoáng miễn phí.
 Nhiều địa điểm đón: Chúng tôi sẽ đón bạn ở nơi bạn chỉ định.
-Dịch vụ vận chuyển của chúng tôi không tốn kém và được cung cấp ở mức giá hợp lý.', N'
-Lịch trình tự do',N'Hanoi Old Quarter', N'Hanoi Old Quarter', '/tours/162');
+Dịch vụ vận chuyển của chúng tôi không tốn kém và được cung cấp ở mức giá hợp lý.', N'Lịch trình tự do',N'Hanoi Old Quarter', N'Hanoi Old Quarter', '/tours/162');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'[3D2N] Discover Sapa Local Village - Cat Cat Village - Ham Rong Tour (From Hanoi, Transfer by 9 seater Limousine coach)', N'Một số khía cạnh của dịch vụ vận tải khiến chúng tôi nổi bật so với đối thủ cạnh tranh:
 Trước khi khởi hành, tài xế hoặc hướng dẫn viên của chúng tôi phải xác nhận rằng bạn đang ở đúng nơi. Điều này được thực hiện để tránh bất kỳ mối nguy hiểm tiềm ẩn hoặc sự nhầm lẫn nào có thể xảy ra do đặt sai vị trí.
@@ -7429,21 +7374,17 @@ Ngày 7: Trekking trong rừng Ba Bể (B/L/D)
 Hoạt động thể chất: trek 15-17km
 Ngày 8: Đi thuyền trên hồ Ba Bể (B/L/D)
 Hoạt động thể chất: trek 5-7km
-Ngày 9: Hồ Ba Bể - Hà Nội (B/L)', N'
-Lịch trình tự do',N'204 Tran Quang Khai, Hoan Kiem, Hanoi', N'204 Tran Quang Khai, Hoan Kiem, Hanoi', '/tours/164');
+Ngày 9: Hồ Ba Bể - Hà Nội (B/L)', N'Lịch trình tự do',N'204 Tran Quang Khai, Hoan Kiem, Hanoi', N'204 Tran Quang Khai, Hoan Kiem, Hanoi', '/tours/164');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
-    VALUES(N'[2D1N] Sapa Trekking Tour: Sapa Long Trekking Route with Fansipan Visit Option | Vietnam', N'Xe Sapa - Hà Giang. Du lịch bằng xe buýt là một trong những cách thuận tiện nhất để đi lại giữa Hà giang và Sapa. Có 1 -2 công ty xe buýt khởi hành từ hai đầu mỗi ngày, thời gian di chuyển từ 5 đến 6 giờ. Hầu hết các xe buýt đều có ghế ngả lưng thoải mái,', N'
-Lịch trình tự do',N'204 Tran Quang Khai, Hoan Kiem District, Hanoi', N'204 Tran Quang Khai, Hoan Kiem District, Hanoi', '/tours/165');
+    VALUES(N'[2D1N] Sapa Trekking Tour: Sapa Long Trekking Route with Fansipan Visit Option | Vietnam', N'Xe Sapa - Hà Giang. Du lịch bằng xe buýt là một trong những cách thuận tiện nhất để đi lại giữa Hà giang và Sapa. Có 1 -2 công ty xe buýt khởi hành từ hai đầu mỗi ngày, thời gian di chuyển từ 5 đến 6 giờ. Hầu hết các xe buýt đều có ghế ngả lưng thoải mái,', N'Lịch trình tự do',N'204 Tran Quang Khai, Hoan Kiem District, Hanoi', N'204 Tran Quang Khai, Hoan Kiem District, Hanoi', '/tours/165');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Full Day Tour in Sapa with Trekking', N'Thưởng thức món nướng Hàn Quốc bằng phiếu giảm giá tiền mặt tại GoGi House
 Voucher áp dụng cho tất cả chi nhánh GoGi House được chỉ định tại Việt Nam
-Thưởng thức bữa ăn tại nhà hàng rộng rãi, tiện nghi', N'
-Lịch trình tự do',N'031 Ngõ Cầu Mây, TT. Sa Pa, Sa Pa, Lào Cai 330000, Việt Nam', N'031 Ngõ Cầu Mây, TT. Sa Pa, Sa Pa, Lào Cai 330000, Việt Nam', '/tours/166');
+Thưởng thức bữa ăn tại nhà hàng rộng rãi, tiện nghi', N'Lịch trình tự do',N'031 Ngõ Cầu Mây, TT. Sa Pa, Sa Pa, Lào Cai 330000, Việt Nam', N'031 Ngõ Cầu Mây, TT. Sa Pa, Sa Pa, Lào Cai 330000, Việt Nam', '/tours/166');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'2D1N Sapa Trekking Tour | A Live – Like – A - Local Experience | Hanoi, Vietnam', N'Với không gian gần gũi, quen thuộc với chất liệu gỗ mộc mạc cùng họa tiết chim công đặc trưng của những năm 1900, không gian tại Công là nơi ghé thăm thân thương cho những tâm hồn hoài niệm. vào một đêm hẹn hò.
 Ở Công, có những thức uống được sáng tạo từ sự biến tấu, giao thoa văn hóa được thể hiện khéo léo, tinh tế trong tách cà phê tưởng chừng đơn giản.
-Không chỉ có cà phê, với thực đơn của Công là cả một bầu trời tâm huyết, sáng tạo để mang lại sự hài lòng nhất cho thực khách.', N'
-Lịch trình tự do',N'204 Tran Quang Khai, Hoan Kiem, Hanoi', N'204 Tran Quang Khai, Hoan Kiem, Hanoi', '/tours/167');
+Không chỉ có cà phê, với thực đơn của Công là cả một bầu trời tâm huyết, sáng tạo để mang lại sự hài lòng nhất cho thực khách.', N'Lịch trình tự do',N'204 Tran Quang Khai, Hoan Kiem, Hanoi', N'204 Tran Quang Khai, Hoan Kiem, Hanoi', '/tours/167');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'[2D1N] Sapa Trekking Tour: Sapa Long Trekking Route with Fansipan Visit Option | Vietnam', N'Hòa mình vào không khí náo nhiệt tại K-Pub để thưởng thức món nướng đường phố Hàn Quốc đích thực và thỏa sức lựa chọn ẩm thực với hơn 30 món
 Thực đơn dễ dàng gọi món với các combo đặt tên theo kích cỡ như trống lớn cho 4-6 người, trống nhỏ cho 2-4 người.
@@ -7925,8 +7866,7 @@ INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,Ph
     VALUES(N'Private Transport | Noi Bai International Airport (HAN) to Sapa and Vice Versa', N'Bắt đầu chuyến phiêu lưu bằng xe máy kéo dài 3 ngày qua cung đường Hà Giang mang tính biểu tượng, cùng với hướng dẫn viên nói tiếng Anh dày dặn và tài xế lành nghề.
 Chiêm ngưỡng cảnh quan tuyệt đẹp khi bạn di chuyển bằng xe máy từ Hà Giang đến Cổng trời Quản Bạ và dòng sông Nho Quế thanh bình
 Tìm hiểu về từng địa điểm từ hướng dẫn viên du lịch của bạn
-Tận hưởng trải nghiệm bao ăn trọn gói, được cung cấp chỗ ở và 3 bữa ăn mỗi ngày', N'
-Lịch trình tự do',N'6R93+FM Phu Cuong, Soc Son, Hanoi, Vietnam', N'6R93+FM Phu Cuong, Soc Son, Hanoi, Vietnam', '/tours/176');
+Tận hưởng trải nghiệm bao ăn trọn gói, được cung cấp chỗ ở và 3 bữa ăn mỗi ngày', N'Lịch trình tự do',N'6R93+FM Phu Cuong, Soc Son, Hanoi, Vietnam', N'6R93+FM Phu Cuong, Soc Son, Hanoi, Vietnam', '/tours/176');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'2 Day 1 Night Trek', N'Nhận phiếu quà tặng và bắt đầu mua sắm tại potico.vn
 Chuyển phát nhanh 90 phút tại Hà Nội và TP.HCM
@@ -8414,28 +8354,23 @@ Thời gian: 50 phút (xấp độ)
 Đồ ăn ở Cao Bằng đa phần mang nét đặc trưng của miền Bắc với một số đặc sản riêng. Du khách có thể thưởng thức các món ăn địa phương ở Cao Bằng khi kết thúc chuyến tham quan
 Thời gian: 30 phút (xấp độ)',N'La Pán Tẩn, Mù Cang Chải, Yên Bái, Việt Nam', N'La Pán Tẩn, Mù Cang Chải, Yên Bái, Việt Nam', '/tours/186');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
-    VALUES(N'Halfday trekking Mu Cang Chai', N'Cao Bằng là một vùng biên giới dân cư thưa thớt, vô cùng xinh đẹp của miền Bắc Việt Nam. Thành phố này đang bùng nổ với các địa điểm địa văn hóa tuyệt đẹp. Với 5 hệ thống sông lớn và 47 hồ nước, nước đóng vai trò quan trọng trong việc hình thành cảnh quan và đời sống địa phương. Bạn sẽ ngạc nhiên vì biết bao câu chuyện ẩn chứa trong các con phố, tòa nhà, góc phố Cao Bằng. Hướng dẫn viên quyến rũ sẽ cho bạn biết điều gì đặc biệt và độc đáo khi sống ở thành phố này. Hoàn hảo cho những người đến thăm thành phố lần đầu tiên và muốn tận dụng tối đa nó!', N'
-Lịch trình tự do',N'La Pán Tẩn, Mù Cang Chải, Yên Bái, Việt Nam', N'La Pán Tẩn, Mù Cang Chải, Yên Bái, Việt Nam', '/tours/187');
+    VALUES(N'Halfday trekking Mu Cang Chai', N'Cao Bằng là một vùng biên giới dân cư thưa thớt, vô cùng xinh đẹp của miền Bắc Việt Nam. Thành phố này đang bùng nổ với các địa điểm địa văn hóa tuyệt đẹp. Với 5 hệ thống sông lớn và 47 hồ nước, nước đóng vai trò quan trọng trong việc hình thành cảnh quan và đời sống địa phương. Bạn sẽ ngạc nhiên vì biết bao câu chuyện ẩn chứa trong các con phố, tòa nhà, góc phố Cao Bằng. Hướng dẫn viên quyến rũ sẽ cho bạn biết điều gì đặc biệt và độc đáo khi sống ở thành phố này. Hoàn hảo cho những người đến thăm thành phố lần đầu tiên và muốn tận dụng tối đa nó!', N'Lịch trình tự do',N'La Pán Tẩn, Mù Cang Chải, Yên Bái, Việt Nam', N'La Pán Tẩn, Mù Cang Chải, Yên Bái, Việt Nam', '/tours/187');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Private transfer Between Hanoi or Noi Bai and Mu Cang Chai', N'Thưởng thức món nướng Hàn Quốc bằng phiếu giảm giá tiền mặt tại GoGi House
 Voucher áp dụng cho tất cả chi nhánh GoGi House được chỉ định tại Việt Nam
-Thưởng thức bữa ăn tại nhà hàng rộng rãi, tiện nghi', N'
-Lịch trình tự do',N'Phú Minh, Sóc Sơn, Hà Nội, Việt Nam', N'Phú Minh, Sóc Sơn, Hà Nội, Việt Nam', '/tours/188');
+Thưởng thức bữa ăn tại nhà hàng rộng rãi, tiện nghi', N'Lịch trình tự do',N'Phú Minh, Sóc Sơn, Hà Nội, Việt Nam', N'Phú Minh, Sóc Sơn, Hà Nội, Việt Nam', '/tours/188');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Full day trekking Mu Cang Chai', N'Với không gian gần gũi, quen thuộc với chất liệu gỗ mộc mạc cùng họa tiết chim công đặc trưng của những năm 1900, không gian tại Công là nơi ghé thăm thân thương cho những tâm hồn hoài niệm. vào một đêm hẹn hò.
 Ở Công, có những thức uống được sáng tạo từ sự biến tấu, giao thoa văn hóa được thể hiện khéo léo, tinh tế trong tách cà phê tưởng chừng đơn giản.
-Không chỉ có cà phê, với thực đơn của Công là cả một bầu trời tâm huyết, sáng tạo để mang lại sự hài lòng nhất cho thực khách.', N'
-Lịch trình tự do',N'La Pán Tẩn, Mù Cang Chải, Yên Bái, Việt Nam', N'La Pán Tẩn, Mù Cang Chải, Yên Bái, Việt Nam', '/tours/189');
+Không chỉ có cà phê, với thực đơn của Công là cả một bầu trời tâm huyết, sáng tạo để mang lại sự hài lòng nhất cho thực khách.', N'Lịch trình tự do',N'La Pán Tẩn, Mù Cang Chải, Yên Bái, Việt Nam', N'La Pán Tẩn, Mù Cang Chải, Yên Bái, Việt Nam', '/tours/189');
 --------------------------------
 ----------------------------------
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Active Adventure Tour - Tham Phay cave expedition 3 days 2 nights', N'Hòa mình vào không khí náo nhiệt tại K-Pub để thưởng thức món nướng đường phố Hàn Quốc đích thực và thỏa sức lựa chọn ẩm thực với hơn 30 món
 Thực đơn dễ dàng gọi món với các combo đặt tên theo kích cỡ như trống lớn cho 4-6 người, trống nhỏ cho 2-4 người.
-Ngoài đồ nướng, nhà hàng còn có món lẩu và các món ăn nổi tiếng khác của Hàn Quốc. Những đĩa thịt được đặt trên những tấm gỗ thông dài tới 1 mét trông rất độc đáo', N'
-Lịch trình tự do',N'Hoàn Kiếm, Hà Nội, Việt Nam', N'Hoàn Kiếm, Hà Nội, Việt Nam', '/tours/185');
+Ngoài đồ nướng, nhà hàng còn có món lẩu và các món ăn nổi tiếng khác của Hàn Quốc. Những đĩa thịt được đặt trên những tấm gỗ thông dài tới 1 mét trông rất độc đáo', N'Lịch trình tự do',N'Hoàn Kiếm, Hà Nội, Việt Nam', N'Hoàn Kiếm, Hà Nội, Việt Nam', '/tours/185');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
-    VALUES(N'Private transfer from Hanoi to Ba Be lake or from Ba Be to Hanoi', N'Đừng lo lắng khi khởi hành đến Sân bay Hà Nội và đặt trước dịch vụ đưa đón riêng phù hợp với số lượng người trong nhóm của bạn (tối đa 15 người). Tránh phải xếp hàng dài đón taxi tại khách sạn và di chuyển thoải mái trên xe hơi Premium hoặc xe tải nhỏ.', N'
-Lịch trình tự do',N'Phú Minh, Sóc Sơn, Hà Nội, Việt Nam', N'Phú Minh, Sóc Sơn, Hà Nội, Việt Nam', '/tours/186');
+    VALUES(N'Private transfer from Hanoi to Ba Be lake or from Ba Be to Hanoi', N'Đừng lo lắng khi khởi hành đến Sân bay Hà Nội và đặt trước dịch vụ đưa đón riêng phù hợp với số lượng người trong nhóm của bạn (tối đa 15 người). Tránh phải xếp hàng dài đón taxi tại khách sạn và di chuyển thoải mái trên xe hơi Premium hoặc xe tải nhỏ.', N'Lịch trình tự do',N'Phú Minh, Sóc Sơn, Hà Nội, Việt Nam', N'Phú Minh, Sóc Sơn, Hà Nội, Việt Nam', '/tours/186');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Lo Mo Cave Expedition In Ba Be National Park 4 Days 3 Nights', N'Đắm mình trong khung cảnh núi non trùng điệp nơi được UNESCO công nhận là Công viên địa chất toàn cầu Cao Bằng
 Tận hưởng bầu không khí trong lành, nghe chim hót, trekking cung đường độc đáo, khám phá cung đường mới đi qua các bản làng đồng bào dân tộc
@@ -8550,8 +8485,7 @@ Bao gồm vé vào cửa
 Thời gian: 3 tiếng (xấp xỉ)',N'Phú Minh, Sóc Sơn, Hà Nội, Việt Nam', N'Phú Minh, Sóc Sơn, Hà Nội, Việt Nam', '/tours/188');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'BEST SELLER- 2 Day/1 Night Cruise with All-Inclusive in Halong', N'Trải nghiệm toàn cảnh ngoạn mục của núi và nước xen kẽ trong khu vực được UNESCO công nhận là Công viên địa chất toàn cầu Cao Bằng. Tận hưởng bầu không khí trong lành khi tham gia những chuyến du ngoạn địa hình trên con đèo lộng gió có một không hai và khám phá những con đường mới. Hướng dẫn viên du lịch địa phương của bạn là người hiểu biết, nhiệt tình, tỉ mỉ và tốt bụng.
-Chúng ta sẽ đi qua các bản làng của người dân tộc để khám phá những đặc điểm riêng biệt của các bộ tộc như Tày, Nùng, Dao, Hmong và các dân tộc khác. Khám phá văn hóa chuyên sâu: Con người và ẩm thực khu vực Tham quan Đường mòn ẩn, Hang Ngao, Thác Bản Giốc, Làng đá Tày và các tuyến đường đặc biệt khác.', N'
-Lịch trình tự do',N'Hà Nội, Việt Nam', N'Hà Nội, Việt Nam', '/tours/189');
+Chúng ta sẽ đi qua các bản làng của người dân tộc để khám phá những đặc điểm riêng biệt của các bộ tộc như Tày, Nùng, Dao, Hmong và các dân tộc khác. Khám phá văn hóa chuyên sâu: Con người và ẩm thực khu vực Tham quan Đường mòn ẩn, Hang Ngao, Thác Bản Giốc, Làng đá Tày và các tuyến đường đặc biệt khác.', N'Lịch trình tự do',N'Hà Nội, Việt Nam', N'Hà Nội, Việt Nam', '/tours/189');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'2D1N Tour: Halong Phoenix Cruiser from Hanoi | Vietnam', N'Nhận phiếu quà tặng và bắt đầu mua sắm tại potico.vn
 Chuyển phát nhanh 90 phút tại Hà Nội và TP.HCM
@@ -8937,16 +8871,14 @@ Sau bữa trưa, đoàn tiếp tục đi bộ qua rừng tre đến Giàng Tả 
 Thời gian: 2 tiếng (xấp xỉ)
 Bao gồm vé vào cửa',N'Hanoi, Vietnam', N'Hanoi, Vietnam', '/tours/199');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
-    VALUES(N'Day Tour | Hercules Cruise Ha Long Bay + Optional Round-trip Transportation Options Included + Lunch Included + Kayak Experience (Vietnam / Sightseeing Boat)', N'Chỉ với một ngày trekking, du khách có thể ghé thăm ba ngôi làng khác nhau và có cơ hội gặp gỡ các dân tộc thiểu số Hmong đen, Giáy và Dao đỏ cũng như khám phá nền văn hóa khác nhau của họ.', N'
-Lịch trình tự do',N'No. 1 Trang Tien, Hoan Kiem, Hanoi', N'No. 1 Trang Tien, Hoan Kiem, Hanoi', '/tours/200');
+    VALUES(N'Day Tour | Hercules Cruise Ha Long Bay + Optional Round-trip Transportation Options Included + Lunch Included + Kayak Experience (Vietnam / Sightseeing Boat)', N'Chỉ với một ngày trekking, du khách có thể ghé thăm ba ngôi làng khác nhau và có cơ hội gặp gỡ các dân tộc thiểu số Hmong đen, Giáy và Dao đỏ cũng như khám phá nền văn hóa khác nhau của họ.', N'Lịch trình tự do',N'No. 1 Trang Tien, Hoan Kiem, Hanoi', N'No. 1 Trang Tien, Hoan Kiem, Hanoi', '/tours/200');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'[EXTRA 12% OFF] Day Tour | Discover Ha Long Bay With Alova Deluxe Cruise from Hanoi (Multiple Languages Tour Guide)', N'Khi nói đến những dịch vụ tối ưu, lòng hiếu khách nồng hậu và tính chuyên nghiệp, chúng tôi nỗ lực hết mình và đó là cách chúng tôi nổi bật giữa tất cả các công ty du lịch. Các sản phẩm và giá cả mà OUROS Travel cung cấp, các dịch vụ chúng tôi cung cấp, các chính sách chúng tôi đặt ra, sự tin cậy mà chúng tôi tạo ra, sự quan tâm đến từng cá nhân mà chúng tôi dành cho khách hàng là một số đặc điểm nổi bật của chúng tôi. Để trình bày cái nhìn chi tiết về các chuyên ngành của chúng tôi và cung cấp cho bạn những lý do không thể phủ nhận để đặt chỗ với chúng tôi, dưới đây là danh sách ngắn gọn nhưng hiệu quả:
 Trải nghiệm thực tế và đích thực
 Chất lượng cao và dịch vụ tuyệt vời
 Giá trị của đồng tiền
 Giá tốt nhất - không có chi phí ẩn
-Du lịch có trách nhiệm và bền vững', N'
-Lịch trình tự do',N'Hanoi Old Quarter', N'Hanoi Old Quarter', '/tours/201');
+Du lịch có trách nhiệm và bền vững', N'Lịch trình tự do',N'Hanoi Old Quarter', N'Hanoi Old Quarter', '/tours/201');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Day Tour | Diamond Cruise Ha Long Bay: Jacuzzi Pool Available (Optional Round-trip Transfer from Hanoi)', N'Xe giường nằm Sapa - Hà Nội - Sleeping Soft 38 giường do Hàn Quốc thiết kế, được mệnh danh là "Mobi Home trên mặt đất" ở hạng thương gia.
 Hướng dẫn viên nói tiếng Anh trên tàu
@@ -8955,20 +8887,16 @@ wifi
 Nước khoáng
 Chăn và gối du lịch
 Kích thước không gian hành khách tối đa: W:600mm/L:1900mm/H:1100mm.
-Nếu bạn có kích thước quá khổ thì hãy cân nhắc lựa chọn xe Limousine 28 ghế mềm.', N'
-Lịch trình tự do',N'No. 1 Trang Tien, Hoan Kiem, Hanoi', N'No. 1 Trang Tien, Hoan Kiem, Hanoi', '/tours/202');
+Nếu bạn có kích thước quá khổ thì hãy cân nhắc lựa chọn xe Limousine 28 ghế mềm.', N'Lịch trình tự do',N'No. 1 Trang Tien, Hoan Kiem, Hanoi', N'No. 1 Trang Tien, Hoan Kiem, Hanoi', '/tours/202');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
-    VALUES(N'Day Tour | Explore Ha Long Bay on Excursion Luxury Cruise with Buffet Lunch ( With English Guide)', N'Chúng tôi là công ty đầu tiên cung cấp xe Dcar Luxury Bus tại Hà Nội. Sự thoải mái cao khi xe chỉ được trang bị 8 ghế bay thay vì 16 ghế thông thường. Chúng tôi cung cấp xe buýt hàng ngày Hà Nội – Sapa với lịch trình cố định', N'
-Lịch trình tự do',N'No.1 Trang Tien Street, Phan Chu Trinh Ward, Hoan Kiem District, Hanoi', N'No.1 Trang Tien Street, Phan Chu Trinh Ward, Hoan Kiem District, Hanoi', '/tours/203');
+    VALUES(N'Day Tour | Explore Ha Long Bay on Excursion Luxury Cruise with Buffet Lunch ( With English Guide)', N'Chúng tôi là công ty đầu tiên cung cấp xe Dcar Luxury Bus tại Hà Nội. Sự thoải mái cao khi xe chỉ được trang bị 8 ghế bay thay vì 16 ghế thông thường. Chúng tôi cung cấp xe buýt hàng ngày Hà Nội – Sapa với lịch trình cố định', N'Lịch trình tự do',N'No.1 Trang Tien Street, Phan Chu Trinh Ward, Hoan Kiem District, Hanoi', N'No.1 Trang Tien Street, Phan Chu Trinh Ward, Hoan Kiem District, Hanoi', '/tours/203');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
-    VALUES(N'Day Tour | Hercules Cruise Ha Long Bay + Optional Round-trip Transportation Options Included + Lunch Included + Kayak Experience (Vietnam / Sightseeing Boat)', N'Với 09 ghế bọc da mềm có thể điều chỉnh từ 10 đến 45 độ tùy theo nhu cầu để ngả lưng thoải mái và ngắm nhìn vẻ đẹp bên ngoài. Nội thất của xe đồng nhất và tiện lợi. Cổng USB sạc pin. Đội ngũ nhân viên nhiệt tình, thân thiện và tài xế giàu kinh nghiệm, cẩn thận.', N'
-Lịch trình tự do',N'No. 1 Trang Tien, Hoan Kiem, Hanoi', N'No. 1 Trang Tien, Hoan Kiem, Hanoi', '/tours/204');
+    VALUES(N'Day Tour | Hercules Cruise Ha Long Bay + Optional Round-trip Transportation Options Included + Lunch Included + Kayak Experience (Vietnam / Sightseeing Boat)', N'Với 09 ghế bọc da mềm có thể điều chỉnh từ 10 đến 45 độ tùy theo nhu cầu để ngả lưng thoải mái và ngắm nhìn vẻ đẹp bên ngoài. Nội thất của xe đồng nhất và tiện lợi. Cổng USB sạc pin. Đội ngũ nhân viên nhiệt tình, thân thiện và tài xế giàu kinh nghiệm, cẩn thận.', N'Lịch trình tự do',N'No. 1 Trang Tien, Hoan Kiem, Hanoi', N'No. 1 Trang Tien, Hoan Kiem, Hanoi', '/tours/204');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'[EXTRA 12% OFF] Day Tour | Discover Ha Long Bay With Alova Deluxe Cruise from Hanoi (Multiple Languages Tour Guide)', N'Tránh những hàng taxi dài ở sân bay và phương tiện giao thông công cộng đông đúc
 Tận hưởng dịch vụ đưa đón riêng từ Sân bay Quốc tế Nội Bài đến Sapa với mức giá hợp lý và không có chi phí ẩn
 Chọn từ nhiều tùy chọn xe để phù hợp nhất với nhu cầu của bạn
-Tài xế kinh nghiệm luôn ưu tiên sự an toàn của khách hàng', N'
-Lịch trình tự do',N'Hanoi Old Quarter', N'Hanoi Old Quarter', '/tours/205');
+Tài xế kinh nghiệm luôn ưu tiên sự an toàn của khách hàng', N'Lịch trình tự do',N'Hanoi Old Quarter', N'Hanoi Old Quarter', '/tours/205');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Day Tour | Explore Ha Long Bay on Excursion Luxury Cruise with Buffet Lunch ( With English Guide)', N'Thưởng thức món nướng Hàn Quốc bằng phiếu giảm giá tiền mặt tại GoGi House
 Voucher áp dụng cho tất cả chi nhánh GoGi House được chỉ định tại Việt Nam
@@ -9011,25 +8939,21 @@ INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,Ph
 Chọn một chuyến phiêu lưu ngắn, dễ khám phá hoặc một chuyến đi bộ lạc vùng nông thôn, hẻo lánh! Bạn sẽ được hướng dẫn viên du lịch riêng bản xứ chuyên nghiệp nói tiếng Anh đi cùng.
 Chúng tôi cố gắng tránh các tuyến du lịch khác (trừ khi bạn có lời khuyên khác). Hướng dẫn viên của chúng tôi nói tiếng Anh xuất sắc, là người địa phương và có rất nhiều kiến thức về Sapa, môi trường xung quanh, lịch sử, văn hóa và các bộ tộc khác nhau.
 Bạn sẽ có cơ hội nghỉ đêm tại nhà dân và tận hưởng Wi-Fi cũng như tắm nước nóng. Ngoài ra, bạn có thể chọn ở trong một ngôi nhà địa phương với một gia đình địa phương. Dù bằng cách nào bạn cũng sẽ trải nghiệm nơi tuyệt vời này và những con người tuyệt vời. Quây quần quanh đống lửa, dành thời gian trò chuyện và làm quen với gia đình chủ nhà của bạn.
-Bằng cách đặt chỗ, bạn đang trả ơn cho người dân địa phương, cho họ cơ hội kiếm được mức lương công bằng, điều rất cần thiết ở một khu vực có 70% dân số dưới mức nghèo khổ.', N'
-Lịch trình tự do',N'Hanoi', N'Hanoi', '/tours/207');
+Bằng cách đặt chỗ, bạn đang trả ơn cho người dân địa phương, cho họ cơ hội kiếm được mức lương công bằng, điều rất cần thiết ở một khu vực có 70% dân số dưới mức nghèo khổ.', N'Lịch trình tự do',N'Hanoi', N'Hanoi', '/tours/207');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'2D1N Explore Ha Long Bay with Victory Star Cruise Tour with English guide | Ha Long', N'BB Terrace Coffee – Nơi tụ tập duyên dáng và lạ mắt
 Thưởng thức cà phê và trà tươi với thực đơn bánh được cập nhật hàng ngày
-Voucher trà chiều và các loại bánh ngọt, bánh ngọt dành cho 02 người', N'
-Lịch trình tự do',N'Ha Long International Cruise Port, Ha long, Quang NinH', N'Ha Long International Cruise Port, Ha long, Quang NinH', '/tours/208');
+Voucher trà chiều và các loại bánh ngọt, bánh ngọt dành cho 02 người', N'Lịch trình tự do',N'Ha Long International Cruise Port, Ha long, Quang NinH', N'Ha Long International Cruise Port, Ha long, Quang NinH', '/tours/208');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'BEST SELLER- 2 Day/1 Night Cruise with All-Inclusive in Halong', N'Thưởng thức những món ăn ngon nhất ở Sapa tại Nhà hàng Red Dzao House, cung cấp tuyển chọn các món ăn địa phương thú vị gần Hôtel de la Coupole - MGallery Sapa.
 Trải nghiệm phong cách trang trí ấn tượng lấy cảm hứng từ phong cách của người dân tộc Dao đỏ
 Khám phá ẩm thực Sapa với những món ăn chính thống được chế biến từ nguyên liệu có nguồn gốc địa phương
 Được chào đón bởi đội ngũ nhân viên thân thiện đến từ dân tộc Dao đỏ
-Tìm sự thuận tiện vì nhà hàng chỉ cách Quảng trường Quang Trường Sapa vài bước chân', N'
-Lịch trình tự do',N'Hà Nội, Việt Nam', N'Hà Nội, Việt Nam', '/tours/209');
+Tìm sự thuận tiện vì nhà hàng chỉ cách Quảng trường Quang Trường Sapa vài bước chân', N'Lịch trình tự do',N'Hà Nội, Việt Nam', N'Hà Nội, Việt Nam', '/tours/209');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Hidden Ha Long with a photographer', N'Với không gian gần gũi, quen thuộc với chất liệu gỗ mộc mạc cùng họa tiết chim công đặc trưng của những năm 1900, không gian tại Công là nơi ghé thăm thân thương cho những tâm hồn hoài niệm. vào một đêm hẹn hò.
 Ở Công, có những thức uống được sáng tạo từ sự biến tấu, giao thoa văn hóa được thể hiện khéo léo, tinh tế trong tách cà phê tưởng chừng đơn giản.
-Không chỉ có cà phê, với thực đơn của Công là cả một bầu trời tâm huyết, sáng tạo để mang lại sự hài lòng nhất cho thực khách.', N'
-Lịch trình tự do',N'30 Bãi Cháy, Thành phố Hạ Long, Quảng Ninh, Việt Nam', N'30 Bãi Cháy, Thành phố Hạ Long, Quảng Ninh, Việt Nam', '/tours/210');
+Không chỉ có cà phê, với thực đơn của Công là cả một bầu trời tâm huyết, sáng tạo để mang lại sự hài lòng nhất cho thực khách.', N'Lịch trình tự do',N'30 Bãi Cháy, Thành phố Hạ Long, Quảng Ninh, Việt Nam', N'30 Bãi Cháy, Thành phố Hạ Long, Quảng Ninh, Việt Nam', '/tours/210');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Halong LanHa Bay FullDay Trip In Unique Route', N'Do bảo trì định kỳ nên xin lưu ý tất cả dịch vụ cáp treo tại Sun World Phan Xi Păng sẽ đóng cửa từ ngày 11 - 15/9
 QUY ĐỊNH PHỤ THU:
@@ -9038,8 +8962,7 @@ QUY ĐỊNH PHỤ THU:
 Chinh phục đỉnh cao nhất Việt Nam một cách dễ dàng trên chuyến đi cáp treo khó quên
 Tận hưởng khung cảnh tuyệt đẹp của ruộng bậc thang Sapa và khung cảnh thiên nhiên hoang sơ của Phan Xi Păng
 Ngắm nhìn khung cảnh tráng lệ của nhiều ngôi chùa và địa danh tâm linh khác nhau từ đỉnh núi
-Chiêm ngưỡng Quần thể văn hóa tâm linh với 12 công trình kiến trúc ấn tượng. Đặc biệt, tượng Phật A Di Đà vĩ đại giữ kỷ lục nằm ở độ cao cao nhất châu Á, nơi lưu giữ xá lợi Phật linh thiêng.', N'
-Lịch trình tự do',N'Đảo Tuần Châu, Tuần Châu, Tp. Hạ Long, Quảng Ninh, Việt Nam', N'Đảo Tuần Châu, Tuần Châu, Tp. Hạ Long, Quảng Ninh, Việt Nam', '/tours/211');
+Chiêm ngưỡng Quần thể văn hóa tâm linh với 12 công trình kiến trúc ấn tượng. Đặc biệt, tượng Phật A Di Đà vĩ đại giữ kỷ lục nằm ở độ cao cao nhất châu Á, nơi lưu giữ xá lợi Phật linh thiêng.', N'Lịch trình tự do',N'Đảo Tuần Châu, Tuần Châu, Tp. Hạ Long, Quảng Ninh, Việt Nam', N'Đảo Tuần Châu, Tuần Châu, Tp. Hạ Long, Quảng Ninh, Việt Nam', '/tours/211');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Cong Cruise Full-day Explore Halong Bay', N'Trải nghiệm sự thoải mái khi đi lại với dịch vụ Xe buýt Nằm này, đưa bạn đi lại liền mạch giữa Hà Nội và Sapa.
 Du lịch thoải mái trên giường ngủ trên xe buýt giữa Hà Nội và Sapa
@@ -9082,8 +9005,7 @@ Tham quan những bản làng đẹp nhất Sapa: Cát Cát, Lao Chải Tả Van
 Tìm hiểu về các dân tộc thiểu số địa phương H''Mông, Dao Đỏ, Tày và Dáy
 Nếm thử những món ăn ngon của địa phương
 Chuyến đi vất vả qua những cảnh quan thiên nhiên tuyệt đẹp
-Tận hưởng sự thân mật của một chuyến du lịch riêng', N'
-Lịch trình tự do',N'Hà Nội, Việt Nam', N'Hà Nội, Việt Nam', '/tours/213');
+Tận hưởng sự thân mật của một chuyến du lịch riêng', N'Lịch trình tự do',N'Hà Nội, Việt Nam', N'Hà Nội, Việt Nam', '/tours/213');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Halong Bay Cruise 1 Day - 2 Days/1 Night or 3 Days/2 Night included Pick up', N'Hành trình tàu hỏa sang trọng từ Hà Nội đến Sapa của Sapaly Express và Chapa Express, mang đến cho hành khách trải nghiệm du lịch đặc biệt
 Đồ nội thất và tiện nghi bằng gỗ hiện đại, bao gồm cả máy điều hòa không khí cũng như chỗ ngồi thoải mái ngoài cabin ngủ.
@@ -9156,38 +9078,32 @@ Các lớp học diễn ra tại hội thảo Sapa của chúng tôi. Các khóa
 ~Tour Sapa Nhà Dân Chàm
 Thời gian: 6 tiếng (xấp xỉ)',N'J264+XH8, Mai Hịch, Mai Châu, Hòa Bình, Việt Nam', N'J264+XH8, Mai Hịch, Mai Châu, Hòa Bình, Việt Nam', '/tours/219');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
-    VALUES(N'Northwest Loop Adventure 11 days 10 nights', N'Xưởng dệt – 54 cộng đồng dân tộc thiểu số khác nhau ở Việt Nam nổi tiếng với loại vải dệt tuyệt vời được sử dụng để tạo ra các trang phục truyền thống khác nhau. Người Dao đỏ và H''Mông đen nói riêng có một số nét quyến rũ nhất, với các chủ đề hoa văn mang tính biểu tượng, trang trí vải phức tạp, thêu tay và nhuộm tự nhiên. Hãy tham gia cùng các nghệ nhân người H''Mông da đen ở Làng Lao Chải để được giới thiệu về sản xuất cây gai dầu, thiết kế batik và nhuộm chàm tự nhiên trong suốt hội thảo dệt kéo dài cả ngày này. Bạn sẽ không trải qua tất cả 41 bước cần thiết để hoàn thành một thiết kế, nhưng bạn sẽ khám phá được ý nghĩa đằng sau một số biểu tượng nghệ thuật dân gian quan trọng nhất của người H''Mông và ngồi xuống thưởng thức bữa trưa truyền thống của người H''Mông.', N'
-Lịch trình tự do',N'Hoàn Kiếm, Hà Nội, Việt Nam', N'Hoàn Kiếm, Hà Nội, Việt Nam', '/tours/220');
+    VALUES(N'Northwest Loop Adventure 11 days 10 nights', N'Xưởng dệt – 54 cộng đồng dân tộc thiểu số khác nhau ở Việt Nam nổi tiếng với loại vải dệt tuyệt vời được sử dụng để tạo ra các trang phục truyền thống khác nhau. Người Dao đỏ và H''Mông đen nói riêng có một số nét quyến rũ nhất, với các chủ đề hoa văn mang tính biểu tượng, trang trí vải phức tạp, thêu tay và nhuộm tự nhiên. Hãy tham gia cùng các nghệ nhân người H''Mông da đen ở Làng Lao Chải để được giới thiệu về sản xuất cây gai dầu, thiết kế batik và nhuộm chàm tự nhiên trong suốt hội thảo dệt kéo dài cả ngày này. Bạn sẽ không trải qua tất cả 41 bước cần thiết để hoàn thành một thiết kế, nhưng bạn sẽ khám phá được ý nghĩa đằng sau một số biểu tượng nghệ thuật dân gian quan trọng nhất của người H''Mông và ngồi xuống thưởng thức bữa trưa truyền thống của người H''Mông.', N'Lịch trình tự do',N'Hoàn Kiếm, Hà Nội, Việt Nam', N'Hoàn Kiếm, Hà Nội, Việt Nam', '/tours/220');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'[Hiking & Trekking] Pu Luong Natural Reserve Explore (Full day)', N'Tận hưởng cảm giác thư giãn tại Minh Châu Foot Care & Spa ở Sa Pa. Thư giãn sau một ngày vất vả và xả bỏ những căng thẳng trong cuộc sống một cách thoải mái nhất.
 Tận dụng cơ hội tiết kiệm 20.000đ cho tất cả các gói massage đến hết tháng 8
 Trải nghiệm dịch vụ đặc biệt từ các kỹ thuật viên massage thân thiện và có tay nghề cao. Tận hưởng các liệu pháp massage chất lượng cao, giá cả phải chăng
 Tận hưởng liệu pháp trẻ hóa sau một ngày trekking qua vùng núi phía Bắc Việt Nam
-Khám phá sự tiện lợi của spa nằm ngay trung tâm thị trấn Sa Pa', N'
-Lịch trình tự do',N'Nà Chiềng, Mai Châu, Hòa Bình, Việt Nam', N'Nà Chiềng, Mai Châu, Hòa Bình, Việt Nam', '/tours/221');
+Khám phá sự tiện lợi của spa nằm ngay trung tâm thị trấn Sa Pa', N'Lịch trình tự do',N'Nà Chiềng, Mai Châu, Hòa Bình, Việt Nam', N'Nà Chiềng, Mai Châu, Hòa Bình, Việt Nam', '/tours/221');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'[Hikking & Trekking] Tour to Mai Ha, Kha, Te, Buoc, Mai Hich Village (Full day)', N'Thư giãn tại Le Chapa Hotel & Spa ở Sa Pa. Tận hưởng nhiều dịch vụ mát-xa toàn thân với trang thiết bị hiện đại, chuyên viên trị liệu lành nghề và lịch trình linh hoạt.
 Tận dụng cơ hội tiết kiệm 20.000 đồng cho tất cả các gói massage đến hết tháng 8
 Trải nghiệm dịch vụ spa tiện lợi ngay trung tâm thị trấn Sa Pa
 Giảm căng thẳng, mệt mỏi với massage thư giãn sau ngày dài
-Khám phá các dịch vụ chất lượng với giá cả phải chăng', N'
-Lịch trình tự do',N'Nà Chiềng, Mai Châu, Hòa Bình, Việt Nam', N'Nà Chiềng, Mai Châu, Hòa Bình, Việt Nam', '/tours/222');
+Khám phá các dịch vụ chất lượng với giá cả phải chăng', N'Lịch trình tự do',N'Nà Chiềng, Mai Châu, Hòa Bình, Việt Nam', N'Nà Chiềng, Mai Châu, Hòa Bình, Việt Nam', '/tours/222');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Northwest Loop Adventure 11 days 10 nights', N'Nhận phiếu quà tặng và bắt đầu mua sắm tại potico.vn
 Chuyển phát nhanh 90 phút tại Hà Nội và TP.HCM
 Hoa chất lượng cao và nhiều sự lựa chọn đáp ứng nhu cầu của bạn - món quà tuyệt vời nhất cho người thân yêu của bạn
-Potico là nơi đáng tin cậy để bạn trao tặng những món quà tuyệt vời nhất cho người thân yêu', N'
-Lịch trình tự do',N'Hoàn Kiếm, Hà Nội, Việt Nam', N'Hoàn Kiếm, Hà Nội, Việt Nam', '/tours/223');
+Potico là nơi đáng tin cậy để bạn trao tặng những món quà tuyệt vời nhất cho người thân yêu', N'Lịch trình tự do',N'Hoàn Kiếm, Hà Nội, Việt Nam', N'Hoàn Kiếm, Hà Nội, Việt Nam', '/tours/223');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Private transfer Between Mai Chau and Pu Luong', N'Thưởng thức món nướng Hàn Quốc bằng phiếu giảm giá tiền mặt tại GoGi House
 Voucher áp dụng cho tất cả chi nhánh GoGi House được chỉ định tại Việt Nam
-Thưởng thức bữa ăn tại nhà hàng rộng rãi, tiện nghi', N'
-Lịch trình tự do',N'Mai Châu, Hòa Bình, Việt Nam', N'Mai Châu, Hòa Bình, Việt Nam', '/tours/224');
+Thưởng thức bữa ăn tại nhà hàng rộng rãi, tiện nghi', N'Lịch trình tự do',N'Mai Châu, Hòa Bình, Việt Nam', N'Mai Châu, Hòa Bình, Việt Nam', '/tours/224');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'[Biking Tour] Discovering Mai Chau (Half-day)', N'Với không gian gần gũi, quen thuộc với chất liệu gỗ mộc mạc cùng họa tiết chim công đặc trưng của những năm 1900, không gian tại Công là nơi ghé thăm thân thương cho những tâm hồn hoài niệm. vào một đêm hẹn hò.
 Ở Công, có những thức uống được sáng tạo từ sự biến tấu, giao thoa văn hóa được thể hiện khéo léo, tinh tế trong tách cà phê tưởng chừng đơn giản.
-Không chỉ có cà phê, với thực đơn của Công là cả một bầu trời tâm huyết, sáng tạo để mang lại sự hài lòng nhất cho thực khách.', N'
-Lịch trình tự do',N'Nà Chiềng, Mai Châu, Hòa Bình, Việt Nam', N'Nà Chiềng, Mai Châu, Hòa Bình, Việt Nam', '/tours/225');
+Không chỉ có cà phê, với thực đơn của Công là cả một bầu trời tâm huyết, sáng tạo để mang lại sự hài lòng nhất cho thực khách.', N'Lịch trình tự do',N'Nà Chiềng, Mai Châu, Hòa Bình, Việt Nam', N'Nà Chiềng, Mai Châu, Hòa Bình, Việt Nam', '/tours/225');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Private Transfers One Way Between Ninh Binh and Mai Chau', N'Hòa mình vào không khí náo nhiệt tại K-Pub để thưởng thức món nướng đường phố Hàn Quốc đích thực và thỏa sức lựa chọn ẩm thực với hơn 30 món
 Thực đơn dễ dàng gọi món với các combo đặt tên theo kích cỡ như trống lớn cho 4-6 người, trống nhỏ cho 2-4 người.
@@ -9289,29 +9205,24 @@ Không có chi phí ẩn
 Lái xe chuyên nghiệp
 Ưu đãi giá rẻ
 Không tốn thêm chi phí cho thời gian chờ đợi.
-Đội ngũ hỗ trợ chuyên nghiệp và trách nhiệm 24/24', N'
-Lịch trình tự do',N'Hanoi Opera House - No 1 Trang Tien street, Hoan Kiem, Ha Noi', N'Hanoi Opera House - No 1 Trang Tien street, Hoan Kiem, Ha Noi', '/tours/230');
+Đội ngũ hỗ trợ chuyên nghiệp và trách nhiệm 24/24', N'Lịch trình tự do',N'Hanoi Opera House - No 1 Trang Tien street, Hoan Kiem, Ha Noi', N'Hanoi Opera House - No 1 Trang Tien street, Hoan Kiem, Ha Noi', '/tours/230');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Ninh Binh Nature Day Tour : Hoa Lu - Trang An - Hang Mua with Multiple-Language Tour Guides and Tour Options | Hanoi, Vietnam', N'Nhận phiếu quà tặng và bắt đầu mua sắm tại potico.vn
 Chuyển phát nhanh 90 phút tại Hà Nội và TP.HCM
 Hoa chất lượng cao và nhiều sự lựa chọn đáp ứng nhu cầu của bạn - món quà tuyệt vời nhất cho người thân yêu của bạn
-Potico là nơi đáng tin cậy để bạn trao tặng những món quà tuyệt vời nhất cho người thân yêu', N'
-Lịch trình tự do',N'Hanoi Old Quarter', N'Hanoi Old Quarter', '/tours/231');
+Potico là nơi đáng tin cậy để bạn trao tặng những món quà tuyệt vời nhất cho người thân yêu', N'Lịch trình tự do',N'Hanoi Old Quarter', N'Hanoi Old Quarter', '/tours/231');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Discover Bai Dinh/ Trang An/ Hang Mua - Vietnam Hidden Charm (Multiple Languages Tour Guide)', N'Thưởng thức món nướng Hàn Quốc bằng phiếu giảm giá tiền mặt tại GoGi House
 Voucher áp dụng cho tất cả chi nhánh GoGi House được chỉ định tại Việt Nam
-Thưởng thức bữa ăn tại nhà hàng rộng rãi, tiện nghi', N'
-Lịch trình tự do',N'Hanoi City', N'Hanoi City', '/tours/232');
+Thưởng thức bữa ăn tại nhà hàng rộng rãi, tiện nghi', N'Lịch trình tự do',N'Hanoi City', N'Hanoi City', '/tours/232');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Day Tour | Exploring Bai Dinh - Trang An - Mua Cave ( Depart from Hanoi City )', N'Với không gian gần gũi, quen thuộc với chất liệu gỗ mộc mạc cùng họa tiết chim công đặc trưng của những năm 1900, không gian tại Công là nơi ghé thăm thân thương cho những tâm hồn hoài niệm. vào một đêm hẹn hò.
 Ở Công, có những thức uống được sáng tạo từ sự biến tấu, giao thoa văn hóa được thể hiện khéo léo, tinh tế trong tách cà phê tưởng chừng đơn giản.
-Không chỉ có cà phê, với thực đơn của Công là cả một bầu trời tâm huyết, sáng tạo để mang lại sự hài lòng nhất cho thực khách.', N'
-Lịch trình tự do',N'Hanoi Opera House - No 1 Trang Tien street, Hoan Kiem, Ha Noi', N'Hanoi Opera House - No 1 Trang Tien street, Hoan Kiem, Ha Noi', '/tours/233');
+Không chỉ có cà phê, với thực đơn của Công là cả một bầu trời tâm huyết, sáng tạo để mang lại sự hài lòng nhất cho thực khách.', N'Lịch trình tự do',N'Hanoi Opera House - No 1 Trang Tien street, Hoan Kiem, Ha Noi', N'Hanoi Opera House - No 1 Trang Tien street, Hoan Kiem, Ha Noi', '/tours/233');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Ninh Binh Nature Day Tour : Hoa Lu - Trang An - Hang Mua with Multiple-Language Tour Guides and Tour Options | Hanoi, Vietnam', N'Hòa mình vào không khí náo nhiệt tại K-Pub để thưởng thức món nướng đường phố Hàn Quốc đích thực và thỏa sức lựa chọn ẩm thực với hơn 30 món
 Thực đơn dễ dàng gọi món với các combo đặt tên theo kích cỡ như trống lớn cho 4-6 người, trống nhỏ cho 2-4 người.
-Ngoài đồ nướng, nhà hàng còn có món lẩu và các món ăn nổi tiếng khác của Hàn Quốc. Những đĩa thịt được đặt trên những tấm gỗ thông dài tới 1 mét trông rất độc đáo', N'
-Lịch trình tự do',N'Hanoi Old Quarter', N'Hanoi Old Quarter', '/tours/234');
+Ngoài đồ nướng, nhà hàng còn có món lẩu và các món ăn nổi tiếng khác của Hàn Quốc. Những đĩa thịt được đặt trên những tấm gỗ thông dài tới 1 mét trông rất độc đáo', N'Lịch trình tự do',N'Hanoi Old Quarter', N'Hanoi Old Quarter', '/tours/234');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Day Tour | Explore Ninh Binh Nature: Hoa Lu - Tam Coc - Hang Mua (With Multiple Languages Tour Guides and Multiple Tour Options)', N'Tour trekking bản địa nửa ngày sẽ đưa bạn đến những thắng cảnh nổi bật, khung cảnh tuyệt đẹp ra cánh đồng lúa nhựa và dòng nước đầu nguồn chảy đến từng cánh đồng ở xã La Pán Tẩn.', N'
 ~La Pán Tẩn
@@ -9757,11 +9668,9 @@ Sự xuất sắc chưa từng có: Mù Cang Chải mang đến những tour du 
 Lựa chọn của bạn, theo cách của bạn: Cho dù bạn chọn tham gia các chuyến thám hiểm theo nhóm hay các cuộc phiêu lưu riêng tư, các dịch vụ của chúng tôi luôn sẵn sàng phục vụ bạn 24/7. Khám phá những điều kỳ diệu của Mù Cang Chải và vẻ đẹp mê hoặc của Vịnh Hạ Long một cách dễ dàng cùng chúng tôi.
 Sự xuất sắc trọn gói: Từ dịch vụ đón khách thuận tiện tại khách sạn đến những bữa ăn ngon miệng, phương tiện đi lại thoải mái và hướng dẫn viên nhiệt tình, chúng tôi xử lý từng chi tiết.
 Hãy bắt đầu hành trình của bạn ngay hôm nay và đảm bảo những ưu đãi tốt nhất cho chuyến phiêu lưu Mù Cang Chải và Vịnh Hạ Long được tích hợp liền mạch của bạn!
-Trân trọng, Authentic Adventures Việt Nam,', N'
-Lịch trình tự do',N'6R93+FM Phu Cuong, Soc Son, Hanoi, Vietnam', N'6R93+FM Phu Cuong, Soc Son, Hanoi, Vietnam', '/tours/237');
+Trân trọng, Authentic Adventures Việt Nam,', N'Lịch trình tự do',N'6R93+FM Phu Cuong, Soc Son, Hanoi, Vietnam', N'6R93+FM Phu Cuong, Soc Son, Hanoi, Vietnam', '/tours/237');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
-    VALUES(N'3D2N Adventure in Hung Thoong - Quang BinH', N'Tour trekking bản địa nửa ngày sẽ đưa bạn đến những thắng cảnh nổi bật, khung cảnh tuyệt đẹp ra cánh đồng lúa nhựa và dòng nước đầu nguồn chảy đến từng cánh đồng ở xã La Pán Tẩn.', N'
-Lịch trình tự do',N'Dong Hoi, Quang BinH', N'Dong Hoi, Quang BinH', '/tours/238');
+    VALUES(N'3D2N Adventure in Hung Thoong - Quang BinH', N'Tour trekking bản địa nửa ngày sẽ đưa bạn đến những thắng cảnh nổi bật, khung cảnh tuyệt đẹp ra cánh đồng lúa nhựa và dòng nước đầu nguồn chảy đến từng cánh đồng ở xã La Pán Tẩn.', N'Lịch trình tự do',N'Dong Hoi, Quang BinH', N'Dong Hoi, Quang BinH', '/tours/238');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Phong Nha Cave & Paradise Cave Day Tour Small Group to Fairy LanD', N'Xe của chúng tôi là sự lựa chọn tốt nhất cho chuyến đi của bạn với tài xế nói tiếng Anh cơ bản. Nó làm cho chuyến đi của bạn dường như ngắn hơn và thoải mái hơn. Bạn chỉ cần cảm thấy thư giãn trên xe, bỏ lại những muộn phiền để chiêm ngưỡng cảnh quan hai bên đường trong quá trình di chuyển. Ngoài ra còn một số tính năng nổi bật khác mà bạn sẽ có khi đặt phòng với chúng tôi:
 Đội xe thuộc thế hệ mới nhất.
@@ -9778,8 +9687,7 @@ Xuất phát lúc 9h, toàn bộ du khách sẽ di chuyển đến điểm ngắ
 Thời gian: 6 tiếng (xấp xỉ)
 Bao gồm vé vào cửa',N'6 Nguyễn Trãi, Hải Đình, Đồng Hới, Quảng Bình, Việt Nam', N'6 Nguyễn Trãi, Hải Đình, Đồng Hới, Quảng Bình, Việt Nam', '/tours/239');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
-    VALUES(N'Daily Tour to Paradise and Dark Cave', N'Bạn đang băn khoăn không biết nên làm gì và đi đâu trong một ngày ở Mù Cang Chải? Tour trekking bản địa một ngày chính là câu trả lời tốt nhất cho bạn. Bạn không chỉ được tham quan cảnh đẹp ngoạn mục ở Mù Cang Chải mà còn được khám phá về truyền thống, văn hóa của người H''mông.', N'
-Lịch trình tự do',N'Nguyễn Đình Chiểu, Đồng Hải, Đồng Hới, Quảng Bình, Việt Nam', N'Nguyễn Đình Chiểu, Đồng Hải, Đồng Hới, Quảng Bình, Việt Nam', '/tours/240');
+    VALUES(N'Daily Tour to Paradise and Dark Cave', N'Bạn đang băn khoăn không biết nên làm gì và đi đâu trong một ngày ở Mù Cang Chải? Tour trekking bản địa một ngày chính là câu trả lời tốt nhất cho bạn. Bạn không chỉ được tham quan cảnh đẹp ngoạn mục ở Mù Cang Chải mà còn được khám phá về truyền thống, văn hóa của người H''mông.', N'Lịch trình tự do',N'Nguyễn Đình Chiểu, Đồng Hải, Đồng Hới, Quảng Bình, Việt Nam', N'Nguyễn Đình Chiểu, Đồng Hải, Đồng Hới, Quảng Bình, Việt Nam', '/tours/240');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'One Day caving and Trekking Phong Nha - Ke Bang', N'Nhận phiếu quà tặng và bắt đầu mua sắm tại potico.vn
 Chuyển phát nhanh 90 phút tại Hà Nội và TP.HCM
@@ -10500,8 +10408,7 @@ Nếu bạn đặt "Lựa chọn Vịnh Lan Hạ"
 => Tham quan: Vịnh Lan Hạ, Hang Tối & Sáng, khu vực đảo Cát Bà hoặc Trang trại Ngọc trai HOẶC Hang trên đảo, Chèo thuyền kayak/Bơi quanh khu vực nước tinh khiết/đảo nhỏ/đá.
 Nếu bạn đặt "Tùy chọn Vịnh Bái Tử Long"
 => Đón ~ 08:00 - 08:30 từ khu phố cổ Hà Nội
-=> Tham quan: Động Thiên Cảnh Sơn, bãi biển hoang sơ xinh đẹp, làng nổi Vùng Viêng. Chèo thuyền Kayak/Bơi quanh làng nổi/đảo nhỏ/đá', N'
-Lịch trình tự do',N'43 Đường Hai Bà Trưng, Phường Hải Thành, Đồng Hới, Quảng Bình, Việt Nam', N'43 Đường Hai Bà Trưng, Phường Hải Thành, Đồng Hới, Quảng Bình, Việt Nam', '/tours/247');
+=> Tham quan: Động Thiên Cảnh Sơn, bãi biển hoang sơ xinh đẹp, làng nổi Vùng Viêng. Chèo thuyền Kayak/Bơi quanh làng nổi/đảo nhỏ/đá', N'Lịch trình tự do',N'43 Đường Hai Bà Trưng, Phường Hải Thành, Đồng Hới, Quảng Bình, Việt Nam', N'43 Đường Hai Bà Trưng, Phường Hải Thành, Đồng Hới, Quảng Bình, Việt Nam', '/tours/247');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Dong Hoi Airport to Phong Nha or Versa Way', N'Khi bạn chọn Việt Nam cho kỳ nghỉ của mình nhưng nếu không có nhiều thời gian thì chuyến du lịch Hạ Long một ngày sẽ là điều bạn nghĩ. Với chương trình du ngoạn một ngày, chúng tôi có thể cung cấp cho bạn cái nhìn tổng quan về Vịnh Hạ Long với thời gian 6 giờ trên Vịnh. Bạn sẽ có cơ hội tuyệt vời không chỉ để tham quan những thắng cảnh đẹp ở Vịnh Hạ Long. Điểm nổi bật: Tour du lịch Vịnh Hạ Long Đưa đón bằng xe buýt Hà Nội – Hạ Long – Hà Nội bằng đường cao tốc mới Bữa trưa truyền thống của Việt Nam với hải sản Bơi lội hoặc đi bộ đường dài tại đảo Titop để có tầm nhìn đẹp nhất ra Vịnh Hạ Long Khám phá Hang Sửng Sốt (Hang Sửng Sốt) một trong những hang động lớn nhất Chèo thuyền kayak xung quanh vịnh Thưởng thức bữa tiệc hoàng hôn trên thuyền', N'
 ~Ngày 1 – Vịnh Hạ Long /Vịnh Lan Hạ/ Vịnh Bái Tử Long /Đảo Cát Bà
@@ -11049,8 +10956,7 @@ Cơ hội tham quan Di sản thiên nhiên thế giới xinh đẹp Vịnh Hạ 
 Bữa trưa buffet ngon miệng với hơn 30 món ngon, đặc trưng với các món ngon hải sản địa phương
 Bao gồm tiệc trà chiều trên boong tắm nắng
 Lựa chọn giữa tham quan Sun World Hạ Long và nghỉ dưỡng dưới đại dương trên bãi biển Bãi Cháy
-Ngắm nhìn những nét đẹp nhất của văn hóa miền Bắc Việt Nam được khắc họa trong Vé xem Tinh Hoa Bắc Bộ tại Hà Nội | Việt Nam', N'
-Lịch trình tự do',N'04 Bạch Đằng, Thạch Thang, Hải Châu, Đà Nẵng', N'04 Bạch Đằng, Thạch Thang, Hải Châu, Đà Nẵng', '/tours/256');
+Ngắm nhìn những nét đẹp nhất của văn hóa miền Bắc Việt Nam được khắc họa trong Vé xem Tinh Hoa Bắc Bộ tại Hà Nội | Việt Nam', N'Lịch trình tự do',N'04 Bạch Đằng, Thạch Thang, Hải Châu, Đà Nẵng', N'04 Bạch Đằng, Thạch Thang, Hải Châu, Đà Nẵng', '/tours/256');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'2,5 hours walking tour inside Hue Imperial city', N'Do bảo trì định kỳ nên xin lưu ý dịch vụ cáp treo Nữ Hoàng tại Sun World Hạ Long sẽ đóng cửa từ ngày 2 - 6/10
 Tận hưởng cảm giác phấn khích tại Sun World Hạ Long! Hãy đặt vé để có một ngày phấn khích khó quên, bao gồm các chuyến đi trên Vòng quay Mặt trời khổng lồ và Cáp treo Nữ hoàng hai tầng.
@@ -11524,13 +11430,11 @@ Nếu bạn đặt "Lựa chọn Vịnh Lan Hạ"
 => Tham quan: Vịnh Lan Hạ, Hang Tối & Sáng, khu vực đảo Cát Bà hoặc Trang trại Ngọc trai HOẶC Hang trên đảo, Chèo thuyền kayak/Bơi quanh khu vực nước tinh khiết/đảo nhỏ/đá.
 Nếu bạn đặt "Tùy chọn Vịnh Bái Tử Long"
 => Đón ~ 08:00 - 08:30 từ khu phố cổ Hà Nội
-=> Tham quan: Động Thiên Cảnh Sơn, bãi biển hoang sơ xinh đẹp, làng nổi Vùng Viêng. Chèo thuyền Kayak/Bơi quanh làng nổi/đảo nhỏ/đá', N'
-Lịch trình tự do',N'1 Nguyễn Lộ Trạch, Xuân Phú, Thành phố Huế, Thừa Thiên Huế, Việt Nam', N'1 Nguyễn Lộ Trạch, Xuân Phú, Thành phố Huế, Thừa Thiên Huế, Việt Nam', '/tours/262');
+=> Tham quan: Động Thiên Cảnh Sơn, bãi biển hoang sơ xinh đẹp, làng nổi Vùng Viêng. Chèo thuyền Kayak/Bơi quanh làng nổi/đảo nhỏ/đá', N'Lịch trình tự do',N'1 Nguyễn Lộ Trạch, Xuân Phú, Thành phố Huế, Thừa Thiên Huế, Việt Nam', N'1 Nguyễn Lộ Trạch, Xuân Phú, Thành phố Huế, Thừa Thiên Huế, Việt Nam', '/tours/262');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Bach Ma National Park Trekking Day Tour', N'Thưởng thức món nướng Hàn Quốc bằng phiếu giảm giá tiền mặt tại GoGi House
 Voucher áp dụng cho tất cả chi nhánh GoGi House được chỉ định tại Việt Nam
-Thưởng thức bữa ăn tại nhà hàng rộng rãi, tiện nghi', N'
-Lịch trình tự do',N'2 Đội Cung, Phú Hội, Thành phố Huế, Thừa Thiên Huế, Việt Nam', N'2 Đội Cung, Phú Hội, Thành phố Huế, Thừa Thiên Huế, Việt Nam', '/tours/263');
+Thưởng thức bữa ăn tại nhà hàng rộng rãi, tiện nghi', N'Lịch trình tự do',N'2 Đội Cung, Phú Hội, Thành phố Huế, Thừa Thiên Huế, Việt Nam', N'2 Đội Cung, Phú Hội, Thành phố Huế, Thừa Thiên Huế, Việt Nam', '/tours/263');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Hue City Full Day Tour with Ancient Tombs and Conical Hat Village', N'Thư giãn với 25 bồn tắm Onsen độc đáo và 18 bồn tắm độc đáo dành cho nam và nữ, mang đến trải nghiệm thư giãn và trị liệu cả trong nhà và ngoài trời.
 Tận hưởng việc tắm khoáng và xông hơi lý tưởng để cân bằng cơ thể và thư giãn đầu óc
@@ -11633,8 +11537,7 @@ Liên lạc địa phương tốt nhất
 Hướng dẫn - lái xe chuyên nghiệp và giàu kinh nghiệm
 KHÔNG tham quan MUA SẮM
 Chính sách không để lại phía sau
-Điểm nổi bật nhất của các hoạt động du ngoạn bờ biển Hạ Long', N'
-Lịch trình tự do',N'We drop you off at your hotel or somewhere as your request.', N'We drop you off at your hotel or somewhere as your request.', '/tours/265');
+Điểm nổi bật nhất của các hoạt động du ngoạn bờ biển Hạ Long', N'Lịch trình tự do',N'We drop you off at your hotel or somewhere as your request.', N'We drop you off at your hotel or somewhere as your request.', '/tours/265');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Hue Private Car Charter | Vietnam', N'Với không gian gần gũi, quen thuộc với chất liệu gỗ mộc mạc cùng họa tiết chim công đặc trưng của những năm 1900, không gian tại Công là nơi ghé thăm thân thương cho những tâm hồn hoài niệm. vào một đêm hẹn hò.
 Ở Công, có những thức uống được sáng tạo từ sự biến tấu, giao thoa văn hóa được thể hiện khéo léo, tinh tế trong tách cà phê tưởng chừng đơn giản.
@@ -11767,8 +11670,7 @@ Thời gian: 2 tiếng (xấp xỉ)',N'16 Nguyễn Thái Học, Phú Hội, Thà
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Walking street food tour', N'Khám phá vẻ đẹp của Vịnh Hạ Long trên chuyến du thuyền nhóm nhỏ sang trọng, có sức chứa tối đa 20 du khách. Đi trên con tàu hạng nhất, khám phá những kho báu ẩn giấu và những địa điểm được yêu thích ở địa phương.
 Lặn vào Hang Sửng Sốt, đi bộ qua Đảo Titop tuyệt đẹp và thư giãn trên những bãi biển hoang sơ, ngập tràn ánh nắng. Bơi trong làn nước trong như pha lê, thử nấu món Thái hoặc kiểm tra kỹ năng câu mực của bạn.
-Tất cả các hoạt động đều được bao gồm, với các tùy chọn để tùy chỉnh trải nghiệm của bạn. Dịch vụ cho thuê thuyền kayak và dụng cụ câu cá được cung cấp, mang đến một cách độc đáo và xa hoa để khám phá điểm đến đẹp như tranh vẽ này.', N'
-Lịch trình tự do',N'1/40 Nguyễn Lộ Trạch, tổ 8, Thành phố Huế, Thừa Thiên Huế, Việt Nam', N'1/40 Nguyễn Lộ Trạch, tổ 8, Thành phố Huế, Thừa Thiên Huế, Việt Nam', '/tours/271');
+Tất cả các hoạt động đều được bao gồm, với các tùy chọn để tùy chỉnh trải nghiệm của bạn. Dịch vụ cho thuê thuyền kayak và dụng cụ câu cá được cung cấp, mang đến một cách độc đáo và xa hoa để khám phá điểm đến đẹp như tranh vẽ này.', N'Lịch trình tự do',N'1/40 Nguyễn Lộ Trạch, tổ 8, Thành phố Huế, Thừa Thiên Huế, Việt Nam', N'1/40 Nguyễn Lộ Trạch, tổ 8, Thành phố Huế, Thừa Thiên Huế, Việt Nam', '/tours/271');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Hue Street Food Tour At Night By Scooter', N'Thư giãn với 25 bồn tắm Onsen độc đáo và 18 bồn tắm độc đáo dành cho nam và nữ, mang đến trải nghiệm thư giãn và trị liệu cả trong nhà và ngoài trời.
 Tận hưởng việc tắm khoáng và xông hơi lý tưởng để cân bằng cơ thể và thư giãn đầu óc
@@ -11815,8 +11717,7 @@ Tham quan Khu bảo tồn thiên nhiên Pù Luông
 Thật dễ dàng để dành một vài ngày để làm gì khác ngoài việc chiêm ngưỡng thiên nhiên xung quanh Mai Châu, nhưng việc đi lang thang trong rừng sẽ mang lại nhiều lợi ích. Hàng loạt dòng suối trong lành, mát mẻ chạy giữa những hàng cây, tạo thành những thác nước và hồ nước màu ngọc lam lý tưởng để tắm dưới cái nóng buổi chiều. Để có trải nghiệm tốt nhất, hãy thuê một hướng dẫn viên và đi sâu hơn vào khu vực.
 Bao gồm vé vào cửa',N'1 Phạm Hồng Thái, Vĩnh Ninh, Thành phố Huế, Thừa Thiên Huế, Việt Nam', N'1 Phạm Hồng Thái, Vĩnh Ninh, Thành phố Huế, Thừa Thiên Huế, Việt Nam', '/tours/274');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
-    VALUES(N'Full Day: Hue City Tour Small Group Maximum 12 Guests from Da Nang/ Hoi An', N'Bạn có bao giờ thắc mắc những loại vải, đặc biệt là những loại vải có hoa văn và màu sắc đẹp mắt, lại được dệt bằng tay như thế nào không? Hội thảo của chúng tôi là cơ hội để có được trải nghiệm độc đáo để hiểu và tham gia vào các quy trình khác nhau về cách làm vải từ nhuộm bằng nguyên liệu tự nhiên đến dệt trên khung dệt bằng kỹ thuật truyền thống của người Thái Trắng hoặc tạo ra các thiết kế thêu của riêng bạn. Hội thảo là dịp đặc biệt không chỉ dành cho NHÀ KHÁM PHÁ VĂN HÓA mà còn dành cho NHỮNG Ý TƯỞNG MÔI TRƯỜNG, những người quan tâm đến các giá trị bền vững và mong muốn trở thành một phần của SỰ THAY ĐỔI. Được trình bày và hướng dẫn bởi các nghệ nhân địa phương của chúng tôi tại How Ban Atelier và nhóm tình nguyện viên quốc tế từ các quốc gia khác nhau, những người muốn trở thành một phần của CUỘC CÁCH MẠNG. Chúng tôi nỗ lực mang đến cho du khách những kỷ niệm khó quên về Việt Nam và khám phá một trong những hoạt động văn hóa quý giá nhất mà chúng tôi đang cố gắng bảo tồn và phát huy.', N'
-Lịch trình tự do',N'04 Bạch Đằng, Thạch Thang, Hải Châu, Đà Nẵng', N'04 Bạch Đằng, Thạch Thang, Hải Châu, Đà Nẵng', '/tours/275');
+    VALUES(N'Full Day: Hue City Tour Small Group Maximum 12 Guests from Da Nang/ Hoi An', N'Bạn có bao giờ thắc mắc những loại vải, đặc biệt là những loại vải có hoa văn và màu sắc đẹp mắt, lại được dệt bằng tay như thế nào không? Hội thảo của chúng tôi là cơ hội để có được trải nghiệm độc đáo để hiểu và tham gia vào các quy trình khác nhau về cách làm vải từ nhuộm bằng nguyên liệu tự nhiên đến dệt trên khung dệt bằng kỹ thuật truyền thống của người Thái Trắng hoặc tạo ra các thiết kế thêu của riêng bạn. Hội thảo là dịp đặc biệt không chỉ dành cho NHÀ KHÁM PHÁ VĂN HÓA mà còn dành cho NHỮNG Ý TƯỞNG MÔI TRƯỜNG, những người quan tâm đến các giá trị bền vững và mong muốn trở thành một phần của SỰ THAY ĐỔI. Được trình bày và hướng dẫn bởi các nghệ nhân địa phương của chúng tôi tại How Ban Atelier và nhóm tình nguyện viên quốc tế từ các quốc gia khác nhau, những người muốn trở thành một phần của CUỘC CÁCH MẠNG. Chúng tôi nỗ lực mang đến cho du khách những kỷ niệm khó quên về Việt Nam và khám phá một trong những hoạt động văn hóa quý giá nhất mà chúng tôi đang cố gắng bảo tồn và phát huy.', N'Lịch trình tự do',N'04 Bạch Đằng, Thạch Thang, Hải Châu, Đà Nẵng', N'04 Bạch Đằng, Thạch Thang, Hải Châu, Đà Nẵng', '/tours/275');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Full-Day Hue City Tour', N'*Tuyến đường đi xe đạp: 12 km *Thời gian: 2 - 2,5 giờ *Tour riêng dành cho nhóm nhỏ, gia đình, v.v... Hành trình quyến rũ sẽ khởi hành từ Mai Châu Ecolodge, đạp xe quanh thung lũng; khám phá cảnh đẹp và văn hóa Thái độc đáo tại các làng: Nà Thia, Chiềng Sại, Làng Chà, Làng Chà Long, Tông Đậu và Làng Văn. Đắm mình vào cuộc sống yên tĩnh hàng ngày khi nhìn thấy những người nông dân làm việc trên những cánh đồng lúa xanh tươi: trồng lúa, trồng rau, nuôi cá và chăn thả gia súc tùy theo mùa. Hơn nữa, du khách còn có cơ hội đến thăm một gia đình địa phương (nơi bốn thế hệ cùng chung sống dưới một mái nhà) và trải nghiệm cuộc sống hàng ngày cũng như công việc đồng áng với người dân bản địa.', N'
 ~Mai Hịch farmstay
@@ -12453,30 +12354,24 @@ Tự do khám phá Mai Châu hoặc mua sắm theo ý muốn.
 18h30: Đến Hà Nội. Kết thúc dịch vụ!',N'37 Chu Văn An, Phú Hội, Thành phố Huế, Thừa Thiên Huế 53000, Việt Nam', N'37 Chu Văn An, Phú Hội, Thành phố Huế, Thừa Thiên Huế 53000, Việt Nam', '/tours/280');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Spa massage services in Thừa Thiên Huế, Vietnam', N'Tìm hiểu cách sử dụng kỹ thuật đánh bắt cá truyền thống của địa phương bằng lưới tròn và lưới Đến ruộng rau hữu cơ, tưới nước và trồng rau, cuốc đất cùng nông dân địa phương Chuẩn bị bữa ăn cùng gia đình địa phương Trải nghiệm chèo bè trên suối (Chỉ áp dụng vào tháng 3, tháng 4 năm 2017) Tháng 5, tháng 6) Tổng quan Tour du lịch thân thiện với môi trường Mai Châu được thiết kế đặc biệt dành cho những trải nghiệm tour du lịch tại nhà/trang trại tập trung vào cuộc sống trải nghiệm nông nghiệp và đánh cá truyền thống của các gia đình dân tộc ''Thái trắng'' trong vùng.
-Mai Châu là một chuyến đi dài 139km từ Hà Nội qua địa hình đồi núi, trong một thung lũng. trong một thung lũng nông thôn bình dị và quyến rũ nép mình giữa hai vách đá cao chót vót được bao quanh bởi những cánh đồng xanh ngọc lục bảo Tận hưởng những trải nghiệm thực tế với hướng dẫn viên như câu cá bằng lưới truyền thống, chèo thuyền trên sông truyền thống và làm việc trên cánh đồng với nông dân địa phương . Bạn sẽ có thể sống giữa những người dân địa phương và tham gia vào các hoạt động hàng ngày của họ Chuyến tham quan riêng nhưng đi chung xe buýt', N'
-Lịch trình tự do',N'22 Nguyễn Công Trứ, Phú Hội, Thành phố Huế, Thừa Thiên Huế, Việt Nam', N'22 Nguyễn Công Trứ, Phú Hội, Thành phố Huế, Thừa Thiên Huế, Việt Nam', '/tours/281');
+Mai Châu là một chuyến đi dài 139km từ Hà Nội qua địa hình đồi núi, trong một thung lũng. trong một thung lũng nông thôn bình dị và quyến rũ nép mình giữa hai vách đá cao chót vót được bao quanh bởi những cánh đồng xanh ngọc lục bảo Tận hưởng những trải nghiệm thực tế với hướng dẫn viên như câu cá bằng lưới truyền thống, chèo thuyền trên sông truyền thống và làm việc trên cánh đồng với nông dân địa phương . Bạn sẽ có thể sống giữa những người dân địa phương và tham gia vào các hoạt động hàng ngày của họ Chuyến tham quan riêng nhưng đi chung xe buýt', N'Lịch trình tự do',N'22 Nguyễn Công Trứ, Phú Hội, Thành phố Huế, Thừa Thiên Huế, Việt Nam', N'22 Nguyễn Công Trứ, Phú Hội, Thành phố Huế, Thừa Thiên Huế, Việt Nam', '/tours/281');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Hue Royal Relaxation Massage for 100 Minutes in Hue, Vietnam', N'Thưởng thức món nướng Hàn Quốc bằng phiếu giảm giá tiền mặt tại GoGi House
 Voucher áp dụng cho tất cả chi nhánh GoGi House được chỉ định tại Việt Nam
-Thưởng thức bữa ăn tại nhà hàng rộng rãi, tiện nghi', N'
-Lịch trình tự do',N'37 Chu Văn An, Phú Hội, Thành phố Huế, Thừa Thiên Huế 53000, Việt Nam', N'37 Chu Văn An, Phú Hội, Thành phố Huế, Thừa Thiên Huế 53000, Việt Nam', '/tours/282');
+Thưởng thức bữa ăn tại nhà hàng rộng rãi, tiện nghi', N'Lịch trình tự do',N'37 Chu Văn An, Phú Hội, Thành phố Huế, Thừa Thiên Huế 53000, Việt Nam', N'37 Chu Văn An, Phú Hội, Thành phố Huế, Thừa Thiên Huế 53000, Việt Nam', '/tours/282');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'1-Hour Hue Traditional Massage Experience', N'Với không gian gần gũi, quen thuộc với chất liệu gỗ mộc mạc cùng họa tiết chim công đặc trưng của những năm 1900, không gian tại Công là nơi ghé thăm thân thương cho những tâm hồn hoài niệm. vào một đêm hẹn hò.
 Ở Công, có những thức uống được sáng tạo từ sự biến tấu, giao thoa văn hóa được thể hiện khéo léo, tinh tế trong tách cà phê tưởng chừng đơn giản.
-Không chỉ có cà phê, với thực đơn của Công là cả một bầu trời tâm huyết, sáng tạo để mang lại sự hài lòng nhất cho thực khách.', N'
-Lịch trình tự do',N'37 Chu Văn An, Phú Hội, Thành phố Huế, Thừa Thiên Huế 53000, Việt Nam', N'37 Chu Văn An, Phú Hội, Thành phố Huế, Thừa Thiên Huế 53000, Việt Nam', '/tours/283');
+Không chỉ có cà phê, với thực đơn của Công là cả một bầu trời tâm huyết, sáng tạo để mang lại sự hài lòng nhất cho thực khách.', N'Lịch trình tự do',N'37 Chu Văn An, Phú Hội, Thành phố Huế, Thừa Thiên Huế 53000, Việt Nam', N'37 Chu Văn An, Phú Hội, Thành phố Huế, Thừa Thiên Huế 53000, Việt Nam', '/tours/283');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Royal Facial Care with Hue Royal Hair Treatment', N'Hòa mình vào không khí náo nhiệt tại K-Pub để thưởng thức món nướng đường phố Hàn Quốc đích thực và thỏa sức lựa chọn ẩm thực với hơn 30 món
 Thực đơn dễ dàng gọi món với các combo đặt tên theo kích cỡ như trống lớn cho 4-6 người, trống nhỏ cho 2-4 người.
-Ngoài đồ nướng, nhà hàng còn có món lẩu và các món ăn nổi tiếng khác của Hàn Quốc. Những đĩa thịt được đặt trên những tấm gỗ thông dài tới 1 mét trông rất độc đáo', N'
-Lịch trình tự do',N'37 Chu Văn An, Phú Hội, Thành phố Huế, Thừa Thiên Huế 53000, Việt Nam', N'37 Chu Văn An, Phú Hội, Thành phố Huế, Thừa Thiên Huế 53000, Việt Nam', '/tours/284');
+Ngoài đồ nướng, nhà hàng còn có món lẩu và các món ăn nổi tiếng khác của Hàn Quốc. Những đĩa thịt được đặt trên những tấm gỗ thông dài tới 1 mét trông rất độc đáo', N'Lịch trình tự do',N'37 Chu Văn An, Phú Hội, Thành phố Huế, Thừa Thiên Huế 53000, Việt Nam', N'37 Chu Văn An, Phú Hội, Thành phố Huế, Thừa Thiên Huế 53000, Việt Nam', '/tours/284');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Experience Vegan Cooking Class in Hue City', N'Xe của chúng tôi với tài xế giàu kinh nghiệm, nói tiếng Anh cơ bản là sự lựa chọn tốt nhất cho chuyến đi của bạn. Dịch vụ đưa đón chuyên nghiệp giúp bạn cảm thấy chuyến đi của mình ngắn gọn và thoải mái hơn. Bạn vừa cảm thấy thư giãn trên xe, bỏ lại những lo âu phía sau để có thể chiêm ngưỡng cảnh đẹp hai bên đường trong quá trình di chuyển.
-Đoạn đường giữa Pù Luông và Mai Châu có rất nhiều cảnh đẹp, hấp dẫn. Lái xe sẵn sàng dừng xe và giới thiệu cho quý khách chụp ảnh và khám phá một số địa điểm như bản Lác, Nhà máy tre, View ngắm ruộng bậc thang...', N'
-Lịch trình tự do',N'3 Võ Thị Sáu, Phú Hội, Thành phố Huế, Thừa Thiên Huế, Việt Nam', N'3 Võ Thị Sáu, Phú Hội, Thành phố Huế, Thừa Thiên Huế, Việt Nam', '/tours/285');
+Đoạn đường giữa Pù Luông và Mai Châu có rất nhiều cảnh đẹp, hấp dẫn. Lái xe sẵn sàng dừng xe và giới thiệu cho quý khách chụp ảnh và khám phá một số địa điểm như bản Lác, Nhà máy tre, View ngắm ruộng bậc thang...', N'Lịch trình tự do',N'3 Võ Thị Sáu, Phú Hội, Thành phố Huế, Thừa Thiên Huế, Việt Nam', N'3 Võ Thị Sáu, Phú Hội, Thành phố Huế, Thừa Thiên Huế, Việt Nam', '/tours/285');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
-    VALUES(N'Home Cooking Class in Hue City', N'*Tuyến đường đi xe đạp: 12 km *Thời gian: 2 - 2,5 giờ *Tour riêng dành cho nhóm nhỏ, gia đình, v.v... Hành trình quyến rũ sẽ khởi hành từ Mai Châu Ecolodge, đạp xe quanh thung lũng; khám phá cảnh đẹp và văn hóa Thái độc đáo tại các làng: Nà Thia, Chiềng Sại, Làng Chà, Làng Chà Long, Tông Đậu và Làng Văn. Đắm mình vào cuộc sống yên tĩnh hàng ngày khi nhìn thấy những người nông dân làm việc trên những cánh đồng lúa xanh tươi: trồng lúa, trồng rau, nuôi cá và chăn thả gia súc tùy theo mùa. Hơn nữa, du khách còn có cơ hội đến thăm một gia đình địa phương (nơi bốn thế hệ cùng chung sống dưới một mái nhà) và trải nghiệm cuộc sống hàng ngày cũng như công việc đồng áng với người dân bản địa.', N'
-Lịch trình tự do',N'3 Võ Văn Kiệt, Thủy Thủ, Hương Thủy, Thừa Thiên Huế, Việt Nam', N'3 Võ Văn Kiệt, Thủy Thủ, Hương Thủy, Thừa Thiên Huế, Việt Nam', '/tours/286');
+    VALUES(N'Home Cooking Class in Hue City', N'*Tuyến đường đi xe đạp: 12 km *Thời gian: 2 - 2,5 giờ *Tour riêng dành cho nhóm nhỏ, gia đình, v.v... Hành trình quyến rũ sẽ khởi hành từ Mai Châu Ecolodge, đạp xe quanh thung lũng; khám phá cảnh đẹp và văn hóa Thái độc đáo tại các làng: Nà Thia, Chiềng Sại, Làng Chà, Làng Chà Long, Tông Đậu và Làng Văn. Đắm mình vào cuộc sống yên tĩnh hàng ngày khi nhìn thấy những người nông dân làm việc trên những cánh đồng lúa xanh tươi: trồng lúa, trồng rau, nuôi cá và chăn thả gia súc tùy theo mùa. Hơn nữa, du khách còn có cơ hội đến thăm một gia đình địa phương (nơi bốn thế hệ cùng chung sống dưới một mái nhà) và trải nghiệm cuộc sống hàng ngày cũng như công việc đồng áng với người dân bản địa.', N'Lịch trình tự do',N'3 Võ Văn Kiệt, Thủy Thủ, Hương Thủy, Thừa Thiên Huế, Việt Nam', N'3 Võ Văn Kiệt, Thủy Thủ, Hương Thủy, Thừa Thiên Huế, Việt Nam', '/tours/286');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Experience Local Market and Cooking Class in Hue City', N'Xe của chúng tôi với tài xế giàu kinh nghiệm nói tiếng Anh cơ bản là sự lựa chọn tốt nhất cho chuyến đi của bạn. Dịch vụ đưa đón chuyên nghiệp giúp bạn cảm thấy chuyến đi của mình ngắn gọn và thoải mái hơn. Bạn chỉ cần cảm thấy thư giãn trên xe, bỏ lại những muộn phiền phía sau để chiêm ngưỡng cảnh đẹp hai bên đường trong quá trình di chuyển. Ngoài ra còn một số tính năng nổi bật khác mà bạn sẽ có khi đặt phòng với chúng tôi:
 Đội xe thuộc thế hệ mới nhất.
@@ -12485,8 +12380,7 @@ Giá rẻ & không có chi phí ẩn
 Tài xế chuyên nghiệp nói tiếng Anh cơ bản
 Không tốn thêm chi phí cho thời gian chờ đợi.
 Đội ngũ hỗ trợ có trách nhiệm 24 giờ
-Luôn đi đường cao tốc cho chuyến đi.', N'
-Lịch trình tự do',N'3 Võ Thị Sáu, Phú Hội, Thành phố Huế, Thừa Thiên Huế, Việt Nam', N'3 Võ Thị Sáu, Phú Hội, Thành phố Huế, Thừa Thiên Huế, Việt Nam', '/tours/287');
+Luôn đi đường cao tốc cho chuyến đi.', N'Lịch trình tự do',N'3 Võ Thị Sáu, Phú Hội, Thành phố Huế, Thừa Thiên Huế, Việt Nam', N'3 Võ Thị Sáu, Phú Hội, Thành phố Huế, Thừa Thiên Huế, Việt Nam', '/tours/287');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Golf Tours From Danang – Laguna Lang Co Golf Course | Hue', N'Nhận phiếu quà tặng và bắt đầu mua sắm tại potico.vn
 Chuyển phát nhanh 90 phút tại Hà Nội và TP.HCM
@@ -12757,42 +12651,35 @@ Thăm chùa Bái Đính ngắm tượng Phật lớn nhất Việt Nam
 Tham quan Hang Múa bằng cách đi bộ 500 bước lên Núi Rồng Nằm
 Thưởng thức bữa trưa theo thực đơn món Việt
 Tham quan Eco Tràng An bằng thuyền tam bản
-Tìm hiểu về tỉnh Ninh Bình và các địa danh thiên nhiên', N'
-Lịch trình tự do',N'Âu Cơ, Cửa Đại, Hội An, Quảng Nam, Việt Nam', N'Âu Cơ, Cửa Đại, Hội An, Quảng Nam, Việt Nam', '/tours/298');
+Tìm hiểu về tỉnh Ninh Bình và các địa danh thiên nhiên', N'Lịch trình tự do',N'Âu Cơ, Cửa Đại, Hội An, Quảng Nam, Việt Nam', N'Âu Cơ, Cửa Đại, Hội An, Quảng Nam, Việt Nam', '/tours/298');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Day Tour | Hoi An Old Town And Basket Boat Tour', N'Thưởng thức món nướng Hàn Quốc bằng phiếu giảm giá tiền mặt tại GoGi House
 Voucher áp dụng cho tất cả chi nhánh GoGi House được chỉ định tại Việt Nam
-Thưởng thức bữa ăn tại nhà hàng rộng rãi, tiện nghi', N'
-Lịch trình tự do',N'99 Vo Nguyen Giap, Bac My An, Ngu Hanh Son, Danang 550000, Vietnam', N'99 Vo Nguyen Giap, Bac My An, Ngu Hanh Son, Danang 550000, Vietnam', '/tours/299');
+Thưởng thức bữa ăn tại nhà hàng rộng rãi, tiện nghi', N'Lịch trình tự do',N'99 Vo Nguyen Giap, Bac My An, Ngu Hanh Son, Danang 550000, Vietnam', N'99 Vo Nguyen Giap, Bac My An, Ngu Hanh Son, Danang 550000, Vietnam', '/tours/299');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Hoi An Eco Cooking Class(Local market, Basket Boat Ride,Crab Fishing & Cooking)', N'Với không gian gần gũi, quen thuộc với chất liệu gỗ mộc mạc cùng họa tiết chim công đặc trưng của những năm 1900, không gian tại Công là nơi ghé thăm thân thương cho những tâm hồn hoài niệm. vào một đêm hẹn hò.
 Ở Công, có những thức uống được sáng tạo từ sự biến tấu, giao thoa văn hóa được thể hiện khéo léo, tinh tế trong tách cà phê tưởng chừng đơn giản.
-Không chỉ có cà phê, với thực đơn của Công là cả một bầu trời tâm huyết, sáng tạo để mang lại sự hài lòng nhất cho thực khách.', N'
-Lịch trình tự do',N'07 Đường Trần Quốc Toản, Cẩm Châu, Hội An, Quảng Nam, Việt Nam', N'07 Đường Trần Quốc Toản, Cẩm Châu, Hội An, Quảng Nam, Việt Nam', '/tours/300');
+Không chỉ có cà phê, với thực đơn của Công là cả một bầu trời tâm huyết, sáng tạo để mang lại sự hài lòng nhất cho thực khách.', N'Lịch trình tự do',N'07 Đường Trần Quốc Toản, Cẩm Châu, Hội An, Quảng Nam, Việt Nam', N'07 Đường Trần Quốc Toản, Cẩm Châu, Hội An, Quảng Nam, Việt Nam', '/tours/300');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Basket Boat Ride in Hoi An Activity', N'Hòa mình vào không khí náo nhiệt tại K-Pub để thưởng thức món nướng đường phố Hàn Quốc đích thực và thỏa sức lựa chọn ẩm thực với hơn 30 món
 Thực đơn dễ dàng gọi món với các combo đặt tên theo kích cỡ như trống lớn cho 4-6 người, trống nhỏ cho 2-4 người.
-Ngoài đồ nướng, nhà hàng còn có món lẩu và các món ăn nổi tiếng khác của Hàn Quốc. Những đĩa thịt được đặt trên những tấm gỗ thông dài tới 1 mét trông rất độc đáo', N'
-Lịch trình tự do',N'Tổ 3 thôn Vạn Lăng, Cẩm Thanh, Hội An, Quảng Nam 563800, Việt Nam', N'Tổ 3 thôn Vạn Lăng, Cẩm Thanh, Hội An, Quảng Nam 563800, Việt Nam', '/tours/301');
+Ngoài đồ nướng, nhà hàng còn có món lẩu và các món ăn nổi tiếng khác của Hàn Quốc. Những đĩa thịt được đặt trên những tấm gỗ thông dài tới 1 mét trông rất độc đáo', N'Lịch trình tự do',N'Tổ 3 thôn Vạn Lăng, Cẩm Thanh, Hội An, Quảng Nam 563800, Việt Nam', N'Tổ 3 thôn Vạn Lăng, Cẩm Thanh, Hội An, Quảng Nam 563800, Việt Nam', '/tours/301');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Secret Cocktail Experience in Hoi An', N'Thưởng thức bữa trưa buffet ngon miệng trong chuyến đi Ninh Bình tại Nhà hàng Thế Long. Thưởng thức nhiều món ăn địa phương đầy hương vị của Việt Nam.
 Tận dụng tối đa vị trí thuận lợi của nhà hàng nằm trong khu đông dân nhất Ninh Bình, ngay cạnh bến thuyền Tam Cốc
 Khám phá ẩm thực địa phương Việt Nam ngon miệng, đặc trưng của món ngon Ninh Bình
 Đánh giá cao bầu không khí ấn tượng của nhà hàng với lối trang trí bằng gỗ boutique
-Tận hưởng lòng hiếu khách tuyệt vời từ đội ngũ nhân viên thân thiện', N'
-Lịch trình tự do',N'Tp. Hội An, Quảng Nam, Việt Nam', N'Tp. Hội An, Quảng Nam, Việt Nam', '/tours/302');
+Tận hưởng lòng hiếu khách tuyệt vời từ đội ngũ nhân viên thân thiện', N'Lịch trình tự do',N'Tp. Hội An, Quảng Nam, Việt Nam', N'Tp. Hội An, Quảng Nam, Việt Nam', '/tours/302');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Hoi An Eco Cooking Class(Local market, Basket boat, crab fishing& cooking class)', N'Di chuyển dễ dàng khi bạn tận dụng dịch vụ đưa đón chung từ Hà Nội đến Thành phố Ninh Bình và ngược lại! Tận hưởng dịch vụ đón và trả khách sạn thuận tiện tại Phố Cổ Hà Nội và trải nghiệm chuyến đi thoải mái có máy lạnh mà không phải lo lắng về việc xếp hàng dài khi sử dụng phương tiện giao thông công cộng.
 Được sử dụng dịch vụ đưa đón thoải mái và dễ dàng giữa Hà Nội và Thành phố Ninh Bình
 Tránh đám đông đông đúc và hàng dài chờ sử dụng phương tiện giao thông công cộng và tận hưởng lựa chọn chất lượng cao, vừa túi tiền
-Chọn từ nhiều loại xe khác nhau để đáp ứng tốt nhất nhu cầu của bạn', N'
-Lịch trình tự do',N'05-07 Hoàng Diệu, Cẩm Châu, Hội An, Quảng Nam, Việt Nam', N'05-07 Hoàng Diệu, Cẩm Châu, Hội An, Quảng Nam, Việt Nam', '/tours/303');
+Chọn từ nhiều loại xe khác nhau để đáp ứng tốt nhất nhu cầu của bạn', N'Lịch trình tự do',N'05-07 Hoàng Diệu, Cẩm Châu, Hội An, Quảng Nam, Việt Nam', N'05-07 Hoàng Diệu, Cẩm Châu, Hội An, Quảng Nam, Việt Nam', '/tours/303');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Evening Walking Food Tour in Hoi An', N'Tránh những hàng taxi dài ở sân bay và phương tiện giao thông công cộng đông đúc
 Tận hưởng dịch vụ đưa đón riêng từ Sân bay Quốc tế Nội Bài đến Ninh Bình với mức giá hợp lý và không có chi phí ẩn
 Chọn từ nhiều tùy chọn xe để phù hợp nhất với nhu cầu của bạn
-Tài xế kinh nghiệm luôn ưu tiên sự an toàn của khách hàng', N'
-Lịch trình tự do',N'Hội An, Sơn Phong, Tp. Hội An, Quảng Nam, Việt Nam', N'Hội An, Sơn Phong, Tp. Hội An, Quảng Nam, Việt Nam', '/tours/304');
+Tài xế kinh nghiệm luôn ưu tiên sự an toàn của khách hàng', N'Lịch trình tự do',N'Hội An, Sơn Phong, Tp. Hội An, Quảng Nam, Việt Nam', N'Hội An, Sơn Phong, Tp. Hội An, Quảng Nam, Việt Nam', '/tours/304');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Hoi An Full Lantern Making Class- A special Foldable lantern', N'Nhận phiếu quà tặng và bắt đầu mua sắm tại potico.vn
 Chuyển phát nhanh 90 phút tại Hà Nội và TP.HCM
@@ -13117,11 +13004,9 @@ Bảo hiểm du lịch
 Với những nét nguyên sơ tự nhiên, Động Thiên Đường trông giống như một bức tranh phong cảnh; khiến nơi đây trở thành một kỳ quan thiên nhiên được nhiều người yêu thích kể từ khi mở cửa vào năm 2010. Theo những người thám hiểm hang động, càng đi sâu vào hang, người ta càng cảm nhận được những giếng nước trong vắt xung quanh. Hang động có thể cao tới 72 m và rộng tới 150 m. Nơi đây có hàng loạt nhũ đá pha lê trắng (trầm tích đá vôi) giống như những cây cột tự nhiên và nhiều hình dạng ngoạn mục khác. Động Thiên Đường (Hang Thiên Đường) được các nhà khoa học thuộc Hiệp hội nghiên cứu hang động Anh phát hiện vào năm 2005. Nó có chiều dài 31,4 km và là hang khô dài nhất châu Á.
 Thời gian: 10 phút (xấp độ)',N'19 Trần Phú, Cẩm Châu, Hội An, Quảng Nam, Việt Nam', N'19 Trần Phú, Cẩm Châu, Hội An, Quảng Nam, Việt Nam', '/tours/314');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
-    VALUES(N'Hoi An Full Lantern Making Class- A special Foldable lantern', N'Động Phong Nha và động Thiên Đường là hai hang động nổi tiếng nhất ở Vườn quốc gia Phong Nha Kẻ Bàng, được UNESCO công nhận là Di sản Thế giới năm 2003 vì các giá trị địa chất. Cả hai đã tạo nên sức hấp dẫn đặc biệt cho “Vương quốc hang động” Vườn quốc gia Phong Nha Kẻ Bàng. Ngày nay, có rất nhiều du khách không chỉ trong nước mà cả quốc tế đến tham quan và chiêm ngưỡng vẻ đẹp của chúng. Nếu bạn là người thích khám phá hang động thì Phong Nha thực sự là một địa điểm lý tưởng dành cho bạn.', N'
-Lịch trình tự do',N'8 Trần Cao Vân, Phường Cẩm Phổ, Hội An, Quảng Nam, Việt Nam', N'8 Trần Cao Vân, Phường Cẩm Phổ, Hội An, Quảng Nam, Việt Nam', '/tours/315');
+    VALUES(N'Hoi An Full Lantern Making Class- A special Foldable lantern', N'Động Phong Nha và động Thiên Đường là hai hang động nổi tiếng nhất ở Vườn quốc gia Phong Nha Kẻ Bàng, được UNESCO công nhận là Di sản Thế giới năm 2003 vì các giá trị địa chất. Cả hai đã tạo nên sức hấp dẫn đặc biệt cho “Vương quốc hang động” Vườn quốc gia Phong Nha Kẻ Bàng. Ngày nay, có rất nhiều du khách không chỉ trong nước mà cả quốc tế đến tham quan và chiêm ngưỡng vẻ đẹp của chúng. Nếu bạn là người thích khám phá hang động thì Phong Nha thực sự là một địa điểm lý tưởng dành cho bạn.', N'Lịch trình tự do',N'8 Trần Cao Vân, Phường Cẩm Phổ, Hội An, Quảng Nam, Việt Nam', N'8 Trần Cao Vân, Phường Cẩm Phổ, Hội An, Quảng Nam, Việt Nam', '/tours/315');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
-    VALUES(N'Skip the Line: Hoi An Memories Show (2 levels) Ticket', N'Dịch vụ giao hàng tận nơi Tài xế nói tiếng Anh cơ bản Sạch sẽ, hiện đại và đưa đón bằng xe riêng có máy lạnh. Nhận hàng nhanh chóng và đúng giờ. Dịch vụ chăm sóc khách hàng trực tuyến 24/7 qua Whatsapp. Xe đưa đón tư nhân chất lượng cao với giá cả phải chăng.', N'
-Lịch trình tự do',N'Con Hen, 200 Nguyen Tri Phuong Turns Left', N'Con Hen, 200 Nguyen Tri Phuong Turns Left', '/tours/316');
+    VALUES(N'Skip the Line: Hoi An Memories Show (2 levels) Ticket', N'Dịch vụ giao hàng tận nơi Tài xế nói tiếng Anh cơ bản Sạch sẽ, hiện đại và đưa đón bằng xe riêng có máy lạnh. Nhận hàng nhanh chóng và đúng giờ. Dịch vụ chăm sóc khách hàng trực tuyến 24/7 qua Whatsapp. Xe đưa đón tư nhân chất lượng cao với giá cả phải chăng.', N'Lịch trình tự do',N'Con Hen, 200 Nguyen Tri Phuong Turns Left', N'Con Hen, 200 Nguyen Tri Phuong Turns Left', '/tours/316');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'One Day Golf Tour From Da Nang To Hoiana Shores Golf Club', N'Dịch vụ tận nhà.
 Lịch trình và thời gian tham quan linh hoạt.
@@ -13130,27 +13015,21 @@ Tài xế nói tiếng Anh cơ bản, thân thiện và giàu kinh nghiệm.
 Bạn là ông chủ, bạn có thể quyết định thời gian khởi hành.
 Đây không chỉ là dịch vụ đưa đón riêng mà còn là một chuyến tham quan.
 Mọi thứ trong dịch vụ đưa đón bằng ô tô riêng của chúng tôi đều rõ ràng, không có chi phí ẩn.
-Chúng tôi cũng có thể tùy chỉnh các chuyến tham quan/chuyển tiếp theo ý tưởng/yêu cầu của bạn.', N'
-Lịch trình tự do',N'Da Nang City', N'Da Nang City', '/tours/317');
+Chúng tôi cũng có thể tùy chỉnh các chuyến tham quan/chuyển tiếp theo ý tưởng/yêu cầu của bạn.', N'Lịch trình tự do',N'Da Nang City', N'Da Nang City', '/tours/317');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
-    VALUES(N'Hoi An Full Lantern Making Class , Basket Boat , Crab Fishing And FooD', N'Tận hưởng dịch vụ đưa đón thân thiện, dễ dàng đến Khách sạn của bạn ở Đồng Hới khi bạn đến Sân bay Đồng Hới. Tài xế chuyên nghiệp sẽ chào đón bạn tại nhà ga và đưa bạn thẳng đến khách sạn bằng xe có máy lạnh', N'
-Lịch trình tự do',N'07 Đường Trần Quốc Toản, Cẩm Châu, Hội An, Quảng Nam, Việt Nam', N'07 Đường Trần Quốc Toản, Cẩm Châu, Hội An, Quảng Nam, Việt Nam', '/tours/318');
+    VALUES(N'Hoi An Full Lantern Making Class , Basket Boat , Crab Fishing And FooD', N'Tận hưởng dịch vụ đưa đón thân thiện, dễ dàng đến Khách sạn của bạn ở Đồng Hới khi bạn đến Sân bay Đồng Hới. Tài xế chuyên nghiệp sẽ chào đón bạn tại nhà ga và đưa bạn thẳng đến khách sạn bằng xe có máy lạnh', N'Lịch trình tự do',N'07 Đường Trần Quốc Toản, Cẩm Châu, Hội An, Quảng Nam, Việt Nam', N'07 Đường Trần Quốc Toản, Cẩm Châu, Hội An, Quảng Nam, Việt Nam', '/tours/318');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
-    VALUES(N'Express Hoi An Lantern Making Class-Foldable lanterns', N'Đừng lo lắng khi khởi hành đến Sân bay Đà Nẵng và đặt trước dịch vụ đưa đón riêng phù hợp với số lượng người trong nhóm của bạn (tối đa 15 người). Tránh phải xếp hàng dài đón taxi tại khách sạn và di chuyển thoải mái trên xe hơi Premium hoặc xe tải nhỏ.', N'
-Lịch trình tự do',N'8 Trần Cao Vân, Phường Cẩm Phổ, Hội An, Quảng Nam, Việt Nam', N'8 Trần Cao Vân, Phường Cẩm Phổ, Hội An, Quảng Nam, Việt Nam', '/tours/319');
+    VALUES(N'Express Hoi An Lantern Making Class-Foldable lanterns', N'Đừng lo lắng khi khởi hành đến Sân bay Đà Nẵng và đặt trước dịch vụ đưa đón riêng phù hợp với số lượng người trong nhóm của bạn (tối đa 15 người). Tránh phải xếp hàng dài đón taxi tại khách sạn và di chuyển thoải mái trên xe hơi Premium hoặc xe tải nhỏ.', N'Lịch trình tự do',N'8 Trần Cao Vân, Phường Cẩm Phổ, Hội An, Quảng Nam, Việt Nam', N'8 Trần Cao Vân, Phường Cẩm Phổ, Hội An, Quảng Nam, Việt Nam', '/tours/319');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
-    VALUES(N'Half Day Hoi An Private Cooking Class & Bamboo Round Boat Tour', N'Dừng chân chụp ảnh, ăn uống, thư giãn mọi lúc, mọi nơi. Xe máy lạnh riêng, tài xế kinh nghiệm. Tài xế nói tiếng Anh tốt và cung cấp thông tin tốt nhất. Đón và trả khách tại các địa điểm linh hoạt theo yêu cầu của bạn.', N'
-Lịch trình tự do',N'Hoi An Town, Quang Nam', N'Hoi An Town, Quang Nam', '/tours/320');
+    VALUES(N'Half Day Hoi An Private Cooking Class & Bamboo Round Boat Tour', N'Dừng chân chụp ảnh, ăn uống, thư giãn mọi lúc, mọi nơi. Xe máy lạnh riêng, tài xế kinh nghiệm. Tài xế nói tiếng Anh tốt và cung cấp thông tin tốt nhất. Đón và trả khách tại các địa điểm linh hoạt theo yêu cầu của bạn.', N'Lịch trình tự do',N'Hoi An Town, Quang Nam', N'Hoi An Town, Quang Nam', '/tours/320');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'My Son Sanctuary Discovery Half-Day Tour', N'Thưởng thức món nướng Hàn Quốc bằng phiếu giảm giá tiền mặt tại GoGi House
 Voucher áp dụng cho tất cả chi nhánh GoGi House được chỉ định tại Việt Nam
-Thưởng thức bữa ăn tại nhà hàng rộng rãi, tiện nghi', N'
-Lịch trình tự do',N'157 Hung Vuong, Hoi An', N'157 Hung Vuong, Hoi An', '/tours/321');
+Thưởng thức bữa ăn tại nhà hàng rộng rãi, tiện nghi', N'Lịch trình tự do',N'157 Hung Vuong, Hoi An', N'157 Hung Vuong, Hoi An', '/tours/321');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Shuttle Bus | Round-trip: Hoi An - My Son Sanctuary', N'Với không gian gần gũi, quen thuộc với chất liệu gỗ mộc mạc cùng họa tiết chim công đặc trưng của những năm 1900, không gian tại Công là nơi ghé thăm thân thương cho những tâm hồn hoài niệm. vào một đêm hẹn hò.
 Ở Công, có những thức uống được sáng tạo từ sự biến tấu, giao thoa văn hóa được thể hiện khéo léo, tinh tế trong tách cà phê tưởng chừng đơn giản.
-Không chỉ có cà phê, với thực đơn của Công là cả một bầu trời tâm huyết, sáng tạo để mang lại sự hài lòng nhất cho thực khách.', N'
-Lịch trình tự do',N'119 Tran Quang Khai, Cam Chau, Hoi An, Quang Nam, Vietnam', N'119 Tran Quang Khai, Cam Chau, Hoi An, Quang Nam, Vietnam', '/tours/322');
+Không chỉ có cà phê, với thực đơn của Công là cả một bầu trời tâm huyết, sáng tạo để mang lại sự hài lòng nhất cho thực khách.', N'Lịch trình tự do',N'119 Tran Quang Khai, Cam Chau, Hoi An, Quang Nam, Vietnam', N'119 Tran Quang Khai, Cam Chau, Hoi An, Quang Nam, Vietnam', '/tours/322');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Small Group Tour | Thu Bon River Cruise and My Son Sanctuary (From Da Nang/Hoi An)', N'Hòa mình vào không khí náo nhiệt tại K-Pub để thưởng thức món nướng đường phố Hàn Quốc đích thực và thỏa sức lựa chọn ẩm thực với hơn 30 món
 Thực đơn dễ dàng gọi món với các combo đặt tên theo kích cỡ như trống lớn cho 4-6 người, trống nhỏ cho 2-4 người.
@@ -13187,8 +13066,7 @@ Chúng tôi đề xuất 2 hang động hoặc địa điểm khác nhau cho chu
 Động Thiên Đường là hang khô dài nhất Châu Á (nằm trong vùng lõi Vườn Quốc gia Phong Nha – Kẻ Bàng. Với đặc điểm tự nhiên nguyên sơ, Động Thiên Đường giống như một bức tranh phong cảnh, là kỳ quan thiên nhiên được nhiều người yêu thích kể từ khi mở cửa vào năm 2010. Theo các nhà thám hiểm hang động, càng đi sâu vào hang, người ta càng cảm nhận được những giếng nước trong vắt bao quanh, chiều cao hang có thể lên tới 72 m, rộng tới 150 m và có hàng loạt tinh thể màu trắng. nhũ đá (trầm tích đá vôi) giống như các cột trụ tự nhiên và nhiều hình dạng ngoạn mục khác.
 Hang Tối là một trải nghiệm đầy phiêu lưu và đầy hành động. Tham quan hang động này bao gồm dây kéo kéo qua dòng sông màu ngọc lam, bơi vào cửa hang (bao gồm áo phao), đi bộ trong bóng tối chỉ với chiếc đèn pin đội trên mũ bảo hiểm khai thác của bạn để soi đường, chiến đấu với bùn trong bùn nổi tắm sâu trong hang, tắm rửa sạch sẽ và bơi lội ở hồ bên trong hang, sau đó chèo thuyền kayak ngược sông để kiểm tra sức mạnh của mình với trò chơi treo vượt chướng ngại vật và đu dây zipline.',N'52 Mạc Đĩnh Chi, Cẩm Sơn, Hội An, Quảng Nam 56000, Việt Nam', N'52 Mạc Đĩnh Chi, Cẩm Sơn, Hội An, Quảng Nam 56000, Việt Nam', '/tours/325');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
-    VALUES(N'Blue Gift Package 3', N'Bạn có thể đặt xe riêng để tham quan Vườn quốc gia Phong Nha - Kẻ Bàng, chuyến đi khoảng 5 tiếng bao gồm tham quan 2 địa điểm sau: Động Phong Nha, Động Thiên Đường, Hang Tối, Đường mòn sinh thái Nước Moọc, Vườn Bách Thảo.', N'
-Lịch trình tự do',N'52 Mạc Đĩnh Chi, Cẩm Sơn, Hội An, Quảng Nam 56000, Việt Nam', N'52 Mạc Đĩnh Chi, Cẩm Sơn, Hội An, Quảng Nam 56000, Việt Nam', '/tours/326');
+    VALUES(N'Blue Gift Package 3', N'Bạn có thể đặt xe riêng để tham quan Vườn quốc gia Phong Nha - Kẻ Bàng, chuyến đi khoảng 5 tiếng bao gồm tham quan 2 địa điểm sau: Động Phong Nha, Động Thiên Đường, Hang Tối, Đường mòn sinh thái Nước Moọc, Vườn Bách Thảo.', N'Lịch trình tự do',N'52 Mạc Đĩnh Chi, Cẩm Sơn, Hội An, Quảng Nam 56000, Việt Nam', N'52 Mạc Đĩnh Chi, Cẩm Sơn, Hội An, Quảng Nam 56000, Việt Nam', '/tours/326');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Spa Experience in Hội An', N'Đưa cả gia đình đến công viên nước và suối nước nóng này. Hãy ngâm mình trong một trong những suối nước nóng tốt nhất của Việt Nam! Chọn từ nhiều phòng tắm trong nhà và ngoài trời khác nhau để ngâm mình!
 Tận hưởng suối nước nóng Bàng nổi bật là suối nước nóng duy nhất ở Quảng Bình có nhiệt độ trên 100 độ C!
@@ -13201,8 +13079,7 @@ INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,Ph
     VALUES(N'Coco Signature Massage Experience in Hoi An', N'Bạn được cung cấp các công cụ thám hiểm hang động để trở thành một nhà thám hiểm hang động khám phá mọi ngóc ngách của hang động, chiêm ngưỡng vẻ đẹp của măng đá và nhũ đá nguyên sơ kỳ vĩ.
 Hòa mình và trải nghiệm cuộc sống của người Bru Vân Kiều, khám phá thiên nhiên hùng vĩ, không khí trong lành, tách biệt khỏi thành phố
 Tham quan bến phà Long Đại, điểm giao thông trọng điểm trên đường Hồ Chí Minh; cùng với trạm thông tin A72, di tích lịch sử quốc gia, là địa điểm quan trọng trong chiến tranh Việt Nam.
-Thưởng thức các món ăn địa phương', N'
-Lịch trình tự do',N'29 Đào Duy Từ, Phường Minh An, Hội An, Quảng Nam 560000, Việt Nam', N'29 Đào Duy Từ, Phường Minh An, Hội An, Quảng Nam 560000, Việt Nam', '/tours/328');
+Thưởng thức các món ăn địa phương', N'Lịch trình tự do',N'29 Đào Duy Từ, Phường Minh An, Hội An, Quảng Nam 560000, Việt Nam', N'29 Đào Duy Từ, Phường Minh An, Hội An, Quảng Nam 560000, Việt Nam', '/tours/328');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Private 1-Hour Relaxation Massage in Hoi An', N'Nhận phiếu quà tặng và bắt đầu mua sắm tại potico.vn
 Chuyển phát nhanh 90 phút tại Hà Nội và TP.HCM
@@ -13480,43 +13357,36 @@ INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,Ph
     VALUES(N'Private Transfer: Buon Me Thuot Airport to/from Buon Me Thuot City Center', N'LỊCH TRÌNH TOUR DU LỊCH:
 Hướng dẫn viên và tài xế của chúng tôi Đón bạn từ Cảng CHAN MAY hoặc TIÊN SA (Vui lòng cung cấp cho chúng tôi Tên và Thời gian đón và trả khách của bạn để sắp xếp đón tốt). Hướng dẫn viên của chúng tôi sẽ tổ chức Hội đồng chào đón có tên Bạn. Sau đó, chúng tôi lái xe đến Bà Nà Hills. Khi đến nơi, chúng tôi đi cáp treo đến ga đầu tiên. Bạn sẽ được hướng dẫn đi qua tất cả các khu vực tuyệt vời của khu phức hợp, bao gồm Cầu Vàng nổi tiếng có hai bàn tay khổng lồ, Vườn hoa, chùa Linh Ứng, Hướng dẫn viên của chúng tôi sẽ kể cho bạn nghe về lịch sử của Bà Nà Hills và đảm bảo bạn có những điều tuyệt vời nhất điểm để chụp ảnh của bạn.
 Sau That Yo xuống Cáp Treo lên xe, Xe đưa Quý khách thưởng thức bữa trưa tại nhà hàng địa phương. Tiếp theo, Quý khách sẽ khám phá Phố cổ Hội An - UNESSCO SITE với những điểm nổi bật tại Hội quán Phúc Kiến, Nhà thương mại cổ Tấn Ký, Cây cầu có mái che Nhật Bản, Bảo tàng văn hóa lịch sử, chợ địa phương.
-Kết thúc chuyến tham quan và chúng tôi đưa bạn trở lại tàu đúng giờ (Trước khi tàu khởi hành: 1 giờ)', N'
-Lịch trình tự do',N'Tp. Buôn Ma Thuột, Đắk Lắk, Việt Nam', N'Tp. Buôn Ma Thuột, Đắk Lắk, Việt Nam', '/tours/339');
+Kết thúc chuyến tham quan và chúng tôi đưa bạn trở lại tàu đúng giờ (Trước khi tàu khởi hành: 1 giờ)', N'Lịch trình tự do',N'Tp. Buôn Ma Thuột, Đắk Lắk, Việt Nam', N'Tp. Buôn Ma Thuột, Đắk Lắk, Việt Nam', '/tours/339');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Island Hopping Day Tour in Nha Trang: Coral Reef, Fishing Village, and Tranh BeacH', N'Đảm bảo 100% xe nếu đặt trước
 Giá cố định và không có chi phí ẩn
-Hoàn hảo cho các nhóm lớn hơn, đặc biệt là cho các gia đình, phù hợp cho cả nhóm trên xe 16 chỗ', N'
-Lịch trình tự do',N'Tran Phu square, 2/4 street, Loc Tho, Nha Trang, Khanh Hoa', N'Tran Phu square, 2/4 street, Loc Tho, Nha Trang, Khanh Hoa', '/tours/340');
+Hoàn hảo cho các nhóm lớn hơn, đặc biệt là cho các gia đình, phù hợp cho cả nhóm trên xe 16 chỗ', N'Lịch trình tự do',N'Tran Phu square, 2/4 street, Loc Tho, Nha Trang, Khanh Hoa', N'Tran Phu square, 2/4 street, Loc Tho, Nha Trang, Khanh Hoa', '/tours/340');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Trekking and Cliff-Jumping at Ba Ho Waterfall - half day tour', N'Chụp ảnh những địa điểm đẹp và thư giãn trên đường đi bất cứ khi nào bạn muốn.
 Thời gian linh hoạt cho hành trình của bạn.
 Thưởng thức các món ăn địa phương, gặp gỡ những người dân địa phương thân thiện.
 Xe máy lạnh riêng, tài xế kinh nghiệm.
 Tài xế nói tiếng Anh tốt và đưa ra lời khuyên tốt nhất.
-Đón và trả khách tại các địa điểm linh hoạt theo yêu cầu của bạn.', N'
-Lịch trình tự do',N'39 Yết Kiêu, Vạn Thắng, Nha Trang, Khánh Hòa 650000, Việt Nam', N'39 Yết Kiêu, Vạn Thắng, Nha Trang, Khánh Hòa 650000, Việt Nam', '/tours/341');
+Đón và trả khách tại các địa điểm linh hoạt theo yêu cầu của bạn.', N'Lịch trình tự do',N'39 Yết Kiêu, Vạn Thắng, Nha Trang, Khánh Hòa 650000, Việt Nam', N'39 Yết Kiêu, Vạn Thắng, Nha Trang, Khánh Hòa 650000, Việt Nam', '/tours/341');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Nha Trang City Half-Day Tour | National Oceanographic Museum, Po Nagar Cham Towers, Nha Trang Cathedral & Chong Rock', N'Tận hưởng hành trình thành phố Huế của riêng bạn với xe thuê riêng và tài xế chuyên nghiệp
 Di chuyển hoàn toàn dễ dàng với lựa chọn xe 4, 7 hoặc 12 chỗ
-Chọn lịch trình du lịch phù hợp với nhu cầu của bạn', N'
-Lịch trình tự do',N'Tran Phu square, 2/4 street, Loc Tho, Nha Trang, Khanh Hoa', N'Tran Phu square, 2/4 street, Loc Tho, Nha Trang, Khanh Hoa', '/tours/342');
+Chọn lịch trình du lịch phù hợp với nhu cầu của bạn', N'Lịch trình tự do',N'Tran Phu square, 2/4 street, Loc Tho, Nha Trang, Khanh Hoa', N'Tran Phu square, 2/4 street, Loc Tho, Nha Trang, Khanh Hoa', '/tours/342');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Da Lat Day Tour From Nha Trang | Vietnam', N'Du lịch với dịch vụ đưa đón riêng chất lượng cao với mức giá hợp lý
 Tận dụng các gói thuê thời gian khác nhau, với tùy chọn hướng dẫn viên du lịch
 Chọn kích thước xe của bạn để phù hợp với nhóm du lịch
-Tận hưởng sự linh hoạt và hủy miễn phí tối đa 24 giờ trước ngày bạn đã chọn', N'
-Lịch trình tự do',N'2/4 Square, Tran Phu Street, Loc Tho, Nha Trang, Khanh Hoa', N'2/4 Square, Tran Phu Street, Loc Tho, Nha Trang, Khanh Hoa', '/tours/343');
+Tận hưởng sự linh hoạt và hủy miễn phí tối đa 24 giờ trước ngày bạn đã chọn', N'Lịch trình tự do',N'2/4 Square, Tran Phu Street, Loc Tho, Nha Trang, Khanh Hoa', N'2/4 Square, Tran Phu Street, Loc Tho, Nha Trang, Khanh Hoa', '/tours/343');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Nha Trang Half Day Motorbike Tour', N'Du lịch với dịch vụ đưa đón riêng chất lượng cao với mức giá hợp lý
 Tận dụng dịch vụ một chiều và khứ hồi tiện lợi
 Chọn kích thước xe của bạn để phù hợp với nhóm du lịch
-Tận hưởng sự linh hoạt và hủy miễn phí tối đa 24 giờ trước ngày bạn đã chọn', N'
-Lịch trình tự do',N'9 Biệt Thự, Lộc Thọ, Nha Trang, Khánh Hòa 650000, Việt Nam', N'9 Biệt Thự, Lộc Thọ, Nha Trang, Khánh Hòa 650000, Việt Nam', '/tours/344');
+Tận hưởng sự linh hoạt và hủy miễn phí tối đa 24 giờ trước ngày bạn đã chọn', N'Lịch trình tự do',N'9 Biệt Thự, Lộc Thọ, Nha Trang, Khánh Hòa 650000, Việt Nam', N'9 Biệt Thự, Lộc Thọ, Nha Trang, Khánh Hòa 650000, Việt Nam', '/tours/344');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Nha Trang Snorkeling Tour | Vietnam', N'Thưởng thức món nướng Hàn Quốc bằng phiếu giảm giá tiền mặt tại GoGi House
 Voucher áp dụng cho tất cả chi nhánh GoGi House được chỉ định tại Việt Nam
-Thưởng thức bữa ăn tại nhà hàng rộng rãi, tiện nghi', N'
-Lịch trình tự do',N'2/4 Square, Tran Phu Street, Loc Tho, Nha Trang, Khanh Hoa', N'2/4 Square, Tran Phu Street, Loc Tho, Nha Trang, Khanh Hoa', '/tours/345');
+Thưởng thức bữa ăn tại nhà hàng rộng rãi, tiện nghi', N'Lịch trình tự do',N'2/4 Square, Tran Phu Street, Loc Tho, Nha Trang, Khanh Hoa', N'2/4 Square, Tran Phu Street, Loc Tho, Nha Trang, Khanh Hoa', '/tours/345');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Fantastic Tour: Snorkeling - Seafood Lunch - Mini Beach | Nha Trang', N'Với không gian gần gũi, quen thuộc với chất liệu gỗ mộc mạc cùng họa tiết chim công đặc trưng của những năm 1900, không gian tại Công là nơi ghé thăm thân thương cho những tâm hồn hoài niệm. vào một đêm hẹn hò.
 Ở Công, có những thức uống được sáng tạo từ sự biến tấu, giao thoa văn hóa được thể hiện khéo léo, tinh tế trong tách cà phê tưởng chừng đơn giản.
@@ -13524,13 +13394,11 @@ Không chỉ có cà phê, với thực đơn của Công là cả một bầu t
 ~Sông Hương
 Thời gian: 4 tiếng (xấp xỉ)',N'Agarwood Tower, Tran Phu square, Loc Tho, Nha Trang, Khanh Hoa', N'Agarwood Tower, Tran Phu square, Loc Tho, Nha Trang, Khanh Hoa', '/tours/346');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
-    VALUES(N'Nemo Trip: Boat Trip, Snorkeling & Floating Party | Nha Trang', N'Thành phố Huế được biết đến không chỉ bởi lịch sử phong phú, kiến trúc đẹp mà còn bởi nền ẩm thực: chân thực, tinh tế và chịu ảnh hưởng của ẩm thực cung đình từ xa xưa. Với tour này, bạn sẽ có cơ hội thưởng thức ẩm thực Huế trên thuyền và khám phá Tử Cấm Thành về đêm.', N'
-Lịch trình tự do',N'Tran Phu square, 2/4 street, Loc Tho, Nha Trang, Khanh Hoa', N'Tran Phu square, 2/4 street, Loc Tho, Nha Trang, Khanh Hoa', '/tours/347');
+    VALUES(N'Nemo Trip: Boat Trip, Snorkeling & Floating Party | Nha Trang', N'Thành phố Huế được biết đến không chỉ bởi lịch sử phong phú, kiến trúc đẹp mà còn bởi nền ẩm thực: chân thực, tinh tế và chịu ảnh hưởng của ẩm thực cung đình từ xa xưa. Với tour này, bạn sẽ có cơ hội thưởng thức ẩm thực Huế trên thuyền và khám phá Tử Cấm Thành về đêm.', N'Lịch trình tự do',N'Tran Phu square, 2/4 street, Loc Tho, Nha Trang, Khanh Hoa', N'Tran Phu square, 2/4 street, Loc Tho, Nha Trang, Khanh Hoa', '/tours/347');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Trekking and Cliff-Jumping at Ba Ho Waterfall - half day tour', N'Hòa mình vào không khí náo nhiệt tại K-Pub để thưởng thức món nướng đường phố Hàn Quốc đích thực và thỏa sức lựa chọn ẩm thực với hơn 30 món
 Thực đơn dễ dàng gọi món với các combo đặt tên theo kích cỡ như trống lớn cho 4-6 người, trống nhỏ cho 2-4 người.
-Ngoài đồ nướng, nhà hàng còn có món lẩu và các món ăn nổi tiếng khác của Hàn Quốc. Những đĩa thịt được đặt trên những tấm gỗ thông dài tới 1 mét trông rất độc đáo', N'
-Lịch trình tự do',N'39 Yết Kiêu, Vạn Thắng, Nha Trang, Khánh Hòa 650000, Việt Nam', N'39 Yết Kiêu, Vạn Thắng, Nha Trang, Khánh Hòa 650000, Việt Nam', '/tours/348');
+Ngoài đồ nướng, nhà hàng còn có món lẩu và các món ăn nổi tiếng khác của Hàn Quốc. Những đĩa thịt được đặt trên những tấm gỗ thông dài tới 1 mét trông rất độc đáo', N'Lịch trình tự do',N'39 Yết Kiêu, Vạn Thắng, Nha Trang, Khánh Hòa 650000, Việt Nam', N'39 Yết Kiêu, Vạn Thắng, Nha Trang, Khánh Hòa 650000, Việt Nam', '/tours/348');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Hon Chong Beach SUP Paddling & Snorkeling Experience: Sunrise Tour (Optional Flycam Photography and Underwater Video Filming) | Nha Trang', N'Thưởng thức nét văn hóa phong phú của Huế tại Nhà hàng Cung Đình. Trải nghiệm sự pha trộn đáng nhớ giữa văn hóa, lịch sử và ẩm thực tuyệt vời để có một chuyến thăm thực sự đặc biệt đến Huế.
 Khám phá Nhà hàng Cung Đình (Công viên Hoàng gia) để hòa mình vào di sản văn hóa phong phú của Huế đồng thời thưởng thức hương vị địa phương. Khám phá nghệ thuật trình bày món ăn gồm nem phượng, tôm thuyền rồng và bánh đặc sản Huế
@@ -13591,8 +13459,7 @@ INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,Ph
     VALUES(N'Nha Trang 5-star Emperor Sunset Cruises Experience', N'Một trải nghiệm thú vị và khó quên để du khách khám phá, cảm nhận vẻ đẹp đa chiều, nhiều sắc thái của dòng sông Hương trữ tình, thơ mộng của Huế
 Tham quan Hoàng thành Huế, nơi ở của triều đại hoàng gia cuối cùng của Việt Nam – triều Nguyễn
 Tìm hiểu về ý nghĩa kiến trúc lăng mộ hoàng gia và những câu chuyện lịch sử
-Trải nghiệm thực tế tại làng nón, làng hương', N'
-Lịch trình tự do',N'14B Tran Phu Street, Vinh Hoa Ward, Nha Trang City', N'14B Tran Phu Street, Vinh Hoa Ward, Nha Trang City', '/tours/351');
+Trải nghiệm thực tế tại làng nón, làng hương', N'Lịch trình tự do',N'14B Tran Phu Street, Vinh Hoa Ward, Nha Trang City', N'14B Tran Phu Street, Vinh Hoa Ward, Nha Trang City', '/tours/351');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Nha Trang City to Resort/Cam Ranh Airport - Transportation - Private Transfer', N'Tạm biệt những rắc rối khi đi lại và chào đón sự tiện lợi tối đa với xe buýt du lịch hop-on-hop-off của chúng tôi
 Hãy sẵn sàng khám phá những bí mật của những điểm tham quan mang tính biểu tượng nhất của Huế khi bạn dễ dàng xuống xe tại các điểm đến đã chọn
@@ -13642,8 +13509,7 @@ INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,Ph
 Tham quan Hoàng thành Huế, nơi ở của triều đại hoàng gia cuối cùng của Việt Nam – triều Nguyễn
 Tìm hiểu về ý nghĩa kiến trúc lăng mộ hoàng gia và những câu chuyện lịch sử
 Trải nghiệm thực tế tại làng nón, làng hương
-Tùy chọn buổi sáng/chiều cho các sở thích khác nhau về thời gian của du khách', N'
-Lịch trình tự do',N'Nha Trang, Vietnam', N'Nha Trang, Vietnam', '/tours/354');
+Tùy chọn buổi sáng/chiều cho các sở thích khác nhau về thời gian của du khách', N'Lịch trình tự do',N'Nha Trang, Vietnam', N'Nha Trang, Vietnam', '/tours/354');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Coral Reef Snorkeling and Floating Bar Party from Nha Trang', N'Thư giãn với trải nghiệm KOBI Onsen ở Huế! Đắm mình trong làn nước ấm và thư giãn trong hơi nước êm dịu để trẻ hóa cơ thể và tâm hồn.
 Trải nghiệm suối nước nóng truyền thống Nhật Bản tại Kawara My An Onsen Resort
@@ -13795,8 +13661,7 @@ Tại sao chọn chúng tôi:
 Nhóm nhỏ (Tối đa 12 người)
 Hành trình độc đáo (chỉ chúng tôi cung cấp tuyến đường này)
 Lựa chọn điểm đến và hành trình
-Dịch vụ tốt nhất và vận chuyển mới', N'
-Lịch trình tự do',N'145a Trần Nhật Duật, Phước Hoà, Nha Trang, Khánh Hòa 650000, Việt Nam', N'145a Trần Nhật Duật, Phước Hoà, Nha Trang, Khánh Hòa 650000, Việt Nam', '/tours/368');
+Dịch vụ tốt nhất và vận chuyển mới', N'Lịch trình tự do',N'145a Trần Nhật Duật, Phước Hoà, Nha Trang, Khánh Hòa 650000, Việt Nam', N'145a Trần Nhật Duật, Phước Hoà, Nha Trang, Khánh Hòa 650000, Việt Nam', '/tours/368');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'100 Egg Theme Park Experience in Nha Trang', N'76Chiêm ngưỡng các ngôi tháp lịch sử tạo nên Thánh địa Mỹ Sơn - thánh địa được UNESCO công nhận
 Thưởng thức bữa trưa thú vị trong chuyến tham quan trong ngày của bạn
@@ -14017,8 +13882,7 @@ Khám phá những quán cà phê ẩn mình ở Hội An với phong cách cổ
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Da Lat Day Tour From Nha Trang | Vietnam', N'Thưởng thức món nướng Hàn Quốc bằng phiếu giảm giá tiền mặt tại GoGi House
 Voucher áp dụng cho tất cả chi nhánh GoGi House được chỉ định tại Việt Nam
-Thưởng thức bữa ăn tại nhà hàng rộng rãi, tiện nghi', N'
-Lịch trình tự do',N'2/4 Square, Tran Phu Street, Loc Tho, Nha Trang, Khanh Hoa', N'2/4 Square, Tran Phu Street, Loc Tho, Nha Trang, Khanh Hoa', '/tours/378');
+Thưởng thức bữa ăn tại nhà hàng rộng rãi, tiện nghi', N'Lịch trình tự do',N'2/4 Square, Tran Phu Street, Loc Tho, Nha Trang, Khanh Hoa', N'2/4 Square, Tran Phu Street, Loc Tho, Nha Trang, Khanh Hoa', '/tours/378');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'2D1N Tour | Camping By Stream In Thon Lung - Da Lat', N'Tour buổi sáng: 8:30 sáng đến 1:00 chiều Tour chiều: 2:00 chiều đến 6:30 chiều Bạn sẽ được hướng dẫn viên địa phương đón bằng ô tô tại khách sạn. Và đưa bạn đến chợ Hội An. Họ sẽ giúp bạn giao tiếp với những người buôn bán địa phương trong chợ và chỉ cho bạn cách chọn mua thực phẩm ngon cho lớp học nấu ăn sau đó. Tour tiếp tục từ chợ đi thẳng đến làng dừa nước Cẩm Thanh, bạn sẽ mặc trang phục áo dài truyền thống Việt Nam đi thuyền thúng trên các kênh rạch của rừng dừa nước Bảy Mẫu. Bạn có cơ hội chiêm ngưỡng Vẻ đẹp sông nước ở vùng quê Việt Nam, sự bình yên của cuộc sống làng quê sẽ đưa bạn rời xa sự ồn ào, náo nhiệt của cuộc sống thành thị để tận hưởng câu cua và cách đánh bắt cá truyền thống của những ngư dân mến khách nơi đây. Tận hưởng một ngày độc đáo ở làng chài Việt Nam hấp dẫn. bà Trâm; đầu bếp tài năng kết hợp kỹ năng nấu nướng của mình và kỹ năng của những người hàng xóm trong làng để mang đến một ngày đi chơi tuyệt vời ở Hội An', N'
 ~Thuê áo dài Hội An
@@ -14119,8 +13983,7 @@ INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,Ph
     VALUES(N'Mui Ne Sunset Day Tour from Ho Chi MinH', N'Tận hưởng xe thuê riêng và khám phá Hội An cùng tài xế chuyên nghiệp
 Chọn giữa xe 4, 7 hoặc 12 chỗ
 Du lịch dễ dàng đến các điểm đến không thể bỏ qua, như Thánh địa Mỹ Sơn và Vườn Quốc gia Bạch Mã
-Chọn dịch vụ thuê xe phù hợp với nhu cầu của bạn để có hành trình du lịch linh hoạt', N'
-Lịch trình tự do',N'Tour Operator Office - 28/13 Bui Vien Street, Pham Ngu Lao Ward, District 1, Ho Chi Minh City, Vietnam', N'Tour Operator Office - 28/13 Bui Vien Street, Pham Ngu Lao Ward, District 1, Ho Chi Minh City, Vietnam', '/tours/387');
+Chọn dịch vụ thuê xe phù hợp với nhu cầu của bạn để có hành trình du lịch linh hoạt', N'Lịch trình tự do',N'Tour Operator Office - 28/13 Bui Vien Street, Pham Ngu Lao Ward, District 1, Ho Chi Minh City, Vietnam', N'Tour Operator Office - 28/13 Bui Vien Street, Pham Ngu Lao Ward, District 1, Ho Chi Minh City, Vietnam', '/tours/387');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Mui Ne Sunrise Day Tour from Ho Chi Minh City | Vietnam', N'Tham quan Di tích lịch sử văn hóa Di tích dừa nước Cẩm Thanh và thưởng ngoạn cảnh quan sinh thái
 Trải nghiệm ném lưới đánh cá và các hoạt động khác
@@ -14193,8 +14056,7 @@ Giá rẻ & không có chi phí ẩn
 Tài xế chuyên nghiệp nói tiếng Anh cơ bản
 Không tốn thêm chi phí cho thời gian chờ đợi.
 Đội ngũ hỗ trợ có trách nhiệm 24 giờ
-Luôn đi đường cao tốc cho chuyến đi.', N'
-Lịch trình tự do',N'Ho Chi Minh City', N'Ho Chi Minh City', '/tours/391');
+Luôn đi đường cao tốc cho chuyến đi.', N'Lịch trình tự do',N'Ho Chi Minh City', N'Ho Chi Minh City', '/tours/391');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Shared Transfer | Route Ho Chi Minh City - Mui Ne (And Vice Versa)', N'Tự làm chiếc đèn lồng Việt Nam, được cho là biểu tượng của sự may mắn, hạnh phúc và giàu có
 Nơi bạn làm đèn lồng từ đầu
@@ -14325,8 +14187,7 @@ Tự do khám phá trang web theo cách bạn muốn
 Có thể bạn muốn ghé thăm: Vé Công viên Giải trí Vinwonders Nam Hội An | Việt Nam
 Vé Sun World Bà Nà Hills
 Đưa đón riêng: Đưa đón riêng giữa Sân bay Quốc tế Đà Nẵng (DAD) và Đà Nẵng, Hội An, Huế, Bà Nà Hills | Việt Nam
-Du lịch cần thiết: Dịch vụ xin visa điện tử du lịch Việt Nam | Visa điện tử Việt Nam khi đến', N'
-Lịch trình tự do',N'Đường số 3, TT. Phú Mỹ, Tân Thành, Bà Rịa - Vũng Tàu, Việt Nam', N'Đường số 3, TT. Phú Mỹ, Tân Thành, Bà Rịa - Vũng Tàu, Việt Nam', '/tours/400');
+Du lịch cần thiết: Dịch vụ xin visa điện tử du lịch Việt Nam | Visa điện tử Việt Nam khi đến', N'Lịch trình tự do',N'Đường số 3, TT. Phú Mỹ, Tân Thành, Bà Rịa - Vũng Tàu, Việt Nam', N'Đường số 3, TT. Phú Mỹ, Tân Thành, Bà Rịa - Vũng Tàu, Việt Nam', '/tours/400');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Ho Chi Minh City Private Shore Excursion from Ho Chi Minh City (Phu My), Vietnam', N'Tour nhóm nhỏ: Chăm sóc tốt hơn - Dịch vụ tốt hơn
 Thăm những ngôi chùa bị bỏ hoang tại Khu Di sản Thánh địa Mỹ Sơn
@@ -14358,15 +14219,13 @@ INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,Ph
     VALUES(N'Sport bike rentals', N'Tận hưởng các phương pháp trị liệu độc đáo và lâu dài - đến từ sự kết hợp giữa kỹ thuật truyền thống và hiện đại
 Hãy để cơ thể và tâm hồn bạn được chữa lành với bầu không khí mà La Luna Spa mang lại
 Kinh nghiệm bền vững: Sử dụng 100% thảo mộc hữu cơ và nguồn cung ứng địa phương được sản xuất theo phương pháp truyền thống
-Vị trí thuận tiện - Thoải mái lựa chọn giữa 2 chi nhánh của La Luna Spa: Chi nhánh Center tại Trung tâm Hội An và Sea Lavie tại khu vực Biển An Bàng', N'
-Lịch trình tự do',N'207 Võ Thị Sáu, Phường Thắng Tam, Thành phố Vũng Tầu, Bà Rịa - Vũng Tàu, Việt Nam', N'207 Võ Thị Sáu, Phường Thắng Tam, Thành phố Vũng Tầu, Bà Rịa - Vũng Tàu, Việt Nam', '/tours/402');
+Vị trí thuận tiện - Thoải mái lựa chọn giữa 2 chi nhánh của La Luna Spa: Chi nhánh Center tại Trung tâm Hội An và Sea Lavie tại khu vực Biển An Bàng', N'Lịch trình tự do',N'207 Võ Thị Sáu, Phường Thắng Tam, Thành phố Vũng Tầu, Bà Rịa - Vũng Tàu, Việt Nam', N'207 Võ Thị Sáu, Phường Thắng Tam, Thành phố Vũng Tầu, Bà Rịa - Vũng Tàu, Việt Nam', '/tours/402');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'EXPLORE MEKONG DELTA SHORE EXCURSION from Phu My Port', N'Thư giãn và trẻ hóa tại Coco K Spa & Nail trong chuyến du lịch Hội An. Kinh nghiệm này cung cấp giá cả phải chăng cho một loạt các phương pháp điều trị khác nhau.
 Nuông chiều bản thân với các liệu pháp spa bổ dưỡng được cung cấp bởi các nhân viên mát-xa giàu kinh nghiệm
 Tận hưởng bầu không khí tuyệt vời trong bầu không khí yên tĩnh được bao quanh bởi thiên nhiên và âm nhạc êm dịu
 Hãy chiều chuộng bản thân với các dịch vụ làm móng tay và móng chân tuyệt vời của chúng tôi
-Đắm chìm trong trải nghiệm chăm sóc sức khỏe trong chuyến đi đến Hội An', N'
-Lịch trình tự do',N'Đường số 3, TT. Phú Mỹ, Tân Thành, Bà Rịa - Vũng Tàu, Việt Nam', N'Đường số 3, TT. Phú Mỹ, Tân Thành, Bà Rịa - Vũng Tàu, Việt Nam', '/tours/403');
+Đắm chìm trong trải nghiệm chăm sóc sức khỏe trong chuyến đi đến Hội An', N'Lịch trình tự do',N'Đường số 3, TT. Phú Mỹ, Tân Thành, Bà Rịa - Vũng Tàu, Việt Nam', N'Đường số 3, TT. Phú Mỹ, Tân Thành, Bà Rịa - Vũng Tàu, Việt Nam', '/tours/403');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Vung Tau City Tour Pickup from Phu My Port', N'Tận hưởng và quan sát bản thân về mặt tinh thần và thể chất thông qua trải nghiệm này mà chúng tôi đã cẩn thận tạo ra chỉ nhằm mục đích thư giãn và chữa bệnh cho riêng bạn.
 Gói đặc biệt Five Senses Spa của chúng tôi được lựa chọn cẩn thận vì lợi ích của khách hàng trong việc cải thiện sức khỏe tinh thần và thể chất.
@@ -14386,31 +14245,24 @@ INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,Ph
     VALUES(N'EXPLORE MEKONG DELTA SHORE EXCURSION from Phu My Port', N'Nhận phiếu quà tặng và bắt đầu mua sắm tại potico.vn
 Chuyển phát nhanh 90 phút tại Hà Nội và TP.HCM
 Hoa chất lượng cao và nhiều sự lựa chọn đáp ứng nhu cầu của bạn - món quà tuyệt vời nhất cho người thân yêu của bạn
-Potico là nơi đáng tin cậy để bạn trao tặng những món quà tuyệt vời nhất cho người thân yêu', N'
-Lịch trình tự do',N'Đường số 3, TT. Phú Mỹ, Tân Thành, Bà Rịa - Vũng Tàu, Việt Nam', N'Đường số 3, TT. Phú Mỹ, Tân Thành, Bà Rịa - Vũng Tàu, Việt Nam', '/tours/407');
+Potico là nơi đáng tin cậy để bạn trao tặng những món quà tuyệt vời nhất cho người thân yêu', N'Lịch trình tự do',N'Đường số 3, TT. Phú Mỹ, Tân Thành, Bà Rịa - Vũng Tàu, Việt Nam', N'Đường số 3, TT. Phú Mỹ, Tân Thành, Bà Rịa - Vũng Tàu, Việt Nam', '/tours/407');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Vung Tau City Tour Pickup from Phu My Port', N'Du lịch với dịch vụ đưa đón riêng chất lượng cao với mức giá hợp lý
 Chọn kích thước xe của bạn để phù hợp với nhóm du lịch
-Tận hưởng sự linh hoạt và hủy miễn phí tối đa 48 giờ trước ngày bạn đã chọn', N'
-Lịch trình tự do',N'Đường số 3, TT. Phú Mỹ, Tân Thành, Bà Rịa - Vũng Tàu, Việt Nam', N'Đường số 3, TT. Phú Mỹ, Tân Thành, Bà Rịa - Vũng Tàu, Việt Nam', '/tours/408');
+Tận hưởng sự linh hoạt và hủy miễn phí tối đa 48 giờ trước ngày bạn đã chọn', N'Lịch trình tự do',N'Đường số 3, TT. Phú Mỹ, Tân Thành, Bà Rịa - Vũng Tàu, Việt Nam', N'Đường số 3, TT. Phú Mỹ, Tân Thành, Bà Rịa - Vũng Tàu, Việt Nam', '/tours/408');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Mekong Delta Tour from Phu My Port', N'Theo dõi thời gian Tài xế của bạn sẽ theo dõi thời gian của bạn và đợi bạn nếu bị trễ.
 Một mức giá rõ ràng Giá của bạn được xác nhận trước – không mất thêm chi phí, không cần tiền mặt.
 Dịch vụ đã được thử và đúng Chúng tôi làm việc với các tài xế chuyên nghiệp và có dịch vụ chăm sóc khách hàng 24/7.
-Đến đích đến của bạn Đến đích nhanh chóng và an toàn - không phải xếp hàng dài chờ taxi, không cần điều hướng phương tiện công cộng', N'
-Lịch trình tự do',N'Đường số 3, TT. Phú Mỹ, Tân Thành, Bà Rịa - Vũng Tàu, Việt Nam', N'Đường số 3, TT. Phú Mỹ, Tân Thành, Bà Rịa - Vũng Tàu, Việt Nam', '/tours/409');
+Đến đích đến của bạn Đến đích nhanh chóng và an toàn - không phải xếp hàng dài chờ taxi, không cần điều hướng phương tiện công cộng', N'Lịch trình tự do',N'Đường số 3, TT. Phú Mỹ, Tân Thành, Bà Rịa - Vũng Tàu, Việt Nam', N'Đường số 3, TT. Phú Mỹ, Tân Thành, Bà Rịa - Vũng Tàu, Việt Nam', '/tours/409');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
-    VALUES(N'Sport bike rentals', N'Hướng dẫn viên du lịch chuyên nghiệp hiểu rõ văn hóa, con người, nhiệt tình và nói tốt tiếng Việt và tiếng Anh Dịch vụ chuyên nghiệp Nhiếp ảnh gia chuyên nghiệp Ăn đồ ăn địa phương Không đông khách Luôn nhận được sự hỗ trợ từ Quản lý tour trước và sau chuyến tham quan', N'
-Lịch trình tự do',N'207 Võ Thị Sáu, Phường Thắng Tam, Thành phố Vũng Tầu, Bà Rịa - Vũng Tàu, Việt Nam', N'207 Võ Thị Sáu, Phường Thắng Tam, Thành phố Vũng Tầu, Bà Rịa - Vũng Tàu, Việt Nam', '/tours/410');
+    VALUES(N'Sport bike rentals', N'Hướng dẫn viên du lịch chuyên nghiệp hiểu rõ văn hóa, con người, nhiệt tình và nói tốt tiếng Việt và tiếng Anh Dịch vụ chuyên nghiệp Nhiếp ảnh gia chuyên nghiệp Ăn đồ ăn địa phương Không đông khách Luôn nhận được sự hỗ trợ từ Quản lý tour trước và sau chuyến tham quan', N'Lịch trình tự do',N'207 Võ Thị Sáu, Phường Thắng Tam, Thành phố Vũng Tầu, Bà Rịa - Vũng Tàu, Việt Nam', N'207 Võ Thị Sáu, Phường Thắng Tam, Thành phố Vũng Tầu, Bà Rịa - Vũng Tàu, Việt Nam', '/tours/410');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
-    VALUES(N'Private Transfer from Vung Tau to Tan Son Nhat (SGN) Airport', N'Tận hưởng dịch vụ đưa đón thân thiện, thoải mái đến Khách sạn của bạn ở Quy Nhon khi bạn đến Sân bay Quy Nhơn Phù Cát. Tài xế chuyên nghiệp sẽ chào đón bạn tại nhà ga và đưa bạn thẳng đến khách sạn bằng xe có máy lạnh', N'
-Lịch trình tự do',N'Trường Sơn, Phường 2, Tân Bình, Thành phố Hồ Chí Minh, Việt Nam', N'Trường Sơn, Phường 2, Tân Bình, Thành phố Hồ Chí Minh, Việt Nam', '/tours/411');
+    VALUES(N'Private Transfer from Vung Tau to Tan Son Nhat (SGN) Airport', N'Tận hưởng dịch vụ đưa đón thân thiện, thoải mái đến Khách sạn của bạn ở Quy Nhon khi bạn đến Sân bay Quy Nhơn Phù Cát. Tài xế chuyên nghiệp sẽ chào đón bạn tại nhà ga và đưa bạn thẳng đến khách sạn bằng xe có máy lạnh', N'Lịch trình tự do',N'Trường Sơn, Phường 2, Tân Bình, Thành phố Hồ Chí Minh, Việt Nam', N'Trường Sơn, Phường 2, Tân Bình, Thành phố Hồ Chí Minh, Việt Nam', '/tours/411');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
-    VALUES(N'EXPLORE MEKONG DELTA SHORE EXCURSION from Phu My Port', N'Đừng lo lắng khi khởi hành đến Sân bay Phù Cát và đặt trước dịch vụ đưa đón riêng phù hợp với nhóm của bạn (tối đa 15 người). Tránh phải xếp hàng dài đón taxi tại khách sạn và di chuyển thoải mái trên xe hơi Premium hoặc xe tải nhỏ.', N'
-Lịch trình tự do',N'Đường số 3, TT. Phú Mỹ, Tân Thành, Bà Rịa - Vũng Tàu, Việt Nam', N'Đường số 3, TT. Phú Mỹ, Tân Thành, Bà Rịa - Vũng Tàu, Việt Nam', '/tours/412');
+    VALUES(N'EXPLORE MEKONG DELTA SHORE EXCURSION from Phu My Port', N'Đừng lo lắng khi khởi hành đến Sân bay Phù Cát và đặt trước dịch vụ đưa đón riêng phù hợp với nhóm của bạn (tối đa 15 người). Tránh phải xếp hàng dài đón taxi tại khách sạn và di chuyển thoải mái trên xe hơi Premium hoặc xe tải nhỏ.', N'Lịch trình tự do',N'Đường số 3, TT. Phú Mỹ, Tân Thành, Bà Rịa - Vũng Tàu, Việt Nam', N'Đường số 3, TT. Phú Mỹ, Tân Thành, Bà Rịa - Vũng Tàu, Việt Nam', '/tours/412');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
-    VALUES(N'SAIGON SHORE EXCURSION: Car Services + LOCAL TOUR GUIDE in Saigon', N'Hướng dẫn viên du lịch chuyên nghiệp hiểu rõ văn hóa, con người, nhiệt tình và nói tốt tiếng Việt và tiếng Anh Dịch vụ chuyên nghiệp Nhiếp ảnh gia chuyên nghiệp Ăn đồ ăn địa phương Không đông khách Luôn nhận được sự hỗ trợ từ Quản lý tour trước và sau chuyến tham quan', N'
-Lịch trình tự do',N'Phú Mỹ, Hồ Chí Minh, Bà Rịa - Vũng Tàu, Việt Nam', N'Phú Mỹ, Hồ Chí Minh, Bà Rịa - Vũng Tàu, Việt Nam', '/tours/413');
+    VALUES(N'SAIGON SHORE EXCURSION: Car Services + LOCAL TOUR GUIDE in Saigon', N'Hướng dẫn viên du lịch chuyên nghiệp hiểu rõ văn hóa, con người, nhiệt tình và nói tốt tiếng Việt và tiếng Anh Dịch vụ chuyên nghiệp Nhiếp ảnh gia chuyên nghiệp Ăn đồ ăn địa phương Không đông khách Luôn nhận được sự hỗ trợ từ Quản lý tour trước và sau chuyến tham quan', N'Lịch trình tự do',N'Phú Mỹ, Hồ Chí Minh, Bà Rịa - Vũng Tàu, Việt Nam', N'Phú Mỹ, Hồ Chí Minh, Bà Rịa - Vũng Tàu, Việt Nam', '/tours/413');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Private City Transfers from Tan Son Nhat Airport to Vung Tau/Mui Ne (Binh Thuan)/My Tho/Can Tho/Binh Duong/Da Lat', N'Thành phố biển xinh đẹp Quy Nhon có thể không nổi tiếng nhất ở Việt Nam, nhưng chắc chắn rất đáng để ghé thăm! Trong chuyến tham quan cả ngày này, chúng tôi sẽ đưa bạn đến những địa điểm có khả năng Instagram cao nhất ở Quy Nhon, tất cả chỉ trong một ngày.
 Nếu bạn đang tìm kiếm điều gì đó khác biệt một chút, trải nghiệm văn hóa Việt Nam, nếm thử một số món ăn ngon và có được nhiều bức ảnh đẹp thì đây là chuyến tham quan dành cho bạn.
@@ -14531,8 +14383,7 @@ Bao gồm vé vào cửa
 Tham quan làng nấu rượu gạo, xem người dân làm rượu như thế nào, thử rượu gạo, xôi, cơm đậu xanh...
 Thời gian: 1 tiếng (xấp xỉ)',N'Trường Sơn, Phường 2, Tân Bình, Thành phố Hồ Chí Minh, Việt Nam', N'Trường Sơn, Phường 2, Tân Bình, Thành phố Hồ Chí Minh, Việt Nam', '/tours/417');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
-    VALUES(N'Ditch fishing by bare hand in Cai Be', N'Hướng dẫn viên du lịch chuyên nghiệp, hiểu rõ văn hóa, con người, nhiệt tình và nói tốt tiếng Việt và tiếng Anh Dịch vụ chuyên nghiệp Nhiếp ảnh gia chuyên nghiệp Ăn đồ ăn địa phương Không đông khách Luôn nhận được sự hỗ trợ từ Quản lý tour trước và sau chuyến tham quan', N'
-Lịch trình tự do',N'Tân Phong, Cai Lậy, Tiền Giang, Việt Nam', N'Tân Phong, Cai Lậy, Tiền Giang, Việt Nam', '/tours/418');
+    VALUES(N'Ditch fishing by bare hand in Cai Be', N'Hướng dẫn viên du lịch chuyên nghiệp, hiểu rõ văn hóa, con người, nhiệt tình và nói tốt tiếng Việt và tiếng Anh Dịch vụ chuyên nghiệp Nhiếp ảnh gia chuyên nghiệp Ăn đồ ăn địa phương Không đông khách Luôn nhận được sự hỗ trợ từ Quản lý tour trước và sau chuyến tham quan', N'Lịch trình tự do',N'Tân Phong, Cai Lậy, Tiền Giang, Việt Nam', N'Tân Phong, Cai Lậy, Tiền Giang, Việt Nam', '/tours/418');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Day Tour | Phu Quoc 3-island Tour By Speedboat', N'Hãy đến với chúng tôi khi chúng tôi tận hưởng một Tour du lịch chuyên về vẻ đẹp của biển và đảo. Thưởng thức hải sản địa phương thơm ngon và khám phá bãi biển đẹp nhất Quy Nhon, ngắm san hô tuyệt đẹp. Hướng dẫn viên vui tính và giàu kinh nghiệm với kiến thức và kỹ năng tốt nhất để chụp những bức ảnh siêu đẹp đáng nhớ! Trường hợp thời tiết xấu (thông thường từ tháng 10 đến tháng 3) cano không thể ra biển, chúng ta sẽ chuyển sang ô tô để ra đảo Kỳ Co. Và sẽ không có lặn với ống thở.', N'
 ~Khu kinh tế Nhon Hội
@@ -14584,39 +14435,32 @@ Sau khi câu được mực, hãy thưởng thức món mực tươi ngon đư�
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'4-Island Visit from Phu Quoc with Speedboat and Scuba Diving', N'Thưởng thức món nướng Hàn Quốc bằng phiếu giảm giá tiền mặt tại GoGi House
 Voucher áp dụng cho tất cả chi nhánh GoGi House được chỉ định tại Việt Nam
-Thưởng thức bữa ăn tại nhà hàng rộng rãi, tiện nghi', N'
-Lịch trình tự do',N'An Thới, Phú Quốc, Kiên Giang, Việt Nam', N'An Thới, Phú Quốc, Kiên Giang, Việt Nam', '/tours/422');
+Thưởng thức bữa ăn tại nhà hàng rộng rãi, tiện nghi', N'Lịch trình tự do',N'An Thới, Phú Quốc, Kiên Giang, Việt Nam', N'An Thới, Phú Quốc, Kiên Giang, Việt Nam', '/tours/422');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Trip 3 : 3 Islands by boat', N'Với không gian gần gũi, quen thuộc với chất liệu gỗ mộc mạc cùng họa tiết chim công đặc trưng của những năm 1900, không gian tại Công là nơi ghé thăm thân thương cho những tâm hồn hoài niệm. vào một đêm hẹn hò.
 Ở Công, có những thức uống được sáng tạo từ sự biến tấu, giao thoa văn hóa được thể hiện khéo léo, tinh tế trong tách cà phê tưởng chừng đơn giản.
-Không chỉ có cà phê, với thực đơn của Công là cả một bầu trời tâm huyết, sáng tạo để mang lại sự hài lòng nhất cho thực khách.', N'
-Lịch trình tự do',N'143 Đường Trần Hưng Đạo, Dương Tơ, Phú Quốc, Kiên Giang, Việt Nam', N'143 Đường Trần Hưng Đạo, Dương Tơ, Phú Quốc, Kiên Giang, Việt Nam', '/tours/423');
+Không chỉ có cà phê, với thực đơn của Công là cả một bầu trời tâm huyết, sáng tạo để mang lại sự hài lòng nhất cho thực khách.', N'Lịch trình tự do',N'143 Đường Trần Hưng Đạo, Dương Tơ, Phú Quốc, Kiên Giang, Việt Nam', N'143 Đường Trần Hưng Đạo, Dương Tơ, Phú Quốc, Kiên Giang, Việt Nam', '/tours/423');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Day Tour | Phu Quoc 3-island Tour By Speedboat', N'Hòa mình vào không khí náo nhiệt tại K-Pub để thưởng thức món nướng đường phố Hàn Quốc đích thực và thỏa sức lựa chọn ẩm thực với hơn 30 món
 Thực đơn dễ dàng gọi món với các combo đặt tên theo kích cỡ như trống lớn cho 4-6 người, trống nhỏ cho 2-4 người.
-Ngoài đồ nướng, nhà hàng còn có món lẩu và các món ăn nổi tiếng khác của Hàn Quốc. Những đĩa thịt được đặt trên những tấm gỗ thông dài tới 1 mét trông rất độc đáo', N'
-Lịch trình tự do',N'379 Tran Hung Dao Street, Phu Quoc', N'379 Tran Hung Dao Street, Phu Quoc', '/tours/424');
+Ngoài đồ nướng, nhà hàng còn có món lẩu và các món ăn nổi tiếng khác của Hàn Quốc. Những đĩa thịt được đặt trên những tấm gỗ thông dài tới 1 mét trông rất độc đáo', N'Lịch trình tự do',N'379 Tran Hung Dao Street, Phu Quoc', N'379 Tran Hung Dao Street, Phu Quoc', '/tours/424');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Seawalker at Nautilus Namaste Cruise + Round Trip Canoe Transfer', N'Nhận phiếu quà tặng và bắt đầu mua sắm tại potico.vn
 Chuyển phát nhanh 90 phút tại Hà Nội và TP.HCM
 Hoa chất lượng cao và nhiều sự lựa chọn đáp ứng nhu cầu của bạn - món quà tuyệt vời nhất cho người thân yêu của bạn
-Potico là nơi đáng tin cậy để bạn trao tặng những món quà tuyệt vời nhất cho người thân yêu', N'
-Lịch trình tự do',N'An Thoi International Port, Phu Quoc islanD', N'An Thoi International Port, Phu Quoc islanD', '/tours/425');
+Potico là nơi đáng tin cậy để bạn trao tặng những món quà tuyệt vời nhất cho người thân yêu', N'Lịch trình tự do',N'An Thoi International Port, Phu Quoc islanD', N'An Thoi International Port, Phu Quoc islanD', '/tours/425');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'4-Island Visit from Phu Quoc with Speedboat and Scuba Diving', N'Thưởng thức món nướng Hàn Quốc bằng phiếu giảm giá tiền mặt tại GoGi House
 Voucher áp dụng cho tất cả chi nhánh GoGi House được chỉ định tại Việt Nam
-Thưởng thức bữa ăn tại nhà hàng rộng rãi, tiện nghi', N'
-Lịch trình tự do',N'An Thới, Phú Quốc, Kiên Giang, Việt Nam', N'An Thới, Phú Quốc, Kiên Giang, Việt Nam', '/tours/426');
+Thưởng thức bữa ăn tại nhà hàng rộng rãi, tiện nghi', N'Lịch trình tự do',N'An Thới, Phú Quốc, Kiên Giang, Việt Nam', N'An Thới, Phú Quốc, Kiên Giang, Việt Nam', '/tours/426');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Trip 3 : 3 Islands by boat', N'Với không gian gần gũi, quen thuộc với chất liệu gỗ mộc mạc cùng họa tiết chim công đặc trưng của những năm 1900, không gian tại Công là nơi ghé thăm thân thương cho những tâm hồn hoài niệm. vào một đêm hẹn hò.
 Ở Công, có những thức uống được sáng tạo từ sự biến tấu, giao thoa văn hóa được thể hiện khéo léo, tinh tế trong tách cà phê tưởng chừng đơn giản.
-Không chỉ có cà phê, với thực đơn của Công là cả một bầu trời tâm huyết, sáng tạo để mang lại sự hài lòng nhất cho thực khách.', N'
-Lịch trình tự do',N'143 Đường Trần Hưng Đạo, Dương Tơ, Phú Quốc, Kiên Giang, Việt Nam', N'143 Đường Trần Hưng Đạo, Dương Tơ, Phú Quốc, Kiên Giang, Việt Nam', '/tours/427');
+Không chỉ có cà phê, với thực đơn của Công là cả một bầu trời tâm huyết, sáng tạo để mang lại sự hài lòng nhất cho thực khách.', N'Lịch trình tự do',N'143 Đường Trần Hưng Đạo, Dương Tơ, Phú Quốc, Kiên Giang, Việt Nam', N'143 Đường Trần Hưng Đạo, Dương Tơ, Phú Quốc, Kiên Giang, Việt Nam', '/tours/427');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Half-day Snorkeling Experience in Phu Quoc islanD', N'Hòa mình vào không khí náo nhiệt tại K-Pub để thưởng thức món nướng đường phố Hàn Quốc đích thực và thỏa sức lựa chọn ẩm thực với hơn 30 món
 Thực đơn dễ dàng gọi món với các combo đặt tên theo kích cỡ như trống lớn cho 4-6 người, trống nhỏ cho 2-4 người.
-Ngoài đồ nướng, nhà hàng còn có món lẩu và các món ăn nổi tiếng khác của Hàn Quốc. Những đĩa thịt được đặt trên những tấm gỗ thông dài tới 1 mét trông rất độc đáo', N'
-Lịch trình tự do',N'1 Đường Nguyễn Trãi, TT. Dương Đông, Phú Quốc, Kiên Giang 92506, Việt Nam', N'1 Đường Nguyễn Trãi, TT. Dương Đông, Phú Quốc, Kiên Giang 92506, Việt Nam', '/tours/428');
+Ngoài đồ nướng, nhà hàng còn có món lẩu và các món ăn nổi tiếng khác của Hàn Quốc. Những đĩa thịt được đặt trên những tấm gỗ thông dài tới 1 mét trông rất độc đáo', N'Lịch trình tự do',N'1 Đường Nguyễn Trãi, TT. Dương Đông, Phú Quốc, Kiên Giang 92506, Việt Nam', N'1 Đường Nguyễn Trãi, TT. Dương Đông, Phú Quốc, Kiên Giang 92506, Việt Nam', '/tours/428');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Phu Quoc Private Airport Transfer', N'Tôi là Sammie và tôi là giáo viên trung học, tôi đã sống và làm việc ở huyện Krong Ana trong nhiều năm, đó là lý do tại sao tôi có thể giới thiệu và giải thích cho các bạn tất cả những nét đặc biệt của đất nước sinh sống. Tôi sẽ giúp bạn tiếp cận với những người và gia đình khác nhau và đó là cách bạn có thể có được những góc nhìn khác nhau về cuộc sống ở vùng nông thôn Việt Nam.
 Đắc Lắc là một trong những nơi sản xuất cà phê nhiều nhất không chỉ ở Việt Nam mà còn trên thế giới. Tôi tổ chức buổi trải nghiệm này với mục đích giúp các bạn hiểu sâu hơn về tấm lòng của người nông dân nơi đây
@@ -14665,8 +14509,7 @@ Bao gồm vé vào cửa',N'5X7X+37V, Nguyễn Trường Tộ, Tổ 2, Phú Qu�
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Private Transfer from Phu Quoc City to Phu Quoc (PQC) Airport', N'Bạn đang băn khoăn làm thế nào để trải nghiệm cà phê – đặc sản Đăk Lăk – một cách trọn vẹn nhất. Tôi, phóng viên cà phê, sẽ đưa tin này cho bạn ở đây. Cùng điểm qua lịch sử và bức tranh tổng thể hiện tại của cà phê Đăk Lăk, những điều cần chú ý về hạt cà phê và những quán cà phê mà bạn thực sự không nên bỏ qua.
 Chúng tôi hy vọng bạn sẽ được nghe những câu chuyện thú vị về cà phê Đăk Lăk. Hãy đến và tận hưởng chuyến du lịch thú vị cùng chúng tôi nhé!
-Do giới hạn của hệ thống nên một số địa điểm tham quan trong tour này không thể đưa vào đây. Nếu bạn cần thông tin chi tiết đầy đủ về chuyến đi vui lòng liên hệ với chúng tôi. Cảm ơn', N'
-Lịch trình tự do',N'5X7X+37V, Nguyễn Trường Tộ, Tổ 2, Phú Quốc, Kiên Giang 922271, Việt Nam', N'5X7X+37V, Nguyễn Trường Tộ, Tổ 2, Phú Quốc, Kiên Giang 922271, Việt Nam', '/tours/433');
+Do giới hạn của hệ thống nên một số địa điểm tham quan trong tour này không thể đưa vào đây. Nếu bạn cần thông tin chi tiết đầy đủ về chuyến đi vui lòng liên hệ với chúng tôi. Cảm ơn', N'Lịch trình tự do',N'5X7X+37V, Nguyễn Trường Tộ, Tổ 2, Phú Quốc, Kiên Giang 922271, Việt Nam', N'5X7X+37V, Nguyễn Trường Tộ, Tổ 2, Phú Quốc, Kiên Giang 922271, Việt Nam', '/tours/433');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Phu Quoc City - Local Street Food Tour By Night', N'Tây Nguyên xa xôi và chưa được khám phá chứa đựng một số bí mật được giữ kín nhất của Việt Nam. Bạn sẽ thoát khỏi con đường mòn và khám phá những hồ nước hoang sơ, những dòng sông trong vắt, những khu rừng rậm lịch sử rộng lớn và những ngôi làng dân tộc thiểu số biệt lập. Cuộc phiêu lưu kéo dài 6 ngày này sẽ đưa bạn từ trạm đồi trung tâm cao nguyên Đà Lạt đến thị trấn biển Nha Trang. Hành trình độc đáo này là một cách tuyệt vời để khám phá đất nước có khí hậu lý tưởng. Hành trình cũng có thể được thực hiện ngược lại đối với những người bắt đầu từ Nha Trang và đi lên Đà Lạt từ phía tây', N'
 ~Viện Eakmat - Vườn Ươm Cây Trồng Trường Thịnh Đăk Lăk
@@ -14776,8 +14619,7 @@ INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,Ph
     VALUES(N'The Original Taste of PhuQuoc ''food tour'' by Tuktuk', N'Nhận phiếu quà tặng và bắt đầu mua sắm tại potico.vn
 Chuyển phát nhanh 90 phút tại Hà Nội và TP.HCM
 Hoa chất lượng cao và nhiều sự lựa chọn đáp ứng nhu cầu của bạn - món quà tuyệt vời nhất cho người thân yêu của bạn
-Potico là nơi đáng tin cậy để bạn trao tặng những món quà tuyệt vời nhất cho người thân yêu', N'
-Lịch trình tự do',N'10 Đ. 30 Tháng 4, TT. Dương Đông, Phú Quốc, Kiên Giang, Việt Nam', N'10 Đ. 30 Tháng 4, TT. Dương Đông, Phú Quốc, Kiên Giang, Việt Nam', '/tours/438');
+Potico là nơi đáng tin cậy để bạn trao tặng những món quà tuyệt vời nhất cho người thân yêu', N'Lịch trình tự do',N'10 Đ. 30 Tháng 4, TT. Dương Đông, Phú Quốc, Kiên Giang, Việt Nam', N'10 Đ. 30 Tháng 4, TT. Dương Đông, Phú Quốc, Kiên Giang, Việt Nam', '/tours/438');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Seawalker at Nautilus Namaste Cruise + Round Trip Canoe Transfer', N'[ƯU ĐÃI HOT] Nhận ngay Ưu đãi khuyến mãi tốt nhất Nha Trang: Mua 2 tặng 1, Giảm 10% khi vui chơi biển Nha Trang! chiến dịch
 Hành trình xuyên vịnh Nha Trang, một thành phố ven biển thuộc tỉnh Khánh Hòa của Việt Nam
@@ -14787,8 +14629,7 @@ Tham gia chuyến tham quan vùng nhiệt đới bao gồm đón khách tại kh
 Tham quan công viên giải trí VinWonders Nha Trang: Vé công viên giải trí VinWonders Nha Trang
 Hoạt động thêm: Vé xem múa rối đời sống tại Nhà hát Đồ Đọ Nha Trang | Việt Nam
 Dịch vụ đưa đón riêng và nhanh sân bay VIP: Sân bay quốc tế Cam Ranh (CXR) đến Trung tâm thành phố Nha Trang (Vice Versa) | Việt Nam
-Du lịch cần thiết: Dịch vụ xin visa điện tử du lịch Việt Nam | Visa điện tử Việt Nam khi đến', N'
-Lịch trình tự do',N'An Thoi International Port, Phu Quoc islanD', N'An Thoi International Port, Phu Quoc islanD', '/tours/439');
+Du lịch cần thiết: Dịch vụ xin visa điện tử du lịch Việt Nam | Visa điện tử Việt Nam khi đến', N'Lịch trình tự do',N'An Thoi International Port, Phu Quoc islanD', N'An Thoi International Port, Phu Quoc islanD', '/tours/439');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Safari Phu Quoc Ticket With Roundtrip Transfer', N'Chứng kiến một chương trình văn hóa độc đáo kết hợp múa rối truyền thống với hoạt hình, biểu diễn trực tiếp và múa đương đại để tạo ra trải nghiệm đặc biệt trong chuyến thăm Nha Trang tiếp theo của bạn.
 [ƯU ĐÃI HOT] Nhận ngay Ưu đãi khuyến mãi tốt nhất Nha Trang: Mua 2 tặng 1, Giảm 10% khi vui chơi biển Nha Trang! chiến dịch
@@ -14817,8 +14658,7 @@ Du lịch cần thiết: Dịch vụ xin visa điện tử du lịch Việt Nam 
 ~ Đến Bãi Tranh. Du khách tự do thư giãn, nghỉ ngơi trên ghế dọc bãi biển Tự do tắm biển, chụp ảnh Tham gia các trò chơi trên biển như jet ski, dù bay,... (chi phí tự túc)
 13:00',N'Bai Dai', N'Bai Dai', '/tours/440');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
-    VALUES(N'Phu Quoc Island package', N'Chuyến đi lặn với ống thở tuyệt vời khởi hành từ khách sạn của bạn lúc 9 giờ sáng đến 9 giờ 30 phút sáng (bằng xe tải nhỏ) trực tiếp đến bến cảng sau đó thuyền của chúng tôi sẽ đưa bạn đến khu bảo tồn đảo Mun, CHUYẾN ĐI BAO GỒM TẤT CẢ: Đón khách tại khách sạn, tất cả các thiết bị (mặt nạ & Vây) Hướng dẫn nói tiếng Anh , áo phao ( nếu cần ) phí vào cửa , cà phê và nước . Ghế tắm nắng trên nóc thuyền nơi bạn có thể tắm nắng', N'
-Lịch trình tự do',N'An Thoi archipelago', N'An Thoi archipelago', '/tours/441');
+    VALUES(N'Phu Quoc Island package', N'Chuyến đi lặn với ống thở tuyệt vời khởi hành từ khách sạn của bạn lúc 9 giờ sáng đến 9 giờ 30 phút sáng (bằng xe tải nhỏ) trực tiếp đến bến cảng sau đó thuyền của chúng tôi sẽ đưa bạn đến khu bảo tồn đảo Mun, CHUYẾN ĐI BAO GỒM TẤT CẢ: Đón khách tại khách sạn, tất cả các thiết bị (mặt nạ & Vây) Hướng dẫn nói tiếng Anh , áo phao ( nếu cần ) phí vào cửa , cà phê và nước . Ghế tắm nắng trên nóc thuyền nơi bạn có thể tắm nắng', N'Lịch trình tự do',N'An Thoi archipelago', N'An Thoi archipelago', '/tours/441');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Snorkeling & Sunset BBQ Dinner In Phu Quoc Island Tour', N'Khám phá những điểm tham quan hấp dẫn của thành phố biển Nha Trang một cách nhàn nhã trong chuyến đi xích lô truyền thống thoải mái.
 [ƯU ĐÃI HOT] Nhận ngay Ưu đãi khuyến mãi tốt nhất Nha Trang: Mua 2 tặng 1, Giảm 10% khi vui chơi biển Nha Trang! chiến dịch
@@ -14856,8 +14696,7 @@ Tận hưởng dịch vụ đưa đón riêng thuận tiện từ khách sạn c
 ~Quay lại điểm đón. Chuyến tham quan kết thúc.
 15:00',N'Công ty TNHH MTV TM Du lịch Lữ hành Nghĩa Nhân, 10 Đ. 30 Tháng 4, TT. Dương Đông, Phú Quốc, Kiên Giang 922200, Việt Nam', N'Công ty TNHH MTV TM Du lịch Lữ hành Nghĩa Nhân, 10 Đ. 30 Tháng 4, TT. Dương Đông, Phú Quốc, Kiên Giang 922200, Việt Nam', '/tours/443');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
-    VALUES(N'2D1N Tour | Sa Dec - Can Tho - My Tho - Ben Tre: Hung Thy Flower Village - Huynh Thuy Le Ancient House - Cai Rang Floating Market - Con Lan Con Phung (From Ho Chi Minh)', N'Hãy tận hưởng một ngày tuyệt vời, rời xa sự hối hả và nhộn nhịp của thành phố và dành những khoảng thời gian vui vẻ bên gia đình và bạn bè tại Đảo Hòn Mun xinh đẹp, Đảo Hòn Tằm hay Đảo Hòn Một. . Trong chuyến tham quan có hướng dẫn viên kéo dài 6 giờ này, bạn sẽ thích thú với làn nước trong vắt và ấm áp cùng các loài cá nhiệt đới cũng như màu sắc tuyệt đẹp của một trong những cấu trúc rạn san hô lớn nhất Việt Nam. Các nhân viên được đào tạo biết những điểm tốt nhất xung quanh rạn san hô và sẽ cho bạn thấy những san hô và sinh vật biển thú vị nhất. Tất cả các thiết bị ống thở đều được cung cấp cũng như bữa sáng, bữa trưa và vận chuyển bằng phương tiện có máy lạnh.', N'
-Lịch trình tự do',N'28/13 Bui Vien, Pham Ngu Lao Ward, District 1, City. Ho Chi MinH', N'28/13 Bui Vien, Pham Ngu Lao Ward, District 1, City. Ho Chi MinH', '/tours/444');
+    VALUES(N'2D1N Tour | Sa Dec - Can Tho - My Tho - Ben Tre: Hung Thy Flower Village - Huynh Thuy Le Ancient House - Cai Rang Floating Market - Con Lan Con Phung (From Ho Chi Minh)', N'Hãy tận hưởng một ngày tuyệt vời, rời xa sự hối hả và nhộn nhịp của thành phố và dành những khoảng thời gian vui vẻ bên gia đình và bạn bè tại Đảo Hòn Mun xinh đẹp, Đảo Hòn Tằm hay Đảo Hòn Một. . Trong chuyến tham quan có hướng dẫn viên kéo dài 6 giờ này, bạn sẽ thích thú với làn nước trong vắt và ấm áp cùng các loài cá nhiệt đới cũng như màu sắc tuyệt đẹp của một trong những cấu trúc rạn san hô lớn nhất Việt Nam. Các nhân viên được đào tạo biết những điểm tốt nhất xung quanh rạn san hô và sẽ cho bạn thấy những san hô và sinh vật biển thú vị nhất. Tất cả các thiết bị ống thở đều được cung cấp cũng như bữa sáng, bữa trưa và vận chuyển bằng phương tiện có máy lạnh.', N'Lịch trình tự do',N'28/13 Bui Vien, Pham Ngu Lao Ward, District 1, City. Ho Chi MinH', N'28/13 Bui Vien, Pham Ngu Lao Ward, District 1, City. Ho Chi MinH', '/tours/444');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Day Tour | Cai Rang Floating Market Tour ( Depart from Can Tho )', N'[ƯU ĐÃI HOT] Nhận ngay Ưu đãi khuyến mãi tốt nhất Nha Trang: Mua 2 tặng 1, Giảm 10% khi vui chơi biển Nha Trang! chiến dịch
 Khám phá thế giới dưới nước tại công viên biển đầu tiên ở Việt Nam
@@ -14968,8 +14807,7 @@ Chọn từ nhiều tùy chọn xe
 Tận hưởng dịch vụ khách hàng 24/7 sẵn sàng hỗ trợ
 Tham quan công viên giải trí VinWonders Nha Trang: Vé công viên giải trí VinWonders Nha Trang
 Hoạt động thêm: Vé xem múa rối đời sống tại Nhà hát Đồ Đọ Nha Trang | Việt Nam
-Du lịch cần thiết: Dịch vụ xin visa điện tử du lịch Việt Nam | Visa điện tử Việt Nam khi đến', N'
-Lịch trình tự do',N'28/13 Bui Vien, Pham Ngu Lao Ward, District 1, City. Ho Chi MinH', N'28/13 Bui Vien, Pham Ngu Lao Ward, District 1, City. Ho Chi MinH', '/tours/450');
+Du lịch cần thiết: Dịch vụ xin visa điện tử du lịch Việt Nam | Visa điện tử Việt Nam khi đến', N'Lịch trình tự do',N'28/13 Bui Vien, Pham Ngu Lao Ward, District 1, City. Ho Chi MinH', N'28/13 Bui Vien, Pham Ngu Lao Ward, District 1, City. Ho Chi MinH', '/tours/450');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'3D2N Tour | My Tho - Ben Tre - Can Tho - Chau Doc: Tra Su Melaleuca Forest, Cai Rang Floating Market, Cu Lao, Sam Mountain Relic (From Ho Chi Minh)', N'[ƯU ĐÃI HOT] Nhận ngay Ưu đãi khuyến mãi tốt nhất Nha Trang: Mua 2 tặng 1, Giảm 10% khi vui chơi biển Nha Trang! chiến dịch
 Lên du thuyền Emperor Cruise lấy cảm hứng từ cuộc sống xa hoa của Hoàng đế Bảo Đại, vị hoàng đế cuối cùng của Việt Nam
@@ -14980,14 +14818,12 @@ Tận dụng dịch vụ đưa đón khứ hồi thuận tiện từ khách sạ
 Tham quan công viên giải trí VinWonders Nha Trang: Vé công viên giải trí VinWonders Nha Trang
 Hoạt động thêm: Vé xem múa rối đời sống tại Nhà hát Đồ Đọ Nha Trang | Việt Nam
 Dịch vụ đưa đón riêng và nhanh sân bay VIP: Sân bay quốc tế Cam Ranh (CXR) đến Trung tâm thành phố Nha Trang (Vice Versa) | Việt Nam
-Du lịch cần thiết: Dịch vụ xin visa điện tử du lịch Việt Nam | Visa điện tử Việt Nam khi đến', N'
-Lịch trình tự do',N'28/13 Bui Vien, Pham Ngu Lao Ward, District 1, City. Ho Chi MinH', N'28/13 Bui Vien, Pham Ngu Lao Ward, District 1, City. Ho Chi MinH', '/tours/451');
+Du lịch cần thiết: Dịch vụ xin visa điện tử du lịch Việt Nam | Visa điện tử Việt Nam khi đến', N'Lịch trình tự do',N'28/13 Bui Vien, Pham Ngu Lao Ward, District 1, City. Ho Chi MinH', N'28/13 Bui Vien, Pham Ngu Lao Ward, District 1, City. Ho Chi MinH', '/tours/451');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'3D2N Tour | Exploring the Western Provinces: My Tho - Ben Tre - Can Tho - Ca Mau - Bac Lieu - Soc Trang (From Ho Chi Minh)', N'Theo dõi thời gian Tài xế của bạn sẽ theo dõi thời gian của bạn và đợi bạn nếu bị trễ.
 Một mức giá rõ ràng Giá của bạn được xác nhận trước – không mất thêm chi phí, không cần tiền mặt.
 Dịch vụ đã được thử và đúng Chúng tôi làm việc với các tài xế chuyên nghiệp và có dịch vụ chăm sóc khách hàng 24/7.
-Đến đích đến của bạn Đến đích nhanh chóng và an toàn - không phải xếp hàng dài chờ taxi, không cần điều hướng phương tiện công cộng', N'
-Lịch trình tự do',N'28/13 Bui Vien, Pham Ngu Lao Ward, District 1, City. Ho Chi MinH', N'28/13 Bui Vien, Pham Ngu Lao Ward, District 1, City. Ho Chi MinH', '/tours/452');
+Đến đích đến của bạn Đến đích nhanh chóng và an toàn - không phải xếp hàng dài chờ taxi, không cần điều hướng phương tiện công cộng', N'Lịch trình tự do',N'28/13 Bui Vien, Pham Ngu Lao Ward, District 1, City. Ho Chi MinH', N'28/13 Bui Vien, Pham Ngu Lao Ward, District 1, City. Ho Chi MinH', '/tours/452');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'2D1N | Sa Đéc - Cần Thơ: Chợ Nổi Cái Răng - Chùa Lá Sen - Làng hoa kiểng Sa Đéc - Vườn Quýt hồng Lai Vung / Làng Bột & Vườn Chà Là (Từ Cần Thơ)', N'Thưởng thức món nướng Hàn Quốc bằng phiếu giảm giá tiền mặt tại GoGi House
 Voucher áp dụng cho tất cả chi nhánh GoGi House được chỉ định tại Việt Nam
@@ -15004,13 +14840,11 @@ Thưởng thức bữa ăn tại nhà hàng rộng rãi, tiện nghi', N'
 ~Kết thúc bữa tối lãng mạn của bạn bằng cách thưởng thức đồ uống hoặc cocktail tại sảnh khách hoặc trên hiên tắm nắng trước khi quay trở lại Cảng Nha Trang và trở về đất liền.
 20:00',N'Bến Tàu Ninh Kiều, Ninh Kiều, Cần Thơ', N'Bến Tàu Ninh Kiều, Ninh Kiều, Cần Thơ', '/tours/453');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
-    VALUES(N'Can Tho food tour by motorbike designed by local chef', N'Chuyến đi lặn với ống thở tuyệt vời khởi hành từ khách sạn của bạn lúc 9 giờ sáng đến 9 giờ 30 phút sáng (bằng xe tải nhỏ) trực tiếp đến bến cảng sau đó thuyền của chúng tôi sẽ đưa bạn đến khu bảo tồn đảo Mun, CHUYẾN ĐI BAO GỒM TẤT CẢ: Đón khách tại khách sạn, tất cả các thiết bị (mặt nạ & Vây) Hướng dẫn nói tiếng Anh , áo phao ( nếu cần ) phí vào cửa , cà phê và nước . Ghế tắm nắng trên nóc thuyền nơi bạn có thể tắm nắng', N'
-Lịch trình tự do',N'Đường Hai Bà Trưng, Tân An, Ninh Kiều, Cần Thơ, Việt Nam', N'Đường Hai Bà Trưng, Tân An, Ninh Kiều, Cần Thơ, Việt Nam', '/tours/454');
+    VALUES(N'Can Tho food tour by motorbike designed by local chef', N'Chuyến đi lặn với ống thở tuyệt vời khởi hành từ khách sạn của bạn lúc 9 giờ sáng đến 9 giờ 30 phút sáng (bằng xe tải nhỏ) trực tiếp đến bến cảng sau đó thuyền của chúng tôi sẽ đưa bạn đến khu bảo tồn đảo Mun, CHUYẾN ĐI BAO GỒM TẤT CẢ: Đón khách tại khách sạn, tất cả các thiết bị (mặt nạ & Vây) Hướng dẫn nói tiếng Anh , áo phao ( nếu cần ) phí vào cửa , cà phê và nước . Ghế tắm nắng trên nóc thuyền nơi bạn có thể tắm nắng', N'Lịch trình tự do',N'Đường Hai Bà Trưng, Tân An, Ninh Kiều, Cần Thơ, Việt Nam', N'Đường Hai Bà Trưng, Tân An, Ninh Kiều, Cần Thơ, Việt Nam', '/tours/454');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Full-Day Experience in Mekong Cycling and Authentic Home Cooking', N'Với không gian gần gũi, quen thuộc với chất liệu gỗ mộc mạc cùng họa tiết chim công đặc trưng của những năm 1900, không gian tại Công là nơi ghé thăm thân thương cho những tâm hồn hoài niệm. vào một đêm hẹn hò.
 Ở Công, có những thức uống được sáng tạo từ sự biến tấu, giao thoa văn hóa được thể hiện khéo léo, tinh tế trong tách cà phê tưởng chừng đơn giản.
-Không chỉ có cà phê, với thực đơn của Công là cả một bầu trời tâm huyết, sáng tạo để mang lại sự hài lòng nhất cho thực khách.', N'
-Lịch trình tự do',N'9 Đường Châu Văn Liêm, Tân An, Ninh Kiều, Cần Thơ, Việt Nam', N'9 Đường Châu Văn Liêm, Tân An, Ninh Kiều, Cần Thơ, Việt Nam', '/tours/455');
+Không chỉ có cà phê, với thực đơn của Công là cả một bầu trời tâm huyết, sáng tạo để mang lại sự hài lòng nhất cho thực khách.', N'Lịch trình tự do',N'9 Đường Châu Văn Liêm, Tân An, Ninh Kiều, Cần Thơ, Việt Nam', N'9 Đường Châu Văn Liêm, Tân An, Ninh Kiều, Cần Thơ, Việt Nam', '/tours/455');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Can Tho Sunset Tour', N'Nằm trên con đường ven biển đẹp nhất Việt Nam, nhà hàng Ngon Gallery cho bạn góc nhìn toàn cảnh thành phố biển theo hình bán nguyệt.
 Nhà hàng đầu tiên tại Nha Trang phục vụ Buffet tôm hùm và hải sản KHÔNG GIỚI HẠN cho Buffet tối trọn gói
@@ -15019,14 +14853,12 @@ Hơn 100 món ăn ngon từ ẩm thực Đông Tây và các buổi biểu diễ
 ~Easy Rider Nha Trang
 Thời gian: 6 tiếng (xấp xỉ)',N'10 Đường Hai Bà Trưng, Tân An, Ninh Kiều, Cần Thơ, Việt Nam', N'10 Đường Hai Bà Trưng, Tân An, Ninh Kiều, Cần Thơ, Việt Nam', '/tours/456');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
-    VALUES(N'Eco Cooking Class and Market Tour', N'Khám phá vẻ đẹp của sinh vật biển và san hô. Tận hưởng nhiều hoạt động trên biển: cầu trượt nước khổng lồ, SUP, chèo thuyền kayak và hơn thế nữa. Trải nghiệm bar nổi với cocktail và trái cây không giới hạn. Thưởng thức nhạc sống.', N'
-Lịch trình tự do',N'542, Area No.3, Ba Lang ward, Ba Láng, Cái Răng, Cần Thơ, Việt Nam', N'542, Area No.3, Ba Lang ward, Ba Láng, Cái Răng, Cần Thơ, Việt Nam', '/tours/457');
+    VALUES(N'Eco Cooking Class and Market Tour', N'Khám phá vẻ đẹp của sinh vật biển và san hô. Tận hưởng nhiều hoạt động trên biển: cầu trượt nước khổng lồ, SUP, chèo thuyền kayak và hơn thế nữa. Trải nghiệm bar nổi với cocktail và trái cây không giới hạn. Thưởng thức nhạc sống.', N'Lịch trình tự do',N'542, Area No.3, Ba Lang ward, Ba Láng, Cái Răng, Cần Thơ, Việt Nam', N'542, Area No.3, Ba Lang ward, Ba Láng, Cái Răng, Cần Thơ, Việt Nam', '/tours/457');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Bicycle Tour Through Peaceful Villages', N'Hơn 100 loài hoa lan nở rộ quanh năm tại Đảo Hoa Lan
 1000 con khỉ đang được bảo tồn và sống hoang dã trên Đảo Khỉ
 Tắm biển và trải nghiệm các hoạt động thể thao dưới nước (chi phí tự túc)
-Hoạt động giải trí phong phú: xiếc thú, đua xe kart, cá cược đua chó…', N'
-Lịch trình tự do',N'209 Đ. 30 Tháng 4, Xuân Khánh, Ninh Kiều, Cần Thơ, Việt Nam', N'209 Đ. 30 Tháng 4, Xuân Khánh, Ninh Kiều, Cần Thơ, Việt Nam', '/tours/458');
+Hoạt động giải trí phong phú: xiếc thú, đua xe kart, cá cược đua chó…', N'Lịch trình tự do',N'209 Đ. 30 Tháng 4, Xuân Khánh, Ninh Kiều, Cần Thơ, Việt Nam', N'209 Đ. 30 Tháng 4, Xuân Khánh, Ninh Kiều, Cần Thơ, Việt Nam', '/tours/458');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Private City Transfers from Tan Son Nhat Airport to Vung Tau/Mui Ne (Binh Thuan)/My Tho/Can Tho/Binh Duong/Da Lat', N'[ƯU ĐÃI HOT] Nhận ngay Ưu đãi khuyến mãi tốt nhất Nha Trang: Mua 2 tặng 1, Giảm 10% khi vui chơi biển Nha Trang! chiến dịch
 Lên thuyền và tận hưởng chuyến du ngoạn thú vị qua Sông Bông với điểm dừng ở Đảo Dừa
@@ -15061,8 +14893,7 @@ INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,Ph
     VALUES(N'Cai Rang Floating market tour-Amazing Can Tho', N'[ƯU ĐÃI HOT] Nhận ngay Ưu đãi khuyến mãi tốt nhất Nha Trang: Mua 2 tặng 1, Giảm 10% khi vui chơi biển Nha Trang! chiến dịch
 Di chuyển thoải mái về trung tâm thành phố và ngược lại
 Cảm giác an toàn với tài xế giàu kinh nghiệm và chuyên nghiệp
-Bỏ qua việc di chuyển và thư giãn trên đường đến đích', N'
-Lịch trình tự do',N'10 Đường Hai Bà Trưng, Tân An, Ninh Kiều, Cần Thơ, Việt Nam', N'10 Đường Hai Bà Trưng, Tân An, Ninh Kiều, Cần Thơ, Việt Nam', '/tours/460');
+Bỏ qua việc di chuyển và thư giãn trên đường đến đích', N'Lịch trình tự do',N'10 Đường Hai Bà Trưng, Tân An, Ninh Kiều, Cần Thơ, Việt Nam', N'10 Đường Hai Bà Trưng, Tân An, Ninh Kiều, Cần Thơ, Việt Nam', '/tours/460');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Private Transfer from Can Tho City to Can Tho (VCA) Airport', N'Khám phá những điểm tham quan hấp dẫn của thành phố biển Nha Trang một cách nhàn nhã trong chuyến đi xích lô truyền thống thoải mái.
 [ƯU ĐÃI HOT] Nhận ngay Ưu đãi khuyến mãi tốt nhất Nha Trang: Mua 2 tặng 1, Giảm 10% khi vui chơi biển Nha Trang! chiến dịch
@@ -15098,8 +14929,7 @@ INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,Ph
 [ƯU ĐÃI HOT] Nhận ngay Khuyến mãi hấp dẫn nhất Nha Trang: Mua 2 tặng 1 Giảm 10% với chiến dịch Nha Trang Beach Fun
 Để biết thêm các hoạt động, hãy xem Vé xem múa rối cuộc sống tại Nhà hát Dô ở Nha Trang | Vé Công viên giải trí Việt Nam và VinWonders Nha Trang
 Kiểm tra Dịch vụ đưa đón riêng và nhanh chóng tại sân bay VIP: Sân bay quốc tế Cam Ranh (CXR) đến Trung tâm thành phố Nha Trang (Vice Versa) | Việt Nam
-Nhận những điều cần thiết về du lịch: Dịch vụ xin visa điện tử du lịch Việt Nam | Visa điện tử Việt Nam khi đến', N'
-Lịch trình tự do',N'Trường Sơn, Phường 2, Tân Bình, Thành phố Hồ Chí Minh, Việt Nam', N'Trường Sơn, Phường 2, Tân Bình, Thành phố Hồ Chí Minh, Việt Nam', '/tours/462');
+Nhận những điều cần thiết về du lịch: Dịch vụ xin visa điện tử du lịch Việt Nam | Visa điện tử Việt Nam khi đến', N'Lịch trình tự do',N'Trường Sơn, Phường 2, Tân Bình, Thành phố Hồ Chí Minh, Việt Nam', N'Trường Sơn, Phường 2, Tân Bình, Thành phố Hồ Chí Minh, Việt Nam', '/tours/462');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Eco Cooking Class and Market Tour', N'[ƯU ĐÃI HOT] Nhận ngay Ưu đãi khuyến mãi tốt nhất Nha Trang: Mua 2 tặng 1, Giảm 10% khi vui chơi biển Nha Trang! chiến dịch
 Thư giãn cơ bắp bằng cách ngâm mình trong suối khoáng nóng
@@ -15109,8 +14939,7 @@ Tạo sự khác biệt với những người bạn du lịch của bạn tại
 Tham quan công viên giải trí VinWonders Nha Trang: Vé công viên giải trí VinWonders Nha Trang
 Hoạt động thêm: Vé xem múa rối đời sống tại Nhà hát Đồ Đọ Nha Trang | Việt Nam
 Dịch vụ đưa đón riêng và nhanh sân bay VIP: Sân bay quốc tế Cam Ranh (CXR) đến Trung tâm thành phố Nha Trang (Vice Versa) | Việt Nam
-Du lịch cần thiết: Dịch vụ xin visa điện tử du lịch Việt Nam | Visa điện tử Việt Nam khi đến', N'
-Lịch trình tự do',N'542, Area No.3, Ba Lang ward, Ba Láng, Cái Răng, Cần Thơ, Việt Nam', N'542, Area No.3, Ba Lang ward, Ba Láng, Cái Răng, Cần Thơ, Việt Nam', '/tours/463');
+Du lịch cần thiết: Dịch vụ xin visa điện tử du lịch Việt Nam | Visa điện tử Việt Nam khi đến', N'Lịch trình tự do',N'542, Area No.3, Ba Lang ward, Ba Láng, Cái Răng, Cần Thơ, Việt Nam', N'542, Area No.3, Ba Lang ward, Ba Láng, Cái Răng, Cần Thơ, Việt Nam', '/tours/463');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Mekong Delta and Cai Rang Floating Market 5-Hours Tour', N'Dịch vụ của chúng tôi giúp bạn thư giãn và trẻ hóa.
 Chúng tôi cung cấp một không gian thiền yên bình được bao quanh bởi thiên nhiên.
@@ -15118,15 +14947,13 @@ Tắm bùn của chúng tôi giải độc và trẻ hóa làn da.
 Suối khoáng nóng của chúng tôi làm giảm căng thẳng và cải thiện sức khỏe.
 Chúng tôi có các gói spa phù hợp với sở thích cá nhân.
 Đặt trước ít nhất 2 giờ để đảm bảo bạn có trải nghiệm thoải mái.
-Hãy trải nghiệm tác dụng chữa bệnh của dịch vụ của chúng tôi ngay hôm nay!', N'
-Lịch trình tự do',N'Đường Hai Bà Trưng, Tân An, Ninh Kiều, Cần Thơ, Việt Nam', N'Đường Hai Bà Trưng, Tân An, Ninh Kiều, Cần Thơ, Việt Nam', '/tours/464');
+Hãy trải nghiệm tác dụng chữa bệnh của dịch vụ của chúng tôi ngay hôm nay!', N'Lịch trình tự do',N'Đường Hai Bà Trưng, Tân An, Ninh Kiều, Cần Thơ, Việt Nam', N'Đường Hai Bà Trưng, Tân An, Ninh Kiều, Cần Thơ, Việt Nam', '/tours/464');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Boat tour on Mekong river see the sunset, small canal, Vegan dinner, street FooD', N'Đắm chìm trong lối thoát chăm sóc sức khỏe tuyệt vời tại Galina Hotel & Spa. Tận hưởng liệu pháp tắm bùn sang trọng kết hợp massage thư giãn ngay trung tâm thành phố Nha Trang.
 Tiết kiệm hơn với ưu đãi khuyến mãi hàng đầu Nha Trang: Mua 2 tặng 1, Giảm 10% tại Nha Trang Beach Fun!
 Trải nghiệm tắm bùn độc đáo giữa lòng Nha Trang
 Truy cập các dịch vụ bổ sung của Galina bao gồm bể sục, phòng tắm hơi, thủy trị liệu và hồ bơi
-Thưởng thức các liệu pháp mát-xa nhẹ nhàng bởi các nhà trị liệu lành nghề để nuông chiều cơ thể bạn', N'
-Lịch trình tự do',N'22B Đ. Lê Thánh Tôn, Tân An, Ninh Kiều, Cần Thơ, Việt Nam', N'22B Đ. Lê Thánh Tôn, Tân An, Ninh Kiều, Cần Thơ, Việt Nam', '/tours/465');
+Thưởng thức các liệu pháp mát-xa nhẹ nhàng bởi các nhà trị liệu lành nghề để nuông chiều cơ thể bạn', N'Lịch trình tự do',N'22B Đ. Lê Thánh Tôn, Tân An, Ninh Kiều, Cần Thơ, Việt Nam', N'22B Đ. Lê Thánh Tôn, Tân An, Ninh Kiều, Cần Thơ, Việt Nam', '/tours/465');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Boat tour visit 3 pagodas, Ancient house, see sunset on mekong river', N'Đắm mình trong khung cảnh hoài cổ và thân thiện của Mandarin Spa
 Phương pháp điều trị giật gân cho cơ thể của bạn
@@ -15168,22 +14995,19 @@ INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,Ph
     VALUES(N'Can Tho Sunset Tour', N'Thưởng thức hương vị sang trọng và nhịp nhàng tại Câu lạc bộ Ambassador, Ana Marina Nha Trang, nơi tiệc buffet hải sản hấp dẫn với tôm hùm Nha Trang hòa cùng những bước nhảy nóng bỏng của chương trình khiêu vũ Cuba tại thành phố biển sôi động nhất Việt Nam.
 Đắm mình trong sự lãng mạn của hoàng hôn ven biển và đắm mình trong thiên đường ẩm thực thượng hạng, thể hiện tinh hoa hải sản Nha Trang
 Đắm mình trong sự kết hợp đặc biệt của âm thanh, ánh sáng và những màn trình diễn âm nhạc, vũ đạo sôi động
-Tận hưởng một đêm khó quên tại Ambassador Club, Ana Marina Nha Trang', N'
-Lịch trình tự do',N'10 Đường Hai Bà Trưng, Tân An, Ninh Kiều, Cần Thơ, Việt Nam', N'10 Đường Hai Bà Trưng, Tân An, Ninh Kiều, Cần Thơ, Việt Nam', '/tours/468');
+Tận hưởng một đêm khó quên tại Ambassador Club, Ana Marina Nha Trang', N'Lịch trình tự do',N'10 Đường Hai Bà Trưng, Tân An, Ninh Kiều, Cần Thơ, Việt Nam', N'10 Đường Hai Bà Trưng, Tân An, Ninh Kiều, Cần Thơ, Việt Nam', '/tours/468');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Full-Day Experience in Mekong Cycling and Authentic Home Cooking', N'Khám phá nghệ thuật chế biến ẩm thực địa phương với Lớp học nấu ăn của Chopstick. Đắm mình trong trải nghiệm chợ truyền thống của Việt Nam và nấu ăn bên bờ sông tuyệt đẹp của Nha Trang.
 Tận hưởng ưu đãi "Mua 2 tặng 1" và giảm giá 10% khi vui chơi trên bãi biển Nha Trang! chiến dịch
 Khám phá bí mật ẩm thực Việt Nam và ghé thăm chợ ẩm thực địa phương
 Đắm chìm trong trải nghiệm nấu ăn độc đáo bên bờ sông
 Tăng cường chuyến đi của bạn với các chuyến tham quan Công viên giải trí VinWonders Nha Trang và Nhà hát múa rối cuộc sống
-Đảm bảo một hành trình suôn sẻ với Dịch vụ Fast Track & Đưa đón sân bay tại Sân bay Cam Ranh và bảo đảm visa du lịch Việt Nam điện tử của bạn', N'
-Lịch trình tự do',N'9 Đường Châu Văn Liêm, Tân An, Ninh Kiều, Cần Thơ, Việt Nam', N'9 Đường Châu Văn Liêm, Tân An, Ninh Kiều, Cần Thơ, Việt Nam', '/tours/469');
+Đảm bảo một hành trình suôn sẻ với Dịch vụ Fast Track & Đưa đón sân bay tại Sân bay Cam Ranh và bảo đảm visa du lịch Việt Nam điện tử của bạn', N'Lịch trình tự do',N'9 Đường Châu Văn Liêm, Tân An, Ninh Kiều, Cần Thơ, Việt Nam', N'9 Đường Châu Văn Liêm, Tân An, Ninh Kiều, Cần Thơ, Việt Nam', '/tours/469');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Mekong Delta Day Tour: Visit My Tho - Ben Tre and Mekong River (with English, Chinese, Japanese, Korean Tour Guide) | Vietnam', N'Được đồng hành & hướng dẫn bởi Chef Đạt với 18 năm kinh nghiệm và Đạt cũng là hướng dẫn viên nói tiếng Anh được chứng nhận trong hơn 20 năm. Đầu bếp Đạt được biết đến rộng rãi trong giới nhà hàng Nha Trang nhờ kỹ năng nấu nướng cũng như khả năng truyền tải một số tài năng vượt trội của mình cho những học viên ham học hỏi. Kỹ năng tiếng Anh xuất sắc của Đạt sẽ đảm bảo một ngày học tập suôn sẻ, dễ dàng và thú vị.
 Sử dụng nguyên liệu tươi và pha chế hương vị giàu trí tưởng tượng, đây là một cách thú vị và thú vị để tìm hiểu ẩm thực địa phương.
 Tận hưởng trải nghiệm nấu ăn độc đáo, trực tiếp từ đầu đến cuối trong việc chuẩn bị ba món ăn truyền thống tuyệt vời của Việt Nam.
-Là một phần của chuyến phiêu lưu ẩm thực, bạn cũng sẽ được cung cấp các công thức nấu ăn chi tiết, để khi trở về nhà, bạn sẽ có thể gây ấn tượng với gia đình và bạn bè (và chính mình) bằng một số món ăn Việt Nam tuyệt vời.', N'
-Lịch trình tự do',N'District 1 Ho Chi Minh City', N'District 1 Ho Chi Minh City', '/tours/470');
+Là một phần của chuyến phiêu lưu ẩm thực, bạn cũng sẽ được cung cấp các công thức nấu ăn chi tiết, để khi trở về nhà, bạn sẽ có thể gây ấn tượng với gia đình và bạn bè (và chính mình) bằng một số món ăn Việt Nam tuyệt vời.', N'Lịch trình tự do',N'District 1 Ho Chi Minh City', N'District 1 Ho Chi Minh City', '/tours/470');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Ben Tre Wheels & Waters: Scooter, Sailboat, and Food (Full day)', N'[ƯU ĐÃI HOT] Nhận ngay Ưu đãi khuyến mãi tốt nhất Nha Trang: Mua 2 tặng 1, Giảm 10% khi vui chơi biển Nha Trang! chiến dịch
 Tìm hiểu các kỹ thuật làm các món ăn ngon của địa phương như Bánh xèo, bánh xèo Việt Nam, chả giò, v.v.
@@ -15191,8 +15015,7 @@ Tìm hiểu các kỹ thuật làm các món ăn ngon của địa phương như
 Tận hưởng sự riêng tư tuyệt vời khi tham gia tour riêng này
 Hoạt động khác: Tham quan Công viên chủ đề VinWonders Nha Trang
 Phải xem: Các buổi diễn múa rối cuộc sống tại Nhà hát Dó
-Cần thiết: Dịch vụ Fast Track & Đưa đón sân bay tại Sân bay Cam Ranh và Visa điện tử du lịch Việt Nam', N'
-Lịch trình tự do',N'3 Đại Lộ Đồng Khởi, Phường 3, Bến Tre, Việt Nam', N'3 Đại Lộ Đồng Khởi, Phường 3, Bến Tre, Việt Nam', '/tours/471');
+Cần thiết: Dịch vụ Fast Track & Đưa đón sân bay tại Sân bay Cam Ranh và Visa điện tử du lịch Việt Nam', N'Lịch trình tự do',N'3 Đại Lộ Đồng Khởi, Phường 3, Bến Tre, Việt Nam', N'3 Đại Lộ Đồng Khởi, Phường 3, Bến Tre, Việt Nam', '/tours/471');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'[2D1N] Exploring Mekong Delta : My Tho - Ben Tre - Cai Rang floating market ( Depart from Ho Chi Minh City)', N'Hãy nuông chiều bản thân hoặc chiêu đãi người đặc biệt đó với gói du thuyền ăn tối lúc hoàng hôn kéo dài 3,5 giờ này bao gồm bữa tối 5 món, nhạc sống, cocktail và đồ uống bạn chọn. Chiêm ngưỡng bãi biển cát trắng dài 7 km của Nha Trang và toàn cảnh hoàng hôn ngoạn mục khi bạn uống và dùng bữa trên thuyền truyền thống.', N'
 ~Xe riêng và Hướng dẫn viên đón khách tại khách sạn ở trung tâm thành phố Nha Trang hoặc Tháp Trầm Hương.
@@ -15209,8 +15032,7 @@ INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,Ph
 ~Xe và hướng dẫn đưa quý khách về khách sạn ở trung tâm Nha Trang hoặc điểm hẹn. Kết thúc chuyến tham quan
 14:30',N'District 1 Ho Chi Minh City', N'District 1 Ho Chi Minh City', '/tours/472');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
-    VALUES(N'2D1N Tour | My Tho & Ben Tre - Can Tho: Fruit Garden, Cai Rang Floating Market, Vinh Trang Pagoda (from Ho Chi Minh)', N'Khám phá vẻ đẹp của sinh vật biển và san hô. Tận hưởng nhiều hoạt động trên biển: cầu trượt nước khổng lồ, SUP, chèo thuyền kayak và hơn thế nữa. Trải nghiệm bar nổi với cocktail và trái cây không giới hạn. Thưởng thức nhạc sống.', N'
-Lịch trình tự do',N'28/13 Bui Vien, Pham Ngu Lao Ward, District 1, City. Ho Chi MinH', N'28/13 Bui Vien, Pham Ngu Lao Ward, District 1, City. Ho Chi MinH', '/tours/473');
+    VALUES(N'2D1N Tour | My Tho & Ben Tre - Can Tho: Fruit Garden, Cai Rang Floating Market, Vinh Trang Pagoda (from Ho Chi Minh)', N'Khám phá vẻ đẹp của sinh vật biển và san hô. Tận hưởng nhiều hoạt động trên biển: cầu trượt nước khổng lồ, SUP, chèo thuyền kayak và hơn thế nữa. Trải nghiệm bar nổi với cocktail và trái cây không giới hạn. Thưởng thức nhạc sống.', N'Lịch trình tự do',N'28/13 Bui Vien, Pham Ngu Lao Ward, District 1, City. Ho Chi MinH', N'28/13 Bui Vien, Pham Ngu Lao Ward, District 1, City. Ho Chi MinH', '/tours/473');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Ben Tre Half Day Tour with Scooter and Sailboat and Mekong FooD', N'Rời thành phố biển Nha Trang, hướng dẫn viên sẽ chở du khách trên những con đường êm đềm, mát mẻ dọc những làng quê xinh đẹp yên bình của Nha Trang. Bạn sẽ được thư giãn tại thác nước trong khung cảnh rừng rậm Hòn Bà trong khi thưởng thức bữa trưa nướng trước khi lên núi Hòn Bà, nơi bạn sẽ chiêm ngưỡng một số khung cảnh ngoạn mục.', N'
 ~Trải nghiệm xe riêng và đón hướng dẫn viên tại khách sạn ở Trung tâm Thành phố Nha Trang hoặc Tháp Trầm Hương
@@ -15347,8 +15169,7 @@ Miễn phí đón khách tại khách sạn và không phải lo lắng về vi�
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'2D1N Tour | My Tho & Ben Tre - Chau Doc: Fruit Garden, Vinh Trang Pagoda, Sam Mountain, Tra Su Melaleuca Forest (From Ho Chi Minh)', N'Bắt tay vào chuyến phiêu lưu thú vị xuyên qua những khu rừng tươi tốt
 Khám phá vẻ đẹp của Thác Datanla khi bạn đi cùng tàu lượn
-Cảm nhận cảm giác adrenaline dâng trào khi đi trên con đường tàu lượn dài nhất châu Á', N'
-Lịch trình tự do',N'28/13 Bui Vien, Pham Ngu Lao Ward, District 1, City. Ho Chi MinH', N'28/13 Bui Vien, Pham Ngu Lao Ward, District 1, City. Ho Chi MinH', '/tours/481');
+Cảm nhận cảm giác adrenaline dâng trào khi đi trên con đường tàu lượn dài nhất châu Á', N'Lịch trình tự do',N'28/13 Bui Vien, Pham Ngu Lao Ward, District 1, City. Ho Chi MinH', N'28/13 Bui Vien, Pham Ngu Lao Ward, District 1, City. Ho Chi MinH', '/tours/481');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Ben Tre Wheels & Waters: Scooter, Sailboat, and Food (Full day)', N'Khám phá 7 khu ziplines và vô số tiện ích trong 1 ngày
 Đảm bảo an toàn cho bạn với sự hướng dẫn từ các giảng viên chuyên nghiệp
@@ -15441,20 +15262,17 @@ INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,Ph
     VALUES(N'Ben Tre Coconut Candies Handmade Workshop (3HRS)', N'Tham quan các khu vực theo chủ đề, bao gồm Đại lộ Tình yêu, Khu vườn hứa, Quảng trường Hòa Bình và nhiều địa điểm khác!
 Cảm nhận cái lạnh và ngắm nhìn sườn núi tuyết của Lâu đài băng
 Tham quan thế giới ảo tại VR Game Center
-Đối mặt với nỗi sợ hãi của bạn tại ngôi nhà ma ám của công viên', N'
-Lịch trình tự do',N'3 Đại Lộ Đồng Khởi, Phường 3, Bến Tre, Việt Nam', N'3 Đại Lộ Đồng Khởi, Phường 3, Bến Tre, Việt Nam', '/tours/484');
+Đối mặt với nỗi sợ hãi của bạn tại ngôi nhà ma ám của công viên', N'Lịch trình tự do',N'3 Đại Lộ Đồng Khởi, Phường 3, Bến Tre, Việt Nam', N'3 Đại Lộ Đồng Khởi, Phường 3, Bến Tre, Việt Nam', '/tours/484');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Cooking class & Discover Ben Tre Market by Scooter (Half-Day)', N'Đà Lạt Zoodoo - môi trường thân thiện thích hợp cho trẻ em ngắm nhìn và giao lưu với động vật hoang dã
 Nhà thờ Domaine de Marie (Có một cửa hàng quần áo len nhỏ nơi bạn có thể mua quần áo len rẻ nhất và tốt nhất).
 Trang trại chó con, một trong những địa điểm du lịch Đà Lạt nổi tiếng nhất hiện nay, với 36 giống chó quý hiếm khác nhau trên thế giới. Alpaca, Ngựa Pony
-Tham quan: Rau thủy canh, Bí ngô, Trang trại dâu tây công nghệ cao + vườn dưa chuột baby, pepino (Dưa chuột ngọt) + Trồng cà chua bi, Vườn dương xỉ, Xương rồng, vườn hoa (theo mùa).', N'
-Lịch trình tự do',N'11D Group 3, Nhơn Thạnh, Bến Tre, Việt Nam', N'11D Group 3, Nhơn Thạnh, Bến Tre, Việt Nam', '/tours/485');
+Tham quan: Rau thủy canh, Bí ngô, Trang trại dâu tây công nghệ cao + vườn dưa chuột baby, pepino (Dưa chuột ngọt) + Trồng cà chua bi, Vườn dương xỉ, Xương rồng, vườn hoa (theo mùa).', N'Lịch trình tự do',N'11D Group 3, Nhơn Thạnh, Bến Tre, Việt Nam', N'11D Group 3, Nhơn Thạnh, Bến Tre, Việt Nam', '/tours/485');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Private Transfer from Ben Tre to Tan Son Nhat (SGN) Airport', N'[ƯU ĐÃI HOT] Nhận ngay Ưu đãi khuyến mãi tốt nhất Nha Trang: Mua 2 tặng 1, Giảm 10% khi vui chơi biển Nha Trang! chiến dịch
 Di chuyển thoải mái về trung tâm thành phố và ngược lại
 Cảm giác an toàn với tài xế giàu kinh nghiệm và chuyên nghiệp
-Bỏ qua việc di chuyển và thư giãn trên đường đến đích', N'
-Lịch trình tự do',N'Trường Sơn, Phường 2, Tân Bình, Thành phố Hồ Chí Minh, Việt Nam', N'Trường Sơn, Phường 2, Tân Bình, Thành phố Hồ Chí Minh, Việt Nam', '/tours/486');
+Bỏ qua việc di chuyển và thư giãn trên đường đến đích', N'Lịch trình tự do',N'Trường Sơn, Phường 2, Tân Bình, Thành phố Hồ Chí Minh, Việt Nam', N'Trường Sơn, Phường 2, Tân Bình, Thành phố Hồ Chí Minh, Việt Nam', '/tours/486');
 INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Private Transfer from Vinh Long to Tan Son Nhat (SGN) Airport', N'Tham quan và khám phá “làng Hobbit” ở Đà Lạt
 Cảm giác như trở về tuổi thơ với những tác phẩm nghệ thuật theo chủ đề truyện cổ tích
@@ -15479,7 +15297,501 @@ INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,Ph
     VALUES(N'Private Transfer: Dien Bien Phu Airport to/from Dien Bien Phu', N'Tránh sự căng thẳng khi di chuyển trong thành phố và đi xe limousine chung đến trung tâm thành phố. Tận hưởng dịch vụ nhanh chóng để có một hành trình suôn sẻ. Thư giãn và tận hưởng dịch vụ tiện lợi tại địa điểm trả khách. Tận dụng các điểm đón và trả khách thuận tiện
 Di chuyển thoải mái về trung tâm thành phố và ngược lại
 Cảm giác an toàn với tài xế giàu kinh nghiệm và chuyên nghiệp
-Bỏ qua việc di chuyển và thư giãn trên đường đến đích', N'
-Lịch trình tự do',N'Tp. Điện Biên Phủ, Điện Biên, Việt Nam', N'Tp. Điện Biên Phủ, Điện Biên, Việt Nam', '/tours/488');
+Bỏ qua việc di chuyển và thư giãn trên đường đến đích', N'Lịch trình tự do',N'Tp. Điện Biên Phủ, Điện Biên, Việt Nam', N'Tp. Điện Biên Phủ, Điện Biên, Việt Nam', '/tours/488');
 
+-- cập nhật PostingDate, PosterId, ApprrovalDate, ApprovalId
+update Tour Set PostingDate = '2022-09-23', ApprovalDate = '2022-10-03', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 0
+update Tour Set PostingDate = '2023-09-16', ApprovalDate = '2023-09-27', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 1
+update Tour Set PostingDate = '2022-11-28', ApprovalDate = '2022-12-08', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 2
+update Tour Set PostingDate = '2022-03-16', ApprovalDate = '2022-03-17', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 3
+update Tour Set PostingDate = '2022-12-14', ApprovalDate = '2022-12-22', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 4
+update Tour Set PostingDate = '2022-04-17', ApprovalDate = '2022-04-29', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 5
+update Tour Set PostingDate = '2022-03-14', ApprovalDate = '2022-03-22', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 6
+update Tour Set PostingDate = '2022-11-30', ApprovalDate = '2022-12-09', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 7
+update Tour Set PostingDate = '2023-08-07', ApprovalDate = '2023-08-08', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 8
+update Tour Set PostingDate = '2023-09-06', ApprovalDate = '2023-09-10', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 9
+update Tour Set PostingDate = '2022-05-13', ApprovalDate = '2022-05-19', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 10
+update Tour Set PostingDate = '2023-04-10', ApprovalDate = '2023-04-18', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 11
+update Tour Set PostingDate = '2022-05-29', ApprovalDate = '2022-06-14', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 12
+update Tour Set PostingDate = '2023-08-26', ApprovalDate = '2023-09-04', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 13
+update Tour Set PostingDate = '2022-03-02', ApprovalDate = '2022-03-14', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 14
+update Tour Set PostingDate = '2023-01-11', ApprovalDate = '2023-01-17', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 15
+update Tour Set PostingDate = '2023-09-23', ApprovalDate = '2023-09-26', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 16
+update Tour Set PostingDate = '2023-09-06', ApprovalDate = '2023-09-08', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 17
+update Tour Set PostingDate = '2023-10-23', ApprovalDate = '2023-11-02', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 18
+update Tour Set PostingDate = '2023-04-24', ApprovalDate = '2023-05-08', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 19
+update Tour Set PostingDate = '2022-10-21', ApprovalDate = '2022-11-04', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 20
+update Tour Set PostingDate = '2023-08-12', ApprovalDate = '2023-08-21', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 21
+update Tour Set PostingDate = '2022-11-05', ApprovalDate = '2022-11-17', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 22
+update Tour Set PostingDate = '2022-08-17', ApprovalDate = '2022-09-02', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 23
+update Tour Set PostingDate = '2022-06-18', ApprovalDate = '2022-06-25', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 24
+update Tour Set PostingDate = '2022-07-17', ApprovalDate = '2022-07-25', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 25
+update Tour Set PostingDate = '2023-03-22', ApprovalDate = '2023-04-08', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 26
+update Tour Set PostingDate = '2023-09-13', ApprovalDate = '2023-10-02', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 27
+update Tour Set PostingDate = '2022-06-08', ApprovalDate = '2022-06-12', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 28
+update Tour Set PostingDate = '2023-03-05', ApprovalDate = '2023-03-11', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 29
+update Tour Set PostingDate = '2022-09-02', ApprovalDate = '2022-09-12', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 30
+update Tour Set PostingDate = '2023-07-01', ApprovalDate = '2023-07-02', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 31
+update Tour Set PostingDate = '2022-07-18', ApprovalDate = '2022-08-05', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 32
+update Tour Set PostingDate = '2022-10-23', ApprovalDate = '2022-10-25', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 33
+update Tour Set PostingDate = '2022-05-17', ApprovalDate = '2022-05-28', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 34
+update Tour Set PostingDate = '2022-10-09', ApprovalDate = '2022-10-25', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 35
+update Tour Set PostingDate = '2022-11-13', ApprovalDate = '2022-11-17', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 36
+update Tour Set PostingDate = '2023-03-23', ApprovalDate = '2023-04-02', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 37
+update Tour Set PostingDate = '2022-06-09', ApprovalDate = '2022-06-26', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 38
+update Tour Set PostingDate = '2022-01-09', ApprovalDate = '2022-01-27', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 39
+update Tour Set PostingDate = '2023-03-03', ApprovalDate = '2023-03-04', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 40
+update Tour Set PostingDate = '2023-05-14', ApprovalDate = '2023-05-18', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 41
+update Tour Set PostingDate = '2023-04-04', ApprovalDate = '2023-04-12', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 42
+update Tour Set PostingDate = '2023-10-26', ApprovalDate = '2023-11-06', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 43
+update Tour Set PostingDate = '2023-11-01', ApprovalDate = '2023-11-15', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 44
+update Tour Set PostingDate = '2023-02-11', ApprovalDate = '2023-02-18', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 45
+update Tour Set PostingDate = '2022-01-13', ApprovalDate = '2022-01-15', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 46
+update Tour Set PostingDate = '2023-01-11', ApprovalDate = '2023-01-26', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 47
+update Tour Set PostingDate = '2023-02-05', ApprovalDate = '2023-02-21', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 48
+update Tour Set PostingDate = '2022-02-01', ApprovalDate = '2022-02-16', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 49
+update Tour Set PostingDate = '2023-11-06', ApprovalDate = '2023-11-10', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 50
+update Tour Set PostingDate = '2022-08-24', ApprovalDate = '2022-08-28', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 51
+update Tour Set PostingDate = '2022-02-17', ApprovalDate = '2022-02-23', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 52
+update Tour Set PostingDate = '2022-03-20', ApprovalDate = '2022-03-28', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 53
+update Tour Set PostingDate = '2023-03-31', ApprovalDate = '2023-04-12', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 54
+update Tour Set PostingDate = '2023-01-26', ApprovalDate = '2023-02-04', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 55
+update Tour Set PostingDate = '2022-07-12', ApprovalDate = '2022-07-28', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 56
+update Tour Set PostingDate = '2023-06-26', ApprovalDate = '2023-06-27', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 57
+update Tour Set PostingDate = '2022-01-13', ApprovalDate = '2022-01-18', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 58
+update Tour Set PostingDate = '2022-07-26', ApprovalDate = '2022-07-28', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 59
+update Tour Set PostingDate = '2023-01-25', ApprovalDate = '2023-02-06', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 60
+update Tour Set PostingDate = '2023-01-06', ApprovalDate = '2023-01-14', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 61
+update Tour Set PostingDate = '2023-05-30', ApprovalDate = '2023-06-01', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 62
+update Tour Set PostingDate = '2023-09-30', ApprovalDate = '2023-10-09', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 63
+update Tour Set PostingDate = '2023-01-07', ApprovalDate = '2023-01-17', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 64
+update Tour Set PostingDate = '2022-06-02', ApprovalDate = '2022-06-03', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 65
+update Tour Set PostingDate = '2023-08-19', ApprovalDate = '2023-09-07', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 66
+update Tour Set PostingDate = '2022-11-18', ApprovalDate = '2022-11-29', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 67
+update Tour Set PostingDate = '2023-11-18', ApprovalDate = '2023-11-28', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 68
+update Tour Set PostingDate = '2023-04-04', ApprovalDate = '2023-04-10', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 69
+update Tour Set PostingDate = '2022-05-28', ApprovalDate = '2022-06-14', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 70
+update Tour Set PostingDate = '2022-08-16', ApprovalDate = '2022-08-28', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 71
+update Tour Set PostingDate = '2022-12-21', ApprovalDate = '2022-12-23', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 72
+update Tour Set PostingDate = '2023-06-05', ApprovalDate = '2023-06-08', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 73
+update Tour Set PostingDate = '2022-04-09', ApprovalDate = '2022-04-25', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 74
+update Tour Set PostingDate = '2022-02-07', ApprovalDate = '2022-02-09', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 75
+update Tour Set PostingDate = '2023-07-09', ApprovalDate = '2023-07-26', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 76
+update Tour Set PostingDate = '2022-09-03', ApprovalDate = '2022-09-08', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 77
+update Tour Set PostingDate = '2023-08-18', ApprovalDate = '2023-08-23', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 78
+update Tour Set PostingDate = '2023-01-14', ApprovalDate = '2023-01-24', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 79
+update Tour Set PostingDate = '2022-07-30', ApprovalDate = '2022-08-09', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 80
+update Tour Set PostingDate = '2022-10-12', ApprovalDate = '2022-10-22', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 81
+update Tour Set PostingDate = '2023-11-08', ApprovalDate = '2023-11-14', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 82
+update Tour Set PostingDate = '2022-05-22', ApprovalDate = '2022-05-27', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 83
+update Tour Set PostingDate = '2023-08-13', ApprovalDate = '2023-08-26', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 84
+update Tour Set PostingDate = '2023-05-09', ApprovalDate = '2023-05-24', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 85
+update Tour Set PostingDate = '2023-01-02', ApprovalDate = '2023-01-16', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 86
+update Tour Set PostingDate = '2023-09-29', ApprovalDate = '2023-10-01', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 87
+update Tour Set PostingDate = '2022-09-15', ApprovalDate = '2022-09-17', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 88
+update Tour Set PostingDate = '2022-06-12', ApprovalDate = '2022-06-19', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 89
+update Tour Set PostingDate = '2022-02-26', ApprovalDate = '2022-03-06', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 90
+update Tour Set PostingDate = '2022-10-05', ApprovalDate = '2022-10-13', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 91
+update Tour Set PostingDate = '2023-08-29', ApprovalDate = '2023-08-30', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 92
+update Tour Set PostingDate = '2022-04-30', ApprovalDate = '2022-05-17', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 93
+update Tour Set PostingDate = '2023-08-26', ApprovalDate = '2023-09-05', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 94
+update Tour Set PostingDate = '2023-06-07', ApprovalDate = '2023-06-14', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 95
+update Tour Set PostingDate = '2023-05-10', ApprovalDate = '2023-05-20', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 96
+update Tour Set PostingDate = '2023-01-22', ApprovalDate = '2023-02-01', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 97
+update Tour Set PostingDate = '2022-04-09', ApprovalDate = '2022-04-10', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 98
+update Tour Set PostingDate = '2022-05-01', ApprovalDate = '2022-05-06', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 99
+update Tour Set PostingDate = '2023-07-20', ApprovalDate = '2023-07-25', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 100
+update Tour Set PostingDate = '2022-05-16', ApprovalDate = '2022-05-25', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 101
+update Tour Set PostingDate = '2022-08-20', ApprovalDate = '2022-08-31', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 102
+update Tour Set PostingDate = '2023-01-23', ApprovalDate = '2023-02-06', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 103
+update Tour Set PostingDate = '2023-10-05', ApprovalDate = '2023-10-21', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 104
+update Tour Set PostingDate = '2023-02-09', ApprovalDate = '2023-02-22', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 105
+update Tour Set PostingDate = '2023-08-15', ApprovalDate = '2023-08-17', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 106
+update Tour Set PostingDate = '2022-09-06', ApprovalDate = '2022-09-16', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 107
+update Tour Set PostingDate = '2022-02-06', ApprovalDate = '2022-02-22', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 108
+update Tour Set PostingDate = '2023-05-08', ApprovalDate = '2023-05-11', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 109
+update Tour Set PostingDate = '2023-04-19', ApprovalDate = '2023-04-25', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 110
+update Tour Set PostingDate = '2022-11-28', ApprovalDate = '2022-12-02', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 111
+update Tour Set PostingDate = '2023-10-20', ApprovalDate = '2023-11-03', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 112
+update Tour Set PostingDate = '2022-02-28', ApprovalDate = '2022-03-07', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 113
+update Tour Set PostingDate = '2023-05-06', ApprovalDate = '2023-05-24', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 114
+update Tour Set PostingDate = '2022-12-05', ApprovalDate = '2022-12-10', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 115
+update Tour Set PostingDate = '2023-11-11', ApprovalDate = '2023-11-18', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 116
+update Tour Set PostingDate = '2022-12-04', ApprovalDate = '2022-12-14', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 117
+update Tour Set PostingDate = '2022-10-23', ApprovalDate = '2022-10-25', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 118
+update Tour Set PostingDate = '2023-02-26', ApprovalDate = '2023-03-08', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 119
+update Tour Set PostingDate = '2023-02-21', ApprovalDate = '2023-02-27', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 120
+update Tour Set PostingDate = '2023-08-20', ApprovalDate = '2023-09-06', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 121
+update Tour Set PostingDate = '2022-12-27', ApprovalDate = '2023-01-13', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 122
+update Tour Set PostingDate = '2023-01-19', ApprovalDate = '2023-01-22', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 123
+update Tour Set PostingDate = '2023-09-10', ApprovalDate = '2023-09-12', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 124
+update Tour Set PostingDate = '2022-10-18', ApprovalDate = '2022-11-03', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 125
+update Tour Set PostingDate = '2023-06-15', ApprovalDate = '2023-06-17', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 126
+update Tour Set PostingDate = '2023-03-08', ApprovalDate = '2023-03-21', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 127
+update Tour Set PostingDate = '2022-01-04', ApprovalDate = '2022-01-18', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 128
+update Tour Set PostingDate = '2023-11-22', ApprovalDate = '2023-11-24', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 129
+update Tour Set PostingDate = '2022-09-20', ApprovalDate = '2022-09-28', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 130
+update Tour Set PostingDate = '2022-03-16', ApprovalDate = '2022-03-27', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 131
+update Tour Set PostingDate = '2022-04-14', ApprovalDate = '2022-04-22', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 132
+update Tour Set PostingDate = '2022-08-26', ApprovalDate = '2022-09-06', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 133
+update Tour Set PostingDate = '2022-07-01', ApprovalDate = '2022-07-16', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 134
+update Tour Set PostingDate = '2022-10-29', ApprovalDate = '2022-10-30', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 135
+update Tour Set PostingDate = '2023-05-02', ApprovalDate = '2023-05-16', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 136
+update Tour Set PostingDate = '2023-05-13', ApprovalDate = '2023-05-29', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 137
+update Tour Set PostingDate = '2022-08-13', ApprovalDate = '2022-08-19', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 138
+update Tour Set PostingDate = '2023-06-23', ApprovalDate = '2023-06-26', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 139
+update Tour Set PostingDate = '2023-04-17', ApprovalDate = '2023-04-19', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 140
+update Tour Set PostingDate = '2022-08-29', ApprovalDate = '2022-09-01', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 141
+update Tour Set PostingDate = '2023-02-19', ApprovalDate = '2023-02-20', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 142
+update Tour Set PostingDate = '2022-05-13', ApprovalDate = '2022-05-31', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 143
+update Tour Set PostingDate = '2023-01-02', ApprovalDate = '2023-01-18', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 144
+update Tour Set PostingDate = '2023-08-07', ApprovalDate = '2023-08-26', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 145
+update Tour Set PostingDate = '2023-11-07', ApprovalDate = '2023-11-08', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 146
+update Tour Set PostingDate = '2023-04-19', ApprovalDate = '2023-05-04', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 147
+update Tour Set PostingDate = '2023-04-08', ApprovalDate = '2023-04-10', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 148
+update Tour Set PostingDate = '2023-10-03', ApprovalDate = '2023-10-20', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 149
+update Tour Set PostingDate = '2022-10-15', ApprovalDate = '2022-10-24', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 150
+update Tour Set PostingDate = '2023-03-17', ApprovalDate = '2023-03-21', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 151
+update Tour Set PostingDate = '2022-03-03', ApprovalDate = '2022-03-13', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 152
+update Tour Set PostingDate = '2022-04-28', ApprovalDate = '2022-05-09', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 153
+update Tour Set PostingDate = '2022-08-10', ApprovalDate = '2022-08-15', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 154
+update Tour Set PostingDate = '2023-05-02', ApprovalDate = '2023-05-17', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 155
+update Tour Set PostingDate = '2022-07-09', ApprovalDate = '2022-07-25', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 156
+update Tour Set PostingDate = '2023-05-12', ApprovalDate = '2023-05-26', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 157
+update Tour Set PostingDate = '2022-03-22', ApprovalDate = '2022-03-25', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 158
+update Tour Set PostingDate = '2022-12-07', ApprovalDate = '2022-12-15', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 159
+update Tour Set PostingDate = '2022-10-02', ApprovalDate = '2022-10-06', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 160
+update Tour Set PostingDate = '2022-01-23', ApprovalDate = '2022-01-28', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 161
+update Tour Set PostingDate = '2023-01-05', ApprovalDate = '2023-01-20', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 162
+update Tour Set PostingDate = '2022-07-12', ApprovalDate = '2022-07-16', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 163
+update Tour Set PostingDate = '2022-12-01', ApprovalDate = '2022-12-04', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 164
+update Tour Set PostingDate = '2023-03-01', ApprovalDate = '2023-03-08', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 165
+update Tour Set PostingDate = '2022-08-05', ApprovalDate = '2022-08-13', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 166
+update Tour Set PostingDate = '2023-06-15', ApprovalDate = '2023-07-04', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 167
+update Tour Set PostingDate = '2023-07-17', ApprovalDate = '2023-07-26', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 168
+update Tour Set PostingDate = '2022-11-16', ApprovalDate = '2022-12-04', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 169
+update Tour Set PostingDate = '2023-07-15', ApprovalDate = '2023-08-01', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 170
+update Tour Set PostingDate = '2023-03-07', ApprovalDate = '2023-03-18', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 171
+update Tour Set PostingDate = '2023-11-21', ApprovalDate = '2023-12-01', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 172
+update Tour Set PostingDate = '2023-11-15', ApprovalDate = '2023-11-29', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 173
+update Tour Set PostingDate = '2023-11-20', ApprovalDate = '2023-12-04', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 174
+update Tour Set PostingDate = '2023-01-19', ApprovalDate = '2023-01-26', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 175
+update Tour Set PostingDate = '2022-08-05', ApprovalDate = '2022-08-15', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 176
+update Tour Set PostingDate = '2022-01-21', ApprovalDate = '2022-02-07', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 177
+update Tour Set PostingDate = '2023-09-21', ApprovalDate = '2023-09-30', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 178
+update Tour Set PostingDate = '2023-06-28', ApprovalDate = '2023-07-02', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 179
+update Tour Set PostingDate = '2023-08-02', ApprovalDate = '2023-08-16', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 180
+update Tour Set PostingDate = '2022-08-12', ApprovalDate = '2022-08-25', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 181
+update Tour Set PostingDate = '2022-05-08', ApprovalDate = '2022-05-11', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 182
+update Tour Set PostingDate = '2022-10-24', ApprovalDate = '2022-11-01', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 183
+update Tour Set PostingDate = '2023-08-24', ApprovalDate = '2023-09-09', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 184
+update Tour Set PostingDate = '2022-02-11', ApprovalDate = '2022-02-14', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 185
+update Tour Set PostingDate = '2023-07-28', ApprovalDate = '2023-07-29', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 186
+update Tour Set PostingDate = '2022-01-21', ApprovalDate = '2022-02-04', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 187
+update Tour Set PostingDate = '2023-07-14', ApprovalDate = '2023-07-21', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 188
+update Tour Set PostingDate = '2022-06-26', ApprovalDate = '2022-07-03', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 189
+update Tour Set PostingDate = '2022-10-20', ApprovalDate = '2022-10-27', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 190
+update Tour Set PostingDate = '2023-06-16', ApprovalDate = '2023-06-21', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 191
+update Tour Set PostingDate = '2023-03-01', ApprovalDate = '2023-03-12', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 192
+update Tour Set PostingDate = '2023-04-25', ApprovalDate = '2023-05-07', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 193
+update Tour Set PostingDate = '2023-04-06', ApprovalDate = '2023-04-08', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 194
+update Tour Set PostingDate = '2022-12-24', ApprovalDate = '2023-01-09', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 195
+update Tour Set PostingDate = '2022-05-27', ApprovalDate = '2022-06-09', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 196
+update Tour Set PostingDate = '2023-10-28', ApprovalDate = '2023-10-31', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 197
+update Tour Set PostingDate = '2023-04-12', ApprovalDate = '2023-04-27', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 198
+update Tour Set PostingDate = '2022-06-19', ApprovalDate = '2022-07-04', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 199
+update Tour Set PostingDate = '2023-10-07', ApprovalDate = '2023-10-19', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 200
+update Tour Set PostingDate = '2022-01-21', ApprovalDate = '2022-02-05', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 201
+update Tour Set PostingDate = '2023-04-29', ApprovalDate = '2023-05-01', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 202
+update Tour Set PostingDate = '2023-09-16', ApprovalDate = '2023-10-04', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 203
+update Tour Set PostingDate = '2022-08-20', ApprovalDate = '2022-09-07', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 204
+update Tour Set PostingDate = '2023-03-09', ApprovalDate = '2023-03-20', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 205
+update Tour Set PostingDate = '2023-01-31', ApprovalDate = '2023-02-18', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 206
+update Tour Set PostingDate = '2023-11-14', ApprovalDate = '2023-11-18', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 207
+update Tour Set PostingDate = '2022-02-22', ApprovalDate = '2022-02-27', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 208
+update Tour Set PostingDate = '2023-11-23', ApprovalDate = '2023-11-28', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 209
+update Tour Set PostingDate = '2023-09-15', ApprovalDate = '2023-09-20', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 210
+update Tour Set PostingDate = '2023-05-06', ApprovalDate = '2023-05-20', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 211
+update Tour Set PostingDate = '2023-10-28', ApprovalDate = '2023-11-08', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 212
+update Tour Set PostingDate = '2023-09-17', ApprovalDate = '2023-09-20', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 213
+update Tour Set PostingDate = '2022-03-03', ApprovalDate = '2022-03-19', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 214
+update Tour Set PostingDate = '2022-01-18', ApprovalDate = '2022-01-30', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 215
+update Tour Set PostingDate = '2023-02-14', ApprovalDate = '2023-02-23', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 216
+update Tour Set PostingDate = '2023-03-24', ApprovalDate = '2023-04-05', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 217
+update Tour Set PostingDate = '2023-09-03', ApprovalDate = '2023-09-12', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 218
+update Tour Set PostingDate = '2022-03-29', ApprovalDate = '2022-04-09', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 219
+update Tour Set PostingDate = '2022-08-13', ApprovalDate = '2022-08-15', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 220
+update Tour Set PostingDate = '2022-01-05', ApprovalDate = '2022-01-11', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 221
+update Tour Set PostingDate = '2022-12-06', ApprovalDate = '2022-12-13', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 222
+update Tour Set PostingDate = '2023-11-10', ApprovalDate = '2023-11-19', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 223
+update Tour Set PostingDate = '2022-06-08', ApprovalDate = '2022-06-24', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 224
+update Tour Set PostingDate = '2022-02-17', ApprovalDate = '2022-03-07', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 225
+update Tour Set PostingDate = '2022-11-18', ApprovalDate = '2022-11-19', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 226
+update Tour Set PostingDate = '2022-05-26', ApprovalDate = '2022-06-11', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 227
+update Tour Set PostingDate = '2022-07-08', ApprovalDate = '2022-07-25', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 228
+update Tour Set PostingDate = '2023-09-15', ApprovalDate = '2023-09-21', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 229
+update Tour Set PostingDate = '2023-05-30', ApprovalDate = '2023-06-10', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 230
+update Tour Set PostingDate = '2023-07-15', ApprovalDate = '2023-07-31', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 231
+update Tour Set PostingDate = '2023-01-03', ApprovalDate = '2023-01-19', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 232
+update Tour Set PostingDate = '2023-07-05', ApprovalDate = '2023-07-20', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 233
+update Tour Set PostingDate = '2023-06-18', ApprovalDate = '2023-06-24', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 234
+update Tour Set PostingDate = '2022-01-13', ApprovalDate = '2022-01-28', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 235
+update Tour Set PostingDate = '2023-10-23', ApprovalDate = '2023-11-03', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 236
+update Tour Set PostingDate = '2022-09-09', ApprovalDate = '2022-09-17', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 237
+update Tour Set PostingDate = '2022-03-15', ApprovalDate = '2022-03-28', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 238
+update Tour Set PostingDate = '2023-07-28', ApprovalDate = '2023-07-31', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 239
+update Tour Set PostingDate = '2022-11-16', ApprovalDate = '2022-11-23', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 240
+update Tour Set PostingDate = '2022-06-20', ApprovalDate = '2022-06-25', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 241
+update Tour Set PostingDate = '2022-07-31', ApprovalDate = '2022-08-03', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 242
+update Tour Set PostingDate = '2023-04-15', ApprovalDate = '2023-04-30', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 243
+update Tour Set PostingDate = '2022-08-14', ApprovalDate = '2022-08-16', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 244
+update Tour Set PostingDate = '2022-07-29', ApprovalDate = '2022-08-06', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 245
+update Tour Set PostingDate = '2022-10-27', ApprovalDate = '2022-11-15', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 246
+update Tour Set PostingDate = '2023-08-08', ApprovalDate = '2023-08-11', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 247
+update Tour Set PostingDate = '2022-06-02', ApprovalDate = '2022-06-09', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 248
+update Tour Set PostingDate = '2022-11-12', ApprovalDate = '2022-11-20', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 249
+update Tour Set PostingDate = '2022-08-09', ApprovalDate = '2022-08-17', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 250
+update Tour Set PostingDate = '2023-10-27', ApprovalDate = '2023-11-05', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 251
+update Tour Set PostingDate = '2023-01-29', ApprovalDate = '2023-02-08', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 252
+update Tour Set PostingDate = '2022-11-24', ApprovalDate = '2022-12-12', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 253
+update Tour Set PostingDate = '2022-05-21', ApprovalDate = '2022-06-05', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 254
+update Tour Set PostingDate = '2022-08-01', ApprovalDate = '2022-08-13', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 255
+update Tour Set PostingDate = '2022-02-20', ApprovalDate = '2022-02-25', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 256
+update Tour Set PostingDate = '2022-09-17', ApprovalDate = '2022-10-06', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 257
+update Tour Set PostingDate = '2023-03-21', ApprovalDate = '2023-04-07', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 258
+update Tour Set PostingDate = '2023-03-14', ApprovalDate = '2023-03-17', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 259
+update Tour Set PostingDate = '2023-05-10', ApprovalDate = '2023-05-15', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 260
+update Tour Set PostingDate = '2023-10-08', ApprovalDate = '2023-10-15', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 261
+update Tour Set PostingDate = '2023-06-19', ApprovalDate = '2023-06-27', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 262
+update Tour Set PostingDate = '2023-07-23', ApprovalDate = '2023-08-09', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 263
+update Tour Set PostingDate = '2023-09-17', ApprovalDate = '2023-10-03', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 264
+update Tour Set PostingDate = '2023-09-02', ApprovalDate = '2023-09-03', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 265
+update Tour Set PostingDate = '2023-02-25', ApprovalDate = '2023-03-07', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 266
+update Tour Set PostingDate = '2023-05-24', ApprovalDate = '2023-06-12', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 267
+update Tour Set PostingDate = '2023-07-23', ApprovalDate = '2023-07-25', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 268
+update Tour Set PostingDate = '2022-07-15', ApprovalDate = '2022-08-01', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 269
+update Tour Set PostingDate = '2023-08-19', ApprovalDate = '2023-08-20', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 270
+update Tour Set PostingDate = '2023-08-28', ApprovalDate = '2023-08-31', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 271
+update Tour Set PostingDate = '2022-04-28', ApprovalDate = '2022-05-17', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 272
+update Tour Set PostingDate = '2023-11-18', ApprovalDate = '2023-11-26', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 273
+update Tour Set PostingDate = '2022-01-29', ApprovalDate = '2022-02-04', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 274
+update Tour Set PostingDate = '2023-06-17', ApprovalDate = '2023-06-20', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 275
+update Tour Set PostingDate = '2022-11-29', ApprovalDate = '2022-12-06', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 276
+update Tour Set PostingDate = '2022-09-07', ApprovalDate = '2022-09-17', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 277
+update Tour Set PostingDate = '2022-06-15', ApprovalDate = '2022-06-29', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 278
+update Tour Set PostingDate = '2023-05-16', ApprovalDate = '2023-05-27', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 279
+update Tour Set PostingDate = '2023-10-09', ApprovalDate = '2023-10-12', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 280
+update Tour Set PostingDate = '2023-08-19', ApprovalDate = '2023-09-01', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 281
+update Tour Set PostingDate = '2022-08-21', ApprovalDate = '2022-08-26', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 282
+update Tour Set PostingDate = '2023-05-18', ApprovalDate = '2023-06-01', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 283
+update Tour Set PostingDate = '2022-01-07', ApprovalDate = '2022-01-23', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 284
+update Tour Set PostingDate = '2022-07-15', ApprovalDate = '2022-07-26', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 285
+update Tour Set PostingDate = '2022-01-15', ApprovalDate = '2022-01-19', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 286
+update Tour Set PostingDate = '2023-01-27', ApprovalDate = '2023-02-14', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 287
+update Tour Set PostingDate = '2023-06-29', ApprovalDate = '2023-07-04', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 288
+update Tour Set PostingDate = '2022-10-10', ApprovalDate = '2022-10-21', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 289
+update Tour Set PostingDate = '2023-10-12', ApprovalDate = '2023-10-21', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 290
+update Tour Set PostingDate = '2023-09-26', ApprovalDate = '2023-10-01', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 291
+update Tour Set PostingDate = '2022-04-21', ApprovalDate = '2022-04-27', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 292
+update Tour Set PostingDate = '2023-03-06', ApprovalDate = '2023-03-24', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 293
+update Tour Set PostingDate = '2022-02-01', ApprovalDate = '2022-02-15', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 294
+update Tour Set PostingDate = '2022-05-06', ApprovalDate = '2022-05-17', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 295
+update Tour Set PostingDate = '2022-07-21', ApprovalDate = '2022-08-03', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 296
+update Tour Set PostingDate = '2023-08-25', ApprovalDate = '2023-08-28', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 297
+update Tour Set PostingDate = '2023-09-29', ApprovalDate = '2023-10-04', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 298
+update Tour Set PostingDate = '2023-02-03', ApprovalDate = '2023-02-17', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 299
+update Tour Set PostingDate = '2022-12-13', ApprovalDate = '2022-12-28', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 300
+update Tour Set PostingDate = '2023-05-24', ApprovalDate = '2023-05-30', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 301
+update Tour Set PostingDate = '2022-07-29', ApprovalDate = '2022-07-30', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 302
+update Tour Set PostingDate = '2023-06-30', ApprovalDate = '2023-07-09', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 303
+update Tour Set PostingDate = '2022-03-10', ApprovalDate = '2022-03-11', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 304
+update Tour Set PostingDate = '2023-01-09', ApprovalDate = '2023-01-12', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 305
+update Tour Set PostingDate = '2023-09-13', ApprovalDate = '2023-09-20', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 306
+update Tour Set PostingDate = '2023-09-28', ApprovalDate = '2023-10-07', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 307
+update Tour Set PostingDate = '2022-04-30', ApprovalDate = '2022-05-01', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 308
+update Tour Set PostingDate = '2023-10-15', ApprovalDate = '2023-10-24', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 309
+update Tour Set PostingDate = '2023-12-01', ApprovalDate = '2023-12-10', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 310
+update Tour Set PostingDate = '2023-04-30', ApprovalDate = '2023-05-15', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 311
+update Tour Set PostingDate = '2023-05-06', ApprovalDate = '2023-05-11', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 312
+update Tour Set PostingDate = '2023-08-11', ApprovalDate = '2023-08-17', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 313
+update Tour Set PostingDate = '2023-07-20', ApprovalDate = '2023-07-27', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 314
+update Tour Set PostingDate = '2023-06-18', ApprovalDate = '2023-07-03', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 315
+update Tour Set PostingDate = '2022-06-07', ApprovalDate = '2022-06-23', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 316
+update Tour Set PostingDate = '2022-07-12', ApprovalDate = '2022-07-18', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 317
+update Tour Set PostingDate = '2023-02-10', ApprovalDate = '2023-02-28', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 318
+update Tour Set PostingDate = '2022-01-05', ApprovalDate = '2022-01-23', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 319
+update Tour Set PostingDate = '2022-11-02', ApprovalDate = '2022-11-15', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 320
+update Tour Set PostingDate = '2022-12-08', ApprovalDate = '2022-12-22', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 321
+update Tour Set PostingDate = '2023-10-03', ApprovalDate = '2023-10-04', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 322
+update Tour Set PostingDate = '2022-04-27', ApprovalDate = '2022-05-07', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 323
+update Tour Set PostingDate = '2023-11-20', ApprovalDate = '2023-11-26', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 324
+update Tour Set PostingDate = '2023-05-18', ApprovalDate = '2023-06-01', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 325
+update Tour Set PostingDate = '2022-06-13', ApprovalDate = '2022-06-14', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 326
+update Tour Set PostingDate = '2022-10-22', ApprovalDate = '2022-10-26', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 327
+update Tour Set PostingDate = '2022-10-10', ApprovalDate = '2022-10-12', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 328
+update Tour Set PostingDate = '2022-01-13', ApprovalDate = '2022-01-24', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 329
+update Tour Set PostingDate = '2023-10-14', ApprovalDate = '2023-10-18', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 330
+update Tour Set PostingDate = '2023-01-16', ApprovalDate = '2023-01-17', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 331
+update Tour Set PostingDate = '2022-12-17', ApprovalDate = '2022-12-23', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 332
+update Tour Set PostingDate = '2023-07-14', ApprovalDate = '2023-07-18', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 333
+update Tour Set PostingDate = '2022-01-21', ApprovalDate = '2022-02-02', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 334
+update Tour Set PostingDate = '2023-08-29', ApprovalDate = '2023-09-06', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 335
+update Tour Set PostingDate = '2023-09-22', ApprovalDate = '2023-09-23', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 336
+update Tour Set PostingDate = '2023-07-23', ApprovalDate = '2023-08-08', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 337
+update Tour Set PostingDate = '2023-05-06', ApprovalDate = '2023-05-14', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 338
+update Tour Set PostingDate = '2022-06-26', ApprovalDate = '2022-07-10', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 339
+update Tour Set PostingDate = '2023-08-19', ApprovalDate = '2023-08-22', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 340
+update Tour Set PostingDate = '2022-03-19', ApprovalDate = '2022-04-02', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 341
+update Tour Set PostingDate = '2023-01-14', ApprovalDate = '2023-01-31', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 342
+update Tour Set PostingDate = '2022-03-04', ApprovalDate = '2022-03-05', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 343
+update Tour Set PostingDate = '2022-07-03', ApprovalDate = '2022-07-19', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 344
+update Tour Set PostingDate = '2023-09-06', ApprovalDate = '2023-09-21', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 345
+update Tour Set PostingDate = '2023-07-24', ApprovalDate = '2023-08-10', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 346
+update Tour Set PostingDate = '2022-11-03', ApprovalDate = '2022-11-17', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 347
+update Tour Set PostingDate = '2023-10-23', ApprovalDate = '2023-11-07', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 348
+update Tour Set PostingDate = '2023-05-22', ApprovalDate = '2023-06-01', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 349
+update Tour Set PostingDate = '2023-07-29', ApprovalDate = '2023-08-14', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 350
+update Tour Set PostingDate = '2023-11-01', ApprovalDate = '2023-11-14', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 351
+update Tour Set PostingDate = '2022-02-15', ApprovalDate = '2022-03-06', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 352
+update Tour Set PostingDate = '2022-12-27', ApprovalDate = '2022-12-28', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 353
+update Tour Set PostingDate = '2022-06-20', ApprovalDate = '2022-06-30', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 354
+update Tour Set PostingDate = '2023-08-17', ApprovalDate = '2023-08-23', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 355
+update Tour Set PostingDate = '2022-04-28', ApprovalDate = '2022-05-05', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 356
+update Tour Set PostingDate = '2022-11-01', ApprovalDate = '2022-11-13', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 357
+update Tour Set PostingDate = '2022-08-30', ApprovalDate = '2022-09-03', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 358
+update Tour Set PostingDate = '2023-04-13', ApprovalDate = '2023-04-27', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 359
+update Tour Set PostingDate = '2022-08-17', ApprovalDate = '2022-09-03', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 360
+update Tour Set PostingDate = '2023-08-03', ApprovalDate = '2023-08-10', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 361
+update Tour Set PostingDate = '2022-07-04', ApprovalDate = '2022-07-23', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 362
+update Tour Set PostingDate = '2022-07-27', ApprovalDate = '2022-08-09', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 363
+update Tour Set PostingDate = '2022-09-17', ApprovalDate = '2022-10-04', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 364
+update Tour Set PostingDate = '2023-03-04', ApprovalDate = '2023-03-22', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 365
+update Tour Set PostingDate = '2022-02-16', ApprovalDate = '2022-02-27', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 366
+update Tour Set PostingDate = '2022-08-17', ApprovalDate = '2022-09-04', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 367
+update Tour Set PostingDate = '2022-06-27', ApprovalDate = '2022-07-16', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 368
+update Tour Set PostingDate = '2023-09-13', ApprovalDate = '2023-09-26', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 369
+update Tour Set PostingDate = '2022-02-11', ApprovalDate = '2022-02-15', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 370
+update Tour Set PostingDate = '2023-03-16', ApprovalDate = '2023-03-19', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 371
+update Tour Set PostingDate = '2022-07-11', ApprovalDate = '2022-07-30', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 372
+update Tour Set PostingDate = '2023-03-25', ApprovalDate = '2023-04-09', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 373
+update Tour Set PostingDate = '2023-07-14', ApprovalDate = '2023-07-29', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 374
+update Tour Set PostingDate = '2023-05-26', ApprovalDate = '2023-06-06', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 375
+update Tour Set PostingDate = '2022-10-31', ApprovalDate = '2022-11-19', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 376
+update Tour Set PostingDate = '2023-06-25', ApprovalDate = '2023-07-13', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 377
+update Tour Set PostingDate = '2022-04-25', ApprovalDate = '2022-04-30', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 378
+update Tour Set PostingDate = '2023-03-03', ApprovalDate = '2023-03-10', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 379
+update Tour Set PostingDate = '2022-08-03', ApprovalDate = '2022-08-16', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 380
+update Tour Set PostingDate = '2023-01-25', ApprovalDate = '2023-02-10', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 381
+update Tour Set PostingDate = '2023-11-20', ApprovalDate = '2023-11-22', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 382
+update Tour Set PostingDate = '2023-07-16', ApprovalDate = '2023-07-20', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 383
+update Tour Set PostingDate = '2022-11-13', ApprovalDate = '2022-11-28', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 384
+update Tour Set PostingDate = '2023-03-22', ApprovalDate = '2023-04-04', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 385
+update Tour Set PostingDate = '2022-06-02', ApprovalDate = '2022-06-16', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 386
+update Tour Set PostingDate = '2023-05-26', ApprovalDate = '2023-06-09', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 387
+update Tour Set PostingDate = '2022-03-29', ApprovalDate = '2022-03-30', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 388
+update Tour Set PostingDate = '2022-10-07', ApprovalDate = '2022-10-10', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 389
+update Tour Set PostingDate = '2022-07-01', ApprovalDate = '2022-07-19', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 390
+update Tour Set PostingDate = '2022-01-09', ApprovalDate = '2022-01-12', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 391
+update Tour Set PostingDate = '2023-10-02', ApprovalDate = '2023-10-12', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 392
+update Tour Set PostingDate = '2022-02-19', ApprovalDate = '2022-03-03', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 393
+update Tour Set PostingDate = '2022-03-03', ApprovalDate = '2022-03-10', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 394
+update Tour Set PostingDate = '2022-02-12', ApprovalDate = '2022-02-18', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 395
+update Tour Set PostingDate = '2022-05-13', ApprovalDate = '2022-05-29', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 396
+update Tour Set PostingDate = '2022-02-16', ApprovalDate = '2022-03-03', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 397
+update Tour Set PostingDate = '2022-05-01', ApprovalDate = '2022-05-13', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 398
+update Tour Set PostingDate = '2023-07-28', ApprovalDate = '2023-08-06', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 399
+update Tour Set PostingDate = '2023-03-01', ApprovalDate = '2023-03-19', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 400
+update Tour Set PostingDate = '2022-09-27', ApprovalDate = '2022-10-13', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 401
+update Tour Set PostingDate = '2022-08-13', ApprovalDate = '2022-09-01', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 402
+update Tour Set PostingDate = '2023-05-26', ApprovalDate = '2023-05-30', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 403
+update Tour Set PostingDate = '2022-08-15', ApprovalDate = '2022-08-23', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 404
+update Tour Set PostingDate = '2022-10-28', ApprovalDate = '2022-10-30', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 405
+update Tour Set PostingDate = '2022-01-05', ApprovalDate = '2022-01-14', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 406
+update Tour Set PostingDate = '2022-03-19', ApprovalDate = '2022-04-03', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 407
+update Tour Set PostingDate = '2022-08-07', ApprovalDate = '2022-08-16', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 408
+update Tour Set PostingDate = '2023-03-16', ApprovalDate = '2023-03-22', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 409
+update Tour Set PostingDate = '2022-09-24', ApprovalDate = '2022-09-25', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 410
+update Tour Set PostingDate = '2022-06-23', ApprovalDate = '2022-07-05', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 411
+update Tour Set PostingDate = '2023-07-17', ApprovalDate = '2023-07-24', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 412
+update Tour Set PostingDate = '2022-11-24', ApprovalDate = '2022-11-29', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 413
+update Tour Set PostingDate = '2022-01-04', ApprovalDate = '2022-01-13', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 414
+update Tour Set PostingDate = '2023-11-22', ApprovalDate = '2023-11-30', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 415
+update Tour Set PostingDate = '2023-06-10', ApprovalDate = '2023-06-20', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 416
+update Tour Set PostingDate = '2023-05-08', ApprovalDate = '2023-05-20', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 417
+update Tour Set PostingDate = '2023-09-13', ApprovalDate = '2023-09-30', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 418
+update Tour Set PostingDate = '2023-09-21', ApprovalDate = '2023-09-26', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 419
+update Tour Set PostingDate = '2023-10-08', ApprovalDate = '2023-10-15', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 420
+update Tour Set PostingDate = '2022-04-27', ApprovalDate = '2022-05-09', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 421
+update Tour Set PostingDate = '2022-09-09', ApprovalDate = '2022-09-19', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 422
+update Tour Set PostingDate = '2023-10-13', ApprovalDate = '2023-10-19', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 423
+update Tour Set PostingDate = '2022-09-06', ApprovalDate = '2022-09-18', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 424
+update Tour Set PostingDate = '2023-07-12', ApprovalDate = '2023-07-27', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 425
+update Tour Set PostingDate = '2023-04-15', ApprovalDate = '2023-04-16', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 426
+update Tour Set PostingDate = '2023-02-11', ApprovalDate = '2023-02-24', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 427
+update Tour Set PostingDate = '2022-11-28', ApprovalDate = '2022-11-30', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 428
+update Tour Set PostingDate = '2023-03-25', ApprovalDate = '2023-04-05', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 429
+update Tour Set PostingDate = '2022-04-23', ApprovalDate = '2022-04-27', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 430
+update Tour Set PostingDate = '2022-09-01', ApprovalDate = '2022-09-05', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 431
+update Tour Set PostingDate = '2022-07-26', ApprovalDate = '2022-08-09', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 432
+update Tour Set PostingDate = '2023-10-13', ApprovalDate = '2023-10-24', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 433
+update Tour Set PostingDate = '2023-07-29', ApprovalDate = '2023-08-15', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 434
+update Tour Set PostingDate = '2023-04-18', ApprovalDate = '2023-05-02', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 435
+update Tour Set PostingDate = '2022-11-26', ApprovalDate = '2022-12-08', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 436
+update Tour Set PostingDate = '2022-01-13', ApprovalDate = '2022-01-30', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 437
+update Tour Set PostingDate = '2022-05-08', ApprovalDate = '2022-05-26', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 438
+update Tour Set PostingDate = '2023-02-17', ApprovalDate = '2023-02-19', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 439
+update Tour Set PostingDate = '2023-10-10', ApprovalDate = '2023-10-19', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 440
+update Tour Set PostingDate = '2022-01-16', ApprovalDate = '2022-01-22', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 441
+update Tour Set PostingDate = '2022-08-10', ApprovalDate = '2022-08-17', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 442
+update Tour Set PostingDate = '2022-08-06', ApprovalDate = '2022-08-11', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 443
+update Tour Set PostingDate = '2022-07-20', ApprovalDate = '2022-07-30', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 444
+update Tour Set PostingDate = '2023-11-07', ApprovalDate = '2023-11-26', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 445
+update Tour Set PostingDate = '2022-08-29', ApprovalDate = '2022-09-04', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 446
+update Tour Set PostingDate = '2023-01-19', ApprovalDate = '2023-01-30', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 447
+update Tour Set PostingDate = '2022-09-09', ApprovalDate = '2022-09-23', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 448
+update Tour Set PostingDate = '2023-01-13', ApprovalDate = '2023-01-23', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 449
+update Tour Set PostingDate = '2022-06-21', ApprovalDate = '2022-06-25', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 450
+update Tour Set PostingDate = '2022-07-01', ApprovalDate = '2022-07-20', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 451
+update Tour Set PostingDate = '2022-06-02', ApprovalDate = '2022-06-03', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 452
+update Tour Set PostingDate = '2022-05-16', ApprovalDate = '2022-06-01', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 453
+update Tour Set PostingDate = '2022-09-07', ApprovalDate = '2022-09-14', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 454
+update Tour Set PostingDate = '2022-11-07', ApprovalDate = '2022-11-14', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 455
+update Tour Set PostingDate = '2022-10-02', ApprovalDate = '2022-10-17', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 456
+update Tour Set PostingDate = '2022-02-10', ApprovalDate = '2022-02-20', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 457
+update Tour Set PostingDate = '2022-06-26', ApprovalDate = '2022-07-03', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 458
+update Tour Set PostingDate = '2023-01-30', ApprovalDate = '2023-02-08', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 459
+update Tour Set PostingDate = '2023-03-17', ApprovalDate = '2023-04-03', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 460
+update Tour Set PostingDate = '2022-09-13', ApprovalDate = '2022-09-25', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 461
+update Tour Set PostingDate = '2023-08-01', ApprovalDate = '2023-08-08', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 462
+update Tour Set PostingDate = '2023-03-30', ApprovalDate = '2023-04-06', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 463
+update Tour Set PostingDate = '2023-07-18', ApprovalDate = '2023-07-31', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 464
+update Tour Set PostingDate = '2022-04-23', ApprovalDate = '2022-05-11', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 465
+update Tour Set PostingDate = '2022-11-16', ApprovalDate = '2022-11-24', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 466
+update Tour Set PostingDate = '2022-10-24', ApprovalDate = '2022-11-05', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 467
+update Tour Set PostingDate = '2023-03-03', ApprovalDate = '2023-03-11', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 468
+update Tour Set PostingDate = '2023-09-01', ApprovalDate = '2023-09-09', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 469
+update Tour Set PostingDate = '2022-04-28', ApprovalDate = '2022-05-01', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 470
+update Tour Set PostingDate = '2022-10-17', ApprovalDate = '2022-10-19', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 471
+update Tour Set PostingDate = '2022-08-24', ApprovalDate = '2022-09-07', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 472
+update Tour Set PostingDate = '2023-11-01', ApprovalDate = '2023-11-11', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 473
+update Tour Set PostingDate = '2022-01-24', ApprovalDate = '2022-01-30', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 474
+update Tour Set PostingDate = '2023-06-30', ApprovalDate = '2023-07-12', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 475
+update Tour Set PostingDate = '2023-09-01', ApprovalDate = '2023-09-18', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 476
+update Tour Set PostingDate = '2023-11-13', ApprovalDate = '2023-11-26', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 477
+update Tour Set PostingDate = '2022-07-17', ApprovalDate = '2022-07-20', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 478
+update Tour Set PostingDate = '2023-10-18', ApprovalDate = '2023-10-23', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 479
+update Tour Set PostingDate = '2023-05-02', ApprovalDate = '2023-05-08', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 480
+update Tour Set PostingDate = '2023-11-20', ApprovalDate = '2023-12-02', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 481
+update Tour Set PostingDate = '2022-11-30', ApprovalDate = '2022-12-13', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 482
+update Tour Set PostingDate = '2023-04-12', ApprovalDate = '2023-04-26', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 483
+update Tour Set PostingDate = '2022-01-02', ApprovalDate = '2022-01-21', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 484
+update Tour Set PostingDate = '2022-04-29', ApprovalDate = '2022-05-11', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 485
+update Tour Set PostingDate = '2023-01-31', ApprovalDate = '2023-02-15', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 486
+update Tour Set PostingDate = '2022-01-13', ApprovalDate = '2022-01-28', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 487
+update Tour Set PostingDate = '2022-03-09', ApprovalDate = '2022-03-16', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 488
+update Tour Set PostingDate = '2022-02-20', ApprovalDate = '2022-02-22', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 489
+update Tour Set PostingDate = '2023-07-14', ApprovalDate = '2023-07-17', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 490
+update Tour Set PostingDate = '2023-05-27', ApprovalDate = '2023-06-10', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 491
+update Tour Set PostingDate = '2022-05-26', ApprovalDate = '2022-05-29', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 492
+update Tour Set PostingDate = '2023-04-26', ApprovalDate = '2023-05-05', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 493
 

@@ -115,7 +115,7 @@ namespace Booking.Areas.Authentication.Controllers
 
         [Route("login")]
         [HttpGet]
-        public async Task<IActionResult> Login(int? returnUrl = null)
+        public async Task<IActionResult> Login(int? returnUrl = -1)
         {
             if (await authenRepository.GetUserSignedIn(User) != null)
             {
@@ -168,11 +168,10 @@ namespace Booking.Areas.Authentication.Controllers
                 return View();
             }
 
-			if (returnUrl != null)
+			if (returnUrl != -1)
 			{
 				return RedirectToAction("TourDetail", "Home", new { tourId = returnUrl });
 			}
-
 
 			return RedirectToAction("Index", "Home");
         }
