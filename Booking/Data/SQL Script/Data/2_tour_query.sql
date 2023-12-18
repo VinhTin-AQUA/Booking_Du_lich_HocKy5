@@ -15300,7 +15300,6 @@ Cảm giác an toàn với tài xế giàu kinh nghiệm và chuyên nghiệp
 Bỏ qua việc di chuyển và thư giãn trên đường đến đích', N'Lịch trình tự do',N'Tp. Điện Biên Phủ, Điện Biên, Việt Nam', N'Tp. Điện Biên Phủ, Điện Biên, Việt Nam', '/tours/488');
 
 -- cập nhật PostingDate, PosterId, ApprrovalDate, ApprovalId
-update Tour Set PostingDate = '2022-09-23', ApprovalDate = '2022-10-03', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 0
 update Tour Set PostingDate = '2023-09-16', ApprovalDate = '2023-09-27', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 1
 update Tour Set PostingDate = '2022-11-28', ApprovalDate = '2022-12-08', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 2
 update Tour Set PostingDate = '2022-03-16', ApprovalDate = '2022-03-17', PosterID = '7c1deb86-c2c4-445c-b519-5d85e858b031', ApproverID = '64f021f5-6ab3-42af-aa53-8724a00c0595' where TourId = 3
