@@ -7,7 +7,7 @@ namespace Booking.Areas.Admin.Controllers
 {
     [Area("Admin")]
     [Route("user-management")]
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public class UserManagerController : Controller
     {
         private readonly IUserManagerRepository userManagerRepository;
