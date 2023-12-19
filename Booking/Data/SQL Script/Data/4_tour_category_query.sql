@@ -1,3 +1,4 @@
+USE Booking;
 INSERT INTO TourCategory(TourId, CategoryId) VALUES (1,1);
 INSERT INTO TourCategory(TourId, CategoryId) VALUES (2,1);
 INSERT INTO TourCategory(TourId, CategoryId) VALUES (3,1);

@@ -8,6 +8,7 @@ namespace Booking.Interfaces
         public Task<bool> AddBookTour(BookTour bookTour);
         public Task<ICollection<BookTour>> GetAllBookTour();
         public Task<BookTour?> GetBookTourByID(int bookTourId);
+        public Task<BookTour?> GetNewBookTour();
 
         public Task<bool> DeleteBookTour(BookTour bookTour);
 

@@ -1,4 +1,5 @@
-﻿INSERT INTO PackagePrice(PackageId,ChildPrice,AdultPrice) VALUES(1, 394.457, 930.247 );
+﻿USE Booking;
+INSERT INTO PackagePrice(PackageId,ChildPrice,AdultPrice) VALUES(1, 394.457, 930.247 );
 INSERT INTO PackagePrice(PackageId,ChildPrice,AdultPrice) VALUES(2, 469.057, 270.24 );
 INSERT INTO PackagePrice(PackageId,ChildPrice,AdultPrice) VALUES(3, 40.193, 554.241 );
 INSERT INTO PackagePrice(PackageId,ChildPrice,AdultPrice) VALUES(4, 443.964, 973.47 );

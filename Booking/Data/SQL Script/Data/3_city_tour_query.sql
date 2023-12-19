@@ -1,3 +1,4 @@
+USE Booking;
 INSERT INTO CityTour(TourId, CityId) VALUES (1,1);
 INSERT INTO CityTour(TourId, CityId) VALUES (2,1);
 INSERT INTO CityTour(TourId, CityId) VALUES (3,1);

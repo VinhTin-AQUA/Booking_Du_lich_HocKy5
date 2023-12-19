@@ -1,4 +1,5 @@
-﻿INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
+﻿USE Booking;
+INSERT INTO Tour(TourName,Overview,Schedule,DepartureLocation,DropOffLocation,PhotoPath)  
     VALUES(N'Skip the Line: Thang Long Water Puppet Theater Entrance Tickets', N'Bỏ qua việc xếp hàng và rắc rối với dịch vụ đặt trước bao gồm vé vào cổng múa rối nước. Chọn từ một số lịch chiếu để phù hợp với lịch trình du lịch của bạn. Hãy đến nhà hát 15 phút trước giờ chiếu và chuẩn bị trải nghiệm một trong những loại hình nghệ thuật truyền thống đáng nhớ nhất của Việt Nam trực tiếp trên sân khấu.', N'~Múa rối nước Thăng Long
 Múa rối nước là loại hình nghệ thuật truyền thống mang bản sắc văn hóa đặc sắc của Việt Nam. Nó ra đời, phát triển và đa dạng hóa hơn một nghìn năm trước ở vùng đồng bằng sông Hồng. Nhờ những màn biểu diễn độc đáo trên mặt nước, nghệ thuật múa rối này nổi tiếng và được đánh giá cao trên toàn thế giới.
 Thời kỳ đầu, múa rối nước thể hiện cuộc sống đời thường của người dân làng quê như làm ruộng, câu cá, lãng mạn và trẻ con nô đùa. Giờ đây, chủ đề của các vở kịch cũng được chọn lọc từ truyền thuyết, thần thoại, giai đoạn lịch sử xa xưa.

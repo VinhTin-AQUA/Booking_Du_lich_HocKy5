@@ -1,4 +1,5 @@
-﻿INSERT INTO Package(TourID,PackageName,[Description],MaxPeople) VALUES( 1, N'AUDIO GUIDE', N'This is ticket for AUDIO GUIDE: "AUDIO GUIDE" only. This is not ticket for Water Puppet Show', 12 );
+﻿USE Booking;
+INSERT INTO Package(TourID,PackageName,[Description],MaxPeople) VALUES( 1, N'AUDIO GUIDE', N'This is ticket for AUDIO GUIDE: "AUDIO GUIDE" only. This is not ticket for Water Puppet Show', 12 );
 INSERT INTO Package(TourID,PackageName,[Description],MaxPeople) VALUES( 1, N'Standard Class - Show 17:20', N'(Seats row from L-M-N-O-P-Q-R) Duration: 50 minutes', 14 );
 INSERT INTO Package(TourID,PackageName,[Description],MaxPeople) VALUES( 1, N'Standard Class - Show 20:00', N'(Seats row from L-M-N-O-P-Q-R)', 4 );
 INSERT INTO Package(TourID,PackageName,[Description],MaxPeople) VALUES( 1, N'Standard Class - Show 16:10', N'(Seats row from L-M-N-O-P-Q-R) Duration: 50 minutes', 3 );

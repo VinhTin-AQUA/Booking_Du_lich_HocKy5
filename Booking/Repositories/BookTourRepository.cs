@@ -41,6 +41,12 @@ namespace Booking.Repositories
             return bookTour;
         }
 
+        public Task<BookTour?> GetNewBookTour()
+        {
+            var newbt = context.BookTours.OrderByDescending(bt => bt.BookTourId).FirstOrDefaultAsync();
+            return newbt;
+        }
+
         public async Task<bool> Save()
         {
             var r = await context.SaveChangesAsync();
