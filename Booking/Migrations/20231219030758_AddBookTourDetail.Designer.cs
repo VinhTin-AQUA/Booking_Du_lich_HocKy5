@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Booking.Migrations
 {
     [DbContext(typeof(BookingContext))]
-    [Migration("20231219024459_AddBookTourDetail")]
+    [Migration("20231219030758_AddBookTourDetail")]
     partial class AddBookTourDetail
     {
         /// <inheritdoc />
@@ -166,7 +166,8 @@ namespace Booking.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("TicketCode");
+                    b.HasKey("TicketCode")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.HasIndex("BookTourId");
 

@@ -163,7 +163,8 @@ namespace Booking.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("TicketCode");
+                    b.HasKey("TicketCode")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.HasIndex("BookTourId");
 
