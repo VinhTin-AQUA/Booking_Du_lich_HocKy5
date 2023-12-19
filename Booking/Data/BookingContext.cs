@@ -130,7 +130,8 @@ public partial class BookingContext : IdentityDbContext<AppUser>
             .HasForeignKey(ct => ct.CityId);
 
         modelBuilder.Entity<BookTourDetail>()
-            .HasKey(btd => btd.TicketCode);
+            .HasKey(btd => btd.TicketCode)
+            .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
         modelBuilder.Entity<BookTourDetail>()
             .HasOne(btd => btd.BookTour)
