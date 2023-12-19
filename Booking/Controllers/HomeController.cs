@@ -379,7 +379,8 @@ namespace Booking.Controllers
 
             ViewBag.myLst = lst_bookTourDetail;
             int a = 1;
-
+ ViewBag.image = _imageService.GetAllFileOfFolder("tours", package.TourID.ToString())[0];
+            ViewBag.BaseImgUrl = _appConfigs.BaseImgUrl;
             // End Processing BookTourDetail
 
             return View("Checkout");
@@ -396,6 +397,7 @@ namespace Booking.Controllers
         [HttpGet]
         public async Task<IActionResult> Checkout()
         {
+
             return View();
         }
 
