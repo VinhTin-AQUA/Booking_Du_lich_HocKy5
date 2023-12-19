@@ -14,8 +14,8 @@ namespace Booking.Models
         public bool IsAdult { get; set; }
 
         // Khoa ngoai
-        [Key]
         public int BookTourId { get; set; }
+
         [AllowNull]
         public BookTour? BookTour { get; set; }
     }

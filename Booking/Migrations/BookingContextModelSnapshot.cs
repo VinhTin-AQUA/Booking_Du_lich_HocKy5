@@ -143,10 +143,13 @@ namespace Booking.Migrations
 
             modelBuilder.Entity("Booking.Models.BookTourDetail", b =>
                 {
-                    b.Property<int>("BookTourId")
+                    b.Property<int>("TicketCode")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("TicketCode")
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TicketCode"));
+
+                    b.Property<int>("BookTourId")
                         .HasColumnType("int");
 
                     b.Property<string>("FirstNameTourist")
@@ -160,7 +163,9 @@ namespace Booking.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("BookTourId", "TicketCode");
+                    b.HasKey("TicketCode");
+
+                    b.HasIndex("BookTourId");
 
                     b.ToTable("BookTourDetail");
                 });
