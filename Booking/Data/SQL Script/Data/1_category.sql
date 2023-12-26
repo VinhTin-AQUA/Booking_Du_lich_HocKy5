@@ -1,3 +1,4 @@
+USE Booking;
 INSERT INTO Category(CategoryName) VALUES (N'Chuyến tham quan'); -- id = 1
 INSERT INTO Category(CategoryName) VALUES (N'Ngoài trời'); -- id = 2
 INSERT INTO Category(CategoryName) VALUES (N'Ẩm thực'); -- id = 3

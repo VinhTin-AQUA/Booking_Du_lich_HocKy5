@@ -54,15 +54,16 @@ namespace Booking.Migrations
                 name: "BookTourDetail",
                 columns: table => new
                 {
-                    TicketCode = table.Column<int>(type: "int", nullable: false),
-                    BookTourId = table.Column<int>(type: "int", nullable: false),
+                    TicketCode = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     FirstNameTourist = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     LastNameTourist = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IsAdult = table.Column<bool>(type: "bit", nullable: false)
+                    IsAdult = table.Column<bool>(type: "bit", nullable: false),
+                    BookTourId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_BookTourDetail", x => new { x.BookTourId, x.TicketCode });
+                    table.PrimaryKey("PK_BookTourDetail", x => x.TicketCode);
                     table.ForeignKey(
                         name: "FK_BookTourDetail_BookTour_BookTourId",
                         column: x => x.BookTourId,
@@ -75,6 +76,11 @@ namespace Booking.Migrations
                 name: "IX_BookTour_PackageId",
                 table: "BookTour",
                 column: "PackageId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_BookTourDetail_BookTourId",
+                table: "BookTourDetail",
+                column: "BookTourId");
         }
 
         /// <inheritdoc />

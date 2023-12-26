@@ -123,13 +123,20 @@ public partial class BookingContext : IdentityDbContext<AppUser>
             .HasMany(t => t.CityTours)
             .WithOne(ct => ct.Tour)
             .HasForeignKey(ct => ct.TourId);
+
         modelBuilder.Entity<City>()
             .HasMany(c => c.CityTours)
             .WithOne(ct => ct.City)
             .HasForeignKey(ct => ct.CityId);
 
         modelBuilder.Entity<BookTourDetail>()
-            .HasKey(btd => new { btd.BookTourId, btd.TicketCode });
+            .HasKey(btd => btd.TicketCode)
+            .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+        modelBuilder.Entity<BookTourDetail>()
+            .HasOne(btd => btd.BookTour)
+            .WithMany(bt => bt.BookTourDetails)
+            .HasForeignKey(btd => btd.BookTourId);
     }
 
     public DbSet<City> City { get; set; }

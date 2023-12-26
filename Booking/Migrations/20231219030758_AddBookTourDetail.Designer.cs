@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Booking.Migrations
 {
     [DbContext(typeof(BookingContext))]
-    [Migration("20231213143040_AddBookTourDetail")]
+    [Migration("20231219030758_AddBookTourDetail")]
     partial class AddBookTourDetail
     {
         /// <inheritdoc />
@@ -146,10 +146,13 @@ namespace Booking.Migrations
 
             modelBuilder.Entity("Booking.Models.BookTourDetail", b =>
                 {
-                    b.Property<int>("BookTourId")
+                    b.Property<int>("TicketCode")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("TicketCode")
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TicketCode"));
+
+                    b.Property<int>("BookTourId")
                         .HasColumnType("int");
 
                     b.Property<string>("FirstNameTourist")
@@ -163,7 +166,10 @@ namespace Booking.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("BookTourId", "TicketCode");
+                    b.HasKey("TicketCode")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.HasIndex("BookTourId");
 
                     b.ToTable("BookTourDetail");
                 });

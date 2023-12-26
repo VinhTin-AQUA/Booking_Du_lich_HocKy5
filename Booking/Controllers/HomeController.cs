@@ -6,6 +6,7 @@ using Booking.Seeds;
 using Booking.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using NuGet.Protocol;
 using System.Collections;
 using System.Diagnostics;
@@ -26,6 +27,7 @@ namespace Booking.Controllers
 		private readonly IImageService _imageService;
         private readonly IPackageRepository _packageRepository;
         private readonly IUserManagerRepository _userManagerRepository;
+        private readonly IBookTourDetailRepository _bookTourDetailRepository;
 
         public HomeController(IPackageRepository packageRepository,
             IImageService imageService, 
@@ -35,7 +37,8 @@ namespace Booking.Controllers
             IBookTourRepository bookTourRepository, 
             IPackagePriceRepository packagePriceRepository, 
             ITourRepository tourRepository,
-            ICityRepository cityRepository, IUserManagerRepository userManagerRepository)
+            ICityRepository cityRepository, IUserManagerRepository userManagerRepository,
+            IBookTourDetailRepository bookTourDetailRepository)
              
         {
             _appConfigs = appConfigs;
@@ -48,6 +51,7 @@ namespace Booking.Controllers
 			_imageService = imageService;
             _packageRepository = packageRepository;
             _userManagerRepository = userManagerRepository;
+            _bookTourDetailRepository = bookTourDetailRepository;
         }
 
         public IActionResult Index()
@@ -325,7 +329,7 @@ namespace Booking.Controllers
         [HttpPost]
         public async Task<IActionResult> BookTour(int packageId, BookTour model)
         {
-            //List<BookTourDetail> lst_bookTourDetail = new List<BookTourDetail>();
+            List<BookTourDetail> lst_bookTourDetail = new List<BookTourDetail>();
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (packageId == null || userId == null)
             {
@@ -339,55 +343,56 @@ namespace Booking.Controllers
             Package package = await _packageRepository.GetPackageById(packageId);
             Tour tour = await _tourRepository.GetTourById(package.TourID);
 
+            // Start processing insert data booktour
+            string booktourJson = JsonConvert.SerializeObject(model);
+            TempData["booked"] = booktourJson;
+            // End processing insert data booktour
+
             // Start Processing View Checkout
 
             ViewBag.tourName = tour.TourName;
             ViewBag.packageName = package.PackageName;
             ViewBag.price = model.Price;
             ViewBag.numOfTourist = Request.Form["totalParticipation"];
-            ViewBag.departureDate = DateTime.Now.Date;
+            ViewBag.departureDate = model.DepartureDate.ToString().Substring(0,10);
+            ViewBag.image = _imageService.GetAllFileOfFolder("tours", package.TourID.ToString())[0];
+            ViewBag.BaseImgUrl = _appConfigs.BaseImgUrl;
 
             // End Processing View Checkout
 
             // Start Processing BookTourDetail
 
-            //int numOfChild = Convert.ToInt32(Request.Form["quantityChild"]);
-            //int numOfAdult = Convert.ToInt32(Request.Form["quantityAdult"]);
-            //for(int i=1; i<=numOfAdult; ++i)
-            //{
-            //    BookTourDetail btd = new BookTourDetail()
-            //    {
-            //        //FirstNameTourist = Request.Form["firstNameAdult-1"].ToString(),
-            //        //LastNameTourist = Request.Form["lastNameAdult-1"].ToString(),
-            //        //FirstNameTourist = Request.Form[String.Format("firstNameAdult-{0}",i)].ToString(),
-            //        //LastNameTourist = Request.Form[String.Format("lastNameAdult-{0}", i)].ToString(),
-            //        FirstNameTourist = "FA" + i.ToString(),
-            //        LastNameTourist = "LA" + i.ToString(),
-            //        IsAdult = true
-            //    };
-            //    lst_bookTourDetail.Add(btd);
-            //}
-            //if(numOfChild > 0)
-            //{
-            //    for (int i = 1; i <= numOfChild; ++i)
-            //    {
-            //        BookTourDetail btd = new BookTourDetail()
-            //        {
-            //            //FirstNameTourist = Request.Form["firstNameChild-1"].ToString(),
-            //            //LastNameTourist = Request.Form["lastNameChild-1"].ToString(),
-            //            //FirstNameTourist = Request.Form[String.Format("firstNameChild-{0}", i)].ToString(),
-            //            //LastNameTourist = Request.Form[String.Format("lastNameChild-{0}", i)].ToString(),
-            //            FirstNameTourist = "FC" + i.ToString(),
-            //            LastNameTourist = "LC" + i.ToString(),
-            //            IsAdult = false
-            //        };
-            //        lst_bookTourDetail.Add(btd);
-            //    }
-            //}
+            int numOfChild = Convert.ToInt32(Request.Form["quantityChild"]);
+            int numOfAdult = Convert.ToInt32(Request.Form["quantityAdult"]);
+            for (int i = 1; i <= numOfAdult; ++i)
+            {
+                BookTourDetail btd = new BookTourDetail()
+                {
+                    FirstNameTourist = Convert.ToString(Request.Form[$"firstNameAdult-{i}"]),
+                    LastNameTourist = Convert.ToString(Request.Form[$"lastNameAdult-{i}"]),
+                    IsAdult = true
+                };
+                //string detailJson = JsonConvert.SerializeObject(btd);
+                lst_bookTourDetail.Add(btd);
+            }
+            if (numOfChild > 0)
+            {
+                for (int i = 1; i <= numOfChild; ++i)
+                {
+                    BookTourDetail btd = new BookTourDetail()
+                    {
+                        FirstNameTourist = Convert.ToString(Request.Form[$"firstNameChild-{i}"]),
+                        LastNameTourist = Convert.ToString(Request.Form[$"lastNameChild-{i}"]),
+                        IsAdult = false
+                    };
+                    //string detailJson = JsonConvert.SerializeObject(btd);
+                    lst_bookTourDetail.Add(btd);
+                }
+            }
 
-            //ViewBag.myLst = lst_bookTourDetail;
-            //int a = 1;
+            var oldList = JsonConvert.SerializeObject(lst_bookTourDetail);
 
+            TempData["myLst"] = oldList;
             // End Processing BookTourDetail
 
             return View("Checkout");
@@ -397,6 +402,27 @@ namespace Booking.Controllers
         [HttpGet]
         public async Task<IActionResult> Success()
         {
+            string saveBooktour = TempData["booked"] as string;
+            BookTour bt = JsonConvert.DeserializeObject<BookTour>(saveBooktour);
+            var r = await _bookTourRepository.AddBookTour(bt);
+
+            if (r == false)
+            {
+                return View("BookTour");
+            }
+
+            BookTour newBt = await _bookTourRepository.GetNewBookTour();
+            var newList = JsonConvert.DeserializeObject<List<BookTourDetail>>(TempData["myLst"].ToString());
+
+            foreach (var detail in newList)
+            {
+                detail.BookTourId = newBt.BookTourId;
+                var s = await _bookTourDetailRepository.AddBookTourDetail(detail);
+                if (s == false)
+                {
+                    return View("BookTour");
+                }
+            }
             return View();
         }
 
@@ -404,6 +430,7 @@ namespace Booking.Controllers
         [HttpGet]
         public async Task<IActionResult> Checkout()
         {
+
             return View();
         }
 

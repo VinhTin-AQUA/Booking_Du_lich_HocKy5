@@ -240,8 +240,13 @@
 
                             // Tạo phần tử span với class "disount-price" và văn bản
                             var priceSpan = document.createElement("span");
-                            priceSpan.className = "disount-price";
-                            priceSpan.textContent = item.price + " VNĐ";
+                            priceSpan.className = "disount-price text-danger fw-bolder";
+
+                            if (item.price === -1) {
+                                priceSpan.textContent = "Chưa cập nhật";
+                            } else {
+                                priceSpan.textContent = item.price + " VNĐ";
+                            }
 
                             // Tạo phần tử div với class "product-description limited-lines" và văn bản
                             var descriptionDiv = document.createElement("div");

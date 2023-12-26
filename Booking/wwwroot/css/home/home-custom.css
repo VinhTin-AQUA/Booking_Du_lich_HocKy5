@@ -50,10 +50,11 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
     -webkit-line-clamp: 2; /* Số hàng muốn hiển thị */
+    min-height: 48px!important;
 }
 
-    .limited-lines::after {
-        content: "...";
-        display: block;
-    }
+.limited-lines::after {
+    content: "...";
+    display: block;
+}
 
