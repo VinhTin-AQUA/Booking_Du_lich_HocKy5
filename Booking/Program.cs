@@ -94,7 +94,7 @@ builder.Services.Configure<IdentityOptions>(options =>
 //thiet lap cookie
 builder.Services.ConfigureApplicationCookie(options =>
 {
-	options.AccessDeniedPath = "/Identity/Account/AccessDenied";
+	options.AccessDeniedPath = "/error/page-not-found";
 	options.Cookie.Name = "YourAppCookieName";
 	options.Cookie.HttpOnly = true;
 	options.ExpireTimeSpan = TimeSpan.FromDays(30);
